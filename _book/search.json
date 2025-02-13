@@ -1,0 +1,32 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Operations Research",
+    "section": "",
+    "text": "Интерактивный курс по исследованию операций",
+    "crumbs": [
+      "Интерактивный курс по исследованию операций"
+    ]
+  },
+  {
+    "objectID": "figure-plot-r.html",
+    "href": "figure-plot-r.html",
+    "title": "5  Графические библиотеки",
+    "section": "",
+    "text": "5.1 plotly",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Графические библиотеки</span>"
+    ]
+  },
+  {
+    "objectID": "figure-plot-r.html#ggplot2",
+    "href": "figure-plot-r.html#ggplot2",
+    "title": "5  Графические библиотеки",
+    "section": "5.2 GGPlot2",
+    "text": "5.2 GGPlot2",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Графические библиотеки</span>"
+    ]
+  }
+]
