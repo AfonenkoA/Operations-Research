@@ -20,6 +20,8 @@ book:
 
 bibliography: references.bib
 
+freeze: auto
+
 format:
   html:
     theme: cosmo
