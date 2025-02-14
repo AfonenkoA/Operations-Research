@@ -8,15 +8,16 @@ book:
   date-format: long
   chapters:
     - index.qmd
-    - markdown.qmd
-    - latex.qmd
-    - basic-r.qmd
-    - advanced-r.qmd
-    - figure-plot-r.qmd
-    - linear-algebra-r.qmd
-    - linear-intro-r.qmd
-    - lab1-intro.qmd
-    - lab2-linear.qmd
+    - enviroment/rstudio.qmd
+    - enviroment/markdown.qmd
+    - enviroment/latex.qmd
+    - r-lang/basic.qmd
+    - r-lang/advanced.qmd
+    - r-tools/figure-plot.qmd
+    - linear/linear-algebra.qmd
+    - linear/linear-intro.qmd
+    - lab1/intro.qmd
+    - lab2/linear.qmd
 
 bibliography: references.bib
 
