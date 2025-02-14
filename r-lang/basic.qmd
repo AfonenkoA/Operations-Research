@@ -1,0 +1,346 @@
+# Основы языка R
+
+
+
+## Типы данных
+
+В R все элементы, используемые для вычислений, называются объектами. Зарезервированы 5 atomic типов объектов:
+
+```{r}
+typeof(10.5)
+typeof(100L)
+typeof(9+3i)
+typeof("1ac")
+typeof(TRUE)
+```
+
+Базовый объект - вектор. Вектор может содержать объекты только одного типа.
+
+```{r}
+1
+```
+
+In real life, some information items may be inherently or temporarily missing, unknown, or Not Available. As R is orientated towards data processing, it was equipped with a special indicator: NA_real\_ \# numeric NA (missing value) \## \[1\] NA It is similar to the Null marker in database query languages such as SQL. Note that NA_real\_ is displayed simply as “NA”, chiefly for readability. Moreover, Inf denotes infinity, ∞, i.e., an element that is larger than the largest representable double-precision (64 bit) floating point value. Also, NaN stands for not-a-number, which is returned as the result of some illegal operations, e.g., 0/0 or ∞−∞.
+
+Причём для c сделать сслыку на репозиторий функций. First, the c function can be used to combine (concatenate) many numeric vectors, each of any length. It results in a single object: c(1, 2, 3) \# three vectors of length one –\> one vector of length three \## \[1\] 1 2 3 c(1, c(2, NA_real\_, 4), 5, c(6, c(7, Inf))) \## \[1\] 1 2 NA 4 5 6 7 Inf Note Running help("c"), we will see that its usage is like c(...). In the current context, this means that the c function takes an arbitrary number of arguments. In Section 9.4.6, we will study the dot-dot-dot (ellipsis) parameter in more detail. 2.1.3. Repeating entries with rep Second, rep replicates the elements in a vector a given number of times. rep(1, 5) \## \[1\] 1 1 1 1 1 rep(c(1, 2, 3), 4) \## \[1\] 1 2 3 1 2 3 1 2 3 1 2 3 In the second case, the whole vector (1, 2, 3) has been recycled (tiled) four times. Interestingly, if the second argument is a vector of the same length as the first one, the behaviour will be different: rep(c(1, 2, 3), c(2, 1, 4))
+
+```         
+• times,
+• length.out[1],
+• each.
+```
+
+2.1.4. Generating arithmetic progressions with seq and `:` Third, we can call the seq function to create a sequence of equally-spaced numbers on a linear scale, i.e., an arithmetic progression. seq(1, 15, 2) \## \[1\] 1 3 5 7 9 11 13 15 From the function’s help page, we discover that seq accepts the from, to, by, and length.out arguments, amongst others. Thus, the preceding call is equivalent to: seq(from=1, to=15, by=2) \## \[1\] 1 3 5 7 9 11 13 15 Note that to actually means “up to”: seq(from=1, to=16, by=2) \## \[1\] 1 3 5 7 9 11 13 15 We can also pass length.out instead of by. In such a case, the increments or decrements will be computed via the formula ((to - from)/(length.out - 1)). This default value is reported in the Usage section of help("seq"). seq(1, 0, length.out=5) \## \[1\] 1.00 0.75 0.50 0.25 0.00 seq(length.out=5) \# default `from` is 1 \## \[1\] 1 2 3 4 5 Arithmetic progressions with steps equal to 1 or -1 can also be generated via the `:` operator. 1:10 \# seq(1, 10) or seq(1, 10, 1) \## \[1\] 1 2 3 4 5 6 7 8 9 10 -1:10 \# seq(-1, 10) or seq(-1, 10, 1) \## \[1\] -1 0 1 2 3 4 5 6 7 8 9 10 -1:-10 \# seq(-1, -10) or seq(-1, -10, -1) \## \[1\] -1 -2 -3 -4 -5 -6 -7 -8 -9 -10 Let’s highlight the order of precedence of this operator: -1:10 means (-1):10, and not -(1:10); compare Section 2.4.3. Exercise 2.1 Take a look at the manual page of seq_along and seq_len and determine whether we can do without them, having seq\[3\] at hand.
+
+При объединении объектов разных типов в вектор, они приводятся к более широкому (implicit coercion)
+
+```{r}
+class(c(TRUE, FALSE))
+class(c(1L, TRUE))
+class(c(1L, 2L))
+class(c(1L, 2.5))
+class(c(1L, 2.5, 2.5+1i))
+class(c(1L, 2L, 2.5+1i, "12"))
+```
+
+## Создание переменных
+
+The objects we bring forth will often need to be memorised so that they can be referred to in further computations. The assignment operator, `<-`, can be used for this purpose: x \<- 1:3 \# creates a numeric vector and binds the name `x` to it The now-named object can be recalled\[4\] and dealt with as we please: print(x) \# or just `x` in the R console \## \[1\] 1 2 3 sum(x) \# example operation: compute the sum of all elements in `x` \## \[1\] 6 Important In R, all names are case-sensitive. Hence, x and X can coexist peacefully: when set, they refer to two different objects. If we tried calling Print(x), print(X), or PRINT(x), we would get an error. Typically, we will be using syntactic names. In help("make.names"), we read: A syntactically valid name consists of letters, numbers and the dot or underline characters and starts with a letter or the dot not followed by a number. Names such as .2way are not valid, and neither are the reserved words such as if, for, function, next, and TRUE, but see Section 9.3.1 for an exception. A fine name is self-explanatory and thus reader-friendly: patients, mean, and average_scores are way better (if they are what they claim they are) than xyz123, crap, or spam. Also, it might not be such a bad idea to get used to denoting: • vectors by x, y, z, • matrices (and matrix-like objects) by A, B, …, X, Y, Z, • integer indexes by letters i, j, k, l, • object sizes by n, m, d, p or nx, ny, etc., especially when they are only of temporary nature (for storing auxiliary results, iterating over collections of objects, etc.). There are numerous naming conventions that we can adopt, but most often they are a matter of taste; snake_case, lowerCamelCase, UpperCamelCase, flatcase, or dot.case are equally sound as long as they are used coherently (for instance, some use snake_case for vectors and UpperCamelCase for functions). Occasionally, we have little choice but to adhere to the naming conventions of the project we are about to contribute to. Note Generally, a dot, “.”, has no special meaning\[5\]; na.omit is as appropriate a name as na_omit, naOmit, NAOMIT, naomit, and NaOmit. Readers who know other programming languages will need to habituate themselves to this convention. R, as a dynamic language, allows for introducing new variables at any time. Moreover, existing names can be bound to new values. For instance: (y \<- "spam") \# bracketed expression – printing not suppressed \## \[1\] "spam" x \<- y \# overwrites the previous `x` print(x) \## \[1\] "spam" Now x refers to a verbatim copy of y. Note Objects are automatically destroyed when we cannot access them anymore. By now, the garbage collector is likely to have got rid of the foregoing 1:3 vector (to which the name x was bound previously).
+
+## Базовые операции
+
+```{r}
+x <- 3 # присвоение значения переменной, предпочтительно использовать
+3 -> x # присвоение значения переменной
+x <<- 3 # присвоение значения переменной из внешей области видимости
++3;2+3 
+-2;5-2
+2*5
+3/5
+2^5; 2**10	# возведение в степень
+10 %% 3	  # остаток от деления 
+10 %/% 3  # целочисленное деление
+```
+
+## Логические операции
+
+```{r}
+x <- c(TRUE,FALSE,TRUE)
+y <- c(FALSE,TRUE,TRUE)
+
+x < 3
+x <= y
+2 > x
+x >= x
+3 == 5
+3 != 5
+
+!x # логическое отрицание
+x & y # поэлементное логическое И
+TRUE && FALSE # логическое И
+x | y # поэлементное логическое OR
+TRUE || FALSE # логическое ИЛИ
+xor(x, y) # поэлементное логическое Исключающее ИЛИ
+
+isTRUE(x) # явное приведение к логическому типу
+```
+
+## Создание вектора элементов
+
+Вектор может содержать объекты только одного типа. Вектор можно создать с помощью функций: - **с** -- combine - **seq** -- создание вектора последовательных чисел. - **vector** -- создание пустого вектора или вектора нулей - **rep** -- создание вектора, состоящего из одинаковых элементов. - **:** -- упрощенная форма seq
+
+```{r}
+vector(mode = "numeric", length = 2)
+seq(1, 9, by = 2)
+rep(1:3, 2)
+1:10
+```
+
+## Преобразование объектов
+
+Для преобразования объекта к другому типу используются функции семейства **as.\***
+
+```{r}
+as.logical(c(-1, 0, 1))
+as.numeric(c(TRUE, FALSE))
+as.character(c(TRUE, FALSE))
+```
+
+## Матрицы и массивы высших размерностей
+
+Матрица – это специальный тип вектора в R, который имеет атрибут *dim*. *dim* – это вектор типа integer, состоящий из 2 элементов ( *nrow* - число строк и *ncol* - число столбцов). Матрицы заполняются по правилу: сверху вниз слева направо.
+
+```{r}
+m <- matrix(c(1, 2, 3, 4), ncol = 2, nrow = 2)
+m
+dim(m)
+attributes(m)
+```
+
+Матрицы можно создавать с помощью функций **cbind** и **rbind**.
+
+```{r}
+x <- 1:3
+y <- 10:12
+cbind(x, y)
+```
+
+**array(data,dim)** -- функция для создания матрицы заданного размера.
+
+```{r}
+array(1:8,c(2,2,2))
+```
+
+## Cписки
+
+Список (list) – особый вид вектора, который объединяет объекты различных типов. **list** – функция для объединения объектов в список.
+
+```{r}
+list(1,c(1,2),"abobus",TRUE)
+```
+
+## Пропущенные значения
+
+**NA**, **NaN** -- используются для работы с пропущенными значениями. **is.na** -- функция для проверки наличия в векторе элементов с пропущенными значениями типа **NA**. **NA** может иметь тип *integer*, *numeric*, *character*. **is.nan** -- функция для проверки наличия в векторе элементов с пропущенными значениями типа **NaN**.
+
+```{r}
+x <- c(1, NaN, NA, 10, 3)
+is.na(x)
+is.nan(x)
+```
+
+## Таблицы
+
+Таблица (Data Frame)-- специальный тип списка, в котором каждый элемент имеет фиксированную длину. Используется для хранения табулированных данных. Каждая колонка может представлять различные типы данных, включая факторы. Data Frame имеют специализированный атрибут *row.names*, указывающий имена строк. Это помогает упростить аннотацию данных. Для создания Data Frame из табулированных данных используются функции **read.table** и **read.csv**. Для создания матрицы из Data Frame используется функция **data.matrix**. **data.frame** -- функция для создания Data Frame.
+
+```{r}
+x <- data.frame(foo = 1:4, bar = c(T, T, F, F))
+nrow(x)
+ncol(x)
+```
+
+## Имена
+
+Имена (Names) – используются для лучшего понимания объектов и написания программного кода. Элементы объектов могут иметь имена. **names** -- функция для присвоения имен элементам объектов.
+
+```{r}
+x <- 1:3
+names(x)
+names(x) <- c("foo", "bar", "norf")
+names(x)
+```
+
+Списки и матрицы также могут иметь имена.
+
+```{r}
+list(a = 1, b = 2, c = 3)
+m <- matrix(1:4, nrow = 2, ncol = 2)
+dimnames(m) <- list(c("a", "b"), c("c", "d"))
+m
+```
+
+## Управление наборами данных
+
+### Доступ к элементам структур данных
+
+В R используются несколько операторов для извлечения данных из объектов -- "**\[**", "**\[\[**", "**\$**".\
+"**\[**" -- возвращает объект того же класса что и объект-оригинал. Пример -- из вектора -\> вектор, из списка -\> список и т.д. Может быть выделено **более 1** элемента!\
+"**\[\[**" -- используется для взятия элемента списка или таблицы (Data Frame). Класс элемента может быть различным. Может быть выделен **только 1** элемент!\
+"**\$**" -- применяется для выделения элемента списка или таблицы по имени name. Класс элемента не обязательно совпадает с исходными данными.
+
+Примеры использования оператора "**\[**"
+
+```{r}
+x <- c("a", "b", "c", "c", "d", "a")
+x[1]
+x[2]
+x[1:4]
+u <- x > "a"
+u
+x[u]
+```
+
+Доступ к элементам матриц осуществляется с использованием индексов в квадратных скобках – "**\[**". Первый индекс – номер строки, второй индекс – номер столбца.
+
+```{r}
+x <- matrix(1:6, 2, 3)
+x[1, 2]
+x[2, 1]
+```
+
+Первый или второй индекс может отсутствовать. Тогда будет возвращена строка или столбец матрицы.
+
+```{r}
+x[1, ]
+x[, 2]
+```
+
+По умолчанию возвращается вектор единичной длины того же класса что и исходный объект. Для получения объекта в виде матрицы необходимо установить параметр *drop*. Учет размерности данных -- **drop = FALSE**.
+
+```{r}
+x <- matrix(1:6, 2, 3)
+x[1, 2, drop = FALSE]
+x <- matrix(1:6, 2, 3)
+x[1, ]
+x[1, , drop = FALSE]
+```
+
+### Доступ к элементам списка
+
+Для доступа к элементам списка можно использовать -- "**\[**", "**\[\[**", "**\$**".
+
+```{r}
+x <- list(foo = 1:4, bar = 0.6)
+x[1]
+x[[1]]
+x$bar
+x[["bar"]]
+x <- list(foo = 1:4, bar = 0.6, baz = "hello")
+x[c(1, 3)]
+```
+
+Оператор "**\[\[**" используется с индексами и именами, а “**\$**” - только с именами объектов. "**\$**" упрощает работу, т.к. не требуется определение порядка следования.
+
+```{r}
+x <- list(foo = 1:4, bar = 0.6, baz = "hello")
+name <- "foo"
+x[[name]]
+x$name
+x$foo
+```
+
+Оператор "**\[\[**" может принимать последовательность целых чисел и рекурсивно извлекать элементы из вложенного списка.
+
+```{r}
+x <- list(a = list(10, 12, 14), b = c(3.14, 2.81))
+x[[c(1, 3)]]
+x[[1]][[3]]
+x[[c(2, 1)]]
+```
+
+## Векторные операции
+
+В R можно осуществлять операции над векторами. Это позволяет значительно упростить программный код, не программировать циклы, ускорить процесс написания программ.
+
+```{r}
+x <- 1:4
+y <- 6:9
+x + y
+x > 2
+x >= 2
+y == 8
+x * y
+x / y
+```
+
+Аналогично векторные операции осуществляются над матрицами.
+
+```{r}
+x <- matrix(1:4, 2, 2);
+y <- matrix(rep(10, 4), 2, 2)
+x * y # поэлементно
+x / y
+```
+
+Оператор "%\*%" используется для матричное перемножение по правилам линейной алгебры.
+
+```{r}
+x %*% y
+```
+
+## Функции
+
+Функции используются для систематизации повторяющегося программного кода. Функция создается с помощью оператора **function** и сохраняется как R-объект класса *function*.
+
+Особенности: 1. Объекты класса function можно передавать в качестве аргумента другой функции. 2. Функции могут быть вложенными, т.е. одна функция может быть определена внутри другой. 3. Возвращаемое значение функции – это результат последнего выражения в коде функции.
+
+Аргументы сопоставляются по позициям в списке или по совпадению имен.
+
+```{r}
+mydata <- rnorm(100)
+sd(mydata)
+sd(x = mydata)
+sd(x = mydata, na.rm = FALSE)
+sd(na.rm = FALSE, x = mydata)
+sd(na.rm = FALSE, mydata)
+```
+
+### Сопоставление аргументов
+
+Если передаются именованные аргументы, то их не обязательно располагать в требуемом порядке. Можно смешивать «порядок» и «имена». Именованный аргумент извлекается из списка, остальные будут ассоциированы по позициям оставшихся аргументов в списке.
+
+```{r}
+args(lm)
+```
+
+Имена аргументов могут совпадать не полностью, а частично. Система сама определяет наиболее подходящий аргумент и присваивает ему значение. Порядок следования операций определения аргументов в функциях: 1) Проверка на точное совпадение именованных аргументов. 2) Проверка на частичное совпадение именованных аргументов. 3) Проверка на точное совпадение позиций неименованных аргументов.
+
+```{r}
+f <- function(a, b = 1, c = 2, d = NULL) {
+	return(1);
+}
+```
+
+Аргумент функции в виде "..." используется для передачи стандартных аргументов сторонних функций.
+
+```{r}
+myplot <- function(x, y, type = "l", ...) {
+	plot(x, y, type = type, ...)
+}
+```
+
+Аргумент "..." применяется когда число аргументов функции заранее не известно
+
+```{r}
+args(paste)
+args(cat)
+```
+
+Аргументы, идущие после "...", должны быть именованы полностью.
+
+```{r}
+args(paste)
+paste("a", "b", sep = ":")
+paste("a", "b", se = ":")
+```
+

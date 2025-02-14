@@ -10,73 +10,563 @@
     ]
   },
   {
-    "objectID": "latex.html",
-    "href": "latex.html",
-    "title": "2  Язык разметки LaTeX",
+    "objectID": "enviroment/rstudio.html",
+    "href": "enviroment/rstudio.html",
+    "title": "1  Среда разработки RStudio",
     "section": "",
-    "text": "2.1 Специальные символы",
+    "text": "1.1 Сочетания клавиш\nКартинки и обзор панели редактирования",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Среда разработки RStudio</span>"
     ]
   },
   {
-    "objectID": "latex.html#специальные-символы",
-    "href": "latex.html#специальные-символы",
-    "title": "2  Язык разметки LaTeX",
+    "objectID": "enviroment/rstudio.html#отладка",
+    "href": "enviroment/rstudio.html#отладка",
+    "title": "1  Среда разработки RStudio",
+    "section": "1.2 Отладка",
+    "text": "1.2 Отладка\nЗдесь обзор конопок, а функции типа browser() и trace() ссылка на продвинутый r",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Среда разработки RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/markdown.html",
+    "href": "enviroment/markdown.html",
+    "title": "2  Язык разметки Markdown",
     "section": "",
-    "text": "Греческие символы\n\n\n\n\n\n\n\n\n\n\nСтрочная\n\nПрописная\n\nАльтернативная\n\n\n\n\n\n$\\alpha$\n\\(\\alpha\\)\n$A$\n\\(A\\)\n\n\n\n\n$\\beta$\n\\(\\beta\\)\n$B$\n\\(B\\)\n\n\n\n\n$\\gamma$\n\\(\\gamma\\)\n$\\Gamma$\n\\(\\Gamma\\)\n\n\n\n\n$\\delta$\n\\(\\delta\\)\n$\\Delta$\n\\(\\Delta\\)\n\n\n\n\n$\\epsilon$\n\\(\\epsilon\\)\n$E$\n\\(E\\)\n$\\varepsilon$\n\\(\\varepsilon\\)\n\n\n$\\zeta$\n\\(\\zeta\\)\n$Z$\n\\(Z\\)\n\n\n\n\n$\\eta$\n\\(\\eta\\)\n$H$\n\\(H\\)\n\n\n\n\n$\\theta$\n\\(\\theta\\)\n$\\Theta$\n\\(\\Theta\\)\n$\\vartheta$\n\\(\\vartheta\\)\n\n\n$\\zeta$\n\\(\\zeta\\)\n$Z$\n\\(Z\\)\n\n\n\n\n$\\kappa$\n\\(\\kappa\\)\n$K$\n\\(K\\)\n$\\varkappa$\n\\(\\varkappa\\)\n\n\n$\\lambda$\n\\(\\lambda\\)\n$Lambda$\n\\(\\Lambda\\)\n\n\n\n\n$\\mu$\n\\(\\mu\\)\n$M$\n\\(M\\)\n\n\n\n\n$\\nu$\n\\(\\nu\\)\n$N$\n\\(N\\)\n\n\n\n\n$\\xi$\n\\(\\xi\\)\n$\\Xi$\n\\(\\Xi\\)\n\n\n\n\n$\\omicron$\n\\(\\omicron\\)\n$O$\n\\(O\\)\n\n\n\n\n$\\pi$\n\\(\\pi\\)\n$\\Pi$\n\\(\\Pi\\)\n$\\varpi$\n\\(\\varpi\\)\n\n\n$\\rho$\n\\(\\rho\\)\n$P$\n\\(P\\)\n$\\varrho$\n\\(\\varrho\\)\n\n\n$\\sigma$\n\\(\\sigma\\)\n$\\Sigma$\n\\(\\Sigma\\)\n$\\varsigma$\n\\(\\varsigma\\)\n\n\n$\\tau$\n\\(\\tau\\)\n$T$\n\\(T\\)\n\n\n\n\n$\\upsilon$\n\\(\\upsilon\\)\n$\\Upsilon$\n\\(\\Upsilon\\)\n\n\n\n\n$\\phi$\n\\(\\phi\\)\n$\\Phi$\n\\(\\Phi\\)\n$\\varphi$\n\\(\\varphi\\)\n\n\n$\\varphi$\n\n\n\n\n\n\n\n$\\chi$\n\\(\\chi\\)\n$X$\n\\(X\\)\n\n\n\n\n$\\psi$\n\\(\\psi\\)\n$\\Psi$\n\\(\\Psi\\)\n\n\n\n\n$\\omega$\n\\(\\omega\\)\n$\\Omega$\n\\(\\Omega\\)",
+    "text": "2.1 Блоки кода\nQuarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org.\nCode blocks that use braces around the language name (e.g. ```{r}) are executable, and will be run by Quarto during render. Here is a simple example:\nYou’ll note that there are some special comments at the top of the code block. These are cell level options that make the figure cross-referenceable.\nThis document results in the following rendered output:\nYou can produce a wide variety of output types from executable code blocks, including plots, tabular output from data frames, and plain text output (e.g. printing the results of statistical summaries).\nThere are many options which control the behavior of code execution and output, you can read more about them in the article on Execution Options.\nIn addition to code blocks which interrupt the flow of markdown, you can also include code inline. Read more about inline code in the Inline Code article.\nCode blocks that use braces around the language name (e.g. ```{python}) are executable, and will be run by Quarto during render. Here is a simple example:\nYou’ll note that there are some special comments at the top of the code block. These are cell level options that make the figure cross-referenceable.\nThis document would result in the following rendered output:\nYou can produce a wide variety of output types from executable code blocks, including plots, tabular output from data frames, and plain text output (e.g. printing the results of statistical summaries).",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки Markdown</span>"
     ]
   },
   {
-    "objectID": "latex.html#операторы",
-    "href": "latex.html#операторы",
-    "title": "2  Язык разметки LaTeX",
-    "section": "2.2 Операторы",
-    "text": "2.2 Операторы\n\nОператоры\n\n\n\n\n\n\nLaTeX\nРезультат\n\n\n\n\n$\\cos{x}$\n\\(\\cos{x}\\)\n\n\n$\\sin{x}$\n\\(\\sin{x}\\)\n\n\n$\\csc{x}$\n\\(\\csc{x}\\)\n\n\n$\\exp{x}$\n\\(\\exp\\biggl(\\, \\sum_{n=1}^{10} \\frac{1}{n} \\biggr)\\)\n\n\n$\\min_{sub} expr$\n\\(\\min_{\\forall s \\in S_j} q_k(s)\\)\n\n\n$\\gcd$\n\\(\\gcd{144,12}\\)\n\n\n$\\log_b n$\n\\(A(n) \\in \\Theta(n^{\\log_b a}) = \\Theta(n^{\\log_2 2} ) = \\Theta(n)\\)\n\n\n$\\sup_i f$\n\\(\\sup_{x&gt;0}f(x)\\)",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
-    ]
-  },
-  {
-    "objectID": "latex.html#скобки",
-    "href": "latex.html#скобки",
-    "title": "2  Язык разметки LaTeX",
-    "section": "2.3 Скобки",
-    "text": "2.3 Скобки",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
-    ]
-  },
-  {
-    "objectID": "latex.html#матрицы",
-    "href": "latex.html#матрицы",
-    "title": "2  Язык разметки LaTeX",
-    "section": "2.4 Матрицы",
-    "text": "2.4 Матрицы\n\nМатрицы\n\n\n\n\n\n\n\nТип\nLaTeX\nРезультат\n\n\n\n\nОбычная\n$$\n\\begin{matrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9\n\\end{matrix}\n$$\n\\[\n\\begin{matrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9\n\\end{matrix}\n\\]\n\n\nКвадратные скобки\n$$ M =\n\\begin{bmatrix}\n\\frac{5}{6} & \\frac{1}{6} & 0 \\\\\n\\frac{5}{6} & 0 & \\frac{1}{6} \\\\\n0 & \\frac{5}{6} & \\frac{1}{6}\n\\end{bmatrix}\n$$\n\\[ M =\n\\begin{bmatrix}\n\\frac{5}{6} & \\frac{1}{6} & 0 \\\\\n\\frac{5}{6} & 0 & \\frac{1}{6} \\\\\n0 & \\frac{5}{6} & \\frac{1}{6}\n\\end{bmatrix}\n\\]\n\n\nВыражение\n$$\nM =\n\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix}\n\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix}\n$$\n\\[\nM =\n\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix}\n\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix}\n\\]\n\n\nКруглые скобки\n$$\nM =\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n$$\n\\[\nM =\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n\\]\n\n\nОбщий вид\n$$\nA_{m,n} =\n\\begin{pmatrix}\na_{1,1} & a_{1,2} & \\cdots & a_{1,n} \\\\\na_{2,1} & a_{2,2} & \\cdots & a_{2,n} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\na_{m,1} & a_{m,2} & \\cdots & a_{m,n}\n\\end{pmatrix}\n$$\n\\[\nA_{m,n} =\n\\begin{pmatrix}\na_{1,1} & a_{1,2} & \\cdots & a_{1,n} \\\\\na_{2,1} & a_{2,2} & \\cdots & a_{2,n} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\na_{m,1} & a_{m,2} & \\cdots & a_{m,n}\n\\end{pmatrix}\n\\]",
-    "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
-    ]
-  },
-  {
-    "objectID": "figure-plot-r.html",
-    "href": "figure-plot-r.html",
-    "title": "5  Графические библиотеки",
+    "objectID": "enviroment/markdown.html#блоки-кода",
+    "href": "enviroment/markdown.html#блоки-кода",
+    "title": "2  Язык разметки Markdown",
     "section": "",
-    "text": "5.1 plotly",
+    "text": "## Air Quality\n\n@fig-airquality further explores the impact of temperature on ozone level.\n\n```{r}\n#| label: fig-airquality\n#| fig-cap: \"Temperature and ozone level.\"\n#| warning: false\n\nlibrary(ggplot2)\n\nggplot(airquality, aes(Temp, Ozone)) + \n  geom_point() + \n  geom_smooth(method = \"loess\")\n```\n\n\n\n\n\n\n\n---\ntitle: \"matplotlib demo\"\nformat:\n  html:\n    code-fold: true\njupyter: python3\n---\n\nFor a demonstration of a line plot on a polar axis, see @fig-polar.\n\n```{python}\n#| label: fig-polar\n#| fig-cap: \"A line plot on a polar axis\"\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Графические библиотеки</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки Markdown</span>"
     ]
   },
   {
-    "objectID": "figure-plot-r.html#ggplot2",
-    "href": "figure-plot-r.html#ggplot2",
-    "title": "5  Графические библиотеки",
-    "section": "5.2 GGPlot2",
-    "text": "5.2 GGPlot2",
+    "objectID": "enviroment/markdown.html#inline-code",
+    "href": "enviroment/markdown.html#inline-code",
+    "title": "2  Язык разметки Markdown",
+    "section": "2.2 Inline code",
+    "text": "2.2 Inline code\nInline code allows you to execute code within markdown, e.g. to automatically use the most up-to-date computations in narrative. Quarto provides an inline code syntax that works across all three engines (Jupyter, Knitr and OJS).\nThe syntax for inline code is similar to code blocks, except you use a single tick (`) rather than triple ticks (```), and you can use it in the middle of markdown. For example, the following code stores the variable radius in a code block and then accesses it in a sentence using inline code:\n\nradius &lt;- 5\n\nThe radius of the circle is 5",
     "crumbs": [
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Графические библиотеки</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/markdown.html#keep-inline-code-simple",
+    "href": "enviroment/markdown.html#keep-inline-code-simple",
+    "title": "2  Язык разметки Markdown",
+    "section": "2.3 Keep Inline Code Simple",
+    "text": "2.3 Keep Inline Code Simple\nInline expressions should be confined to simple values that you have pre-computed within normal code cells (rather than function calls that do non-trivial work). This is because the protocol used for inline expressions is not compatible with some Python libraries (especially those that use multi-threading or multi-processing).",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/markdown.html#using-python-and-r-together",
+    "href": "enviroment/markdown.html#using-python-and-r-together",
+    "title": "2  Язык разметки Markdown",
+    "section": "2.4 Using python and r together",
+    "text": "2.4 Using python and r together\nЗдесь вызвать пару R команд.\n\n2.4.1 Rendering\nWhen a Quarto document is rendered, R code blocks are automatically executed.\nUsing the Render button in RStudio:\nThe top section of a qmd file as displayed in RStudio. There is a toolbar right above the document containing various options, including ‘Render.’ There is a stylized, segmented blue arrow pointing at the word. По умолчанию документ qmd конвертируется в html. The Render button will render the first format listed in the document YAML. If no format is specified, then it will render to HTML.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/markdown.html#chunk-options",
+    "href": "enviroment/markdown.html#chunk-options",
+    "title": "2  Язык разметки Markdown",
+    "section": "2.5 Chunk Options",
+    "text": "2.5 Chunk Options\nYou can set a label for a code chunk with the label option:\n```{r}\n#| label: convert\nairquality$TempC &lt;- (5 / 9) * (airquality$Temp - 32)\n```\nThe echo: false option disables the printing of code (only output is displayed).\n``` r\nlibrary(tidyverse)\nlibrary(palmerpenguins)\npenguins |&gt;\n  mutate(\n    bill_ratio = bill_depth_mm / bill_length_mm,\n    bill_area  = bill_depth_mm * bill_length_mm\n  )\n```\n\nLine 3  \nTake `penguins`, and then,\n\nLines 4-7  \nadd new columns for the bill ratio and bill area.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/markdown.html#output-options",
+    "href": "enviroment/markdown.html#output-options",
+    "title": "2  Язык разметки Markdown",
+    "section": "2.6 Output Options",
+    "text": "2.6 Output Options\nThere are a wide variety of options available for customizing output from executed code. All of these options can be specified either globally (in the document front-matter) or per code-block. For example, here’s a modification of the Python example to specify that we don’t want to “echo” the code into the output document:\n---\ntitle: \"My Document\"\nexecute:\n  echo: false\njupyter: python3\n---\nNote that we can override this option on a per code-block basis. For example:\n```{python}\n#| echo: true\n\nimport matplotlib.pyplot as plt\nplt.plot([1,2,3,4])\nplt.show()\n```\nCode block options are included in a special comment at the top of the block (lines at the top prefaced with #| are considered options).\nOptions available for customizing output include:\n\n\n\n\n\n\n\nOption\nDescription\n\n\n\n\neval\nEvaluate the code chunk (if false, just echos the code into the output).\n\n\necho\nInclude the source code in output\n\n\noutput\nInclude the results of executing the code in the output (true, false, or asis to indicate that the output is raw markdown and should not have any of Quarto’s standard enclosing markdown).\n\n\nwarning\nInclude warnings in the output.\n\n\nerror\nInclude errors in the output (note that this implies that errors executing code will not halt processing of the document).\n\n\n\nHere’s a Knitr example with some of these additional options included:\n---\ntitle: \"Knitr Document\"\nexecute:\n  echo: false\n---\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(ggplot2)\nggplot(airquality, aes(Temp, Ozone)) + \n  geom_point() + \n  geom_smooth(method = \"loess\", se = FALSE)\n```\n\n::: {.cell-output-display}\n![](markdown_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n:::\n\n```{r}\nsummary(airquality)\n```\n\n2.6.1 Caption and Alt Text\nYou can specify the caption and alt text for figures generated from code using the fig-cap and fig-alt options. For example, here we add these options to a Python code cell that creates a plot:\n```{python}\n#| fig-cap: \"Polar axis plot\"\n#| fig-alt: \"A line plot on a polar axis\"\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/markdown.html#форматирование-текста",
+    "href": "enviroment/markdown.html#форматирование-текста",
+    "title": "2  Язык разметки Markdown",
+    "section": "2.7 Форматирование текста",
+    "text": "2.7 Форматирование текста\n\n\n\n\n\n\n\nЯзык разметки Markdown\nРезультат\n\n\n\n\n*курсив*, **жирный**, ***жирный курсив***\nкурсив, жирный, жирный курсив\n\n\nверхний индекс^2^ / subscript~2~\nверхний индекс2 / нижний индекс2\n\n\n~~зачёркнутый~~\nзачёркутый",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/markdown.html#заголовки",
+    "href": "enviroment/markdown.html#заголовки",
+    "title": "2  Язык разметки Markdown",
+    "section": "2.8 Заголовки",
+    "text": "2.8 Заголовки\n\nЗаголовки\n\n\n\n\n\n\nЯзык разметки Markdown\nРезультат\n\n\n\n\n## Заголовок 2\n2.9 Заголовок 2\n\n\n### Заголовок 3\n2.9.1 Заголовок 3\n\n\n#### Заголовок 4\n2.9.1.1 Заголовок 4\n\n\n##### Заголовок 5\n2.9.1.1.1 Заголовок 5\n\n\n###### Заголовок 6\n2.9.1.1.1.1 Заголовок 6",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/markdown.html#ссылки-и-изображения",
+    "href": "enviroment/markdown.html#ссылки-и-изображения",
+    "title": "2  Язык разметки Markdown",
+    "section": "2.10 Ссылки и Изображения",
+    "text": "2.10 Ссылки и Изображения\n\n\n\nЯзык разметки Markdown\nРезультат\n\n\n\n\n&lt;https://rct.bsu.by&gt;\nhttps://rct.bsu.by\n\n\n[Название](https://rct.bsu.by)\nНаш факультет\n\n\n![Название](rctbsu.png)\n\n\n\nНаш факультет\n\n\n\n\n[![Название](rctbsu.png)](https://rct.bsu.by)\nКартинка становится кликабельной при подстановке в html.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/markdown.html#cross-references",
+    "href": "enviroment/markdown.html#cross-references",
+    "title": "2  Язык разметки Markdown",
+    "section": "2.11 Cross References",
+    "text": "2.11 Cross References\nYou can cross-reference figures by adding an ID with the fig- prefix to them, and then referencing the figure using the @ prefix. For example:\n![An Elephant](elephant.png){#fig-elephant}\n\nThis is illustrated well by @fig-elephant.\nFor figures produced by executable code cells, include a label with a fig- prefix to make them cross-referenceable. For example:\nFor a demonstration of a line plot, see @fig-cars-plot.\n\n```{r}\n#| label: fig-cars-plot\n#| fig-cap: \"Cars plot \"\n\nplot(cars)\n```\n\n2.11.1 Layout\nNote that figure layout attributes also work for figures produced by executable code blocks. Here are examples for both Jupyter and Knitr:\n```{r}\n#| layout-ncol: 2\n#| fig-cap: \n#|   - \"Speed and Stopping Distances of Cars\"\n#|   - \"Vapor Pressure of Mercury as a Function of Temperature\"\n\nplot(cars)\nplot(pressure)\n```\nplot(cars)\nplot(pressure)\n\n\n\n\n\n\nSpeed and Stopping Distances of Cars\n\n\n\n\n\n\n\nVapor Pressure of Mercury as a Function of Temperature\n\n\n\n\n\nNote that in these examples we also use the fig-cap option to apply a caption to each of the generated figures.\n\n\n2.11.2 Subcaptions\nYou can create subcaptions for computational output by combining the fig-cap and fig-subcap options. When applying captions to computational output you can optionally include a label with a fig- prefix—if you do this then the figure will be numbered and cross-referenceable.\n```{r}\n#| label: fig-charts\n#| fig-cap: \"Charts\"\n#| fig-subcap: \n#|   - \"Cars\"\n#|   - \"Pressure\"\n#| layout-ncol: 2\n\nplot(cars)\nplot(pressure)\n```\nplot(cars)\nplot(pressure)\n\n\n\n\n\n\n\n\n\n\n\n(a) Cars\n\n\n\n\n\n\n\n\n\n\n\n(b) Pressure\n\n\n\n\n\n\n\nFigure 2.1: Charts\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nОпять только при подстановке в html",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/markdown.html#списки",
+    "href": "enviroment/markdown.html#списки",
+    "title": "2  Язык разметки Markdown",
+    "section": "2.12 Списки",
+    "text": "2.12 Списки\n\n\n\n\n\n\n\nЯзык разметки Markdown\nOutput\n\n\n\n\n* маркированный список\n    + пункт 1\n    + пункт 2\n        - подпункт 1\n\nмаркированный список\n\nпункт 1\nпункт 2\n\nподпункт 1\n\n\n\n\n\n1. нумерованный список\n2. пункт 2\n    i) подпункт 1\n         A.  вложение 1\n\nordered list\nitem 2\n\nsub-item 1\n\nsub-sub-item 1\n\n\n\n\n\n- [ ] Задача 1\n- [x] Задача 2\n\nЗадача 1\nЗадача 2\n\n\n\n(@)  Сквозная нумерация списка\n\nпродолжается после\n\n(@)  прерывания\n\nСквозная нумерация списка\n\nпродолжается после\n\nпрерывания\n\n\n\nтермин\n: его определение\n\nтермин\n\nего определение\n\n\n\n\n\n\n2.12.1 Block Layout\nWhile the examples above illustrate laying out figures, it’s important to note that layout attributes can be used to layout any sort of block content. For example, here we layout 2 lists side-by-side:\n::: {layout-ncol=2}\n### List One\n\n- Item A\n- Item B\n- Item C\n\n### List Two\n\n- Item X\n- Item Y\n- Item Z\n:::\n\n\n\n\n\n\n2.12.1.1 Первый списко\n\nЭлемент A\nЭлемент B\nЭлемент C\n\n\n\n2.12.1.2 Второй список\n\nЭлемент X\nЭлемент Y\nЭлемент Z\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nТолько при конвертации в html",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/markdown.html#таблицы",
+    "href": "enviroment/markdown.html#таблицы",
+    "title": "2  Язык разметки Markdown",
+    "section": "2.13 Таблицы",
+    "text": "2.13 Таблицы\n\n2.13.1 Простые таблицы\nВ обычных таблицах могут содержаться только элементы представленные простым текстом.\n\n2.13.1.1 Разметка Markdown\nВыравнивание по\n| Правому краю | Левому краю | Умолчанию | Центру |\n|-------------:|:------------|-----------|:------:|\n|           12 | 12          | 12        |   12   |\n|          123 | 123         | 123       |  123   |\n|            1 | 1           | 1         |   1    |\n\n\n2.13.1.2 Результат\nВыравнивание по\n\n\n\nПравому краю\nЛевому краю\nУмолчанию\nЦентру\n\n\n\n\n12\n12\n12\n12\n\n\n123\n123\n123\n123\n\n\n1\n1\n1\n1\n\n\n\n\n\n\n2.13.2 Расширенные таблицы (grid tables)\nGrid tables are a more advanced type of markdown tables that allow arbitrary block elements (multiple paragraphs, code blocks, lists, etc.). For example: The row of =s separates the header from the table body, and can be omitted for a headerless table. The cells of grid tables may contain arbitrary block elements (multiple paragraphs, code blocks, lists, etc.)\nAlignments can be specified as with pipe tables, by putting colons at the boundaries of the separator line after the header:\n\n2.13.2.1 Разметка Markdown\n+-----------+-----------+--------------------+\n| Fruit     | Price     | Advantages         |\n+===========+===========+====================+\n| Bananas   | $1.34     | - built-in wrapper |\n|           |           | - bright color     |\n+-----------+-----------+--------------------+\n| Oranges   | $2.10     | - cures scurvy     |\n|           |           | - tasty            |\n+-----------+-----------+--------------------+\n\n: Пример расширенной таблицы\n\n\n2.13.2.2 Результат\n\nПример расширенной таблицы\n\n\n\n\n\n\n\nFruit\nPrice\nAdvantages\n\n\n\n\nBananas\n$1.34\n\nbuilt-in wrapper\nbright color\n\n\n\nOranges\n$2.10\n\ncures scurvy\ntasty",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/markdown.html#формулы",
+    "href": "enviroment/markdown.html#формулы",
+    "title": "2  Язык разметки Markdown",
+    "section": "2.14 Формулы",
+    "text": "2.14 Формулы\nДля вставки формулы в текст используется $. Для выделения отдельным блоком используется $$. Например:\n\nФормулы\n\n\n\n\n\n\nЯзык разметки Markdown\nРезультат\n\n\n\n\nформула в тексте: $E = mc^{2}$\nформула в тексте: \\(E=mc^{2}\\)\n\n\nотдельный блок формул:\n\n$$E = mc^{2}$$\nотдельный блок формул:\n\\[E = mc^{2}\\]\n\n\n\nПерекрёстная ссылка на LaTeX",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/markdown.html#диаграммы",
+    "href": "enviroment/markdown.html#диаграммы",
+    "title": "2  Язык разметки Markdown",
+    "section": "2.15 Диаграммы",
+    "text": "2.15 Диаграммы\nQuarto has native support for embedding Mermaid and Graphviz diagrams. This enables you to create flowcharts, sequence diagrams, state diagrams, Gantt charts, and more using a plain text syntax inspired by markdown.\nFor example, here we embed a flowchart created using Mermaid:\n\n```{mermaid}\nflowchart LR\n  A[Hard edge] --&gt; B(Round edge)\n  B --&gt; C{Decision}\n  C --&gt; D[Result one]\n  C --&gt; E[Result two]\n```\n\n\n\n\nflowchart LR\n  A[Hard edge] --&gt; B(Round edge)\n  B --&gt; C{Decision}\n  C --&gt; D[Result one]\n  C --&gt; E[Result two]\n\n\n\n\n\n\nQuarto has native support for embedding Mermaid and Graphviz diagrams. This enables you to create flowcharts, sequence diagrams, state diagrams, gantt charts, and more using a plain text syntax inspired by markdown.\nFor example, here we embed a flowchart created using Mermaid:\n\n```{mermaid}\nflowchart LR\n  A[Hard edge] --&gt; B(Round edge)\n  B --&gt; C{Decision}\n  C --&gt; D[Result one]\n  C --&gt; E[Result two]\n```\n\n\n\n\nflowchart LR\n  A[Hard edge] --&gt; B(Round edge)\n  B --&gt; C{Decision}\n  C --&gt; D[Result one]\n  C --&gt; E[Result two]\n\n\n\n\n\n\nAs illustrated above, Mermaid diagrams are embedded using {mermaid} executable cells. Graphviz diagrams are embedded using {dot} executable cells. Note that cell options are added with slightly different syntax: %%| for {mermaid}, and //| for {dot}.\nMermaid is a Javascript based diagramming and charting tool that uses Markdown-inspired text definitions and a renderer to create and modify complex diagrams. Mermaid diagrams use %% as their comment syntax, and so cell options are declared using %%|. Cell options must be included directly beneath the start of the diagram code chunk.\nAbove we demonstrated a flowchart created with Mermaid, here is a sequence diagram (also embedded using a {mermaid} executable cell): To learn more about using Mermaid, see the Mermaid website or the Mermaid book (which is written by the creator of Mermaid).",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/markdown.html#цитаты",
+    "href": "enviroment/markdown.html#цитаты",
+    "title": "2  Язык разметки Markdown",
+    "section": "2.16 Цитаты",
+    "text": "2.16 Цитаты\n &gt; Blockquote\n\nЭто короткая цитата",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/markdown.html#специальные-символы",
+    "href": "enviroment/markdown.html#специальные-символы",
+    "title": "2  Язык разметки Markdown",
+    "section": "2.17 Специальные символы",
+    "text": "2.17 Специальные символы\n\n\n\n\n\n\n\nMarkdown Syntax\nOutput\n\n\n\n\nendash: --\nendash: –\n\n\nemdash: ---\nemdash: —\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nСимволы подставляются только при конвертации в html",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки Markdown</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/latex.html",
+    "href": "enviroment/latex.html",
+    "title": "3  Язык разметки LaTeX",
+    "section": "",
+    "text": "3.1 Специальные символы",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/latex.html#специальные-символы",
+    "href": "enviroment/latex.html#специальные-символы",
+    "title": "3  Язык разметки LaTeX",
+    "section": "",
+    "text": "Греческие символы\n\n\n\n\n\n\n\n\n\n\nСтрочная\n\nПрописная\n\nАльтернативная\n\n\n\n\n\n$\\alpha$\n\\(\\alpha\\)\n$A$\n\\(A\\)\n\n\n\n\n$\\beta$\n\\(\\beta\\)\n$B$\n\\(B\\)\n\n\n\n\n$\\gamma$\n\\(\\gamma\\)\n$\\Gamma$\n\\(\\Gamma\\)\n\n\n\n\n$\\delta$\n\\(\\delta\\)\n$\\Delta$\n\\(\\Delta\\)\n\n\n\n\n$\\epsilon$\n\\(\\epsilon\\)\n$E$\n\\(E\\)\n$\\varepsilon$\n\\(\\varepsilon\\)\n\n\n$\\zeta$\n\\(\\zeta\\)\n$Z$\n\\(Z\\)\n\n\n\n\n$\\eta$\n\\(\\eta\\)\n$H$\n\\(H\\)\n\n\n\n\n$\\theta$\n\\(\\theta\\)\n$\\Theta$\n\\(\\Theta\\)\n$\\vartheta$\n\\(\\vartheta\\)\n\n\n$\\zeta$\n\\(\\zeta\\)\n$Z$\n\\(Z\\)\n\n\n\n\n$\\kappa$\n\\(\\kappa\\)\n$K$\n\\(K\\)\n$\\varkappa$\n\\(\\varkappa\\)\n\n\n$\\lambda$\n\\(\\lambda\\)\n$Lambda$\n\\(\\Lambda\\)\n\n\n\n\n$\\mu$\n\\(\\mu\\)\n$M$\n\\(M\\)\n\n\n\n\n$\\nu$\n\\(\\nu\\)\n$N$\n\\(N\\)\n\n\n\n\n$\\xi$\n\\(\\xi\\)\n$\\Xi$\n\\(\\Xi\\)\n\n\n\n\n$\\omicron$\n\\(\\omicron\\)\n$O$\n\\(O\\)\n\n\n\n\n$\\pi$\n\\(\\pi\\)\n$\\Pi$\n\\(\\Pi\\)\n$\\varpi$\n\\(\\varpi\\)\n\n\n$\\rho$\n\\(\\rho\\)\n$P$\n\\(P\\)\n$\\varrho$\n\\(\\varrho\\)\n\n\n$\\sigma$\n\\(\\sigma\\)\n$\\Sigma$\n\\(\\Sigma\\)\n$\\varsigma$\n\\(\\varsigma\\)\n\n\n$\\tau$\n\\(\\tau\\)\n$T$\n\\(T\\)\n\n\n\n\n$\\upsilon$\n\\(\\upsilon\\)\n$\\Upsilon$\n\\(\\Upsilon\\)\n\n\n\n\n$\\phi$\n\\(\\phi\\)\n$\\Phi$\n\\(\\Phi\\)\n$\\varphi$\n\\(\\varphi\\)\n\n\n$\\chi$\n\\(\\chi\\)\n$X$\n\\(X\\)\n\n\n\n\n$\\psi$\n\\(\\psi\\)\n$\\Psi$\n\\(\\Psi\\)\n\n\n\n\n$\\omega$\n\\(\\omega\\)\n$\\Omega$\n\\(\\Omega\\)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/latex.html#стрелки",
+    "href": "enviroment/latex.html#стрелки",
+    "title": "3  Язык разметки LaTeX",
+    "section": "3.2 Стрелки",
+    "text": "3.2 Стрелки\n\nСтрелки\n\n\n\n\n\n\n\n\n$\\leftarrow$\n\\(\\leftarrow\\)\n$\\Leftarrow$\n\\(\\Leftarrow\\)\n\n\n$\\rightarrow$\n\\(\\rightarrow\\)\n$\\rightarrow$\n\\(\\Rightarrow\\)\n\n\n$\\leftrightarrow$\n\\(\\leftrightarrow\\)\n$\\rightleftharpoons$\n\\(\\rightleftharpoons\\)\n\n\n$\\uparrow$\n\\(\\uparrow\\)\n$\\downarrow$\n\\(\\downarrow\\)\n\n\n$\\Uparrow$\n\\(\\Uparrow\\)\n$\\Downarrow$\n\\(\\Downarrow\\)\n\n\n$\\Leftrightarrow$\n\\(\\Leftrightarrow\\)\n$\\Updownarrow$\n\\(\\Updownarrow\\)\n\n\n$\\mapsto$\n\\(\\mapsto\\)\n$\\longmapsto$\n\\(\\longmapsto\\)\n\n\n$\\nearrow$\n\\(\\nearrow\\)\n$\\searrow$\n\\(\\searrow\\)\n\n\n$\\swarrow$\n\\(\\swarrow\\)\n$\\nwarrow$\n\\(\\nwarrow\\)\n\n\n$\\leftharpoonup$\n\\(\\leftharpoonup\\)\n$\\rightharpoonup$\n\\(\\rightharpoonup\\)\n\n\n$\\leftharpoondown$\n\\(\\leftharpoondown\\)\n$\\rightharpoondown$\n\\(\\rightharpoondown\\)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/latex.html#бинарные-операторы-и-символы-отношения",
+    "href": "enviroment/latex.html#бинарные-операторы-и-символы-отношения",
+    "title": "3  Язык разметки LaTeX",
+    "section": "3.3 Бинарные операторы и символы отношения",
+    "text": "3.3 Бинарные операторы и символы отношения\n\nОператоры\n\n\n\n\n\n\n\n\n$\\times$\n\\(\\times\\)\n$\\cdot$\n\\(\\cdot\\)\n\n\n$\\div$\n\\(\\div\\)\n$\\cap$\n\\(\\cap\\)\n\n\n$\\cup$\n\\(\\cup\\)\n$\\neq$\n\\(\\neq\\)\n\n\n$\\leq$\n\\(\\leq\\)\n$\\geq$\n\\(\\geq\\)\n\n\n$\\in$\n\\(\\in\\)\n$\\perp$\n\\(\\perp\\)\n\n\n$\\notin$\n\\(\\notin\\)\n$\\subset$\n\\(\\subset\\)\n\n\n$\\simeq$\n\\(\\simeq\\)\n$\\approx$\n\\(\\approx\\)\n\n\n$\\wedge$\n\\(\\wedge\\)\n$\\vee$\n\\(\\vee\\)\n\n\n$\\oplus$\n\\(\\oplus\\)\n$\\otimes$\n\\(\\otimes\\)\n\n\n$\\Box$\n\\(\\Box\\)\n$\\boxtimes$\n\\(\\boxtimes\\)\n\n\n$\\equiv$\n\\(\\equiv\\)\n$\\cong$\n\\(\\cong\\)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/latex.html#прочие-символы",
+    "href": "enviroment/latex.html#прочие-символы",
+    "title": "3  Язык разметки LaTeX",
+    "section": "3.4 Прочие символы",
+    "text": "3.4 Прочие символы",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/latex.html#выделяемые-функции",
+    "href": "enviroment/latex.html#выделяемые-функции",
+    "title": "3  Язык разметки LaTeX",
+    "section": "3.5 Выделяемые функции",
+    "text": "3.5 Выделяемые функции\n\nФункции\n\n\n\n\n\n\nLaTeX\nРезультат\n\n\n\n\n$\\cos{x}$\n\\[\n\\cos{x}\n\\]\n\n\n$\\sin{x}$\n\\[\n\\sin{x}\n\\]\n\n\n$\\csc{x}$\n\\[\n\\csc{x}\n\\]\n\n\n$\\exp{x}$\n\\[\n\\exp\n\\biggl(\\,\n\\sum_{n=1}^{10}\n\\frac{1}{n}\n\\biggr)\n\\]\n\n\n$\\min_{sub} expr$\n\\[\n\\min_{\\forall s \\in S_j} q_k(s)\n\\]\n\n\n$\\gcd$\n\\[\n\\gcd{144,12}\n\\]\n\n\n$\\log_b n$\n\\[\nA(n) \\in\n\\Theta(n^{\\log_b a}) =\n\\Theta(n^{\\log_2 2} ) =\n\\Theta(n)\n\\]\n\n\n$\\sup_i f$\n\\[\n\\sup_{x&gt;0}f(x)\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/latex.html#скобки",
+    "href": "enviroment/latex.html#скобки",
+    "title": "3  Язык разметки LaTeX",
+    "section": "3.6 Скобки",
+    "text": "3.6 Скобки",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/latex.html#матрицы",
+    "href": "enviroment/latex.html#матрицы",
+    "title": "3  Язык разметки LaTeX",
+    "section": "3.7 Матрицы",
+    "text": "3.7 Матрицы\n\nМатрицы\n\n\n\n\n\n\n\nТип\nLaTeX\nРезультат\n\n\n\n\nОбычная\n$$\n\\begin{matrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9\n\\end{matrix}\n$$\n\\[\n\\begin{matrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9\n\\end{matrix}\n\\]\n\n\nКвадратные скобки\n$$ M =\n\\begin{bmatrix}\n\\frac{5}{6} & \\frac{1}{6} & 0 \\\\\n\\frac{5}{6} & 0 & \\frac{1}{6} \\\\\n0 & \\frac{5}{6} & \\frac{1}{6}\n\\end{bmatrix}\n$$\n\\[ M =\n\\begin{bmatrix}\n\\frac{5}{6} & \\frac{1}{6} & 0 \\\\\n\\frac{5}{6} & 0 & \\frac{1}{6} \\\\\n0 & \\frac{5}{6} & \\frac{1}{6}\n\\end{bmatrix}\n\\]\n\n\nВыражение\n$$\nM =\n\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix}\n\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix}\n$$\n\\[\nM =\n\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix}\n\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix}\n\\]\n\n\nКруглые скобки\n$$\nM =\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n$$\n\\[\nM =\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n\\]\n\n\nОбщий вид\n$$\nA_{m,n} =\n\\begin{pmatrix}\na_{1,1} & a_{1,2} & \\cdots & a_{1,n} \\\\\na_{2,1} & a_{2,2} & \\cdots & a_{2,n} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\na_{m,1} & a_{m,2} & \\cdots & a_{m,n}\n\\end{pmatrix}\n$$\n\\[\nA_{m,n} =\n\\begin{pmatrix}\na_{1,1} & a_{1,2} & \\cdots & a_{1,n} \\\\\na_{2,1} & a_{2,2} & \\cdots & a_{2,n} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\na_{m,1} & a_{m,2} & \\cdots & a_{m,n}\n\\end{pmatrix}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/latex.html#большие-операторы",
+    "href": "enviroment/latex.html#большие-операторы",
+    "title": "3  Язык разметки LaTeX",
+    "section": "3.8 Большие операторы",
+    "text": "3.8 Большие операторы",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/latex.html#примеры",
+    "href": "enviroment/latex.html#примеры",
+    "title": "3  Язык разметки LaTeX",
+    "section": "3.9 Примеры",
+    "text": "3.9 Примеры\n\nПримеры\n\n\n\n\n\n\nLaTeX\nРезультат\n\n\n\n\n$$\nx^{2 \\alpha} - 1 = y_{ij} + y_{ij}\n$$\n\\[\nx^{2 \\alpha} - 1 = y_{ij} + y_{ij}\n\\]\n\n\n$$\n(a^n)^{r+s} = a^{nr+ns}\n$$\n\\[\n(a^n)^{r+s} = a^{nr+ns}\n\\]\n\n\n$$\n\\sum_{i=1}^{\\infty}\n\\frac{1}{n^s} =\n\\prod_p \\frac{1}{1 - p^{-s}}\n$$\n\\[\n\\sum_{i=1}^{\\infty}\n\\frac{1}{n^s} =\n\\prod_p \\frac{1}{1 - p^{-s}}\n\\]\n\n\n$$\n\\begin{array}{*{20}c}\n{x = \\frac{{ - b \\pm \\sqrt {b^2  - 4ac} }}{{2a}}} &\n {{\\rm{when}}} &\n{ax^2  + bx + c = 0}\n\\\\\\end{array}\n$$\n\\[\n\\begin{array}{*{20}c}\n{x = \\frac{{ - b \\pm \\sqrt {b^2  - 4ac} }}{{2a}}} &\n{{\\rm{when}}} &\n{ax^2  + bx + c = 0}\n\\\\\\end{array}\n\\]\n\n\n$$\nx^2  +\nx\\left( {a + b} \\right) +\nab =\n\\left( {x + a} \\right)\n\\left( {x + b} \\right)\n$$\n\\[\nx^2  +\nx\\left( {a + b} \\right) +\nab =\n\\left( {x + a} \\right)\n\\left( {x + b} \\right)\n\\]\n\n\n$$\n\\log _b \\left( x \\right) =\n\\log _b \\left( c \\right)\\log _c \\left( x \\right) =\n\\frac{{\\log _c \\left( x \\right)}}\n{{\\log _c \\left( b \\right)}}\n$$\n\\[\n\\log _b \\left( x \\right) =\n\\log _b \\left( c \\right)\\log _c \\left( x \\right) =\n\\frac{{\\log _c \\left( x \\right)}}\n{{\\log _c \\left( b \\right)}}\n\\]\n\n\n$$\n\\frac{d}{{dx}}b^x  =\nb^x \\ln \\left( b \\right)\n$$\n\\[\n\\frac{d}{{dx}}b^x  =\nb^x \\ln \\left( b \\right)\n\\]\n\n\n$$\n\\int {\\sec (ax)} dx =\n\\frac{1}{a}\\ln \\left|\n{\\tan \\left( {\\frac{{ax}}{2} +\n\\frac{\\pi }{4}} \\right)} \\right| + c\n$$\n\\[\n\\int {\\sec (ax)} dx =\n\\frac{1}{a}\\ln \\left|\n{\\tan \\left( {\\frac{{ax}}{2} +\n\\frac{\\pi }{4}} \\right)} \\right| + c\n\\]\n\n\n$$\n\\oint_S {E_n dA =\n\\frac{1}{{\\varepsilon _0 }}} Q_{inside}\n$$\n\\[\n\\oint_S {E_n dA =\n\\frac{1}{{\\varepsilon _0 }}} Q_{inside}\n\\]\n\n\n$$\ny(x,t) = \\sum\\limits_n\n{A_n \\cos (\\omega _n t + \\delta _n )\n\\sin (k_n x)}\n$$\n\\[\ny(x,t) = \\sum\\limits_n\n{A_n \\cos (\\omega _n t + \\delta _n )\n\\sin (k_n x)}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/latex.html#дальнейшее-изучение",
+    "href": "enviroment/latex.html#дальнейшее-изучение",
+    "title": "3  Язык разметки LaTeX",
+    "section": "3.10 Дальнейшее изучение",
+    "text": "3.10 Дальнейшее изучение\nСборник формул. Overleaf latex",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "r-lang/basic.html",
+    "href": "r-lang/basic.html",
+    "title": "4  Основы языка R",
+    "section": "",
+    "text": "4.1 Типы данных\nВ R все элементы, используемые для вычислений, называются объектами. Зарезервированы 5 atomic типов объектов:\ntypeof(10.5)\n\n[1] \"double\"\n\ntypeof(100L)\n\n[1] \"integer\"\n\ntypeof(9+3i)\n\n[1] \"complex\"\n\ntypeof(\"1ac\")\n\n[1] \"character\"\n\ntypeof(TRUE)\n\n[1] \"logical\"\nБазовый объект - вектор. Вектор может содержать объекты только одного типа.\n1\n\n[1] 1\nIn real life, some information items may be inherently or temporarily missing, unknown, or Not Available. As R is orientated towards data processing, it was equipped with a special indicator: NA_real_ # numeric NA (missing value) ## [1] NA It is similar to the Null marker in database query languages such as SQL. Note that NA_real_ is displayed simply as “NA”, chiefly for readability. Moreover, Inf denotes infinity, ∞, i.e., an element that is larger than the largest representable double-precision (64 bit) floating point value. Also, NaN stands for not-a-number, which is returned as the result of some illegal operations, e.g., 0/0 or ∞−∞.\nПричём для c сделать сслыку на репозиторий функций. First, the c function can be used to combine (concatenate) many numeric vectors, each of any length. It results in a single object: c(1, 2, 3) # three vectors of length one –&gt; one vector of length three ## [1] 1 2 3 c(1, c(2, NA_real_, 4), 5, c(6, c(7, Inf))) ## [1] 1 2 NA 4 5 6 7 Inf Note Running help(“c”), we will see that its usage is like c(…). In the current context, this means that the c function takes an arbitrary number of arguments. In Section 9.4.6, we will study the dot-dot-dot (ellipsis) parameter in more detail. 2.1.3. Repeating entries with rep Second, rep replicates the elements in a vector a given number of times. rep(1, 5) ## [1] 1 1 1 1 1 rep(c(1, 2, 3), 4) ## [1] 1 2 3 1 2 3 1 2 3 1 2 3 In the second case, the whole vector (1, 2, 3) has been recycled (tiled) four times. Interestingly, if the second argument is a vector of the same length as the first one, the behaviour will be different: rep(c(1, 2, 3), c(2, 1, 4))\n2.1.4. Generating arithmetic progressions with seq and : Third, we can call the seq function to create a sequence of equally-spaced numbers on a linear scale, i.e., an arithmetic progression. seq(1, 15, 2) ## [1] 1 3 5 7 9 11 13 15 From the function’s help page, we discover that seq accepts the from, to, by, and length.out arguments, amongst others. Thus, the preceding call is equivalent to: seq(from=1, to=15, by=2) ## [1] 1 3 5 7 9 11 13 15 Note that to actually means “up to”: seq(from=1, to=16, by=2) ## [1] 1 3 5 7 9 11 13 15 We can also pass length.out instead of by. In such a case, the increments or decrements will be computed via the formula ((to - from)/(length.out - 1)). This default value is reported in the Usage section of help(“seq”). seq(1, 0, length.out=5) ## [1] 1.00 0.75 0.50 0.25 0.00 seq(length.out=5) # default from is 1 ## [1] 1 2 3 4 5 Arithmetic progressions with steps equal to 1 or -1 can also be generated via the : operator. 1:10 # seq(1, 10) or seq(1, 10, 1) ## [1] 1 2 3 4 5 6 7 8 9 10 -1:10 # seq(-1, 10) or seq(-1, 10, 1) ## [1] -1 0 1 2 3 4 5 6 7 8 9 10 -1:-10 # seq(-1, -10) or seq(-1, -10, -1) ## [1] -1 -2 -3 -4 -5 -6 -7 -8 -9 -10 Let’s highlight the order of precedence of this operator: -1:10 means (-1):10, and not -(1:10); compare Section 2.4.3. Exercise 2.1 Take a look at the manual page of seq_along and seq_len and determine whether we can do without them, having seq[3] at hand.\nПри объединении объектов разных типов в вектор, они приводятся к более широкому (implicit coercion)\nclass(c(TRUE, FALSE))\n\n[1] \"logical\"\n\nclass(c(1L, TRUE))\n\n[1] \"integer\"\n\nclass(c(1L, 2L))\n\n[1] \"integer\"\n\nclass(c(1L, 2.5))\n\n[1] \"numeric\"\n\nclass(c(1L, 2.5, 2.5+1i))\n\n[1] \"complex\"\n\nclass(c(1L, 2L, 2.5+1i, \"12\"))\n\n[1] \"character\"",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Основы языка R</span>"
+    ]
+  },
+  {
+    "objectID": "r-lang/basic.html#типы-данных",
+    "href": "r-lang/basic.html#типы-данных",
+    "title": "4  Основы языка R",
+    "section": "",
+    "text": "• times,\n• length.out[1],\n• each.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Основы языка R</span>"
+    ]
+  },
+  {
+    "objectID": "r-lang/basic.html#создание-переменных",
+    "href": "r-lang/basic.html#создание-переменных",
+    "title": "4  Основы языка R",
+    "section": "4.2 Создание переменных",
+    "text": "4.2 Создание переменных\nThe objects we bring forth will often need to be memorised so that they can be referred to in further computations. The assignment operator, &lt;-, can be used for this purpose: x &lt;- 1:3 # creates a numeric vector and binds the name x to it The now-named object can be recalled[4] and dealt with as we please: print(x) # or just x in the R console ## [1] 1 2 3 sum(x) # example operation: compute the sum of all elements in x ## [1] 6 Important In R, all names are case-sensitive. Hence, x and X can coexist peacefully: when set, they refer to two different objects. If we tried calling Print(x), print(X), or PRINT(x), we would get an error. Typically, we will be using syntactic names. In help(“make.names”), we read: A syntactically valid name consists of letters, numbers and the dot or underline characters and starts with a letter or the dot not followed by a number. Names such as .2way are not valid, and neither are the reserved words such as if, for, function, next, and TRUE, but see Section 9.3.1 for an exception. A fine name is self-explanatory and thus reader-friendly: patients, mean, and average_scores are way better (if they are what they claim they are) than xyz123, crap, or spam. Also, it might not be such a bad idea to get used to denoting: • vectors by x, y, z, • matrices (and matrix-like objects) by A, B, …, X, Y, Z, • integer indexes by letters i, j, k, l, • object sizes by n, m, d, p or nx, ny, etc., especially when they are only of temporary nature (for storing auxiliary results, iterating over collections of objects, etc.). There are numerous naming conventions that we can adopt, but most often they are a matter of taste; snake_case, lowerCamelCase, UpperCamelCase, flatcase, or dot.case are equally sound as long as they are used coherently (for instance, some use snake_case for vectors and UpperCamelCase for functions). Occasionally, we have little choice but to adhere to the naming conventions of the project we are about to contribute to. Note Generally, a dot, “.”, has no special meaning[5]; na.omit is as appropriate a name as na_omit, naOmit, NAOMIT, naomit, and NaOmit. Readers who know other programming languages will need to habituate themselves to this convention. R, as a dynamic language, allows for introducing new variables at any time. Moreover, existing names can be bound to new values. For instance: (y &lt;- “spam”) # bracketed expression – printing not suppressed ## [1] “spam” x &lt;- y # overwrites the previous x print(x) ## [1] “spam” Now x refers to a verbatim copy of y. Note Objects are automatically destroyed when we cannot access them anymore. By now, the garbage collector is likely to have got rid of the foregoing 1:3 vector (to which the name x was bound previously).",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Основы языка R</span>"
+    ]
+  },
+  {
+    "objectID": "r-lang/basic.html#базовые-операции",
+    "href": "r-lang/basic.html#базовые-операции",
+    "title": "4  Основы языка R",
+    "section": "4.3 Базовые операции",
+    "text": "4.3 Базовые операции\n\nx &lt;- 3 # присвоение значения переменной, предпочтительно использовать\n3 -&gt; x # присвоение значения переменной\nx &lt;&lt;- 3 # присвоение значения переменной из внешей области видимости\n+3;2+3 \n\n[1] 3\n\n\n[1] 5\n\n-2;5-2\n\n[1] -2\n\n\n[1] 3\n\n2*5\n\n[1] 10\n\n3/5\n\n[1] 0.6\n\n2^5; 2**10  # возведение в степень\n\n[1] 32\n\n\n[1] 1024\n\n10 %% 3   # остаток от деления \n\n[1] 1\n\n10 %/% 3  # целочисленное деление\n\n[1] 3",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Основы языка R</span>"
+    ]
+  },
+  {
+    "objectID": "r-lang/basic.html#логические-операции",
+    "href": "r-lang/basic.html#логические-операции",
+    "title": "4  Основы языка R",
+    "section": "4.4 Логические операции",
+    "text": "4.4 Логические операции\n\nx &lt;- c(TRUE,FALSE,TRUE)\ny &lt;- c(FALSE,TRUE,TRUE)\n\nx &lt; 3\n\n[1] TRUE TRUE TRUE\n\nx &lt;= y\n\n[1] FALSE  TRUE  TRUE\n\n2 &gt; x\n\n[1] TRUE TRUE TRUE\n\nx &gt;= x\n\n[1] TRUE TRUE TRUE\n\n3 == 5\n\n[1] FALSE\n\n3 != 5\n\n[1] TRUE\n\n!x # логическое отрицание\n\n[1] FALSE  TRUE FALSE\n\nx & y # поэлементное логическое И\n\n[1] FALSE FALSE  TRUE\n\nTRUE && FALSE # логическое И\n\n[1] FALSE\n\nx | y # поэлементное логическое OR\n\n[1] TRUE TRUE TRUE\n\nTRUE || FALSE # логическое ИЛИ\n\n[1] TRUE\n\nxor(x, y) # поэлементное логическое Исключающее ИЛИ\n\n[1]  TRUE  TRUE FALSE\n\nisTRUE(x) # явное приведение к логическому типу\n\n[1] FALSE",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Основы языка R</span>"
+    ]
+  },
+  {
+    "objectID": "r-lang/basic.html#создание-вектора-элементов",
+    "href": "r-lang/basic.html#создание-вектора-элементов",
+    "title": "4  Основы языка R",
+    "section": "4.5 Создание вектора элементов",
+    "text": "4.5 Создание вектора элементов\nВектор может содержать объекты только одного типа. Вектор можно создать с помощью функций: - с – combine - seq – создание вектора последовательных чисел. - vector – создание пустого вектора или вектора нулей - rep – создание вектора, состоящего из одинаковых элементов. - : – упрощенная форма seq\n\nvector(mode = \"numeric\", length = 2)\n\n[1] 0 0\n\nseq(1, 9, by = 2)\n\n[1] 1 3 5 7 9\n\nrep(1:3, 2)\n\n[1] 1 2 3 1 2 3\n\n1:10\n\n [1]  1  2  3  4  5  6  7  8  9 10",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Основы языка R</span>"
+    ]
+  },
+  {
+    "objectID": "r-lang/basic.html#преобразование-объектов",
+    "href": "r-lang/basic.html#преобразование-объектов",
+    "title": "4  Основы языка R",
+    "section": "4.6 Преобразование объектов",
+    "text": "4.6 Преобразование объектов\nДля преобразования объекта к другому типу используются функции семейства as.*\n\nas.logical(c(-1, 0, 1))\n\n[1]  TRUE FALSE  TRUE\n\nas.numeric(c(TRUE, FALSE))\n\n[1] 1 0\n\nas.character(c(TRUE, FALSE))\n\n[1] \"TRUE\"  \"FALSE\"",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Основы языка R</span>"
+    ]
+  },
+  {
+    "objectID": "r-lang/basic.html#матрицы-и-массивы-высших-размерностей",
+    "href": "r-lang/basic.html#матрицы-и-массивы-высших-размерностей",
+    "title": "4  Основы языка R",
+    "section": "4.7 Матрицы и массивы высших размерностей",
+    "text": "4.7 Матрицы и массивы высших размерностей\nМатрица – это специальный тип вектора в R, который имеет атрибут dim. dim – это вектор типа integer, состоящий из 2 элементов ( nrow - число строк и ncol - число столбцов). Матрицы заполняются по правилу: сверху вниз слева направо.\n\nm &lt;- matrix(c(1, 2, 3, 4), ncol = 2, nrow = 2)\nm\n\n     [,1] [,2]\n[1,]    1    3\n[2,]    2    4\n\ndim(m)\n\n[1] 2 2\n\nattributes(m)\n\n$dim\n[1] 2 2\n\n\nМатрицы можно создавать с помощью функций cbind и rbind.\n\nx &lt;- 1:3\ny &lt;- 10:12\ncbind(x, y)\n\n     x  y\n[1,] 1 10\n[2,] 2 11\n[3,] 3 12\n\n\narray(data,dim) – функция для создания матрицы заданного размера.\n\narray(1:8,c(2,2,2))\n\n, , 1\n\n     [,1] [,2]\n[1,]    1    3\n[2,]    2    4\n\n, , 2\n\n     [,1] [,2]\n[1,]    5    7\n[2,]    6    8",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Основы языка R</span>"
+    ]
+  },
+  {
+    "objectID": "r-lang/basic.html#cписки",
+    "href": "r-lang/basic.html#cписки",
+    "title": "4  Основы языка R",
+    "section": "4.8 Cписки",
+    "text": "4.8 Cписки\nСписок (list) – особый вид вектора, который объединяет объекты различных типов. list – функция для объединения объектов в список.\n\nlist(1,c(1,2),\"abobus\",TRUE)\n\n[[1]]\n[1] 1\n\n[[2]]\n[1] 1 2\n\n[[3]]\n[1] \"abobus\"\n\n[[4]]\n[1] TRUE",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Основы языка R</span>"
+    ]
+  },
+  {
+    "objectID": "r-lang/basic.html#пропущенные-значения",
+    "href": "r-lang/basic.html#пропущенные-значения",
+    "title": "4  Основы языка R",
+    "section": "4.9 Пропущенные значения",
+    "text": "4.9 Пропущенные значения\nNA, NaN – используются для работы с пропущенными значениями. is.na – функция для проверки наличия в векторе элементов с пропущенными значениями типа NA. NA может иметь тип integer, numeric, character. is.nan – функция для проверки наличия в векторе элементов с пропущенными значениями типа NaN.\n\nx &lt;- c(1, NaN, NA, 10, 3)\nis.na(x)\n\n[1] FALSE  TRUE  TRUE FALSE FALSE\n\nis.nan(x)\n\n[1] FALSE  TRUE FALSE FALSE FALSE",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Основы языка R</span>"
+    ]
+  },
+  {
+    "objectID": "r-lang/basic.html#таблицы",
+    "href": "r-lang/basic.html#таблицы",
+    "title": "4  Основы языка R",
+    "section": "4.10 Таблицы",
+    "text": "4.10 Таблицы\nТаблица (Data Frame)– специальный тип списка, в котором каждый элемент имеет фиксированную длину. Используется для хранения табулированных данных. Каждая колонка может представлять различные типы данных, включая факторы. Data Frame имеют специализированный атрибут row.names, указывающий имена строк. Это помогает упростить аннотацию данных. Для создания Data Frame из табулированных данных используются функции read.table и read.csv. Для создания матрицы из Data Frame используется функция data.matrix. data.frame – функция для создания Data Frame.\n\nx &lt;- data.frame(foo = 1:4, bar = c(T, T, F, F))\nnrow(x)\n\n[1] 4\n\nncol(x)\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Основы языка R</span>"
+    ]
+  },
+  {
+    "objectID": "r-lang/basic.html#имена",
+    "href": "r-lang/basic.html#имена",
+    "title": "4  Основы языка R",
+    "section": "4.11 Имена",
+    "text": "4.11 Имена\nИмена (Names) – используются для лучшего понимания объектов и написания программного кода. Элементы объектов могут иметь имена. names – функция для присвоения имен элементам объектов.\n\nx &lt;- 1:3\nnames(x)\n\nNULL\n\nnames(x) &lt;- c(\"foo\", \"bar\", \"norf\")\nnames(x)\n\n[1] \"foo\"  \"bar\"  \"norf\"\n\n\nСписки и матрицы также могут иметь имена.\n\nlist(a = 1, b = 2, c = 3)\n\n$a\n[1] 1\n\n$b\n[1] 2\n\n$c\n[1] 3\n\nm &lt;- matrix(1:4, nrow = 2, ncol = 2)\ndimnames(m) &lt;- list(c(\"a\", \"b\"), c(\"c\", \"d\"))\nm\n\n  c d\na 1 3\nb 2 4",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Основы языка R</span>"
+    ]
+  },
+  {
+    "objectID": "r-lang/basic.html#управление-наборами-данных",
+    "href": "r-lang/basic.html#управление-наборами-данных",
+    "title": "4  Основы языка R",
+    "section": "4.12 Управление наборами данных",
+    "text": "4.12 Управление наборами данных\n\n4.12.1 Доступ к элементам структур данных\nВ R используются несколько операторов для извлечения данных из объектов – “[”, “[[”, “$”.\n“[” – возвращает объект того же класса что и объект-оригинал. Пример – из вектора -&gt; вектор, из списка -&gt; список и т.д. Может быть выделено более 1 элемента!\n“[[” – используется для взятия элемента списка или таблицы (Data Frame). Класс элемента может быть различным. Может быть выделен только 1 элемент!\n“$” – применяется для выделения элемента списка или таблицы по имени name. Класс элемента не обязательно совпадает с исходными данными.\nПримеры использования оператора “[”\n\nx &lt;- c(\"a\", \"b\", \"c\", \"c\", \"d\", \"a\")\nx[1]\n\n[1] \"a\"\n\nx[2]\n\n[1] \"b\"\n\nx[1:4]\n\n[1] \"a\" \"b\" \"c\" \"c\"\n\nu &lt;- x &gt; \"a\"\nu\n\n[1] FALSE  TRUE  TRUE  TRUE  TRUE FALSE\n\nx[u]\n\n[1] \"b\" \"c\" \"c\" \"d\"\n\n\nДоступ к элементам матриц осуществляется с использованием индексов в квадратных скобках – “[”. Первый индекс – номер строки, второй индекс – номер столбца.\n\nx &lt;- matrix(1:6, 2, 3)\nx[1, 2]\n\n[1] 3\n\nx[2, 1]\n\n[1] 2\n\n\nПервый или второй индекс может отсутствовать. Тогда будет возвращена строка или столбец матрицы.\n\nx[1, ]\n\n[1] 1 3 5\n\nx[, 2]\n\n[1] 3 4\n\n\nПо умолчанию возвращается вектор единичной длины того же класса что и исходный объект. Для получения объекта в виде матрицы необходимо установить параметр drop. Учет размерности данных – drop = FALSE.\n\nx &lt;- matrix(1:6, 2, 3)\nx[1, 2, drop = FALSE]\n\n     [,1]\n[1,]    3\n\nx &lt;- matrix(1:6, 2, 3)\nx[1, ]\n\n[1] 1 3 5\n\nx[1, , drop = FALSE]\n\n     [,1] [,2] [,3]\n[1,]    1    3    5\n\n\n\n\n4.12.2 Доступ к элементам списка\nДля доступа к элементам списка можно использовать – “[”, “[[”, “$”.\n\nx &lt;- list(foo = 1:4, bar = 0.6)\nx[1]\n\n$foo\n[1] 1 2 3 4\n\nx[[1]]\n\n[1] 1 2 3 4\n\nx$bar\n\n[1] 0.6\n\nx[[\"bar\"]]\n\n[1] 0.6\n\nx &lt;- list(foo = 1:4, bar = 0.6, baz = \"hello\")\nx[c(1, 3)]\n\n$foo\n[1] 1 2 3 4\n\n$baz\n[1] \"hello\"\n\n\nОператор “[[” используется с индексами и именами, а “$” - только с именами объектов. “$” упрощает работу, т.к. не требуется определение порядка следования.\n\nx &lt;- list(foo = 1:4, bar = 0.6, baz = \"hello\")\nname &lt;- \"foo\"\nx[[name]]\n\n[1] 1 2 3 4\n\nx$name\n\nNULL\n\nx$foo\n\n[1] 1 2 3 4\n\n\nОператор “[[” может принимать последовательность целых чисел и рекурсивно извлекать элементы из вложенного списка.\n\nx &lt;- list(a = list(10, 12, 14), b = c(3.14, 2.81))\nx[[c(1, 3)]]\n\n[1] 14\n\nx[[1]][[3]]\n\n[1] 14\n\nx[[c(2, 1)]]\n\n[1] 3.14",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Основы языка R</span>"
+    ]
+  },
+  {
+    "objectID": "r-lang/basic.html#векторные-операции",
+    "href": "r-lang/basic.html#векторные-операции",
+    "title": "4  Основы языка R",
+    "section": "4.13 Векторные операции",
+    "text": "4.13 Векторные операции\nВ R можно осуществлять операции над векторами. Это позволяет значительно упростить программный код, не программировать циклы, ускорить процесс написания программ.\n\nx &lt;- 1:4\ny &lt;- 6:9\nx + y\n\n[1]  7  9 11 13\n\nx &gt; 2\n\n[1] FALSE FALSE  TRUE  TRUE\n\nx &gt;= 2\n\n[1] FALSE  TRUE  TRUE  TRUE\n\ny == 8\n\n[1] FALSE FALSE  TRUE FALSE\n\nx * y\n\n[1]  6 14 24 36\n\nx / y\n\n[1] 0.1666667 0.2857143 0.3750000 0.4444444\n\n\nАналогично векторные операции осуществляются над матрицами.\n\nx &lt;- matrix(1:4, 2, 2);\ny &lt;- matrix(rep(10, 4), 2, 2)\nx * y # поэлементно\n\n     [,1] [,2]\n[1,]   10   30\n[2,]   20   40\n\nx / y\n\n     [,1] [,2]\n[1,]  0.1  0.3\n[2,]  0.2  0.4\n\n\nОператор “%*%” используется для матричное перемножение по правилам линейной алгебры.\n\nx %*% y\n\n     [,1] [,2]\n[1,]   40   40\n[2,]   60   60",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Основы языка R</span>"
+    ]
+  },
+  {
+    "objectID": "r-lang/basic.html#функции",
+    "href": "r-lang/basic.html#функции",
+    "title": "4  Основы языка R",
+    "section": "4.14 Функции",
+    "text": "4.14 Функции\nФункции используются для систематизации повторяющегося программного кода. Функция создается с помощью оператора function и сохраняется как R-объект класса function.\nОсобенности: 1. Объекты класса function можно передавать в качестве аргумента другой функции. 2. Функции могут быть вложенными, т.е. одна функция может быть определена внутри другой. 3. Возвращаемое значение функции – это результат последнего выражения в коде функции.\nАргументы сопоставляются по позициям в списке или по совпадению имен.\n\nmydata &lt;- rnorm(100)\nsd(mydata)\n\n[1] 0.9976606\n\nsd(x = mydata)\n\n[1] 0.9976606\n\nsd(x = mydata, na.rm = FALSE)\n\n[1] 0.9976606\n\nsd(na.rm = FALSE, x = mydata)\n\n[1] 0.9976606\n\nsd(na.rm = FALSE, mydata)\n\n[1] 0.9976606\n\n\n\n4.14.1 Сопоставление аргументов\nЕсли передаются именованные аргументы, то их не обязательно располагать в требуемом порядке. Можно смешивать «порядок» и «имена». Именованный аргумент извлекается из списка, остальные будут ассоциированы по позициям оставшихся аргументов в списке.\n\nargs(lm)\n\nfunction (formula, data, subset, weights, na.action, method = \"qr\", \n    model = TRUE, x = FALSE, y = FALSE, qr = TRUE, singular.ok = TRUE, \n    contrasts = NULL, offset, ...) \nNULL\n\n\nИмена аргументов могут совпадать не полностью, а частично. Система сама определяет наиболее подходящий аргумент и присваивает ему значение. Порядок следования операций определения аргументов в функциях: 1) Проверка на точное совпадение именованных аргументов. 2) Проверка на частичное совпадение именованных аргументов. 3) Проверка на точное совпадение позиций неименованных аргументов.\n\nf &lt;- function(a, b = 1, c = 2, d = NULL) {\n    return(1);\n}\n\nАргумент функции в виде “…” используется для передачи стандартных аргументов сторонних функций.\n\nmyplot &lt;- function(x, y, type = \"l\", ...) {\n    plot(x, y, type = type, ...)\n}\n\nАргумент “…” применяется когда число аргументов функции заранее не известно\n\nargs(paste)\n\nfunction (..., sep = \" \", collapse = NULL, recycle0 = FALSE) \nNULL\n\nargs(cat)\n\nfunction (..., file = \"\", sep = \" \", fill = FALSE, labels = NULL, \n    append = FALSE) \nNULL\n\n\nАргументы, идущие после “…”, должны быть именованы полностью.\n\nargs(paste)\n\nfunction (..., sep = \" \", collapse = NULL, recycle0 = FALSE) \nNULL\n\npaste(\"a\", \"b\", sep = \":\")\n\n[1] \"a:b\"\n\npaste(\"a\", \"b\", se = \":\")\n\n[1] \"a b :\"",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Основы языка R</span>"
+    ]
+  },
+  {
+    "objectID": "r-lang/advanced.html",
+    "href": "r-lang/advanced.html",
+    "title": "5  Продвинутый R",
+    "section": "",
+    "text": "5.1 Встроенные константы\nВ R зарезервирован набор специальных констант:\npi/Inf\n\n[1] 0",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Продвинутый R</span>"
+    ]
+  },
+  {
+    "objectID": "r-lang/advanced.html#встроенные-константы",
+    "href": "r-lang/advanced.html#встроенные-константы",
+    "title": "5  Продвинутый R",
+    "section": "",
+    "text": "Inf – бесконечность\nNA – Not Available. Отсутствующее значение. Используется для обозначения пропущенных значений в данных.\nNaN – Not A Number. Определяет неопределенное число или «не число».\nNULL – представляет нулевой объект. Часто используется когда возвращаема величина выражения или функции не определена.\npi – 3.141593",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Продвинутый R</span>"
+    ]
+  },
+  {
+    "objectID": "r-lang/advanced.html#атрибуты-объектов",
+    "href": "r-lang/advanced.html#атрибуты-объектов",
+    "title": "5  Продвинутый R",
+    "section": "5.2 Атрибуты объектов",
+    "text": "5.2 Атрибуты объектов\nОбъекты характеризуются атрибутами которые могут быть рассмотрены, как метаданные для объектов. Не все объекты имеют атрибуты. Атрибуты используются для упрощения понимания и описания объектов. Примеры атрибутов объектов:\n\nnames, dimnames\ndimensions\nclass\nlength\nпрочие, определенные пользователем, атрибуты (metadata) Для доступа к атрибутам объекта используется функция attributes\n\n\nx &lt;- cbind(a = 1:3, pi = pi)\nx\n\n     a       pi\n[1,] 1 3.141593\n[2,] 2 3.141593\n[3,] 3 3.141593\n\nattributes(x)\n\n$dim\n[1] 3 2\n\n$dimnames\n$dimnames[[1]]\nNULL\n\n$dimnames[[2]]\n[1] \"a\"  \"pi\"",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Продвинутый R</span>"
+    ]
+  },
+  {
+    "objectID": "r-lang/advanced.html#векторизированные-вычисления",
+    "href": "r-lang/advanced.html#векторизированные-вычисления",
+    "title": "5  Продвинутый R",
+    "section": "5.3 Векторизированные вычисления",
+    "text": "5.3 Векторизированные вычисления\nИспользование операторов циклов for, while не удобно при работе в командной строке интерпретатора. В R реализованы функции, оптимизирующее циклически вычисления:\n- lapply – производит циклическое вычисление некоторой функции над элементами списка. - sapply – выполняет то же что lapply, только выводит результаты в упрощенном виде. - apply – производит циклическое вычисление некоторой функции над элементами массива. - tapply – производит циклическое вычисление некоторой функции над заданным набором элементов вектора. - mapply – мультивариативная версия функции lapply (работает сразу с несколькими объектами).\nlapply производит циклическое вычисление некоторой функции над элементами списка. lapply всегда возвращает объект класса список, несмотря на тип объекта на входе. Если объект на входе не список, то он будет преобразован с помощью функции as.list.\nsapply вариант функции lapply, предназначенный для максимального упрощения результатов. Например: 1. Если результат список (list), каждый элемент которого имеет длину 1, то возвращается вектор. 2. Если результат список (list), каждый элемент которого вектор одинаковой длины, то возвращается матрица.\n3. Если результат непонятно как может быть преобразован, то возвращается список.\napply используется для вычисления некоторой функции в пределах заданного набора индексов массива. Особенности: 1. В основном применяется для вычисления некоторой функции по строкам или столбцам массива. Работает даже для трехмерных матриц. 2. Используется для массивов любой размерности.\nmapply – мультивариативный вариант lapply и sapply, предназначенный для параллельного применения в цикле некоторой функции к набору R-объектов.\nПример векторизации функции.\n\nrnorm (5, 1, 2)\n\n[1] -1.041594  2.676819  1.213298 -3.436185  2.199786\n\nmapply(rnorm, 1:5, 1:5, 2)\n\n[[1]]\n[1] -0.8191867\n\n[[2]]\n[1] 4.753072 1.649744\n\n[[3]]\n[1] 3.255005 4.241312 4.353122\n\n[[4]]\n[1] 3.535148 2.191579 5.295486 2.531591\n\n[[5]]\n[1]  6.283620  6.612531  7.615085  4.148009 10.622194\n\n\ntapply – используется для расчета некоторой функции в цикле по группам элементов вектора. Это удобно когда один вектор формирует несколько выборок.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Продвинутый R</span>"
+    ]
+  },
+  {
+    "objectID": "r-lang/advanced.html#правила-видимости-свободных-переменных-scoping-rules",
+    "href": "r-lang/advanced.html#правила-видимости-свободных-переменных-scoping-rules",
+    "title": "5  Продвинутый R",
+    "section": "5.4 Правила видимости свободных переменных (Scoping rules)",
+    "text": "5.4 Правила видимости свободных переменных (Scoping rules)\nДля присвоения lm некоторого значения будет осуществляться поиск данной функции в различных областях или пространствах памяти среды – environments. Environment – список или набор R-объектов (по типу символ-значение), которые представляют собой видимое по некоторым правилам пространство памяти. Если работа производится в строке интерпретатора команд, то загружается global environment. В global environment входят все элементы, созданные или загруженные в R. При поиске lm порядок просмотра environments 1. global environment 2. пространства, загруженных пакетов (namespaces).\nglobal environment эквивалентно пространству памяти «пользователя». После просмотра global environment поиск осуществляется от пространства памяти пакета stats к пространству пакета base. Порядок следования пакетов важен! library – функция для загрузки пакетов. Загруженный пакет становится на вторую позицию, остальные пакеты смещаются на одну позицию вниз. Scoping rules определяют правила присвоения значений свободным переменным функций. В R используется lexical или static scoping. Наиболее распространенная альтернатива - dynamic scoping. Фактически задача сводится к вопросу: как R просматривает environments, для того чтобы связать свободную переменную с конкретным значением.\n\nz &lt;- 1\nf &lt;- function(x, y) {\n    x^2 + y / z\n}\n\nГде z – свободная переменная (a free variable). Свободная переменная не является ни формальным аргументом функции, ни локальной переменной функции.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Продвинутый R</span>"
+    ]
+  },
+  {
+    "objectID": "r-lang/advanced.html#scoping-rules",
+    "href": "r-lang/advanced.html#scoping-rules",
+    "title": "5  Продвинутый R",
+    "section": "5.5 Scoping rules",
+    "text": "5.5 Scoping rules\nПравило (lexical rules) 1: Значение для свободной переменной функции определяются в том пространстве памяти (environment), где была создана данная функция. Каждое environment имеет родительское environment. Родитель может иметь несколько потомков. Пространство без родителя называется пустым (empty environment). Функция + ее пространство памяти = closure или function closure. Правило (lexical rules) 2: Если значение для свободной переменной функций не найдено в пространстве, где была создана данная функция, то продолжается поиск по линии родительских пространств вплоть до пространства наивысшего уровня top-level environment (global environment или namespace of package). Правило (lexical rules) 3: После просмотра пространства наивысшего уровня (top-level environment) поиск осуществляется вниз по списку пространств загруженных пакетов (namespaces).\nПри достижении пространства последнего пакета (empty environment) в списке и не нахождения значения для свободной переменной выводится сообщение об ошибке.\n\nmake_power &lt;- function(n) {\n    pow &lt;- function(x) {\n        x^n\n    }\n    return(pow)\n}\ncube &lt;- make_power(3)\nsquare &lt;- make_power(2)\ncube(3)\n\n[1] 27\n\nsquare(3)\n\n[1] 9\n\n\nДля просмотра пространства памяти функции можно воспользоваться функциями ls, environment и get.\n\nls(environment(cube))\n\n[1] \"n\"   \"pow\"\n\nget(\"n\", environment(cube))\n\n[1] 3\n\n\n\ny &lt;- 10\nf &lt;- function(x) {\n    y &lt;- 2\n    y^2 + g(x)\n}\n\ng &lt;- function(x) {\n    x*y\n}\n\nДостоинства lexical scoping: 1) Не требуется передача длинных списков аргументов в функции. Это значительно упрощает работу пользователя в интерактивном режиме и в ходе исследовательской (exploratory) работы. 2) Сокращает, а значит и упрощает, программный код. 3) Удобно для решения задач оптимизации (nlm, optim , optimise) для управления целевыми функциями, параметры которых обеспечивают корректное решение задачи.\nцикл с помощью walk по датасетам или по сгенерированным последовательностям\nRecycling rule Some of the preceding statements can be written more concisely. When the operands are of different lengths, the shorter one is recycled as many times as necessary, as in rep(y, length.out=length(x)). For exampl\nУпростите выражение c(sqrt(1), sqrt(2), sqrt(3))?\nThe expression: 4i=1∑n2i−1(−1)i+1=4(11−31+51−71+⋯) slowly converges to π as n approaches ∞. Calculate it for n=1 000 000 and n=1 000 000 000 using the vectorised functions and operators discussed in this chapter, making use of the recycling rule as much as possible",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Продвинутый R</span>"
+    ]
+  },
+  {
+    "objectID": "r-tools/figure-plot.html",
+    "href": "r-tools/figure-plot.html",
+    "title": "6  Графические библиотеки",
+    "section": "",
+    "text": "6.1 plotly\nДля построения интерактивных графиков используется современная библиотека plotly. Устанавливается командой install.packages(“plotly”). Стоит выделить отличный от стандартного синтаксис вызова функции посторения графика. Строка “x = ~x” означает, что в качестве значений оси X (слева от знака равенства) будут использоваться значения заданные формулой (оператор ~). Сама формула ~x задаёт связь между зависимой переменной (слева от знака равенства, здесь опущенна) и независимыми. Например, в данном случае допустима конструкция “x = ~x + y”.\nРасказать про два варианта либо полного задания функции и построения ряда точек. Либо про задание формулой и кросс ссылка на продвинутый R.\nlibrary(plotly)\nx &lt;- seq(0, 2*pi, length.out=100)\ny &lt;- sin(x)\nplot_ly(x=x, y=~sin(x), type = 'scatter', mode = 'lines')\nДля построения объемного графика требуется построить матрицу значений функции с помощью функции outer. Сказать про отсчёты, что можно и сократить, но тогда теряется масштаб по осям.\nx &lt;- y &lt;- seq(0, pi/2, length.out = 100)\nz &lt;- outer(x, y, \\(x,y) { sin(x*y) })  |&gt; t()\nplot_ly(x=x, y=y, z = z, type = \"surface\")\nКонтурный график. Больше объяснений и примеров\nx &lt;- y &lt;- seq(0, pi/2, length.out = 100)\nz &lt;- outer(x, y, \\(x,y) { sin(x*y) })  |&gt; t()\nplot_ly(x=x, y=y, z=z, type=\"contour\")",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Графические библиотеки</span>"
+    ]
+  },
+  {
+    "objectID": "r-tools/figure-plot.html#plotly",
+    "href": "r-tools/figure-plot.html#plotly",
+    "title": "6  Графические библиотеки",
+    "section": "",
+    "text": "Tip\n\n\n\nЕсли график строится успешно, то рекомендуется игнорировать сообщения и предупреждения с помощью message и warning\n```{r}\n#| warning: false\n#| message: false\n```",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Графические библиотеки</span>"
+    ]
+  },
+  {
+    "objectID": "r-tools/figure-plot.html#ggplot2",
+    "href": "r-tools/figure-plot.html#ggplot2",
+    "title": "6  Графические библиотеки",
+    "section": "6.2 GGPlot2",
+    "text": "6.2 GGPlot2",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Графические библиотеки</span>"
+    ]
+  },
+  {
+    "objectID": "lab1/intro.html",
+    "href": "lab1/intro.html",
+    "title": "9  Лабораторная работа 1. Введение",
+    "section": "",
+    "text": "9.1 Задача 1\nПостройте график функции и её производных \\(F=(x-5)^2+6x\\). Найдите минимум функции.",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Лабораторная работа 1. Введение</span>"
+    ]
+  },
+  {
+    "objectID": "lab1/intro.html#задача-2",
+    "href": "lab1/intro.html#задача-2",
+    "title": "9  Лабораторная работа 1. Введение",
+    "section": "9.2 Задача 2",
+    "text": "9.2 Задача 2\nУпростите выражение c(sqrt(1), sqrt(2), sqrt(3))?",
+    "crumbs": [
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Лабораторная работа 1. Введение</span>"
     ]
   }
 ]
