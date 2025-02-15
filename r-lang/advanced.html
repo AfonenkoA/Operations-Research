@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../r-tools/figure-plot.html" rel="next">
+<link href="../linear/linear-algebra.html" rel="next">
 <link href="../r-lang/basic.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -178,32 +178,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r-tools/figure-plot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Графические библиотеки</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../linear/linear-algebra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Элементы линейной алгебры</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Элементы линейной алгебры</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../linear/linear-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Линейное программирование</span></span></a>
+  <a href="../linear/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Линейное программирование</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lab1/intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Лабораторная работа 1. Введение</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Лабораторная работа 1. Введение</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lab2/linear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Лабораторная работа 2. Линейное программирование</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Лабораторная работа 2. Линейное программирование</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r-tools/figure-plot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Приложение R.A. Графические библиотеки</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r-tools/linear.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Приложение R.Б. Решатель LPSolve</span></span></a>
   </div>
 </li>
     </ul>
@@ -309,24 +315,24 @@ $dimnames[[2]]
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span> (<span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -1.041594  2.676819  1.213298 -3.436185  2.199786</code></pre>
+<pre><code>[1]  0.5898500  0.1717295 -1.9937810  2.3571216  0.7332131</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mapply</span>(rnorm, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
-[1] -0.8191867
+[1] 1.604668
 
 [[2]]
-[1] 4.753072 1.649744
+[1] -1.637963  2.396849
 
 [[3]]
-[1] 3.255005 4.241312 4.353122
+[1]  4.733881 -1.522315  5.472971
 
 [[4]]
-[1] 3.535148 2.191579 5.295486 2.531591
+[1] 1.6681129 0.7335998 5.7946593 6.4679819
 
 [[5]]
-[1]  6.283620  6.612531  7.615085  4.148009 10.622194</code></pre>
+[1] 1.013939 3.417495 2.807728 4.633650 3.977549</code></pre>
 </div>
 </div>
 <p><strong>tapply</strong> – используется для расчета некоторой функции в цикле по группам элементов вектора. Это удобно когда один вектор формирует несколько выборок.</p>
@@ -371,7 +377,7 @@ $dimnames[[2]]
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "n"   "pow"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get</span>(<span class="st">"n"</span>, <span class="fu">environment</span>(cube))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get</span>(<span class="st">'n'</span>, <span class="fu">environment</span>(cube))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3</code></pre>
 </div>
@@ -824,8 +830,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../r-tools/figure-plot.html" class="pagination-link" aria-label="Графические библиотеки">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Графические библиотеки</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../linear/linear-algebra.html" class="pagination-link" aria-label="Элементы линейной алгебры">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Элементы линейной алгебры</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

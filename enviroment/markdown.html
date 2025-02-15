@@ -106,8 +106,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -210,32 +224,38 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r-tools/figure-plot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Графические библиотеки</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../linear/linear-algebra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Элементы линейной алгебры</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Элементы линейной алгебры</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../linear/linear-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Линейное программирование</span></span></a>
+  <a href="../linear/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Линейное программирование</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lab1/intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Лабораторная работа 1. Введение</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Лабораторная работа 1. Введение</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lab2/linear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Лабораторная работа 2. Линейное программирование</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Лабораторная работа 2. Линейное программирование</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r-tools/figure-plot.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Приложение R.A. Графические библиотеки</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r-tools/linear.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Приложение R.Б. Решатель LPSolve</span></span></a>
   </div>
 </li>
     </ul>
@@ -248,39 +268,35 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#блоки-кода" id="toc-блоки-кода" class="nav-link active" data-scroll-target="#блоки-кода"><span class="header-section-number">2.1</span> Блоки кода</a></li>
-  <li><a href="#inline-code" id="toc-inline-code" class="nav-link" data-scroll-target="#inline-code"><span class="header-section-number">2.2</span> Inline code</a></li>
-  <li><a href="#keep-inline-code-simple" id="toc-keep-inline-code-simple" class="nav-link" data-scroll-target="#keep-inline-code-simple"><span class="header-section-number">2.3</span> Keep Inline Code Simple</a></li>
-  <li><a href="#using-python-and-r-together" id="toc-using-python-and-r-together" class="nav-link" data-scroll-target="#using-python-and-r-together"><span class="header-section-number">2.4</span> Using python and r together</a>
+  <li><a href="#блоки-кода" id="toc-блоки-кода" class="nav-link active" data-scroll-target="#блоки-кода"><span class="header-section-number">2.1</span> Блоки кода</a>
   <ul class="collapse">
-  <li><a href="#rendering" id="toc-rendering" class="nav-link" data-scroll-target="#rendering"><span class="header-section-number">2.4.1</span> Rendering</a></li>
+  <li><a href="#встраиваемый-код" id="toc-встраиваемый-код" class="nav-link" data-scroll-target="#встраиваемый-код"><span class="header-section-number">2.1.1</span> Встраиваемый код</a></li>
+  <li><a href="#разные-языки-в-одном-документе" id="toc-разные-языки-в-одном-документе" class="nav-link" data-scroll-target="#разные-языки-в-одном-документе"><span class="header-section-number">2.1.2</span> Разные языки в одном документе</a></li>
+  <li><a href="#рендеринг-и-сохранение" id="toc-рендеринг-и-сохранение" class="nav-link" data-scroll-target="#рендеринг-и-сохранение"><span class="header-section-number">2.1.3</span> Рендеринг и сохранение</a></li>
+  <li><a href="#опции-блоков-кода" id="toc-опции-блоков-кода" class="nav-link" data-scroll-target="#опции-блоков-кода"><span class="header-section-number">2.1.4</span> Опции блоков кода</a></li>
+  <li><a href="#параметры-вывода" id="toc-параметры-вывода" class="nav-link" data-scroll-target="#параметры-вывода"><span class="header-section-number">2.1.5</span> Параметры вывода</a></li>
+  <li><a href="#названия-рисунков" id="toc-названия-рисунков" class="nav-link" data-scroll-target="#названия-рисунков"><span class="header-section-number">2.1.6</span> Названия рисунков</a></li>
   </ul></li>
-  <li><a href="#chunk-options" id="toc-chunk-options" class="nav-link" data-scroll-target="#chunk-options"><span class="header-section-number">2.5</span> Chunk Options</a></li>
-  <li><a href="#output-options" id="toc-output-options" class="nav-link" data-scroll-target="#output-options"><span class="header-section-number">2.6</span> Output Options</a>
+  <li><a href="#форматирование-текста" id="toc-форматирование-текста" class="nav-link" data-scroll-target="#форматирование-текста"><span class="header-section-number">2.2</span> Форматирование текста</a></li>
+  <li><a href="#заголовки" id="toc-заголовки" class="nav-link" data-scroll-target="#заголовки"><span class="header-section-number">2.3</span> Заголовки</a></li>
+  <li><a href="#ссылки-и-изображения" id="toc-ссылки-и-изображения" class="nav-link" data-scroll-target="#ссылки-и-изображения"><span class="header-section-number">2.5</span> Ссылки и Изображения</a></li>
+  <li><a href="#перекрестные-ссылки" id="toc-перекрестные-ссылки" class="nav-link" data-scroll-target="#перекрестные-ссылки"><span class="header-section-number">2.6</span> Перекрестные ссылки</a>
   <ul class="collapse">
-  <li><a href="#caption-and-alt-text" id="toc-caption-and-alt-text" class="nav-link" data-scroll-target="#caption-and-alt-text"><span class="header-section-number">2.6.1</span> Caption and Alt Text</a></li>
+  <li><a href="#размещение-и-подзаголовки-рисунков" id="toc-размещение-и-подзаголовки-рисунков" class="nav-link" data-scroll-target="#размещение-и-подзаголовки-рисунков"><span class="header-section-number">2.6.1</span> Размещение и подзаголовки рисунков</a></li>
   </ul></li>
-  <li><a href="#форматирование-текста" id="toc-форматирование-текста" class="nav-link" data-scroll-target="#форматирование-текста"><span class="header-section-number">2.7</span> Форматирование текста</a></li>
-  <li><a href="#заголовки" id="toc-заголовки" class="nav-link" data-scroll-target="#заголовки"><span class="header-section-number">2.8</span> Заголовки</a></li>
-  <li><a href="#ссылки-и-изображения" id="toc-ссылки-и-изображения" class="nav-link" data-scroll-target="#ссылки-и-изображения"><span class="header-section-number">2.10</span> Ссылки и Изображения</a></li>
-  <li><a href="#cross-references" id="toc-cross-references" class="nav-link" data-scroll-target="#cross-references"><span class="header-section-number">2.11</span> Cross References</a>
+  <li><a href="#списки" id="toc-списки" class="nav-link" data-scroll-target="#списки"><span class="header-section-number">2.7</span> Списки</a>
   <ul class="collapse">
-  <li><a href="#layout" id="toc-layout" class="nav-link" data-scroll-target="#layout"><span class="header-section-number">2.11.1</span> Layout</a></li>
-  <li><a href="#subcaptions" id="toc-subcaptions" class="nav-link" data-scroll-target="#subcaptions"><span class="header-section-number">2.11.2</span> Subcaptions</a></li>
+  <li><a href="#блочное-размещение" id="toc-блочное-размещение" class="nav-link" data-scroll-target="#блочное-размещение"><span class="header-section-number">2.7.1</span> Блочное размещение</a></li>
   </ul></li>
-  <li><a href="#списки" id="toc-списки" class="nav-link" data-scroll-target="#списки"><span class="header-section-number">2.12</span> Списки</a>
+  <li><a href="#таблицы" id="toc-таблицы" class="nav-link" data-scroll-target="#таблицы"><span class="header-section-number">2.8</span> Таблицы</a>
   <ul class="collapse">
-  <li><a href="#block-layout" id="toc-block-layout" class="nav-link" data-scroll-target="#block-layout"><span class="header-section-number">2.12.1</span> Block Layout</a></li>
+  <li><a href="#простые-таблицы" id="toc-простые-таблицы" class="nav-link" data-scroll-target="#простые-таблицы"><span class="header-section-number">2.8.1</span> Простые таблицы</a></li>
+  <li><a href="#расширенные-таблицы" id="toc-расширенные-таблицы" class="nav-link" data-scroll-target="#расширенные-таблицы"><span class="header-section-number">2.8.2</span> Расширенные таблицы</a></li>
   </ul></li>
-  <li><a href="#таблицы" id="toc-таблицы" class="nav-link" data-scroll-target="#таблицы"><span class="header-section-number">2.13</span> Таблицы</a>
-  <ul class="collapse">
-  <li><a href="#простые-таблицы" id="toc-простые-таблицы" class="nav-link" data-scroll-target="#простые-таблицы"><span class="header-section-number">2.13.1</span> Простые таблицы</a></li>
-  <li><a href="#расширенные-таблицы-grid-tables" id="toc-расширенные-таблицы-grid-tables" class="nav-link" data-scroll-target="#расширенные-таблицы-grid-tables"><span class="header-section-number">2.13.2</span> Расширенные таблицы (grid tables)</a></li>
-  </ul></li>
-  <li><a href="#формулы" id="toc-формулы" class="nav-link" data-scroll-target="#формулы"><span class="header-section-number">2.14</span> Формулы</a></li>
-  <li><a href="#диаграммы" id="toc-диаграммы" class="nav-link" data-scroll-target="#диаграммы"><span class="header-section-number">2.15</span> Диаграммы</a></li>
-  <li><a href="#цитаты" id="toc-цитаты" class="nav-link" data-scroll-target="#цитаты"><span class="header-section-number">2.16</span> Цитаты</a></li>
-  <li><a href="#специальные-символы" id="toc-специальные-символы" class="nav-link" data-scroll-target="#специальные-символы"><span class="header-section-number">2.17</span> Специальные символы</a></li>
+  <li><a href="#формулы" id="toc-формулы" class="nav-link" data-scroll-target="#формулы"><span class="header-section-number">2.9</span> Формулы</a></li>
+  <li><a href="#диаграммы" id="toc-диаграммы" class="nav-link" data-scroll-target="#диаграммы"><span class="header-section-number">2.10</span> Диаграммы</a></li>
+  <li><a href="#цитаты" id="toc-цитаты" class="nav-link" data-scroll-target="#цитаты"><span class="header-section-number">2.11</span> Цитаты</a></li>
+  <li><a href="#специальные-символы" id="toc-специальные-символы" class="nav-link" data-scroll-target="#специальные-символы"><span class="header-section-number">2.12</span> Специальные символы</a></li>
   </ul>
 </nav>
     </div>
@@ -315,133 +331,185 @@ window.Quarto = {
 <p>Рассмотрим наиболее часто встречаемые примитивы разметки</p>
 <section id="блоки-кода" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="блоки-кода"><span class="header-section-number">2.1</span> Блоки кода</h2>
-<p>Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <a href="https://quarto.org" class="uri">https://quarto.org</a>.</p>
-<p>Code blocks that use braces around the language name (e.g.&nbsp;<code>```{r}</code>) are executable, and will be run by Quarto during render. Here is a simple example:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## Air Quality</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>@fig-airquality further explores the impact of temperature on ozone level.</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-airquality</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Temperature and ozone level."</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="in">library(ggplot2)</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(airquality, aes(Temp, Ozone)) + </span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_point() + </span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_smooth(method = "loess")</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You’ll note that there are some special comments at the top of the code block. These are cell level options that make the figure <a href="../docs/authoring/cross-references.qmd">cross-referenceable</a>.</p>
-<p>This document results in the following rendered output:</p>
-<p><img src="../images/hello-knitr.png" class="border img-fluid" alt="Example output with title (ggplot2 demo), author (Norah Jones), and date (5/22/2021). Below is a header reading Air Quality followed by body text (Figure 1 further explores the impact of temperature on ozone level.) with a toggleable code field, and figure with caption that reads Figure 1 Temperature and ozone level."></p>
-<p>You can produce a wide variety of output types from executable code blocks, including plots, tabular output from data frames, and plain text output (e.g.&nbsp;printing the results of statistical summaries).</p>
-<p>There are many options which control the behavior of code execution and output, you can read more about them in the article on <a href="execution-options.qmd">Execution Options</a>.</p>
-<p>In addition to code blocks which interrupt the flow of markdown, you can also include code inline. Read more about inline code in the <a href="inline-code.qmd">Inline Code</a> article.</p>
-<p>Code blocks that use braces around the language name (e.g.&nbsp;<code>```{python}</code>) are executable, and will be run by Quarto during render. Here is a simple example:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "matplotlib demo"</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="an">jupyter:</span><span class="co"> python3</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>For a demonstration of a line plot on a polar axis, see @fig-polar.</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-polar</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "A line plot on a polar axis"</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="in">import numpy as np</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="in">import matplotlib.pyplot as plt</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="in">r = np.arange(0, 2, 0.01)</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="in">theta = 2 * np.pi * r</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="in">fig, ax = plt.subplots(</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="in">  subplot_kw = {'projection': 'polar'} </span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="in">)</span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="in">ax.plot(theta, r)</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="in">ax.set_rticks([0.5, 1, 1.5, 2])</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="in">ax.grid(True)</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="in">plt.show()</span></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You’ll note that there are some special comments at the top of the code block. These are cell level options that make the figure <a href="../docs/authoring/cross-references.qmd">cross-referenceable</a>.</p>
-<p>This document would result in the following rendered output:</p>
-<p><img src="../images/hello-jupyter.png" class="border img-fluid" alt="Example output where header reads: matplotlib demo, the body reads: For a demonstration of a line plot on a polar axis, see Figure 1. Below the body text is a toggleable field to reveal the code, and the Figure 1 image with a caption that reads: Figure 1: A line plot on a polar axis."></p>
-<p>You can produce a wide variety of output types from executable code blocks, including plots, tabular output from data frames, and plain text output (e.g.&nbsp;printing the results of statistical summaries).</p>
-</section>
-<section id="inline-code" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="inline-code"><span class="header-section-number">2.2</span> Inline code</h2>
-<p>Inline code allows you to execute code within markdown, e.g.&nbsp;to automatically use the most up-to-date computations in narrative. Quarto provides an inline code syntax that works across all three engines (Jupyter, Knitr and OJS).</p>
-<p>The syntax for inline code is similar to code blocks, except you use a single tick (<code>`</code>) rather than triple ticks (<code>```</code>), and you can use it in the middle of markdown. For example, the following code stores the variable <code>radius</code> in a code block and then accesses it in a sentence using inline code:</p>
+<p>Quarto позволяет объеденить исполняемый код и сопутсвующее описание в готовый документ. Чтобы узнать больше о Quarto, посетите <a href="https://quarto.org" class="uri">https://quarto.org</a>. Блоки кода, которые используют фигурные скобки вокруг имени языка (например, <code>```{r}</code>), являются исполняемыми и будут запущены Quarto во время рендеринга</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Качество воздуха</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>@fig-airquality более подробно изучает влияние температуры на уровень озона.</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-airquality</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Температура и уровень озона."</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="in">library(ggplot2)</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(airquality, aes(Temp, Ozone)) + </span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_point() + </span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_smooth(method = "loess")</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>В результате получим следующее. <a href="#fig-airquality" class="quarto-xref">Figure&nbsp;<span>2.1</span></a> более подробно изучает влияние температуры на уровень озона.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>radius <span class="ot">&lt;-</span> <span class="dv">5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-airquality" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-airquality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="markdown_files/figure-html/fig-airquality-1.png" class="img-fluid figure-img" width="672">
 </div>
-<p>The radius of the circle is 5</p>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-airquality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: Температура и уровень озона.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Из исполняемых блоков кода можно создавать самые разные типы выходных данных, включая графики, таблицы и простой текст.</p>
+<section id="встраиваемый-код" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="встраиваемый-код"><span class="header-section-number">2.1.1</span> Встраиваемый код</h3>
+<p>Встраиваемый (Inline) код позволяет вам выполнять код в markdown, например, для автоматического использования самых последних вычислений в повествовании. Синтаксис встроенного кода похож на блоки кода, за исключением того, что используеся один тик (<code>`</code>) вместо тройных тиков (<code>```</code>). Встраиваемый код может использоваться в середине markdown. Например, следующий код сохраняет переменную <code>radius</code> в блоке кода, а затем обращается к ней в предложении с помощью встроенного кода:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="in">radius &lt;- 5</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>The radius of the circle is <span class="in">`{r} radius`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>В результате получаем:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>The radius of the circle is 5.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Встроенные выражения должны быть ограничены простыми значениями, которые предварительно вычисляются в обычных ячейках кода (а не вызовами функций, которые выполняют нетривиальную работу). Это связано с тем, что протокол, используемый для встроенных выражений, несовместим с библиотеками, использующими многопоточность.</p>
+</div>
+</div>
 </section>
-<section id="keep-inline-code-simple" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="keep-inline-code-simple"><span class="header-section-number">2.3</span> Keep Inline Code Simple</h2>
-<p>Inline expressions should be confined to simple values that you have pre-computed within normal code cells (rather than function calls that do non-trivial work). This is because the protocol used for inline expressions is not compatible with some Python libraries (especially those that use multi-threading or multi-processing).</p>
+<section id="разные-языки-в-одном-документе" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="разные-языки-в-одном-документе"><span class="header-section-number">2.1.2</span> Разные языки в одном документе</h3>
+<p>Движки рендеринга <strong>Knitr</strong> и <strong>Jupyter</strong> позволяют совмещать вычисления на разных языках в одном документе. Например:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| cache: true</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="in">plot(pressure, pch=21, col='blue', bg='lightblue')</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="markdown_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| message: false</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| error: false</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="in">#| cache: true</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="in">import matplotlib.pyplot as plt</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="in">import numpy as np</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="in"># Data for plotting</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="in">t = np.arange(0.0, 2.0, 0.01)</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="in">s = 1 + np.sin(2 * np.pi * t)</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="in">fig, ax = plt.subplots()</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="in">ax.plot(t, s)</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="in">ax.set(xlabel='time (s)', ylabel='voltage (mV)',</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a><span class="in">       title='About as simple as it gets, folks')</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="in">ax.grid()</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="in">fig.savefig("test.png")</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="in">plt.show()</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="markdown_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{julia}</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| message: false</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| error: false</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="in">#| cache: true</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="in">using Plots</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="in">x = range(0, 10, length=100);</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="in">y1 = sin.(x);</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="in">y2 = cos.(x);</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="in">plot(x, [y1 y2])</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="markdown_files/figure-html/unnamed-chunk-4-J1.png" class="img-fluid figure-img" width="300"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="using-python-and-r-together" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="using-python-and-r-together"><span class="header-section-number">2.4</span> Using python and r together</h2>
-<p>Здесь вызвать пару R команд.</p>
-<section id="rendering" class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" data-anchor-id="rendering"><span class="header-section-number">2.4.1</span> Rendering</h3>
-<p>When a Quarto document is rendered, R code blocks are automatically executed.</p>
-<p>Using the <strong>Render</strong> button in RStudio:</p>
-<p>The top section of a qmd file as displayed in RStudio. There is a toolbar right above the document containing various options, including ‘Render.’ There is a stylized, segmented blue arrow pointing at the word. По умолчанию документ qmd конвертируется в html. The <strong>Render</strong> button will render the first format listed in the document YAML. If no format is specified, then it will render to HTML.</p>
+<section id="рендеринг-и-сохранение" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="рендеринг-и-сохранение"><span class="header-section-number">2.1.3</span> Рендеринг и сохранение</h3>
+<p>При рендеринге документа Quarto блоки кода выполняются автоматически. Прямо над документом находится панель инструментов, содержащая различные параметры, включая <strong>Render</strong> (сегментированная синяя стрелка). По умолчанию документ qmd конвертируется в html.</p>
 </section>
+<section id="опции-блоков-кода" class="level3" data-number="2.1.4">
+<h3 data-number="2.1.4" class="anchored" data-anchor-id="опции-блоков-кода"><span class="header-section-number">2.1.4</span> Опции блоков кода</h3>
+<p>Задать название блока можно с помощь параметра <code>label</code>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: convert</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="in">airquality$TempC &lt;- (5 / 9) * (airquality$Temp - 32)</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Параметр <code>echo: false</code> отключает печать кода (отображается только вывод).</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">``` r</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">bill_ratio =</span> bill_depth_mm <span class="sc">/</span> bill_length_mm,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">bill_area  =</span> bill_depth_mm <span class="sc">*</span> bill_length_mm</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>Line 3  </span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>Take <span class="in">`penguins`</span>, and then,</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>Lines 4-7  </span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>add new columns for the bill ratio and bill area.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="chunk-options" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="chunk-options"><span class="header-section-number">2.5</span> Chunk Options</h2>
-<p>You can set a label for a code chunk with the <code>label</code> option:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: convert</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="in">airquality$TempC &lt;- (5 / 9) * (airquality$Temp - 32)</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The <code>echo: false</code> option disables the printing of code (only output is displayed).</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">``` r</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">bill_ratio =</span> bill_depth_mm <span class="sc">/</span> bill_length_mm,</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">bill_area  =</span> bill_depth_mm <span class="sc">*</span> bill_length_mm</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>Line 3  </span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>Take <span class="in">`penguins`</span>, and then,</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>Lines 4-7  </span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>add new columns for the bill ratio and bill area.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="output-options" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="output-options"><span class="header-section-number">2.6</span> Output Options</h2>
-<p>There are a wide variety of options available for customizing output from executed code. All of these options can be specified either globally (in the document front-matter) or per code-block. For example, here’s a modification of the Python example to specify that we don’t want to “echo” the code into the output document:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">jupyter</span><span class="kw">:</span><span class="at"> python3</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Note that we can override this option on a per code-block basis. For example:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: true</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="in">import matplotlib.pyplot as plt</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="in">plt.plot([1,2,3,4])</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="in">plt.show()</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Code block options are included in a special comment at the top of the block (lines at the top prefaced with <code>#|</code> are considered options).</p>
-<p>Options available for customizing output include:</p>
+<section id="параметры-вывода" class="level3" data-number="2.1.5">
+<h3 data-number="2.1.5" class="anchored" data-anchor-id="параметры-вывода"><span class="header-section-number">2.1.5</span> Параметры вывода</h3>
+<p>Существует широкий спектр опций для настройки вывода из выполненного кода. Все эти опции могут быть указаны либо глобально (в front-matter документа), либо для каждого блока кода. Например, вот модификация примера R, указывающая, что мы не хотим “отражать” код в выходном документе:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Параметр <code>echo</code> может быть переопределен для конкретно блока кода. Например:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: true</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="in">plot(cars)</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Параметры блока кода включены в специальный комментарий в верхней части блока (строки в верхней части, начинающиеся с <code>#|</code>, считаются параметрами).</p>
+<p>Наиболее распространенные параметры приведены далее:</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 5%">
-<col style="width: 94%">
+<col style="width: 9%">
+<col style="width: 90%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -452,72 +520,80 @@ window.Quarto = {
 <tbody>
 <tr class="odd">
 <td><code>eval</code></td>
-<td>Evaluate the code chunk (if <code>false</code>, just echos the code into the output).</td>
+<td>Вычислить блок (если <code>false</code>, то блок кода просто дублируется в вывод).</td>
 </tr>
 <tr class="even">
 <td><code>echo</code></td>
-<td>Include the source code in output</td>
+<td>Включить исходный код в вывод</td>
 </tr>
 <tr class="odd">
 <td><code>output</code></td>
-<td>Include the results of executing the code in the output (<code>true</code>, <code>false</code>, or <code>asis</code> to indicate that the output is raw markdown and should not have any of Quarto’s standard enclosing markdown).</td>
+<td><p>Включить результаты выполнения кода в выходные данные (<code>true</code>, <code>false</code>)</p>
+<p><code>asis</code>, чтобы указать, что выходные данные представляют собой markdown и не должны содержать расширений Quarto).</p></td>
 </tr>
 <tr class="even">
 <td><code>warning</code></td>
-<td>Include warnings in the output.</td>
+<td>Включать предупреждения в вывод</td>
 </tr>
 <tr class="odd">
 <td><code>error</code></td>
-<td>Include errors in the output (note that this implies that errors executing code will not halt processing of the document).</td>
+<td>Включать ошибки в вывод (это подразумевает, что ошибки выполнения кода не остановят обработку документа).</td>
 </tr>
 </tbody>
 </table>
-<p>Here’s a Knitr example with some of these additional options included:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Knitr Document"</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: false</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>::: {.cell}</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="in">```{.r .cell-code}</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="in">library(ggplot2)</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(airquality, aes(Temp, Ozone)) + </span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_point() + </span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_smooth(method = "loess", se = FALSE)</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>::: {.cell-output-display}</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="al">![](markdown_files/figure-html/unnamed-chunk-2-1.png)</span>{width=672}</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="in">summary(airquality)</span></span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="caption-and-alt-text" class="level3" data-number="2.6.1">
-<h3 data-number="2.6.1" class="anchored" data-anchor-id="caption-and-alt-text"><span class="header-section-number">2.6.1</span> Caption and Alt Text</h3>
-<p>You can specify the caption and alt text for figures generated from code using the <code>fig-cap</code> and <code>fig-alt</code> options. For example, here we add these options to a Python code cell that creates a plot:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Polar axis plot"</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-alt: "A line plot on a polar axis"</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="in">import numpy as np</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="in">import matplotlib.pyplot as plt</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="in">r = np.arange(0, 2, 0.01)</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="in">theta = 2 * np.pi * r</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="in">fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="in">ax.plot(theta, r)</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="in">ax.set_rticks([0.5, 1, 1.5, 2])</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="in">ax.grid(True)</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="in">plt.show()</span></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Пример Knitr с некоторыми из этих дополнительных параметров:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Knitr Document"</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: false</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="in">#| warning: false</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="in">library(ggplot2)</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="in">ggplot(airquality, aes(Temp, Ozone)) + </span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_point() + </span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="in">  geom_smooth(method = "loess", se = FALSE)</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="in">summary(airquality)</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="названия-рисунков" class="level3" data-number="2.1.6">
+<h3 data-number="2.1.6" class="anchored" data-anchor-id="названия-рисунков"><span class="header-section-number">2.1.6</span> Названия рисунков</h3>
+<p>Можно указать подпись и замещающий текст для рисунков, сгенерированных из кода, используя параметры <code>fig-cap</code> и <code>fig-alt</code>. Например, здесь эти параметры добавлются в ячейку кода которая создает график:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "График в полярных координатах"</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-alt: "График линии в полярных координатах"</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| cache: true</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="in">import numpy as np</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="in">import matplotlib.pyplot as plt</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="in">r = np.arange(0, 2, 0.01)</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="in">theta = 2 * np.pi * r</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="in">fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="in">ax.plot(theta, r)</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="in">ax.set_rticks([0.5, 1, 1.5, 2])</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="in">ax.grid(True)</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="in">plt.show()</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="markdown_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" alt="График линии в полярных координатах" width="672"></p>
+<figcaption>График в полярных координатах</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 </section>
-<section id="форматирование-текста" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="форматирование-текста"><span class="header-section-number">2.7</span> Форматирование текста</h2>
+<section id="форматирование-текста" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="форматирование-текста"><span class="header-section-number">2.2</span> Форматирование текста</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -531,22 +607,22 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td><div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>*курсив*, **жирный**, ***жирный курсив***</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>*курсив*, **жирный**, ***жирный курсив***</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><em>курсив</em>, <strong>жирный</strong>, <strong><em>жирный курсив</em></strong></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>верхний индекс^2^ / subscript~2~</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>верхний индекс^2^ / subscript~2~</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td>верхний индекс<sup>2</sup> / нижний индекс<sub>2</sub></td>
 </tr>
 <tr class="odd">
-<td><div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>~~зачёркнутый~~</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>~~зачёркнутый~~</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><del>зачёркутый</del></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="заголовки" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="заголовки"><span class="header-section-number">2.8</span> Заголовки</h2>
+<section id="заголовки" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="заголовки"><span class="header-section-number">2.3</span> Заголовки</h2>
 <table class="caption-top table">
 <caption>Заголовки</caption>
 <colgroup>
@@ -561,30 +637,30 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td><div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Заголовок 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
-<td><h2 id="заголовок-2" data-number="2.9" class="anchored"><span class="header-section-number">2.9</span> Заголовок 2</h2></td>
+<td><div class="sourceCode" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Заголовок 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><h2 id="заголовок-2" data-number="2.4" class="anchored"><span class="header-section-number">2.4</span> Заголовок 2</h2></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">### Заголовок 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
-<td><h3 id="заголовок-3" data-number="2.9.1" class="anchored"><span class="header-section-number">2.9.1</span> Заголовок 3</h3></td>
+<td><div class="sourceCode" id="cb18"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">### Заголовок 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><h3 id="заголовок-3" data-number="2.4.1" class="anchored"><span class="header-section-number">2.4.1</span> Заголовок 3</h3></td>
 </tr>
 <tr class="odd">
-<td><div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Заголовок 4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
-<td><h4 id="заголовок-4" data-number="2.9.1.1" class="anchored"><span class="header-section-number">2.9.1.1</span> Заголовок 4</h4></td>
+<td><div class="sourceCode" id="cb19"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Заголовок 4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><h4 id="заголовок-4" data-number="2.4.1.1" class="anchored"><span class="header-section-number">2.4.1.1</span> Заголовок 4</h4></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Заголовок 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
-<td><h5 id="заголовок-5" data-number="2.9.1.1.1" class="anchored"><span class="header-section-number">2.9.1.1.1</span> Заголовок 5</h5></td>
+<td><div class="sourceCode" id="cb20"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Заголовок 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><h5 id="заголовок-5" data-number="2.4.1.1.1" class="anchored"><span class="header-section-number">2.4.1.1.1</span> Заголовок 5</h5></td>
 </tr>
 <tr class="odd">
-<td><div class="sourceCode" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">###### Заголовок 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
-<td><h6 id="заголовок-6" data-number="2.9.1.1.1.1" class="anchored"><span class="header-section-number">2.9.1.1.1.1</span> Заголовок 6</h6></td>
+<td><div class="sourceCode" id="cb21"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">###### Заголовок 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><h6 id="заголовок-6" data-number="2.4.1.1.1.1" class="anchored"><span class="header-section-number">2.4.1.1.1.1</span> Заголовок 6</h6></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="ссылки-и-изображения" class="level2" data-number="2.10">
-<h2 data-number="2.10" class="anchored" data-anchor-id="ссылки-и-изображения"><span class="header-section-number">2.10</span> Ссылки и Изображения</h2>
+<section id="ссылки-и-изображения" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="ссылки-и-изображения"><span class="header-section-number">2.5</span> Ссылки и Изображения</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -594,15 +670,15 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td><div class="sourceCode" id="cb18"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;https://rct.bsu.by&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb22"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;https://rct.bsu.by&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><a href="https://rct.bsu.by" class="uri">https://rct.bsu.by</a></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb19"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Название</span><span class="co">](https://rct.bsu.by)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb23"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Название</span><span class="co">](https://rct.bsu.by)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><a href="https://bsu.by">Наш факультет</a></td>
 </tr>
 <tr class="odd">
-<td><div class="sourceCode" id="cb20"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Название](rctbsu.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb24"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Название](rctbsu.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="rctbsu.png" class="img-fluid figure-img" width="100"></p>
@@ -611,80 +687,65 @@ window.Quarto = {
 </div></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb21"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Название](rctbsu.png)</span><span class="co">](https://rct.bsu.by)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<td><div class="sourceCode" id="cb25"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Название](rctbsu.png)</span><span class="co">](https://rct.bsu.by)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Картинка становится кликабельной при подстановке в html.</p></td>
 <td><a href="https://rct.bsu.by"><img src="rctbsu.png" class="img-fluid" width="100" alt="Наш факультет"></a></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="cross-references" class="level2" data-number="2.11">
-<h2 data-number="2.11" class="anchored" data-anchor-id="cross-references"><span class="header-section-number">2.11</span> Cross References</h2>
-<p>You can cross-reference figures by adding an ID with the <code>fig-</code> prefix to them, and then referencing the figure using the <code>@</code> prefix. For example:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="al">![An Elephant](elephant.png)</span>{#fig-elephant}</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>This is illustrated well by @fig-elephant.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For figures produced by executable code cells, include a <code>label</code> with a <code>fig-</code> prefix to make them cross-referenceable. For example:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>For a demonstration of a line plot, see @fig-cars-plot.</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-cars-plot</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Cars plot "</span></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="in">plot(cars)</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="layout" class="level3" data-number="2.11.1">
-<h3 data-number="2.11.1" class="anchored" data-anchor-id="layout"><span class="header-section-number">2.11.1</span> Layout</h3>
-<p>Note that figure layout attributes also work for figures produced by executable code blocks. Here are examples for both Jupyter and Knitr:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| layout-ncol: 2</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: </span></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="in">#|   - "Speed and Stopping Distances of Cars"</span></span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="in">#|   - "Vapor Pressure of Mercury as a Function of Temperature"</span></span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="in">plot(cars)</span></span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="in">plot(pressure)</span></span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pressure)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell quarto-layout-panel" data-layout-ncol="2">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="markdown_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Speed and Stopping Distances of Cars</figcaption>
-</figure>
+<section id="перекрестные-ссылки" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="перекрестные-ссылки"><span class="header-section-number">2.6</span> Перекрестные ссылки</h2>
+<p>Перекрестные ссылки на рисунки создаются, добавлением к ним идентификатора с префиксом <code>fig-</code>, а затем ссылаясь на рисунок с помощью префикса <code>@</code>. Например:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Грач](rctbsu.png)</span>{#fig-grach}</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>Как показано на рисунке @fig-grach.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Для рисунков, созданных блоками исполняемого кода, используется <code>label</code> с префиксом <code>fig-</code>, чтобы сделать их перекрестно-ссылочными. Например:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>Для демонстрации графика линии используется @fig-cars-plot.</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-cars-plot</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Cars plot "</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="in">plot(cars)</span></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Для демонстрации графика линии используется <a href="#fig-cars-plot" class="quarto-xref">Figure&nbsp;<span>2.2</span></a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-cars-plot</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Cars plot "</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| cache: true</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="in">plot(cars)</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-cars-plot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cars-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="markdown_files/figure-html/fig-cars-plot-3.png" class="img-fluid figure-img" width="672">
 </div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="markdown_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Vapor Pressure of Mercury as a Function of Temperature</figcaption>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cars-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: Cars plot
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
-</div>
-<p>Note that in these examples we also use the <code>fig-cap</code> option to apply a caption to each of the generated figures.</p>
-</section>
-<section id="subcaptions" class="level3" data-number="2.11.2">
-<h3 data-number="2.11.2" class="anchored" data-anchor-id="subcaptions"><span class="header-section-number">2.11.2</span> Subcaptions</h3>
-<p>You can create subcaptions for computational output by combining the <code>fig-cap</code> and <code>fig-subcap</code> options. When applying captions to computational output you can optionally include a <code>label</code> with a <code>fig-</code> prefix—if you do this then the figure will be numbered and <a href="cross-references.qmd">cross-referenceable</a>.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-charts</span></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Charts"</span></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-subcap: </span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="in">#|   - "Cars"</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="in">#|   - "Pressure"</span></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="in">#| layout-ncol: 2</span></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="in">plot(cars)</span></span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="in">plot(pressure)</span></span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars)</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pressure)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="размещение-и-подзаголовки-рисунков" class="level3" data-number="2.6.1">
+<h3 data-number="2.6.1" class="anchored" data-anchor-id="размещение-и-подзаголовки-рисунков"><span class="header-section-number">2.6.1</span> Размещение и подзаголовки рисунков</h3>
+<p>Подзаголовки для вычисляемых рисунков задаются с использованием опций <code>fig-cap</code> и <code>fig-subcap</code>. Если использовать параметр <code>label</code> с префиксом <code>fig-</code> то рисунок будет пронумерован и [перекрестно-ссылаемым].</p>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| label: fig-charts</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-cap: "Charts"</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="in">#| fig-subcap: </span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="in">#|   - "Cars"</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="in">#|   - "Pressure"</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="in">#| layout-ncol: 2</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="in">#| cache: true</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="in">plot(cars)</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="in">plot(pressure)</span></span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig-charts" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-charts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -716,7 +777,7 @@ window.Quarto = {
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-charts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.1: Charts
+Figure&nbsp;2.3: Charts
 </figcaption>
 </figure>
 </div>
@@ -730,13 +791,13 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Опять только при подстановке в html</p>
+<p>Рисунки будут размещены в две колонки только при конвертации в <code>html</code></p>
 </div>
 </div>
 </section>
 </section>
-<section id="списки" class="level2" data-number="2.12">
-<h2 data-number="2.12" class="anchored" data-anchor-id="списки"><span class="header-section-number">2.12</span> Списки</h2>
+<section id="списки" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="списки"><span class="header-section-number">2.7</span> Списки</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 45%">
@@ -750,10 +811,10 @@ Note
 </thead>
 <tbody>
 <tr class="odd">
-<td><div class="sourceCode" id="cb28"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>маркированный список</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="ss">    + </span>пункт 1</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="ss">    + </span>пункт 2</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="ss">        - </span>подпункт 1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb30"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>маркированный список</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="ss">    + </span>пункт 1</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="ss">    + </span>пункт 2</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="ss">        - </span>подпункт 1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><ul>
 <li>маркированный список
 <ul>
@@ -766,10 +827,10 @@ Note
 </ul></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb29"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>нумерованный список</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>пункт 2</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    i) подпункт 1</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>         A.  вложение 1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb31"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>нумерованный список</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>пункт 2</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    i) подпункт 1</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>         A.  вложение 1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><ol type="1">
 <li>ordered list</li>
 <li>item 2
@@ -782,19 +843,19 @@ Note
 </ol></td>
 </tr>
 <tr class="odd">
-<td><div class="sourceCode" id="cb30"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Задача 1</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[x]</span> Задача 2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb32"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Задача 1</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[x]</span> Задача 2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><ul class="task-list">
 <li><label><input type="checkbox">Задача 1</label></li>
 <li><label><input type="checkbox" checked="">Задача 2</label></li>
 </ul></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb31"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>(@)  Сквозная нумерация списка</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>продолжается после</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>(@)  прерывания</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb33"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>(@)  Сквозная нумерация списка</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>продолжается после</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>(@)  прерывания</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><ol type="1">
 <li>Сквозная нумерация списка</li>
 </ol>
@@ -804,8 +865,8 @@ Note
 </ol></td>
 </tr>
 <tr class="odd">
-<td><div class="sourceCode" id="cb32"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>термин</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>: его определение</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb34"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>термин</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>: его определение</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><dl>
 <dt>термин</dt>
 <dd>
@@ -815,37 +876,37 @@ Note
 </tr>
 </tbody>
 </table>
-<section id="block-layout" class="level3" data-number="2.12.1">
-<h3 data-number="2.12.1" class="anchored" data-anchor-id="block-layout"><span class="header-section-number">2.12.1</span> Block Layout</h3>
-<p>While the examples above illustrate laying out figures, it’s important to note that layout attributes can be used to layout any sort of block content. For example, here we layout 2 lists side-by-side:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>::: {layout-ncol=2}</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">### List One</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item A</span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item B</span>
-<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item C</span>
-<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="fu">### List Two</span></span>
-<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-10"><a href="#cb33-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item X</span>
-<span id="cb33-11"><a href="#cb33-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item Y</span>
-<span id="cb33-12"><a href="#cb33-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item Z</span>
-<span id="cb33-13"><a href="#cb33-13" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="блочное-размещение" class="level3" data-number="2.7.1">
+<h3 data-number="2.7.1" class="anchored" data-anchor-id="блочное-размещение"><span class="header-section-number">2.7.1</span> Блочное размещение</h3>
+<p>Например, например мы можем разместиить 2 списка рядом:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>::: {layout-ncol=2}</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">### List One</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item A</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item B</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item C</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="fu">### List Two</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item X</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item Y</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item Z</span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div>
 
 </div>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
-<section id="первый-списко" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;" data-number="2.12.1.1">
-<h4 data-number="2.12.1.1" class="anchored" data-anchor-id="первый-списко"><span class="header-section-number">2.12.1.1</span> Первый списко</h4>
+<section id="первый-списко" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;" data-number="2.7.1.1">
+<h4 data-number="2.7.1.1" class="anchored" data-anchor-id="первый-списко"><span class="header-section-number">2.7.1.1</span> Первый списко</h4>
 <ul>
 <li>Элемент A</li>
 <li>Элемент B</li>
 <li>Элемент C</li>
 </ul>
 </section>
-<section id="второй-список" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;" data-number="2.12.1.2">
-<h4 data-number="2.12.1.2" class="anchored" data-anchor-id="второй-список"><span class="header-section-number">2.12.1.2</span> Второй список</h4>
+<section id="второй-список" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;" data-number="2.7.1.2">
+<h4 data-number="2.7.1.2" class="anchored" data-anchor-id="второй-список"><span class="header-section-number">2.7.1.2</span> Второй список</h4>
 <ul>
 <li>Элемент X</li>
 <li>Элемент Y</li>
@@ -864,27 +925,27 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Только при конвертации в html</p>
+<p>Списки будут размещены в две колонки только при конвертации в <code>html</code></p>
 </div>
 </div>
 </section>
 </section>
-<section id="таблицы" class="level2" data-number="2.13">
-<h2 data-number="2.13" class="anchored" data-anchor-id="таблицы"><span class="header-section-number">2.13</span> Таблицы</h2>
-<section id="простые-таблицы" class="level3" data-number="2.13.1">
-<h3 data-number="2.13.1" class="anchored" data-anchor-id="простые-таблицы"><span class="header-section-number">2.13.1</span> Простые таблицы</h3>
+<section id="таблицы" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="таблицы"><span class="header-section-number">2.8</span> Таблицы</h2>
+<section id="простые-таблицы" class="level3" data-number="2.8.1">
+<h3 data-number="2.8.1" class="anchored" data-anchor-id="простые-таблицы"><span class="header-section-number">2.8.1</span> Простые таблицы</h3>
 <p>В обычных таблицах могут содержаться только элементы представленные простым текстом.</p>
-<section id="разметка-markdown" class="level4" data-number="2.13.1.1">
-<h4 data-number="2.13.1.1" class="anchored" data-anchor-id="разметка-markdown"><span class="header-section-number">2.13.1.1</span> Разметка Markdown</h4>
+<section id="разметка-markdown" class="level4" data-number="2.8.1.1">
+<h4 data-number="2.8.1.1" class="anchored" data-anchor-id="разметка-markdown"><span class="header-section-number">2.8.1.1</span> Разметка Markdown</h4>
 <p>Выравнивание по</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>| Правому краю | Левому краю | Умолчанию | Центру |</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>|-------------:|:------------|-----------|:------:|</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>|           12 | 12          | 12        |   12   |</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>|          123 | 123         | 123       |  123   |</span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>|            1 | 1           | 1         |   1    |</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>| Правому краю | Левому краю | Умолчанию | Центру |</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>|-------------:|:------------|-----------|:------:|</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>|           12 | 12          | 12        |   12   |</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>|          123 | 123         | 123       |  123   |</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>|            1 | 1           | 1         |   1    |</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="результат" class="level4" data-number="2.13.1.2">
-<h4 data-number="2.13.1.2" class="anchored" data-anchor-id="результат"><span class="header-section-number">2.13.1.2</span> Результат</h4>
+<section id="результат" class="level4" data-number="2.8.1.2">
+<h4 data-number="2.8.1.2" class="anchored" data-anchor-id="результат"><span class="header-section-number">2.8.1.2</span> Результат</h4>
 <p>Выравнивание по</p>
 <table class="caption-top table">
 <thead>
@@ -918,31 +979,31 @@ Note
 </table>
 </section>
 </section>
-<section id="расширенные-таблицы-grid-tables" class="level3" data-number="2.13.2">
-<h3 data-number="2.13.2" class="anchored" data-anchor-id="расширенные-таблицы-grid-tables"><span class="header-section-number">2.13.2</span> Расширенные таблицы (grid tables)</h3>
-<p>Grid tables are a more advanced type of markdown tables that allow arbitrary block elements (multiple paragraphs, code blocks, lists, etc.). For example: The row of =s separates the header from the table body, and can be omitted for a headerless table. The cells of grid tables may contain arbitrary block elements (multiple paragraphs, code blocks, lists, etc.)</p>
-<p>Alignments can be specified as with pipe tables, by putting colons at the boundaries of the separator line after the header:</p>
-<section id="разметка-markdown-1" class="level4" data-number="2.13.2.1">
-<h4 data-number="2.13.2.1" class="anchored" data-anchor-id="разметка-markdown-1"><span class="header-section-number">2.13.2.1</span> Разметка Markdown</h4>
-<div class="sourceCode" id="cb35"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>+-----------+-----------+--------------------+</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>| Fruit     | Price     | Advantages         |</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>+===========+===========+====================+</span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>| Bananas   | $1.34     | - built-in wrapper |</span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>|           |           | - bright color     |</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>+-----------+-----------+--------------------+</span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>| Oranges   | $2.10     | - cures scurvy     |</span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>|           |           | - tasty            |</span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>+-----------+-----------+--------------------+</span>
-<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>: Пример расширенной таблицы</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="расширенные-таблицы" class="level3" data-number="2.8.2">
+<h3 data-number="2.8.2" class="anchored" data-anchor-id="расширенные-таблицы"><span class="header-section-number">2.8.2</span> Расширенные таблицы</h3>
+<p>Расширенные таблицы (grid tables) — это более продвинутый тип таблиц разметки, которые допускают произвольные блочные элементы (несколько абзацев, блоков кода, списков и т. д.). Например: строка =s отделяет заголовок от тела таблицы и может быть опущена для таблицы без заголовка. Ячейки таблиц сетки могут содержать произвольные блочные элементы (несколько абзацев, блоков кода, списков и т. д.)</p>
+<p>Выравнивания можно указывать так же, как и в случае с таблицами конвейера, помещая двоеточия на границах разделительной линии после заголовка.</p>
+<section id="разметка-markdown-1" class="level4" data-number="2.8.2.1">
+<h4 data-number="2.8.2.1" class="anchored" data-anchor-id="разметка-markdown-1"><span class="header-section-number">2.8.2.1</span> Разметка Markdown</h4>
+<div class="sourceCode" id="cb37"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>+-----------+-----------+--------------------+</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>| Fruit     | Price     | Advantages         |</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>+===========+===========+====================+</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>| Bananas   | $1.34     | - built-in wrapper |</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>|           |           | - bright color     |</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>+-----------+-----------+--------------------+</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>| Oranges   | $2.10     | - cures scurvy     |</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>|           |           | - tasty            |</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>+-----------+-----------+--------------------+</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>: Пример расширенной таблицы</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="результат-1" class="level4" data-number="2.13.2.2">
-<h4 data-number="2.13.2.2" class="anchored" data-anchor-id="результат-1"><span class="header-section-number">2.13.2.2</span> Результат</h4>
+<section id="результат-1" class="level4" data-number="2.8.2.2">
+<h4 data-number="2.8.2.2" class="anchored" data-anchor-id="результат-1"><span class="header-section-number">2.8.2.2</span> Результат</h4>
 <table class="caption-top table">
 <caption>Пример расширенной таблицы</caption>
 <colgroup>
-<col style="width: 18%">
-<col style="width: 18%">
+<col style="width: 20%">
+<col style="width: 20%">
 <col style="width: 31%">
 </colgroup>
 <thead>
@@ -974,8 +1035,8 @@ Note
 </section>
 </section>
 </section>
-<section id="формулы" class="level2" data-number="2.14">
-<h2 data-number="2.14" class="anchored" data-anchor-id="формулы"><span class="header-section-number">2.14</span> Формулы</h2>
+<section id="формулы" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="формулы"><span class="header-section-number">2.9</span> Формулы</h2>
 <p>Для вставки формулы в текст используется <code>$</code>. Для выделения отдельным блоком используется <code>$$</code>. Например:</p>
 <table class="caption-top table">
 <caption>Формулы</caption>
@@ -991,32 +1052,31 @@ Note
 </thead>
 <tbody>
 <tr class="odd">
-<td><div class="sourceCode" id="cb36"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>формула в тексте: $E = mc^{2}$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
-<td>формула в тексте: <span class="math inline">\(E=mc^{2}\)</span></td>
+<td><div class="sourceCode" id="cb38"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>формула в тексте: $E = mc^{2}$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td>формула в тексте: <span class="math inline">E=mc^{2}</span></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb37"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>отдельный блок формул:</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>$$E = mc^{2}$$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb39"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>отдельный блок формул:</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>$$E = mc^{2}$$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><p>отдельный блок формул:</p>
-<p><span class="math display">\[E = mc^{2}\]</span></p></td>
+<p><span class="math display">E = mc^{2}</span></p></td>
 </tr>
 </tbody>
 </table>
 <p>Перекрёстная ссылка на LaTeX</p>
 </section>
-<section id="диаграммы" class="level2" data-number="2.15">
-<h2 data-number="2.15" class="anchored" data-anchor-id="диаграммы"><span class="header-section-number">2.15</span> Диаграммы</h2>
-<p>Quarto has native support for embedding <a href="https://mermaid-js.github.io/mermaid/#/">Mermaid</a> and <a href="https://graphviz.org/">Graphviz</a> diagrams. This enables you to create flowcharts, sequence diagrams, state diagrams, Gantt charts, and more using a plain text syntax inspired by markdown.</p>
-<p>For example, here we embed a flowchart created using Mermaid:</p>
+<section id="диаграммы" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="диаграммы"><span class="header-section-number">2.10</span> Диаграммы</h2>
+<p>Quarto имеет встроенную поддержку для диаграмм <a href="https://mermaid-js.github.io/mermaid/#/">Mermaid</a> и <a href="https://graphviz.org/">Graphviz</a>. Mermaid – это инструмент для создания диаграмм и графиков на основе Javascript, который использует определения текста, вдохновленные Markdown, и рендерер для создания и изменения сложных диаграмм.</p>
 <div class="cell" data-layout-align="default">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="in">flowchart LR</span></span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="in">  A[Hard edge] --&gt; B(Round edge)</span></span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="in">  B --&gt; C{Decision}</span></span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="in">  C --&gt; D[Result one]</span></span>
-<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="in">  C --&gt; E[Result two]</span></span>
-<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="in">flowchart LR</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="in">  A[Hard edge] --&gt; B(Round edge)</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="in">  B --&gt; C{Decision}</span></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="in">  C --&gt; D[Result one]</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="in">  C --&gt; E[Result two]</span></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <p></p><figure class="figure"><p></p>
@@ -1032,44 +1092,16 @@ Note
 </div>
 </div>
 </div>
-<p>Quarto has native support for embedding <a href="https://mermaid-js.github.io/mermaid/#/">Mermaid</a> and <a href="https://graphviz.org/">Graphviz</a> diagrams. This enables you to create flowcharts, sequence diagrams, state diagrams, gantt charts, and more using a plain text syntax inspired by markdown.</p>
-<p>For example, here we embed a flowchart created using Mermaid:</p>
-<div class="cell" data-layout-align="default">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="in">flowchart LR</span></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="in">  A[Hard edge] --&gt; B(Round edge)</span></span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="in">  B --&gt; C{Decision}</span></span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="in">  C --&gt; D[Result one]</span></span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="in">  C --&gt; E[Result two]</span></span>
-<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-  A[Hard edge] --&gt; B(Round edge)
-  B --&gt; C{Decision}
-  C --&gt; D[Result one]
-  C --&gt; E[Result two]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<p>As illustrated above, Mermaid diagrams are embedded using <code>{mermaid}</code> executable cells. Graphviz diagrams are embedded using <code>{dot}</code> executable cells. Note that cell options are added with slightly different syntax: <code>%%|</code> for <code>{mermaid}</code>, and <code>//|</code> for <code>{dot}</code>.</p>
-<p>Mermaid is a Javascript based diagramming and charting tool that uses Markdown-inspired text definitions and a renderer to create and modify complex diagrams. Mermaid diagrams use <code>%%</code> as their comment syntax, and so cell options are declared using <code>%%|</code>. Cell options <strong>must</strong> be included directly beneath the start of the diagram code chunk.</p>
-<p>Above we demonstrated a flowchart created with Mermaid, here is a sequence diagram (also embedded using a <code>{mermaid}</code> executable cell): To learn more about using Mermaid, see the <a href="https://mermaid-js.github.io/mermaid/">Mermaid website</a> or the <a href="https://www.amazon.com/Official-Guide-Mermaid-js-beautiful-flowcharts-dp-1801078025/dp/1801078025">Mermaid book</a> (which is written by the creator of Mermaid).</p>
 </section>
-<section id="цитаты" class="level2" data-number="2.16">
-<h2 data-number="2.16" class="anchored" data-anchor-id="цитаты"><span class="header-section-number">2.16</span> Цитаты</h2>
-<div class="sourceCode" id="cb40"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a> <span class="at">&gt; Blockquote</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="цитаты" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="цитаты"><span class="header-section-number">2.11</span> Цитаты</h2>
+<div class="sourceCode" id="cb41"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a> <span class="at">&gt; Blockquote</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <blockquote class="blockquote">
 <p>Это короткая цитата</p>
 </blockquote>
 </section>
-<section id="специальные-символы" class="level2" data-number="2.17">
-<h2 data-number="2.17" class="anchored" data-anchor-id="специальные-символы"><span class="header-section-number">2.17</span> Специальные символы</h2>
+<section id="специальные-символы" class="level2" data-number="2.12">
+<h2 data-number="2.12" class="anchored" data-anchor-id="специальные-символы"><span class="header-section-number">2.12</span> Специальные символы</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
@@ -1083,11 +1115,11 @@ Note
 </thead>
 <tbody>
 <tr class="odd">
-<td><div class="sourceCode" id="cb41"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="an">endash:</span><span class="co"> --</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb42"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="an">endash:</span><span class="co"> --</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td>endash: –</td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb42"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="an">emdash:</span><span class="co"> ---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb43"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="an">emdash:</span><span class="co"> ---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td>emdash: —</td>
 </tr>
 </tbody>
@@ -1102,7 +1134,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Символы подставляются только при конвертации в html</p>
+<p>Символы подставляются только при конвертации в <code>html</code></p>
 </div>
 </div>
 
