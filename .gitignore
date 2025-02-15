@@ -7,3 +7,6 @@
 /_site/
 /_book/
 /_freeze/
+/enviroment/markdown_cache/
+/enviroment/markdown_files/
+/enviroment/test.png

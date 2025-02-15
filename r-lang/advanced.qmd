@@ -100,7 +100,7 @@ square(3)
 
 ```{r}
 ls(environment(cube))
-get("n", environment(cube))
+get('n', environment(cube))
 ```
 
 ```{r}

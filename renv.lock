@@ -1455,6 +1455,36 @@
       "Maintainer": "Lionel Henry <lionel@posit.co>",
       "Repository": "CRAN"
     },
+    "lpSolve": {
+      "Package": "lpSolve",
+      "Version": "5.6.23",
+      "Source": "Repository",
+      "Title": "Interface to 'Lp_solve' v. 5.5 to Solve Linear/Integer Programs",
+      "Authors@R": "c( person(\"G<U+00E1>bor\", \"Cs<U+00E1>rdi\", , \"csardi.gabor@gmail.com\", role = \"cre\"), person(\"Michel\", \"Berkelaar\", role = \"aut\") )",
+      "Description": "Lp_solve is freely available (under LGPL 2) software for solving linear, integer and mixed integer programs. In this implementation we supply a \"wrapper\" function in C and some R functions that solve general linear/integer problems, assignment problems, and transportation problems. This version calls lp_solve version 5.5.",
+      "License": "LGPL-2",
+      "URL": "https://github.com/gaborcsardi/lpSolve",
+      "BugReports": "https://github.com/gaborcsardi/lpSolve/issues",
+      "Encoding": "UTF-8",
+      "NeedsCompilation": "yes",
+      "Author": "G<U+00E1>bor Cs<U+00E1>rdi [cre], Michel Berkelaar [aut]",
+      "Maintainer": "G<U+00E1>bor Cs<U+00E1>rdi <csardi.gabor@gmail.com>",
+      "Repository": "CRAN"
+    },
+    "lpSolveAPI": {
+      "Package": "lpSolveAPI",
+      "Version": "5.5.2.0-17.12",
+      "Source": "Repository",
+      "Title": "R Interface to 'lp_solve' Version 5.5.2.0",
+      "Author": "lp_solve <https://lpsolve.sourceforge.net/> [aut], Kjell Konis [aut], Florian Schwendinger [aut, cre], Kurt Hornik [ctb]",
+      "Maintainer": "Florian Schwendinger <FlorianSchwendinger@gmx.at>",
+      "Description": "The lpSolveAPI package provides an R interface to 'lp_solve', a Mixed Integer Linear Programming (MILP) solver with support for pure linear, (mixed) integer/binary, semi-continuous and special ordered sets (SOS) models.",
+      "License": "LGPL-2",
+      "RoxygenNote": "7.2.0",
+      "NeedsCompilation": "yes",
+      "Repository": "CRAN",
+      "Encoding": "UTF-8"
+    },
     "magrittr": {
       "Package": "magrittr",
       "Version": "2.0.3",
@@ -2562,6 +2592,41 @@
       "RoxygenNote": "7.2.3",
       "NeedsCompilation": "no",
       "Author": "Simon Garnier [aut, cre], Noam Ross [ctb, cph], Bob Rudis [ctb, cph], Marco Sciaini [ctb, cph], Ant<U+00F4>nio Pedro Camargo [ctb, cph], C<U+00E9>dric Scherer [ctb, cph]",
+      "Repository": "CRAN"
+    },
+    "widgetframe": {
+      "Package": "widgetframe",
+      "Version": "0.3.1",
+      "Source": "Repository",
+      "Type": "Package",
+      "Title": "'Htmlwidgets' in Responsive 'iframes'",
+      "Authors@R": "c( person(\"Bhaskar\", \"Karambelkar\", email = \"bhaskarvk@gmail.com\", role = c(\"aut\", \"cre\")), person(\"Yihui\", \"Xie\", role = c(\"ctb\")), person(\"NPR Visual Team\", role = c(\"ctb\", \"cph\"), comment = \"pym.js JavaScript library\"), person(\"Bj<U+00F8>rn Klinggaard\", role = c(\"ctb\", \"cph\"), comment = \"bLazy.js JavaScript library\") )",
+      "Description": "Provides two functions 'frameableWidget()', and 'frameWidget()'. The 'frameableWidget()' is used to add extra code to a 'htmlwidget' which allows is to be rendered correctly inside a responsive 'iframe'. The 'frameWidget()' is a 'htmlwidget' which displays content of another 'htmlwidget' inside a responsive 'iframe'. These functions allow for easier embedding of 'htmlwidgets' in content management systems such as 'wordpress', 'blogger' etc. They also allow for separation of widget content from main HTML content where CSS of the main HTML could interfere with the widget.",
+      "License": "MIT + file LICENSE",
+      "Encoding": "UTF-8",
+      "LazyData": "true",
+      "Depends": [
+        "R (>= 3.1.0)",
+        "htmlwidgets"
+      ],
+      "Imports": [
+        "htmltools",
+        "purrr",
+        "magrittr",
+        "utils",
+        "tools"
+      ],
+      "RoxygenNote": "6.0.1",
+      "URL": "https://github.com/bhaskarvk/widgetframe, https://bhaskarvk.github.io/widgetframe/",
+      "BugReports": "https://github.com/bhaskarvk/widgetframe/issues",
+      "Suggests": [
+        "knitr",
+        "rmarkdown"
+      ],
+      "VignetteBuilder": "knitr",
+      "NeedsCompilation": "no",
+      "Author": "Bhaskar Karambelkar [aut, cre], Yihui Xie [ctb], NPR Visual Team [ctb, cph] (pym.js JavaScript library), Bj<U+00F8>rn Klinggaard [ctb, cph] (bLazy.js JavaScript library)",
+      "Maintainer": "Bhaskar Karambelkar <bhaskarvk@gmail.com>",
       "Repository": "CRAN"
     },
     "withr": {

@@ -13,11 +13,12 @@ book:
     - enviroment/latex.qmd
     - r-lang/basic.qmd
     - r-lang/advanced.qmd
-    - r-tools/figure-plot.qmd
     - linear/linear-algebra.qmd
-    - linear/linear-intro.qmd
+    - linear/intro.qmd
     - lab1/intro.qmd
     - lab2/linear.qmd
+    - r-tools/figure-plot.qmd
+    - r-tools/linear.qmd
 
 bibliography: references.bib
 
@@ -26,5 +27,6 @@ freeze: auto
 format:
   html:
     theme: cosmo
+    html-math-method: katex
 
 editor: visual
