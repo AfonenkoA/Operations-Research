@@ -3,10 +3,12 @@
 .RData
 .Ruserdata
 
+.quarto/
+_site/
+_book/
+_freeze/
+*_cache/
+*_files/
+*figure/
+
 /.quarto/
-/_site/
-/_book/
-/_freeze/
-/enviroment/markdown_cache/
-/enviroment/markdown_files/
-/enviroment/test.png
