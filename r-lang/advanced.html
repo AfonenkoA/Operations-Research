@@ -223,10 +223,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#встроенные-константы" id="toc-встроенные-константы" class="nav-link active" data-scroll-target="#встроенные-константы"><span class="header-section-number">5.1</span> Встроенные константы</a></li>
-  <li><a href="#атрибуты-объектов" id="toc-атрибуты-объектов" class="nav-link" data-scroll-target="#атрибуты-объектов"><span class="header-section-number">5.2</span> Атрибуты объектов</a></li>
-  <li><a href="#векторизированные-вычисления" id="toc-векторизированные-вычисления" class="nav-link" data-scroll-target="#векторизированные-вычисления"><span class="header-section-number">5.3</span> Векторизированные вычисления</a></li>
-  <li><a href="#правила-видимости-свободных-переменных-scoping-rules" id="toc-правила-видимости-свободных-переменных-scoping-rules" class="nav-link" data-scroll-target="#правила-видимости-свободных-переменных-scoping-rules"><span class="header-section-number">5.4</span> Правила видимости свободных переменных (Scoping rules)</a></li>
-  <li><a href="#scoping-rules" id="toc-scoping-rules" class="nav-link" data-scroll-target="#scoping-rules"><span class="header-section-number">5.5</span> Scoping rules</a></li>
+  <li><a href="#пропущенные-значения" id="toc-пропущенные-значения" class="nav-link" data-scroll-target="#пропущенные-значения"><span class="header-section-number">5.2</span> Пропущенные значения</a></li>
+  <li><a href="#имена" id="toc-имена" class="nav-link" data-scroll-target="#имена"><span class="header-section-number">5.3</span> Имена</a></li>
+  <li><a href="#атрибуты-объектов" id="toc-атрибуты-объектов" class="nav-link" data-scroll-target="#атрибуты-объектов"><span class="header-section-number">5.4</span> Атрибуты объектов</a></li>
+  <li><a href="#векторизированные-вычисления" id="toc-векторизированные-вычисления" class="nav-link" data-scroll-target="#векторизированные-вычисления"><span class="header-section-number">5.5</span> Векторизированные вычисления</a></li>
+  <li><a href="#правила-видимости-свободных-переменных-scoping-rules" id="toc-правила-видимости-свободных-переменных-scoping-rules" class="nav-link" data-scroll-target="#правила-видимости-свободных-переменных-scoping-rules"><span class="header-section-number">5.6</span> Правила видимости свободных переменных (Scoping rules)</a>
+  <ul class="collapse">
+  <li><a href="#сопоставление-аргументов" id="toc-сопоставление-аргументов" class="nav-link" data-scroll-target="#сопоставление-аргументов"><span class="header-section-number">5.6.1</span> Сопоставление аргументов</a></li>
+  </ul></li>
+  <li><a href="#scoping-rules" id="toc-scoping-rules" class="nav-link" data-scroll-target="#scoping-rules"><span class="header-section-number">5.7</span> Scoping rules</a></li>
+  <li><a href="#ленивые-вычисления" id="toc-ленивые-вычисления" class="nav-link" data-scroll-target="#ленивые-вычисления"><span class="header-section-number">5.8</span> Ленивые вычисления</a></li>
   </ul>
 </nav>
     </div>
@@ -252,6 +258,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p>При объединении объектов разных типов в вектор, они приводятся к более широкому (implicit coercion)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "logical"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">c</span>(<span class="dv">1</span>L, <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "integer"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">c</span>(<span class="dv">1</span>L, <span class="dv">2</span>L))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "integer"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">c</span>(<span class="dv">1</span>L, <span class="fl">2.5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">c</span>(<span class="dv">1</span>L, <span class="fl">2.5</span>, <span class="fl">2.5</span><span class="sc">+</span><span class="dv">1</span>i))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "complex"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">c</span>(<span class="dv">1</span>L, <span class="dv">2</span>L, <span class="fl">2.5</span><span class="sc">+</span><span class="dv">1</span>i, <span class="st">"12"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+</div>
 <section id="встроенные-константы" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="встроенные-константы"><span class="header-section-number">5.1</span> Встроенные константы</h2>
 <p>В R зарезервирован набор специальных констант:</p>
@@ -263,14 +296,67 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>pi</strong> – <em>3.141593</em></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pi<span class="sc">/</span><span class="cn">Inf</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>pi<span class="sc">/</span><span class="cn">Inf</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0</code></pre>
 </div>
 </div>
 </section>
-<section id="атрибуты-объектов" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="атрибуты-объектов"><span class="header-section-number">5.2</span> Атрибуты объектов</h2>
+<section id="пропущенные-значения" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="пропущенные-значения"><span class="header-section-number">5.2</span> Пропущенные значения</h2>
+<p><strong>NA</strong>, <strong>NaN</strong> – используются для работы с пропущенными значениями. <strong>is.na</strong> – функция для проверки наличия в векторе элементов с пропущенными значениями типа <strong>NA</strong>. <strong>NA</strong> может иметь тип <em>integer</em>, <em>numeric</em>, <em>character</em>. <strong>is.nan</strong> – функция для проверки наличия в векторе элементов с пропущенными значениями типа <strong>NaN</strong>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="cn">NaN</span>, <span class="cn">NA</span>, <span class="dv">10</span>, <span class="dv">3</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE  TRUE  TRUE FALSE FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.nan</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE  TRUE FALSE FALSE FALSE</code></pre>
+</div>
+</div>
+</section>
+<section id="имена" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="имена"><span class="header-section-number">5.3</span> Имена</h2>
+<p>Имена (Names) – используются для лучшего понимания объектов и написания программного кода. Элементы объектов могут иметь имена. <strong>names</strong> – функция для присвоения имен элементам объектов.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>NULL</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(x) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"foo"</span>, <span class="st">"bar"</span>, <span class="st">"norf"</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "foo"  "bar"  "norf"</code></pre>
+</div>
+</div>
+<p>Списки и матрицы также могут иметь имена.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list</span>(<span class="at">a =</span> <span class="dv">1</span>, <span class="at">b =</span> <span class="dv">2</span>, <span class="at">c =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$a
+[1] 1
+
+$b
+[1] 2
+
+$c
+[1] 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(m) <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>), <span class="fu">c</span>(<span class="st">"c"</span>, <span class="st">"d"</span>))</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>m</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  c d
+a 1 3
+b 2 4</code></pre>
+</div>
+</div>
+</section>
+<section id="атрибуты-объектов" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="атрибуты-объектов"><span class="header-section-number">5.4</span> Атрибуты объектов</h2>
 <p>Объекты характеризуются атрибутами которые могут быть рассмотрены, как метаданные для объектов. Не все объекты имеют атрибуты. Атрибуты используются для упрощения понимания и описания объектов. Примеры атрибутов объектов:</p>
 <ul>
 <li>names, dimnames</li>
@@ -280,15 +366,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>прочие, определенные пользователем, атрибуты (metadata) Для доступа к атрибутам объекта используется функция <strong>attributes</strong></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">pi =</span> pi)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">a =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">pi =</span> pi)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     a       pi
 [1,] 1 3.141593
 [2,] 2 3.141593
 [3,] 3 3.141593</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$dim
 [1] 3 2
@@ -302,8 +388,8 @@ $dimnames[[2]]
 </div>
 </div>
 </section>
-<section id="векторизированные-вычисления" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="векторизированные-вычисления"><span class="header-section-number">5.3</span> Векторизированные вычисления</h2>
+<section id="векторизированные-вычисления" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="векторизированные-вычисления"><span class="header-section-number">5.5</span> Векторизированные вычисления</h2>
 <p>Использование операторов циклов <strong>for</strong>, <strong>while</strong> не удобно при работе в командной строке интерпретатора. В R реализованы функции, оптимизирующее циклически вычисления:<br>
 - <strong>lapply</strong> – производит циклическое вычисление некоторой функции над элементами списка. - <strong>sapply</strong> – выполняет то же что <strong>lapply</strong>, только выводит результаты в упрощенном виде. - <strong>apply</strong> – производит циклическое вычисление некоторой функции над элементами массива. - <strong>tapply</strong> – производит циклическое вычисление некоторой функции над заданным набором элементов вектора. - <strong>mapply</strong> – мультивариативная версия функции <strong>lapply</strong> (работает сразу с несколькими объектами).</p>
 <p><strong>lapply</strong> производит циклическое вычисление некоторой функции над элементами списка. <strong>lapply</strong> всегда возвращает объект класса список, несмотря на тип объекта на входе. Если объект на входе не список, то он будет преобразован с помощью функции <strong>as.list</strong>.</p>
@@ -313,91 +399,175 @@ $dimnames[[2]]
 <p><strong>mapply</strong> – мультивариативный вариант <strong>lapply</strong> и <strong>sapply</strong>, предназначенный для параллельного применения в цикле некоторой функции к набору R-объектов.</p>
 <p>Пример векторизации функции.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span> (<span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span> (<span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  0.5898500  0.1717295 -1.9937810  2.3571216  0.7332131</code></pre>
+<pre><code>[1]  2.5357377  1.0417480  0.1509758  3.8686725 -0.9352085</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mapply</span>(rnorm, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mapply</span>(rnorm, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
-[1] 1.604668
+[1] -0.261586
 
 [[2]]
-[1] -1.637963  2.396849
+[1] 2.047026 2.256049
 
 [[3]]
-[1]  4.733881 -1.522315  5.472971
+[1] -0.7794389  3.0574072  4.8738348
 
 [[4]]
-[1] 1.6681129 0.7335998 5.7946593 6.4679819
+[1] 4.655176 6.371885 6.273515 7.715864
 
 [[5]]
-[1] 1.013939 3.417495 2.807728 4.633650 3.977549</code></pre>
+[1] 6.459080 7.276767 6.064567 8.314161 7.686455</code></pre>
 </div>
 </div>
 <p><strong>tapply</strong> – используется для расчета некоторой функции в цикле по группам элементов вектора. Это удобно когда один вектор формирует несколько выборок.</p>
 </section>
-<section id="правила-видимости-свободных-переменных-scoping-rules" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="правила-видимости-свободных-переменных-scoping-rules"><span class="header-section-number">5.4</span> Правила видимости свободных переменных (Scoping rules)</h2>
+<section id="правила-видимости-свободных-переменных-scoping-rules" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="правила-видимости-свободных-переменных-scoping-rules"><span class="header-section-number">5.6</span> Правила видимости свободных переменных (Scoping rules)</h2>
 <p>Для присвоения <strong>lm</strong> некоторого значения будет осуществляться поиск данной функции в различных областях или пространствах памяти среды – environments. Environment – список или набор R-объектов (по типу символ-значение), которые представляют собой видимое по некоторым правилам пространство памяти. Если работа производится в строке интерпретатора команд, то загружается global environment. В global environment входят все элементы, созданные или загруженные в R. При поиске <strong>lm</strong> порядок просмотра environments 1. global environment 2. пространства, загруженных пакетов (namespaces).</p>
 <p>global environment эквивалентно пространству памяти «пользователя». После просмотра global environment поиск осуществляется от пространства памяти пакета stats к пространству пакета base. Порядок следования пакетов важен! <strong>library</strong> – функция для загрузки пакетов. Загруженный пакет становится на вторую позицию, остальные пакеты смещаются на одну позицию вниз. Scoping rules определяют правила присвоения значений свободным переменным функций. В R используется lexical или static scoping. Наиболее распространенная альтернатива - dynamic scoping. Фактически задача сводится к вопросу: как R просматривает environments, для того чтобы связать свободную переменную с конкретным значением.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> y <span class="sc">/</span> z</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> y <span class="sc">/</span> z</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Где <em>z</em> – свободная переменная (a free variable). Свободная переменная не является ни формальным аргументом функции, ни локальной переменной функции.</p>
+<p>Функции используются для систематизации повторяющегося программного кода. Функция создается с помощью оператора <strong>function</strong> и сохраняется как R-объект класса <em>function</em>.</p>
+<p>Особенности: 1. Объекты класса function можно передавать в качестве аргумента другой функции. 2. Функции могут быть вложенными, т.е. одна функция может быть определена внутри другой. 3. Возвращаемое значение функции – это результат последнего выражения в коде функции.</p>
+<p>Аргументы сопоставляются по позициям в списке или по совпадению имен.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>mydata <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(mydata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.04979</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(<span class="at">x =</span> mydata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.04979</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(<span class="at">x =</span> mydata, <span class="at">na.rm =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.04979</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">FALSE</span>, <span class="at">x =</span> mydata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.04979</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">FALSE</span>, mydata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.04979</code></pre>
+</div>
+</div>
+<section id="сопоставление-аргументов" class="level3" data-number="5.6.1">
+<h3 data-number="5.6.1" class="anchored" data-anchor-id="сопоставление-аргументов"><span class="header-section-number">5.6.1</span> Сопоставление аргументов</h3>
+<p>Если передаются именованные аргументы, то их не обязательно располагать в требуемом порядке. Можно смешивать «порядок» и «имена». Именованный аргумент извлекается из списка, остальные будут ассоциированы по позициям оставшихся аргументов в списке.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">args</span>(lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>function (formula, data, subset, weights, na.action, method = "qr", 
+    model = TRUE, x = FALSE, y = FALSE, qr = TRUE, singular.ok = TRUE, 
+    contrasts = NULL, offset, ...) 
+NULL</code></pre>
+</div>
+</div>
+<p>Имена аргументов могут совпадать не полностью, а частично. Система сама определяет наиболее подходящий аргумент и присваивает ему значение. Порядок следования операций определения аргументов в функциях: 1) Проверка на точное совпадение именованных аргументов. 2) Проверка на частичное совпадение именованных аргументов. 3) Проверка на точное совпадение позиций неименованных аргументов.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(a, <span class="at">b =</span> <span class="dv">1</span>, <span class="at">c =</span> <span class="dv">2</span>, <span class="at">d =</span> <span class="cn">NULL</span>) {</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="dv">1</span>);</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Аргумент функции в виде “…” используется для передачи стандартных аргументов сторонних функций.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>myplot <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y, <span class="at">type =</span> <span class="st">"l"</span>, ...) {</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot</span>(x, y, <span class="at">type =</span> type, ...)</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Аргумент “…” применяется когда число аргументов функции заранее не известно</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">args</span>(paste)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>function (..., sep = " ", collapse = NULL, recycle0 = FALSE) 
+NULL</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">args</span>(cat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>function (..., file = "", sep = " ", fill = FALSE, labels = NULL, 
+    append = FALSE) 
+NULL</code></pre>
+</div>
+</div>
+<p>Аргументы, идущие после “…”, должны быть именованы полностью.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">args</span>(paste)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>function (..., sep = " ", collapse = NULL, recycle0 = FALSE) 
+NULL</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="at">sep =</span> <span class="st">":"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "a:b"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">paste</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="at">se =</span> <span class="st">":"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "a b :"</code></pre>
+</div>
+</div>
 </section>
-<section id="scoping-rules" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="scoping-rules"><span class="header-section-number">5.5</span> Scoping rules</h2>
+</section>
+<section id="scoping-rules" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="scoping-rules"><span class="header-section-number">5.7</span> Scoping rules</h2>
 <p><strong>Правило (lexical rules) 1:</strong> Значение для свободной переменной функции определяются в том пространстве памяти (environment), где была создана данная функция. Каждое environment имеет родительское environment. Родитель может иметь несколько потомков. Пространство без родителя называется пустым (empty environment). Функция + ее пространство памяти = closure или function closure. <strong>Правило (lexical rules) 2:</strong> Если значение для свободной переменной функций не найдено в пространстве, где была создана данная функция, то продолжается поиск по линии родительских пространств вплоть до пространства наивысшего уровня top-level environment (global environment или namespace of package). <strong>Правило (lexical rules) 3:</strong> После просмотра пространства наивысшего уровня (top-level environment) поиск осуществляется вниз по списку пространств загруженных пакетов (namespaces).</p>
 <p>При достижении пространства последнего пакета (empty environment) в списке и не нахождения значения для свободной переменной выводится сообщение об ошибке.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>make_power <span class="ot">&lt;-</span> <span class="cf">function</span>(n) {</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    pow <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        x<span class="sc">^</span>n</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(pow)</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>cube <span class="ot">&lt;-</span> <span class="fu">make_power</span>(<span class="dv">3</span>)</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>square <span class="ot">&lt;-</span> <span class="fu">make_power</span>(<span class="dv">2</span>)</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="fu">cube</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>make_power <span class="ot">&lt;-</span> <span class="cf">function</span>(n) {</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>    pow <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>        x<span class="sc">^</span>n</span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(pow)</span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>cube <span class="ot">&lt;-</span> <span class="fu">make_power</span>(<span class="dv">3</span>)</span>
+<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a>square <span class="ot">&lt;-</span> <span class="fu">make_power</span>(<span class="dv">2</span>)</span>
+<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a><span class="fu">cube</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 27</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">square</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">square</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 9</code></pre>
 </div>
 </div>
 <p>Для просмотра пространства памяти функции можно воспользоваться функциями <strong>ls</strong>, <strong>environment</strong> и <strong>get</strong>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>(<span class="fu">environment</span>(cube))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span>(<span class="fu">environment</span>(cube))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "n"   "pow"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get</span>(<span class="st">'n'</span>, <span class="fu">environment</span>(cube))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get</span>(<span class="st">'n'</span>, <span class="fu">environment</span>(cube))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">10</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    y <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    y<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">g</span>(x)</span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    x<span class="sc">*</span>y</span>
-<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>    y <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>    y<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">g</span>(x)</span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb68-8"><a href="#cb68-8" aria-hidden="true" tabindex="-1"></a>    x<span class="sc">*</span>y</span>
+<span id="cb68-9"><a href="#cb68-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Достоинства lexical scoping: 1) Не требуется передача длинных списков аргументов в функции. Это значительно упрощает работу пользователя в интерактивном режиме и в ходе исследовательской (exploratory) работы. 2) Сокращает, а значит и упрощает, программный код. 3) Удобно для решения задач оптимизации (<strong>nlm</strong>, <strong>optim</strong> , <strong>optimise</strong>) для управления целевыми функциями, параметры которых обеспечивают корректное решение задачи.</p>
 <p>цикл с помощью walk по датасетам или по сгенерированным последовательностям</p>
 <p>Recycling rule Some of the preceding statements can be written more concisely. When the operands are of different lengths, the shorter one is recycled as many times as necessary, as in rep(y, length.out=length(x)). For exampl</p>
 <p>Упростите выражение c(sqrt(1), sqrt(2), sqrt(3))?</p>
 <p>The expression: 4i=1∑n2i−1(−1)i+1=4(11−31+51−71+⋯) slowly converges to π as n approaches ∞. Calculate it for n=1&nbsp;000&nbsp;000 and n=1&nbsp;000&nbsp;000&nbsp;000 using the vectorised functions and operators discussed in this chapter, making use of the recycling rule as much as possible</p>
+</section>
+<section id="ленивые-вычисления" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="ленивые-вычисления"><span class="header-section-number">5.8</span> Ленивые вычисления</h2>
 
 
 </section>
