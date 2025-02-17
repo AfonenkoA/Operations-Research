@@ -1,0 +1,1 @@
+# Безусловная оптимизация функции одной переменной {#sec-nonlinear-unconstrained-one}
