@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.7.13">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; Приложение R.Б. Решатель LPSolve – Operations Research</title>
+<title>13&nbsp; Приложение R.Б. Решатель LPSolve – Operations Research</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,15 +65,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../r-tools/figure-plot.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-66ab7fd5e73b7f0a764e0d49b3e29ab1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-4fa55f62383448b489c88c030bb35243.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -157,7 +158,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../r-tools/linear.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Приложение R.Б. Решатель LPSolve</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../r-tools/linear.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Приложение R.Б. Решатель LPSolve</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -232,26 +233,38 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../nonlinear/unconstrained/analytical-one.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Безусловная оптимизация функции одной переменной</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nonlinear/unconstrained/analytical-many.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Безусловная оптимизация функции многих переменных</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../lab1/intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Лабораторная работа 1. Введение</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Лабораторная работа 1. Введение</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lab2/linear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Лабораторная работа 2. Линейное программирование</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Лабораторная работа 2. Линейное программирование</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../r-tools/figure-plot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Приложение R.A. Графические библиотеки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Приложение R.A. Графические библиотеки</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../r-tools/linear.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Приложение R.Б. Решатель LPSolve</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Приложение R.Б. Решатель LPSolve</span></span></a>
   </div>
 </li>
     </ul>
@@ -264,9 +277,9 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#lpsolve" id="toc-lpsolve" class="nav-link active" data-scroll-target="#lpsolve"><span class="header-section-number">11.1</span> lpSolve</a></li>
-  <li><a href="#lpsolveapi" id="toc-lpsolveapi" class="nav-link" data-scroll-target="#lpsolveapi"><span class="header-section-number">11.2</span> lpSolveAPI</a></li>
-  <li><a href="#анализ-чувствительности" id="toc-анализ-чувствительности" class="nav-link" data-scroll-target="#анализ-чувствительности"><span class="header-section-number">11.3</span> Анализ чувствительности</a></li>
+  <li><a href="#lpsolve" id="toc-lpsolve" class="nav-link active" data-scroll-target="#lpsolve"><span class="header-section-number">13.1</span> lpSolve</a></li>
+  <li><a href="#lpsolveapi" id="toc-lpsolveapi" class="nav-link" data-scroll-target="#lpsolveapi"><span class="header-section-number">13.2</span> lpSolveAPI</a></li>
+  <li><a href="#анализ-чувствительности" id="toc-анализ-чувствительности" class="nav-link" data-scroll-target="#анализ-чувствительности"><span class="header-section-number">13.3</span> Анализ чувствительности</a></li>
   </ul>
 </nav>
     </div>
@@ -275,7 +288,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Приложение R.Б. Решатель LPSolve</span></h1>
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Приложение R.Б. Решатель LPSolve</span></h1>
 </div>
 
 
@@ -293,8 +306,8 @@ window.Quarto = {
 
 
 <p>Существует два интерфейса для работы с этой библиотекой. Более высокоуровненый <strong>lpSolve</strong> и низкоуровневый <strong>lpSolveAPI</strong>. Рассмотрим оба</p>
-<section id="lpsolve" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="lpsolve"><span class="header-section-number">11.1</span> lpSolve</h2>
+<section id="lpsolve" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="lpsolve"><span class="header-section-number">13.1</span> lpSolve</h2>
 <p>Требуется задать коэффициенты целевой функции. <span class="math inline">c(a_1,a_2,a_3,...,a_n)\implies F(\vec{x})=a_1x_1+a_2x_2+a_3x_3+...a_nx_n</span>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lpSolve)</span>
@@ -331,8 +344,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="lpsolveapi" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="lpsolveapi"><span class="header-section-number">11.2</span> lpSolveAPI</h2>
+<section id="lpsolveapi" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="lpsolveapi"><span class="header-section-number">13.2</span> lpSolveAPI</h2>
 <p>Создать объект модели задачи линейного программирования с 2 переменными и 0 ограничений (будут добавлены позднее).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lpSolveAPI)</span>
@@ -385,8 +398,8 @@ Lower        0     0          </code></pre>
 </div>
 </div>
 </section>
-<section id="анализ-чувствительности" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="анализ-чувствительности"><span class="header-section-number">11.3</span> Анализ чувствительности</h2>
+<section id="анализ-чувствительности" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="анализ-чувствительности"><span class="header-section-number">13.3</span> Анализ чувствительности</h2>
 <p>Анализ чувствительности применим только к задаче в действительных числах. Исходная целевая функция <span class="math inline">F=2x_1+6x_2</span>. Для анализа чувствительности целевой функции используется функция <strong>get.sensitivity.obj</strong>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get.sensitivity.obj</span>(lprob)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -528,8 +541,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -640,7 +651,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -869,7 +879,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../r-tools/figure-plot.html" class="pagination-link" aria-label="Приложение R.A. Графические библиотеки">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Приложение R.A. Графические библиотеки</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Приложение R.A. Графические библиотеки</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
