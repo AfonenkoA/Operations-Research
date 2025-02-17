@@ -15,6 +15,8 @@ book:
     - r-lang/advanced.qmd
     - linear/linear-algebra.qmd
     - linear/intro.qmd
+    - nonlinear/unconstrained/analytical-one.qmd
+    - nonlinear/unconstrained/analytical-many.qmd
     - lab1/intro.qmd
     - lab2/linear.qmd
     - r-tools/figure-plot.qmd
