@@ -54,7 +54,7 @@ book:
 
   appendices:
     - references.qmd
-    - part: "R"
+    - part: "Язык программирования R"
       chapters:
         - r-tools/figure-plot.qmd
         - r-tools/linear.qmd
