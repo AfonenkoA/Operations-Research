@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Appendix B — Решатель LPSolve R – Operations Research</title>
+<title>Теория игр – Operations Research</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../r-tools/renv.html" rel="next">
-<link href="../r-tools/figure-plot.html" rel="prev">
+<link href="../game-theory/matrix.html" rel="next">
+<link href="../graph-theory/dijkstra.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -104,49 +70,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -159,7 +82,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../references.html">Appendices</a></li><li class="breadcrumb-item"><a href="../r-tools/figure-plot.html">R</a></li><li class="breadcrumb-item"><a href="../r-tools/linear.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Решатель LPSolve R</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../game-theory/overview.html">Теория игр</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -349,7 +272,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../game-theory/overview.html" class="sidebar-item-text sidebar-link">
+            <a href="../game-theory/overview.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Теория игр</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -404,13 +327,13 @@ window.Quarto = {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../r-tools/figure-plot.html" class="sidebar-item-text sidebar-link">
@@ -419,7 +342,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r-tools/linear.html" class="sidebar-item-text sidebar-link active">
+  <a href="../r-tools/linear.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Решатель LPSolve R</span></span></a>
   </div>
 </li>
@@ -438,23 +361,15 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#lpsolve" id="toc-lpsolve" class="nav-link active" data-scroll-target="#lpsolve"><span class="header-section-number">B.1</span> lpSolve</a></li>
-  <li><a href="#lpsolveapi" id="toc-lpsolveapi" class="nav-link" data-scroll-target="#lpsolveapi"><span class="header-section-number">B.2</span> lpSolveAPI</a></li>
-  <li><a href="#анализ-чувствительности" id="toc-анализ-чувствительности" class="nav-link" data-scroll-target="#анализ-чувствительности"><span class="header-section-number">B.3</span> Анализ чувствительности</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../references.html">Appendices</a></li><li class="breadcrumb-item"><a href="../r-tools/figure-plot.html">R</a></li><li class="breadcrumb-item"><a href="../r-tools/linear.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Решатель LPSolve R</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Appendix B — Решатель LPSolve R</h1>
+<h1 class="title">Теория игр</h1>
 </div>
 
 
@@ -471,158 +386,8 @@ window.Quarto = {
 </header>
 
 
-<p>Существует два интерфейса для работы с этой библиотекой. Более высокоуровненый <strong>lpSolve</strong> и низкоуровневый <strong>lpSolveAPI</strong>. Рассмотрим оба</p>
-<section id="lpsolve" class="level2" data-number="B.1">
-<h2 data-number="B.1" class="anchored" data-anchor-id="lpsolve"><span class="header-section-number">B.1</span> lpSolve</h2>
-<p>Требуется задать коэффициенты целевой функции. <span class="math inline">c(a_1,a_2,a_3,...,a_n)\implies F(\vec{x})=a_1x_1+a_2x_2+a_3x_3+...a_nx_n</span>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lpSolve)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Fun <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Ограничения задаются в виде матрицы коэффициентов</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>), <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>), <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Правые части и знаки ограничений задаются отдельно</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>B <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2048</span>, <span class="dv">2048</span>, <span class="dv">480</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>CD <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'&lt;='</span>, <span class="st">'&lt;='</span>, <span class="st">'&lt;='</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Для решения вызываетя процедура <strong>lp</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>optimum <span class="ot">&lt;-</span> <span class="fu">lp</span>(</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">direction =</span> <span class="st">'max'</span>,</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">objective.in =</span> Fun,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">const.mat =</span> A,</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">const.dir =</span> CD,</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">const.rhs =</span> B,</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">compute.sens =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>optimum</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Success: the objective function is 3510.857 </code></pre>
-</div>
-</div>
-<p>Макисмальное значение целевой функции достигается при следующих значениях переменных</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>optimum<span class="sc">$</span>solution</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 877.7143 292.5714</code></pre>
-</div>
-</div>
-</section>
-<section id="lpsolveapi" class="level2" data-number="B.2">
-<h2 data-number="B.2" class="anchored" data-anchor-id="lpsolveapi"><span class="header-section-number">B.2</span> lpSolveAPI</h2>
-<p>Создать объект модели задачи линейного программирования с 2 переменными и 0 ограничений (будут добавлены позднее).</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lpSolveAPI)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>lprob <span class="ot">&lt;-</span> <span class="fu">make.lp</span>(<span class="dv">0</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Далее выбирается тип оптимизации, в данном случае максимизация. Вывод функции перенаправляется в переменную заглушку, чтобы отменить печать информации на экран.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>stub <span class="ot">&lt;-</span> <span class="fu">lp.control</span>(lprob, <span class="at">sense =</span> <span class="st">'max'</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(stub)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Далее задаются ограничения. Коэффициенты в функция ограничения задаются с помощью <span class="math inline">c(a_1,a_2,a_3,...,a_n)\implies a_1x_1+a_2x_2+a_3x_3+...a_nx_n</span>. По умолчанию на переменные накладывается условие <span class="math inline">\forall{i}: x_i\geq0</span></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">add.constraint</span>(lprob, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>), <span class="st">'&lt;='</span>, <span class="dv">2048</span>)</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">add.constraint</span>(lprob, <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>), <span class="st">'&lt;='</span>, <span class="dv">2048</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">add.constraint</span>(lprob, <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="st">'&lt;='</span>, <span class="dv">480</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Задание целевой функции. Объект модели можно конструировать в произвольном порядке</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.objfn</span>(lprob, <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">6</span>))</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>lprob</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Model name: 
-            C1    C2          
-Maximize     2     6          
-R1           1     4  &lt;=  2048
-R2           2     1  &lt;=  2048
-R3           0     1  &lt;=   480
-Kind       Std   Std          
-Type      Real  Real          
-Upper      Inf   Inf          
-Lower        0     0          </code></pre>
-</div>
-</div>
-<p>Далее необходимо решить систему</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>status_code <span class="ot">&lt;-</span> <span class="fu">solve</span>(lprob)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Наилучшее значение целевой функции</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get.objective</span>(lprob)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3510.857</code></pre>
-</div>
-</div>
-<p>Значение переменных, при которых дистигнуто максимальное значение целевой функции</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get.variables</span>(lprob)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 877.7143 292.5714</code></pre>
-</div>
-</div>
-</section>
-<section id="анализ-чувствительности" class="level2" data-number="B.3">
-<h2 data-number="B.3" class="anchored" data-anchor-id="анализ-чувствительности"><span class="header-section-number">B.3</span> Анализ чувствительности</h2>
-<p>Анализ чувствительности применим только к задаче в действительных числах. Исходная целевая функция <span class="math inline">F=2x_1+6x_2</span>. Для анализа чувствительности целевой функции используется функция <strong>get.sensitivity.obj</strong>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get.sensitivity.obj</span>(lprob)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>$objfrom
-[1] 1.5 1.0
-
-$objtill
-[1] 12  8</code></pre>
-</div>
-</div>
-<p>Полученные значения означают, что при измениении значения <span class="math inline">x_1\in(1.5,12)</span> или <span class="math inline">x_2\in(1,8)</span> точка соовтетствующая лучшему значению целевой функции не изменится.</p>
-<p>Для анализа чувствительности ограничений применяется функция <strong>get.sensitivity.rhs</strong>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get.sensitivity.rhs</span>(lprob)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>$duals
-[1] 1.4285714 0.2857143 0.0000000 0.0000000 0.0000000
-
-$dualsfrom
-[1]  1.024e+03  7.360e+02 -1.000e+30 -1.000e+30 -1.000e+30
-
-$dualstill
-[1] 2.704e+03 4.096e+03 1.000e+30 1.000e+30 1.000e+30</code></pre>
-</div>
-</div>
-<p>Рассмотрим первое ограничение <span class="math inline">x_1+4x_2\leq2048</span>. Значение <span class="math inline">\xi_1=1.4285</span> показывает насколько изменится целевая функция, если значение ограничения увеличится на одну единицу. Значение <span class="math inline">xi</span> ненулевое, только если ограничение активно. <span class="math inline">\xi</span> можно интерпретировать как частную произовдную целевой фунцкии по правой части неравенстра ограничения. <span class="math inline">\xi_1=\frac{\partial F}{\partial B_1}</span>. Следовательно при изменении ограничения <span class="math inline">\xi_i</span> в пределах от <span class="math inline">\xi_{from}</span> до <span class="math inline">\xi_{till}</span> значение целевой функции изменится как <span class="math inline">F=F_0+\Delta B_i \xi_i</span></p>
-<p>Значение <span class="math inline">\xi_i</span> дает очень хорошее представление о том, сколько стоит это ограничение. Если значение <span class="math inline">\xi_i</span> большое, то это ограничение сильно влияет на целевую функцию. Небольшие изменения ограничения (ослабление) позволит значительно улучшить значение целевой функции. Также имеет значение знак <span class="math inline">\xi_i</span>. Положительное значение означает, что по мере увеличения ограничения значение целевой функции будет больше, а по мере того, как оно становится более отрицательным, значение целевой функции будет меньше.</p>
-<p>Аналогично для <strong>lpSolve</strong> используются следующие функции для анализа коэффициентов целевой функции</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>optimum<span class="sc">$</span>sens.coef.from</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.5 1.0</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>optimum<span class="sc">$</span>sens.coef.to</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 12  8</code></pre>
-</div>
-</div>
-<p>и для анализа ограничений</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>optimum<span class="sc">$</span>duals</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.4285714 0.2857143 0.0000000 0.0000000 0.0000000</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>optimum<span class="sc">$</span>duals.from</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1]  1.024e+03  7.360e+02 -1.000e+30 -1.000e+30 -1.000e+30</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>optimum<span class="sc">$</span>duals.to</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2.704e+03 4.096e+03 1.000e+30 1.000e+30 1.000e+30</code></pre>
-</div>
-</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1044,13 +809,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../r-tools/figure-plot.html" class="pagination-link" aria-label="Графические библиотеки R">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Графические библиотеки R</span></span>
+      <a href="../graph-theory/dijkstra.html" class="pagination-link" aria-label="Алгоритм дейкстры">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Алгоритм дейкстры</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../r-tools/renv.html" class="pagination-link" aria-label="Система управления пакетами renv">
-        <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Система управления пакетами renv</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../game-theory/matrix.html" class="pagination-link" aria-label="Матричные игры">
+        <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Матричные игры</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

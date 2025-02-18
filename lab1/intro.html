@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>10&nbsp; Лабораторная работа 1. Введение – Operations Research</title>
+<title>19&nbsp; Лабораторная работа 1. Введение – Operations Research</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../lab2/linear.html" rel="next">
-<link href="../nonlinear/unconstrained/analytical-many.html" rel="prev">
+<link href="../game-theory/matrix.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -168,7 +168,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lab1/intro.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Лабораторная работа 1. Введение</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lab1/intro.html">Лабораторные работы</a></li><li class="breadcrumb-item"><a href="../lab1/intro.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Лабораторная работа 1. Введение</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -199,84 +199,249 @@ window.Quarto = {
  <span class="menu-text">Интерактивный курс по исследованию операций</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../enviroment/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Среда разработки</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../enviroment/rstudio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Среда разработки RStudio</span></span></a>
+  <a href="../enviroment/setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Установка и настройка</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../enviroment/markdown.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Язык разметки Markdown</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../enviroment/latex.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Язык разметки LaTeX</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../r-lang/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Язык программирования R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../r-lang/basic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Основы языка R</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../r-lang/advanced.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Продвинутый R</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../linear/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Линейное программирование</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../linear/linear-algebra.html" class="sidebar-item-text sidebar-link">
+  <a href="../linear/algebra.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Элементы линейной алгебры</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../linear/intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Линейное программирование</span></span></a>
+  <a href="../linear/graphical-solution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Графическое решение</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../linear/sensetivity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Анализ чувствительности</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../linear/dual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Двойственная задача линейного программирования</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../linear/simplex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Симплекс метод</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../linear/simplex-ext.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Двухэтапный симплекс метод и M-метод</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../linear/integer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Целочисленное программирование. Метод ветвей и границ</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../linear/transport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Транспортная задача</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../linear/network.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Сетевая задача</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../nonlinear/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Нелинейное программирование</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../nonlinear/unconstrained/analytical-one.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Безусловная оптимизация функции одной переменной</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Безусловная оптимизация функции одной переменной</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../nonlinear/unconstrained/analytical-many.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Безусловная оптимизация функции многих переменных</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Безусловная оптимизация функции многих переменных</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../graph-theory/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Элементы теории графов</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../graph-theory/dijkstra.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Алгоритм дейкстры</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../game-theory/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Теория игр</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../game-theory/matrix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Матричные игры</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Лабораторные работы</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lab1/intro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Лабораторная работа 1. Введение</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Лабораторная работа 1. Введение</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lab2/linear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Лабораторная работа 2. Линейное программирование</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Лабораторная работа 2. Линейное программирование</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Литература</span></a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">R</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../r-tools/figure-plot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Приложение R.A. Графические библиотеки</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Графические библиотеки R</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../r-tools/linear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Приложение R.Б. Решатель LPSolve</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Решатель LPSolve R</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r-tools/renv.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Система управления пакетами renv</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -287,44 +452,44 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#пример" id="toc-пример" class="nav-link active" data-scroll-target="#пример"><span class="header-section-number">10.1</span> Пример</a>
+  <li><a href="#пример" id="toc-пример" class="nav-link active" data-scroll-target="#пример"><span class="header-section-number">19.1</span> Пример</a>
   <ul class="collapse">
-  <li><a href="#задача" id="toc-задача" class="nav-link" data-scroll-target="#задача"><span class="header-section-number">10.1.1</span> Задача</a></li>
-  <li><a href="#решение" id="toc-решение" class="nav-link" data-scroll-target="#решение"><span class="header-section-number">10.1.2</span> Решение</a></li>
+  <li><a href="#задача" id="toc-задача" class="nav-link" data-scroll-target="#задача"><span class="header-section-number">19.1.1</span> Задача</a></li>
+  <li><a href="#решение" id="toc-решение" class="nav-link" data-scroll-target="#решение"><span class="header-section-number">19.1.2</span> Решение</a></li>
   </ul></li>
-  <li><a href="#язык-программирования-r" id="toc-язык-программирования-r" class="nav-link" data-scroll-target="#язык-программирования-r"><span class="header-section-number">10.2</span> Язык программирования R</a>
+  <li><a href="#язык-программирования-r" id="toc-язык-программирования-r" class="nav-link" data-scroll-target="#язык-программирования-r"><span class="header-section-number">19.2</span> Язык программирования R</a>
   <ul class="collapse">
-  <li><a href="#задача-1" id="toc-задача-1" class="nav-link" data-scroll-target="#задача-1"><span class="header-section-number">10.2.1</span> Задача 1</a></li>
-  <li><a href="#задача-2" id="toc-задача-2" class="nav-link" data-scroll-target="#задача-2"><span class="header-section-number">10.2.2</span> Задача 2</a></li>
-  <li><a href="#задача-3" id="toc-задача-3" class="nav-link" data-scroll-target="#задача-3"><span class="header-section-number">10.2.3</span> Задача 3</a></li>
-  <li><a href="#задача-4" id="toc-задача-4" class="nav-link" data-scroll-target="#задача-4"><span class="header-section-number">10.2.4</span> Задача 4</a></li>
-  <li><a href="#задача-5" id="toc-задача-5" class="nav-link" data-scroll-target="#задача-5"><span class="header-section-number">10.2.5</span> Задача 5</a></li>
-  <li><a href="#задача-6" id="toc-задача-6" class="nav-link" data-scroll-target="#задача-6"><span class="header-section-number">10.2.6</span> Задача 6</a></li>
+  <li><a href="#задача-1" id="toc-задача-1" class="nav-link" data-scroll-target="#задача-1"><span class="header-section-number">19.2.1</span> Задача 1</a></li>
+  <li><a href="#задача-2" id="toc-задача-2" class="nav-link" data-scroll-target="#задача-2"><span class="header-section-number">19.2.2</span> Задача 2</a></li>
+  <li><a href="#задача-3" id="toc-задача-3" class="nav-link" data-scroll-target="#задача-3"><span class="header-section-number">19.2.3</span> Задача 3</a></li>
+  <li><a href="#задача-4" id="toc-задача-4" class="nav-link" data-scroll-target="#задача-4"><span class="header-section-number">19.2.4</span> Задача 4</a></li>
+  <li><a href="#задача-5" id="toc-задача-5" class="nav-link" data-scroll-target="#задача-5"><span class="header-section-number">19.2.5</span> Задача 5</a></li>
+  <li><a href="#задача-6" id="toc-задача-6" class="nav-link" data-scroll-target="#задача-6"><span class="header-section-number">19.2.6</span> Задача 6</a></li>
   </ul></li>
-  <li><a href="#линейная-алгебра" id="toc-линейная-алгебра" class="nav-link" data-scroll-target="#линейная-алгебра"><span class="header-section-number">10.3</span> Линейная алгебра</a>
+  <li><a href="#линейная-алгебра" id="toc-линейная-алгебра" class="nav-link" data-scroll-target="#линейная-алгебра"><span class="header-section-number">19.3</span> Линейная алгебра</a>
   <ul class="collapse">
-  <li><a href="#здача-1" id="toc-здача-1" class="nav-link" data-scroll-target="#здача-1"><span class="header-section-number">10.3.1</span> Здача 1</a></li>
-  <li><a href="#здача-2" id="toc-здача-2" class="nav-link" data-scroll-target="#здача-2"><span class="header-section-number">10.3.2</span> Здача 2</a></li>
-  <li><a href="#задача-3-1" id="toc-задача-3-1" class="nav-link" data-scroll-target="#задача-3-1"><span class="header-section-number">10.3.3</span> Задача 3</a></li>
+  <li><a href="#здача-1" id="toc-здача-1" class="nav-link" data-scroll-target="#здача-1"><span class="header-section-number">19.3.1</span> Здача 1</a></li>
+  <li><a href="#здача-2" id="toc-здача-2" class="nav-link" data-scroll-target="#здача-2"><span class="header-section-number">19.3.2</span> Здача 2</a></li>
+  <li><a href="#задача-3-1" id="toc-задача-3-1" class="nav-link" data-scroll-target="#задача-3-1"><span class="header-section-number">19.3.3</span> Задача 3</a></li>
   </ul></li>
-  <li><a href="#исследование-операций" id="toc-исследование-операций" class="nav-link" data-scroll-target="#исследование-операций"><span class="header-section-number">10.4</span> Исследование операций</a>
+  <li><a href="#исследование-операций" id="toc-исследование-операций" class="nav-link" data-scroll-target="#исследование-операций"><span class="header-section-number">19.4</span> Исследование операций</a>
   <ul class="collapse">
-  <li><a href="#задача-1-1" id="toc-задача-1-1" class="nav-link" data-scroll-target="#задача-1-1"><span class="header-section-number">10.4.1</span> Задача 1</a></li>
-  <li><a href="#задача-2-1" id="toc-задача-2-1" class="nav-link" data-scroll-target="#задача-2-1"><span class="header-section-number">10.4.2</span> Задача 2</a></li>
-  <li><a href="#задача-3-2" id="toc-задача-3-2" class="nav-link" data-scroll-target="#задача-3-2"><span class="header-section-number">10.4.3</span> Задача 3</a></li>
-  <li><a href="#задача-4-1" id="toc-задача-4-1" class="nav-link" data-scroll-target="#задача-4-1"><span class="header-section-number">10.4.4</span> Задача 4</a></li>
+  <li><a href="#задача-1-1" id="toc-задача-1-1" class="nav-link" data-scroll-target="#задача-1-1"><span class="header-section-number">19.4.1</span> Задача 1</a></li>
+  <li><a href="#задача-2-1" id="toc-задача-2-1" class="nav-link" data-scroll-target="#задача-2-1"><span class="header-section-number">19.4.2</span> Задача 2</a></li>
+  <li><a href="#задача-3-2" id="toc-задача-3-2" class="nav-link" data-scroll-target="#задача-3-2"><span class="header-section-number">19.4.3</span> Задача 3</a></li>
+  <li><a href="#задача-4-1" id="toc-задача-4-1" class="nav-link" data-scroll-target="#задача-4-1"><span class="header-section-number">19.4.4</span> Задача 4</a></li>
   </ul></li>
-  <li><a href="#прикладная-магия" id="toc-прикладная-магия" class="nav-link" data-scroll-target="#прикладная-магия"><span class="header-section-number">10.5</span> Прикладная магия</a></li>
-  <li><a href="#разбалловка" id="toc-разбалловка" class="nav-link" data-scroll-target="#разбалловка"><span class="header-section-number">10.6</span> Разбалловка</a></li>
+  <li><a href="#прикладная-магия" id="toc-прикладная-магия" class="nav-link" data-scroll-target="#прикладная-магия"><span class="header-section-number">19.5</span> Прикладная магия</a></li>
+  <li><a href="#разбалловка" id="toc-разбалловка" class="nav-link" data-scroll-target="#разбалловка"><span class="header-section-number">19.6</span> Разбалловка</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lab1/intro.html">Лабораторные работы</a></li><li class="breadcrumb-item"><a href="../lab1/intro.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Лабораторная работа 1. Введение</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Лабораторная работа 1. Введение</span></h1>
+<h1 class="title"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Лабораторная работа 1. Введение</span></h1>
 </div>
 
 
@@ -341,14 +506,14 @@ window.Quarto = {
 </header>
 
 
-<section id="пример" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="пример"><span class="header-section-number">10.1</span> Пример</h2>
-<section id="задача" class="level3" data-number="10.1.1">
-<h3 data-number="10.1.1" class="anchored" data-anchor-id="задача"><span class="header-section-number">10.1.1</span> Задача</h3>
+<section id="пример" class="level2" data-number="19.1">
+<h2 data-number="19.1" class="anchored" data-anchor-id="пример"><span class="header-section-number">19.1</span> Пример</h2>
+<section id="задача" class="level3" data-number="19.1.1">
+<h3 data-number="19.1.1" class="anchored" data-anchor-id="задача"><span class="header-section-number">19.1.1</span> Задача</h3>
 <p>Чтобы попасть из пункта А (остановка автобуса) в пункт В (лодочная станция) человек должен пройти сначала по асфальтовой дороге шириной <span class="math inline">S</span>, а затем по песчаному пляжу шириной <span class="math inline">s</span>. Скорость передвижения по асфальту <span class="math inline">V</span> , скорость передвижения по песку <span class="math inline">v</span>. Спрашивается, в каком месте нужно свернуть с асфальтовой дороги, чтобы затратить меньше времени на путь.</p>
 </section>
-<section id="решение" class="level3" data-number="10.1.2">
-<h3 data-number="10.1.2" class="anchored" data-anchor-id="решение"><span class="header-section-number">10.1.2</span> Решение</h3>
+<section id="решение" class="level3" data-number="19.1.2">
+<h3 data-number="19.1.2" class="anchored" data-anchor-id="решение"><span class="header-section-number">19.1.2</span> Решение</h3>
 <p>Решим задачу с конкретными значениями, в виду сложности аналитического решения (сводится к уравнению 4 степени): <span class="math inline">D = 100</span>, <span class="math inline">S = 40</span>, <span class="math inline">V = 5</span>, <span class="math inline">s = 60</span>, <span class="math inline">v = 3</span></p>
 <div class="cell">
 <div class="cell-output-display">
@@ -378,10 +543,10 @@ window.Quarto = {
 <p>Следовательно оптимальное значение пути, пройденного по дороге <span class="math inline">x = 65.64</span></p>
 </section>
 </section>
-<section id="язык-программирования-r" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="язык-программирования-r"><span class="header-section-number">10.2</span> Язык программирования R</h2>
-<section id="задача-1" class="level3" data-number="10.2.1">
-<h3 data-number="10.2.1" class="anchored" data-anchor-id="задача-1"><span class="header-section-number">10.2.1</span> Задача 1</h3>
+<section id="язык-программирования-r" class="level2" data-number="19.2">
+<h2 data-number="19.2" class="anchored" data-anchor-id="язык-программирования-r"><span class="header-section-number">19.2</span> Язык программирования R</h2>
+<section id="задача-1" class="level3" data-number="19.2.1">
+<h3 data-number="19.2.1" class="anchored" data-anchor-id="задача-1"><span class="header-section-number">19.2.1</span> Задача 1</h3>
 <p>Упростите выражение:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">sqrt</span>(<span class="dv">1</span>), <span class="fu">sqrt</span>(<span class="dv">2</span>), <span class="fu">sqrt</span>(<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Создайте последовательность 2 способами <code>(-1, -0.75, -0.5, …, 0.75, 1)</code>.</p>
@@ -399,8 +564,8 @@ Note
 </div>
 </div>
 </section>
-<section id="задача-2" class="level3" data-number="10.2.2">
-<h3 data-number="10.2.2" class="anchored" data-anchor-id="задача-2"><span class="header-section-number">10.2.2</span> Задача 2</h3>
+<section id="задача-2" class="level3" data-number="19.2.2">
+<h3 data-number="19.2.2" class="anchored" data-anchor-id="задача-2"><span class="header-section-number">19.2.2</span> Задача 2</h3>
 <p>Построить график кусочно-гладкой функции используя функцию <a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></p>
 <p><span class="math display">
 f(x)=\begin{cases}
@@ -423,8 +588,8 @@ Note
 </div>
 </div>
 </section>
-<section id="задача-3" class="level3" data-number="10.2.3">
-<h3 data-number="10.2.3" class="anchored" data-anchor-id="задача-3"><span class="header-section-number">10.2.3</span> Задача 3</h3>
+<section id="задача-3" class="level3" data-number="19.2.3">
+<h3 data-number="19.2.3" class="anchored" data-anchor-id="задача-3"><span class="header-section-number">19.2.3</span> Задача 3</h3>
 <p>С помощью <a href="https://ru.wikipedia.org/wiki/%D0%A0%D1%8F%D0%B4_%D0%9B%D0%B5%D0%B9%D0%B1%D0%BD%D0%B8%D1%86%D0%B0">ряда Лейбница</a> можно получить значение числа <span class="math inline">\pi</span> . Данный ряд сходится очень медленно.</p>
 <p><span class="math display">
 \pi =\sum_{i=0}^n{\frac{(-1)^i}{2i+1}}
@@ -448,9 +613,9 @@ Note
 </div>
 </div>
 </section>
-<section id="задача-4" class="level3" data-number="10.2.4">
-<h3 data-number="10.2.4" class="anchored" data-anchor-id="задача-4"><span class="header-section-number">10.2.4</span> Задача 4</h3>
-<p>Создать список содержащий буквы от <code>a</code> до <code>z</code>. Продемонстрировать использование операторов индексации <a href="../r-lang/basic.html#sec-list-indexing" class="quarto-xref"><span>Section 4.4.1</span></a>.</p>
+<section id="задача-4" class="level3" data-number="19.2.4">
+<h3 data-number="19.2.4" class="anchored" data-anchor-id="задача-4"><span class="header-section-number">19.2.4</span> Задача 4</h3>
+<p>Создать список содержащий буквы от <code>a</code> до <code>z</code>. Продемонстрировать использование операторов индексации <a href="../r-lang/basic.html#sec-basic-list-indexing" class="quarto-xref"><span>Section 4.4.1</span></a>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -465,8 +630,8 @@ Note
 </div>
 </div>
 </section>
-<section id="задача-5" class="level3" data-number="10.2.5">
-<h3 data-number="10.2.5" class="anchored" data-anchor-id="задача-5"><span class="header-section-number">10.2.5</span> Задача 5</h3>
+<section id="задача-5" class="level3" data-number="19.2.5">
+<h3 data-number="19.2.5" class="anchored" data-anchor-id="задача-5"><span class="header-section-number">19.2.5</span> Задача 5</h3>
 <p>Создать список матриц размером <code>2x2</code> заполненных случайными целыми числами. Используя циклы получите:</p>
 <ol type="1">
 <li>список с элементов <code>(2,2)</code> каждой матрицы.</li>
@@ -486,8 +651,8 @@ Note
 </div>
 </div>
 </section>
-<section id="задача-6" class="level3" data-number="10.2.6">
-<h3 data-number="10.2.6" class="anchored" data-anchor-id="задача-6"><span class="header-section-number">10.2.6</span> Задача 6</h3>
+<section id="задача-6" class="level3" data-number="19.2.6">
+<h3 data-number="19.2.6" class="anchored" data-anchor-id="задача-6"><span class="header-section-number">19.2.6</span> Задача 6</h3>
 <ol type="1">
 <li>создайте пятимерный массив и заполните его целыми числами.</li>
 <li>преобразуйте его как список массивов размерности 4.</li>
@@ -508,10 +673,10 @@ Note
 </div>
 </section>
 </section>
-<section id="линейная-алгебра" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="линейная-алгебра"><span class="header-section-number">10.3</span> Линейная алгебра</h2>
-<section id="здача-1" class="level3" data-number="10.3.1">
-<h3 data-number="10.3.1" class="anchored" data-anchor-id="здача-1"><span class="header-section-number">10.3.1</span> Здача 1</h3>
+<section id="линейная-алгебра" class="level2" data-number="19.3">
+<h2 data-number="19.3" class="anchored" data-anchor-id="линейная-алгебра"><span class="header-section-number">19.3</span> Линейная алгебра</h2>
+<section id="здача-1" class="level3" data-number="19.3.1">
+<h3 data-number="19.3.1" class="anchored" data-anchor-id="здача-1"><span class="header-section-number">19.3.1</span> Здача 1</h3>
 <p>Решить СЛАУ <span class="math inline">AX=b</span> встроенным методом. Элементы матриц сгенерировать произвольно. <a href="https://rdrr.io/r/base/solve.html">solve</a></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -527,8 +692,8 @@ Note
 </div>
 </div>
 </section>
-<section id="здача-2" class="level3" data-number="10.3.2">
-<h3 data-number="10.3.2" class="anchored" data-anchor-id="здача-2"><span class="header-section-number">10.3.2</span> Здача 2</h3>
+<section id="здача-2" class="level3" data-number="19.3.2">
+<h3 data-number="19.3.2" class="anchored" data-anchor-id="здача-2"><span class="header-section-number">19.3.2</span> Здача 2</h3>
 <p>Для произвольных матриц <span class="math inline">A</span> и <span class="math inline">B</span> заполненных случайными числами проверить следующие свойства:</p>
 <ol type="1">
 <li><span class="math inline">(A+B)^T=A^T+B^T</span></li>
@@ -554,8 +719,8 @@ Note
 </div>
 </div>
 </section>
-<section id="задача-3-1" class="level3" data-number="10.3.3">
-<h3 data-number="10.3.3" class="anchored" data-anchor-id="задача-3-1"><span class="header-section-number">10.3.3</span> Задача 3</h3>
+<section id="задача-3-1" class="level3" data-number="19.3.3">
+<h3 data-number="19.3.3" class="anchored" data-anchor-id="задача-3-1"><span class="header-section-number">19.3.3</span> Задача 3</h3>
 <p>Реализовать решение системы линейных уравнений методом гаусса жордана используя векторные операции.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -572,10 +737,10 @@ Note
 </div>
 </section>
 </section>
-<section id="исследование-операций" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="исследование-операций"><span class="header-section-number">10.4</span> Исследование операций</h2>
-<section id="задача-1-1" class="level3" data-number="10.4.1">
-<h3 data-number="10.4.1" class="anchored" data-anchor-id="задача-1-1"><span class="header-section-number">10.4.1</span> Задача 1</h3>
+<section id="исследование-операций" class="level2" data-number="19.4">
+<h2 data-number="19.4" class="anchored" data-anchor-id="исследование-операций"><span class="header-section-number">19.4</span> Исследование операций</h2>
+<section id="задача-1-1" class="level3" data-number="19.4.1">
+<h3 data-number="19.4.1" class="anchored" data-anchor-id="задача-1-1"><span class="header-section-number">19.4.1</span> Задача 1</h3>
 <ol type="1">
 <li>Построить объемный и контурный графики функций <span class="math inline">z = x^2 - y^2</span> и <span class="math inline">z = x^2 + y^2</span>.</li>
 <li>Графически определить минимум.</li>
@@ -595,15 +760,15 @@ Note
 </div>
 </div>
 </section>
-<section id="задача-2-1" class="level3" data-number="10.4.2">
-<h3 data-number="10.4.2" class="anchored" data-anchor-id="задача-2-1"><span class="header-section-number">10.4.2</span> Задача 2</h3>
+<section id="задача-2-1" class="level3" data-number="19.4.2">
+<h3 data-number="19.4.2" class="anchored" data-anchor-id="задача-2-1"><span class="header-section-number">19.4.2</span> Задача 2</h3>
 <p>Найти максимальную скорость тела движущегося по закону</p>
 <p><span class="math display">
 s = 18t + 9t^2 - t^3
 </span></p>
 <ol type="1">
 <li>Построить график функции и её производной.</li>
-<li>Аналитически определить <a href="../nonlinear/unconstrained/analytical-one.html" class="quarto-xref">максимум функции гл.&nbsp;<span>8</span></a>.</li>
+<li>Аналитически определить <a href="../nonlinear/unconstrained/analytical-one.html" class="quarto-xref">максимум функции гл.&nbsp;<span>15</span></a>.</li>
 <li>Доказать, что данная точка является максимумом.</li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -620,8 +785,8 @@ Note
 </div>
 </div>
 </section>
-<section id="задача-3-2" class="level3" data-number="10.4.3">
-<h3 data-number="10.4.3" class="anchored" data-anchor-id="задача-3-2"><span class="header-section-number">10.4.3</span> Задача 3</h3>
+<section id="задача-3-2" class="level3" data-number="19.4.3">
+<h3 data-number="19.4.3" class="anchored" data-anchor-id="задача-3-2"><span class="header-section-number">19.4.3</span> Задача 3</h3>
 <p>Суточные расходы при плавании судна состоят из двух частей: постоянной, равной <span class="math inline">а</span>, и переменной, возрастающий пропорционально кубу скорости. При какой скорости <span class="math inline">v</span> плавание судна окажется наиболее экономичным?</p>
 <ol type="1">
 <li>определите целевую функцию</li>
@@ -642,8 +807,8 @@ Note
 </div>
 </div>
 </section>
-<section id="задача-4-1" class="level3" data-number="10.4.4">
-<h3 data-number="10.4.4" class="anchored" data-anchor-id="задача-4-1"><span class="header-section-number">10.4.4</span> Задача 4</h3>
+<section id="задача-4-1" class="level3" data-number="19.4.4">
+<h3 data-number="19.4.4" class="anchored" data-anchor-id="задача-4-1"><span class="header-section-number">19.4.4</span> Задача 4</h3>
 <p>Имеется квадратный лист жести, сторона которого <span class="math inline">а=60\ см</span>. Вырезая по всем его углам равные квадраты и загибая оставшуюся часть, нужно изготовить коробку без крышки. Каковы должны быть размеры вырезаемых квадратов, чтобы коробка имела наибольший объем?</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -671,8 +836,8 @@ Note
 </div>
 </section>
 </section>
-<section id="прикладная-магия" class="level2" data-number="10.5">
-<h2 data-number="10.5" class="anchored" data-anchor-id="прикладная-магия"><span class="header-section-number">10.5</span> Прикладная магия</h2>
+<section id="прикладная-магия" class="level2" data-number="19.5">
+<h2 data-number="19.5" class="anchored" data-anchor-id="прикладная-магия"><span class="header-section-number">19.5</span> Прикладная магия</h2>
 <p>Пусть дана функция общего вида <span class="math inline">f(x,y)</span> и система уравнений <span class="math inline">Ax=b</span> для двух переменных. Постройте контурный график функции, на котором изобразите точки пересечения прямых. Обработать случая параллельных прямых, совпадающих прямых.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -702,8 +867,8 @@ Tip
 </div>
 </div>
 </section>
-<section id="разбалловка" class="level2" data-number="10.6">
-<h2 data-number="10.6" class="anchored" data-anchor-id="разбалловка"><span class="header-section-number">10.6</span> Разбалловка</h2>
+<section id="разбалловка" class="level2" data-number="19.6">
+<h2 data-number="19.6" class="anchored" data-anchor-id="разбалловка"><span class="header-section-number">19.6</span> Разбалловка</h2>
 <table class="caption-top table">
 <caption>Разбалловка</caption>
 <thead>
@@ -1151,13 +1316,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../nonlinear/unconstrained/analytical-many.html" class="pagination-link" aria-label="Безусловная оптимизация функции многих переменных">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Безусловная оптимизация функции многих переменных</span></span>
+      <a href="../game-theory/matrix.html" class="pagination-link" aria-label="Матричные игры">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Матричные игры</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../lab2/linear.html" class="pagination-link" aria-label="Лабораторная работа 2. Линейное программирование">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Лабораторная работа 2. Линейное программирование</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Лабораторная работа 2. Линейное программирование</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
