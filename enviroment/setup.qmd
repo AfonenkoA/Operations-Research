@@ -1,0 +1,165 @@
+# Установка и настройка
+
+## Quarto
+
+### Установка
+
+::: panel-tabset
+#### Windows
+
+```{{python}}
+#| layout-ncol: 2
+#| fig-cap: 
+#|   - "Line Plot 1"
+#|   - "Line Plot 2"
+
+import matplotlib.pyplot as plt
+plt.plot([1,23,2,4])
+plt.show()
+
+plt.plot([8,65,23,90])
+plt.show()
+```
+
+#### Arch linux
+
+```{{r}}
+#| layout-ncol: 2
+#| fig-cap: 
+#|   - "Speed and Stopping Distances of Cars"
+#|   - "Vapor Pressure of Mercury as a Function of Temperature"
+
+plot(cars)
+plot(pressure)
+```
+:::
+
+### Работа
+
+дальнейшее изучение
+
+## R
+
+### Установка
+
+::: panel-tabset
+#### Windows
+
+```{{python}}
+#| layout-ncol: 2
+#| fig-cap: 
+#|   - "Line Plot 1"
+#|   - "Line Plot 2"
+
+import matplotlib.pyplot as plt
+plt.plot([1,23,2,4])
+plt.show()
+
+plt.plot([8,65,23,90])
+plt.show()
+```
+
+#### Arch linux
+
+```{{r}}
+#| layout-ncol: 2
+#| fig-cap: 
+#|   - "Speed and Stopping Distances of Cars"
+#|   - "Vapor Pressure of Mercury as a Function of Temperature"
+
+plot(cars)
+plot(pressure)
+```
+:::
+
+### Интерфейс командной строки
+
+ссылка на язык
+
+## RTools
+
+### Установка
+
+::: panel-tabset
+#### Windows
+
+```{{python}}
+#| layout-ncol: 2
+#| fig-cap: 
+#|   - "Line Plot 1"
+#|   - "Line Plot 2"
+
+import matplotlib.pyplot as plt
+plt.plot([1,23,2,4])
+plt.show()
+
+plt.plot([8,65,23,90])
+plt.show()
+```
+
+#### Arch linux
+
+```{{r}}
+#| layout-ncol: 2
+#| fig-cap: 
+#|   - "Speed and Stopping Distances of Cars"
+#|   - "Vapor Pressure of Mercury as a Function of Temperature"
+
+plot(cars)
+plot(pressure)
+```
+:::
+
+### Проверка
+
+установка пакетов lpSolve
+
+## RStudio
+
+### Установка
+
+::: panel-tabset
+#### Windows
+
+```{{python}}
+#| layout-ncol: 2
+#| fig-cap: 
+#|   - "Line Plot 1"
+#|   - "Line Plot 2"
+
+import matplotlib.pyplot as plt
+plt.plot([1,23,2,4])
+plt.show()
+
+plt.plot([8,65,23,90])
+plt.show()
+```
+
+#### Arch linux
+
+```{{r}}
+#| layout-ncol: 2
+#| fig-cap: 
+#|   - "Speed and Stopping Distances of Cars"
+#|   - "Vapor Pressure of Mercury as a Function of Temperature"
+
+plot(cars)
+plot(pressure)
+```
+:::
+
+### Приступая к работе
+
+#### Создание проекта
+
+проект quarto
+
+#### Сочетание клавиш
+
+Картинки и обзор панели редактирования
+
+#### Отладка
+
+Здесь обзор конопок, а функции типа browser() и trace() ссылка на продвинутый r
+
+## VSCode
