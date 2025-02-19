@@ -4,32 +4,15 @@ format:
     html-math-method: katex
 ---
 
-# Целочисленное программирование. Метод ветвей и границ
-
 ```{r}
 #| echo: false
 #| warning: false
 #| message: false
-
-library(plotly)
-
-add_region <- function(fig, xy, name = 'region', color) {
-  add_trace(
-    fig,
-    x = xy[, 1],
-    y = xy[, 2],
-    type = 'scatter',
-    fill = 'toself',
-    fillcolor = color,
-    hoveron = 'points+fills',
-    marker = list(color = 'red'),
-    line = list(color = color),
-    text = apply(xy, 1, paste, collapse = ','),
-    hoverinfo = 'text',
-    name = TeX(name)
-  )
-}
+#| include: false
+#| file: ../util/add_region.R
 ```
+
+# Целочисленное программирование. Метод ветвей и границ
 
 Рассмотрим следующую задачу оптимизации в которой наглядно показано отличие целочисленного решения и округления решения в действительных числах.
 
