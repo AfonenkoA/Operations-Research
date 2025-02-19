@@ -104,22 +104,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -260,7 +246,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../linear/graphical-solution.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Графическое решение</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Особые случаи применеия симплекс метода</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -328,6 +314,18 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Безусловная оптимизация функции многих переменных</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nonlinear/constrained/analytical-one.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Условная оптимизация функции одной переменной</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nonlinear/constrained/analytical-many.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Условная оптимизация функции многих переменных</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -342,7 +340,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../graph-theory/dijkstra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Алгоритм дейкстры</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Алгоритм дейкстры</span></span></a>
   </div>
 </li>
       </ul>
@@ -359,7 +357,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../game-theory/matrix.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Матричные игры</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Матричные игры</span></span></a>
   </div>
 </li>
       </ul>
@@ -376,13 +374,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lab1/intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Лабораторная работа 1. Введение</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Лабораторная работа 1. Введение</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lab2/linear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Лабораторная работа 2. Линейное программирование</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Лабораторная работа 2. Линейное программирование</span></span></a>
   </div>
 </li>
       </ul>
@@ -474,7 +472,7 @@ window.Quarto = {
 <p>Существует два интерфейса для работы с этой библиотекой. Более высокоуровненый <strong>lpSolve</strong> и низкоуровневый <strong>lpSolveAPI</strong>. Рассмотрим оба</p>
 <section id="lpsolve" class="level2" data-number="B.1">
 <h2 data-number="B.1" class="anchored" data-anchor-id="lpsolve"><span class="header-section-number">B.1</span> lpSolve</h2>
-<p>Требуется задать коэффициенты целевой функции. <span class="math inline">c(a_1,a_2,a_3,...,a_n)\implies F(\vec{x})=a_1x_1+a_2x_2+a_3x_3+...a_nx_n</span>.</p>
+<p>Требуется задать коэффициенты целевой функции. <span class="math inline">\(c(a_1,a_2,a_3,...,a_n)\implies F(\vec{x})=a_1x_1+a_2x_2+a_3x_3+...a_nx_n\)</span>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lpSolve)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Fun <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -522,7 +520,7 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>stub <span class="ot">&lt;-</span> <span class="fu">lp.control</span>(lprob, <span class="at">sense =</span> <span class="st">'max'</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(stub)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Далее задаются ограничения. Коэффициенты в функция ограничения задаются с помощью <span class="math inline">c(a_1,a_2,a_3,...,a_n)\implies a_1x_1+a_2x_2+a_3x_3+...a_nx_n</span>. По умолчанию на переменные накладывается условие <span class="math inline">\forall{i}: x_i\geq0</span></p>
+<p>Далее задаются ограничения. Коэффициенты в функция ограничения задаются с помощью <span class="math inline">\(c(a_1,a_2,a_3,...,a_n)\implies a_1x_1+a_2x_2+a_3x_3+...a_nx_n\)</span>. По умолчанию на переменные накладывается условие <span class="math inline">\(\forall{i}: x_i\geq0\)</span></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">add.constraint</span>(lprob, <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>), <span class="st">'&lt;='</span>, <span class="dv">2048</span>)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">add.constraint</span>(lprob, <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>), <span class="st">'&lt;='</span>, <span class="dv">2048</span>)</span>
@@ -566,7 +564,7 @@ Lower        0     0          </code></pre>
 </section>
 <section id="анализ-чувствительности" class="level2" data-number="B.3">
 <h2 data-number="B.3" class="anchored" data-anchor-id="анализ-чувствительности"><span class="header-section-number">B.3</span> Анализ чувствительности</h2>
-<p>Анализ чувствительности применим только к задаче в действительных числах. Исходная целевая функция <span class="math inline">F=2x_1+6x_2</span>. Для анализа чувствительности целевой функции используется функция <strong>get.sensitivity.obj</strong>.</p>
+<p>Анализ чувствительности применим только к задаче в действительных числах. Исходная целевая функция <span class="math inline">\(F=2x_1+6x_2\)</span>. Для анализа чувствительности целевой функции используется функция <strong>get.sensitivity.obj</strong>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get.sensitivity.obj</span>(lprob)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -577,7 +575,7 @@ $objtill
 [1] 12  8</code></pre>
 </div>
 </div>
-<p>Полученные значения означают, что при измениении значения <span class="math inline">x_1\in(1.5,12)</span> или <span class="math inline">x_2\in(1,8)</span> точка соовтетствующая лучшему значению целевой функции не изменится.</p>
+<p>Полученные значения означают, что при измениении значения <span class="math inline">\(x_1\in(1.5,12)\)</span> или <span class="math inline">\(x_2\in(1,8)\)</span> точка соовтетствующая лучшему значению целевой функции не изменится.</p>
 <p>Для анализа чувствительности ограничений применяется функция <strong>get.sensitivity.rhs</strong>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">get.sensitivity.rhs</span>(lprob)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -592,8 +590,8 @@ $dualstill
 [1] 2.704e+03 4.096e+03 1.000e+30 1.000e+30 1.000e+30</code></pre>
 </div>
 </div>
-<p>Рассмотрим первое ограничение <span class="math inline">x_1+4x_2\leq2048</span>. Значение <span class="math inline">\xi_1=1.4285</span> показывает насколько изменится целевая функция, если значение ограничения увеличится на одну единицу. Значение <span class="math inline">xi</span> ненулевое, только если ограничение активно. <span class="math inline">\xi</span> можно интерпретировать как частную произовдную целевой фунцкии по правой части неравенстра ограничения. <span class="math inline">\xi_1=\frac{\partial F}{\partial B_1}</span>. Следовательно при изменении ограничения <span class="math inline">\xi_i</span> в пределах от <span class="math inline">\xi_{from}</span> до <span class="math inline">\xi_{till}</span> значение целевой функции изменится как <span class="math inline">F=F_0+\Delta B_i \xi_i</span></p>
-<p>Значение <span class="math inline">\xi_i</span> дает очень хорошее представление о том, сколько стоит это ограничение. Если значение <span class="math inline">\xi_i</span> большое, то это ограничение сильно влияет на целевую функцию. Небольшие изменения ограничения (ослабление) позволит значительно улучшить значение целевой функции. Также имеет значение знак <span class="math inline">\xi_i</span>. Положительное значение означает, что по мере увеличения ограничения значение целевой функции будет больше, а по мере того, как оно становится более отрицательным, значение целевой функции будет меньше.</p>
+<p>Рассмотрим первое ограничение <span class="math inline">\(x_1+4x_2\leq2048\)</span>. Значение <span class="math inline">\(\xi_1=1.4285\)</span> показывает насколько изменится целевая функция, если значение ограничения увеличится на одну единицу. Значение <span class="math inline">\(xi\)</span> ненулевое, только если ограничение активно. <span class="math inline">\(\xi\)</span> можно интерпретировать как частную произовдную целевой фунцкии по правой части неравенстра ограничения. <span class="math inline">\(\xi_1=\frac{\partial F}{\partial B_1}\)</span>. Следовательно при изменении ограничения <span class="math inline">\(\xi_i\)</span> в пределах от <span class="math inline">\(\xi_{from}\)</span> до <span class="math inline">\(\xi_{till}\)</span> значение целевой функции изменится как <span class="math inline">\(F=F_0+\Delta B_i \xi_i\)</span></p>
+<p>Значение <span class="math inline">\(\xi_i\)</span> дает очень хорошее представление о том, сколько стоит это ограничение. Если значение <span class="math inline">\(\xi_i\)</span> большое, то это ограничение сильно влияет на целевую функцию. Небольшие изменения ограничения (ослабление) позволит значительно улучшить значение целевой функции. Также имеет значение знак <span class="math inline">\(\xi_i\)</span>. Положительное значение означает, что по мере увеличения ограничения значение целевой функции будет больше, а по мере того, как оно становится более отрицательным, значение целевой функции будет меньше.</p>
 <p>Аналогично для <strong>lpSolve</strong> используются следующие функции для анализа коэффициентов целевой функции</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>optimum<span class="sc">$</span>sens.coef.from</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
