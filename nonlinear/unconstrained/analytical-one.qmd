@@ -43,9 +43,9 @@
 ###### Решение
 
 ```{r}
-#|echo: false
-#|message: false
-#|warning: false
+#| echo: false
+#| message: false
+#| warning: false
 
 library(plotly)
 
@@ -92,9 +92,9 @@ $$y_{\min }=y(0)=-1$$
 ##### Решение
 
 ```{r}
-#|echo: false
-#|message: false
-#|warning: false
+#| echo: false
+#| message: false
+#| warning: false
 
 library(plotly)
 

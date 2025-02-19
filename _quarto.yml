@@ -37,6 +37,8 @@ book:
       chapters:
         - nonlinear/unconstrained/analytical-one.qmd
         - nonlinear/unconstrained/analytical-many.qmd
+        - nonlinear/constrained/analytical-one.qmd
+        - nonlinear/constrained/analytical-many.qmd
 
     - part: graph-theory/overview.qmd
       chapters:
@@ -63,13 +65,10 @@ book:
 
 bibliography: references.bib
 
-freeze: auto
-cache: true
-
 format:
   html:
     number-depth: 3
     theme: cosmo
-    html-math-method: katex
+    html-math-method: mathjax
 
 editor: visual
