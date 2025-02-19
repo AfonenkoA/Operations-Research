@@ -28,6 +28,7 @@ book:
         - linear/sensetivity.qmd
         - linear/dual.qmd
         - linear/simplex.qmd
+        - linear/simplex-spec.qmd
         - linear/simplex-ext.qmd
         - linear/integer.qmd
         - linear/transport.qmd
