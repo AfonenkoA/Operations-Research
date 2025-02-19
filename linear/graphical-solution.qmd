@@ -1,4 +1,8 @@
-# Графическое решение
+---
+format:
+  html:
+    html-math-method: katex
+---
 
 $$\begin{cases}
       \max{F(x)=2x_1+6x_2}\\
@@ -6,7 +10,7 @@ $$\begin{cases}
       2x_1+x_2\leq2048\\
       x2\leq480\\
       x1,x2\geq0
-\end{cases}\,$$
+\end{cases}$$
 
 Задача 1 найти область удовлетворяющую ограничениям. Сразу можно сказать, что рассматривается первая четверть из-за ограничения на положительность переменных. Определим функцию для построения замкнутой области на графике используя библиотеку **plotly**.
 
@@ -39,8 +43,6 @@ add_region <- function(fig, xy, name = 'region', color) {
 #| echo: false
 #| warning: false
 #| message: false
-#| output: asis
-
 
 library(plotly)
 library(widgetframe)
@@ -72,8 +74,7 @@ plot_ly(mode = 'lines+markers') |>
   add_region(
     xy = rbind(c(0, 0), c(0, 480), c(128, 480), c(6144 / 7, 2048 / 7), c(2048 / 2, 0)),
     name = 'region',
-    color = 'rgba(51, 0, 153, 0.4)') |>
-  config(mathjax = 'cdn')
+    color = 'rgba(51, 0, 153, 0.4)')
 ```
 
 Теперь можно добавить график уровня функции и совместить его с графиком ограничений
@@ -107,7 +108,7 @@ $$\begin{cases}
       5x_1+6x_2\leq600\\
       x_1+2x_2\leq160\\
       x1,x2\geq0
-\end{cases}\,$$
+\end{cases}$$
 
 Изобразим область поиска соответствующую ограничениям
 
@@ -149,8 +150,7 @@ plot_ly(x = x, y = y, z = z, type = 'contour') |>
   add_region(
     xy = rbind(c(0, 0), c(0, 80), c(60, 50), c(80, 100 / 3), c(80, 0)),
     name = 'region',
-    color = 'rgba(0, 0, 0, 0.4)') |>
-  config(mathjax = 'cdn')
+    color = 'rgba(0, 0, 0, 0.4)')
 ```
 
 Из графика следует то, что прямая постоянного уровня целевой функции $F(x)=x_1+2x_2$ совпала с прямой задающей ограничение $x_1+2x_2\leq160$. Значит все точки принадлежащие прямой проходящей через координаты $P(0,80)$ и $Q(60,50)$ будут соответствовать оптимальному решению.
@@ -278,8 +278,6 @@ plot_ly(mode = 'lines+markers') |>
 
 Объединяя добавляя контурный график
 
-Blackbody,Bluered,Blues,Cividis,Earth,Electric,Greens,Greys,Hot,Jet,Picnic,Portland,Rainbow,RdBu,Reds,Viridis,YlGnBu,YlOrRd.
-
 ```{r}
 #| echo: false
 #| warning: false
@@ -295,8 +293,7 @@ plot_ly(x = x, y = y, z = z, type = 'contour', colorscale = 'YlOrRd') |>
   add_region(
     xy = rbind(c(15, 40), c(24, 22), c(90, 0), c(90, 40)),
     name = 'region',
-    color = 'rgba(255, 255, 255, 0.5)') |>
-  config(mathjax = 'cdn')
+    color = 'rgba(255, 255, 255, 0.5)')
 ```
 
 Ограничения заданные в этом примере не ограничивают область поиска в направлениии $x\to\infty$ и $y\to\infty$. Целевая функция неограниченно возрастает в этом направлении, следовательно и решение неограниченно.

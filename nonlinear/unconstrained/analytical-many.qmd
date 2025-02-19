@@ -25,57 +25,356 @@ y <- seq(-3, -1 , length.out = 100)
 z <- outer(x, y, \(x,y) { (x-1)^2 + (y+2)^2 })  |> t()
 
 plot_ly(x=x, y=y, z = z, type = "surface") |>
-  add_trace(x=1, y=-2, z = 0, type='scatter3d', mode='markers', marker = list(size = 10, color = "red", symbol = 104))
-```
-
-```{r}
-set.seed(123)
-
-x = sample(1:ncol(volcano), size = 50)
-y = sample(1:nrow(volcano), size = 50)
-
-z = c()
-
-for(i in 1:50) {z <- c(z, volcano[y[i], x[i]])}
-
-df <- data.frame(x, y, z)
-
-plot_ly(z = volcano, type = "surface") %>% 
-  add_trace(data = df, x = x, y = y, z = z, mode = "markers", type = "scatter3d", 
-            marker = list(size = 5, color = "red", symbol = 104))
-
+  add_trace(x=1, y=-2, z = 0, type='scatter3d', mode='markers', name='M0',  marker = list(size = 10, color = "red", symbol = 104))
 ```
 
 ## Экстремум функции двух переменных
 
 ### Необходимое условие
 
-Прежде всего, нужно ориентироваться на необходимое условие экстремума:
+Если дифференцируемая функция имеет экстремум в точке , то обе частные производные 1-го порядка в данной точке равны нулю:
 
-если дифференцируемая функция имеет экстремум в точке , то обе частные производные 1-го порядка в данной точке равны нулю:
+$$
+\frac{\partial F(x,y)}{\partial x}=0 \qquad
+\frac{\partial F(x,y)}{\partial y}=0
+$$
 
-Точку, удовлетворяющую этим условиям, называют критической, а чаще – стационарной точкой.
+Стационарной точкой
 
-Так, например, у функции , которая как раз задаёт эллиптический параболоид, частные производные обращаются в ноль в точке – и в данной точке действительно существует минимум функции («дно чаши»).
+:   называется точка. удовлетворяющая этим условиям. Также эту точку называют критической.
 
-Но у функции с производными , равными нулю в этой же точке, не наблюдается ничего подобного. Это гиперболический параболоид или «седло»
+Но у функции с производными , равными нулю в этой же точке, не наблюдается ничего подобного. Это гиперболический параболоид или «седло» Для точки не существует окрестности, в которой поверхность располагалась бы только вверху или только внизу .
 
-Для точки не существует -окрестности, в которой поверхность располагалась бы только вверху или только внизу . Грубо говоря, в любой -окрестности точки куски поверхности есть и сверху и снизу.
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+#| fig-cap: "Гиперболический параболоид"
 
-Точку такого рода так и называют – седловой, а иногда, по известной географической ассоциации – точкой перевала.
+library(plotly)
+
+
+x <- y <-  seq(-5, 5, length.out = 100)
+z <- outer(x, y, \(x,y) { x^2 - y^2 })  |> t()
+
+plot_ly(x=x, y=y, z = z, type = "surface") |>
+  add_trace(x=0, y=0, z = 0, type='scatter3d', mode='markers', name='M0', marker = list(size = 10, color = "red", symbol = 104))
+```
+
+Следовой точкой
+
+:   называется точку такого рода.
 
 #### Пример
 
 ##### Задание
+
+Исследовать на экстремум функцию
+
+$$z=3x^2 + xy + 2y^2 -x -4y$$
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+
+library(plotly)
+
+x <- y <-  seq(-5, 5, length.out = 100)
+z <- outer(x, y, \(x,y) { 3*x^2+x*y+2*y^2-x-4*y })  |> t()
+
+plot_ly(x=x, y=y, z = z, type = "surface") |>
+  add_trace(x=0, y=1, z = -2, type='scatter3d', mode='markers', name='M0', marker = list(size = 10, color = "red", symbol = 104))
+```
+
+##### Решение
+
+на первом шаге нужно отыскать стационарные точки. Для этого найдём частные производные 1-го порядка:
+
+$$
+\begin{align*}
+&\frac{\partial z}{\partial x}=\frac{\partial}{\partial x}\bigl(3x^2+xy+2y^2-x-4y \bigr)=6x+y-1 \\
+&\frac{\partial z}{\partial x}=\frac{\partial}{\partial x}\bigl(3x^2+xy+2y^2-x-4y \bigr)=x+4y-4
+\end{align*}
+$$
+
+Решим систему уравнений
+
+$$
+\begin{cases}
+\frac{\partial z}{\partial x}=0\\
+\frac{\partial z}{\partial y}=0
+\end{cases}\,
+\Rightarrow
+\begin{cases}
+6x+y-1=0\\
+x+4y-1=0
+\end{cases}\,
+$$
+
+Таким образом 
+
+$$
+\begin{align*}
+y=1\\
+x=0
+\end{align*}
+$$
+
+##### Ответ
+
+Найдена стационарная точка $M_0(0,1)$. В найденной точке может быть минимум, максимум либо перевал.
 
 ### Достаточное условие
 
+Для применения достаточного условия нужно вычислить частные производные 2-го порядка в точке Для компактности обычно используют следующие обозначения
+
+$$
+\begin{align*}
+&A=\frac{\partial^2 z}{\partial x^2}\\
+&B=\frac{\partial^2 z}{\partial x \partial y}\\
+&C=\frac{\partial^2 z}{\partial x^2}\\
+\end{align*}
+$$
+
+1.  Если $AC-B^2>0$, то функция $z=f(x,y)$ имеет экстремум в точке $M_0$, причём, если $A>0$, то это минимум, а если $A<0$ -- то максимум.
+2.  Если $AC-B^2<0$, то в точке $M_0$ нет экстремума.
+3.  Если $AC-B^2=0$, то требуется дополнительное исследование.
+
 #### Пример
 
 ##### Задание
 
+Определить тип стационарной точки $M_0(0,1)$ для функции $$z=3x^2 + xy + 2y^2 -x -4y$$ 
+
+##### Решение
+
+Найдем все вторые частные производные.
+
+$$
+\begin{align*}
+&\frac{\partial^2 z}{\partial x^2}=\frac{\partial z}{\partial x} \bigl(6x+y-1\bigr)=A=6\\
+&\frac{\partial^2 z}{\partial x \partial y}=\frac{\partial z}{\partial y} \bigl(6x+y-1\bigr)=B=1\\
+&\frac{\partial^2 z}{\partial y^2}=\frac{\partial z}{\partial x} \bigl(x+4y-4\bigr)=C=4
+\end{align*}
+$$ 
+
+Таким образом $AC-B^2=6\cdot 4-1^2=23>0$, следовательно в точке $M_0$ есть экстремум, и так как $A>0$, то это минимум.
+
+##### Ответ
+
+$$\min{z}=z(0,1)=-2$$
+
 ## Экстремумы трёх переменных
 
+### Необходимое условие
+
+Как и для функции двух переменных общий вид необходимых условий сохраняется.
+
+$$
+\frac{\partial F(x,y,z)}{\partial x}=0 \qquad
+\frac{\partial F(x,y,z)}{\partial y}=0 \qquad
+\frac{\partial F(x,y,z)}{\partial z}=0
+$$ 
+
+#### Пример
+
+##### Задание
+
+Найти стационарные точки функции
+
+$$
+u=-x^2-5y^2-3z^2+xy-2xz+2yz+11x+2y+18z+10
+$$
+
+График сечений
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+
+library(plotly)
+library(widgetframe)
+
+f <- \(x,y,z) x^2-5*y^2-3*z^2+x*y-2*x*z+2*y*z+11*x+2*y+18*z+10
+x <- y <- z <- seq(-5, 5, length.out = 20)
+d <- tidyr::crossing(x = x,y = y, z = z)
+u <- purrr::pmap_dbl(d,f)
+
+plot_ly(data = d,
+  type='isosurface',
+  x = ~x,
+  y = ~y,
+  z = ~z,
+  value = u,
+  isomin = -100,
+  isomax = 100,
+  colorscale='RdBu',
+  surface = list(show = TRUE, count = 1),
+  slices = list(z = list(show = TRUE,locations=-5:5), y=list(show=TRUE,locations=c(0))),
+  caps = list(x = list(show = FALSE),y = list(show = FALSE))) |>
+  add_trace(x=4, y=1, z = 2, type='scatter3d', mode='markers', name='M0',  marker = list(size = 10, color = "green", symbol = 104))
+```
+
+##### Решение
+
+Найдем все первые частные производные
+
+$$
+\begin{align*}
+&\frac{\partial u}{\partial x}=-2x+y-2z+11\\
+&\frac{\partial u}{\partial y}=-10y+x+2z+2\\
+&\frac{\partial u}{\partial z}=-6z-2x+2y+18
+\end{align*}
+$$
+
+Чтобы найти стационарные точки, составим и решим следующую систему
+
+$$
+\begin{cases}
+\frac{\partial u}{\partial x}=0\\
+\frac{\partial u}{\partial y}=0\\
+\frac{\partial u}{\partial z}=0\\
+\end{cases}\,
+\Rightarrow
+\begin{cases}
+-2x+y-2z+11=0\\
+-10y+x+2z+2=0\\
+-6z-2x+2y+18=0
+\end{cases}\,
+$$
+
+Таким образом 
+
+$$
+\begin{align*}
+&x=4\\
+&y=1\\
+&z=2
+\end{align*}
+$$
+
+##### Ответ
+
+Найдена единственная стационарная точка $M_0(4,1,2)$
+
+### Достаточное условие
+
+Для проверки достаточное условия требуется построить **матрицу Гессе**, состоящую из всех частных производных второго порядка
+
+$$
+H =
+\begin{pmatrix}
+\frac{\partial^2 u(M_0)}{\partial x^2} & \frac{\partial^2 u(M_0)}{\partial x \partial y} & \frac{\partial^2 u(M_0)}{\partial x \partial z} \\
+\frac{\partial^2 u(M_0)}{\partial y \partial x} & \frac{\partial^2 u(M_0)}{\partial y^2}  & \frac{\partial^2 u(M_0)}{\partial y \partial z} \\
+\frac{\partial^2 u(M_0)}{\partial z \partial x} &  \frac{\partial^2 u(M_0)}{\partial y \partial z} & \frac{\partial^2 u(M_0)}{\partial z^2}
+\end{pmatrix}
+$$ 
+
+Данная матрица является симметричной (или симметрической). Это значит, что её элементы симметричны относительно главной диагонали, на которой в данном случае расположены «однобуквенные» частные производные
+
+Далее нужно вычислить угловые миноры. Это определители, которые «разрастаются» из левого верхнего угла:
+
+$$
+\delta_1=\frac{\partial^2 u(M_0)}{\partial x^2}, \qquad
+\delta_2=
+\begin{vmatrix}
+\frac{\partial^2 u(M_0)}{\partial x^2} & \frac{\partial^2 u(M_0)}{\partial x \partial y} \\
+\frac{\partial^2 u(M_0)}{\partial y \partial x} & \frac{\partial^2 u(M_0)}{\partial y^2}
+\end{vmatrix}, \qquad
+\delta_3=
+\begin{vmatrix}
+\frac{\partial^2 u(M_0)}{\partial x^2} & \frac{\partial^2 u(M_0)}{\partial x \partial y} & \frac{\partial^2 u(M_0)}{\partial x \partial z} \\
+\frac{\partial^2 u(M_0)}{\partial y \partial x} & \frac{\partial^2 u(M_0)}{\partial y^2}  & \frac{\partial^2 u(M_0)}{\partial y \partial z} \\
+\frac{\partial^2 u(M_0)}{\partial z \partial x} &  \frac{\partial^2 u(M_0)}{\partial y \partial z} & \frac{\partial^2 u(M_0)}{\partial z^2}
+\end{vmatrix}
+$$ 1. Если $\delta_1>0,\quad \delta_2>0,\quad \delta_3>0$, то функция $u=f(x,y,z)$ достигает минимума в точке $M_0$ 2. Если $\delta_1<0,\quad \delta_2>0,\quad \delta_3<0$ (так и только так!), то функция $u=f(x,y,z)$ достигает максимума в точке $M_0$. 3. Если получилось что-то другое и при этом $\delta_3=|H|\neq0$, то $M_0$ -- следовая точка. Здесь это уже во многом условное название. 4. Если $\delta_3=|H|=0$, то признак не даёт ответа о характере точки $M_0$.
+
+#### Пример
+
+##### Задача
+
+Определить тип стационарной точки $M_0(4,1,2)$ для функции
+
+$$
+u=-x^2-5y^2-3z^2+xy-2xz+2yz+11x+2y+18z+10
+$$
+
+##### Решение
+
+В нашем примере все производные 2-го порядка равны константам
+
+$$
+\begin{align*}
+&\frac{\partial^2 u}{\partial x^2}=-2\\
+&\frac{\partial^2 u}{\partial y^2}=-10\\
+&\frac{\partial^2 u}{\partial z^2}=-6\\
+&\frac{\partial^2 u}{\partial x \partial y}=1\\
+&\frac{\partial^2 u}{\partial x \partial z}=-2\\
+&\frac{\partial^2 u}{\partial y \partial z}=2\\
+\end{align*}
+$$
+
+Составим матрицу Гессе
+
+$$
+H=
+\begin{pmatrix}
+-2 & 1 & -2\\
+1 & -10 & 2\\
+-2 & 2 & -6
+\end{pmatrix}
+$$
+
+и вычислим её угловые миноры
+
+$$
+\begin{align*}
+&\delta_1=2<0\\
+&\delta_2=
+\begin{vmatrix}
+-2 & 1\\
+1 & -10
+\end{vmatrix}=19>0\\
+&\delta_3=
+\begin{vmatrix}
+-2 & 1 & -2\\
+1 & -10 & 2\\
+-2 & 2 & -6
+\end{vmatrix}=-74<0
+\end{align*}
+$$ Вывод: функция достигает максимума в точке $M_0(4,1,2)$
+
+##### Ответ
+
+$$\max{u}=u(4,1,2)=51$$
+
 ## Экстремум функции четырех переменных
+
+Рассмотренный алгоритм исследования распространяется и на функции большего количества переменных Разберём ещё случай функции 4 переменных, а дальше – будет понятно. Чтобы исследовать на экстремум дифференцируемую функцию четырёх аргументов, нужно найти частные производные 1-го порядка и решить систему:
+
+$$
+\begin{cases}
+\frac{\partial u}{\partial x}=0\\
+\frac{\partial u}{\partial y}=0\\
+\frac{\partial u}{\partial z}=0\\
+\frac{\partial u}{\partial v}=0\\
+\end{cases}
+$$
+
+Предположим, что в результате решения найдена стационарная точка $M_0(x_0,y_0,z_0,v_0$. Далее нужно найти частные производные 2-го порядка, вычислить их в точке $M_0$ и составить матрицу Гессе:
+
+$$
+H_4=
+\begin{pmatrix}
+\frac{\partial^2 u(M_0)}{\partial x^2} & \frac{\partial^2 u(M_0)}{\partial x \partial y} & \frac{\partial^2 u(M_0)}{\partial x \partial z}  & \frac{\partial^2 u(M_0)}{\partial x \partial v}\\
+\frac{\partial^2 u(M_0)}{\partial y \partial x} & \frac{\partial^2 u(M_0)}{\partial y^2}  & \frac{\partial^2 u(M_0)}{\partial y \partial z} & \frac{\partial^2 u(M_0)}{\partial y \partial v} \\
+\frac{\partial^2 u(M_0)}{\partial x \partial z} &  \frac{\partial^2 u(M_0)}{\partial z \partial y} & \frac{\partial^2 u(M_0)}{\partial z^2} & \frac{\partial^2 u(M_0)}{\partial z \partial v} \\
+\frac{\partial^2 u(M_0)}{\partial v \partial x} &  \frac{\partial^2 u(M_0)}{\partial v \partial y} & \frac{\partial^2 u(M_0)}{\partial v \partial z} & \frac{\partial^2 u(M_0)}{\partial v^2} \\
+\end{pmatrix}
+$$ после чего вычислить её угловые миноры $\delta_1,\delta_2,\delta_3,\delta_4$.
+
+Если все миноры положительны, то в точке $M_0$ -- минимум, если знакочередуются в следующем порядке: $\delta_1<0,\quad \delta_2>0,\quad \delta_3<0, \quad \delta_4>0$ (и именно в таком!), то в точке $M_0$ -- максимум. Если имеет место другой случай, но $\delta_4=|H_4|\neq0$ , то $M_0$ -- седловая точка; если же $\delta_4=|H_4|=0$, то признак не даёт ответа о характере точки $M_0$. Этот алгоритм известен как проверка квадратичной формы полного дифференциала 2-го порядка на знакоопределённость методом Сильвестра (для функций 2, 3, 4 и большего количества переменных).
 
 <http://mathprofi.ru/extremumy_funkcij_dvuh_i_treh_peremennyh.html>
