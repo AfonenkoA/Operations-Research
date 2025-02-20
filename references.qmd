@@ -2,13 +2,3 @@
 
 ::: {#refs}
 :::
-
-<https://adv-r.hadley.nz/>
-
-<https://deepr.gagolewski.com/>
-
-<https://www.tutorialspoint.com/r/index.htm>
-
-<https://quarto.org/>
-
-<https://www.w3schools.com/r/>

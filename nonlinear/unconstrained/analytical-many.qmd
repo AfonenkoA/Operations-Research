@@ -1,5 +1,7 @@
 # Безусловная оптимизация функции многих переменных
 
+@mathprofi-extremum-many
+
 ## Определение
 
 Точкой локального максимума
@@ -112,7 +114,7 @@ x+4y-1=0
 \end{cases}\,
 $$
 
-Таким образом 
+Таким образом
 
 $$
 \begin{align*}
@@ -145,7 +147,7 @@ $$
 
 ##### Задание
 
-Определить тип стационарной точки $M_0(0,1)$ для функции $$z=3x^2 + xy + 2y^2 -x -4y$$ 
+Определить тип стационарной точки $M_0(0,1)$ для функции $$z=3x^2 + xy + 2y^2 -x -4y$$
 
 ##### Решение
 
@@ -157,7 +159,7 @@ $$
 &\frac{\partial^2 z}{\partial x \partial y}=\frac{\partial z}{\partial y} \bigl(6x+y-1\bigr)=B=1\\
 &\frac{\partial^2 z}{\partial y^2}=\frac{\partial z}{\partial x} \bigl(x+4y-4\bigr)=C=4
 \end{align*}
-$$ 
+$$
 
 Таким образом $AC-B^2=6\cdot 4-1^2=23>0$, следовательно в точке $M_0$ есть экстремум, и так как $A>0$, то это минимум.
 
@@ -175,7 +177,7 @@ $$
 \frac{\partial F(x,y,z)}{\partial x}=0 \qquad
 \frac{\partial F(x,y,z)}{\partial y}=0 \qquad
 \frac{\partial F(x,y,z)}{\partial z}=0
-$$ 
+$$
 
 #### Пример
 
@@ -245,7 +247,7 @@ $$
 \end{cases}\,
 $$
 
-Таким образом 
+Таким образом
 
 $$
 \begin{align*}
@@ -270,7 +272,7 @@ H =
 \frac{\partial^2 u(M_0)}{\partial y \partial x} & \frac{\partial^2 u(M_0)}{\partial y^2}  & \frac{\partial^2 u(M_0)}{\partial y \partial z} \\
 \frac{\partial^2 u(M_0)}{\partial z \partial x} &  \frac{\partial^2 u(M_0)}{\partial y \partial z} & \frac{\partial^2 u(M_0)}{\partial z^2}
 \end{pmatrix}
-$$ 
+$$
 
 Данная матрица является симметричной (или симметрической). Это значит, что её элементы симметричны относительно главной диагонали, на которой в данном случае расположены «однобуквенные» частные производные
 

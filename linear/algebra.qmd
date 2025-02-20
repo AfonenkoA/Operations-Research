@@ -8,7 +8,7 @@
 
 Обратная матрица. Определение и свойства
 
-<https://rpubs.com/odenipinedo/linear-algebra-for-data-science-in-R>
+@rpubs-linear-algebra
 
 Дать задачку на решение слау
 
