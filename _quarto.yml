@@ -77,5 +77,8 @@ format:
     number-depth: 3
     theme: cosmo
     html-math-method: mathjax
+  pdf:
+    include-in-header:
+      - file: preamble.tex
 
 editor: visual
