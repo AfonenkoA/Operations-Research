@@ -1,6 +1,6 @@
 # Безусловная оптимизация функции одной переменной {#sec-nonlinear-unconstrained-one}
 
-@mathprofi-extremum @webmath-extremum
+@mathprofi-extremum-one @webmath-extremum
 
 ## Определение
 
