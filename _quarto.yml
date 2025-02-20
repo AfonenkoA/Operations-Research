@@ -13,6 +13,8 @@ book:
     - part: enviroment/overview.qmd
       chapters:
         - enviroment/setup.qmd
+        - enviroment/rstudio.qmd
+        - enviroment/quarto.qmd
         - enviroment/markdown.qmd
         - enviroment/latex.qmd
 
@@ -53,18 +55,22 @@ book:
       chapters:
         - lab1/intro.qmd
         - lab2/linear.qmd
+    - references.qmd
 
 
   appendices:
-    - references.qmd
     - part: "Язык программирования R"
       chapters:
-        - r-tools/figure-plot.qmd
-        - r-tools/linear.qmd
+        - r-tools/basic.qmd
         - r-tools/renv.qmd
+        - r-tools/plotly.qmd
+        - r-tools/ggplot2.qmd
+        - r-tools/tibble.qmd
+        - r-tools/purrr.qmd
 
 
 bibliography: references.bib
+csl: gost-r-7-0-5-2008-numeric.csl
 
 format:
   html:

@@ -1,5 +1,7 @@
 # Безусловная оптимизация функции одной переменной {#sec-nonlinear-unconstrained-one}
 
+@mathprofi-extremum @webmath-extremum
+
 ## Определение
 
 Точкой локального максимума
@@ -160,7 +162,3 @@ $$y_{\min }=y(0)=-1$$
 | $\arctan{g(x)}$  |            $\frac{g'(x)}{1+g(x)^2}$            |
 
 : Таблица производных
-
-<https://www.webmath.ru/poleznoe/formules_8_22.php>
-
-<http://mathprofi.ru/vozrastanie_ubyvanie_ekstremumy_funkcii.html>
