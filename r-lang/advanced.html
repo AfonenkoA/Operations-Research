@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Продвинутый R – Operations Research</title>
+<title>7&nbsp; Продвинутый R – Operations Research</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -54,7 +54,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -116,7 +136,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../r-lang/overview.html">Язык программирования R</a></li><li class="breadcrumb-item"><a href="../r-lang/advanced.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Продвинутый R</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../r-lang/overview.html">Язык программирования R</a></li><li class="breadcrumb-item"><a href="../r-lang/advanced.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Продвинутый R</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -164,14 +184,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../enviroment/rstudio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">RStudio IDE</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../enviroment/quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quarto</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../enviroment/markdown.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Язык разметки Markdown</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Язык разметки Markdown</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../enviroment/latex.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Язык разметки LaTeX</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Язык разметки LaTeX</span></span></a>
   </div>
 </li>
       </ul>
@@ -188,13 +220,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../r-lang/basic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Основы языка R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Основы языка R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../r-lang/advanced.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Продвинутый R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Продвинутый R</span></span></a>
   </div>
 </li>
       </ul>
@@ -211,61 +243,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../linear/algebra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Элементы линейной алгебры</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Элементы линейной алгебры</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../linear/graphical-solution.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Графическое решение</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Графическое решение</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../linear/sensetivity.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Анализ чувствительности</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Анализ чувствительности</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../linear/dual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Двойственная задача линейного программирования</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Двойственная задача линейного программирования</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../linear/simplex.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Симплекс метод</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Симплекс метод</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../linear/simplex-spec.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Особые случаи применеия симплекс метода</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Особые случаи применеия симплекс метода</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../linear/simplex-ext.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Двухэтапный симплекс метод и M-метод</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Двухэтапный симплекс метод и M-метод</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../linear/integer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Целочисленное программирование. Метод ветвей и границ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Целочисленное программирование. Метод ветвей и границ</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../linear/transport.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Транспортная задача</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Транспортная задача</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../linear/network.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Сетевая задача</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Сетевая задача</span></span></a>
   </div>
 </li>
       </ul>
@@ -282,25 +314,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../nonlinear/unconstrained/analytical-one.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Безусловная оптимизация функции одной переменной</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Безусловная оптимизация функции одной переменной</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../nonlinear/unconstrained/analytical-many.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Безусловная оптимизация функции многих переменных</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Безусловная оптимизация функции многих переменных</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../nonlinear/constrained/analytical-one.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Условная оптимизация функции одной переменной</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Условная оптимизация функции одной переменной</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../nonlinear/constrained/analytical-many.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Условная оптимизация функции многих переменных</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Условная оптимизация функции многих переменных</span></span></a>
   </div>
 </li>
       </ul>
@@ -317,7 +349,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../graph-theory/dijkstra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Алгоритм дейкстры</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Алгоритм дейкстры</span></span></a>
   </div>
 </li>
       </ul>
@@ -334,7 +366,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../game-theory/matrix.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Матричные игры</span></span></a>
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Матричные игры</span></span></a>
   </div>
 </li>
       </ul>
@@ -351,17 +383,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lab1/intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Лабораторная работа 1. Введение</span></span></a>
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Лабораторная работа 1. Введение</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lab2/linear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Лабораторная работа 2. Линейное программирование</span></span></a>
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Лабораторная работа 2. Линейное программирование</span></span></a>
   </div>
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Литература</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
@@ -371,12 +409,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </a> 
       </div>
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Литература</span></a>
-  </div>
-</li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
@@ -388,20 +420,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r-tools/figure-plot.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Графические библиотеки R</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../r-tools/linear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Решатель LPSolve R</span></span></a>
+  <a href="../r-tools/basic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Методы встроенных пакетов</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../r-tools/renv.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Система управления пакетами renv</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Система управления пакетами renv</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r-tools/plotly.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Графическая библиотека plotly</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r-tools/ggplot2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Графическая библиотека ggplot2</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r-tools/tibble.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Датафрейм Tibble</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r-tools/purrr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Функциональные операторы Purrr</span></span></a>
   </div>
 </li>
       </ul>
@@ -418,26 +468,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#встроенные-константы" id="toc-встроенные-константы" class="nav-link active" data-scroll-target="#встроенные-константы"><span class="header-section-number">5.1</span> Встроенные константы</a></li>
-  <li><a href="#пропущенные-значения" id="toc-пропущенные-значения" class="nav-link" data-scroll-target="#пропущенные-значения"><span class="header-section-number">5.2</span> Пропущенные значения</a></li>
-  <li><a href="#имена" id="toc-имена" class="nav-link" data-scroll-target="#имена"><span class="header-section-number">5.3</span> Имена</a></li>
-  <li><a href="#атрибуты-объектов" id="toc-атрибуты-объектов" class="nav-link" data-scroll-target="#атрибуты-объектов"><span class="header-section-number">5.4</span> Атрибуты объектов</a></li>
-  <li><a href="#векторизированные-вычисления" id="toc-векторизированные-вычисления" class="nav-link" data-scroll-target="#векторизированные-вычисления"><span class="header-section-number">5.5</span> Векторизированные вычисления</a></li>
-  <li><a href="#правила-видимости-свободных-переменных-scoping-rules" id="toc-правила-видимости-свободных-переменных-scoping-rules" class="nav-link" data-scroll-target="#правила-видимости-свободных-переменных-scoping-rules"><span class="header-section-number">5.6</span> Правила видимости свободных переменных (Scoping rules)</a>
+  <li><a href="#встроенные-константы" id="toc-встроенные-константы" class="nav-link active" data-scroll-target="#встроенные-константы"><span class="header-section-number">7.1</span> Встроенные константы</a></li>
+  <li><a href="#пропущенные-значения" id="toc-пропущенные-значения" class="nav-link" data-scroll-target="#пропущенные-значения"><span class="header-section-number">7.2</span> Пропущенные значения</a></li>
+  <li><a href="#имена" id="toc-имена" class="nav-link" data-scroll-target="#имена"><span class="header-section-number">7.3</span> Имена</a></li>
+  <li><a href="#атрибуты-объектов" id="toc-атрибуты-объектов" class="nav-link" data-scroll-target="#атрибуты-объектов"><span class="header-section-number">7.4</span> Атрибуты объектов</a></li>
+  <li><a href="#векторизированные-вычисления" id="toc-векторизированные-вычисления" class="nav-link" data-scroll-target="#векторизированные-вычисления"><span class="header-section-number">7.5</span> Векторизированные вычисления</a></li>
+  <li><a href="#правила-видимости-свободных-переменных-scoping-rules" id="toc-правила-видимости-свободных-переменных-scoping-rules" class="nav-link" data-scroll-target="#правила-видимости-свободных-переменных-scoping-rules"><span class="header-section-number">7.6</span> Правила видимости свободных переменных (Scoping rules)</a>
   <ul class="collapse">
-  <li><a href="#сопоставление-аргументов" id="toc-сопоставление-аргументов" class="nav-link" data-scroll-target="#сопоставление-аргументов"><span class="header-section-number">5.6.1</span> Сопоставление аргументов</a></li>
+  <li><a href="#сопоставление-аргументов" id="toc-сопоставление-аргументов" class="nav-link" data-scroll-target="#сопоставление-аргументов"><span class="header-section-number">7.6.1</span> Сопоставление аргументов</a></li>
   </ul></li>
-  <li><a href="#scoping-rules" id="toc-scoping-rules" class="nav-link" data-scroll-target="#scoping-rules"><span class="header-section-number">5.7</span> Scoping rules</a></li>
-  <li><a href="#ленивые-вычисления" id="toc-ленивые-вычисления" class="nav-link" data-scroll-target="#ленивые-вычисления"><span class="header-section-number">5.8</span> Ленивые вычисления</a></li>
+  <li><a href="#scoping-rules" id="toc-scoping-rules" class="nav-link" data-scroll-target="#scoping-rules"><span class="header-section-number">7.7</span> Scoping rules</a></li>
+  <li><a href="#ленивые-вычисления" id="toc-ленивые-вычисления" class="nav-link" data-scroll-target="#ленивые-вычисления"><span class="header-section-number">7.8</span> Ленивые вычисления</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../r-lang/overview.html">Язык программирования R</a></li><li class="breadcrumb-item"><a href="../r-lang/advanced.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Продвинутый R</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../r-lang/overview.html">Язык программирования R</a></li><li class="breadcrumb-item"><a href="../r-lang/advanced.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Продвинутый R</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Продвинутый R</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Продвинутый R</span></h1>
 </div>
 
 
@@ -454,6 +504,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p><span class="citation" data-cites="advanced-r">[<a href="../references.html#ref-advanced-r" role="doc-biblioref">1</a>]</span> <span class="citation" data-cites="deep-r">[<a href="../references.html#ref-deep-r" role="doc-biblioref">2</a>]</span></p>
 <p>При объединении объектов разных типов в вектор, они приводятся к более широкому (implicit coercion)</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -481,8 +532,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[1] "character"</code></pre>
 </div>
 </div>
-<section id="встроенные-константы" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="встроенные-константы"><span class="header-section-number">5.1</span> Встроенные константы</h2>
+<section id="встроенные-константы" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="встроенные-константы"><span class="header-section-number">7.1</span> Встроенные константы</h2>
 <p>В R зарезервирован набор специальных констант:</p>
 <ul>
 <li><strong>Inf</strong> – <em>бесконечность</em></li>
@@ -498,8 +549,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="пропущенные-значения" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="пропущенные-значения"><span class="header-section-number">5.2</span> Пропущенные значения</h2>
+<section id="пропущенные-значения" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="пропущенные-значения"><span class="header-section-number">7.2</span> Пропущенные значения</h2>
 <p><strong>NA</strong>, <strong>NaN</strong> – используются для работы с пропущенными значениями. <strong>is.na</strong> – функция для проверки наличия в векторе элементов с пропущенными значениями типа <strong>NA</strong>. <strong>NA</strong> может иметь тип <em>integer</em>, <em>numeric</em>, <em>character</em>. <strong>is.nan</strong> – функция для проверки наличия в векторе элементов с пропущенными значениями типа <strong>NaN</strong>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="cn">NaN</span>, <span class="cn">NA</span>, <span class="dv">10</span>, <span class="dv">3</span>)</span>
@@ -513,8 +564,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="имена" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="имена"><span class="header-section-number">5.3</span> Имена</h2>
+<section id="имена" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="имена"><span class="header-section-number">7.3</span> Имена</h2>
 <p>Имена (Names) – используются для лучшего понимания объектов и написания программного кода. Элементы объектов могут иметь имена. <strong>names</strong> – функция для присвоения имен элементам объектов.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span></span>
@@ -551,8 +602,8 @@ b 2 4</code></pre>
 </div>
 </div>
 </section>
-<section id="атрибуты-объектов" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="атрибуты-объектов"><span class="header-section-number">5.4</span> Атрибуты объектов</h2>
+<section id="атрибуты-объектов" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="атрибуты-объектов"><span class="header-section-number">7.4</span> Атрибуты объектов</h2>
 <p>Объекты характеризуются атрибутами которые могут быть рассмотрены, как метаданные для объектов. Не все объекты имеют атрибуты. Атрибуты используются для упрощения понимания и описания объектов. Примеры атрибутов объектов:</p>
 <ul>
 <li>names, dimnames</li>
@@ -584,8 +635,8 @@ $dimnames[[2]]
 </div>
 </div>
 </section>
-<section id="векторизированные-вычисления" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="векторизированные-вычисления"><span class="header-section-number">5.5</span> Векторизированные вычисления</h2>
+<section id="векторизированные-вычисления" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="векторизированные-вычисления"><span class="header-section-number">7.5</span> Векторизированные вычисления</h2>
 <p>Использование операторов циклов <strong>for</strong>, <strong>while</strong> не удобно при работе в командной строке интерпретатора. В R реализованы функции, оптимизирующее циклически вычисления:<br>
 - <strong>lapply</strong> – производит циклическое вычисление некоторой функции над элементами списка. - <strong>sapply</strong> – выполняет то же что <strong>lapply</strong>, только выводит результаты в упрощенном виде. - <strong>apply</strong> – производит циклическое вычисление некоторой функции над элементами массива. - <strong>tapply</strong> – производит циклическое вычисление некоторой функции над заданным набором элементов вектора. - <strong>mapply</strong> – мультивариативная версия функции <strong>lapply</strong> (работает сразу с несколькими объектами).</p>
 <p><strong>lapply</strong> производит циклическое вычисление некоторой функции над элементами списка. <strong>lapply</strong> всегда возвращает объект класса список, несмотря на тип объекта на входе. Если объект на входе не список, то он будет преобразован с помощью функции <strong>as.list</strong>.</p>
@@ -597,30 +648,30 @@ $dimnames[[2]]
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span> (<span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.2393026  4.2053613  3.5933192  0.5405503  0.3767531</code></pre>
+<pre><code>[1]  4.1406119 -0.7379723  2.4632241 -0.1973827  0.3573042</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mapply</span>(rnorm, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
-[1] -0.8538948
+[1] 4.038452
 
 [[2]]
-[1] 2.106754 2.837867
+[1] 1.368109 4.221328
 
 [[3]]
-[1] 7.175766 2.369440 5.305817
+[1]  1.5944800 -0.8140351  2.8539287
 
 [[4]]
-[1] 3.045084 3.379863 3.479389 3.439614
+[1] 2.544912 6.457859 0.569622 9.563565
 
 [[5]]
-[1] 1.351797 4.926823 1.481305 2.783435 3.659529</code></pre>
+[1] 1.571545 3.440516 5.431068 4.653374 7.633283</code></pre>
 </div>
 </div>
 <p><strong>tapply</strong> – используется для расчета некоторой функции в цикле по группам элементов вектора. Это удобно когда один вектор формирует несколько выборок.</p>
 </section>
-<section id="правила-видимости-свободных-переменных-scoping-rules" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="правила-видимости-свободных-переменных-scoping-rules"><span class="header-section-number">5.6</span> Правила видимости свободных переменных (Scoping rules)</h2>
+<section id="правила-видимости-свободных-переменных-scoping-rules" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="правила-видимости-свободных-переменных-scoping-rules"><span class="header-section-number">7.6</span> Правила видимости свободных переменных (Scoping rules)</h2>
 <p>Для присвоения <strong>lm</strong> некоторого значения будет осуществляться поиск данной функции в различных областях или пространствах памяти среды – environments. Environment – список или набор R-объектов (по типу символ-значение), которые представляют собой видимое по некоторым правилам пространство памяти. Если работа производится в строке интерпретатора команд, то загружается global environment. В global environment входят все элементы, созданные или загруженные в R. При поиске <strong>lm</strong> порядок просмотра environments 1. global environment 2. пространства, загруженных пакетов (namespaces).</p>
 <p>global environment эквивалентно пространству памяти «пользователя». После просмотра global environment поиск осуществляется от пространства памяти пакета stats к пространству пакета base. Порядок следования пакетов важен! <strong>library</strong> – функция для загрузки пакетов. Загруженный пакет становится на вторую позицию, остальные пакеты смещаются на одну позицию вниз. Scoping rules определяют правила присвоения значений свободным переменным функций. В R используется lexical или static scoping. Наиболее распространенная альтернатива - dynamic scoping. Фактически задача сводится к вопросу: как R просматривает environments, для того чтобы связать свободную переменную с конкретным значением.</p>
 <div class="cell">
@@ -637,27 +688,27 @@ $dimnames[[2]]
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>mydata <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(mydata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.126441</code></pre>
+<pre><code>[1] 1.097494</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(<span class="at">x =</span> mydata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.126441</code></pre>
+<pre><code>[1] 1.097494</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(<span class="at">x =</span> mydata, <span class="at">na.rm =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.126441</code></pre>
+<pre><code>[1] 1.097494</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">FALSE</span>, <span class="at">x =</span> mydata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.126441</code></pre>
+<pre><code>[1] 1.097494</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">FALSE</span>, mydata)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.126441</code></pre>
+<pre><code>[1] 1.097494</code></pre>
 </div>
 </div>
-<section id="сопоставление-аргументов" class="level3" data-number="5.6.1">
-<h3 data-number="5.6.1" class="anchored" data-anchor-id="сопоставление-аргументов"><span class="header-section-number">5.6.1</span> Сопоставление аргументов</h3>
+<section id="сопоставление-аргументов" class="level3" data-number="7.6.1">
+<h3 data-number="7.6.1" class="anchored" data-anchor-id="сопоставление-аргументов"><span class="header-section-number">7.6.1</span> Сопоставление аргументов</h3>
 <p>Если передаются именованные аргументы, то их не обязательно располагать в требуемом порядке. Можно смешивать «порядок» и «имена». Именованный аргумент извлекается из списка, остальные будут ассоциированы по позициям оставшихся аргументов в списке.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">args</span>(lm)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -712,8 +763,8 @@ NULL</code></pre>
 </div>
 </section>
 </section>
-<section id="scoping-rules" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="scoping-rules"><span class="header-section-number">5.7</span> Scoping rules</h2>
+<section id="scoping-rules" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="scoping-rules"><span class="header-section-number">7.7</span> Scoping rules</h2>
 <p><strong>Правило (lexical rules) 1:</strong> Значение для свободной переменной функции определяются в том пространстве памяти (environment), где была создана данная функция. Каждое environment имеет родительское environment. Родитель может иметь несколько потомков. Пространство без родителя называется пустым (empty environment). Функция + ее пространство памяти = closure или function closure. <strong>Правило (lexical rules) 2:</strong> Если значение для свободной переменной функций не найдено в пространстве, где была создана данная функция, то продолжается поиск по линии родительских пространств вплоть до пространства наивысшего уровня top-level environment (global environment или namespace of package). <strong>Правило (lexical rules) 3:</strong> После просмотра пространства наивысшего уровня (top-level environment) поиск осуществляется вниз по списку пространств загруженных пакетов (namespaces).</p>
 <p>При достижении пространства последнего пакета (empty environment) в списке и не нахождения значения для свободной переменной выводится сообщение об ошибке.</p>
 <div class="cell">
@@ -762,10 +813,18 @@ NULL</code></pre>
 <p>Упростите выражение c(sqrt(1), sqrt(2), sqrt(3))?</p>
 <p>The expression: 4i=1∑n2i−1(−1)i+1=4(11−31+51−71+⋯) slowly converges to π as n approaches ∞. Calculate it for n=1&nbsp;000&nbsp;000 and n=1&nbsp;000&nbsp;000&nbsp;000 using the vectorised functions and operators discussed in this chapter, making use of the recycling rule as much as possible</p>
 </section>
-<section id="ленивые-вычисления" class="level2" data-number="5.8">
-<h2 data-number="5.8" class="anchored" data-anchor-id="ленивые-вычисления"><span class="header-section-number">5.8</span> Ленивые вычисления</h2>
+<section id="ленивые-вычисления" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="ленивые-вычисления"><span class="header-section-number">7.8</span> Ленивые вычисления</h2>
 
 
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-advanced-r" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">Wickham H. <span>Advanced R</span> second edition [Electronic resource]. 2022. URL: <a href="https://adv-r.hadley.nz/">https://adv-r.hadley.nz/</a> (accessed: 20.02.2025).</div>
+</div>
+<div id="ref-deep-r" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Gagolewski M. Deep r programming [Electronic resource]. 2025. URL: <a href="https://deepr.gagolewski.com/">https://deepr.gagolewski.com/</a> (accessed: 20.02.2025).</div>
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -1189,7 +1248,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../r-lang/basic.html" class="pagination-link" aria-label="Основы языка R">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Основы языка R</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Основы языка R</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
