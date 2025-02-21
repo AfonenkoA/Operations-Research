@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.13">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Appendix B — Система управления пакетами renv – Operations Research</title>
+<title>Приложение B — Система управления пакетами renv – Исследование операций</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,17 +110,17 @@ div.csl-indent {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Поиск не дал результатов",
+    "search-matching-documents-text": "Результаты поиска",
+    "search-copy-link-title": "Скопировать ссылку",
+    "search-hide-matches-text": "Скрыть дополнительные результаты",
+    "search-more-match-text": "дополнительный результат в этом документе",
+    "search-more-matches-text": "дополнительных результата(-ов) в этом документе",
+    "search-clear-button-title": "Очистить",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Отменить",
+    "search-submit-button-title": "Найти",
+    "search-label": "Поиск"
   }
 }</script>
 
@@ -133,13 +133,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключить боковую панель навигации" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Appendices</li><li class="breadcrumb-item"><a href="../r-tools/basic.html">Язык программирования R</a></li><li class="breadcrumb-item"><a href="../r-tools/renv.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Система управления пакетами renv</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Приложения</li><li class="breadcrumb-item"><a href="../r-tools/basic.html">Язык программирования R</a></li><li class="breadcrumb-item"><a href="../r-tools/renv.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Система управления пакетами renv</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключить боковую панель навигации" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Поиск" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -151,12 +151,15 @@ div.csl-indent {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Operations Research</a> 
+      <a href="../">Исследование операций</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/AfonenkoA/Operations-Research" title="Исходный код" class="quarto-navigation-tool px-1" aria-label="Исходный код"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Поиск"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -171,7 +174,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="../enviroment/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Среда разработки</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -212,7 +215,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="../r-lang/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Язык программирования R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -235,7 +238,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="../linear/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Линейное программирование</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -306,7 +309,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="../nonlinear/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Нелинейное программирование</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -341,7 +344,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="../graph-theory/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Элементы теории графов</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -358,7 +361,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a href="../game-theory/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Теория игр</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -375,7 +378,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Лабораторные работы</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -403,8 +406,8 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+ <span class="menu-text">Приложения</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -413,7 +416,7 @@ div.csl-indent {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
  <span class="menu-text">Язык программирования R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -469,9 +472,9 @@ div.csl-indent {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Appendices</li><li class="breadcrumb-item"><a href="../r-tools/basic.html">Язык программирования R</a></li><li class="breadcrumb-item"><a href="../r-tools/renv.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Система управления пакетами renv</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Приложения</li><li class="breadcrumb-item"><a href="../r-tools/basic.html">Язык программирования R</a></li><li class="breadcrumb-item"><a href="../r-tools/renv.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Система управления пакетами renv</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Appendix B — Система управления пакетами renv</h1>
+<h1 class="title">Приложение B — Система управления пакетами renv</h1>
 </div>
 
 
@@ -488,6 +491,19 @@ div.csl-indent {
 </header>
 
 
+<div class="callout callout-style-default callout-important callout-titled" title="Состояние разработки">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Состояние разработки
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>В разработке</p>
+</div>
+</div>
 <p><span class="citation" data-cites="renv">[<a href="../references.html#ref-renv" role="doc-biblioref">1</a>]</span></p>
 <p>The renv package helps you create reproducible environments for your R projects. This vignette introduces you to the basic nouns and verbs of renv, like the user and project libraries, and key functions like renv::init(), renv::snapshot() and renv::restore(). You’ll also learn about some of the infrastructure that makes renv tick, some problems that renv doesn’t help with, and how to uninstall it if you no longer want to use it. A diagram showing the most important verbs and nouns of renv. Projects start with init(), which creates a project library using packages from the system library. snapshot() updates the lockfile using the packages installed in the project library, where restore() installs packages into the project library using the metadata from the lockfile, and status() compares the lockfile to the project library. You install and update packages from CRAN and GitHub using install() and update(), but because you’ll need to do this for multiple projects, renv uses cache to make this fast.</p>
 <p>The most important verbs and nouns of renv, which you’ll learn more about below.</p>
@@ -547,7 +563,7 @@ A project R profile, .Rprofile. This file is run automatically every time you st
 <span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>      <span class="dt">"Hash"</span><span class="fu">:</span> <span class="st">"c2772b6269924dad6784aaa1d99dbb86"</span></span>
 <span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">}</span></span>
 <span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">}</span></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>As you can see the json file has two main components: R and Packages. The R component contains the version of R used, and a list of repositories where packages were installed from. The Packages contains one record for each package used by the project, including all the details needed to re-install that exact version. The fields written into each package record are derived from the installed package’s DESCRIPTION file, and include the data required to recreate installation, regardless of whether the package was installed from CRAN, Bioconductor, GitHub, Gitlab, Bitbucket, or elsewhere. You can learn more about the sources renv supports in vignette(“package-sources”). Caveats</p>
 <p>It is important to emphasize that renv is not a panacea for reproducibility. Rather, it is a tool that can help make projects reproducible by helping with one part of the overall problem: R packages. There are a number of other pieces that renv doesn’t currently provide much help with:</p>
 <pre><code>R version: renv tracks, but doesn’t help with, the version of R used with the project. renv can’t easily help with this because it’s run inside of R, but you might find tools like rig helpful, as they make it easier to switch between multiple version of R on one computer.
@@ -559,7 +575,7 @@ Operating system, versions of system libraries, compiler versions: Keeping a ‘
 
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-renv" class="csl-entry" role="listitem">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline">RStudio. Introduction to renv [Electronic resource]. 2024. URL: <a href="https://rstudio.github.io/renv/articles/renv.html">https://rstudio.github.io/renv/articles/renv.html</a> (accessed: 20.02.2025).</div>
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">RStudio. Introduction to renv [Электронный ресурс]. 2024. URL: <a href="https://rstudio.github.io/renv/articles/renv.html">https://rstudio.github.io/renv/articles/renv.html</a> (дата обращения: 20.02.2025).</div>
 </div>
 </div>
 
@@ -607,12 +623,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Скопировано");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Скопировано");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -998,4 +1014,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li></ul></div></div></div></footer></body></html>

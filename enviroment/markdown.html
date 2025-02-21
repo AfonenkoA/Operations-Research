@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.13">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Язык разметки Markdown – Operations Research</title>
+<title>4&nbsp; Язык разметки Markdown – Исследование операций</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -90,17 +90,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Поиск не дал результатов",
+    "search-matching-documents-text": "Результаты поиска",
+    "search-copy-link-title": "Скопировать ссылку",
+    "search-hide-matches-text": "Скрыть дополнительные результаты",
+    "search-more-match-text": "дополнительный результат в этом документе",
+    "search-more-matches-text": "дополнительных результата(-ов) в этом документе",
+    "search-clear-button-title": "Очистить",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Отменить",
+    "search-submit-button-title": "Найти",
+    "search-label": "Поиск"
   }
 }</script>
 <script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
@@ -145,13 +145,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключить боковую панель навигации" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../enviroment/overview.html">Среда разработки</a></li><li class="breadcrumb-item"><a href="../enviroment/markdown.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Язык разметки Markdown</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключить боковую панель навигации" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Поиск" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -163,12 +163,15 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Operations Research</a> 
+      <a href="../">Исследование операций</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/AfonenkoA/Operations-Research" title="Исходный код" class="quarto-navigation-tool px-1" aria-label="Исходный код"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Поиск"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -183,7 +186,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../enviroment/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Среда разработки</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -224,7 +227,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../r-lang/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Язык программирования R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -247,7 +250,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../linear/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Линейное программирование</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -318,7 +321,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../nonlinear/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Нелинейное программирование</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -353,7 +356,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../graph-theory/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Элементы теории графов</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -370,7 +373,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a href="../game-theory/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Теория игр</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -387,7 +390,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Лабораторные работы</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -415,8 +418,8 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+ <span class="menu-text">Приложения</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -425,7 +428,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
  <span class="menu-text">Язык программирования R</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -477,7 +480,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">Содержание</h2>
    
   <ul>
   <li><a href="#блоки-кода" id="toc-блоки-кода" class="nav-link active" data-scroll-target="#блоки-кода"><span class="header-section-number">4.1</span> Блоки кода</a>
@@ -510,7 +513,7 @@ window.Quarto = {
   <li><a href="#цитаты" id="toc-цитаты" class="nav-link" data-scroll-target="#цитаты"><span class="header-section-number">4.11</span> Цитаты</a></li>
   <li><a href="#специальные-символы" id="toc-специальные-символы" class="nav-link" data-scroll-target="#специальные-символы"><span class="header-section-number">4.12</span> Специальные символы</a></li>
   </ul>
-</nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -558,14 +561,14 @@ window.Quarto = {
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>В результате получим следующее. <a href="#fig-airquality" class="quarto-xref">Figure&nbsp;<span>4.1</span></a> более подробно изучает влияние температуры на уровень озона.</p>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>В результате получим следующее. <a href="#fig-airquality" class="quarto-xref">Рисунок&nbsp;<span>4.1</span></a> более подробно изучает влияние температуры на уровень озона.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>)</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-airquality" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -573,7 +576,7 @@ window.Quarto = {
 <img src="markdown_files/figure-html/fig-airquality-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-airquality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.1: Температура и уровень озона.
+Рисунок&nbsp;4.1: Температура и уровень озона.
 </figcaption>
 </figure>
 </div>
@@ -587,16 +590,16 @@ Figure&nbsp;4.1: Температура и уровень озона.
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>radius <span class="ot">&lt;-</span> <span class="dv">5</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>The radius of the circle is <span class="in">`{r} radius`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>The radius of the circle is <span class="in">`{r} radius`</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>В результате получаем:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>The radius of the circle is 5.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>The radius of the circle is 5.</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Caution
+Осторожность
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -611,7 +614,7 @@ Caution
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: true</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pressure, <span class="at">pch=</span><span class="dv">21</span>, <span class="at">col=</span><span class="st">'blue'</span>, <span class="at">bg=</span><span class="st">'lightblue'</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -643,7 +646,7 @@ Caution
 <span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="st">"test.png"</span>)</span>
 <span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -664,7 +667,7 @@ Caution
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>y1 <span class="op">=</span> <span class="fu">sin</span>.(x);</span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>y2 <span class="op">=</span> <span class="fu">cos</span>.(x);</span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, [y1 y2])</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -684,7 +687,7 @@ Caution
 <div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: convert</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>airquality<span class="sc">$</span>TempC <span class="ot">&lt;-</span> (<span class="dv">5</span> <span class="sc">/</span> <span class="dv">9</span>) <span class="sc">*</span> (airquality<span class="sc">$</span>Temp <span class="sc">-</span> <span class="dv">32</span>)</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Параметр <code>echo: false</code> отключает печать кода (отображается только вывод).</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">``` r</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -700,7 +703,7 @@ Caution
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>Take <span class="in">`penguins`</span>, and then,</span>
 <span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>Lines 4-7  </span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>add new columns for the bill ratio and bill area.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>add new columns for the bill ratio and bill area.</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="параметры-вывода" class="level3" data-number="4.1.5">
 <h3 data-number="4.1.5" class="anchored" data-anchor-id="параметры-вывода"><span class="header-section-number">4.1.5</span> Параметры вывода</h3>
@@ -709,13 +712,13 @@ Caution
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Параметр <code>echo</code> может быть переопределен для конкретно блока кода. Например:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Параметры блока кода включены в специальный комментарий в верхней части блока (строки в верхней части, начинающиеся с <code>#|</code>, считаются параметрами).</p>
 <p>Наиболее распространенные параметры приведены далее:</p>
 <table class="caption-top table">
@@ -771,7 +774,7 @@ Caution
 <span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(airquality)</span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="названия-рисунков" class="level3" data-number="4.1.6">
 <h3 data-number="4.1.6" class="anchored" data-anchor-id="названия-рисунков"><span class="header-section-number">4.1.6</span> Названия рисунков</h3>
@@ -792,7 +795,7 @@ Caution
 <span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
 <span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>)</span>
 <span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -819,15 +822,15 @@ Caution
 </thead>
 <tbody>
 <tr class="odd">
-<td><div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>*курсив*, **жирный**, ***жирный курсив***</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>*курсив*, **жирный**, ***жирный курсив***</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><em>курсив</em>, <strong>жирный</strong>, <strong><em>жирный курсив</em></strong></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>верхний индекс^2^ / subscript~2~</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>верхний индекс^2^ / subscript~2~</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td>верхний индекс<sup>2</sup> / нижний индекс<sub>2</sub></td>
 </tr>
 <tr class="odd">
-<td><div class="sourceCode" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>~~зачёркнутый~~</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>~~зачёркнутый~~</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><del>зачёркутый</del></td>
 </tr>
 </tbody>
@@ -849,23 +852,23 @@ Caution
 </thead>
 <tbody>
 <tr class="odd">
-<td><div class="sourceCode" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Заголовок 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Заголовок 2</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><h2 id="заголовок-2" data-number="4.4" class="anchored"><span class="header-section-number">4.4</span> Заголовок 2</h2></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb18"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">### Заголовок 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb18"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">### Заголовок 3</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><h3 id="заголовок-3" data-number="4.4.1" class="anchored"><span class="header-section-number">4.4.1</span> Заголовок 3</h3></td>
 </tr>
 <tr class="odd">
-<td><div class="sourceCode" id="cb19"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Заголовок 4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb19"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Заголовок 4</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><h4 id="заголовок-4" class="anchored">Заголовок 4</h4></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb20"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Заголовок 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb20"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Заголовок 5</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><h5 id="заголовок-5" class="anchored">Заголовок 5</h5></td>
 </tr>
 <tr class="odd">
-<td><div class="sourceCode" id="cb21"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">###### Заголовок 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb21"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">###### Заголовок 6</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><h6 id="заголовок-6" class="anchored">Заголовок 6</h6></td>
 </tr>
 </tbody>
@@ -882,15 +885,15 @@ Caution
 </thead>
 <tbody>
 <tr class="odd">
-<td><div class="sourceCode" id="cb22"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;https://rct.bsu.by&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb22"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;https://rct.bsu.by&gt;</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><a href="https://rct.bsu.by" class="uri">https://rct.bsu.by</a></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb23"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Название</span><span class="co">](https://rct.bsu.by)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb23"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Название</span><span class="co">](https://rct.bsu.by)</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><a href="https://bsu.by">Наш факультет</a></td>
 </tr>
 <tr class="odd">
-<td><div class="sourceCode" id="cb24"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Название](rctbsu.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb24"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Название](rctbsu.png)</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="rctbsu.png" class="img-fluid figure-img" width="100"></p>
@@ -899,7 +902,7 @@ Caution
 </div></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb25"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Название](rctbsu.png)</span><span class="co">](https://rct.bsu.by)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<td><div class="sourceCode" id="cb25"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Название](rctbsu.png)</span><span class="co">](https://rct.bsu.by)</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Картинка становится кликабельной при подстановке в html.</p></td>
 <td><a href="https://rct.bsu.by"><img src="rctbsu.png" class="img-fluid" width="100" alt="Наш факультет"></a></td>
 </tr>
@@ -911,7 +914,7 @@ Caution
 <p>Перекрестные ссылки на рисунки создаются, добавлением к ним идентификатора с префиксом <code>fig-</code>, а затем ссылаясь на рисунок с помощью префикса <code>@</code>. Например:</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Грач](rctbsu.png)</span>{#fig-grach}</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>Как показано на рисунке @fig-grach.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>Как показано на рисунке @fig-grach.</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Для рисунков, созданных блоками исполняемого кода, используется <code>label</code> с префиксом <code>fig-</code>, чтобы сделать их перекрестно-ссылочными. Например:</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>Для демонстрации графика линии используется @fig-cars-plot.</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -920,8 +923,8 @@ Caution
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Cars plot "</span></span>
 <span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars)</span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Для демонстрации графика линии используется <a href="#fig-cars-plot" class="quarto-xref">Figure&nbsp;<span>4.2</span></a>.</p>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Для демонстрации графика линии используется <a href="#fig-cars-plot" class="quarto-xref">Рисунок&nbsp;<span>4.2</span></a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-cars-plot</span></span>
@@ -929,7 +932,7 @@ Caution
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: true</span></span>
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars)</span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-cars-plot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -937,7 +940,7 @@ Caution
 <img src="markdown_files/figure-html/fig-cars-plot-3.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cars-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.2: Cars plot
+Рисунок&nbsp;4.2: Cars plot
 </figcaption>
 </figure>
 </div>
@@ -957,7 +960,7 @@ Figure&nbsp;4.2: Cars plot
 <span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars)</span>
 <span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pressure)</span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig-charts" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-charts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -989,7 +992,7 @@ Figure&nbsp;4.2: Cars plot
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-charts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.3: Charts
+Рисунок&nbsp;4.3: Charts
 </figcaption>
 </figure>
 </div>
@@ -999,7 +1002,7 @@ Figure&nbsp;4.3: Charts
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Уведомление
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1026,7 +1029,7 @@ Note
 <td><div class="sourceCode" id="cb30"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>маркированный список</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="ss">    + </span>пункт 1</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="ss">    + </span>пункт 2</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="ss">        - </span>подпункт 1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="ss">        - </span>подпункт 1</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><ul>
 <li>маркированный список
 <ul>
@@ -1042,7 +1045,7 @@ Note
 <td><div class="sourceCode" id="cb31"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>нумерованный список</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>пункт 2</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    i) подпункт 1</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>         A.  вложение 1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>         A.  вложение 1</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><ol type="1">
 <li>ordered list</li>
 <li>item 2
@@ -1056,7 +1059,7 @@ Note
 </tr>
 <tr class="odd">
 <td><div class="sourceCode" id="cb32"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Задача 1</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[x]</span> Задача 2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[x]</span> Задача 2</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><ul class="task-list">
 <li><label><input type="checkbox">Задача 1</label></li>
 <li><label><input type="checkbox" checked="">Задача 2</label></li>
@@ -1067,7 +1070,7 @@ Note
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>продолжается после</span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>(@)  прерывания</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>(@)  прерывания</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><ol type="1">
 <li>Сквозная нумерация списка</li>
 </ol>
@@ -1078,7 +1081,7 @@ Note
 </tr>
 <tr class="odd">
 <td><div class="sourceCode" id="cb34"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>термин</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>: его определение</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>: его определение</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><dl>
 <dt>термин</dt>
 <dd>
@@ -1103,7 +1106,7 @@ Note
 <span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item X</span>
 <span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item Y</span>
 <span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item Z</span>
-<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div>
 
 </div>
@@ -1133,7 +1136,7 @@ Note
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Уведомление
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1154,7 +1157,7 @@ Note
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|-------------:|:------------|-----------|:------:|</span></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>           12 <span class="pp">|</span> 12          <span class="pp">|</span> 12        <span class="pp">|</span>   12   <span class="pp">|</span></span>
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>          123 <span class="pp">|</span> 123         <span class="pp">|</span> 123       <span class="pp">|</span>  123   <span class="pp">|</span></span>
-<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>            1 <span class="pp">|</span> 1           <span class="pp">|</span> 1         <span class="pp">|</span>   1    <span class="pp">|</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>            1 <span class="pp">|</span> 1           <span class="pp">|</span> 1         <span class="pp">|</span>   1    <span class="pp">|</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="результат" class="level4">
 <h4 class="anchored" data-anchor-id="результат">Результат</h4>
@@ -1207,7 +1210,7 @@ Note
 <span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>           <span class="pp">|</span>           <span class="pp">|</span> - tasty            <span class="pp">|</span></span>
 <span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>+-----------+-----------+--------------------+</span>
 <span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>: Пример расширенной таблицы</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>: Пример расширенной таблицы</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="результат-1" class="level4">
 <h4 class="anchored" data-anchor-id="результат-1">Результат</h4>
@@ -1264,13 +1267,13 @@ Note
 </thead>
 <tbody>
 <tr class="odd">
-<td><div class="sourceCode" id="cb38"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>формула в тексте: $E = mc^{2}$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb38"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>формула в тексте: $E = mc^{2}$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td>формула в тексте: <span class="math inline">\(E=mc^{2}\)</span></td>
 </tr>
 <tr class="even">
 <td><div class="sourceCode" id="cb39"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>отдельный блок формул:</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>$$E = mc^{2}$$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>$$E = mc^{2}$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><p>отдельный блок формул:</p>
 <p><span class="math display">\[E = mc^{2}\]</span></p></td>
 </tr>
@@ -1288,7 +1291,7 @@ Note
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  B --&gt; C{Decision}</span>
 <span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>  C --&gt; D[Result one]</span>
 <span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>  C --&gt; E[Result two]</span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <p></p><figure class="figure"><p></p>
@@ -1307,7 +1310,7 @@ Note
 </section>
 <section id="цитаты" class="level2" data-number="4.11">
 <h2 data-number="4.11" class="anchored" data-anchor-id="цитаты"><span class="header-section-number">4.11</span> Цитаты</h2>
-<div class="sourceCode" id="cb41"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a> <span class="at">&gt; Blockquote</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a> <span class="at">&gt; Blockquote</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <blockquote class="blockquote">
 <p>Это короткая цитата</p>
 </blockquote>
@@ -1327,11 +1330,11 @@ Note
 </thead>
 <tbody>
 <tr class="odd">
-<td><div class="sourceCode" id="cb42"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="an">endash:</span><span class="co"> --</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb42"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="an">endash:</span><span class="co"> --</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td>endash: –</td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb43"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="an">emdash:</span><span class="co"> ---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb43"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="an">emdash:</span><span class="co"> ---</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td>emdash: —</td>
 </tr>
 </tbody>
@@ -1342,7 +1345,7 @@ Note
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Уведомление
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1397,12 +1400,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Скопировано");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Скопировано");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -1788,4 +1791,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li></ul></div></div></div></footer></body></html>
