@@ -2,10 +2,14 @@ project:
   type: book
 
 book:
-  title: "Operations Research"
+  title: "Исследование операций"
   author: "Афоненко Анатолий"
   date: today
   date-format: long
+
+  repo-url: "https://github.com/AfonenkoA/Operations-Research"
+  repo-actions: [issue]
+  repo-branch: master
 
   chapters:
     - index.qmd
@@ -69,16 +73,22 @@ book:
         - r-tools/purrr.qmd
 
 
+lang: ru
+
 bibliography: references.bib
 csl: gost-r-7-0-5-2008-numeric.csl
+
+execute:
+  freeze: auto
+  cache: true
 
 format:
   html:
     number-depth: 3
     theme: cosmo
     html-math-method: mathjax
-  pdf:
-    include-in-header:
-      - file: preamble.tex
+#  pdf:
+#    include-in-header:
+#      - file: preamble.tex
 
 editor: visual
