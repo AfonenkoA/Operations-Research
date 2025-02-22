@@ -71,6 +71,7 @@ book:
         - r-tools/ggplot2.qmd
         - r-tools/tibble.qmd
         - r-tools/purrr.qmd
+        - r-tools/tidyr.qmd
 
 
 lang: ru
