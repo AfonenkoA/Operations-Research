@@ -1,0 +1,9 @@
+# tidyr {#sec-r-tools-tidyr}
+
+::: {.callout-important title="Состояние разработки"}
+В разработке
+:::
+
+## Декартово (внешнее) произведение `crossing` {#sec-r-tools-tidyr-crossing}
+
+

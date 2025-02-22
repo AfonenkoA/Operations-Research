@@ -2596,41 +2596,6 @@
       "Author": "Simon Garnier [aut, cre], Noam Ross [ctb, cph], Bob Rudis [ctb, cph], Marco Sciaini [ctb, cph], Ant<U+00F4>nio Pedro Camargo [ctb, cph], C<U+00E9>dric Scherer [ctb, cph]",
       "Repository": "CRAN"
     },
-    "widgetframe": {
-      "Package": "widgetframe",
-      "Version": "0.3.1",
-      "Source": "Repository",
-      "Type": "Package",
-      "Title": "'Htmlwidgets' in Responsive 'iframes'",
-      "Authors@R": "c( person(\"Bhaskar\", \"Karambelkar\", email = \"bhaskarvk@gmail.com\", role = c(\"aut\", \"cre\")), person(\"Yihui\", \"Xie\", role = c(\"ctb\")), person(\"NPR Visual Team\", role = c(\"ctb\", \"cph\"), comment = \"pym.js JavaScript library\"), person(\"Bj<U+00F8>rn Klinggaard\", role = c(\"ctb\", \"cph\"), comment = \"bLazy.js JavaScript library\") )",
-      "Description": "Provides two functions 'frameableWidget()', and 'frameWidget()'. The 'frameableWidget()' is used to add extra code to a 'htmlwidget' which allows is to be rendered correctly inside a responsive 'iframe'. The 'frameWidget()' is a 'htmlwidget' which displays content of another 'htmlwidget' inside a responsive 'iframe'. These functions allow for easier embedding of 'htmlwidgets' in content management systems such as 'wordpress', 'blogger' etc. They also allow for separation of widget content from main HTML content where CSS of the main HTML could interfere with the widget.",
-      "License": "MIT + file LICENSE",
-      "Encoding": "UTF-8",
-      "LazyData": "true",
-      "Depends": [
-        "R (>= 3.1.0)",
-        "htmlwidgets"
-      ],
-      "Imports": [
-        "htmltools",
-        "purrr",
-        "magrittr",
-        "utils",
-        "tools"
-      ],
-      "RoxygenNote": "6.0.1",
-      "URL": "https://github.com/bhaskarvk/widgetframe, https://bhaskarvk.github.io/widgetframe/",
-      "BugReports": "https://github.com/bhaskarvk/widgetframe/issues",
-      "Suggests": [
-        "knitr",
-        "rmarkdown"
-      ],
-      "VignetteBuilder": "knitr",
-      "NeedsCompilation": "no",
-      "Author": "Bhaskar Karambelkar [aut, cre], Yihui Xie [ctb], NPR Visual Team [ctb, cph] (pym.js JavaScript library), Bj<U+00F8>rn Klinggaard [ctb, cph] (bLazy.js JavaScript library)",
-      "Maintainer": "Bhaskar Karambelkar <bhaskarvk@gmail.com>",
-      "Repository": "CRAN"
-    },
     "withr": {
       "Package": "withr",
       "Version": "3.0.2",

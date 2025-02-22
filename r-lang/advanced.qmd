@@ -225,3 +225,9 @@ Recycling rule Some of the preceding statements can be written more concisely. W
 The expression: 4i=1∑n2i−1(−1)i+1=4(11−31+51−71+⋯) slowly converges to π as n approaches ∞. Calculate it for n=1 000 000 and n=1 000 000 000 using the vectorised functions and operators discussed in this chapter, making use of the recycling rule as much as possible
 
 ## Ленивые вычисления
+
+## Присваивание {#sec-r-lang-advanced-assigment}
+
+## Объект формулы {#sec-r-lang-advanced-formula}
+
+## Лямбда функция {#sec-r-lang-advanced-lambda}
