@@ -475,6 +475,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Функциональные операторы Purrr</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r-tools/tidyr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">tidyr</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
       </ul>
@@ -523,8 +529,6 @@ window.Quarto = {
 </header>
 
 
-<section id="sec-lab1-instructions" class="level2" data-number="24.1">
-<h2 data-number="24.1" class="anchored" data-anchor-id="sec-lab1-instructions"><span class="header-section-number">24.1</span> Теория</h2>
 <div class="callout callout-style-default callout-caution callout-titled" title="Состояние разработки">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -538,6 +542,8 @@ window.Quarto = {
 <p>Требуется доработка</p>
 </div>
 </div>
+<section id="sec-lab1-instructions" class="level2" data-number="24.1">
+<h2 data-number="24.1" class="anchored" data-anchor-id="sec-lab1-instructions"><span class="header-section-number">24.1</span> Теория</h2>
 <p>Установить среду разработки</p>
 <p>Сделать то то и то, посмотреть то то и то</p>
 <div id="exm-lab1" class="theorem example">
@@ -578,7 +584,7 @@ window.Quarto = {
 <section id="sec-lab1-task-r-programming" class="level3" data-number="24.2.1">
 <h3 data-number="24.2.1" class="anchored" data-anchor-id="sec-lab1-task-r-programming"><span class="header-section-number">24.2.1</span> Язык программирования R</h3>
 <div id="exr-lab1-r-lang-vector-seq" class="theorem exercise">
-<p><span class="theorem-title"><strong>Упражнение 24.1</strong></span> Упростите выражение:</p>
+<p><span class="theorem-title"><strong>Упражнение 24.1</strong></span> Упростите выражение (<a href="../r-lang/basic.html#sec-r-lang-basic-vector-sequence" class="quarto-xref"><span>Глава 6.3.1</span></a>):</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">sqrt</span>(<span class="dv">1</span>), <span class="fu">sqrt</span>(<span class="dv">2</span>), <span class="fu">sqrt</span>(<span class="dv">3</span>))</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Создайте последовательность 2 способами <code>(-1, -0.75, -0.5, …, 0.75, 1)</code>.</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="Оценка">
@@ -596,7 +602,7 @@ window.Quarto = {
 </div>
 </div>
 <div id="exr-lab1-r-lang-plot2d" class="theorem exercise">
-<p><span class="theorem-title"><strong>Упражнение 24.2</strong></span> Построить график кусочно-гладкой функции используя функцию <a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></p>
+<p><span class="theorem-title"><strong>Упражнение 24.2</strong></span> Построить график (<a href="../r-tools/plotly.html#sec-r-tools-plotly-line2d" class="quarto-xref"><span>Глава C.2</span></a>) кусочно-гладкой функции (<a href="../r-lang/basic.html#sec-r-lang-basic-function-defenition" class="quarto-xref"><span>Глава 6.12.1</span></a>) используя функцию <a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></p>
 <p><span class="math display">\[
 f(x)=\begin{cases}
       x^2,\qquad x \leq -3\\
@@ -623,10 +629,10 @@ f(x)=\begin{cases}
 <p><span class="math display">\[
 \pi =\sum_{i=0}^n{\frac{(-1)^i}{2i+1}}
 \]</span></p>
-<p>Использовав по максимуму векторные операции рассчитайте для различных <span class="math inline">\(n\)</span> от <span class="math inline">\(n=10\)</span> до <span class="math inline">\(n=10^{10}\)</span></p>
+<p>Использовав по максимуму векторные (<a href="../r-lang/basic.html#sec-r-lang-basic-vectorization" class="quarto-xref"><span>Глава 6.9</span></a>) операции рассчитайте для различных <span class="math inline">\(n\)</span> от <span class="math inline">\(n=10\)</span> до <span class="math inline">\(n=10^{10}\)</span></p>
 <ol type="1">
 <li>число <span class="math inline">\(\pi\)</span> и его ошибку</li>
-<li>постройте график ошибки от <span class="math inline">\(n\)</span></li>
+<li>постройте график (<a href="../r-tools/plotly.html#sec-r-tools-plotly-line2d" class="quarto-xref"><span>Глава C.2</span></a>) ошибки от <span class="math inline">\(n\)</span></li>
 </ol>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="Оценка">
 <div class="callout-header d-flex align-content-center">
@@ -643,7 +649,7 @@ f(x)=\begin{cases}
 </div>
 </div>
 <div id="exr-lab1-r-lang-list-indexing" class="theorem exercise">
-<p><span class="theorem-title"><strong>Упражнение 24.4</strong></span> Создать список содержащий буквы от <code>a</code> до <code>z</code>. Продемонстрировать использование операторов индексации <a href="../r-lang/basic.html#sec-r-lang-basic-list-indexing" class="quarto-xref"><span>Глава 6.4.1</span></a>.</p>
+<p><span class="theorem-title"><strong>Упражнение 24.4</strong></span> Создать список (<a href="../r-lang/basic.html#sec-r-lang-basic-list" class="quarto-xref"><span>Глава 6.4</span></a>) содержащий буквы от ‘<code>a'</code> до’<code>z'</code>. Продемонстрировать использование операторов индексации (<a href="../r-lang/basic.html#sec-r-lang-basic-list-indexing" class="quarto-xref"><span>Глава 6.4.1</span></a>).</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="Оценка">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -659,9 +665,9 @@ f(x)=\begin{cases}
 </div>
 </div>
 <div id="exr-lab1-r-lang-matrix" class="theorem exercise">
-<p><span class="theorem-title"><strong>Упражнение 24.5</strong></span> Создать список матриц размером <code>2x2</code> заполненных случайными целыми числами. Используя циклы получите:</p>
+<p><span class="theorem-title"><strong>Упражнение 24.5</strong></span> Создать список (<a href="../r-lang/basic.html#sec-r-lang-basic-list" class="quarto-xref"><span>Глава 6.4</span></a>) матриц (<a href="../r-lang/basic.html#sec-r-lang-basic-matrix" class="quarto-xref"><span>Глава 6.5</span></a>) размером <code>2x2</code> заполненных случайными целыми числами. Используя циклы (<a href="../r-lang/basic.html#sec-r-lang-basic-cylce" class="quarto-xref"><span>Глава 6.11</span></a>) получите:</p>
 <ol type="1">
-<li>список с элементов <code>(2,2)</code> каждой матрицы.</li>
+<li>список с элементов <code>(2,2)</code> каждой матрицы (<a href="../r-lang/basic.html#sec-r-lang-basic-list-indexing" class="quarto-xref"><span>Глава 6.4.1</span></a> , <a href="../r-lang/basic.html#sec-r-lang-basic-matrix-indexing" class="quarto-xref"><span>Глава 6.5.1</span></a>).</li>
 <li>вектор состоящий из элементов <code>(1,1)</code>, <code>(1,2)</code> этих матриц.</li>
 </ol>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="Оценка">
@@ -766,7 +772,7 @@ f(x)=\begin{cases}
 <div id="exr-lab1-operations-research-graphical-solution" class="theorem exercise">
 <p><span class="theorem-title"><strong>Упражнение 24.10</strong></span> &nbsp;</p>
 <ol type="1">
-<li>Построить объемный и контурный графики функций <span class="math inline">\(z = x^2 - y^2\)</span> и <span class="math inline">\(z = x^2 + y^2\)</span>.</li>
+<li>Построить объемный (<a href="../r-tools/plotly.html#sec-r-tools-plotly-surface3d" class="quarto-xref"><span>Глава C.3</span></a>) и контурный (<a href="../r-tools/plotly.html#sec-r-tools-plotly-contour2d" class="quarto-xref"><span>Глава C.4</span></a>) графики функций <span class="math inline">\(z = x^2 - y^2\)</span> и <span class="math inline">\(z = x^2 + y^2\)</span>.</li>
 <li>Графически определить минимум.</li>
 <li>К какому типу относятся кривые, изображенные на контурном графике.</li>
 </ol>
@@ -790,9 +796,9 @@ f(x)=\begin{cases}
 s = 18t + 9t^2 - t^3
 \]</span></p>
 <ol type="1">
-<li>Построить график функции и её производной.</li>
-<li>Аналитически определить максимум функции <a href="../nonlinear/unconstrained/analytical-one.html" class="quarto-xref"><span>Глава 18</span></a>.</li>
-<li>Доказать, что данная точка является максимумом.</li>
+<li>Построить график функции и её производной (<a href="../r-tools/plotly.html#exm-r-tools-plotly-line2d-combine" class="quarto-xref">Пример&nbsp;<span>C.4</span></a>).</li>
+<li>Аналитически определить максимум функции (<a href="../nonlinear/unconstrained/analytical-one.html" class="quarto-xref"><span>Глава 18</span></a>).</li>
+<li>Доказать, что данная точка является максимумом (<a href="../nonlinear/unconstrained/analytical-one.html#thm-nonlinear-unconstrained-one-sufficiency-1" class="quarto-xref">Теорема&nbsp;<span>18.2</span></a>) или (<a href="../nonlinear/unconstrained/analytical-one.html#thm-nonlinear-unconstrained-one-sufficiency-2" class="quarto-xref">Теорема&nbsp;<span>18.3</span></a>) .</li>
 </ol>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="Оценка">
 <div class="callout-header d-flex align-content-center">
@@ -812,8 +818,8 @@ s = 18t + 9t^2 - t^3
 <p><span class="theorem-title"><strong>Упражнение 24.12</strong></span> Суточные расходы при плавании судна состоят из двух частей: постоянной, равной <span class="math inline">\(а\)</span>, и переменной, возрастающий пропорционально кубу скорости. При какой скорости <span class="math inline">\(v\)</span> плавание судна окажется наиболее экономичным?</p>
 <ol type="1">
 <li>определите целевую функцию</li>
-<li>аналитически определите максимум целевой функции</li>
-<li>постройте график целевой функции</li>
+<li>аналитически определите максимум целевой функции (<a href="../nonlinear/unconstrained/analytical-one.html" class="quarto-xref"><span>Глава 18</span></a>)</li>
+<li>постройте график целевой функции (<a href="../r-tools/plotly.html#sec-r-tools-plotly-line2d" class="quarto-xref"><span>Глава C.2</span></a>)</li>
 </ol>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="Оценка">
 <div class="callout-header d-flex align-content-center">
@@ -839,8 +845,8 @@ s = 18t + 9t^2 - t^3
 </div>
 <ol type="1">
 <li>определите целевую функцию</li>
-<li>аналитически определите максимум целевой функции</li>
-<li>постройте график целевой функции</li>
+<li>аналитически определите максимум целевой функции (<a href="../nonlinear/unconstrained/analytical-one.html" class="quarto-xref"><span>Глава 18</span></a>)</li>
+<li>постройте график целевой функции (<a href="../r-tools/plotly.html#sec-r-tools-plotly-line2d" class="quarto-xref"><span>Глава C.2</span></a>)</li>
 </ol>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="Оценка">
 <div class="callout-header d-flex align-content-center">
@@ -860,7 +866,7 @@ s = 18t + 9t^2 - t^3
 <section id="sec-lab1-task-magic" class="level3" data-number="24.2.4">
 <h3 data-number="24.2.4" class="anchored" data-anchor-id="sec-lab1-task-magic"><span class="header-section-number">24.2.4</span> Прикладная магия</h3>
 <div id="exr-lab1-magic" class="theorem exercise">
-<p><span class="theorem-title"><strong>Упражнение 24.14</strong></span> Пусть дана функция общего вида <span class="math inline">\(f(x,y)\)</span> и система уравнений <span class="math inline">\(Ax=b\)</span> для двух переменных. Постройте контурный график функции, на котором изобразите точки пересечения прямых. Обработать случая параллельных прямых, совпадающих прямых.</p>
+<p><span class="theorem-title"><strong>Упражнение 24.14</strong></span> Пусть дана функция общего вида <span class="math inline">\(f(x,y)\)</span> и система уравнений <span class="math inline">\(Ax=b\)</span> для двух переменных. Постройте контурный график функции, на котором изобразите точки пересечения прямых. Обработать случая параллельных прямых, совпадающих прямых. <a href="../r-lang/advanced.html#sec-r-lang-advanced-formula" class="quarto-xref"><span>Глава 7.10</span></a></p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="Оценка">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -873,7 +879,7 @@ s = 18t + 9t^2 - t^3
 <div class="callout-body-container callout-body">
 <p>10</p>
 <p>Ещё 10 баллов. Дополнительно попробуйте использовать встроенный интерфейса формулы используя переменно число аргументов для функции. Считайте символ <code>~</code> эквивалентом символу <code>=</code>.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>(<span class="dv">2</span><span class="sc">*</span>x<span class="sc">+</span><span class="dv">3</span><span class="sc">*</span>y<span class="sc">~</span><span class="dv">0</span>, <span class="dv">2</span><span class="sc">*</span>x<span class="sc">~</span><span class="dv">3</span>y<span class="sc">+</span><span class="dv">1</span>)</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>(<span class="dv">2</span><span class="sc">*</span>x<span class="sc">+</span><span class="dv">3</span><span class="sc">*</span>y<span class="sc">~</span><span class="dv">0</span>, <span class="dv">2</span><span class="sc">*</span>x<span class="sc">~</span><span class="dv">3</span>y<span class="sc">+</span><span class="dv">1</span><span class="sc">~</span><span class="dv">0</span>)</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
