@@ -268,7 +268,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../linear/integer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Целочисленное программирование. Метод ветвей и границ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Целочисленное программирование.</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -451,14 +451,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#установка" id="toc-установка" class="nav-link active" data-scroll-target="#установка"><span class="header-section-number">D.1</span> Установка</a></li>
-  <li><a href="#наиболее-распространенные-примитивы" id="toc-наиболее-распространенные-примитивы" class="nav-link" data-scroll-target="#наиболее-распространенные-примитивы"><span class="header-section-number">D.2</span> Наиболее распространенные примитивы</a>
-  <ul class="collapse">
-  <li><a href="#d-график" id="toc-d-график" class="nav-link" data-scroll-target="#d-график"><span class="header-section-number">D.2.1</span> 2D График</a></li>
-  <li><a href="#d-поверхность" id="toc-d-поверхность" class="nav-link" data-scroll-target="#d-поверхность"><span class="header-section-number">D.2.2</span> 3D Поверхность</a></li>
-  <li><a href="#d-контурный-график" id="toc-d-контурный-график" class="nav-link" data-scroll-target="#d-контурный-график"><span class="header-section-number">D.2.3</span> 2D Контурный график</a></li>
-  </ul></li>
-  <li><a href="#дополнительные-возможности" id="toc-дополнительные-возможности" class="nav-link" data-scroll-target="#дополнительные-возможности"><span class="header-section-number">D.3</span> Дополнительные возможности</a></li>
+  <li><a href="#sec-r-tools-ggplo2-install" id="toc-sec-r-tools-ggplo2-install" class="nav-link active" data-scroll-target="#sec-r-tools-ggplo2-install"><span class="header-section-number">D.1</span> Установка</a></li>
+  <li><a href="#sec-r-tools-ggplo2-line2d" id="toc-sec-r-tools-ggplo2-line2d" class="nav-link" data-scroll-target="#sec-r-tools-ggplo2-line2d"><span class="header-section-number">D.2</span> 2D График</a></li>
+  <li><a href="#sec-r-tools-ggplo2-surface3d" id="toc-sec-r-tools-ggplo2-surface3d" class="nav-link" data-scroll-target="#sec-r-tools-ggplo2-surface3d"><span class="header-section-number">D.3</span> 3D Поверхность</a></li>
+  <li><a href="#sec-r-tools-ggplo2-contour2d" id="toc-sec-r-tools-ggplo2-contour2d" class="nav-link" data-scroll-target="#sec-r-tools-ggplo2-contour2d"><span class="header-section-number">D.4</span> 2D Контурный график</a></li>
+  <li><a href="#sec-r-tools-ggplo2-extra" id="toc-sec-r-tools-ggplo2-extra" class="nav-link" data-scroll-target="#sec-r-tools-ggplo2-extra"><span class="header-section-number">D.5</span> Дополнительные возможности</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li></ul></div></nav>
     </div>
@@ -467,7 +464,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Приложения</li><li class="breadcrumb-item"><a href="../r-tools/basic.html">Язык программирования R</a></li><li class="breadcrumb-item"><a href="../r-tools/ggplot2.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Графическая библиотека ggplot2</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Приложение D — Графическая библиотека ggplot2</h1>
+<h1 class="title"><span id="sec-r-tools-ggplo2" class="quarto-section-identifier">Приложение D — Графическая библиотека ggplot2</span></h1>
 </div>
 
 
@@ -497,28 +494,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>В разработке</p>
 </div>
 </div>
-<section id="установка" class="level2" data-number="D.1">
-<h2 data-number="D.1" class="anchored" data-anchor-id="установка"><span class="header-section-number">D.1</span> Установка</h2>
+<section id="sec-r-tools-ggplo2-install" class="level2" data-number="D.1">
+<h2 data-number="D.1" class="anchored" data-anchor-id="sec-r-tools-ggplo2-install"><span class="header-section-number">D.1</span> Установка</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'ggplot2'</span>)</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="наиболее-распространенные-примитивы" class="level2" data-number="D.2">
-<h2 data-number="D.2" class="anchored" data-anchor-id="наиболее-распространенные-примитивы"><span class="header-section-number">D.2</span> Наиболее распространенные примитивы</h2>
-<section id="d-график" class="level3" data-number="D.2.1">
-<h3 data-number="D.2.1" class="anchored" data-anchor-id="d-график"><span class="header-section-number">D.2.1</span> 2D График</h3>
+<section id="sec-r-tools-ggplo2-line2d" class="level2" data-number="D.2">
+<h2 data-number="D.2" class="anchored" data-anchor-id="sec-r-tools-ggplo2-line2d"><span class="header-section-number">D.2</span> 2D График</h2>
 <p>grrgrrtrtrt</p>
 <p>Чтобы добавить прямую</p>
 </section>
-<section id="d-поверхность" class="level3" data-number="D.2.2">
-<h3 data-number="D.2.2" class="anchored" data-anchor-id="d-поверхность"><span class="header-section-number">D.2.2</span> 3D Поверхность</h3>
+<section id="sec-r-tools-ggplo2-surface3d" class="level2" data-number="D.3">
+<h2 data-number="D.3" class="anchored" data-anchor-id="sec-r-tools-ggplo2-surface3d"><span class="header-section-number">D.3</span> 3D Поверхность</h2>
 <p>алвпаолоопалп</p>
 <p>outer</p>
 </section>
-<section id="d-контурный-график" class="level3" data-number="D.2.3">
-<h3 data-number="D.2.3" class="anchored" data-anchor-id="d-контурный-график"><span class="header-section-number">D.2.3</span> 2D Контурный график</h3>
+<section id="sec-r-tools-ggplo2-contour2d" class="level2" data-number="D.4">
+<h2 data-number="D.4" class="anchored" data-anchor-id="sec-r-tools-ggplo2-contour2d"><span class="header-section-number">D.4</span> 2D Контурный график</h2>
 </section>
-</section>
-<section id="дополнительные-возможности" class="level2" data-number="D.3">
-<h2 data-number="D.3" class="anchored" data-anchor-id="дополнительные-возможности"><span class="header-section-number">D.3</span> Дополнительные возможности</h2>
+<section id="sec-r-tools-ggplo2-extra" class="level2" data-number="D.5">
+<h2 data-number="D.5" class="anchored" data-anchor-id="sec-r-tools-ggplo2-extra"><span class="header-section-number">D.5</span> Дополнительные возможности</h2>
 
 
 </section>

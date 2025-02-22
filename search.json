@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Исследование операций",
     "section": "",
-    "text": "Интерактивный курс по исследованию операций\nОсновная литература [1].\n\n\n\n\n1. А. Т.Х. Исследование операций. 10-е изд. / под ред. Слепцова А.В. Санкт-Петербург: ООО \"Диалектика\", 2019. С. 1056.",
+    "text": "Интерактивный курс по исследованию операций\nОсновная литература [1]\n\n\n\n\n1. А. Т.Х. Исследование операций. 10-е изд. / под ред. Слепцова А.В. Санкт-Петербург: ООО \"Диалектика\", 2019. С. 1056.",
     "crumbs": [
       "Интерактивный курс по исследованию операций"
     ]
@@ -14,7 +14,7 @@
     "href": "enviroment/overview.html",
     "title": "Среда разработки",
     "section": "",
-    "text": "Состояние разработки\n\n\n\nВ разработке\n\n\nНабор инструментов позволяет создавать современные отчёты и не только. Здесь пару примеров.ы",
+    "text": "Состояние разработки\n\n\n\nВ разработке\n\n\nНабор инструментов позволяет создавать современные отчёты и не только. Здесь пару примеров.",
     "crumbs": [
       "Среда разработки"
     ]
@@ -31,8 +31,8 @@
     ]
   },
   {
-    "objectID": "enviroment/setup.html#quarto",
-    "href": "enviroment/setup.html#quarto",
+    "objectID": "enviroment/setup.html#sec-enviroment-setup-quarto",
+    "href": "enviroment/setup.html#sec-enviroment-setup-quarto",
     "title": "1  Установка и настройка",
     "section": "",
     "text": "1.1.1 Установка\n\nWindowsArch linux\n\n\n```{python}\n#| layout-ncol: 2\n#| fig-cap: \n#|   - \"Line Plot 1\"\n#|   - \"Line Plot 2\"\n\nimport matplotlib.pyplot as plt\nplt.plot([1,23,2,4])\nplt.show()\n\nplt.plot([8,65,23,90])\nplt.show()\n```\n\n\n```{r}\n#| layout-ncol: 2\n#| fig-cap: \n#|   - \"Speed and Stopping Distances of Cars\"\n#|   - \"Vapor Pressure of Mercury as a Function of Temperature\"\n\nplot(cars)\nplot(pressure)\n```\n\n\n\n\n\n1.1.2 Работа\nдальнейшее изучение",
@@ -42,8 +42,8 @@
     ]
   },
   {
-    "objectID": "enviroment/setup.html#r",
-    "href": "enviroment/setup.html#r",
+    "objectID": "enviroment/setup.html#sec-enviroment-setup-r",
+    "href": "enviroment/setup.html#sec-enviroment-setup-r",
     "title": "1  Установка и настройка",
     "section": "1.2 R",
     "text": "1.2 R\n\n1.2.1 Установка\n\nWindowsArch linux\n\n\n```{python}\n#| layout-ncol: 2\n#| fig-cap: \n#|   - \"Line Plot 1\"\n#|   - \"Line Plot 2\"\n\nimport matplotlib.pyplot as plt\nplt.plot([1,23,2,4])\nplt.show()\n\nplt.plot([8,65,23,90])\nplt.show()\n```\n\n\n```{r}\n#| layout-ncol: 2\n#| fig-cap: \n#|   - \"Speed and Stopping Distances of Cars\"\n#|   - \"Vapor Pressure of Mercury as a Function of Temperature\"\n\nplot(cars)\nplot(pressure)\n```\n\n\n\n\n\n1.2.2 Интерфейс командной строки\nссылка на язык",
@@ -53,8 +53,8 @@
     ]
   },
   {
-    "objectID": "enviroment/setup.html#rtools",
-    "href": "enviroment/setup.html#rtools",
+    "objectID": "enviroment/setup.html#sec-enviroment-setup-rtools",
+    "href": "enviroment/setup.html#sec-enviroment-setup-rtools",
     "title": "1  Установка и настройка",
     "section": "1.3 RTools",
     "text": "1.3 RTools\n\n1.3.1 Установка\n\nWindowsArch linux\n\n\n```{python}\n#| layout-ncol: 2\n#| fig-cap: \n#|   - \"Line Plot 1\"\n#|   - \"Line Plot 2\"\n\nimport matplotlib.pyplot as plt\nplt.plot([1,23,2,4])\nplt.show()\n\nplt.plot([8,65,23,90])\nplt.show()\n```\n\n\n```{r}\n#| layout-ncol: 2\n#| fig-cap: \n#|   - \"Speed and Stopping Distances of Cars\"\n#|   - \"Vapor Pressure of Mercury as a Function of Temperature\"\n\nplot(cars)\nplot(pressure)\n```\n\n\n\n\n\n1.3.2 Проверка\nустановка пакетов lpSolve",
@@ -64,19 +64,19 @@
     ]
   },
   {
-    "objectID": "enviroment/setup.html#rstudio",
-    "href": "enviroment/setup.html#rstudio",
+    "objectID": "enviroment/setup.html#sec-enviroment-setup-rstudio",
+    "href": "enviroment/setup.html#sec-enviroment-setup-rstudio",
     "title": "1  Установка и настройка",
     "section": "1.4 RStudio",
-    "text": "1.4 RStudio\n\n1.4.1 Установка\n\nWindowsArch linux\n\n\n```{python}\n#| layout-ncol: 2\n#| fig-cap: \n#|   - \"Line Plot 1\"\n#|   - \"Line Plot 2\"\n\nimport matplotlib.pyplot as plt\nplt.plot([1,23,2,4])\nplt.show()\n\nplt.plot([8,65,23,90])\nplt.show()\n```\n\n\n```{r}\n#| layout-ncol: 2\n#| fig-cap: \n#|   - \"Speed and Stopping Distances of Cars\"\n#|   - \"Vapor Pressure of Mercury as a Function of Temperature\"\n\nplot(cars)\nplot(pressure)\n```\n\n\n\n\n\n1.4.2 Приступая к работе\n\nСоздание проекта\nпроект quarto\n\n\nСочетание клавиш\nКартинки и обзор панели редактирования\n\n\nОтладка\nЗдесь обзор конопок, а функции типа browser() и trace() ссылка на продвинутый r",
+    "text": "1.4 RStudio\n\n1.4.1 Установка\n\nWindowsArch linux\n\n\n```{python}\n#| layout-ncol: 2\n#| fig-cap: \n#|   - \"Line Plot 1\"\n#|   - \"Line Plot 2\"\n\nimport matplotlib.pyplot as plt\nplt.plot([1,23,2,4])\nplt.show()\n\nplt.plot([8,65,23,90])\nplt.show()\n```\n\n\n```{r}\n#| layout-ncol: 2\n#| fig-cap: \n#|   - \"Speed and Stopping Distances of Cars\"\n#|   - \"Vapor Pressure of Mercury as a Function of Temperature\"\n\nplot(cars)\nplot(pressure)\n```\n\n\n\n\n\n1.4.2 Приступая к работе",
     "crumbs": [
       "Среда разработки",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Установка и настройка</span>"
     ]
   },
   {
-    "objectID": "enviroment/setup.html#vscode",
-    "href": "enviroment/setup.html#vscode",
+    "objectID": "enviroment/setup.html#sec-enviroment-setup-vscode",
+    "href": "enviroment/setup.html#sec-enviroment-setup-vscode",
     "title": "1  Установка и настройка",
     "section": "1.5 VSCode",
     "text": "1.5 VSCode",
@@ -90,7 +90,7 @@
     "href": "enviroment/rstudio.html",
     "title": "2  RStudio IDE",
     "section": "",
-    "text": "Состояние разработки\n\n\n\nВ разработке",
+    "text": "Состояние разработки\n\n\n\nВ разработке\n\n\n\nСоздание проекта\nпроект quarto\n\n\nСочетание клавиш\nКартинки и обзор панели редактирования\n\n\nОтладка\nЗдесь обзор конопок, а функции типа browser() и trace() ссылка на продвинутый r",
     "crumbs": [
       "Среда разработки",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>RStudio IDE</span>"
@@ -119,8 +119,8 @@
     ]
   },
   {
-    "objectID": "enviroment/markdown.html#блоки-кода",
-    "href": "enviroment/markdown.html#блоки-кода",
+    "objectID": "enviroment/markdown.html#sec-markdown-codeblocks",
+    "href": "enviroment/markdown.html#sec-markdown-codeblocks",
     "title": "4  Язык разметки Markdown",
     "section": "",
     "text": "## Качество воздуха\n\n@fig-airquality более подробно изучает влияние температуры на уровень озона.\n\n```{r}\n#| label: fig-airquality\n#| fig-cap: \"Температура и уровень озона.\"\n#| warning: false\n\nlibrary(ggplot2)\n\nggplot(airquality, aes(Temp, Ozone)) + \n  geom_point() + \n  geom_smooth(method = \"loess\")\n```\n\n\n\n\n4.1.1 Встраиваемый код\nВстраиваемый (Inline) код позволяет вам выполнять код в markdown, например, для автоматического использования самых последних вычислений в повествовании. Синтаксис встроенного кода похож на блоки кода, за исключением того, что используеся один тик (`) вместо тройных тиков (```). Встраиваемый код может использоваться в середине markdown. Например, следующий код сохраняет переменную radius в блоке кода, а затем обращается к ней в предложении с помощью встроенного кода:\n```{r}\nradius &lt;- 5\n```\n\nThe radius of the circle is `{r} radius`\nВ результате получаем:\nThe radius of the circle is 5.\n\n\n\n\n\n\nОсторожность\n\n\n\nВстроенные выражения должны быть ограничены простыми значениями, которые предварительно вычисляются в обычных ячейках кода (а не вызовами функций, которые выполняют нетривиальную работу). Это связано с тем, что протокол, используемый для встроенных выражений, несовместим с библиотеками, использующими многопоточность.\n\n\n\n\n4.1.2 Разные языки в одном документе\nДвижки рендеринга Knitr и Jupyter позволяют совмещать вычисления на разных языках в одном документе. Например:\n\n```{r}\n#| cache: true\nplot(pressure, pch=21, col='blue', bg='lightblue')\n```\n\n\n\n\n\n\n\n\n\n```{python}\n#| warning: false\n#| message: false\n#| error: false\n#| cache: true\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Data for plotting\nt = np.arange(0.0, 2.0, 0.01)\ns = 1 + np.sin(2 * np.pi * t)\n\nfig, ax = plt.subplots()\nax.plot(t, s)\n\nax.set(xlabel='time (s)', ylabel='voltage (mV)',\n       title='About as simple as it gets, folks')\nax.grid()\n\nfig.savefig(\"test.png\")\nplt.show()\n```\n\n\n\n\n\n\n\n\n\n```{julia}\n#| warning: false\n#| message: false\n#| error: false\n#| cache: true\n\nusing Plots\nx = range(0, 10, length=100);\ny1 = sin.(x);\ny2 = cos.(x);\nplot(x, [y1 y2])\n```\n\n\n\n\n\n\n\n\n\n\n4.1.3 Рендеринг и сохранение\nПри рендеринге документа Quarto блоки кода выполняются автоматически. Прямо над документом находится панель инструментов, содержащая различные параметры, включая Render (сегментированная синяя стрелка). По умолчанию документ qmd конвертируется в html.\n\n\n4.1.4 Опции блоков кода\nЗадать название блока можно с помощь параметра label:\n```{r}\n#| label: convert\nairquality$TempC &lt;- (5 / 9) * (airquality$Temp - 32)\n```\nПараметр echo: false отключает печать кода (отображается только вывод).\n``` r\nlibrary(tidyverse)\nlibrary(palmerpenguins)\npenguins |&gt;\n  mutate(\n    bill_ratio = bill_depth_mm / bill_length_mm,\n    bill_area  = bill_depth_mm * bill_length_mm\n  )\n```\n\nLine 3  \nTake `penguins`, and then,\n\nLines 4-7  \nadd new columns for the bill ratio and bill area.\n\n\n4.1.5 Параметры вывода\nСуществует широкий спектр опций для настройки вывода из выполненного кода. Все эти опции могут быть указаны либо глобально (в front-matter документа), либо для каждого блока кода. Например, вот модификация примера R, указывающая, что мы не хотим “отражать” код в выходном документе:\n---\ntitle: \"My Document\"\nexecute:\n  echo: false\n---\nПараметр echo может быть переопределен для конкретно блока кода. Например:\n```{r}\n#| echo: true\n\nplot(cars)\n```\nПараметры блока кода включены в специальный комментарий в верхней части блока (строки в верхней части, начинающиеся с #|, считаются параметрами).\nНаиболее распространенные параметры приведены далее:\n\n\n\n\n\n\n\nOption\nDescription\n\n\n\n\neval\nВычислить блок (если false, то блок кода просто дублируется в вывод).\n\n\necho\nВключить исходный код в вывод\n\n\noutput\nВключить результаты выполнения кода в выходные данные (true, false)\nasis, чтобы указать, что выходные данные представляют собой markdown и не должны содержать расширений Quarto).\n\n\nwarning\nВключать предупреждения в вывод\n\n\nerror\nВключать ошибки в вывод (это подразумевает, что ошибки выполнения кода не остановят обработку документа).\n\n\n\nПример Knitr с некоторыми из этих дополнительных параметров:\n---\ntitle: \"Knitr Document\"\nexecute:\n  echo: false\n---\n\n```{r}\n#| warning: false\n\nlibrary(ggplot2)\nggplot(airquality, aes(Temp, Ozone)) + \n  geom_point() + \n  geom_smooth(method = \"loess\", se = FALSE)\n```\n\n```{r}\nsummary(airquality)\n```\n\n\n4.1.6 Названия рисунков\nМожно указать подпись и замещающий текст для рисунков, сгенерированных из кода, используя параметры fig-cap и fig-alt. Например, здесь эти параметры добавлются в ячейку кода которая создает график:\n\n```{python}\n#| fig-cap: \"График в полярных координатах\"\n#| fig-alt: \"График линии в полярных координатах\"\n#| cache: true\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(subplot_kw={'projection': 'polar'})\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n```\n\n\n\n\nГрафик в полярных координатах",
@@ -130,8 +130,8 @@
     ]
   },
   {
-    "objectID": "enviroment/markdown.html#форматирование-текста",
-    "href": "enviroment/markdown.html#форматирование-текста",
+    "objectID": "enviroment/markdown.html#sec-markdown-text-editing",
+    "href": "enviroment/markdown.html#sec-markdown-text-editing",
     "title": "4  Язык разметки Markdown",
     "section": "4.2 Форматирование текста",
     "text": "4.2 Форматирование текста\n\n\n\n\n\n\n\nЯзык разметки Markdown\nРезультат\n\n\n\n\n*курсив*, **жирный**, ***жирный курсив***\nкурсив, жирный, жирный курсив\n\n\nверхний индекс^2^ / subscript~2~\nверхний индекс2 / нижний индекс2\n\n\n~~зачёркнутый~~\nзачёркутый",
@@ -141,19 +141,19 @@
     ]
   },
   {
-    "objectID": "enviroment/markdown.html#заголовки",
-    "href": "enviroment/markdown.html#заголовки",
+    "objectID": "enviroment/markdown.html#заголовки-sec-markdown-headers",
+    "href": "enviroment/markdown.html#заголовки-sec-markdown-headers",
     "title": "4  Язык разметки Markdown",
-    "section": "4.3 Заголовки",
-    "text": "4.3 Заголовки\n\nЗаголовки\n\n\n\n\n\n\nЯзык разметки Markdown\nРезультат\n\n\n\n\n## Заголовок 2\n4.4 Заголовок 2\n\n\n### Заголовок 3\n4.4.1 Заголовок 3\n\n\n#### Заголовок 4\nЗаголовок 4\n\n\n##### Заголовок 5\nЗаголовок 5\n\n\n###### Заголовок 6\nЗаголовок 6",
+    "section": "4.3 Заголовки {#sec markdown-headers}",
+    "text": "4.3 Заголовки {#sec markdown-headers}\n\nЗаголовки\n\n\n\n\n\n\nЯзык разметки Markdown\nРезультат\n\n\n\n\n## Заголовок 2\n4.4 Заголовок 2\n\n\n### Заголовок 3\n4.4.1 Заголовок 3\n\n\n#### Заголовок 4\nЗаголовок 4\n\n\n##### Заголовок 5\nЗаголовок 5\n\n\n###### Заголовок 6\nЗаголовок 6",
     "crumbs": [
       "Среда разработки",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Язык разметки Markdown</span>"
     ]
   },
   {
-    "objectID": "enviroment/markdown.html#ссылки-и-изображения",
-    "href": "enviroment/markdown.html#ссылки-и-изображения",
+    "objectID": "enviroment/markdown.html#sec-markdown-link-and-image",
+    "href": "enviroment/markdown.html#sec-markdown-link-and-image",
     "title": "4  Язык разметки Markdown",
     "section": "4.5 Ссылки и Изображения",
     "text": "4.5 Ссылки и Изображения\n\n\n\nЯзык разметки Markdown\nРезультат\n\n\n\n\n&lt;https://rct.bsu.by&gt;\nhttps://rct.bsu.by\n\n\n[Название](https://rct.bsu.by)\nНаш факультет\n\n\n![Название](rctbsu.png)\n\n\n\nНаш факультет\n\n\n\n\n[![Название](rctbsu.png)](https://rct.bsu.by)\nКартинка становится кликабельной при подстановке в html.",
@@ -163,8 +163,8 @@
     ]
   },
   {
-    "objectID": "enviroment/markdown.html#перекрестные-ссылки",
-    "href": "enviroment/markdown.html#перекрестные-ссылки",
+    "objectID": "enviroment/markdown.html#sec-markdown-crossref",
+    "href": "enviroment/markdown.html#sec-markdown-crossref",
     "title": "4  Язык разметки Markdown",
     "section": "4.6 Перекрестные ссылки",
     "text": "4.6 Перекрестные ссылки\nПерекрестные ссылки на рисунки создаются, добавлением к ним идентификатора с префиксом fig-, а затем ссылаясь на рисунок с помощью префикса @. Например:\n![Грач](rctbsu.png){#fig-grach}\n\nКак показано на рисунке @fig-grach.\nДля рисунков, созданных блоками исполняемого кода, используется label с префиксом fig-, чтобы сделать их перекрестно-ссылочными. Например:\nДля демонстрации графика линии используется @fig-cars-plot.\n\n```{r}\n#| label: fig-cars-plot\n#| fig-cap: \"Cars plot \"\n\nplot(cars)\n```\nДля демонстрации графика линии используется Рисунок 4.2.\n\n```{r}\n#| label: fig-cars-plot\n#| fig-cap: \"Cars plot \"\n#| cache: true\n\nplot(cars)\n```\n\n\n\n\n\n\n\nРисунок 4.2: Cars plot\n\n\n\n\n\n\n4.6.1 Размещение и подзаголовки рисунков\nПодзаголовки для вычисляемых рисунков задаются с использованием опций fig-cap и fig-subcap. Если использовать параметр label с префиксом fig- то рисунок будет пронумерован и [перекрестно-ссылаемым].\n```{r}\n#| label: fig-charts\n#| fig-cap: \"Charts\"\n#| fig-subcap: \n#|   - \"Cars\"\n#|   - \"Pressure\"\n#| layout-ncol: 2\n#| cache: true\n\nplot(cars)\nplot(pressure)\n```\n\n\n\n\n\n\n\n\n\n\n\n(a) Cars\n\n\n\n\n\n\n\n\n\n\n\n(b) Pressure\n\n\n\n\n\n\n\nРисунок 4.3: Charts\n\n\n\n\n\n\n\n\n\nУведомление\n\n\n\nРисунки будут размещены в две колонки только при конвертации в html",
@@ -174,19 +174,19 @@
     ]
   },
   {
-    "objectID": "enviroment/markdown.html#списки",
-    "href": "enviroment/markdown.html#списки",
+    "objectID": "enviroment/markdown.html#sec-markdonw-list",
+    "href": "enviroment/markdown.html#sec-markdonw-list",
     "title": "4  Язык разметки Markdown",
     "section": "4.7 Списки",
-    "text": "4.7 Списки\n\n\n\n\n\n\n\nЯзык разметки Markdown\nOutput\n\n\n\n\n* маркированный список\n    + пункт 1\n    + пункт 2\n        - подпункт 1\n\nмаркированный список\n\nпункт 1\nпункт 2\n\nподпункт 1\n\n\n\n\n\n1. нумерованный список\n2. пункт 2\n    i) подпункт 1\n         A.  вложение 1\n\nordered list\nitem 2\n\nsub-item 1\n\nsub-sub-item 1\n\n\n\n\n\n- [ ] Задача 1\n- [x] Задача 2\n\nЗадача 1\nЗадача 2\n\n\n\n(@)  Сквозная нумерация списка\n\nпродолжается после\n\n(@)  прерывания\n\nСквозная нумерация списка\n\nпродолжается после\n\nпрерывания\n\n\n\nтермин\n: его определение\n\nтермин\n\nего определение\n\n\n\n\n\n\n4.7.1 Блочное размещение\nНапример, например мы можем разместиить 2 списка рядом:\n::: {layout-ncol=2}\n### List One\n\n- Item A\n- Item B\n- Item C\n\n### List Two\n\n- Item X\n- Item Y\n- Item Z\n:::\n\n\n\n\n\n\nПервый списко\n\nЭлемент A\nЭлемент B\nЭлемент C\n\n\n\nВторой список\n\nЭлемент X\nЭлемент Y\nЭлемент Z\n\n\n\n\n\n\n\n\n\n\nУведомление\n\n\n\nСписки будут размещены в две колонки только при конвертации в html",
+    "text": "4.7 Списки\n\n\n\n\n\n\n\nЯзык разметки Markdown\nOutput\n\n\n\n\n* маркированный список\n    + пункт 1\n    + пункт 2\n        - подпункт 1\n\nмаркированный список\n\nпункт 1\nпункт 2\n\nподпункт 1\n\n\n\n\n\n1. нумерованный список\n2. пункт 2\n    i) подпункт 1\n         A.  вложение 1\n\nordered list\nitem 2\n\nsub-item 1\n\nsub-sub-item 1\n\n\n\n\n\n- [ ] Задача 1\n- [x] Задача 2\n\nЗадача 1\nЗадача 2\n\n\n\n(@)  Сквозная нумерация списка\n\nпродолжается после\n\n(@)  прерывания\n\nСквозная нумерация списка\n\nпродолжается после\n\nпрерывания\n\n\n\nтермин\n: его определение\n\nтермин\n\nего определение\n\n\n\n\n\n\n4.7.1 Блочное размещение\nНапример, например мы можем разместить 2 списка рядом:\n::: {layout-ncol=2}\n### List One\n\n- Item A\n- Item B\n- Item C\n\n### List Two\n\n- Item X\n- Item Y\n- Item Z\n:::\n\n\n\n\n\n\nПервый список\n\nЭлемент A\nЭлемент B\nЭлемент C\n\n\n\nВторой список\n\nЭлемент X\nЭлемент Y\nЭлемент Z\n\n\n\n\n\n\n\n\n\n\nУведомление\n\n\n\nСписки будут размещены в две колонки только при конвертации в html",
     "crumbs": [
       "Среда разработки",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Язык разметки Markdown</span>"
     ]
   },
   {
-    "objectID": "enviroment/markdown.html#таблицы",
-    "href": "enviroment/markdown.html#таблицы",
+    "objectID": "enviroment/markdown.html#sec-markdown-tables",
+    "href": "enviroment/markdown.html#sec-markdown-tables",
     "title": "4  Язык разметки Markdown",
     "section": "4.8 Таблицы",
     "text": "4.8 Таблицы\n\n4.8.1 Простые таблицы\nВ обычных таблицах могут содержаться только элементы представленные простым текстом.\n\nРазметка Markdown\nВыравнивание по\n| Правому краю | Левому краю | Умолчанию | Центру |\n|-------------:|:------------|-----------|:------:|\n|           12 | 12          | 12        |   12   |\n|          123 | 123         | 123       |  123   |\n|            1 | 1           | 1         |   1    |\n\n\nРезультат\nВыравнивание по\n\n\n\nПравому краю\nЛевому краю\nУмолчанию\nЦентру\n\n\n\n\n12\n12\n12\n12\n\n\n123\n123\n123\n123\n\n\n1\n1\n1\n1\n\n\n\n\n\n\n4.8.2 Расширенные таблицы\nРасширенные таблицы (grid tables) — это более продвинутый тип таблиц разметки, которые допускают произвольные блочные элементы (несколько абзацев, блоков кода, списков и т. д.). Например: строка =s отделяет заголовок от тела таблицы и может быть опущена для таблицы без заголовка. Ячейки таблиц сетки могут содержать произвольные блочные элементы (несколько абзацев, блоков кода, списков и т. д.)\nВыравнивания можно указывать так же, как и в случае с таблицами конвейера, помещая двоеточия на границах разделительной линии после заголовка.\n\nРазметка Markdown\n+-----------+-----------+--------------------+\n| Fruit     | Price     | Advantages         |\n+===========+===========+====================+\n| Bananas   | $1.34     | - built-in wrapper |\n|           |           | - bright color     |\n+-----------+-----------+--------------------+\n| Oranges   | $2.10     | - cures scurvy     |\n|           |           | - tasty            |\n+-----------+-----------+--------------------+\n\n: Пример расширенной таблицы\n\n\nРезультат\n\nПример расширенной таблицы\n\n\n\n\n\n\n\nFruit\nPrice\nAdvantages\n\n\n\n\nBananas\n$1.34\n\nbuilt-in wrapper\nbright color\n\n\n\nOranges\n$2.10\n\ncures scurvy\ntasty",
@@ -196,19 +196,19 @@
     ]
   },
   {
-    "objectID": "enviroment/markdown.html#формулы",
-    "href": "enviroment/markdown.html#формулы",
+    "objectID": "enviroment/markdown.html#sec-markdown-equations",
+    "href": "enviroment/markdown.html#sec-markdown-equations",
     "title": "4  Язык разметки Markdown",
     "section": "4.9 Формулы",
-    "text": "4.9 Формулы\nДля вставки формулы в текст используется $. Для выделения отдельным блоком используется $$. Например:\n\nФормулы\n\n\n\n\n\n\nЯзык разметки Markdown\nРезультат\n\n\n\n\nформула в тексте: $E = mc^{2}$\nформула в тексте: \\(E=mc^{2}\\)\n\n\nотдельный блок формул:\n\n$$E = mc^{2}$$\nотдельный блок формул:\n\\[E = mc^{2}\\]\n\n\n\nПерекрёстная ссылка на LaTeX",
+    "text": "4.9 Формулы\nДля вставки формулы в текст используется $. Для выделения отдельным блоком используется $$. Например:\n\nФормулы\n\n\n\n\n\n\nЯзык разметки Markdown\nРезультат\n\n\n\n\nформула в тексте: $E = mc^{2}$\nформула в тексте: \\(E=mc^{2}\\)\n\n\nотдельный блок формул:\n\n$$E = mc^{2}$$\nотдельный блок формул:\n\\[E = mc^{2}\\]\n\n\n\nВыражения записываются на языке LaTeX, подробнее Глава 5",
     "crumbs": [
       "Среда разработки",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Язык разметки Markdown</span>"
     ]
   },
   {
-    "objectID": "enviroment/markdown.html#диаграммы",
-    "href": "enviroment/markdown.html#диаграммы",
+    "objectID": "enviroment/markdown.html#sec-markdown-diagram",
+    "href": "enviroment/markdown.html#sec-markdown-diagram",
     "title": "4  Язык разметки Markdown",
     "section": "4.10 Диаграммы",
     "text": "4.10 Диаграммы\nQuarto имеет встроенную поддержку для диаграмм Mermaid и Graphviz. Mermaid – это инструмент для создания диаграмм и графиков на основе Javascript, который использует определения текста, вдохновленные Markdown, и рендерер для создания и изменения сложных диаграмм.\n\n```{mermaid}\nflowchart LR\n  A[Hard edge] --&gt; B(Round edge)\n  B --&gt; C{Decision}\n  C --&gt; D[Result one]\n  C --&gt; E[Result two]\n```\n\n\n\n\nflowchart LR\n  A[Hard edge] --&gt; B(Round edge)\n  B --&gt; C{Decision}\n  C --&gt; D[Result one]\n  C --&gt; E[Result two]",
@@ -218,8 +218,8 @@
     ]
   },
   {
-    "objectID": "enviroment/markdown.html#цитаты",
-    "href": "enviroment/markdown.html#цитаты",
+    "objectID": "enviroment/markdown.html#sec-markdown-quote",
+    "href": "enviroment/markdown.html#sec-markdown-quote",
     "title": "4  Язык разметки Markdown",
     "section": "4.11 Цитаты",
     "text": "4.11 Цитаты\n &gt; Blockquote\n\nЭто короткая цитата",
@@ -229,8 +229,8 @@
     ]
   },
   {
-    "objectID": "enviroment/markdown.html#специальные-символы",
-    "href": "enviroment/markdown.html#специальные-символы",
+    "objectID": "enviroment/markdown.html#sec-markdown-special-symbols",
+    "href": "enviroment/markdown.html#sec-markdown-special-symbols",
     "title": "4  Язык разметки Markdown",
     "section": "4.12 Специальные символы",
     "text": "4.12 Специальные символы\n\n\n\n\n\n\n\nMarkdown Syntax\nOutput\n\n\n\n\nendash: --\nendash: –\n\n\nemdash: ---\nemdash: —\n\n\n\n\n\n\n\n\n\nУведомление\n\n\n\nСимволы подставляются только при конвертации в html",
@@ -244,51 +244,62 @@
     "href": "enviroment/latex.html",
     "title": "5  Язык разметки LaTeX",
     "section": "",
-    "text": "5.1 Стрелки\nДля оформления уравнений и формул в рабочих блокнотах Quarto используется общепринятый стандарт разметки математических выражений LaTeX.\n[1] [2]",
+    "text": "5.1 Греческие буквы\nДля оформления уравнений и формул в рабочих блокнотах Quarto используется общепринятый стандарт разметки математических выражений LaTeX.\n[1] [2]",
     "crumbs": [
       "Среда разработки",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
     ]
   },
   {
-    "objectID": "enviroment/latex.html#стрелки",
-    "href": "enviroment/latex.html#стрелки",
+    "objectID": "enviroment/latex.html#sec-latex-greek-letters",
+    "href": "enviroment/latex.html#sec-latex-greek-letters",
     "title": "5  Язык разметки LaTeX",
     "section": "",
-    "text": "Стрелки\n\n\n\n\n\n\n\n\n$\\leftarrow$\n\\(\\leftarrow\\)\n$\\Leftarrow$\n\\(\\Leftarrow\\)\n\n\n$\\rightarrow$\n\\(\\rightarrow\\)\n$\\rightarrow$\n\\(\\Rightarrow\\)\n\n\n$\\leftrightarrow$\n\\(\\leftrightarrow\\)\n$\\rightleftharpoons$\n\\(\\rightleftharpoons\\)\n\n\n$\\uparrow$\n\\(\\uparrow\\)\n$\\downarrow$\n\\(\\downarrow\\)\n\n\n$\\Uparrow$\n\\(\\Uparrow\\)\n$\\Downarrow$\n\\(\\Downarrow\\)\n\n\n$\\Leftrightarrow$\n\\(\\Leftrightarrow\\)\n$\\Updownarrow$\n\\(\\Updownarrow\\)\n\n\n$\\mapsto$\n\\(\\mapsto\\)\n$\\longmapsto$\n\\(\\longmapsto\\)\n\n\n$\\nearrow$\n\\(\\nearrow\\)\n$\\searrow$\n\\(\\searrow\\)\n\n\n$\\swarrow$\n\\(\\swarrow\\)\n$\\nwarrow$\n\\(\\nwarrow\\)\n\n\n$\\leftharpoonup$\n\\(\\leftharpoonup\\)\n$\\rightharpoonup$\n\\(\\rightharpoonup\\)\n\n\n$\\leftharpoondown$\n\\(\\leftharpoondown\\)\n$\\rightharpoondown$\n\\(\\rightharpoondown\\)",
+    "text": "Таблица 5.1: Греческие символы\n\n\n\n\n\n\n\n\n\n\n\n\n\nСтрочная\n\nПрописная\n\nАльтернативная\n\n\n\n\n\n$\\alpha$\n\\(\\alpha\\)\n$A$\n\\(A\\)\n\n\n\n\n$\\beta$\n\\(\\beta\\)\n$B$\n\\(B\\)\n\n\n\n\n$\\gamma$\n\\(\\gamma\\)\n$\\Gamma$\n\\(\\Gamma\\)\n\n\n\n\n$\\delta$\n\\(\\delta\\)\n$\\Delta$\n\\(\\Delta\\)\n\n\n\n\n$\\epsilon$\n\\(\\epsilon\\)\n$E$\n\\(E\\)\n$\\varepsilon$\n\\(\\varepsilon\\)\n\n\n$\\zeta$\n\\(\\zeta\\)\n$Z$\n\\(Z\\)\n\n\n\n\n$\\eta$\n\\(\\eta\\)\n$H$\n\\(H\\)\n\n\n\n\n$\\theta$\n\\(\\theta\\)\n$\\Theta$\n\\(\\Theta\\)\n$\\vartheta$\n\\(\\vartheta\\)\n\n\n$\\zeta$\n\\(\\zeta\\)\n$Z$\n\\(Z\\)\n\n\n\n\n$\\kappa$\n\\(\\kappa\\)\n$K$\n\\(K\\)\n$\\varkappa$\n\\(\\varkappa\\)\n\n\n$\\lambda$\n\\(\\lambda\\)\n$Lambda$\n\\(\\Lambda\\)\n\n\n\n\n$\\mu$\n\\(\\mu\\)\n$M$\n\\(M\\)\n\n\n\n\n$\\nu$\n\\(\\nu\\)\n$N$\n\\(N\\)\n\n\n\n\n$\\xi$\n\\(\\xi\\)\n$\\Xi$\n\\(\\Xi\\)\n\n\n\n\n$\\omicron$\n\\(\\omicron\\)\n$O$\n\\(O\\)\n\n\n\n\n$\\pi$\n\\(\\pi\\)\n$\\Pi$\n\\(\\Pi\\)\n$\\varpi$\n\\(\\varpi\\)\n\n\n$\\rho$\n\\(\\rho\\)\n$P$\n\\(P\\)\n$\\varrho$\n\\(\\varrho\\)\n\n\n$\\sigma$\n\\(\\sigma\\)\n$\\Sigma$\n\\(\\Sigma\\)\n$\\varsigma$\n\\(\\varsigma\\)\n\n\n$\\tau$\n\\(\\tau\\)\n$T$\n\\(T\\)\n\n\n\n\n$\\upsilon$\n\\(\\upsilon\\)\n$\\Upsilon$\n\\(\\Upsilon\\)\n\n\n\n\n$\\phi$\n\\(\\phi\\)\n$\\Phi$\n\\(\\Phi\\)\n$\\varphi$\n\\(\\varphi\\)\n\n\n$\\chi$\n\\(\\chi\\)\n$X$\n\\(X\\)\n\n\n\n\n$\\psi$\n\\(\\psi\\)\n$\\Psi$\n\\(\\Psi\\)\n\n\n\n\n$\\omega$\n\\(\\omega\\)\n$\\Omega$\n\\(\\Omega\\)",
     "crumbs": [
       "Среда разработки",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
     ]
   },
   {
-    "objectID": "enviroment/latex.html#бинарные-операторы-и-символы-отношения",
-    "href": "enviroment/latex.html#бинарные-операторы-и-символы-отношения",
+    "objectID": "enviroment/latex.html#sec-latex-other-symbols",
+    "href": "enviroment/latex.html#sec-latex-other-symbols",
     "title": "5  Язык разметки LaTeX",
-    "section": "5.2 Бинарные операторы и символы отношения",
-    "text": "5.2 Бинарные операторы и символы отношения\n\nОператоры\n\n\n\n\n\n\n\n\n$\\times$\n\\(\\times\\)\n$\\cdot$\n\\(\\cdot\\)\n\n\n$\\div$\n\\(\\div\\)\n$\\cap$\n\\(\\cap\\)\n\n\n$\\cup$\n\\(\\cup\\)\n$\\neq$\n\\(\\neq\\)\n\n\n$\\leq$\n\\(\\leq\\)\n$\\geq$\n\\(\\geq\\)\n\n\n$\\in$\n\\(\\in\\)\n$\\perp$\n\\(\\perp\\)\n\n\n$\\notin$\n\\(\\notin\\)\n$\\subset$\n\\(\\subset\\)\n\n\n$\\simeq$\n\\(\\simeq\\)\n$\\approx$\n\\(\\approx\\)\n\n\n$\\wedge$\n\\(\\wedge\\)\n$\\vee$\n\\(\\vee\\)\n\n\n$\\oplus$\n\\(\\oplus\\)\n$\\otimes$\n\\(\\otimes\\)\n\n\n$\\Box$\n\\(\\Box\\)\n$\\boxtimes$\n\\(\\boxtimes\\)\n\n\n$\\equiv$\n\\(\\equiv\\)\n$\\cong$\n\\(\\cong\\)",
+    "section": "5.2 Прочие символы",
+    "text": "5.2 Прочие символы\n\n\n\nТаблица 5.2: Прочие символы\n\n\n\n\n\n\n\n\n\n\n\n$\\infty$\n\\(\\infty\\)\n$\\forall$\n\\(\\forall\\)\n\n\n$\\Re$\n\\(\\Re\\)\n$\\Im$\n\\(\\Im\\)\n\n\n$\\nabla$\n\\(\\nabla\\)\n$\\exists$\n\\(\\exists\\)\n\n\n$\\partial$\n\\(\\partial\\)\n$\\nexists$\n\\(\\nexists\\)\n\n\n$\\emptyset$\n\\(\\emptyset\\)\n$\\varnothing$\n\\(\\varnothing\\)\n\n\n$\\wp$\n\\(\\wp\\)\n$\\complement$\n\\(\\complement\\)\n\n\n$\\neg$\n\\(\\neg\\)\n$\\cdots$\n\\(\\cdots\\)\n\n\n$\\square$\n\\(\\square\\)\n$\\surd$\n\\(\\surd\\)\n\n\n$\\blacksquare$\n\\(\\blacksquare\\)\n$\\triangle$\n\\(\\triangle\\)",
     "crumbs": [
       "Среда разработки",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
     ]
   },
   {
-    "objectID": "enviroment/latex.html#прочие-символы",
-    "href": "enviroment/latex.html#прочие-символы",
+    "objectID": "enviroment/latex.html#sec-latex-arrows",
+    "href": "enviroment/latex.html#sec-latex-arrows",
     "title": "5  Язык разметки LaTeX",
-    "section": "5.3 Прочие символы",
-    "text": "5.3 Прочие символы",
+    "section": "5.3 Стрелки",
+    "text": "5.3 Стрелки\n\n\n\nТаблица 5.3: Стрелки\n\n\n\n\n\n\n\n\n\n\n\n$\\leftarrow$\n\\(\\leftarrow\\)\n$\\Leftarrow$\n\\(\\Leftarrow\\)\n\n\n$\\rightarrow$\n\\(\\rightarrow\\)\n$\\rightarrow$\n\\(\\Rightarrow\\)\n\n\n$\\leftrightarrow$\n\\(\\leftrightarrow\\)\n$\\rightleftharpoons$\n\\(\\rightleftharpoons\\)\n\n\n$\\uparrow$\n\\(\\uparrow\\)\n$\\downarrow$\n\\(\\downarrow\\)\n\n\n$\\Uparrow$\n\\(\\Uparrow\\)\n$\\Downarrow$\n\\(\\Downarrow\\)\n\n\n$\\Leftrightarrow$\n\\(\\Leftrightarrow\\)\n$\\Updownarrow$\n\\(\\Updownarrow\\)\n\n\n$\\mapsto$\n\\(\\mapsto\\)\n$\\longmapsto$\n\\(\\longmapsto\\)\n\n\n$\\nearrow$\n\\(\\nearrow\\)\n$\\searrow$\n\\(\\searrow\\)\n\n\n$\\swarrow$\n\\(\\swarrow\\)\n$\\nwarrow$\n\\(\\nwarrow\\)\n\n\n$\\leftharpoonup$\n\\(\\leftharpoonup\\)\n$\\rightharpoonup$\n\\(\\rightharpoonup\\)\n\n\n$\\leftharpoondown$\n\\(\\leftharpoondown\\)\n$\\rightharpoondown$\n\\(\\rightharpoondown\\)",
     "crumbs": [
       "Среда разработки",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
     ]
   },
   {
-    "objectID": "enviroment/latex.html#выделяемые-функции",
-    "href": "enviroment/latex.html#выделяемые-функции",
+    "objectID": "enviroment/latex.html#sec-latex-operators",
+    "href": "enviroment/latex.html#sec-latex-operators",
     "title": "5  Язык разметки LaTeX",
-    "section": "5.4 Выделяемые функции",
-    "text": "5.4 Выделяемые функции\n\nФункции\n\n\n\n\n\n\nLaTeX\nРезультат\n\n\n\n\n$\\cos{x}$\n\\[\n\\cos{x}\n\\]\n\n\n$\\sin{x}$\n\\[\n\\sin{x}\n\\]\n\n\n$\\csc{x}$\n\\[\n\\csc{x}\n\\]\n\n\n$\\exp{x}$\n\\[\n\\exp\n\\biggl(\\,\n\\sum_{n=1}^{10}\n\\frac{1}{n}\n\\biggr)\n\\]\n\n\n$\\min_{sub} expr$\n\\[\n\\min_{\\forall s \\in S_j} q_k(s)\n\\]\n\n\n$\\gcd$\n\\[\n\\gcd{144,12}\n\\]\n\n\n$\\log_b n$\n\\[\nA(n) \\in\n\\Theta(n^{\\log_b a}) =\n\\Theta(n^{\\log_2 2} ) =\n\\Theta(n)\n\\]\n\n\n$\\sup_i f$\n\\[\n\\sup_{x&gt;0}f(x)\n\\]",
+    "section": "5.4 Бинарные операторы и символы отношения",
+    "text": "5.4 Бинарные операторы и символы отношения\n\n\n\nТаблица 5.4: Операторы\n\n\n\n\n\n\n\n\n\n\n\n$\\times$\n\\(\\times\\)\n$\\cdot$\n\\(\\cdot\\)\n\n\n$\\div$\n\\(\\div\\)\n$\\cap$\n\\(\\cap\\)\n\n\n$\\cup$\n\\(\\cup\\)\n$\\neq$\n\\(\\neq\\)\n\n\n$\\leq$\n\\(\\leq\\)\n$\\geq$\n\\(\\geq\\)\n\n\n$\\in$\n\\(\\in\\)\n$\\perp$\n\\(\\perp\\)\n\n\n$\\notin$\n\\(\\notin\\)\n$\\subset$\n\\(\\subset\\)\n\n\n$\\simeq$\n\\(\\simeq\\)\n$\\approx$\n\\(\\approx\\)\n\n\n$\\wedge$\n\\(\\wedge\\)\n$\\vee$\n\\(\\vee\\)\n\n\n$\\oplus$\n\\(\\oplus\\)\n$\\otimes$\n\\(\\otimes\\)\n\n\n$\\Box$\n\\(\\Box\\)\n$\\boxtimes$\n\\(\\boxtimes\\)\n\n\n$\\equiv$\n\\(\\equiv\\)\n$\\cong$\n\\(\\cong\\)",
+    "crumbs": [
+      "Среда разработки",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "enviroment/latex.html#sec-latex-functions",
+    "href": "enviroment/latex.html#sec-latex-functions",
+    "title": "5  Язык разметки LaTeX",
+    "section": "5.5 Выделяемые функции",
+    "text": "5.5 Выделяемые функции\n\n\n\nТаблица 5.5: Функции\n\n\n\n\n\n\n\n\n\nLaTeX\nРезультат\n\n\n\n\n$\\cos{x}$\n\\[\n\\cos{x}\n\\]\n\n\n$\\sin{x}$\n\\[\n\\sin{x}\n\\]\n\n\n$\\csc{x}$\n\\[\n\\csc{x}\n\\]\n\n\n$\\exp{x}$\n\\[\n\\exp\n\\biggl(\\,\n\\sum_{n=1}^{10}\n\\frac{1}{n}\n\\biggr)\n\\]\n\n\n$\\min_{sub} expr$\n\\[\n\\min_{\\forall s \\in S_j} q_k(s)\n\\]\n\n\n$\\gcd$\n\\[\n\\gcd{144,12}\n\\]\n\n\n$\\log_b n$\n\\[\nA(n) \\in\n\\Theta(n^{\\log_b a}) =\n\\Theta(n^{\\log_2 2} ) =\n\\Theta(n)\n\\]\n\n\n$\\sup_i f$\n\\[\n\\sup_{x&gt;0}f(x)\n\\]",
     "crumbs": [
       "Среда разработки",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
@@ -298,41 +309,41 @@
     "objectID": "enviroment/latex.html#скобки",
     "href": "enviroment/latex.html#скобки",
     "title": "5  Язык разметки LaTeX",
-    "section": "5.5 Скобки",
-    "text": "5.5 Скобки",
+    "section": "5.6 Скобки",
+    "text": "5.6 Скобки\n\n\n\nТаблица 5.6: Скобки\n\n\n\n\n\n\n\n\n\n\nТип\nLaTeX\nРезультат\n\n\n\n\nКруглые скобки\n$(x+y)$\n\\((x+y)\\)\n\n\nКвадратные скобки\n$[x+y]$\n\\([x+y]\\)\n\n\nФигурные скобки\n$\\{x+y\\}$\n\\(\\{x+y\\}\\)\n\n\nУгловые скобки\n$\\langle x+y \\rangle$\n\\(\\langle x+y \\rangle\\)\n\n\nВертикальные черты\n$|x+y|$\n\\(|x+y|\\)\n\n\nДвойные вертикальные черты\n$\\|x+y\\|$\n\\(\\|x+y\\|\\)\n\n\nБольшие круглые левые скобки\n$\\big( \\Big( \\bigg( \\Bigg($\n\\(\\big( \\Big( \\bigg( \\Bigg(\\)\n\n\nБольшие круглые правые скобки\n$\\big) \\Big) \\bigg) \\Bigg)$\n\\(\\big) \\Big) \\bigg) \\Bigg)\\)\n\n\nБольшие квадратные левые скобки\n$\\big[ \\Big[ \\bigg[ \\Bigg[$\n\\(\\big[ \\Big[ \\bigg[ \\Bigg[\\)\n\n\nБольшие квадратные правые скобки\n$\\big] \\Big] \\bigg] \\Bigg]$\n\\(\\big] \\Big] \\bigg] \\Bigg]\\)\n\n\nБольшие фигурные левые скобки\n$\\big\\{ \\Big\\{ \\bigg\\{ \\Bigg\\{$\n\\(\\big\\{ \\Big\\{ \\bigg\\{ \\Bigg\\{\\)\n\n\nБольшие фигурные правые скобки\n$\\big\\} \\Big\\} \\bigg\\} \\Bigg\\}$\n\\(\\bigl\\} \\Big\\} \\bigg\\} \\Bigg\\}\\)",
     "crumbs": [
       "Среда разработки",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
     ]
   },
   {
-    "objectID": "enviroment/latex.html#матрицы",
-    "href": "enviroment/latex.html#матрицы",
+    "objectID": "enviroment/latex.html#sec-latex-matrix",
+    "href": "enviroment/latex.html#sec-latex-matrix",
     "title": "5  Язык разметки LaTeX",
-    "section": "5.6 Матрицы",
-    "text": "5.6 Матрицы\n\nМатрицы\n\n\n\n\n\n\n\nТип\nLaTeX\nРезультат\n\n\n\n\nОбычная\n$$\n\\begin{matrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9\n\\end{matrix}\n$$\n\\[\n\\begin{matrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9\n\\end{matrix}\n\\]\n\n\nКвадратные скобки\n$$ M =\n\\begin{bmatrix}\n\\frac{5}{6} & \\frac{1}{6} & 0 \\\\\n\\frac{5}{6} & 0 & \\frac{1}{6} \\\\\n0 & \\frac{5}{6} & \\frac{1}{6}\n\\end{bmatrix}\n$$\n\\[ M =\n\\begin{bmatrix}\n\\frac{5}{6} & \\frac{1}{6} & 0 \\\\\n\\frac{5}{6} & 0 & \\frac{1}{6} \\\\\n0 & \\frac{5}{6} & \\frac{1}{6}\n\\end{bmatrix}\n\\]\n\n\nВыражение\n$$\nM =\n\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix}\n\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix}\n$$\n\\[\nM =\n\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix}\n\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix}\n\\]\n\n\nКруглые скобки\n$$\nM =\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n$$\n\\[\nM =\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n\\]\n\n\nОбщий вид\n$$\nA_{m,n} =\n\\begin{pmatrix}\na_{1,1} & a_{1,2} & \\cdots & a_{1,n} \\\\\na_{2,1} & a_{2,2} & \\cdots & a_{2,n} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\na_{m,1} & a_{m,2} & \\cdots & a_{m,n}\n\\end{pmatrix}\n$$\n\\[\nA_{m,n} =\n\\begin{pmatrix}\na_{1,1} & a_{1,2} & \\cdots & a_{1,n} \\\\\na_{2,1} & a_{2,2} & \\cdots & a_{2,n} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\na_{m,1} & a_{m,2} & \\cdots & a_{m,n}\n\\end{pmatrix}\n\\]",
+    "section": "5.7 Матрицы",
+    "text": "5.7 Матрицы\n\n\n\nТаблица 5.7: Матрицы\n\n\n\n\n\n\n\n\n\n\nТип\nLaTeX\nРезультат\n\n\n\n\nОбычная\n$$\n\\begin{matrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9\n\\end{matrix}\n$$\n\\[\n\\begin{matrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9\n\\end{matrix}\n\\]\n\n\nКвадратные скобки\n$$ M =\n\\begin{bmatrix}\n\\frac{5}{6} & \\frac{1}{6} & 0 \\\\\n\\frac{5}{6} & 0 & \\frac{1}{6} \\\\\n0 & \\frac{5}{6} & \\frac{1}{6}\n\\end{bmatrix}\n$$\n\\[ M =\n\\begin{bmatrix}\n\\frac{5}{6} & \\frac{1}{6} & 0 \\\\\n\\frac{5}{6} & 0 & \\frac{1}{6} \\\\\n0 & \\frac{5}{6} & \\frac{1}{6}\n\\end{bmatrix}\n\\]\n\n\nВыражение\n$$\nM =\n\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix}\n\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix}\n$$\n\\[\nM =\n\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix}\n\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix}\n\\]\n\n\nКруглые скобки\n$$\nM =\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n$$\n\\[\nM =\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n\\]\n\n\nОбщий вид\n$$\nA_{m,n} =\n\\begin{pmatrix}\na_{1,1} & a_{1,2} & \\cdots & a_{1,n} \\\\\na_{2,1} & a_{2,2} & \\cdots & a_{2,n} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\na_{m,1} & a_{m,2} & \\cdots & a_{m,n}\n\\end{pmatrix}\n$$\n\\[\nA_{m,n} =\n\\begin{pmatrix}\na_{1,1} & a_{1,2} & \\cdots & a_{1,n} \\\\\na_{2,1} & a_{2,2} & \\cdots & a_{2,n} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\na_{m,1} & a_{m,2} & \\cdots & a_{m,n}\n\\end{pmatrix}\n\\]",
     "crumbs": [
       "Среда разработки",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
     ]
   },
   {
-    "objectID": "enviroment/latex.html#большие-операторы",
-    "href": "enviroment/latex.html#большие-операторы",
+    "objectID": "enviroment/latex.html#sec-latex-big-operators",
+    "href": "enviroment/latex.html#sec-latex-big-operators",
     "title": "5  Язык разметки LaTeX",
-    "section": "5.7 Большие операторы",
-    "text": "5.7 Большие операторы\n\nБольшие операторы\n\n\n\n\n\n\n$a_{n_i}$\n\\(a_{n_i}\\)\n\n\n$\\int_{i=1}^n$\n\\(\\int_{i=1}^n\\)\n\n\n$\\sum{i=1}^{\\infty}$\n\\(\\sum{i=1}^{\\infty}\\)\n\n\n$\\prod_{i=1}^n$\n\\(\\prod_{i=1}^n\\)\n\n\n$\\cup_{i=1}^n$\n\\(\\cup_{i=1}^n\\)\n\n\n$\\cap_{i=1}^n$\n\\(\\cap_{i=1}^n\\)\n\n\n$\\oint_{i=1}^n$\n\\(\\oint_{i=1}^n\\)\n\n\n$\\coprod_{i=1}^n$\n\\(\\coprod_{i=1}^n\\)",
+    "section": "5.8 Большие операторы",
+    "text": "5.8 Большие операторы\n\n\n\nТаблица 5.8: Большие операторы\n\n\n\n\n\n\n\n\n\n$a_{n_i}$\n\\(a_{n_i}\\)\n\n\n$\\int_{i=1}^n$\n\\(\\int_{i=1}^n\\)\n\n\n$\\sum{i=1}^{\\infty}$\n\\(\\sum{i=1}^{\\infty}\\)\n\n\n$\\prod_{i=1}^n$\n\\(\\prod_{i=1}^n\\)\n\n\n$\\cup_{i=1}^n$\n\\(\\cup_{i=1}^n\\)\n\n\n$\\cap_{i=1}^n$\n\\(\\cap_{i=1}^n\\)\n\n\n$\\oint_{i=1}^n$\n\\(\\oint_{i=1}^n\\)\n\n\n$\\coprod_{i=1}^n$\n\\(\\coprod_{i=1}^n\\)",
     "crumbs": [
       "Среда разработки",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
     ]
   },
   {
-    "objectID": "enviroment/latex.html#примеры",
-    "href": "enviroment/latex.html#примеры",
+    "objectID": "enviroment/latex.html#sec-latex-examples",
+    "href": "enviroment/latex.html#sec-latex-examples",
     "title": "5  Язык разметки LaTeX",
-    "section": "5.8 Примеры",
-    "text": "5.8 Примеры\n\nПримеры\n\n\n\n\n\n\nLaTeX\nРезультат\n\n\n\n\n$$\nx^{2 \\alpha} - 1 = y_{ij} + y_{ij}\n$$\n\\[\nx^{2 \\alpha} - 1 = y_{ij} + y_{ij}\n\\]\n\n\n$$\n(a^n)^{r+s} = a^{nr+ns}\n$$\n\\[\n(a^n)^{r+s} = a^{nr+ns}\n\\]\n\n\n$$\n\\sum_{i=1}^{\\infty}\n\\frac{1}{n^s} =\n\\prod_p \\frac{1}{1 - p^{-s}}\n$$\n\\[\n\\sum_{i=1}^{\\infty}\n\\frac{1}{n^s} =\n\\prod_p \\frac{1}{1 - p^{-s}}\n\\]\n\n\n$$\nx^2  +\nx\\left( {a + b} \\right) +\nab =\n\\left( {x + a} \\right)\n\\left( {x + b} \\right)\n$$\n\\[\nx^2  +\nx\\left( {a + b} \\right) +\nab =\n\\left( {x + a} \\right)\n\\left( {x + b} \\right)\n\\]\n\n\n$$\n\\log _b \\left( x \\right) =\n\\log _b \\left( c \\right)\\log _c \\left( x \\right) =\n\\frac{{\\log _c \\left( x \\right)}}\n{{\\log _c \\left( b \\right)}}\n$$\n\\[\n\\log _b \\left( x \\right) =\n\\log _b \\left( c \\right)\\log _c \\left( x \\right) =\n\\frac{{\\log _c \\left( x \\right)}}\n{{\\log _c \\left( b \\right)}}\n\\]\n\n\n$$\n\\frac{d}{{dx}}b^x  =\nb^x \\ln \\left( b \\right)\n$$\n\\[\n\\frac{d}{{dx}}b^x  =\nb^x \\ln \\left( b \\right)\n\\]\n\n\n$$\n\\int {\\sec (ax)} dx =\n\\frac{1}{a}\\ln \\left|\n{\\tan \\left( {\\frac{{ax}}{2} +\n\\frac{\\pi }{4}} \\right)} \\right| + c\n$$\n\\[\n\\int {\\sec (ax)} dx =\n\\frac{1}{a}\\ln \\left|\n{\\tan \\left( {\\frac{{ax}}{2} +\n\\frac{\\pi }{4}} \\right)} \\right| + c\n\\]\n\n\n$$\n\\oint_S {E_n dA =\n\\frac{1}{{\\varepsilon _0 }}} Q_{inside}\n$$\n\\[\n\\oint_S {E_n dA =\n\\frac{1}{{\\varepsilon _0 }}} Q_{inside}\n\\]\n\n\n$$\ny(x,t) = \\sum\\limits_n\n{A_n \\cos (\\omega _n t + \\delta _n )\n\\sin (k_n x)}\n$$\n\\[\ny(x,t) = \\sum\\limits_n\n{A_n \\cos (\\omega _n t + \\delta _n )\n\\sin (k_n x)}\n\\]\n\n\n\n\n\n\n\n1. Learn LaTeX in 30 minutes [Электронный ресурс]. URL: https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes (дата обращения: 20.02.2025).\n\n\n2. Equation Sheet [Электронный ресурс]. URL: http://www.equationsheet.com/ (дата обращения: 20.02.2025).",
+    "section": "5.9 Примеры",
+    "text": "5.9 Примеры\n\n\n\nТаблица 5.9: Примеры\n\n\n\n\n\n\n\n\n\nLaTeX\nРезультат\n\n\n\n\n$$\nx^{2 \\alpha} - 1 = y_{ij} + y_{ij}\n$$\n\\[\nx^{2 \\alpha} - 1 = y_{ij} + y_{ij}\n\\]\n\n\n$$\n(a^n)^{r+s} = a^{nr+ns}\n$$\n\\[\n(a^n)^{r+s} = a^{nr+ns}\n\\]\n\n\n$$\n\\sum_{i=1}^{\\infty}\n\\frac{1}{n^s} =\n\\prod_p \\frac{1}{1 - p^{-s}}\n$$\n\\[\n\\sum_{i=1}^{\\infty}\n\\frac{1}{n^s} =\n\\prod_p \\frac{1}{1 - p^{-s}}\n\\]\n\n\n$$\nx^2  +\nx\\left( {a + b} \\right) +\nab =\n\\left( {x + a} \\right)\n\\left( {x + b} \\right)\n$$\n\\[\nx^2  +\nx\\left( {a + b} \\right) +\nab =\n\\left( {x + a} \\right)\n\\left( {x + b} \\right)\n\\]\n\n\n$$\n\\log _b \\left( x \\right) =\n\\log _b \\left( c \\right)\\log _c \\left( x \\right) =\n\\frac{{\\log _c \\left( x \\right)}}\n{{\\log _c \\left( b \\right)}}\n$$\n\\[\n\\log _b \\left( x \\right) =\n\\log _b \\left( c \\right)\\log _c \\left( x \\right) =\n\\frac{{\\log _c \\left( x \\right)}}\n{{\\log _c \\left( b \\right)}}\n\\]\n\n\n$$\n\\frac{d}{{dx}}b^x  =\nb^x \\ln \\left( b \\right)\n$$\n\\[\n\\frac{d}{{dx}}b^x  =\nb^x \\ln \\left( b \\right)\n\\]\n\n\n$$\n\\int {\\sec (ax)} dx =\n\\frac{1}{a}\\ln \\left|\n{\\tan \\left( {\\frac{{ax}}{2} +\n\\frac{\\pi }{4}} \\right)} \\right| + c\n$$\n\\[\n\\int {\\sec (ax)} dx =\n\\frac{1}{a}\\ln \\left|\n{\\tan \\left( {\\frac{{ax}}{2} +\n\\frac{\\pi }{4}} \\right)} \\right| + c\n\\]\n\n\n$$\n\\oint_S {E_n dA =\n\\frac{1}{{\\varepsilon _0 }}} Q_{inside}\n$$\n\\[\n\\oint_S {E_n dA =\n\\frac{1}{{\\varepsilon _0 }}} Q_{inside}\n\\]\n\n\n$$\ny(x,t) = \\sum\\limits_n\n{A_n \\cos (\\omega _n t + \\delta _n )\n\\sin (k_n x)}\n$$\n\\[\ny(x,t) = \\sum\\limits_n\n{A_n \\cos (\\omega _n t + \\delta _n )\n\\sin (k_n x)}\n\\]\n\n\n\n\n\n\n\n\n\n\n1. Learn LaTeX in 30 minutes [Электронный ресурс]. URL: https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes (дата обращения: 20.02.2025).\n\n\n2. Equation Sheet [Электронный ресурс]. URL: http://www.equationsheet.com/ (дата обращения: 20.02.2025).",
     "crumbs": [
       "Среда разработки",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
@@ -353,15 +364,15 @@
     "href": "r-lang/basic.html",
     "title": "6  Основы языка R",
     "section": "",
-    "text": "6.1 Переменные\n[1] [2]\nПравильное имя переменной состоит из букв, цифр и символов точки или подчеркивания. Имя переменной начинается с буквы или точки, за которыми не следует число.\nvar_1 = 'Изучаем R'           \nvar_2 &lt;- c('learn','R')   \n'Изучаем R' -&gt; var_3\nТак как R интерпретируемый язык переменные можно удалять с помощью функции rm(). После удаления обращение по имени var_1 генерирует предупреждение.\nrm(var_1)\nvar_1\n\nError: object 'var_1' not found",
+    "text": "6.1 Переменные\n[1]\n[2]\nПравильное имя переменной состоит из букв, цифр и символов точки или подчеркивания. Имя переменной начинается с буквы или точки, за которыми не следует число.\nvar_1 = 'Изучаем R'           \nvar_2 &lt;- c('learn','R')   \n'Изучаем R' -&gt; var_3\nТак как R интерпретируемый язык переменные можно удалять с помощью функции rm(). После удаления обращение по имени var_1 генерирует предупреждение.\nrm(var_1)\nvar_1\n\nError: object 'var_1' not found",
     "crumbs": [
       "Язык программирования R",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Основы языка R</span>"
     ]
   },
   {
-    "objectID": "r-lang/basic.html#переменные",
-    "href": "r-lang/basic.html#переменные",
+    "objectID": "r-lang/basic.html#sec-r-lang-basic-variables-naming",
+    "href": "r-lang/basic.html#sec-r-lang-basic-variables-naming",
     "title": "6  Основы языка R",
     "section": "",
     "text": "Правила именования переменных\n\n\n\n\n\n\n\nИмя переменной\nДопустимость\nОбъяснение\n\n\n\n\nvar_name2.\nда\nСостоит из букв, цифр, точки и знака подчеркивания\n\n\nvar_name%\nнет\nЕсть символ ‘%’. Допускаются только точка(.) и знак подчеркивания.\n\n\n2var_name\nнет\nНачинается с цифры\n\n\n.var_name, var.name\nда\nМожет начинаться с точки(.), но за точкой(.) не должна следовать цифра.\n\n\n.2var_name\nнет\nЗа начальной точкой следует цифра\n\n\n_var_name\nнет\nНачинается с _, что недопустимо\n\n\n\n\n\n\n\n\n\nВажное уведомление\n\n\n\nРекомендуется не использовать точку в имени переменной\n\n\n\n\n\n\n\n\n\nВажное уведомление\n\n\n\nРекомендуется использовать оператор &lt;-.",
@@ -371,19 +382,19 @@
     ]
   },
   {
-    "objectID": "r-lang/basic.html#типы-данных",
-    "href": "r-lang/basic.html#типы-данных",
+    "objectID": "r-lang/basic.html#sec-r-lang-basic-data-types",
+    "href": "r-lang/basic.html#sec-r-lang-basic-data-types",
     "title": "6  Основы языка R",
     "section": "6.2 Типы данных",
-    "text": "6.2 Типы данных\nВ отличие от других языков программирования, таких как C и java, в R переменные не объявляются как некоторый тип данных. Переменным присваиваются R-объекты, и тип данных R-объекта становится типом данных переменной. Существует множество типов R-объектов. Наиболее часто используемые из них:\n\nВектор 6.3\nСписок 6.4\nМатрица 6.5\nМассивы 6.5\nТаблицы 6.6\n\nВсе объекты в R строятся на основе интерфейса вектор. Два основных типа которые реализуют этот интерфейс: list() и vector() остальные R-объекты строятся на основе этих типов. Существует шесть типов typeof данных атомарных векторов.\n\n\n\n\n\n\n\n\nТип данных\nПример\nПроверка\n\n\n\n\nЛогический\nTRUE, FALSE\ntypeof(TRUE)\nlogical\n\n\nДействительный\n12.3, 5, 999\ntypeof(7.5)\ndouble\n\n\nЦелочисленный\n2L, 34L, 0L\ntypeof(2L)\ninteger\n\n\nКомплексный\n3+2i\ntypeof(2+5i)\ncomplex\n\n\nСимвольный\n'a', 'good','TRUE'\ntypeof('TRUE')\ncharacter\n\n\nRaw\n'Hello' is stored as 48 65 6c 6c 6f\ntypeof(charToRaw('Hello'))\nraw",
+    "text": "6.2 Типы данных\nВ отличие от других языков программирования, таких как C и java, в R переменные не объявляются как некоторый тип данных. Переменным присваиваются R-объекты, и тип данных R-объекта становится типом данных переменной. Существует множество типов R-объектов. Наиболее часто используемые из них:\n\nВектор 6.3\nСписок 6.4\nМатрица 6.5\nМассивы 6.5\nТаблицы 6.6\n\nВсе объекты в R строятся на основе интерфейса вектор. Два основных типа которые реализуют этот интерфейс: list() и vector() остальные R-объекты строятся на основе этих типов. Существует шесть типов typeof данных атомарных векторов.\n\n\n\nТаблица 6.1: Базовые типы данных\n\n\n\n\n\n\n\n\n\n\nТип данных\nПример\nПроверка\n\n\n\n\nЛогический\nTRUE, FALSE\ntypeof(TRUE)\nlogical\n\n\nДействительный\n12.3, 5, 999\ntypeof(7.5)\ndouble\n\n\nЦелочисленный\n2L, 34L, 0L\ntypeof(2L)\ninteger\n\n\nКомплексный\n3+2i\ntypeof(2+5i)\ncomplex\n\n\nСимвольный\n'a', 'good','TRUE'\ntypeof('TRUE')\ncharacter\n\n\nRaw\n'Hello' is stored as 48 65 6c 6c 6f\ntypeof(charToRaw('Hello'))\nraw",
     "crumbs": [
       "Язык программирования R",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Основы языка R</span>"
     ]
   },
   {
-    "objectID": "r-lang/basic.html#sec-vector",
-    "href": "r-lang/basic.html#sec-vector",
+    "objectID": "r-lang/basic.html#sec-r-lang-basic-vector",
+    "href": "r-lang/basic.html#sec-r-lang-basic-vector",
     "title": "6  Основы языка R",
     "section": "6.3 Вектор",
     "text": "6.3 Вектор\nВсе данные в языке R векторные. Даже если определить численный литерал его внутреннее представление будет вектором.\n\nis.vector(1)\n\n[1] TRUE\n\n\n\n6.3.1 Последовательности\nДля объединения элементов в вектор используется функция c() – combine. При комбинации элементов различных типов общий тип выводится по правилам (ссылка).\n\na &lt;- c(1,2,3)\na\n\n[1] 1 2 3\n\n\nДля задания целочисленных последовательностей могут использоваться например оператор двоеточия 1:5,\n\nnumbers &lt;- 1:10\nnumbers\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\nили функции seq()\n\nseq(5, 9, by = 0.4)\n\n [1] 5.0 5.4 5.8 6.2 6.6 7.0 7.4 7.8 8.2 8.6 9.0\n\n\nПовторить элементы вектора можно с помощью функции rep()\n\nrep(c(1,2,3), each = 3)\n\n[1] 1 1 1 2 2 2 3 3 3\n\nrep(c(1,2,3), times = 3)\n\n[1] 1 2 3 1 2 3 1 2 3\n\n\nДлина вектора получается функцией length()\n\nv &lt;- 1:5\nlength(v)\n\n[1] 5\n\n\n\n\n6.3.2 Доступ к элементам\n\nОператор [\nОператор объект того же класса что и объект-оригинал. Может быть выделено более 1 элемента!\n\nx &lt;- 1:5\nx[1]\n\n[1] 1\n\nx[2:5]\n\n[1] 2 3 4 5\n\n\nЛогическая индексация\n\nx[x &gt; 2]\n\n[1] 3 4 5\n\n\nТакже можно изменять элементы вектора таким же образом\n\nx[1:2] &lt;- c(6,7)\nx\n\n[1] 6 7 3 4 5\n\n\n\n\nОператор [[\nМожет быть выделен только 1 элемент!\n\nx &lt;- 1:5\nx[[2]]\n\n[1] 2\n\nx[[3:5]]\n\nError in x[[3:5]]: attempt to select more than one element in vectorIndex",
@@ -393,8 +404,8 @@
     ]
   },
   {
-    "objectID": "r-lang/basic.html#sec-basic-list",
-    "href": "r-lang/basic.html#sec-basic-list",
+    "objectID": "r-lang/basic.html#sec-r-lang-basic-list",
+    "href": "r-lang/basic.html#sec-r-lang-basic-list",
     "title": "6  Основы языка R",
     "section": "6.4 Список",
     "text": "6.4 Список\nСписки - это объекты R, которые содержат элементы различных типов, такие как числа, строки, векторы и другие списки внутри них. Список также может содержать матрицу или функцию в качестве своих элементов. Список создается с помощью функции list(). Ниже приведен пример создания списка, содержащего строки, числа, векторы и логические значения.\n\nlist_data &lt;- list('Red', 'Green', c(21,32,11), TRUE, 51.23, 119.1)\nlist_data\n\n[[1]]\n[1] \"Red\"\n\n[[2]]\n[1] \"Green\"\n\n[[3]]\n[1] 21 32 11\n\n[[4]]\n[1] TRUE\n\n[[5]]\n[1] 51.23\n\n[[6]]\n[1] 119.1\n\n\nСписок совмещает в себе свойства списка и словаря из других языков программирования. Поэтому элементам мы можем задавать имена.\n\n6.4.1 Доступ к элементам\n\nОператор [\nПозволяет выбрать один или несколько элементов по индексу. Всегда возвращает тип списка\n\nx &lt;- list(foo = 1:4, bar = 0.6)\nx[1]\n\n$foo\n[1] 1 2 3 4\n\n\n\n\nОператор [[\nПозволяет выбрать один элемент по индексу. Возвращает тип содержащегося элемента.\n\nx &lt;- list(foo = 1:4, bar = 0.6)\nx[[1]]\n\n[1] 1 2 3 4\n\n\nили по имени\n\nx &lt;- list(foo = 1:4, bar = 0.6)\nx[['bar']]\n\n[1] 0.6\n\n\nОператор [[ может принимать последовательность целых чисел и рекурсивно извлекать элементы из вложенного списка\n\nx &lt;- list(a = list(10, 12, 14), b = c(3.14, 2.81))\nx[[c(1, 3)]]\n\n[1] 14\n\nx[[1]][[3]]\n\n[1] 14\n\nx[[c(2, 1)]]\n\n[1] 3.14\n\n\n\n\nОператор $\n$ работает только с именами объектов.\n\nx &lt;- list(foo = 1:4, bar = 0.6)\nx$foo\n\n[1] 1 2 3 4",
@@ -404,8 +415,8 @@
     ]
   },
   {
-    "objectID": "r-lang/basic.html#sec-matrix",
-    "href": "r-lang/basic.html#sec-matrix",
+    "objectID": "r-lang/basic.html#sec-r-lang-basic-matrix",
+    "href": "r-lang/basic.html#sec-r-lang-basic-matrix",
     "title": "6  Основы языка R",
     "section": "6.5 Матрицы и массивы",
     "text": "6.5 Матрицы и массивы\nМатрица – это специальный тип вектора в R, который имеет атрибут dim. dim – это вектор типа integer, состоящий из 2 элементов ( nrow - число строк и ncol - число столбцов). Матрицы заполняются по правилу: сверху вниз слева направо.\n\nm &lt;- matrix(c(1, 2, 3, 4), ncol = 2, nrow = 2)\nm\n\n     [,1] [,2]\n[1,]    1    3\n[2,]    2    4\n\ndim(m)\n\n[1] 2 2\n\nattributes(m)\n\n$dim\n[1] 2 2\n\n\nМатрицы можно создавать с помощью функций cbind и rbind.\n\nx &lt;- 1:3\ny &lt;- 10:12\ncbind(x, y)\n\n     x  y\n[1,] 1 10\n[2,] 2 11\n[3,] 3 12\n\n\narray(data,dim) – функция для создания матрицы заданного размера.\n\narray(1:8,c(2,2,2))\n\n, , 1\n\n     [,1] [,2]\n[1,]    1    3\n[2,]    2    4\n\n, , 2\n\n     [,1] [,2]\n[1,]    5    7\n[2,]    6    8\n\n\nДоступ к элементам матриц осуществляется с использованием индексов в квадратных скобках – ‘[’. Первый индекс – номер строки, второй индекс – номер столбца.\n\nx &lt;- matrix(1:6, 2, 3)\nx[1, 2]\n\n[1] 3\n\nx[2, 1]\n\n[1] 2\n\n\nПервый или второй индекс может отсутствовать. Тогда будет возвращена строка или столбец матрицы.\n\nx[1, ]\n\n[1] 1 3 5\n\nx[, 2]\n\n[1] 3 4\n\n\nПо умолчанию возвращается вектор единичной длины того же класса что и исходный объект. Для получения объекта в виде матрицы необходимо установить параметр drop. Учет размерности данных – drop = FALSE.\n\nx &lt;- matrix(1:6, 2, 3)\nx[1, 2, drop = FALSE]\n\n     [,1]\n[1,]    3\n\nx &lt;- matrix(1:6, 2, 3)\nx[1, ]\n\n[1] 1 3 5\n\nx[1, , drop = FALSE]\n\n     [,1] [,2] [,3]\n[1,]    1    3    5",
@@ -415,8 +426,8 @@
     ]
   },
   {
-    "objectID": "r-lang/basic.html#sec-table",
-    "href": "r-lang/basic.html#sec-table",
+    "objectID": "r-lang/basic.html#sec-r-lang-basic-table",
+    "href": "r-lang/basic.html#sec-r-lang-basic-table",
     "title": "6  Основы языка R",
     "section": "6.6 Таблицы",
     "text": "6.6 Таблицы\nТаблица (Data Frame)– специальный тип списка, в котором каждый элемент имеет фиксированную длину. Используется для хранения табулированных данных. Каждая колонка может представлять различные типы данных, включая факторы. Data Frame имеют специализированный атрибут row.names, указывающий имена строк. Это помогает упростить аннотацию данных. Для создания Data Frame из табулированных данных используются функции read.table и read.csv. Для создания матрицы из Data Frame используется функция data.matrix. data.frame – функция для создания Data Frame.\n\nx &lt;- data.frame(foo = 1:4, bar = c(T, T, F, F))\nnrow(x)\n\n[1] 4\n\nncol(x)\n\n[1] 2",
@@ -426,8 +437,8 @@
     ]
   },
   {
-    "objectID": "r-lang/basic.html#преобразование-объектов",
-    "href": "r-lang/basic.html#преобразование-объектов",
+    "objectID": "r-lang/basic.html#sec-r-lang-basic-cast",
+    "href": "r-lang/basic.html#sec-r-lang-basic-cast",
     "title": "6  Основы языка R",
     "section": "6.7 Преобразование объектов",
     "text": "6.7 Преобразование объектов\nДля преобразования объекта к другому типу используются функции семейства as.*\n\nas.logical(c(-1, 0, 1))\n\n[1]  TRUE FALSE  TRUE\n\nas.numeric(c(TRUE, FALSE))\n\n[1] 1 0\n\nas.character(c(TRUE, FALSE))\n\n[1] \"TRUE\"  \"FALSE\"",
@@ -437,19 +448,19 @@
     ]
   },
   {
-    "objectID": "r-lang/basic.html#векторные-операции",
-    "href": "r-lang/basic.html#векторные-операции",
+    "objectID": "r-lang/basic.html#sec-r-lang-basic-vectorization",
+    "href": "r-lang/basic.html#sec-r-lang-basic-vectorization",
     "title": "6  Основы языка R",
     "section": "6.8 Векторные операции",
-    "text": "6.8 Векторные операции\nВ R можно осуществлять операции над векторами. Это позволяет значительно упростить программный код, не программировать циклы, ускорить процесс написания программ.\n\n6.8.1 Арифметические операторы\n\n\n\n\n\n\n\n\nОператор\nОписание\nПример\n\n\n\n\n+\nПоэлементное сложение двух векторов\nv &lt;- c(2, 5.5,6)\nt &lt;- c(8, 3, 4)\nv+t\n[1] 10.0  8.5  10.0\n\n\n-\nПоэлементное вычитание второго вектора из первого\nv &lt;- c( 2,5.5,6)\nt &lt;- c(8, 3, 4)\nv - t\n[1] -6.0  2.5  2.0\n\n\n*\nПоэлементное умножение двух векторов\nv &lt;- c( 2,5.5,6)\nt &lt;- c(8, 3, 4)\nv * t\n[1] 16.0 16.5 24.0\n\n\n/\nПоэлементно делит второй вектор на первый\nv &lt;- c( 2,5.5,6)\nt &lt;- c(8, 3, 4)\nv / t\n[1] 0.250000 1.833333 1.500000\n\n\n%%\nОстаток от поэлементного деления\nv &lt;- c(2, 5.5,6)\nt &lt;- c(8, 3, 4)\nv %% t\n[1] 2.0 2.5 2.0\n\n\n%/%\nЦелочисленное поэлементное деление\nv &lt;- c( 2,5.5,6)\nt &lt;- c(8, 3, 4)\nv %/% t\n[1] 0 1 1\n\n\n^\nПоэлементное возведение в степень\nv &lt;- c( 2,5.5,6)\nt &lt;- c(8, 3, 4)\nv ^ t\n[1]  256.000  166.375 1296.000\n\n\n\nАналогично векторные операции осуществляются над матрицами.\n\nx &lt;- matrix(1:4, 2, 2);\ny &lt;- matrix(rep(10, 4), 2, 2)\nx * y # поэлементно\n\n     [,1] [,2]\n[1,]   10   30\n[2,]   20   40\n\nx / y\n\n     [,1] [,2]\n[1,]  0.1  0.3\n[2,]  0.2  0.4\n\n\nОператор %*% используется для матричное перемножение по правилам линейной алгебры.\n\nx %*% y\n\n     [,1] [,2]\n[1,]   40   40\n[2,]   60   60\n\n\n\n\n6.8.2 Операторы сравнения\nВ следующей таблице приведены операторы сравнения, поддерживаемые языком R. Каждый элемент первого вектора сравнивается с соответствующим элементом второго вектора. Результатом сравнения является булево значение.\n\n\n\n\n\n\n\n\nОператор\nОписание\nПример\n\n\n\n\n&gt;\nПроверяет, что каждый элемент первого вектора больше соответствующего элемента второго вектора.\nv &lt;- c(2,5.5,6,9)\nt &lt;- c(8,2.5,14,9)\nv &gt; t\n[1] FALSE  TRUE FALSE FALSE\n\n\n&lt;\nПроверяет, не меньше ли каждый элемент первого вектора соответствующего элемента второго вектора.\nv &lt;- c(2,5.5,6,9)\nt &lt;- c(8,2.5,14,9)\nv &lt; t\n[1]  TRUE FALSE  TRUE FALSE\n\n\n==\nПроверяет, равен ли каждый элемент первого вектора соответствующему элементу второго вектора.\nv &lt;- c(2,5.5,6,9)\nt &lt;- c(8,2.5,14,9)\nv == t\n[1] FALSE FALSE FALSE  TRUE\n\n\n&lt;=\nПроверяет, меньше или равен ли каждый элемент первого вектора соответствующему элементу второго вектора.\nv &lt;- c(2,5.5,6,9)\nt &lt;- c(8,2.5,14,9)\nv &lt;= t\n[1]  TRUE FALSE  TRUE  TRUE\n\n\n&gt;=\nПроверяет, больше или равен ли каждый элемент первого вектора соответствующему элементу второго вектора.\nv &lt;- c(2,5.5,6,9)\nt &lt;- c(8,2.5,14,9)\nv &gt;= t\n[1] FALSE  TRUE FALSE  TRUE\n\n\n!=\nПроверяет, не равен ли каждый элемент первого вектора соответствующему элементу второго вектора.\nv &lt;- c(2,5.5,6,9)\nt &lt;- c(8,2.5,14,9)\nv != t\n[1]  TRUE  TRUE  TRUE FALSE\n\n\n\n\n\n6.8.3 Логические\nВ следующей таблице приведены логические операторы, поддерживаемые языком R. Они применимы только к векторам типа logical, numeric или complex. Все числа больше 1 считаются логическим значением TRUE.\nКаждый элемент первого вектора сравнивается с соответствующим элементом второго вектора. Результатом сравнения является булево значение.\n\n\n\n\n\n\n\n\nОператор\nОписание\nПример\n\n\n\n\n&\nЛогический оператор И (Element-wise Logical AND).\nОн объединяет каждый элемент первого вектора с соответствующим элементом второго вектора и выдает на выходе TRUE, если оба элемента TRUE.\nv &lt;- c(3,1,TRUE,2+3i)\nt &lt;- c(4,1,FALSE,2+3i)\nv&t\n[1]  TRUE  TRUE FALSE  TRUE\n\n\n|\nЛогическое ИЛИ по элементам.\nОн объединяет каждый элемент первого вектора с соответствующим элементом второго вектора и выдает на выходе TRUE, если один из элементов равен TRUE.\nv &lt;- c(3,0,TRUE,2+2i)\nt &lt;- c(4,0,FALSE,2+3i)\nv|t\n[1]  TRUE FALSE  TRUE  TRUE\n\n\n!\nЛогический оператор NOT. Берет каждый элемент вектора и выдает противоположное логическое значение.\nv &lt;- c(3,0,TRUE,2+2i)\n!v\n[1] FALSE  TRUE FALSE FALSE\n\n\n\nЛогические операторы && и || учитывают только первый элемент векторов и выдают на выходе вектор из одного элемента.\n\n\n\n\n\n\n\n\nОператор\nОписание\nПример\n\n\n\n\n&&\nОператор логического И. Берет первый элемент обоих векторов и выдает значение TRUE, только если оба элемента TRUE.\nv &lt;- c(3,0,TRUE,2+2i)\nt &lt;- c(1,3,TRUE,2+3i)\nv&&t\n[1] TRUE\n\n\n||\nОператор логического ИЛИ. Берет первый элемент обоих векторов и выдает TRUE, если один из них TRUE.\nv &lt;- c(0,0,TRUE,2+2i)\nt &lt;- c(0,3,TRUE,2+3i)\nv||t\nT[1] FALSE",
+    "text": "6.8 Векторные операции\nВ R можно осуществлять операции над векторами. Это позволяет значительно упростить программный код, не программировать циклы, ускорить процесс написания программ.\n\n6.8.1 Арифметические операторы\n\n\n\nТаблица 6.2: Векторные арифметические операции\n\n\n\n\n\n\n\n\n\n\nОператор\nОписание\nПример\n\n\n\n\n+\nПоэлементное сложение двух векторов\nv &lt;- c(2, 5.5,6)\nt &lt;- c(8, 3, 4)\nv+t\n[1] 10.0  8.5  10.0\n\n\n-\nПоэлементное вычитание второго вектора из первого\nv &lt;- c( 2,5.5,6)\nt &lt;- c(8, 3, 4)\nv - t\n[1] -6.0  2.5  2.0\n\n\n*\nПоэлементное умножение двух векторов\nv &lt;- c( 2,5.5,6)\nt &lt;- c(8, 3, 4)\nv * t\n[1] 16.0 16.5 24.0\n\n\n/\nПоэлементно делит второй вектор на первый\nv &lt;- c( 2,5.5,6)\nt &lt;- c(8, 3, 4)\nv / t\n[1] 0.250000 1.833333 1.500000\n\n\n%%\nОстаток от поэлементного деления\nv &lt;- c(2, 5.5,6)\nt &lt;- c(8, 3, 4)\nv %% t\n[1] 2.0 2.5 2.0\n\n\n%/%\nЦелочисленное поэлементное деление\nv &lt;- c( 2,5.5,6)\nt &lt;- c(8, 3, 4)\nv %/% t\n[1] 0 1 1\n\n\n^\nПоэлементное возведение в степень\nv &lt;- c( 2,5.5,6)\nt &lt;- c(8, 3, 4)\nv ^ t\n[1]  256.000  166.375 1296.000\n\n\n\n\n\n\nАналогично векторные операции осуществляются над матрицами.\n\nx &lt;- matrix(1:4, 2, 2);\ny &lt;- matrix(rep(10, 4), 2, 2)\nx * y # поэлементно\n\n     [,1] [,2]\n[1,]   10   30\n[2,]   20   40\n\nx / y\n\n     [,1] [,2]\n[1,]  0.1  0.3\n[2,]  0.2  0.4\n\n\nОператор %*% используется для матричное перемножение по правилам линейной алгебры.\n\nx %*% y\n\n     [,1] [,2]\n[1,]   40   40\n[2,]   60   60\n\n\n\n\n6.8.2 Операторы сравнения\nВ следующей таблице приведены операторы сравнения, поддерживаемые языком R. Каждый элемент первого вектора сравнивается с соответствующим элементом второго вектора. Результатом сравнения является булево значение.\n\n\n\nТаблица 6.3: Векторные операторы сравнения\n\n\n\n\n\n\n\n\n\n\nОператор\nОписание\nПример\n\n\n\n\n&gt;\nПроверяет, что каждый элемент первого вектора больше соответствующего элемента второго вектора.\nv &lt;- c(2,5.5,6,9)\nt &lt;- c(8,2.5,14,9)\nv &gt; t\n[1] FALSE  TRUE FALSE FALSE\n\n\n&lt;\nПроверяет, не меньше ли каждый элемент первого вектора соответствующего элемента второго вектора.\nv &lt;- c(2,5.5,6,9)\nt &lt;- c(8,2.5,14,9)\nv &lt; t\n[1]  TRUE FALSE  TRUE FALSE\n\n\n==\nПроверяет, равен ли каждый элемент первого вектора соответствующему элементу второго вектора.\nv &lt;- c(2,5.5,6,9)\nt &lt;- c(8,2.5,14,9)\nv == t\n[1] FALSE FALSE FALSE  TRUE\n\n\n&lt;=\nПроверяет, меньше или равен ли каждый элемент первого вектора соответствующему элементу второго вектора.\nv &lt;- c(2,5.5,6,9)\nt &lt;- c(8,2.5,14,9)\nv &lt;= t\n[1]  TRUE FALSE  TRUE  TRUE\n\n\n&gt;=\nПроверяет, больше или равен ли каждый элемент первого вектора соответствующему элементу второго вектора.\nv &lt;- c(2,5.5,6,9)\nt &lt;- c(8,2.5,14,9)\nv &gt;= t\n[1] FALSE  TRUE FALSE  TRUE\n\n\n!=\nПроверяет, не равен ли каждый элемент первого вектора соответствующему элементу второго вектора.\nv &lt;- c(2,5.5,6,9)\nt &lt;- c(8,2.5,14,9)\nv != t\n[1]  TRUE  TRUE  TRUE FALSE\n\n\n\n\n\n\n\n\n6.8.3 Логические\nВ следующей таблице приведены логические операторы, поддерживаемые языком R. Они применимы только к векторам типа logical, numeric или complex. Все числа больше 1 считаются логическим значением TRUE.\nКаждый элемент первого вектора сравнивается с соответствующим элементом второго вектора. Результатом сравнения является булево значение.\n\n\n\nТаблица 6.4: Векторные логические операторы\n\n\n\n\n\n\n\n\n\n\nОператор\nОписание\nПример\n\n\n\n\n&\nЛогический оператор И (Element-wise Logical AND).\nОн объединяет каждый элемент первого вектора с соответствующим элементом второго вектора и выдает на выходе TRUE, если оба элемента TRUE.\nv &lt;- c(3,1,TRUE,2+3i)\nt &lt;- c(4,1,FALSE,2+3i)\nv&t\n[1]  TRUE  TRUE FALSE  TRUE\n\n\n|\nЛогическое ИЛИ по элементам.\nОн объединяет каждый элемент первого вектора с соответствующим элементом второго вектора и выдает на выходе TRUE, если один из элементов равен TRUE.\nv &lt;- c(3,0,TRUE,2+2i)\nt &lt;- c(4,0,FALSE,2+3i)\nv|t\n[1]  TRUE FALSE  TRUE  TRUE\n\n\n!\nЛогический оператор NOT. Берет каждый элемент вектора и выдает противоположное логическое значение.\nv &lt;- c(3,0,TRUE,2+2i)\n!v\n[1] FALSE  TRUE FALSE FALSE\n\n\n\n\n\n\nЛогические операторы && и || учитывают только первый элемент векторов и выдают на выходе вектор из одного элемента.\n\n\n\nТаблица 6.5: Скалярные векторные операторы\n\n\n\n\n\n\n\n\n\n\nОператор\nОписание\nПример\n\n\n\n\n&&\nОператор логического И. Берет первый элемент обоих векторов и выдает значение TRUE, только если оба элемента TRUE.\nv &lt;- c(3,0,TRUE,2+2i)\nt &lt;- c(1,3,TRUE,2+3i)\nv&&t\n[1] TRUE\n\n\n||\nОператор логического ИЛИ. Берет первый элемент обоих векторов и выдает TRUE, если один из них TRUE.\nv &lt;- c(0,0,TRUE,2+2i)\nt &lt;- c(0,3,TRUE,2+3i)\nv||t\nT[1] FALSE",
     "crumbs": [
       "Язык программирования R",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Основы языка R</span>"
     ]
   },
   {
-    "objectID": "r-lang/basic.html#ветвление",
-    "href": "r-lang/basic.html#ветвление",
+    "objectID": "r-lang/basic.html#sec-r-lang-basic-branching",
+    "href": "r-lang/basic.html#sec-r-lang-basic-branching",
     "title": "6  Основы языка R",
     "section": "6.9 Ветвление",
     "text": "6.9 Ветвление\n\n6.9.1 Оператор if\nОператор if состоит из булева выражения, за которым следует один или несколько операторов. Синтаксис оператора выглядит следующим образом\nif(boolean_expression) {\n   # Инструкции будут выполненны, если значение выражения TRUE\n}\nЕсли булево выражение равно true, то будет выполнен блок кода внутри оператора if. Если булево выражение равно false, то будет выполнен первый набор кода после конца оператора if (после закрывающей фигурной скобки).\n\n\n6.9.2 Оператор else\nif(boolean_expression) {\n   # Инструкции будут выполненны, если значение выражения TRUE\n} else {\n   # Инструкции будут выполненны, если значение выражения FALSE\n}\nЕсли булево выражение оценивается как истина, то будет выполнен блок кода if, в противном случае будет выполнен блок кода else.\n\nx &lt;- c('what','is','truth')\n\nif('Truth' %in% x) {\n   'Truth is found'\n} else {\n   'Truth is not found'\n}\n\n[1] \"Truth is not found\"\n\n\nЗа оператором if может следовать необязательный оператор else if...else, что очень удобно для проверки различных условий с помощью одного оператора if...else if\nif(boolean_expression_1) {\n   # Выполняется, если выражение 1 TRUE\n} else if( boolean_expression_2) {\n   # Выполняется, если выражение 2 TRUE\n} else if( boolean_expression_3) {\n   # Выполняется, если выражение 3 TRUE\n} else {\n   # Выполняется если все выражения FALSE\n}\nНапример\n\nx &lt;- c('what','is','truth')\n\nif('Truth' %in% x) {\n   'Truth is found the first time'\n} else if ('truth' %in% x) {\n   'truth is found the second time'\n} else {\n   'No truth found'\n}\n\n[1] \"truth is found the second time\"\n\n\n\n\n6.9.3 Функция switch\nОператор switch позволяет проверить переменную на равенство со списком значений. Каждое значение называется случаем, и переменная, которая включается, проверяется для каждого случая. Оператор записывается следующим образом:\nswitch(expression, case1, case2, case3, ....)\nК оператору switch применяются следующие правила.\n\nЕсли значение выражения не является символьной строкой, оно приводится к целому числу.\nВнутри switch может быть любое количество операторов case. За каждым case следует значение, с которым нужно сравнить, и двоеточие.\nЕсли значение целого числа находится между 1 и nargs()-1 (максимальное количество аргументов), то соответствующий элемент условия case оценивается и возвращается результат.\nЕсли выражение оценивается как символьная строка, то эта строка сопоставляется (в точности) с именами элементов.\nЕсли имеется более одного совпадения, возвращается первый совпавший элемент.\nАргумент Default недоступен.\nВ случае отсутствия совпадения, если существует неименованный элемент …, возвращается его значение. (Если таких аргументов более одного, возвращается ошибка).\n\nПример индексации\n\nswitch(1, 'one', 'two')\n\n[1] \"one\"\n\n\nИндексация с составными именованными выражениями\n\nswitch(1, foo={'one'}, bar={'two'}) \n\n[1] \"one\"\n\n\nПо имени с составными именованными выражениями\n\nswitch('bar', foo={'one'}, bar={'two'})\n\n[1] \"two\"",
@@ -459,8 +470,8 @@
     ]
   },
   {
-    "objectID": "r-lang/basic.html#циклы",
-    "href": "r-lang/basic.html#циклы",
+    "objectID": "r-lang/basic.html#sec-r-lang-basic-cylce",
+    "href": "r-lang/basic.html#sec-r-lang-basic-cylce",
     "title": "6  Основы языка R",
     "section": "6.10 Циклы",
     "text": "6.10 Циклы\nОператор цикла позволяет выполнить оператор или группу операторов несколько раз.\n\n6.10.1 Типы циклов\n\nЦикл for\nЦикл for используется когда количество итераций известно до начала цикла.\nfor (value in vector) {\n   statements\n}\nЦиклы for в R особенно гибки, поскольку не ограничиваются целыми числами или даже числами на входе. Цикл может быть применен к символьным векторам, логическим векторам, спискам или выражениям.\n\nv &lt;- LETTERS[1:4]\nfor ( i in v) {\n   print(i)\n}\n\n[1] \"A\"\n[1] \"B\"\n[1] \"C\"\n[1] \"D\"\n\n\n\n\nЦикл while\nЦикл while выполняет один и тот же код снова и снова, пока не будет выполнено условие остановки.\nwhile (test_expression) {\n   statement\n}\nКлючевым моментом цикла while является то, что цикл может никогда не выполняться. Когда условие будет проверено и результат окажется ложным, тело цикла будет пропущено, и будет выполнен первый оператор после цикла while.\n\nv &lt;- c('Hello','while loop')\ncnt &lt;- 2\n\nwhile (cnt &lt; 7) {\n   print(v)\n   cnt &lt;- cnt + 1\n}\n\n[1] \"Hello\"      \"while loop\"\n[1] \"Hello\"      \"while loop\"\n[1] \"Hello\"      \"while loop\"\n[1] \"Hello\"      \"while loop\"\n[1] \"Hello\"      \"while loop\"\n\n\n\n\nЦикл repeat\nЦикл repeat выполняет один и тот же код снова и снова, пока не будет выполнено условие остановки.\nrepeat { \n   commands \n   if(condition) {\n      break\n   }\n}\nПример\n\nv &lt;- c('Hello','loop')\ncnt &lt;- 2\n\nrepeat {\n   print(v)\n   cnt &lt;- cnt+1\n   if(cnt &gt; 5) {\n      break\n   }\n}\n\n[1] \"Hello\" \"loop\" \n[1] \"Hello\" \"loop\" \n[1] \"Hello\" \"loop\" \n[1] \"Hello\" \"loop\" \n\n\n\n\n\n6.10.2 Операторы управления\nОператоры управления циклом изменяют обычную последовательность выполнения. Когда выполнение покидает область видимости, все автоматические объекты, которые были созданы в этой области, уничтожаются.\n\nКлючевое слово next\nОператор next в языке полезен, когда требуется пропустить текущую итерацию цикла, не завершая его. При встрече с next синтаксический анализатор R пропускает дальнейшие вычисления и начинает следующую итерацию цикла.\nnext\n\nv &lt;- LETTERS[1:6]\nfor ( i in v) {\n   \n   if (i == \"D\") {\n      next\n   }\n   print(i)\n}\n\n[1] \"A\"\n[1] \"B\"\n[1] \"C\"\n[1] \"E\"\n[1] \"F\"\n\n\n\n\nКлючевое слово break\nОператор break в языке программирования R используется следующим образом.\n\nКогда оператор break встречается внутри цикла, цикл немедленно завершается, и управление программой возобновляется в следующем операторе, следующем за циклом.\nОн может быть использован для завершения случая в операторе switch.\n\nbreak\nПример\n\nv &lt;- c(\"Hello\",\"loop\")\ncnt &lt;- 2\n\nrepeat {\n   print(v)\n   cnt &lt;- cnt + 1\n    \n   if(cnt &gt; 5) {\n      break\n   }\n}\n\n[1] \"Hello\" \"loop\" \n[1] \"Hello\" \"loop\" \n[1] \"Hello\" \"loop\" \n[1] \"Hello\" \"loop\"",
@@ -470,11 +481,11 @@
     ]
   },
   {
-    "objectID": "r-lang/basic.html#функции",
-    "href": "r-lang/basic.html#функции",
+    "objectID": "r-lang/basic.html#sec-r-lang-basic-function",
+    "href": "r-lang/basic.html#sec-r-lang-basic-function",
     "title": "6  Основы языка R",
     "section": "6.11 Функции",
-    "text": "6.11 Функции\nФункция - это набор операторов, организованных вместе для выполнения определенной задачи. В R имеется большое количество встроенных функций, и пользователь может создавать свои собственные функции.\nВ R функция - это объект, поэтому интерпретатор R может передавать функции управление, а также аргументы, которые могут потребоваться функции для выполнения действий.\nФункция, в свою очередь, выполняет свою задачу и возвращает управление интерпретатору, а также любой результат, который может быть сохранен в других объектах.\nЧасто используемые функции\n\n6.11.1 Определение функции\nФункция R создается с помощью ключевого слова function. Основной синтаксис определения функции R выглядит следующим образом\nfunction_name &lt;- function(arg_1, arg_2, ...) {\n   # Инструкции\n   # Инструкции\n}\n\n\n6.11.2 Элементы объекта функции\nФункция состоит из\n\nИмени – Функция хранится в среде R как объект с этим именем.\nАргументов – Когда функция вызывается, в неё передаетются значения аргументов. Аргументы необязательны, то есть функция может не содержать аргументов. Также аргументы могут иметь значения по умолчанию.\nТела функции – тело функции содержит набор выражений, которые определяют, что делает функция.\nВозвращаемого значения – это последнее выражение в теле функции, которое должно быть вычислено.\n\nВ R есть множество встроенных функций, которые можно вызывать непосредственно в программе, не определяя их предварительно. Также можно создавать и использовать собственные функции, называемые функциями, определяемыми пользователем.\n\n\n6.11.3 Встроенные функции\nПростыми примерами встроенных функций являются seq(), mean(), sum(), paste() и т. д. Они напрямую вызываются программами, написанными пользователем.\n\nseq(32,44)\n\n [1] 32 33 34 35 36 37 38 39 40 41 42 43 44\n\nmean(25:82)\n\n[1] 53.5\n\nsum(41:68)\n\n[1] 1526\n\n\n\n\n6.11.4 Пользовательские функции\nОни определяют, что нужно пользователю, и после создания могут использоваться так же, как и встроенные функции. Ниже приведен пример создания и использования функции.\n\nf &lt;- function(a) {\n   for(i in 1:a) {\n      b &lt;- i^2\n      print(b)\n   }\n}\n\n\n\n6.11.5 Вызов функции\n\nf &lt;- function(a) {\n   for(i in 1:a) {\n      b &lt;- i^2\n      print(b)\n   }\n}\n\nf(6)\n\n[1] 1\n[1] 4\n[1] 9\n[1] 16\n[1] 25\n[1] 36\n\n\n\nБез аргументов\n\nf &lt;- function() {\n   for(i in 1:5) {\n      print(i^2)\n   }\n}   \n\nf()\n\n[1] 1\n[1] 4\n[1] 9\n[1] 16\n[1] 25\n\n\n\n\nПозиционные и именованные аргументы\nАргументы вызова функции могут быть представлены в той же последовательности, что и определены в функции, или же они могут быть представлены в другой последовательности, но приписаны к именам аргументов.\n\nf &lt;- function(a,b,c) {\n   a * b + c\n}\n\nf(5,3,11)\n\n[1] 26\n\nf(a = 11, b = 5, c = 3)\n\n[1] 58\n\n\n\n\nАргументы по умолчанию\nМожно задать значения аргументов в определении функции и вызвать функцию без указания аргументов, чтобы получить результат по умолчанию.\n\nf &lt;- function(a = 3, b = 6) {\n   a * b\n}\n\nf()\n\n[1] 18\n\nf(9,5)\n\n[1] 45\n\n\n\n\n\n\n1. R Tutorial [Электронный ресурс]. URL: https://www.w3schools.com/r/ (дата обращения: 20.02.2025).\n\n\n2. R Tutorial [Электронный ресурс]. URL: https://www.tutorialspoint.com/r/index.htm (дата обращения: 20.02.2025).",
+    "text": "6.11 Функции\nФункция - это набор операторов, организованных вместе для выполнения определенной задачи. В R имеется большое количество встроенных функций, и пользователь может создавать свои собственные функции.\nВ R функция - это объект, поэтому интерпретатор R может передавать функции управление, а также аргументы, которые могут потребоваться функции для выполнения действий.\nФункция, в свою очередь, выполняет свою задачу и возвращает управление интерпретатору, а также любой результат, который может быть сохранен в других объектах.\nЧасто используемые функции\n\n6.11.1 Определение функции\nФункция R создается с помощью ключевого слова function. Основной синтаксис определения функции R выглядит следующим образом\nfunction_name &lt;- function(arg_1, arg_2, ...) {\n   # Инструкции\n   # Инструкции\n}\n\n\n6.11.2 Элементы объекта функции\nФункция состоит из\n\nИмени – Функция хранится в среде R как объект с этим именем.\nАргументов – Когда функция вызывается, в неё передаетются значения аргументов. Аргументы необязательны, то есть функция может не содержать аргументов. Также аргументы могут иметь значения по умолчанию.\nТела функции – тело функции содержит набор выражений, которые определяют, что делает функция.\nВозвращаемого значения – это последнее выражение в теле функции, которое должно быть вычислено.\n\nВ R есть множество встроенных функций, которые можно вызывать непосредственно в программе, не определяя их предварительно. Также можно создавать и использовать собственные функции, называемые функциями, определяемыми пользователем.\n\n\n6.11.3 Встроенные функции\nПростыми примерами встроенных функций являются seq(), mean(), sum(), paste() и т. д. Они напрямую вызываются программами, написанными пользователем.\n\nseq(32,44)\n\n [1] 32 33 34 35 36 37 38 39 40 41 42 43 44\n\nmean(25:82)\n\n[1] 53.5\n\nsum(41:68)\n\n[1] 1526\n\n\n\n\n6.11.4 Пользовательские функции\nОни определяют, что нужно пользователю, и после создания могут использоваться так же, как и встроенные функции. Ниже приведен пример создания и использования функции.\n\nf &lt;- function(a) {\n   for(i in 1:a) {\n      b &lt;- i^2\n      print(b)\n   }\n}\n\n\n\n6.11.5 Вызов функции\n\nf &lt;- function(a) {\n   for(i in 1:a) {\n      b &lt;- i^2\n      print(b)\n   }\n}\n\nf(6)\n\n[1] 1\n[1] 4\n[1] 9\n[1] 16\n[1] 25\n[1] 36\n\n\n\nБез аргументов\n\nf &lt;- function() {\n   for(i in 1:5) {\n      print(i^2)\n   }\n}   \n\nf()\n\n[1] 1\n[1] 4\n[1] 9\n[1] 16\n[1] 25\n\n\n\n\nПозиционные и именованные аргументы\nАргументы вызова функции могут быть представлены в той же последовательности, что и определены в функции, или же они могут быть представлены в другой последовательности, но приписаны к именам аргументов.\n\nf &lt;- function(a,b,c) {\n   a * b + c\n}\n\nf(5,3,11)\n\n[1] 26\n\nf(a = 11, b = 5, c = 3)\n\n[1] 58\n\n\n\n\nАргументы по умолчанию\nМожно задать значения аргументов в определении функции и вызвать функцию без указания аргументов, чтобы получить результат по умолчанию.\n\nf &lt;- function(a = 3, b = 6) {\n   a * b\n}\n\nf()\n\n[1] 18\n\nf(9,5)\n\n[1] 45\n\n\n\n\n\n\n1. R Tutorial [Электронный ресурс]. URL: https://www.tutorialspoint.com/r/index.htm (дата обращения: 20.02.2025).\n\n\n2. R Tutorial [Электронный ресурс]. URL: https://www.w3schools.com/r/ (дата обращения: 20.02.2025).",
     "crumbs": [
       "Язык программирования R",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Основы языка R</span>"
@@ -485,7 +496,7 @@
     "href": "r-lang/advanced.html",
     "title": "7  Продвинутый R",
     "section": "",
-    "text": "7.1 Встроенные константы\n[1] [2]\nПри объединении объектов разных типов в вектор, они приводятся к более широкому (implicit coercion)\nВ R зарезервирован набор специальных констант:\npi/Inf\n\n[1] 0",
+    "text": "7.1 Встроенные константы\n[1]\n[2]\nПри объединении объектов разных типов в вектор, они приводятся к более широкому (implicit coercion)\nВ R зарезервирован набор специальных констант:\npi/Inf\n\n[1] 0",
     "crumbs": [
       "Язык программирования R",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Продвинутый R</span>"
@@ -594,7 +605,7 @@
     "href": "linear/algebra.html",
     "title": "8  Элементы линейной алгебры",
     "section": "",
-    "text": "Состояние разработки\n\n\n\nВ разработке\n\n\nСистемы линейных алгебраических уравнений. Решение СЛАУ методом Гаусса. Описание алгоритма + пример. Many solutions. One solution. Zero solutions\nОпределитель, линейная независимость.\nГрафическое решение СЛАУ для двух переменных\nОбратная матрица. Определение и свойства\n[1]\nДать задачку на решение слау\nЗаголовок операции над матрицами. Транспонирование. В примерах рассчитать сложное выражение используя все правила. Проверить свойства транспонирования и обратной матрицы. Единичная матрица и её свойства. Свойства диагональной матрицы. Свойство блочной матрицы. Свойства определителя, возможно задачка проверить свойства через компьютер. Через перекрестные ссылки\nНормированиие вектора и норма вектора\nЛинии и плоскости.\n\n\n\n\n1. Eager E. Linear Algebra for Data Science in R [Электронный ресурс]. 2021. URL: https://rpubs.com/odenipinedo/linear-algebra-for-data-science-in-R (дата обращения: 20.02.2025).",
+    "text": "Состояние разработки\n\n\n\nВ разработке\n\n\nСистемы линейных алгебраических уравнений. Решение СЛАУ методом Гаусса. Описание алгоритма + пример. Many solutions. One solution. Zero solutions\nОпределитель, линейная независимость.\nГрафическое решение СЛАУ для двух переменных\n[1]\nОбратная матрица. Определение и свойства\nДать задачку на решение слау\nЗаголовок операции над матрицами. Транспонирование. В примерах рассчитать сложное выражение используя все правила. Проверить свойства транспонирования и обратной матрицы. Единичная матрица и её свойства. Свойства диагональной матрицы. Свойство блочной матрицы. Свойства определителя, возможно задачка проверить свойства через компьютер. Через перекрестные ссылки\nНормированиие вектора и норма вектора\nЛинии и плоскости.\n\n\n\n\n1. Eager E. Linear Algebra for Data Science in R [Электронный ресурс]. 2021. URL: https://rpubs.com/odenipinedo/linear-algebra-for-data-science-in-R (дата обращения: 20.02.2025).",
     "crumbs": [
       "Линейное программирование",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Элементы линейной алгебры</span>"
@@ -702,23 +713,23 @@
   {
     "objectID": "linear/integer.html",
     "href": "linear/integer.html",
-    "title": "15  Целочисленное программирование. Метод ветвей и границ",
+    "title": "15  Целочисленное программирование.",
     "section": "",
     "text": "15.1 Бинарная\nРассмотрим следующую задачу оптимизации в которой наглядно показано отличие целочисленного решения и округления решения в действительных числах.\n\\begin{cases}\n      \\max{F(x,y)=y}\\\\\n      -x+y\\leq1\\\\\n      3x+2y\\leq12\\\\\n      2x+3y\\leq12\\\\\n      x,y\\geq0\\\\\n      x,y\\in\\mathbb{Z}\n\\end{cases}\\, Для этого зададим все условия\nТеперь рассмотрим решение в действительных числах\nОкругляя до ближайшего целого получаем что точка (1.8,2.8) выходит из области определения\nТелекоммуникационная компания хочет установить радиовышки в новом регионе, который состоит из 13 областей. Области и число жителей показано на рисунке. Мощности устанавливаемого передатчика хватает, чтобы обслуживать область, в которой он установлен и граничащие с ней.\nЗадача 1: Разместить наименьшее число передатчиков так, чтобы компания могла оказывать услуги во всем регионе.\nЗадача 2: Имеется возможность установить один передатчик, установить его так, чтобы число клиентов было максимальным.",
     "crumbs": [
       "Линейное программирование",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Целочисленное программирование. Метод ветвей и границ</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Целочисленное программирование.</span>"
     ]
   },
   {
     "objectID": "linear/integer.html#бинарная",
     "href": "linear/integer.html#бинарная",
-    "title": "15  Целочисленное программирование. Метод ветвей и границ",
+    "title": "15  Целочисленное программирование.",
     "section": "",
     "text": "Области с числом жителей\n\n\n\n\n\n15.1.1 Решение\nПередатчик в области может либо быть, либо отсутствовать. Это приводит к применению бинарных переменных. Для начала требуется сформировать условие присутствия в соседних областях. Т.е. передатчик должен быть установлен или в самой области, или в граничащих с ним. Так для области 1 условие формулируется так:\nx_1+x_{11}+x_{10}+x_{13}\\geq1\nОчевидно, что целевая функция выглядит следующим образом\n\\min{\\Sigma x_i}\nТогда полная формализация задачи:\n\nЗадача 1\n\\begin{cases}\n      \\min{F(x)=x_1+x_2+x_3+x_4+x_5+x_6+x_7+x_8+x_9+x_{11}+x_{12}+x_{13}}\\\\\n      x_1+x_{10}+x_{11}+x_{13}\\geq1\\\\\n      x_2+x_9+x_{11}\\geq1\\\\\n      x_3+x_8+x_9+x_{13}\\geq1\\\\\n      x_4+x_5+x_6+x_{12}\\geq1\\\\\n      x_5+x_4+x_{12}\\geq1\\\\\n      x_6+x_4+x_7+x_{12}\\geq1\\\\\n      x_7+x_6+x_8+x_{10}+x_{13}\\geq1\\\\\n      x_8+x_3+x_6+x_7+x_{13}\\geq1\\\\\n      x_9+x_2+x_3+x_{11}+x_{13}\\geq1\\\\\n      x_{10}+x_1+x_7+x_{12}+x_{13}\\geq1\\\\\n      x_{11}+x_1+x_2+x_9+x_{13}\\geq1\\\\\n      x_{12}+x_4+x_5+x_6+x_{10}\\geq1\\\\\n      x_{13}+x_1+x_3+x_7+x_8+x_9+x_{10}+x_{11}\\geq1\\\\\n      \\forall{i}:x_i\\in{0,1}\n\\end{cases}\nВведём эти значения используя lpSolve\n\n\nSuccess: the objective function is 3 \n\n\n [1] 0 0 0 1 0 0 0 0 0 0 1 0 1\n\n\nФилиалы необходимо открыть в следующих регионах\n\n\n[1]  4 11 13\n\n\n\n\nЗадача 2\nВ данном случае введём дополнительно набор переменных y, которые будут означать то, что передатчик в отсутствует в текущей области и граничащих с ней. Минимизация целевой функции построенной на y, говорит о том, что надо выбрать как можно меньше областей с отсутствующей связью.\n\\begin{cases}\n      \\min{F(x)=212y_1+56y_2+132y_3+347y_4+53y_5+503y_6+785y_7+408y_8+430y_9+665y_{10}+403y_{11}+668y_{12}+295y_{13}}\\\\\n      x_1+x_{10}+x_{11}+x_{13}+y_1\\geq1\\\\\n      x_2+x_9+x_{11}+y_2\\geq1\\\\\n      x_3+x_8+x_9+x_{13}+y_3\\geq1\\\\\n      x_4+x_5+x_6+x_{12}+y_4\\geq1\\\\\n      x_5+x_4+x_{12}+y_5\\geq1\\\\\n      x_6+x_4+x_7+x_{12}+y_6\\geq1\\\\\n      x_7+x_6+x_8+x_{10}+x_{13}+y_7\\geq1\\\\\n      x_8+x_6+x_7+x_3+x_{13}+y_8\\geq1\\\\\n      x_9+x_2+x_3+x_{11}+x_{13}+y_9\\geq1\\\\\n      x_{10}+x_1+x_7+x_{12}+x_{13}+y_{10}\\geq1\\\\\n      x_{11}+x_1+x_2+x_9+x_{13}+y_{11}\\geq1\\\\\n      x_{12}+x_4+x_5+x_6+x_{10}+y_{12}\\geq1\\\\\n      x_{13}+x_1+x_3+x_7+x_8+x_9+x_{10}+x_{11}+y_{13}\\geq1\\\\\n      x_1+x_2+x_3+x_4+x_5+x_6+x_7+x_8+x_9+x_{10}+x_{11}+x_{12}+x_{13}=1\\\\\n      \\forall{i}:x_i,y_i\\in \\{0,1\\}\n\\end{cases}\nОсобенность задачи в том, что ограничения по x и y будут заданы раздельно\nКонструируем и решаем задачу используя lpSolve\n\n\nSuccess: the objective function is 1627 \n\n\nВывод: если можно открыть только один филиал, то его надо открыть в регионе:\n\n\n[1] 13\n\n\n\n\n [1] 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 1 1 0 0 0 0 0 1 0",
     "crumbs": [
       "Линейное программирование",
-      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Целочисленное программирование. Метод ветвей и границ</span>"
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Целочисленное программирование.</span>"
     ]
   },
   {
@@ -792,54 +803,65 @@
     "href": "nonlinear/unconstrained/analytical-many.html",
     "title": "19  Безусловная оптимизация функции многих переменных",
     "section": "",
-    "text": "19.1 Определение\n[1]\nНапример для функции \\(f(x,y)=(x-1)^2 +(y+2)^2\\) точка \\(M(x_0=1,y_0=-2)\\) будет точкой локального минимума",
+    "text": "19.1 Определение\n[1]",
     "crumbs": [
       "Нелинейное программирование",
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Безусловная оптимизация функции многих переменных</span>"
     ]
   },
   {
-    "objectID": "nonlinear/unconstrained/analytical-many.html#определение",
-    "href": "nonlinear/unconstrained/analytical-many.html#определение",
+    "objectID": "nonlinear/unconstrained/analytical-many.html#sec-nonlinear-unconstrained-many-defenition",
+    "href": "nonlinear/unconstrained/analytical-many.html#sec-nonlinear-unconstrained-many-defenition",
     "title": "19  Безусловная оптимизация функции многих переменных",
     "section": "",
-    "text": "Точкой локального максимума\n\nназывается такая точка \\(M_0(x_0,y_0,...)\\), что в некоторой \\(\\delta\\)-окрестности этой точки выполняется неравенство \\(f(x,y,...) \\lt f(x_0,y_0,...)\\).\n\nТочкой локального минимума\n\nназывается такая точка \\(M_0(x_0,y_0,...)\\), что в некоторой \\(\\delta\\)-окрестности этой точки выполняется неравенство \\(f(x,y,...) \\gt f(x_0,y_0,...)\\).",
+    "text": "Определение 19.1  \n\nТочкой локального максимума\n\nназывается такая точка \\(M_0(x_0,y_0,...)\\), что в некоторой \\(\\delta\\)-окрестности этой точки выполняется неравенство \\(f(x,y,...) \\lt f(x_0,y_0,...)\\).\n\n\n\n\nОпределение 19.2  \n\nТочкой локального минимума\n\nназывается такая точка \\(M_0(x_0,y_0,...)\\), что в некоторой \\(\\delta\\)-окрестности этой точки выполняется неравенство \\(f(x,y,...) \\gt f(x_0,y_0,...)\\).\n\n\nНапример для функции \\(f(x,y)=(x-1)^2 +(y+2)^2\\) точка \\(M(x_0=1,y_0=-2)\\) будет точкой локального минимума",
     "crumbs": [
       "Нелинейное программирование",
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Безусловная оптимизация функции многих переменных</span>"
     ]
   },
   {
-    "objectID": "nonlinear/unconstrained/analytical-many.html#экстремум-функции-двух-переменных",
-    "href": "nonlinear/unconstrained/analytical-many.html#экстремум-функции-двух-переменных",
+    "objectID": "nonlinear/unconstrained/analytical-many.html#sec-nonlinear-unconstrained-many-2vars",
+    "href": "nonlinear/unconstrained/analytical-many.html#sec-nonlinear-unconstrained-many-2vars",
     "title": "19  Безусловная оптимизация функции многих переменных",
     "section": "19.2 Экстремум функции двух переменных",
-    "text": "19.2 Экстремум функции двух переменных\n\n19.2.1 Необходимое условие\nЕсли дифференцируемая функция имеет экстремум в точке , то обе частные производные 1-го порядка в данной точке равны нулю:\n\\[\n\\frac{\\partial F(x,y)}{\\partial x}=0 \\qquad\n\\frac{\\partial F(x,y)}{\\partial y}=0\n\\]\n\nСтационарной точкой\n\nназывается точка. удовлетворяющая этим условиям. Также эту точку называют критической.\n\n\nНо у функции с производными , равными нулю в этой же точке, не наблюдается ничего подобного. Это гиперболический параболоид или «седло» Для точки не существует окрестности, в которой поверхность располагалась бы только вверху или только внизу .\n\n\n\n\nГиперболический параболоид\n\n\n\nСледовой точкой\n\nназывается точку такого рода.\n\n\n\nПример\n\nЗадание\nИсследовать на экстремум функцию\n\\[z=3x^2 + xy + 2y^2 -x -4y\\]\n\n\n\n\n\n\n\n\nРешение\nна первом шаге нужно отыскать стационарные точки. Для этого найдём частные производные 1-го порядка:\n\\[\n\\begin{align*}\n&\\frac{\\partial z}{\\partial x}=\\frac{\\partial}{\\partial x}\\bigl(3x^2+xy+2y^2-x-4y \\bigr)=6x+y-1 \\\\\n&\\frac{\\partial z}{\\partial x}=\\frac{\\partial}{\\partial x}\\bigl(3x^2+xy+2y^2-x-4y \\bigr)=x+4y-4\n\\end{align*}\n\\]\nРешим систему уравнений\n\\[\n\\begin{cases}\n\\frac{\\partial z}{\\partial x}=0\\\\\n\\frac{\\partial z}{\\partial y}=0\n\\end{cases}\\,\n\\Rightarrow\n\\begin{cases}\n6x+y-1=0\\\\\nx+4y-1=0\n\\end{cases}\\,\n\\]\nТаким образом\n\\[\n\\begin{align*}\ny=1\\\\\nx=0\n\\end{align*}\n\\]\n\n\nОтвет\nНайдена стационарная точка \\(M_0(0,1)\\). В найденной точке может быть минимум, максимум либо перевал.\n\n\n\n\n19.2.2 Достаточное условие\nДля применения достаточного условия нужно вычислить частные производные 2-го порядка в точке Для компактности обычно используют следующие обозначения\n\\[\n\\begin{align*}\n&A=\\frac{\\partial^2 z}{\\partial x^2}\\\\\n&B=\\frac{\\partial^2 z}{\\partial x \\partial y}\\\\\n&C=\\frac{\\partial^2 z}{\\partial x^2}\\\\\n\\end{align*}\n\\]\n\nЕсли \\(AC-B^2&gt;0\\), то функция \\(z=f(x,y)\\) имеет экстремум в точке \\(M_0\\), причём, если \\(A&gt;0\\), то это минимум, а если \\(A&lt;0\\) – то максимум.\nЕсли \\(AC-B^2&lt;0\\), то в точке \\(M_0\\) нет экстремума.\nЕсли \\(AC-B^2=0\\), то требуется дополнительное исследование.\n\n\nПример\n\nЗадание\nОпределить тип стационарной точки \\(M_0(0,1)\\) для функции \\[z=3x^2 + xy + 2y^2 -x -4y\\]\n\n\nРешение\nНайдем все вторые частные производные.\n\\[\n\\begin{align*}\n&\\frac{\\partial^2 z}{\\partial x^2}=\\frac{\\partial z}{\\partial x} \\bigl(6x+y-1\\bigr)=A=6\\\\\n&\\frac{\\partial^2 z}{\\partial x \\partial y}=\\frac{\\partial z}{\\partial y} \\bigl(6x+y-1\\bigr)=B=1\\\\\n&\\frac{\\partial^2 z}{\\partial y^2}=\\frac{\\partial z}{\\partial x} \\bigl(x+4y-4\\bigr)=C=4\n\\end{align*}\n\\]\nТаким образом \\(AC-B^2=6\\cdot 4-1^2=23&gt;0\\), следовательно в точке \\(M_0\\) есть экстремум, и так как \\(A&gt;0\\), то это минимум.\n\n\nОтвет\n\\[\\min{z}=z(0,1)=-2\\]",
+    "text": "19.2 Экстремум функции двух переменных\n\nТеорема 19.1 (Необходимое условие) Если дифференцируемая функция имеет экстремум в точке , то обе частные производные 1-го порядка в данной точке равны нулю:\n\\[\n\\frac{\\partial F(x,y)}{\\partial x}=0 \\qquad\n\\frac{\\partial F(x,y)}{\\partial y}=0\n\\]\n\n\nОпределение 19.3  \n\nСтационарной точкой\n\nназывается точка. удовлетворяющая этим условиям. Также эту точку называют критической.\n\n\n\nНо у функции с производными , равными нулю в этой же точке, не наблюдается ничего подобного. Это гиперболический параболоид или «седло» Для точки не существует окрестности, в которой поверхность располагалась бы только вверху или только внизу .\n\n\n\n\nГиперболический параболоид\n\n\n\nОпределение 19.4  \n\nСледовой точкой\n\nназывается точку такого рода.\n\n\n\n\nПример 19.1 Исследовать на экстремум функцию\n\\[z=3x^2 + xy + 2y^2 -x -4y\\]\n\n\nРешение 19.1. на первом шаге нужно отыскать стационарные точки. Для этого найдем частные производные 1-го порядка:\n\\[\n\\begin{align*}\n&\\frac{\\partial z}{\\partial x}=\\frac{\\partial}{\\partial x}\\bigl(3x^2+xy+2y^2-x-4y \\bigr)=6x+y-1 \\\\\n&\\frac{\\partial z}{\\partial x}=\\frac{\\partial}{\\partial x}\\bigl(3x^2+xy+2y^2-x-4y \\bigr)=x+4y-4\n\\end{align*}\n\\]\nРешим систему уравнений\n\\[\n\\begin{cases}\n\\frac{\\partial z}{\\partial x}=0\\\\\n\\frac{\\partial z}{\\partial y}=0\n\\end{cases}\\,\n\\Rightarrow\n\\begin{cases}\n6x+y-1=0\\\\\nx+4y-1=0\n\\end{cases}\\,\n\\]\n\n\n\n\n\n\nТаким образом\n\\[\n\\begin{align*}\ny=1\\\\\nx=0\n\\end{align*}\n\\]\nНайдена стационарная точка \\(M_0(0,1)\\). В найденной точке может быть минимум, максимум либо перевал.\n\n\nТеорема 19.2 (Достаточное условие) Для применения достаточного условия нужно вычислить частные производные 2-го порядка в точке Для компактности обычно используют следующие обозначения\n\\[\n\\begin{align*}\n&A=\\frac{\\partial^2 z}{\\partial x^2}\\\\\n&B=\\frac{\\partial^2 z}{\\partial x \\partial y}\\\\\n&C=\\frac{\\partial^2 z}{\\partial x^2}\\\\\n\\end{align*}\n\\]\n\nЕсли \\(AC-B^2&gt;0\\), то функция \\(z=f(x,y)\\) имеет экстремум в точке \\(M_0\\), причём, если \\(A&gt;0\\), то это минимум, а если \\(A&lt;0\\) – то максимум.\nЕсли \\(AC-B^2&lt;0\\), то в точке \\(M_0\\) нет экстремума.\nЕсли \\(AC-B^2=0\\), то требуется дополнительное исследование.\n\n\n\nПример 19.2 Определить тип стационарной точки \\(M_0(0,1)\\) для функции \\[z=3x^2 + xy + 2y^2 -x -4y\\]\n\n\nРешение 19.2. Найдем все вторые частные производные.\n\\[\n\\begin{align*}\n&\\frac{\\partial^2 z}{\\partial x^2}=\\frac{\\partial z}{\\partial x} \\bigl(6x+y-1\\bigr)=A=6\\\\\n&\\frac{\\partial^2 z}{\\partial x \\partial y}=\\frac{\\partial z}{\\partial y} \\bigl(6x+y-1\\bigr)=B=1\\\\\n&\\frac{\\partial^2 z}{\\partial y^2}=\\frac{\\partial z}{\\partial x} \\bigl(x+4y-4\\bigr)=C=4\n\\end{align*}\n\\]\nТаким образом \\(AC-B^2=6\\cdot 4-1^2=23&gt;0\\), следовательно в точке \\(M_0\\) есть экстремум, и так как \\(A&gt;0\\), то это минимум. Ответ \\(\\min{z}=z(0,1)=-2\\).",
     "crumbs": [
       "Нелинейное программирование",
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Безусловная оптимизация функции многих переменных</span>"
     ]
   },
   {
-    "objectID": "nonlinear/unconstrained/analytical-many.html#экстремумы-трёх-переменных",
-    "href": "nonlinear/unconstrained/analytical-many.html#экстремумы-трёх-переменных",
+    "objectID": "nonlinear/unconstrained/analytical-many.html#sec-nonlinear-unconstrained-many-3vars",
+    "href": "nonlinear/unconstrained/analytical-many.html#sec-nonlinear-unconstrained-many-3vars",
     "title": "19  Безусловная оптимизация функции многих переменных",
     "section": "19.3 Экстремумы трёх переменных",
-    "text": "19.3 Экстремумы трёх переменных\n\n19.3.1 Необходимое условие\nКак и для функции двух переменных общий вид необходимых условий сохраняется.\n\\[\n\\frac{\\partial F(x,y,z)}{\\partial x}=0 \\qquad\n\\frac{\\partial F(x,y,z)}{\\partial y}=0 \\qquad\n\\frac{\\partial F(x,y,z)}{\\partial z}=0\n\\]\n\nПример\n\nЗадание\nНайти стационарные точки функции\n\\[\nu=-x^2-5y^2-3z^2+xy-2xz+2yz+11x+2y+18z+10\n\\]\nГрафик сечений\n\n\n\n\n\n\n\n\nРешение\nНайдем все первые частные производные\n\\[\n\\begin{align*}\n&\\frac{\\partial u}{\\partial x}=-2x+y-2z+11\\\\\n&\\frac{\\partial u}{\\partial y}=-10y+x+2z+2\\\\\n&\\frac{\\partial u}{\\partial z}=-6z-2x+2y+18\n\\end{align*}\n\\]\nЧтобы найти стационарные точки, составим и решим следующую систему\n\\[\n\\begin{cases}\n\\frac{\\partial u}{\\partial x}=0\\\\\n\\frac{\\partial u}{\\partial y}=0\\\\\n\\frac{\\partial u}{\\partial z}=0\\\\\n\\end{cases}\\,\n\\Rightarrow\n\\begin{cases}\n-2x+y-2z+11=0\\\\\n-10y+x+2z+2=0\\\\\n-6z-2x+2y+18=0\n\\end{cases}\\,\n\\]\nТаким образом\n\\[\n\\begin{align*}\n&x=4\\\\\n&y=1\\\\\n&z=2\n\\end{align*}\n\\]\n\n\nОтвет\nНайдена единственная стационарная точка \\(M_0(4,1,2)\\)\n\n\n\n\n19.3.2 Достаточное условие\nДля проверки достаточное условия требуется построить матрицу Гессе, состоящую из всех частных производных второго порядка\n\\[\nH =\n\\begin{pmatrix}\n\\frac{\\partial^2 u(M_0)}{\\partial x^2} & \\frac{\\partial^2 u(M_0)}{\\partial x \\partial y} & \\frac{\\partial^2 u(M_0)}{\\partial x \\partial z} \\\\\n\\frac{\\partial^2 u(M_0)}{\\partial y \\partial x} & \\frac{\\partial^2 u(M_0)}{\\partial y^2}  & \\frac{\\partial^2 u(M_0)}{\\partial y \\partial z} \\\\\n\\frac{\\partial^2 u(M_0)}{\\partial z \\partial x} &  \\frac{\\partial^2 u(M_0)}{\\partial y \\partial z} & \\frac{\\partial^2 u(M_0)}{\\partial z^2}\n\\end{pmatrix}\n\\]\nДанная матрица является симметричной (или симметрической). Это значит, что её элементы симметричны относительно главной диагонали, на которой в данном случае расположены «однобуквенные» частные производные\nДалее нужно вычислить угловые миноры. Это определители, которые «разрастаются» из левого верхнего угла:\n\\[\n\\delta_1=\\frac{\\partial^2 u(M_0)}{\\partial x^2}, \\qquad\n\\delta_2=\n\\begin{vmatrix}\n\\frac{\\partial^2 u(M_0)}{\\partial x^2} & \\frac{\\partial^2 u(M_0)}{\\partial x \\partial y} \\\\\n\\frac{\\partial^2 u(M_0)}{\\partial y \\partial x} & \\frac{\\partial^2 u(M_0)}{\\partial y^2}\n\\end{vmatrix}, \\qquad\n\\delta_3=\n\\begin{vmatrix}\n\\frac{\\partial^2 u(M_0)}{\\partial x^2} & \\frac{\\partial^2 u(M_0)}{\\partial x \\partial y} & \\frac{\\partial^2 u(M_0)}{\\partial x \\partial z} \\\\\n\\frac{\\partial^2 u(M_0)}{\\partial y \\partial x} & \\frac{\\partial^2 u(M_0)}{\\partial y^2}  & \\frac{\\partial^2 u(M_0)}{\\partial y \\partial z} \\\\\n\\frac{\\partial^2 u(M_0)}{\\partial z \\partial x} &  \\frac{\\partial^2 u(M_0)}{\\partial y \\partial z} & \\frac{\\partial^2 u(M_0)}{\\partial z^2}\n\\end{vmatrix}\n\\] 1. Если \\(\\delta_1&gt;0,\\quad \\delta_2&gt;0,\\quad \\delta_3&gt;0\\), то функция \\(u=f(x,y,z)\\) достигает минимума в точке \\(M_0\\) 2. Если \\(\\delta_1&lt;0,\\quad \\delta_2&gt;0,\\quad \\delta_3&lt;0\\) (так и только так!), то функция \\(u=f(x,y,z)\\) достигает максимума в точке \\(M_0\\). 3. Если получилось что-то другое и при этом \\(\\delta_3=|H|\\neq0\\), то \\(M_0\\) – следовая точка. Здесь это уже во многом условное название. 4. Если \\(\\delta_3=|H|=0\\), то признак не даёт ответа о характере точки \\(M_0\\).\n\nПример\n\nЗадача\nОпределить тип стационарной точки \\(M_0(4,1,2)\\) для функции\n\\[\nu=-x^2-5y^2-3z^2+xy-2xz+2yz+11x+2y+18z+10\n\\]\n\n\nРешение\nВ нашем примере все производные 2-го порядка равны константам\n\\[\n\\begin{align*}\n&\\frac{\\partial^2 u}{\\partial x^2}=-2\\\\\n&\\frac{\\partial^2 u}{\\partial y^2}=-10\\\\\n&\\frac{\\partial^2 u}{\\partial z^2}=-6\\\\\n&\\frac{\\partial^2 u}{\\partial x \\partial y}=1\\\\\n&\\frac{\\partial^2 u}{\\partial x \\partial z}=-2\\\\\n&\\frac{\\partial^2 u}{\\partial y \\partial z}=2\\\\\n\\end{align*}\n\\]\nСоставим матрицу Гессе\n\\[\nH=\n\\begin{pmatrix}\n-2 & 1 & -2\\\\\n1 & -10 & 2\\\\\n-2 & 2 & -6\n\\end{pmatrix}\n\\]\nи вычислим её угловые миноры\n\\[\n\\begin{align*}\n&\\delta_1=2&lt;0\\\\\n&\\delta_2=\n\\begin{vmatrix}\n-2 & 1\\\\\n1 & -10\n\\end{vmatrix}=19&gt;0\\\\\n&\\delta_3=\n\\begin{vmatrix}\n-2 & 1 & -2\\\\\n1 & -10 & 2\\\\\n-2 & 2 & -6\n\\end{vmatrix}=-74&lt;0\n\\end{align*}\n\\] Вывод: функция достигает максимума в точке \\(M_0(4,1,2)\\)\n\n\nОтвет\n\\[\\max{u}=u(4,1,2)=51\\]",
+    "text": "19.3 Экстремумы трёх переменных\n\nТеорема 19.3 (Необходимое условие) Как и для функции двух переменных общий вид необходимых условий сохраняется.\n\\[\n\\frac{\\partial F(x,y,z)}{\\partial x}=0 \\qquad\n\\frac{\\partial F(x,y,z)}{\\partial y}=0 \\qquad\n\\frac{\\partial F(x,y,z)}{\\partial z}=0\n\\]\n\n\nПример 19.3 Найти стационарные точки функции\n\\[\nu=-x^2-5y^2-3z^2+xy-2xz+2yz+11x+2y+18z+10\n\\]\nГрафик сечений\n\n\n\n\n\n\n\n\nРешение 19.3. Найдем все первые частные производные\n\\[\n\\begin{align*}\n&\\frac{\\partial u}{\\partial x}=-2x+y-2z+11\\\\\n&\\frac{\\partial u}{\\partial y}=-10y+x+2z+2\\\\\n&\\frac{\\partial u}{\\partial z}=-6z-2x+2y+18\n\\end{align*}\n\\]\nЧтобы найти стационарные точки, составим и решим следующую систему\n\\[\n\\begin{cases}\n\\frac{\\partial u}{\\partial x}=0\\\\\n\\frac{\\partial u}{\\partial y}=0\\\\\n\\frac{\\partial u}{\\partial z}=0\\\\\n\\end{cases}\\,\n\\Rightarrow\n\\begin{cases}\n-2x+y-2z+11=0\\\\\n-10y+x+2z+2=0\\\\\n-6z-2x+2y+18=0\n\\end{cases}\\,\n\\]\nТаким образом\n\\[\n\\begin{align*}\n&x=4\\\\\n&y=1\\\\\n&z=2\n\\end{align*}\n\\]\nНайдена единственная стационарная точка \\(M_0(4,1,2)\\)\n\n\nТеорема 19.4 (Достаточное условие) Для проверки достаточное условия требуется построить матрицу Гессе, состоящую из всех частных производных второго порядка\n\\[\nH =\n\\begin{pmatrix}\n\\frac{\\partial^2 u(M_0)}{\\partial x^2} & \\frac{\\partial^2 u(M_0)}{\\partial x \\partial y} & \\frac{\\partial^2 u(M_0)}{\\partial x \\partial z} \\\\\n\\frac{\\partial^2 u(M_0)}{\\partial y \\partial x} & \\frac{\\partial^2 u(M_0)}{\\partial y^2}  & \\frac{\\partial^2 u(M_0)}{\\partial y \\partial z} \\\\\n\\frac{\\partial^2 u(M_0)}{\\partial z \\partial x} &  \\frac{\\partial^2 u(M_0)}{\\partial y \\partial z} & \\frac{\\partial^2 u(M_0)}{\\partial z^2}\n\\end{pmatrix}\n\\]\nДанная матрица является симметричной (или симметрической). Это значит, что её элементы симметричны относительно главной диагонали, на которой в данном случае расположены «однобуквенные» частные производные\nДалее нужно вычислить угловые миноры. Это определители, которые «разрастаются» из левого верхнего угла:\n\\[\n\\delta_1=\\frac{\\partial^2 u(M_0)}{\\partial x^2}, \\qquad\n\\delta_2=\n\\begin{vmatrix}\n\\frac{\\partial^2 u(M_0)}{\\partial x^2} & \\frac{\\partial^2 u(M_0)}{\\partial x \\partial y} \\\\\n\\frac{\\partial^2 u(M_0)}{\\partial y \\partial x} & \\frac{\\partial^2 u(M_0)}{\\partial y^2}\n\\end{vmatrix}, \\qquad\n\\delta_3=\n\\begin{vmatrix}\n\\frac{\\partial^2 u(M_0)}{\\partial x^2} & \\frac{\\partial^2 u(M_0)}{\\partial x \\partial y} & \\frac{\\partial^2 u(M_0)}{\\partial x \\partial z} \\\\\n\\frac{\\partial^2 u(M_0)}{\\partial y \\partial x} & \\frac{\\partial^2 u(M_0)}{\\partial y^2}  & \\frac{\\partial^2 u(M_0)}{\\partial y \\partial z} \\\\\n\\frac{\\partial^2 u(M_0)}{\\partial z \\partial x} &  \\frac{\\partial^2 u(M_0)}{\\partial y \\partial z} & \\frac{\\partial^2 u(M_0)}{\\partial z^2}\n\\end{vmatrix}\n\\] 1. Если \\(\\delta_1&gt;0,\\quad \\delta_2&gt;0,\\quad \\delta_3&gt;0\\), то функция \\(u=f(x,y,z)\\) достигает минимума в точке \\(M_0\\) 2. Если \\(\\delta_1&lt;0,\\quad \\delta_2&gt;0,\\quad \\delta_3&lt;0\\) (так и только так!), то функция \\(u=f(x,y,z)\\) достигает максимума в точке \\(M_0\\). 3. Если получилось что-то другое и при этом \\(\\delta_3=|H|\\neq0\\), то \\(M_0\\) – следовая точка. Здесь это уже во многом условное название. 4. Если \\(\\delta_3=|H|=0\\), то признак не даёт ответа о характере точки \\(M_0\\).\n\n\nПример 19.4 Определить тип стационарной точки \\(M_0(4,1,2)\\) для функции\n\\[\nu=-x^2-5y^2-3z^2+xy-2xz+2yz+11x+2y+18z+10\n\\]\n\n\nРешение 19.4. В нашем примере все производные 2-го порядка равны константам\n\\[\n\\begin{align*}\n&\\frac{\\partial^2 u}{\\partial x^2}=-2\\\\\n&\\frac{\\partial^2 u}{\\partial y^2}=-10\\\\\n&\\frac{\\partial^2 u}{\\partial z^2}=-6\\\\\n&\\frac{\\partial^2 u}{\\partial x \\partial y}=1\\\\\n&\\frac{\\partial^2 u}{\\partial x \\partial z}=-2\\\\\n&\\frac{\\partial^2 u}{\\partial y \\partial z}=2\\\\\n\\end{align*}\n\\]\nСоставим матрицу Гессе\n\\[\nH=\n\\begin{pmatrix}\n-2 & 1 & -2\\\\\n1 & -10 & 2\\\\\n-2 & 2 & -6\n\\end{pmatrix}\n\\]\nи вычислим её угловые миноры\n\\[\n\\begin{align*}\n&\\delta_1=2&lt;0\\\\\n&\\delta_2=\n\\begin{vmatrix}\n-2 & 1\\\\\n1 & -10\n\\end{vmatrix}=19&gt;0\\\\\n&\\delta_3=\n\\begin{vmatrix}\n-2 & 1 & -2\\\\\n1 & -10 & 2\\\\\n-2 & 2 & -6\n\\end{vmatrix}=-74&lt;0\n\\end{align*}\n\\]\nВывод: функция достигает максимума в точке \\(M_0(4,1,2)\\)\n\\(\\max{u}=u(4,1,2)=51\\)",
     "crumbs": [
       "Нелинейное программирование",
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Безусловная оптимизация функции многих переменных</span>"
     ]
   },
   {
-    "objectID": "nonlinear/unconstrained/analytical-many.html#экстремум-функции-четырех-переменных",
-    "href": "nonlinear/unconstrained/analytical-many.html#экстремум-функции-четырех-переменных",
+    "objectID": "nonlinear/unconstrained/analytical-many.html#sec-nonlinear-unconstrained-many-4vars",
+    "href": "nonlinear/unconstrained/analytical-many.html#sec-nonlinear-unconstrained-many-4vars",
     "title": "19  Безусловная оптимизация функции многих переменных",
     "section": "19.4 Экстремум функции четырех переменных",
     "text": "19.4 Экстремум функции четырех переменных\nРассмотренный алгоритм исследования распространяется и на функции большего количества переменных Разберём ещё случай функции 4 переменных, а дальше – будет понятно. Чтобы исследовать на экстремум дифференцируемую функцию четырёх аргументов, нужно найти частные производные 1-го порядка и решить систему:\n\\[\n\\begin{cases}\n\\frac{\\partial u}{\\partial x}=0\\\\\n\\frac{\\partial u}{\\partial y}=0\\\\\n\\frac{\\partial u}{\\partial z}=0\\\\\n\\frac{\\partial u}{\\partial v}=0\\\\\n\\end{cases}\n\\]\nПредположим, что в результате решения найдена стационарная точка \\(M_0(x_0,y_0,z_0,v_0\\). Далее нужно найти частные производные 2-го порядка, вычислить их в точке \\(M_0\\) и составить матрицу Гессе:\n\\[\nH_4=\n\\begin{pmatrix}\n\\frac{\\partial^2 u(M_0)}{\\partial x^2} & \\frac{\\partial^2 u(M_0)}{\\partial x \\partial y} & \\frac{\\partial^2 u(M_0)}{\\partial x \\partial z}  & \\frac{\\partial^2 u(M_0)}{\\partial x \\partial v}\\\\\n\\frac{\\partial^2 u(M_0)}{\\partial y \\partial x} & \\frac{\\partial^2 u(M_0)}{\\partial y^2}  & \\frac{\\partial^2 u(M_0)}{\\partial y \\partial z} & \\frac{\\partial^2 u(M_0)}{\\partial y \\partial v} \\\\\n\\frac{\\partial^2 u(M_0)}{\\partial x \\partial z} &  \\frac{\\partial^2 u(M_0)}{\\partial z \\partial y} & \\frac{\\partial^2 u(M_0)}{\\partial z^2} & \\frac{\\partial^2 u(M_0)}{\\partial z \\partial v} \\\\\n\\frac{\\partial^2 u(M_0)}{\\partial v \\partial x} &  \\frac{\\partial^2 u(M_0)}{\\partial v \\partial y} & \\frac{\\partial^2 u(M_0)}{\\partial v \\partial z} & \\frac{\\partial^2 u(M_0)}{\\partial v^2} \\\\\n\\end{pmatrix}\n\\] после чего вычислить её угловые миноры \\(\\delta_1,\\delta_2,\\delta_3,\\delta_4\\).\nЕсли все миноры положительны, то в точке \\(M_0\\) – минимум, если знакочередуются в следующем порядке: \\(\\delta_1&lt;0,\\quad \\delta_2&gt;0,\\quad \\delta_3&lt;0, \\quad \\delta_4&gt;0\\) (и именно в таком!), то в точке \\(M_0\\) – максимум. Если имеет место другой случай, но \\(\\delta_4=|H_4|\\neq0\\) , то \\(M_0\\) – седловая точка; если же \\(\\delta_4=|H_4|=0\\), то признак не даёт ответа о характере точки \\(M_0\\). Этот алгоритм известен как проверка квадратичной формы полного дифференциала 2-го порядка на знакоопределённость методом Сильвестра (для функций 2, 3, 4 и большего количества переменных).\n\n\n\n\n1. Емелин А. Экстремумы функций двух и трёх переменных [Электронный ресурс]. URL: http://mathprofi.ru/extremumy_funkcij_dvuh_i_treh_peremennyh.html (дата обращения: 20.02.2025).",
     "crumbs": [
       "Нелинейное программирование",
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>Безусловная оптимизация функции многих переменных</span>"
+    ]
+  },
+  {
+    "objectID": "nonlinear/constrained/analytical-one.html",
+    "href": "nonlinear/constrained/analytical-one.html",
+    "title": "20  Условная оптимизация функции одной переменной",
+    "section": "",
+    "text": "Состояние разработки\n\n\n\nВ разработке",
+    "crumbs": [
+      "Нелинейное программирование",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Условная оптимизация функции одной переменной</span>"
     ]
   },
   {
@@ -854,8 +876,8 @@
     ]
   },
   {
-    "objectID": "nonlinear/constrained/analytical-many.html#линейные-ограничения-неравенства",
-    "href": "nonlinear/constrained/analytical-many.html#линейные-ограничения-неравенства",
+    "objectID": "nonlinear/constrained/analytical-many.html#sec-nonlinear-constrained-many-linear",
+    "href": "nonlinear/constrained/analytical-many.html#sec-nonlinear-constrained-many-linear",
     "title": "21  Условная оптимизация функции многих переменных",
     "section": "21.2 Линейные ограничения неравенства",
     "text": "21.2 Линейные ограничения неравенства\nЯвляются частным случаем нелинейных, большинство алгоритмов работает с ними, как с нелинейными.\n\n\\begin{cases}\n      \\min{F(\\vec{x})}=x_1^2+x_2^2+x_1x_2+2x_1+4x_2+5\\\\\n      2 x_1 + x_2 \\geq 0\\\\\n      x_1 + 2 x_2 \\leq 1\n\\end{cases}\n\n\n\n\n\n\n\nПреобразуем ограничения\n\n\\begin{cases}\ng_1:(2 x_1 + x_2) \\geq 0\\\\\ng_2:(-x_1-2x_2+1) \\geq 0\n\\end{cases}\n\nСформируем функцию Лагранжа\n\n\\begin{cases}\nL(\\vec{x},\\vec{\\mu})=x_1^2+x_2^2+x_1x_2+2x_1+4x_2+5-\\mu_1(2x_1+x_2)-\\mu_2(-x_1-2x_2+1)\\\\\n\\frac{\\partial L(\\vec{x},\\vec{\\mu})}{\\partial x_1}=2x_1 + x_2 + 2 - 2\\mu_1 + \\mu_2 = 0\\\\\n\\frac{\\partial L(\\vec{x},\\vec{\\mu})}{\\partial x_2}=2x_2 + x_1 + 4 - \\mu_1 + 2\\mu_2 = 0\\\\\ng_1:\\mu_1(2x_1+x_2)=0\\\\\ng_2:\\mu_2(-x_1-2x_2+1)=0\\\\\n\\mu_1,\\mu_2 \\geq 0\n\\end{cases}\n\nДопустим, что \\mu_1&gt;0, тогда (2x_1+x_2)=0, x_2=-2x_1, откуда система:\n\n\\begin{cases}\n2-2\\mu_1+\\mu_2=0\\\\\n4-3x_1-\\mu_1+2\\mu_2=0\\\\\n\\mu_2(3x_1+1)=0\\\\\n\\mu_1,\\mu_2&gt;0\n\\end{cases}\n\nПредположим, что \\mu_2&gt;0, следовательно x_1=-\\frac{1}{3} и система преобразуется в:\n\n\\begin{cases}\n2-2\\mu_1+\\mu_2=0\\\\\n7-\\mu_1+2\\mu_2=0\\\\\n\\mu_1,\\mu_2&gt;0\n\\end{cases}\n\nОткуда следует, что \\mu_2=-4, что является противоречием. Рассмотрим случай, когда \\mu_2=0. Тогда\n\n\\begin{cases}\n2-2\\mu_1=0\\\\\n4-3x_1-\\mu_1=0\\\\\n\\mu_1&gt;0\n\\end{cases}\n\nЛегко получить решение:\n\n\\begin{cases}\nx_1 = 1\\\\\nx_2 = -2\\\\\n\\mu_1 = 1\\\\\n\\mu_2 = 0\n\\end{cases}",
@@ -865,14 +887,35 @@
     ]
   },
   {
-    "objectID": "nonlinear/constrained/analytical-many.html#нелинейные-ограничения-равенства",
-    "href": "nonlinear/constrained/analytical-many.html#нелинейные-ограничения-равенства",
+    "objectID": "nonlinear/constrained/analytical-many.html#sec-nonlinear-constrained-nonlinear",
+    "href": "nonlinear/constrained/analytical-many.html#sec-nonlinear-constrained-nonlinear",
     "title": "21  Условная оптимизация функции многих переменных",
     "section": "21.3 Нелинейные ограничения равенства",
     "text": "21.3 Нелинейные ограничения равенства\n\n\\begin{cases}\n\\min{F(\\vec{x})}=x_1^2+x_2^2+x_1x_2+2x_1+4x_2+5\\\\\ng1:x_1^2 - x_1 x_2 = -2\n\\end{cases}\n\n\n\n\n\n\n\nПереформулируем ограничения\nx_1^2 - x_1 x_2 + 2 = 0\nСформируем функцию Лагранжа\n\n\\begin{cases}\nL(\\vec{x},\\vec{\\mu})=x_1^2+x_2^2+x_1x_2+2x_1+4x_2+5-\\mu_1(x_1^2-x_1x_2+2)\\\\\n\\frac{\\partial L(\\vec{x},\\vec{\\mu})}{\\partial x_1}=2x_1 + x_2 + 2 - \\mu_1(2x_1-x_2)= 0\\\\\n\\frac{\\partial L(\\vec{x},\\vec{\\mu})}{\\partial x_2}=2x_2 + x_1 + 4 + \\mu_1 x_1 = 0\\\\\ng_1:\\mu_1(x_1^2-x_1x_2+2)=0\\\\\n\\mu_1 \\geq 0\n\\end{cases}\n\nПусть \\mu_1&gt;0, тогда x_1^2-x_1x_2+2=0. Рассмотрим случай, когда x_1=x_2. Система представляется так:\n\n\\begin{cases}\n2x_1+x_2+2-\\mu_1(2x_1-x_2)=0\\\\\n2x_2+x_1+4+\\mu_1x_1=0\\\\\n\\mu_1(x_1^2-x_1x_2+2)=0\\\\\n\\mu_1\\geq 0\n\\end{cases}\n\nПусть \\mu_1&gt;0, следовательно x_1^2-x_1x_2+2=0. Выразим x_2=\\frac{2+x_1^2}{x_1}, тогда система после подстановки и преобразования:\n\n\\begin{cases}\nx_1^2(3-\\mu_1)+2x_1+\\mu_1+2=0\\\\\n(3+\\mu_1)x_1^2+4x_1+4=0\\\\\n\\end{cases}\n\nВыразим из второго уравненя\n\n\\mu_1=-\\frac{3x_1^2+4x_1+4}{x_1^2}\n\nИ подставим в первое\n\n6x_1^4+6x_1^3-8x_1-8=0\n\nОтсюда подбором получается корень x_1=-1. Общее решение:\n\n\\begin{cases}\nx_1=-3\\\\\nx_2=-3\\\\\n\\mu_1=1\n\\end{cases}",
     "crumbs": [
       "Нелинейное программирование",
       "<span class='chapter-number'>21</span>  <span class='chapter-title'>Условная оптимизация функции многих переменных</span>"
+    ]
+  },
+  {
+    "objectID": "graph-theory/overview.html",
+    "href": "graph-theory/overview.html",
+    "title": "Элементы теории графов",
+    "section": "",
+    "text": "Состояние разработки\n\n\n\nВ разработке",
+    "crumbs": [
+      "Элементы теории графов"
+    ]
+  },
+  {
+    "objectID": "graph-theory/dijkstra.html",
+    "href": "graph-theory/dijkstra.html",
+    "title": "22  Алгоритм дейкстры",
+    "section": "",
+    "text": "Состояние разработки\n\n\n\nВ разработке",
+    "crumbs": [
+      "Элементы теории графов",
+      "<span class='chapter-number'>22</span>  <span class='chapter-title'>Алгоритм дейкстры</span>"
     ]
   },
   {
@@ -901,73 +944,40 @@
     "href": "lab1/intro.html",
     "title": "24  Лабораторная работа 1. Введение",
     "section": "",
-    "text": "24.1 Пример",
+    "text": "24.1 Теория\nУстановить среду разработки\nСделать то то и то, посмотреть то то и то",
     "crumbs": [
       "Лабораторные работы",
       "<span class='chapter-number'>24</span>  <span class='chapter-title'>Лабораторная работа 1. Введение</span>"
     ]
   },
   {
-    "objectID": "lab1/intro.html#пример",
-    "href": "lab1/intro.html#пример",
+    "objectID": "lab1/intro.html#sec-lab1-instructions",
+    "href": "lab1/intro.html#sec-lab1-instructions",
     "title": "24  Лабораторная работа 1. Введение",
     "section": "",
-    "text": "24.1.1 Задача\nЧтобы попасть из пункта А (остановка автобуса) в пункт В (лодочная станция) человек должен пройти сначала по асфальтовой дороге шириной \\(S\\), а затем по песчаному пляжу шириной \\(s\\). Скорость передвижения по асфальту \\(V\\) , скорость передвижения по песку \\(v\\). Спрашивается, в каком месте нужно свернуть с асфальтовой дороги, чтобы затратить меньше времени на путь.\n\n\n24.1.2 Решение\nРешим задачу с конкретными значениями, в виду сложности аналитического решения (сводится к уравнению 4 степени): \\(D = 100\\), \\(S = 40\\), \\(V = 5\\), \\(s = 60\\), \\(v = 3\\)\n\n\n\n\n\n\nКритерий оптимальности задается функцией \\(t(x)\\), которую надо минимизировать, изменяя варьируемый параметр \\(х\\). Остальные параметры задачи \\((v,V,D,s,S)\\) являются фиксированными. \\[t(x) = \\frac{\\sqrt{x^2+S^2}}{V} + \\frac{\\sqrt{(D-x)^2+s^2}}{v}\\] \\[\\begin{cases}\n      \\min{t(x)} - ?\\\\\n      \\frac{dt}{dx}=0\\\\\n      \\frac{d^2t}{dx^2}&gt;0\n\\end{cases}\\,\\] \\[t'(x)=\\frac{x}{V \\sqrt{S^2+x^2}}-\\frac{d-x}{v \\sqrt{(d-x)^2+s^2}}\\]\nГрафик целевой функции \\(t(x)\\)\n\n\n\n\n\n\nГрафик производной целевой функции \\(t'(x)\\)\n\n\n\n\n\n\nСледовательно оптимальное значение пути, пройденного по дороге \\(x = 65.64\\)",
+    "text": "Состояние разработки\n\n\n\nТребуется доработка\n\n\n\n\n\nПример 24.1 Чтобы попасть из пункта А (остановка автобуса) в пункт В (лодочная станция) человек должен пройти сначала по асфальтовой дороге шириной \\(S\\), а затем по песчаному пляжу шириной \\(s\\). Скорость передвижения по асфальту \\(V\\) , скорость передвижения по песку \\(v\\). Спрашивается, в каком месте нужно свернуть с асфальтовой дороги, чтобы затратить меньше времени на путь.\n\n\nРешение 24.1. Решим задачу с конкретными значениями, в виду сложности аналитического решения (сводится к уравнению 4 степени): \\(D = 100\\), \\(S = 40\\), \\(V = 5\\), \\(s = 60\\), \\(v = 3\\)\n\n\n\n\n\n\nКритерий оптимальности задается функцией \\(t(x)\\), которую надо минимизировать, изменяя варьируемый параметр \\(х\\). Остальные параметры задачи \\((v,V,D,s,S)\\) являются фиксированными. \\[t(x) = \\frac{\\sqrt{x^2+S^2}}{V} + \\frac{\\sqrt{(D-x)^2+s^2}}{v}\\] \\[\\begin{cases}\n      \\min{t(x)} - ?\\\\\n      \\frac{dt}{dx}=0\\\\\n      \\frac{d^2t}{dx^2}&gt;0\n\\end{cases}\\,\\] \\[t'(x)=\\frac{x}{V \\sqrt{S^2+x^2}}-\\frac{d-x}{v \\sqrt{(d-x)^2+s^2}}\\]\nГрафик целевой функции \\(t(x)\\)\n\n\n\n\n\n\nГрафик производной целевой функции \\(t'(x)\\)\n\n\n\n\n\n\nСледовательно оптимальное значение пути, пройденного по дороге \\(x = 65.64\\)",
     "crumbs": [
       "Лабораторные работы",
       "<span class='chapter-number'>24</span>  <span class='chapter-title'>Лабораторная работа 1. Введение</span>"
     ]
   },
   {
-    "objectID": "lab1/intro.html#язык-программирования-r",
-    "href": "lab1/intro.html#язык-программирования-r",
+    "objectID": "lab1/intro.html#sec-lab1-task",
+    "href": "lab1/intro.html#sec-lab1-task",
     "title": "24  Лабораторная работа 1. Введение",
-    "section": "24.2 Язык программирования R",
-    "text": "24.2 Язык программирования R\n\n24.2.1 Задача 1\nУпростите выражение:\nc(sqrt(1), sqrt(2), sqrt(3))\nСоздайте последовательность 2 способами (-1, -0.75, -0.5, …, 0.75, 1).\n\n\n\n\n\n\nОценка\n\n\n\n1\n\n\n\n\n24.2.2 Задача 2\nПостроить график кусочно-гладкой функции используя функцию ifelse\n\\[\nf(x)=\\begin{cases}\n      x^2,\\qquad x \\leq -3\\\\\n      x^3, \\qquad -3 \\leq x \\leq 3\\\\\n      2x+1, 3\\leq x\n\\end{cases}\\,\n\\]\n\n\n\n\n\n\nОценка\n\n\n\n1\n\n\n\n\n24.2.3 Задача 3\nС помощью ряда Лейбница можно получить значение числа \\(\\pi\\) . Данный ряд сходится очень медленно.\n\\[\n\\pi =\\sum_{i=0}^n{\\frac{(-1)^i}{2i+1}}\n\\]\nИспользовав по максимуму векторные операции рассчитайте для различных \\(n\\) от \\(n=10\\) до \\(n=10^{10}\\)\n\nчисло \\(\\pi\\) и его ошибку\nпостройте график ошибки от \\(n\\)\n\n\n\n\n\n\n\nОценка\n\n\n\n1\n\n\n\n\n24.2.4 Задача 4\nСоздать список содержащий буквы от a до z. Продемонстрировать использование операторов индексации Глава 6.4.1.\n\n\n\n\n\n\nОценка\n\n\n\n1\n\n\n\n\n24.2.5 Задача 5\nСоздать список матриц размером 2x2 заполненных случайными целыми числами. Используя циклы получите:\n\nсписок с элементов (2,2) каждой матрицы.\nвектор состоящий из элементов (1,1), (1,2) этих матриц.\n\n\n\n\n\n\n\nОценка\n\n\n\n1\n\n\n\n\n24.2.6 Задача 6\n\nсоздайте пятимерный массив и заполните его целыми числами.\nпреобразуйте его как список массивов размерности 4.\nпреобразуйте его как список списков массивов размерности 3.\n\n\n\n\n\n\n\nОценка\n\n\n\n1",
+    "section": "24.2 Задания",
+    "text": "24.2 Задания\n\n24.2.1 Язык программирования R\n\nУпражнение 24.1 Упростите выражение:\nc(sqrt(1), sqrt(2), sqrt(3))\nСоздайте последовательность 2 способами (-1, -0.75, -0.5, …, 0.75, 1).\n\n\n\n\n\n\nОценка\n\n\n\n1\n\n\n\n\nУпражнение 24.2 Построить график кусочно-гладкой функции используя функцию ifelse\n\\[\nf(x)=\\begin{cases}\n      x^2,\\qquad x \\leq -3\\\\\n      x^3, \\qquad -3 \\leq x \\leq 3\\\\\n      2x+1, 3\\leq x\n\\end{cases}\\,\n\\]\n\n\n\n\n\n\nОценка\n\n\n\n1\n\n\n\n\nУпражнение 24.3 С помощью ряда Лейбница можно получить значение числа \\(\\pi\\) . Данный ряд сходится очень медленно.\n\\[\n\\pi =\\sum_{i=0}^n{\\frac{(-1)^i}{2i+1}}\n\\]\nИспользовав по максимуму векторные операции рассчитайте для различных \\(n\\) от \\(n=10\\) до \\(n=10^{10}\\)\n\nчисло \\(\\pi\\) и его ошибку\nпостройте график ошибки от \\(n\\)\n\n\n\n\n\n\n\nОценка\n\n\n\n1\n\n\n\n\nУпражнение 24.4 Создать список содержащий буквы от a до z. Продемонстрировать использование операторов индексации Глава 6.4.1.\n\n\n\n\n\n\nОценка\n\n\n\n1\n\n\n\n\nУпражнение 24.5 Создать список матриц размером 2x2 заполненных случайными целыми числами. Используя циклы получите:\n\nсписок с элементов (2,2) каждой матрицы.\nвектор состоящий из элементов (1,1), (1,2) этих матриц.\n\n\n\n\n\n\n\nОценка\n\n\n\n1\n\n\n\n\nУпражнение 24.6  \n\nсоздайте пятимерный массив и заполните его целыми числами.\nпреобразуйте его как список массивов размерности 4.\nпреобразуйте его как список списков массивов размерности 3.\n\n\n\n\n\n\n\nОценка\n\n\n\n1\n\n\n\n\n\n24.2.2 Линейная алгебра\n\nУпражнение 24.7 Решить СЛАУ \\(AX=b\\) встроенным методом. Элементы матриц сгенерировать произвольно. solve\n\n\n\n\n\n\nОценка\n\n\n\n1\n\n\n\n\nУпражнение 24.8 Для произвольных матриц \\(A\\) и \\(B\\) заполненных случайными числами проверить следующие свойства:\n\n\\((A+B)^T=A^T+B^T\\)\n\\((AB)^T=B^TA^T\\)\n\\(\\det{A}=\\det{A^T}\\)\n\\(\\det{AB}=\\det{A}\\det{B}\\)\n\\(\\det{A^{-1}}=(\\det{A})^{-1}\\)\n\\((AB)^{-1}=B^{-1}A^{-1}\\)\n\\((A-B)^{-1}=A^{-1}+A^{-1}B(A-B)^{-1}\\)\n\nРассмотрите функции inverse, det\n\n\n\n\n\n\nОценка\n\n\n\n1\n\n\n\n\nУпражнение 24.9 Реализовать решение системы линейных уравнений методом гаусса жордана используя векторные операции.\n\n\n\n\n\n\nОценка\n\n\n\n1\n\n\n\n\n\n24.2.3 Исследование операций\n\nУпражнение 24.10  \n\nПостроить объемный и контурный графики функций \\(z = x^2 - y^2\\) и \\(z = x^2 + y^2\\).\nГрафически определить минимум.\nК какому типу относятся кривые, изображенные на контурном графике.\n\n\n\n\n\n\n\nОценка\n\n\n\n1\n\n\n\n\nУпражнение 24.11 Найти максимальную скорость тела движущегося по закону\n\\[\ns = 18t + 9t^2 - t^3\n\\]\n\nПостроить график функции и её производной.\nАналитически определить максимум функции Глава 18.\nДоказать, что данная точка является максимумом.\n\n\n\n\n\n\n\nОценка\n\n\n\n1\n\n\n\n\nУпражнение 24.12 Суточные расходы при плавании судна состоят из двух частей: постоянной, равной \\(а\\), и переменной, возрастающий пропорционально кубу скорости. При какой скорости \\(v\\) плавание судна окажется наиболее экономичным?\n\nопределите целевую функцию\nаналитически определите максимум целевой функции\nпостройте график целевой функции\n\n\n\n\n\n\n\nОценка\n\n\n\n1\n\n\n\n\nУпражнение 24.13 Имеется квадратный лист жести, сторона которого \\(а=60\\ см\\). Вырезая по всем его углам равные квадраты и загибая оставшуюся часть, нужно изготовить коробку без крышки. Каковы должны быть размеры вырезаемых квадратов, чтобы коробка имела наибольший объем?\n\n\n\nРаскройка листа жести\n\n\n\nопределите целевую функцию\nаналитически определите максимум целевой функции\nпостройте график целевой функции\n\n\n\n\n\n\n\nОценка\n\n\n\n1\n\n\n\n\n\n24.2.4 Прикладная магия\n\nУпражнение 24.14 Пусть дана функция общего вида \\(f(x,y)\\) и система уравнений \\(Ax=b\\) для двух переменных. Постройте контурный график функции, на котором изобразите точки пересечения прямых. Обработать случая параллельных прямых, совпадающих прямых.\n\n\n\n\n\n\nОценка\n\n\n\n10\nЕщё 10 баллов. Дополнительно попробуйте использовать встроенный интерфейса формулы используя переменно число аргументов для функции. Считайте символ ~ эквивалентом символу =.\nf(2*x+3*y~0, 2*x~3y+1)",
     "crumbs": [
       "Лабораторные работы",
       "<span class='chapter-number'>24</span>  <span class='chapter-title'>Лабораторная работа 1. Введение</span>"
     ]
   },
   {
-    "objectID": "lab1/intro.html#линейная-алгебра",
-    "href": "lab1/intro.html#линейная-алгебра",
+    "objectID": "lab1/intro.html#sec-lab1-scoring",
+    "href": "lab1/intro.html#sec-lab1-scoring",
     "title": "24  Лабораторная работа 1. Введение",
-    "section": "24.3 Линейная алгебра",
-    "text": "24.3 Линейная алгебра\n\n24.3.1 Задача 1\nРешить СЛАУ \\(AX=b\\) встроенным методом. Элементы матриц сгенерировать произвольно. solve\n\n\n\n\n\n\nОценка\n\n\n\n1\n\n\n\n\n24.3.2 Задача 2\nДля произвольных матриц \\(A\\) и \\(B\\) заполненных случайными числами проверить следующие свойства:\n\n\\((A+B)^T=A^T+B^T\\)\n\\((AB)^T=B^TA^T\\)\n\\(\\det{A}=\\det{A^T}\\)\n\\(\\det{AB}=\\det{A}\\det{B}\\)\n\\(\\det{A^{-1}}=(\\det{A})^{-1}\\)\n\\((AB)^{-1}=B^{-1}A^{-1}\\)\n\\((A-B)^{-1}=A^{-1}+A^{-1}B(A-B)^{-1}\\)\n\nРассмотрите функции inverse, det\n\n\n\n\n\n\nОценка\n\n\n\n1\n\n\n\n\n24.3.3 Задача 3\nРеализовать решение системы линейных уравнений методом гаусса жордана используя векторные операции.\n\n\n\n\n\n\nОценка\n\n\n\n1",
-    "crumbs": [
-      "Лабораторные работы",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Лабораторная работа 1. Введение</span>"
-    ]
-  },
-  {
-    "objectID": "lab1/intro.html#исследование-операций",
-    "href": "lab1/intro.html#исследование-операций",
-    "title": "24  Лабораторная работа 1. Введение",
-    "section": "24.4 Исследование операций",
-    "text": "24.4 Исследование операций\n\n24.4.1 Задача 1\n\nПостроить объемный и контурный графики функций \\(z = x^2 - y^2\\) и \\(z = x^2 + y^2\\).\nГрафически определить минимум.\nК какому типу относятся кривые, изображенные на контурном графике.\n\n\n\n\n\n\n\nОценка\n\n\n\n1\n\n\n\n\n24.4.2 Задача 2\nНайти максимальную скорость тела движущегося по закону\n\\[\ns = 18t + 9t^2 - t^3\n\\]\n\nПостроить график функции и её производной.\nАналитически определить максимум функции Глава 18.\nДоказать, что данная точка является максимумом.\n\n\n\n\n\n\n\nОценка\n\n\n\n1\n\n\n\n\n24.4.3 Задача 3\nСуточные расходы при плавании судна состоят из двух частей: постоянной, равной \\(а\\), и переменной, возрастающий пропорционально кубу скорости. При какой скорости \\(v\\) плавание судна окажется наиболее экономичным?\n\nопределите целевую функцию\nаналитически определите максимум целевой функции\nпостройте график целевой функции\n\n\n\n\n\n\n\nОценка\n\n\n\n1\n\n\n\n\n24.4.4 Задача 4\nИмеется квадратный лист жести, сторона которого \\(а=60\\ см\\). Вырезая по всем его углам равные квадраты и загибая оставшуюся часть, нужно изготовить коробку без крышки. Каковы должны быть размеры вырезаемых квадратов, чтобы коробка имела наибольший объем?\n\n\n\nРаскройка листа жести\n\n\n\nопределите целевую функцию\nаналитически определите максимум целевой функции\nпостройте график целевой функции\n\n\n\n\n\n\n\nОценка\n\n\n\n1",
-    "crumbs": [
-      "Лабораторные работы",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Лабораторная работа 1. Введение</span>"
-    ]
-  },
-  {
-    "objectID": "lab1/intro.html#прикладная-магия",
-    "href": "lab1/intro.html#прикладная-магия",
-    "title": "24  Лабораторная работа 1. Введение",
-    "section": "24.5 Прикладная магия",
-    "text": "24.5 Прикладная магия\nПусть дана функция общего вида \\(f(x,y)\\) и система уравнений \\(Ax=b\\) для двух переменных. Постройте контурный график функции, на котором изобразите точки пересечения прямых. Обработать случая параллельных прямых, совпадающих прямых.\n\n\n\n\n\n\nОценка\n\n\n\n10\nЕщё 10 баллов. Дополнительно попробуйте использовать встроенный интерфейса формулы используя переменно число аргументов для функции. Считайте символ ~ эквивалентом символу =.\nf(2*x+3*y~0, 2*x~3y+1)",
-    "crumbs": [
-      "Лабораторные работы",
-      "<span class='chapter-number'>24</span>  <span class='chapter-title'>Лабораторная работа 1. Введение</span>"
-    ]
-  },
-  {
-    "objectID": "lab1/intro.html#разбалловка",
-    "href": "lab1/intro.html#разбалловка",
-    "title": "24  Лабораторная работа 1. Введение",
-    "section": "24.6 Разбалловка",
-    "text": "24.6 Разбалловка\n\nРазбалловка\n\n\nПервичный балл\nИтоговый балл\n\n\n\n\n0 – 10\nНе сдано\n\n\n11 – 12\n4\n\n\n12 – 15",
+    "section": "24.3 Разбалловка",
+    "text": "24.3 Разбалловка\n\nРазбалловка\n\n\nПервичный балл\nИтоговый балл\n\n\n\n\n0 – 10\nНе сдано\n\n\n11 – 12\n4\n\n\n12 – 15",
     "crumbs": [
       "Лабораторные работы",
       "<span class='chapter-number'>24</span>  <span class='chapter-title'>Лабораторная работа 1. Введение</span>"
@@ -1007,8 +1017,8 @@
     ]
   },
   {
-    "objectID": "r-tools/basic.html#конвейеризация-вычислений",
-    "href": "r-tools/basic.html#конвейеризация-вычислений",
+    "objectID": "r-tools/basic.html#sec-r-tools-basic-pipe",
+    "href": "r-tools/basic.html#sec-r-tools-basic-pipe",
     "title": "Приложение A — Методы встроенных пакетов",
     "section": "A.2 Конвейеризация вычислений |>",
     "text": "A.2 Конвейеризация вычислений |&gt;",
@@ -1043,11 +1053,11 @@
     ]
   },
   {
-    "objectID": "r-tools/plotly.html#установка",
-    "href": "r-tools/plotly.html#установка",
+    "objectID": "r-tools/plotly.html#sec-r-tools-plotly-install",
+    "href": "r-tools/plotly.html#sec-r-tools-plotly-install",
     "title": "Приложение C — Графическая библиотека plotly",
     "section": "",
-    "text": "install.packages('plotly')",
+    "text": "install.packages('plotly')\n\n\n\n\n\n\nСовет\n\n\n\nЕсли график строится успешно, то рекомендуется игнорировать сообщения и предупреждения с помощью message и warning\n```{r}\n#| warning: false\n#| message: false\n```",
     "crumbs": [
       "Приложения",
       "Язык программирования R",
@@ -1055,11 +1065,11 @@
     ]
   },
   {
-    "objectID": "r-tools/plotly.html#наиболее-распространенные-примитивы",
-    "href": "r-tools/plotly.html#наиболее-распространенные-примитивы",
+    "objectID": "r-tools/plotly.html#sec-r-tools-plotly-line2d",
+    "href": "r-tools/plotly.html#sec-r-tools-plotly-line2d",
     "title": "Приложение C — Графическая библиотека plotly",
-    "section": "C.2 Наиболее распространенные примитивы",
-    "text": "C.2 Наиболее распространенные примитивы\n\n\n\n\n\n\nСовет\n\n\n\nЕсли график строится успешно, то рекомендуется игнорировать сообщения и предупреждения с помощью message и warning\n```{r}\n#| warning: false\n#| message: false\n```\n\n\n\nC.2.1 2D График\nРассказать про два варианта либо полного задания функции и построения ряда точек. Либо про задание формулой и кросс ссылка на продвинутый R.\n\nlibrary(plotly)\nx &lt;- seq(0, 2*pi, length.out=100)\ny &lt;- sin(x)\nplot_ly(x=x, y=~sin(x), type = 'scatter', mode = 'lines')\n\n\n\n\n\n\n\nC.2.2 3D Поверхность\nДля построения объемного графика требуется построить матрицу значений функции с помощью функции outer. Сказать про отсчёты, что можно и сократить, но тогда теряется масштаб по осям.\n\nx &lt;- y &lt;- seq(0, pi/2, length.out = 100)\nz &lt;- outer(x, y, \\(x,y) { sin(x*y) })  |&gt; t()\nplot_ly(x=x, y=y, z = z, type = \"surface\")\n\n\n\n\n\n\n\nC.2.3 2D Контурный график\nКонтурный график. Больше объяснений и примеров\n\nx &lt;- y &lt;- seq(0, pi/2, length.out = 100)\nz &lt;- outer(x, y, \\(x,y) { sin(x*y) })  |&gt; t()\nplot_ly(x=x, y=y, z=z, type=\"contour\")\n\n\n\n\n\n\n\nC.2.4 3D График плотности срезов",
+    "section": "C.2 2D График",
+    "text": "C.2 2D График\nРассказать про два варианта либо полного задания функции и построения ряда точек. Либо про задание формулой и кросс ссылка на продвинутый R.\n\nlibrary(plotly)\nx &lt;- seq(0, 2*pi, length.out=100)\ny &lt;- sin(x)\nplot_ly(x=x, y=~sin(x), type = 'scatter', mode = 'lines')",
     "crumbs": [
       "Приложения",
       "Язык программирования R",
@@ -1067,11 +1077,47 @@
     ]
   },
   {
-    "objectID": "r-tools/plotly.html#дополнительные-возможности",
-    "href": "r-tools/plotly.html#дополнительные-возможности",
+    "objectID": "r-tools/plotly.html#sec-r-tools-plotly-surface3d",
+    "href": "r-tools/plotly.html#sec-r-tools-plotly-surface3d",
     "title": "Приложение C — Графическая библиотека plotly",
-    "section": "C.3 Дополнительные возможности",
-    "text": "C.3 Дополнительные возможности",
+    "section": "C.3 3D Поверхность",
+    "text": "C.3 3D Поверхность\nДля построения объемного графика требуется построить матрицу значений функции с помощью функции outer. Сказать про отсчёты, что можно и сократить, но тогда теряется масштаб по осям.\n\nx &lt;- y &lt;- seq(0, pi/2, length.out = 100)\nz &lt;- outer(x, y, \\(x,y) { sin(x*y) })  |&gt; t()\nplot_ly(x=x, y=y, z = z, type = \"surface\")",
+    "crumbs": [
+      "Приложения",
+      "Язык программирования R",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Графическая библиотека plotly</span>"
+    ]
+  },
+  {
+    "objectID": "r-tools/plotly.html#sec-r-tools-plotly-contour2d",
+    "href": "r-tools/plotly.html#sec-r-tools-plotly-contour2d",
+    "title": "Приложение C — Графическая библиотека plotly",
+    "section": "C.4 2D Контурный график",
+    "text": "C.4 2D Контурный график\nКонтурный график. Больше объяснений и примеров\n\nx &lt;- y &lt;- seq(0, pi/2, length.out = 100)\nz &lt;- outer(x, y, \\(x,y) { sin(x*y) })  |&gt; t()\nplot_ly(x=x, y=y, z=z, type=\"contour\")",
+    "crumbs": [
+      "Приложения",
+      "Язык программирования R",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Графическая библиотека plotly</span>"
+    ]
+  },
+  {
+    "objectID": "r-tools/plotly.html#sec-r-tools-plotly-slice3d",
+    "href": "r-tools/plotly.html#sec-r-tools-plotly-slice3d",
+    "title": "Приложение C — Графическая библиотека plotly",
+    "section": "C.5 3D График плотности срезов",
+    "text": "C.5 3D График плотности срезов",
+    "crumbs": [
+      "Приложения",
+      "Язык программирования R",
+      "<span class='chapter-number'>C</span>  <span class='chapter-title'>Графическая библиотека plotly</span>"
+    ]
+  },
+  {
+    "objectID": "r-tools/plotly.html#sec-r-tools-plotly-extra",
+    "href": "r-tools/plotly.html#sec-r-tools-plotly-extra",
+    "title": "Приложение C — Графическая библиотека plotly",
+    "section": "C.6 Дополнительные возможности",
+    "text": "C.6 Дополнительные возможности",
     "crumbs": [
       "Приложения",
       "Язык программирования R",
@@ -1091,8 +1137,8 @@
     ]
   },
   {
-    "objectID": "r-tools/ggplot2.html#установка",
-    "href": "r-tools/ggplot2.html#установка",
+    "objectID": "r-tools/ggplot2.html#sec-r-tools-ggplo2-install",
+    "href": "r-tools/ggplot2.html#sec-r-tools-ggplo2-install",
     "title": "Приложение D — Графическая библиотека ggplot2",
     "section": "",
     "text": "install.packages('ggplot2')",
@@ -1103,11 +1149,11 @@
     ]
   },
   {
-    "objectID": "r-tools/ggplot2.html#наиболее-распространенные-примитивы",
-    "href": "r-tools/ggplot2.html#наиболее-распространенные-примитивы",
+    "objectID": "r-tools/ggplot2.html#sec-r-tools-ggplo2-line2d",
+    "href": "r-tools/ggplot2.html#sec-r-tools-ggplo2-line2d",
     "title": "Приложение D — Графическая библиотека ggplot2",
-    "section": "D.2 Наиболее распространенные примитивы",
-    "text": "D.2 Наиболее распространенные примитивы\n\nD.2.1 2D График\ngrrgrrtrtrt\nЧтобы добавить прямую\n\n\nD.2.2 3D Поверхность\nалвпаолоопалп\nouter\n\n\nD.2.3 2D Контурный график",
+    "section": "D.2 2D График",
+    "text": "D.2 2D График\ngrrgrrtrtrt\nЧтобы добавить прямую",
     "crumbs": [
       "Приложения",
       "Язык программирования R",
@@ -1115,11 +1161,35 @@
     ]
   },
   {
-    "objectID": "r-tools/ggplot2.html#дополнительные-возможности",
-    "href": "r-tools/ggplot2.html#дополнительные-возможности",
+    "objectID": "r-tools/ggplot2.html#sec-r-tools-ggplo2-surface3d",
+    "href": "r-tools/ggplot2.html#sec-r-tools-ggplo2-surface3d",
     "title": "Приложение D — Графическая библиотека ggplot2",
-    "section": "D.3 Дополнительные возможности",
-    "text": "D.3 Дополнительные возможности",
+    "section": "D.3 3D Поверхность",
+    "text": "D.3 3D Поверхность\nалвпаолоопалп\nouter",
+    "crumbs": [
+      "Приложения",
+      "Язык программирования R",
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Графическая библиотека ggplot2</span>"
+    ]
+  },
+  {
+    "objectID": "r-tools/ggplot2.html#sec-r-tools-ggplo2-contour2d",
+    "href": "r-tools/ggplot2.html#sec-r-tools-ggplo2-contour2d",
+    "title": "Приложение D — Графическая библиотека ggplot2",
+    "section": "D.4 2D Контурный график",
+    "text": "D.4 2D Контурный график",
+    "crumbs": [
+      "Приложения",
+      "Язык программирования R",
+      "<span class='chapter-number'>D</span>  <span class='chapter-title'>Графическая библиотека ggplot2</span>"
+    ]
+  },
+  {
+    "objectID": "r-tools/ggplot2.html#sec-r-tools-ggplo2-extra",
+    "href": "r-tools/ggplot2.html#sec-r-tools-ggplo2-extra",
+    "title": "Приложение D — Графическая библиотека ggplot2",
+    "section": "D.5 Дополнительные возможности",
+    "text": "D.5 Дополнительные возможности",
     "crumbs": [
       "Приложения",
       "Язык программирования R",

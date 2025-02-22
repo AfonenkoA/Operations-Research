@@ -317,7 +317,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../linear/integer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Целочисленное программирование. Метод ветвей и границ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Целочисленное программирование.</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -500,14 +500,15 @@ window.Quarto = {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#стрелки" id="toc-стрелки" class="nav-link active" data-scroll-target="#стрелки"><span class="header-section-number">5.1</span> Стрелки</a></li>
-  <li><a href="#бинарные-операторы-и-символы-отношения" id="toc-бинарные-операторы-и-символы-отношения" class="nav-link" data-scroll-target="#бинарные-операторы-и-символы-отношения"><span class="header-section-number">5.2</span> Бинарные операторы и символы отношения</a></li>
-  <li><a href="#прочие-символы" id="toc-прочие-символы" class="nav-link" data-scroll-target="#прочие-символы"><span class="header-section-number">5.3</span> Прочие символы</a></li>
-  <li><a href="#выделяемые-функции" id="toc-выделяемые-функции" class="nav-link" data-scroll-target="#выделяемые-функции"><span class="header-section-number">5.4</span> Выделяемые функции</a></li>
-  <li><a href="#скобки" id="toc-скобки" class="nav-link" data-scroll-target="#скобки"><span class="header-section-number">5.5</span> Скобки</a></li>
-  <li><a href="#матрицы" id="toc-матрицы" class="nav-link" data-scroll-target="#матрицы"><span class="header-section-number">5.6</span> Матрицы</a></li>
-  <li><a href="#большие-операторы" id="toc-большие-операторы" class="nav-link" data-scroll-target="#большие-операторы"><span class="header-section-number">5.7</span> Большие операторы</a></li>
-  <li><a href="#примеры" id="toc-примеры" class="nav-link" data-scroll-target="#примеры"><span class="header-section-number">5.8</span> Примеры</a></li>
+  <li><a href="#sec-latex-greek-letters" id="toc-sec-latex-greek-letters" class="nav-link active" data-scroll-target="#sec-latex-greek-letters"><span class="header-section-number">5.1</span> Греческие буквы</a></li>
+  <li><a href="#sec-latex-other-symbols" id="toc-sec-latex-other-symbols" class="nav-link" data-scroll-target="#sec-latex-other-symbols"><span class="header-section-number">5.2</span> Прочие символы</a></li>
+  <li><a href="#sec-latex-arrows" id="toc-sec-latex-arrows" class="nav-link" data-scroll-target="#sec-latex-arrows"><span class="header-section-number">5.3</span> Стрелки</a></li>
+  <li><a href="#sec-latex-operators" id="toc-sec-latex-operators" class="nav-link" data-scroll-target="#sec-latex-operators"><span class="header-section-number">5.4</span> Бинарные операторы и символы отношения</a></li>
+  <li><a href="#sec-latex-functions" id="toc-sec-latex-functions" class="nav-link" data-scroll-target="#sec-latex-functions"><span class="header-section-number">5.5</span> Выделяемые функции</a></li>
+  <li><a href="#скобки" id="toc-скобки" class="nav-link" data-scroll-target="#скобки"><span class="header-section-number">5.6</span> Скобки</a></li>
+  <li><a href="#sec-latex-matrix" id="toc-sec-latex-matrix" class="nav-link" data-scroll-target="#sec-latex-matrix"><span class="header-section-number">5.7</span> Матрицы</a></li>
+  <li><a href="#sec-latex-big-operators" id="toc-sec-latex-big-operators" class="nav-link" data-scroll-target="#sec-latex-big-operators"><span class="header-section-number">5.8</span> Большие операторы</a></li>
+  <li><a href="#sec-latex-examples" id="toc-sec-latex-examples" class="nav-link" data-scroll-target="#sec-latex-examples"><span class="header-section-number">5.9</span> Примеры</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li></ul></div></nav>
     </div>
@@ -516,7 +517,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../enviroment/overview.html">Среда разработки</a></li><li class="breadcrumb-item"><a href="../enviroment/latex.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Язык разметки LaTeX</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Язык разметки LaTeX</span></h1>
+<h1 class="title"><span id="sec-latex" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Язык разметки LaTeX</span></span></h1>
 </div>
 
 
@@ -534,7 +535,7 @@ window.Quarto = {
 
 
 <p>Для оформления уравнений и формул в рабочих блокнотах Quarto используется общепринятый стандарт разметки математических выражений LaTeX.</p>
-<p><span class="citation" data-cites="overleaf">[<a href="../references.html#ref-overleaf" role="doc-biblioref">1</a>]</span> <span class="citation" data-cites="equationsheet">[<a href="../references.html#ref-equationsheet" role="doc-biblioref">2</a>]</span></p>
+<p><span class="citation" data-cites="bib-latex-overleaf">[<a href="../references.html#ref-bib-latex-overleaf" role="doc-biblioref">1</a>]</span> <span class="citation" data-cites="bib-latex-equationsheet">[<a href="../references.html#ref-bib-latex-equationsheet" role="doc-biblioref">2</a>]</span></p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 34%">
@@ -560,8 +561,15 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
+<section id="sec-latex-greek-letters" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="sec-latex-greek-letters"><span class="header-section-number">5.1</span> Греческие буквы</h2>
+<div id="tbl-latex-greek-letters" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-latex-greek-letters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;5.1: Греческие символы
+</figcaption>
+<div aria-describedby="tbl-latex-greek-letters-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
-<caption>Греческие символы</caption>
 <colgroup>
 <col style="width: 16%">
 <col style="width: 13%">
@@ -775,8 +783,19 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-latex-other-symbols" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="sec-latex-other-symbols"><span class="header-section-number">5.2</span> Прочие символы</h2>
+<div id="tbl-latex-other-symbols" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-latex-other-symbols-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;5.2: Прочие символы
+</figcaption>
+<div aria-describedby="tbl-latex-other-symbols-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
-<caption>Прочие символы</caption>
 <colgroup>
 <col style="width: 23%">
 <col style="width: 23%">
@@ -840,10 +859,19 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<section id="стрелки" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="стрелки"><span class="header-section-number">5.1</span> Стрелки</h2>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-latex-arrows" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="sec-latex-arrows"><span class="header-section-number">5.3</span> Стрелки</h2>
+<div id="tbl-latex-arrows" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-latex-arrows-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;5.3: Стрелки
+</figcaption>
+<div aria-describedby="tbl-latex-arrows-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
-<caption>Стрелки</caption>
 <colgroup>
 <col style="width: 23%">
 <col style="width: 23%">
@@ -919,14 +947,22 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 </section>
-<section id="бинарные-операторы-и-символы-отношения" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="бинарные-операторы-и-символы-отношения"><span class="header-section-number">5.2</span> Бинарные операторы и символы отношения</h2>
+<section id="sec-latex-operators" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="sec-latex-operators"><span class="header-section-number">5.4</span> Бинарные операторы и символы отношения</h2>
+<div id="tbl-latex-operators" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-latex-operators-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;5.4: Операторы
+</figcaption>
+<div aria-describedby="tbl-latex-operators-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
-<caption>Операторы</caption>
 <colgroup>
 <col style="width: 20%">
-<col style="width: 15%">
+<col style="width: 19%">
 <col style="width: 20%">
 <col style="width: 19%">
 </colgroup>
@@ -999,14 +1035,19 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 </section>
-<section id="прочие-символы" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="прочие-символы"><span class="header-section-number">5.3</span> Прочие символы</h2>
-</section>
-<section id="выделяемые-функции" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="выделяемые-функции"><span class="header-section-number">5.4</span> Выделяемые функции</h2>
+<section id="sec-latex-functions" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="sec-latex-functions"><span class="header-section-number">5.5</span> Выделяемые функции</h2>
+<div id="tbl-latex-functions" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-latex-functions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;5.5: Функции
+</figcaption>
+<div aria-describedby="tbl-latex-functions-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
-<caption>Функции</caption>
 <colgroup>
 <col style="width: 27%">
 <col style="width: 47%">
@@ -1075,14 +1116,107 @@ A(n) \in
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 </section>
-<section id="скобки" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="скобки"><span class="header-section-number">5.5</span> Скобки</h2>
-</section>
-<section id="матрицы" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="матрицы"><span class="header-section-number">5.6</span> Матрицы</h2>
+<section id="скобки" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="скобки"><span class="header-section-number">5.6</span> Скобки</h2>
+<div id="tbl-latex-brackets" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-latex-brackets-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;5.6: Скобки
+</figcaption>
+<div aria-describedby="tbl-latex-brackets-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
-<caption>Матрицы</caption>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 32%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Тип</th>
+<th>LaTeX</th>
+<th style="text-align: center;">Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Круглые скобки</td>
+<td><div class="sourceCode" id="cb128"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a>$(x+y)$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td style="text-align: center;"><span class="math inline">\((x+y)\)</span></td>
+</tr>
+<tr class="even">
+<td>Квадратные скобки</td>
+<td><div class="sourceCode" id="cb129"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a>$<span class="co">[</span><span class="ot">x+y</span><span class="co">]</span>$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td style="text-align: center;"><span class="math inline">\([x+y]\)</span></td>
+</tr>
+<tr class="odd">
+<td>Фигурные скобки</td>
+<td><div class="sourceCode" id="cb130"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a>$<span class="sc">\{</span>x+y<span class="sc">\}</span>$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td style="text-align: center;"><span class="math inline">\(\{x+y\}\)</span></td>
+</tr>
+<tr class="even">
+<td>Угловые скобки</td>
+<td><div class="sourceCode" id="cb131"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a>$\langle x+y \rangle$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td style="text-align: center;"><span class="math inline">\(\langle x+y \rangle\)</span></td>
+</tr>
+<tr class="odd">
+<td>Вертикальные черты</td>
+<td><div class="sourceCode" id="cb132"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a>$|x+y|$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td style="text-align: center;"><span class="math inline">\(|x+y|\)</span></td>
+</tr>
+<tr class="even">
+<td>Двойные вертикальные черты</td>
+<td><div class="sourceCode" id="cb133"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a>$<span class="sc">\|</span>x+y<span class="sc">\|</span>$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td style="text-align: center;"><span class="math inline">\(\|x+y\|\)</span></td>
+</tr>
+<tr class="odd">
+<td>Большие круглые левые скобки</td>
+<td><div class="sourceCode" id="cb134"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a>$\big( \Big( \bigg( \Bigg($</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td style="text-align: center;"><span class="math inline">\(\big( \Big( \bigg( \Bigg(\)</span></td>
+</tr>
+<tr class="even">
+<td>Большие круглые правые скобки</td>
+<td><div class="sourceCode" id="cb135"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a>$\big) \Big) \bigg) \Bigg)$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td style="text-align: center;"><span class="math inline">\(\big) \Big) \bigg) \Bigg)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Большие квадратные левые скобки</td>
+<td><div class="sourceCode" id="cb136"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a>$\big[ \Big[ \bigg[ \Bigg[$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td style="text-align: center;"><span class="math inline">\(\big[ \Big[ \bigg[ \Bigg[\)</span></td>
+</tr>
+<tr class="even">
+<td>Большие квадратные правые скобки</td>
+<td><div class="sourceCode" id="cb137"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a>$\big] \Big] \bigg] \Bigg]$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td style="text-align: center;"><span class="math inline">\(\big] \Big] \bigg] \Bigg]\)</span></td>
+</tr>
+<tr class="odd">
+<td>Большие фигурные левые скобки</td>
+<td><div class="sourceCode" id="cb138"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a>$\big<span class="sc">\{</span> \Big<span class="sc">\{</span> \bigg<span class="sc">\{</span> \Bigg<span class="sc">\{</span>$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td style="text-align: center;"><span class="math inline">\(\big\{ \Big\{ \bigg\{ \Bigg\{\)</span></td>
+</tr>
+<tr class="even">
+<td>Большие фигурные правые скобки</td>
+<td><div class="sourceCode" id="cb139"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a>$\big<span class="sc">\}</span> \Big<span class="sc">\}</span> \bigg<span class="sc">\}</span> \Bigg<span class="sc">\}</span>$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td style="text-align: center;"><span class="math inline">\(\bigl\} \Big\} \bigg\} \Bigg\}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+</section>
+<section id="sec-latex-matrix" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="sec-latex-matrix"><span class="header-section-number">5.7</span> Матрицы</h2>
+<div id="tbl-latex-matrix" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-latex-matrix-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;5.7: Матрицы
+</figcaption>
+<div aria-describedby="tbl-latex-matrix-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 19%">
 <col style="width: 40%">
@@ -1098,13 +1232,13 @@ A(n) \in
 <tbody>
 <tr class="odd">
 <td>Обычная</td>
-<td><div class="sourceCode" id="cb128"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb128-2"><a href="#cb128-2" aria-hidden="true" tabindex="-1"></a>\begin{matrix}</span>
-<span id="cb128-3"><a href="#cb128-3" aria-hidden="true" tabindex="-1"></a>1 &amp; 2 &amp; 3 <span class="sc">\\</span></span>
-<span id="cb128-4"><a href="#cb128-4" aria-hidden="true" tabindex="-1"></a>4 &amp; 5 &amp; 6 <span class="sc">\\</span></span>
-<span id="cb128-5"><a href="#cb128-5" aria-hidden="true" tabindex="-1"></a>7 &amp; 8 &amp; 9</span>
-<span id="cb128-6"><a href="#cb128-6" aria-hidden="true" tabindex="-1"></a>\end{matrix}</span>
-<span id="cb128-7"><a href="#cb128-7" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb140"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb140-2"><a href="#cb140-2" aria-hidden="true" tabindex="-1"></a>\begin{matrix}</span>
+<span id="cb140-3"><a href="#cb140-3" aria-hidden="true" tabindex="-1"></a>1 &amp; 2 &amp; 3 <span class="sc">\\</span></span>
+<span id="cb140-4"><a href="#cb140-4" aria-hidden="true" tabindex="-1"></a>4 &amp; 5 &amp; 6 <span class="sc">\\</span></span>
+<span id="cb140-5"><a href="#cb140-5" aria-hidden="true" tabindex="-1"></a>7 &amp; 8 &amp; 9</span>
+<span id="cb140-6"><a href="#cb140-6" aria-hidden="true" tabindex="-1"></a>\end{matrix}</span>
+<span id="cb140-7"><a href="#cb140-7" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><span class="math display">\[
 \begin{matrix}
 1 &amp; 2 &amp; 3 \\
@@ -1115,13 +1249,13 @@ A(n) \in
 </tr>
 <tr class="even">
 <td>Квадратные скобки</td>
-<td><div class="sourceCode" id="cb129"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a>$$ M =</span>
-<span id="cb129-2"><a href="#cb129-2" aria-hidden="true" tabindex="-1"></a>\begin{bmatrix}</span>
-<span id="cb129-3"><a href="#cb129-3" aria-hidden="true" tabindex="-1"></a>\frac{5}{6} &amp; \frac{1}{6} &amp; 0 <span class="sc">\\</span></span>
-<span id="cb129-4"><a href="#cb129-4" aria-hidden="true" tabindex="-1"></a>\frac{5}{6} &amp; 0 &amp; \frac{1}{6} <span class="sc">\\</span></span>
-<span id="cb129-5"><a href="#cb129-5" aria-hidden="true" tabindex="-1"></a>0 &amp; \frac{5}{6} &amp; \frac{1}{6}</span>
-<span id="cb129-6"><a href="#cb129-6" aria-hidden="true" tabindex="-1"></a>\end{bmatrix}</span>
-<span id="cb129-7"><a href="#cb129-7" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb141"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a>$$ M =</span>
+<span id="cb141-2"><a href="#cb141-2" aria-hidden="true" tabindex="-1"></a>\begin{bmatrix}</span>
+<span id="cb141-3"><a href="#cb141-3" aria-hidden="true" tabindex="-1"></a>\frac{5}{6} &amp; \frac{1}{6} &amp; 0 <span class="sc">\\</span></span>
+<span id="cb141-4"><a href="#cb141-4" aria-hidden="true" tabindex="-1"></a>\frac{5}{6} &amp; 0 &amp; \frac{1}{6} <span class="sc">\\</span></span>
+<span id="cb141-5"><a href="#cb141-5" aria-hidden="true" tabindex="-1"></a>0 &amp; \frac{5}{6} &amp; \frac{1}{6}</span>
+<span id="cb141-6"><a href="#cb141-6" aria-hidden="true" tabindex="-1"></a>\end{bmatrix}</span>
+<span id="cb141-7"><a href="#cb141-7" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><span class="math display">\[ M =
 \begin{bmatrix}
 \frac{5}{6} &amp; \frac{1}{6} &amp; 0 \\
@@ -1132,17 +1266,17 @@ A(n) \in
 </tr>
 <tr class="odd">
 <td>Выражение</td>
-<td><div class="sourceCode" id="cb130"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb130-2"><a href="#cb130-2" aria-hidden="true" tabindex="-1"></a>M =</span>
-<span id="cb130-3"><a href="#cb130-3" aria-hidden="true" tabindex="-1"></a>\begin{bmatrix}</span>
-<span id="cb130-4"><a href="#cb130-4" aria-hidden="true" tabindex="-1"></a>1 &amp; 0 <span class="sc">\\</span></span>
-<span id="cb130-5"><a href="#cb130-5" aria-hidden="true" tabindex="-1"></a>0 &amp; 1</span>
-<span id="cb130-6"><a href="#cb130-6" aria-hidden="true" tabindex="-1"></a>\end{bmatrix}</span>
-<span id="cb130-7"><a href="#cb130-7" aria-hidden="true" tabindex="-1"></a>\begin{bmatrix}</span>
-<span id="cb130-8"><a href="#cb130-8" aria-hidden="true" tabindex="-1"></a>1 &amp; 0 <span class="sc">\\</span></span>
-<span id="cb130-9"><a href="#cb130-9" aria-hidden="true" tabindex="-1"></a>0 &amp; 1</span>
-<span id="cb130-10"><a href="#cb130-10" aria-hidden="true" tabindex="-1"></a>\end{bmatrix}</span>
-<span id="cb130-11"><a href="#cb130-11" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb142"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb142-1"><a href="#cb142-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb142-2"><a href="#cb142-2" aria-hidden="true" tabindex="-1"></a>M =</span>
+<span id="cb142-3"><a href="#cb142-3" aria-hidden="true" tabindex="-1"></a>\begin{bmatrix}</span>
+<span id="cb142-4"><a href="#cb142-4" aria-hidden="true" tabindex="-1"></a>1 &amp; 0 <span class="sc">\\</span></span>
+<span id="cb142-5"><a href="#cb142-5" aria-hidden="true" tabindex="-1"></a>0 &amp; 1</span>
+<span id="cb142-6"><a href="#cb142-6" aria-hidden="true" tabindex="-1"></a>\end{bmatrix}</span>
+<span id="cb142-7"><a href="#cb142-7" aria-hidden="true" tabindex="-1"></a>\begin{bmatrix}</span>
+<span id="cb142-8"><a href="#cb142-8" aria-hidden="true" tabindex="-1"></a>1 &amp; 0 <span class="sc">\\</span></span>
+<span id="cb142-9"><a href="#cb142-9" aria-hidden="true" tabindex="-1"></a>0 &amp; 1</span>
+<span id="cb142-10"><a href="#cb142-10" aria-hidden="true" tabindex="-1"></a>\end{bmatrix}</span>
+<span id="cb142-11"><a href="#cb142-11" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><span class="math display">\[
 M =
 \begin{bmatrix}
@@ -1157,17 +1291,17 @@ M =
 </tr>
 <tr class="even">
 <td>Круглые скобки</td>
-<td><div class="sourceCode" id="cb131"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb131-2"><a href="#cb131-2" aria-hidden="true" tabindex="-1"></a>M =</span>
-<span id="cb131-3"><a href="#cb131-3" aria-hidden="true" tabindex="-1"></a>\begin{pmatrix}</span>
-<span id="cb131-4"><a href="#cb131-4" aria-hidden="true" tabindex="-1"></a>1 &amp; 0 <span class="sc">\\</span></span>
-<span id="cb131-5"><a href="#cb131-5" aria-hidden="true" tabindex="-1"></a>0 &amp; 1</span>
-<span id="cb131-6"><a href="#cb131-6" aria-hidden="true" tabindex="-1"></a>\end{pmatrix}</span>
-<span id="cb131-7"><a href="#cb131-7" aria-hidden="true" tabindex="-1"></a>\begin{pmatrix}</span>
-<span id="cb131-8"><a href="#cb131-8" aria-hidden="true" tabindex="-1"></a>1 &amp; 0 <span class="sc">\\</span></span>
-<span id="cb131-9"><a href="#cb131-9" aria-hidden="true" tabindex="-1"></a>0 &amp; 1</span>
-<span id="cb131-10"><a href="#cb131-10" aria-hidden="true" tabindex="-1"></a>\end{pmatrix}</span>
-<span id="cb131-11"><a href="#cb131-11" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb143"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb143-1"><a href="#cb143-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb143-2"><a href="#cb143-2" aria-hidden="true" tabindex="-1"></a>M =</span>
+<span id="cb143-3"><a href="#cb143-3" aria-hidden="true" tabindex="-1"></a>\begin{pmatrix}</span>
+<span id="cb143-4"><a href="#cb143-4" aria-hidden="true" tabindex="-1"></a>1 &amp; 0 <span class="sc">\\</span></span>
+<span id="cb143-5"><a href="#cb143-5" aria-hidden="true" tabindex="-1"></a>0 &amp; 1</span>
+<span id="cb143-6"><a href="#cb143-6" aria-hidden="true" tabindex="-1"></a>\end{pmatrix}</span>
+<span id="cb143-7"><a href="#cb143-7" aria-hidden="true" tabindex="-1"></a>\begin{pmatrix}</span>
+<span id="cb143-8"><a href="#cb143-8" aria-hidden="true" tabindex="-1"></a>1 &amp; 0 <span class="sc">\\</span></span>
+<span id="cb143-9"><a href="#cb143-9" aria-hidden="true" tabindex="-1"></a>0 &amp; 1</span>
+<span id="cb143-10"><a href="#cb143-10" aria-hidden="true" tabindex="-1"></a>\end{pmatrix}</span>
+<span id="cb143-11"><a href="#cb143-11" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><span class="math display">\[
 M =
 \begin{pmatrix}
@@ -1182,15 +1316,15 @@ M =
 </tr>
 <tr class="odd">
 <td>Общий вид</td>
-<td><div class="sourceCode" id="cb132"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb132-2"><a href="#cb132-2" aria-hidden="true" tabindex="-1"></a>A_{m,n} =</span>
-<span id="cb132-3"><a href="#cb132-3" aria-hidden="true" tabindex="-1"></a>\begin{pmatrix}</span>
-<span id="cb132-4"><a href="#cb132-4" aria-hidden="true" tabindex="-1"></a>a_{1,1} &amp; a_{1,2} &amp; \cdots &amp; a_{1,n} <span class="sc">\\</span></span>
-<span id="cb132-5"><a href="#cb132-5" aria-hidden="true" tabindex="-1"></a>a_{2,1} &amp; a_{2,2} &amp; \cdots &amp; a_{2,n} <span class="sc">\\</span></span>
-<span id="cb132-6"><a href="#cb132-6" aria-hidden="true" tabindex="-1"></a>\vdots &amp; \vdots &amp; \ddots &amp; \vdots <span class="sc">\\</span></span>
-<span id="cb132-7"><a href="#cb132-7" aria-hidden="true" tabindex="-1"></a>a_{m,1} &amp; a_{m,2} &amp; \cdots &amp; a_{m,n}</span>
-<span id="cb132-8"><a href="#cb132-8" aria-hidden="true" tabindex="-1"></a>\end{pmatrix}</span>
-<span id="cb132-9"><a href="#cb132-9" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb144"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb144-1"><a href="#cb144-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb144-2"><a href="#cb144-2" aria-hidden="true" tabindex="-1"></a>A_{m,n} =</span>
+<span id="cb144-3"><a href="#cb144-3" aria-hidden="true" tabindex="-1"></a>\begin{pmatrix}</span>
+<span id="cb144-4"><a href="#cb144-4" aria-hidden="true" tabindex="-1"></a>a_{1,1} &amp; a_{1,2} &amp; \cdots &amp; a_{1,n} <span class="sc">\\</span></span>
+<span id="cb144-5"><a href="#cb144-5" aria-hidden="true" tabindex="-1"></a>a_{2,1} &amp; a_{2,2} &amp; \cdots &amp; a_{2,n} <span class="sc">\\</span></span>
+<span id="cb144-6"><a href="#cb144-6" aria-hidden="true" tabindex="-1"></a>\vdots &amp; \vdots &amp; \ddots &amp; \vdots <span class="sc">\\</span></span>
+<span id="cb144-7"><a href="#cb144-7" aria-hidden="true" tabindex="-1"></a>a_{m,1} &amp; a_{m,2} &amp; \cdots &amp; a_{m,n}</span>
+<span id="cb144-8"><a href="#cb144-8" aria-hidden="true" tabindex="-1"></a>\end{pmatrix}</span>
+<span id="cb144-9"><a href="#cb144-9" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><span class="math display">\[
 A_{m,n} =
 \begin{pmatrix}
@@ -1203,55 +1337,71 @@ a_{m,1} &amp; a_{m,2} &amp; \cdots &amp; a_{m,n}
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 </section>
-<section id="большие-операторы" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="большие-операторы"><span class="header-section-number">5.7</span> Большие операторы</h2>
+<section id="sec-latex-big-operators" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="sec-latex-big-operators"><span class="header-section-number">5.8</span> Большие операторы</h2>
+<div id="tbl-latex-big-operators" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-latex-big-operators-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;5.8: Большие операторы
+</figcaption>
+<div aria-describedby="tbl-latex-big-operators-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
-<caption>Большие операторы</caption>
 <colgroup>
 <col style="width: 31%">
 <col style="width: 31%">
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><div class="sourceCode" id="cb133"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a>$a_{n_i}$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb145"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb145-1"><a href="#cb145-1" aria-hidden="true" tabindex="-1"></a>$a_{n_i}$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><span class="math inline">\(a_{n_i}\)</span></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb134"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a>$\int_{i=1}^n$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb146"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb146-1"><a href="#cb146-1" aria-hidden="true" tabindex="-1"></a>$\int_{i=1}^n$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><span class="math inline">\(\int_{i=1}^n\)</span></td>
 </tr>
 <tr class="odd">
-<td><div class="sourceCode" id="cb135"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a>$\sum{i=1}^{\infty}$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb147"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb147-1"><a href="#cb147-1" aria-hidden="true" tabindex="-1"></a>$\sum{i=1}^{\infty}$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><span class="math inline">\(\sum{i=1}^{\infty}\)</span></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb136"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a>$\prod_{i=1}^n$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb148"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb148-1"><a href="#cb148-1" aria-hidden="true" tabindex="-1"></a>$\prod_{i=1}^n$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><span class="math inline">\(\prod_{i=1}^n\)</span></td>
 </tr>
 <tr class="odd">
-<td><div class="sourceCode" id="cb137"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a>$\cup_{i=1}^n$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb149"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb149-1"><a href="#cb149-1" aria-hidden="true" tabindex="-1"></a>$\cup_{i=1}^n$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><span class="math inline">\(\cup_{i=1}^n\)</span></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb138"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a>$\cap_{i=1}^n$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb150"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb150-1"><a href="#cb150-1" aria-hidden="true" tabindex="-1"></a>$\cap_{i=1}^n$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><span class="math inline">\(\cap_{i=1}^n\)</span></td>
 </tr>
 <tr class="odd">
-<td><div class="sourceCode" id="cb139"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a>$\oint_{i=1}^n$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb151"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb151-1"><a href="#cb151-1" aria-hidden="true" tabindex="-1"></a>$\oint_{i=1}^n$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><span class="math inline">\(\oint_{i=1}^n\)</span></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb140"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a>$\coprod_{i=1}^n$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb152"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb152-1"><a href="#cb152-1" aria-hidden="true" tabindex="-1"></a>$\coprod_{i=1}^n$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><span class="math inline">\(\coprod_{i=1}^n\)</span></td>
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 </section>
-<section id="примеры" class="level2" data-number="5.8">
-<h2 data-number="5.8" class="anchored" data-anchor-id="примеры"><span class="header-section-number">5.8</span> Примеры</h2>
+<section id="sec-latex-examples" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="sec-latex-examples"><span class="header-section-number">5.9</span> Примеры</h2>
+<div id="tbl-latex-examples" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-latex-examples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;5.9: Примеры
+</figcaption>
+<div aria-describedby="tbl-latex-examples-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
-<caption>Примеры</caption>
 <colgroup>
 <col style="width: 50%">
 <col style="width: 50%">
@@ -1264,27 +1414,27 @@ a_{m,1} &amp; a_{m,2} &amp; \cdots &amp; a_{m,n}
 </thead>
 <tbody>
 <tr class="odd">
-<td><div class="sourceCode" id="cb141"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb141-2"><a href="#cb141-2" aria-hidden="true" tabindex="-1"></a>x^{2 \alpha} - 1 = y_{ij} + y_{ij}</span>
-<span id="cb141-3"><a href="#cb141-3" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb153"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb153-2"><a href="#cb153-2" aria-hidden="true" tabindex="-1"></a>x^{2 \alpha} - 1 = y_{ij} + y_{ij}</span>
+<span id="cb153-3"><a href="#cb153-3" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><span class="math display">\[
 x^{2 \alpha} - 1 = y_{ij} + y_{ij}
 \]</span></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb142"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb142-1"><a href="#cb142-1" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb142-2"><a href="#cb142-2" aria-hidden="true" tabindex="-1"></a>(a^n)^{r+s} = a^{nr+ns}</span>
-<span id="cb142-3"><a href="#cb142-3" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb154"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb154-1"><a href="#cb154-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb154-2"><a href="#cb154-2" aria-hidden="true" tabindex="-1"></a>(a^n)^{r+s} = a^{nr+ns}</span>
+<span id="cb154-3"><a href="#cb154-3" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><span class="math display">\[
 (a^n)^{r+s} = a^{nr+ns}
 \]</span></td>
 </tr>
 <tr class="odd">
-<td><div class="sourceCode" id="cb143"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb143-1"><a href="#cb143-1" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb143-2"><a href="#cb143-2" aria-hidden="true" tabindex="-1"></a>\sum_{i=1}^{\infty}</span>
-<span id="cb143-3"><a href="#cb143-3" aria-hidden="true" tabindex="-1"></a>\frac{1}{n^s} =</span>
-<span id="cb143-4"><a href="#cb143-4" aria-hidden="true" tabindex="-1"></a>\prod_p \frac{1}{1 - p^{-s}}</span>
-<span id="cb143-5"><a href="#cb143-5" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb155"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb155-1"><a href="#cb155-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb155-2"><a href="#cb155-2" aria-hidden="true" tabindex="-1"></a>\sum_{i=1}^{\infty}</span>
+<span id="cb155-3"><a href="#cb155-3" aria-hidden="true" tabindex="-1"></a>\frac{1}{n^s} =</span>
+<span id="cb155-4"><a href="#cb155-4" aria-hidden="true" tabindex="-1"></a>\prod_p \frac{1}{1 - p^{-s}}</span>
+<span id="cb155-5"><a href="#cb155-5" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><span class="math display">\[
 \sum_{i=1}^{\infty}
 \frac{1}{n^s} =
@@ -1292,13 +1442,13 @@ x^{2 \alpha} - 1 = y_{ij} + y_{ij}
 \]</span></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb144"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb144-1"><a href="#cb144-1" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb144-2"><a href="#cb144-2" aria-hidden="true" tabindex="-1"></a>x^2  +</span>
-<span id="cb144-3"><a href="#cb144-3" aria-hidden="true" tabindex="-1"></a>x\left( {a + b} \right) +</span>
-<span id="cb144-4"><a href="#cb144-4" aria-hidden="true" tabindex="-1"></a>ab =</span>
-<span id="cb144-5"><a href="#cb144-5" aria-hidden="true" tabindex="-1"></a>\left( {x + a} \right)</span>
-<span id="cb144-6"><a href="#cb144-6" aria-hidden="true" tabindex="-1"></a>\left( {x + b} \right)</span>
-<span id="cb144-7"><a href="#cb144-7" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb156"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb156-1"><a href="#cb156-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb156-2"><a href="#cb156-2" aria-hidden="true" tabindex="-1"></a>x^2  +</span>
+<span id="cb156-3"><a href="#cb156-3" aria-hidden="true" tabindex="-1"></a>x\left( {a + b} \right) +</span>
+<span id="cb156-4"><a href="#cb156-4" aria-hidden="true" tabindex="-1"></a>ab =</span>
+<span id="cb156-5"><a href="#cb156-5" aria-hidden="true" tabindex="-1"></a>\left( {x + a} \right)</span>
+<span id="cb156-6"><a href="#cb156-6" aria-hidden="true" tabindex="-1"></a>\left( {x + b} \right)</span>
+<span id="cb156-7"><a href="#cb156-7" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><span class="math display">\[
 x^2  +
 x\left( {a + b} \right) +
@@ -1308,12 +1458,12 @@ ab =
 \]</span></td>
 </tr>
 <tr class="odd">
-<td><div class="sourceCode" id="cb145"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb145-1"><a href="#cb145-1" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb145-2"><a href="#cb145-2" aria-hidden="true" tabindex="-1"></a>\log _b \left( x \right) =</span>
-<span id="cb145-3"><a href="#cb145-3" aria-hidden="true" tabindex="-1"></a>\log _b \left( c \right)\log _c \left( x \right) =</span>
-<span id="cb145-4"><a href="#cb145-4" aria-hidden="true" tabindex="-1"></a>\frac{{\log _c \left( x \right)}}</span>
-<span id="cb145-5"><a href="#cb145-5" aria-hidden="true" tabindex="-1"></a>{{\log _c \left( b \right)}}</span>
-<span id="cb145-6"><a href="#cb145-6" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb157"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb157-1"><a href="#cb157-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb157-2"><a href="#cb157-2" aria-hidden="true" tabindex="-1"></a>\log _b \left( x \right) =</span>
+<span id="cb157-3"><a href="#cb157-3" aria-hidden="true" tabindex="-1"></a>\log _b \left( c \right)\log _c \left( x \right) =</span>
+<span id="cb157-4"><a href="#cb157-4" aria-hidden="true" tabindex="-1"></a>\frac{{\log _c \left( x \right)}}</span>
+<span id="cb157-5"><a href="#cb157-5" aria-hidden="true" tabindex="-1"></a>{{\log _c \left( b \right)}}</span>
+<span id="cb157-6"><a href="#cb157-6" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><span class="math display">\[
 \log _b \left( x \right) =
 \log _b \left( c \right)\log _c \left( x \right) =
@@ -1322,22 +1472,22 @@ ab =
 \]</span></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb146"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb146-1"><a href="#cb146-1" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb146-2"><a href="#cb146-2" aria-hidden="true" tabindex="-1"></a>\frac{d}{{dx}}b^x  =</span>
-<span id="cb146-3"><a href="#cb146-3" aria-hidden="true" tabindex="-1"></a>b^x \ln \left( b \right)</span>
-<span id="cb146-4"><a href="#cb146-4" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb158"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb158-1"><a href="#cb158-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb158-2"><a href="#cb158-2" aria-hidden="true" tabindex="-1"></a>\frac{d}{{dx}}b^x  =</span>
+<span id="cb158-3"><a href="#cb158-3" aria-hidden="true" tabindex="-1"></a>b^x \ln \left( b \right)</span>
+<span id="cb158-4"><a href="#cb158-4" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><span class="math display">\[
 \frac{d}{{dx}}b^x  =
 b^x \ln \left( b \right)
 \]</span></td>
 </tr>
 <tr class="odd">
-<td><div class="sourceCode" id="cb147"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb147-1"><a href="#cb147-1" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb147-2"><a href="#cb147-2" aria-hidden="true" tabindex="-1"></a>\int {\sec (ax)} dx =</span>
-<span id="cb147-3"><a href="#cb147-3" aria-hidden="true" tabindex="-1"></a>\frac{1}{a}\ln \left|</span>
-<span id="cb147-4"><a href="#cb147-4" aria-hidden="true" tabindex="-1"></a>{\tan \left( {\frac{{ax}}{2} +</span>
-<span id="cb147-5"><a href="#cb147-5" aria-hidden="true" tabindex="-1"></a>\frac{\pi }{4}} \right)} \right| + c</span>
-<span id="cb147-6"><a href="#cb147-6" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb159"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb159-1"><a href="#cb159-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb159-2"><a href="#cb159-2" aria-hidden="true" tabindex="-1"></a>\int {\sec (ax)} dx =</span>
+<span id="cb159-3"><a href="#cb159-3" aria-hidden="true" tabindex="-1"></a>\frac{1}{a}\ln \left|</span>
+<span id="cb159-4"><a href="#cb159-4" aria-hidden="true" tabindex="-1"></a>{\tan \left( {\frac{{ax}}{2} +</span>
+<span id="cb159-5"><a href="#cb159-5" aria-hidden="true" tabindex="-1"></a>\frac{\pi }{4}} \right)} \right| + c</span>
+<span id="cb159-6"><a href="#cb159-6" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><span class="math display">\[
 \int {\sec (ax)} dx =
 \frac{1}{a}\ln \left|
@@ -1346,21 +1496,21 @@ b^x \ln \left( b \right)
 \]</span></td>
 </tr>
 <tr class="even">
-<td><div class="sourceCode" id="cb148"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb148-1"><a href="#cb148-1" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb148-2"><a href="#cb148-2" aria-hidden="true" tabindex="-1"></a>\oint_S {E_n dA =</span>
-<span id="cb148-3"><a href="#cb148-3" aria-hidden="true" tabindex="-1"></a>\frac{1}{{\varepsilon _0 }}} Q_{inside}</span>
-<span id="cb148-4"><a href="#cb148-4" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb160"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb160-1"><a href="#cb160-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb160-2"><a href="#cb160-2" aria-hidden="true" tabindex="-1"></a>\oint_S {E_n dA =</span>
+<span id="cb160-3"><a href="#cb160-3" aria-hidden="true" tabindex="-1"></a>\frac{1}{{\varepsilon _0 }}} Q_{inside}</span>
+<span id="cb160-4"><a href="#cb160-4" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><span class="math display">\[
 \oint_S {E_n dA =
 \frac{1}{{\varepsilon _0 }}} Q_{inside}
 \]</span></td>
 </tr>
 <tr class="odd">
-<td><div class="sourceCode" id="cb149"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb149-1"><a href="#cb149-1" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb149-2"><a href="#cb149-2" aria-hidden="true" tabindex="-1"></a>y(x,t) = \sum\limits_n</span>
-<span id="cb149-3"><a href="#cb149-3" aria-hidden="true" tabindex="-1"></a>{A_n \cos (\omega _n t + \delta _n )</span>
-<span id="cb149-4"><a href="#cb149-4" aria-hidden="true" tabindex="-1"></a>\sin (k_n x)}</span>
-<span id="cb149-5"><a href="#cb149-5" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="sourceCode" id="cb161"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb161-1"><a href="#cb161-1" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb161-2"><a href="#cb161-2" aria-hidden="true" tabindex="-1"></a>y(x,t) = \sum\limits_n</span>
+<span id="cb161-3"><a href="#cb161-3" aria-hidden="true" tabindex="-1"></a>{A_n \cos (\omega _n t + \delta _n )</span>
+<span id="cb161-4"><a href="#cb161-4" aria-hidden="true" tabindex="-1"></a>\sin (k_n x)}</span>
+<span id="cb161-5"><a href="#cb161-5" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
 <td><span class="math display">\[
 y(x,t) = \sum\limits_n
 {A_n \cos (\omega _n t + \delta _n )
@@ -1369,13 +1519,16 @@ y(x,t) = \sum\limits_n
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 
 
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-overleaf" class="csl-entry" role="listitem">
+<div id="ref-bib-latex-overleaf" class="csl-entry" role="listitem">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">Learn LaTeX in 30 minutes [Электронный ресурс]. URL: <a href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes">https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes</a> (дата обращения: 20.02.2025).</div>
 </div>
-<div id="ref-equationsheet" class="csl-entry" role="listitem">
+<div id="ref-bib-latex-equationsheet" class="csl-entry" role="listitem">
 <div class="csl-left-margin">2. </div><div class="csl-right-inline">Equation Sheet [Электронный ресурс]. URL: <a href="http://www.equationsheet.com/">http://www.equationsheet.com/</a> (дата обращения: 20.02.2025).</div>
 </div>
 </div>

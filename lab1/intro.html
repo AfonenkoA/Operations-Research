@@ -306,7 +306,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../linear/integer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Целочисленное программирование. Метод ветвей и границ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Целочисленное программирование.</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -489,35 +489,15 @@ window.Quarto = {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#пример" id="toc-пример" class="nav-link active" data-scroll-target="#пример"><span class="header-section-number">24.1</span> Пример</a>
+  <li><a href="#sec-lab1-instructions" id="toc-sec-lab1-instructions" class="nav-link active" data-scroll-target="#sec-lab1-instructions"><span class="header-section-number">24.1</span> Теория</a></li>
+  <li><a href="#sec-lab1-task" id="toc-sec-lab1-task" class="nav-link" data-scroll-target="#sec-lab1-task"><span class="header-section-number">24.2</span> Задания</a>
   <ul class="collapse">
-  <li><a href="#задача" id="toc-задача" class="nav-link" data-scroll-target="#задача"><span class="header-section-number">24.1.1</span> Задача</a></li>
-  <li><a href="#решение" id="toc-решение" class="nav-link" data-scroll-target="#решение"><span class="header-section-number">24.1.2</span> Решение</a></li>
+  <li><a href="#sec-lab1-task-r-programming" id="toc-sec-lab1-task-r-programming" class="nav-link" data-scroll-target="#sec-lab1-task-r-programming"><span class="header-section-number">24.2.1</span> Язык программирования R</a></li>
+  <li><a href="#sec-lab1-task-linear-algebra" id="toc-sec-lab1-task-linear-algebra" class="nav-link" data-scroll-target="#sec-lab1-task-linear-algebra"><span class="header-section-number">24.2.2</span> Линейная алгебра</a></li>
+  <li><a href="#sec-lab1-task-operations-research" id="toc-sec-lab1-task-operations-research" class="nav-link" data-scroll-target="#sec-lab1-task-operations-research"><span class="header-section-number">24.2.3</span> Исследование операций</a></li>
+  <li><a href="#sec-lab1-task-magic" id="toc-sec-lab1-task-magic" class="nav-link" data-scroll-target="#sec-lab1-task-magic"><span class="header-section-number">24.2.4</span> Прикладная магия</a></li>
   </ul></li>
-  <li><a href="#язык-программирования-r" id="toc-язык-программирования-r" class="nav-link" data-scroll-target="#язык-программирования-r"><span class="header-section-number">24.2</span> Язык программирования R</a>
-  <ul class="collapse">
-  <li><a href="#задача-1" id="toc-задача-1" class="nav-link" data-scroll-target="#задача-1"><span class="header-section-number">24.2.1</span> Задача 1</a></li>
-  <li><a href="#задача-2" id="toc-задача-2" class="nav-link" data-scroll-target="#задача-2"><span class="header-section-number">24.2.2</span> Задача 2</a></li>
-  <li><a href="#задача-3" id="toc-задача-3" class="nav-link" data-scroll-target="#задача-3"><span class="header-section-number">24.2.3</span> Задача 3</a></li>
-  <li><a href="#задача-4" id="toc-задача-4" class="nav-link" data-scroll-target="#задача-4"><span class="header-section-number">24.2.4</span> Задача 4</a></li>
-  <li><a href="#задача-5" id="toc-задача-5" class="nav-link" data-scroll-target="#задача-5"><span class="header-section-number">24.2.5</span> Задача 5</a></li>
-  <li><a href="#задача-6" id="toc-задача-6" class="nav-link" data-scroll-target="#задача-6"><span class="header-section-number">24.2.6</span> Задача 6</a></li>
-  </ul></li>
-  <li><a href="#линейная-алгебра" id="toc-линейная-алгебра" class="nav-link" data-scroll-target="#линейная-алгебра"><span class="header-section-number">24.3</span> Линейная алгебра</a>
-  <ul class="collapse">
-  <li><a href="#задача-1-1" id="toc-задача-1-1" class="nav-link" data-scroll-target="#задача-1-1"><span class="header-section-number">24.3.1</span> Задача 1</a></li>
-  <li><a href="#задача-2-1" id="toc-задача-2-1" class="nav-link" data-scroll-target="#задача-2-1"><span class="header-section-number">24.3.2</span> Задача 2</a></li>
-  <li><a href="#задача-3-1" id="toc-задача-3-1" class="nav-link" data-scroll-target="#задача-3-1"><span class="header-section-number">24.3.3</span> Задача 3</a></li>
-  </ul></li>
-  <li><a href="#исследование-операций" id="toc-исследование-операций" class="nav-link" data-scroll-target="#исследование-операций"><span class="header-section-number">24.4</span> Исследование операций</a>
-  <ul class="collapse">
-  <li><a href="#задача-1-2" id="toc-задача-1-2" class="nav-link" data-scroll-target="#задача-1-2"><span class="header-section-number">24.4.1</span> Задача 1</a></li>
-  <li><a href="#задача-2-2" id="toc-задача-2-2" class="nav-link" data-scroll-target="#задача-2-2"><span class="header-section-number">24.4.2</span> Задача 2</a></li>
-  <li><a href="#задача-3-2" id="toc-задача-3-2" class="nav-link" data-scroll-target="#задача-3-2"><span class="header-section-number">24.4.3</span> Задача 3</a></li>
-  <li><a href="#задача-4-1" id="toc-задача-4-1" class="nav-link" data-scroll-target="#задача-4-1"><span class="header-section-number">24.4.4</span> Задача 4</a></li>
-  </ul></li>
-  <li><a href="#прикладная-магия" id="toc-прикладная-магия" class="nav-link" data-scroll-target="#прикладная-магия"><span class="header-section-number">24.5</span> Прикладная магия</a></li>
-  <li><a href="#разбалловка" id="toc-разбалловка" class="nav-link" data-scroll-target="#разбалловка"><span class="header-section-number">24.6</span> Разбалловка</a></li>
+  <li><a href="#sec-lab1-scoring" id="toc-sec-lab1-scoring" class="nav-link" data-scroll-target="#sec-lab1-scoring"><span class="header-section-number">24.3</span> Разбалловка</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li></ul></div></nav>
     </div>
@@ -526,7 +506,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../lab1/intro.html">Лабораторные работы</a></li><li class="breadcrumb-item"><a href="../lab1/intro.html"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Лабораторная работа 1. Введение</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Лабораторная работа 1. Введение</span></h1>
+<h1 class="title"><span id="sec-lab1" class="quarto-section-identifier"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Лабораторная работа 1. Введение</span></span></h1>
 </div>
 
 
@@ -543,6 +523,8 @@ window.Quarto = {
 </header>
 
 
+<section id="sec-lab1-instructions" class="level2" data-number="24.1">
+<h2 data-number="24.1" class="anchored" data-anchor-id="sec-lab1-instructions"><span class="header-section-number">24.1</span> Теория</h2>
 <div class="callout callout-style-default callout-caution callout-titled" title="Состояние разработки">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -556,15 +538,13 @@ window.Quarto = {
 <p>Требуется доработка</p>
 </div>
 </div>
-<section id="пример" class="level2" data-number="24.1">
-<h2 data-number="24.1" class="anchored" data-anchor-id="пример"><span class="header-section-number">24.1</span> Пример</h2>
-<section id="задача" class="level3" data-number="24.1.1">
-<h3 data-number="24.1.1" class="anchored" data-anchor-id="задача"><span class="header-section-number">24.1.1</span> Задача</h3>
-<p>Чтобы попасть из пункта А (остановка автобуса) в пункт В (лодочная станция) человек должен пройти сначала по асфальтовой дороге шириной <span class="math inline">\(S\)</span>, а затем по песчаному пляжу шириной <span class="math inline">\(s\)</span>. Скорость передвижения по асфальту <span class="math inline">\(V\)</span> , скорость передвижения по песку <span class="math inline">\(v\)</span>. Спрашивается, в каком месте нужно свернуть с асфальтовой дороги, чтобы затратить меньше времени на путь.</p>
-</section>
-<section id="решение" class="level3" data-number="24.1.2">
-<h3 data-number="24.1.2" class="anchored" data-anchor-id="решение"><span class="header-section-number">24.1.2</span> Решение</h3>
-<p>Решим задачу с конкретными значениями, в виду сложности аналитического решения (сводится к уравнению 4 степени): <span class="math inline">\(D = 100\)</span>, <span class="math inline">\(S = 40\)</span>, <span class="math inline">\(V = 5\)</span>, <span class="math inline">\(s = 60\)</span>, <span class="math inline">\(v = 3\)</span></p>
+<p>Установить среду разработки</p>
+<p>Сделать то то и то, посмотреть то то и то</p>
+<div id="exm-lab1" class="theorem example">
+<p><span class="theorem-title"><strong>Пример 24.1</strong></span> Чтобы попасть из пункта А (остановка автобуса) в пункт В (лодочная станция) человек должен пройти сначала по асфальтовой дороге шириной <span class="math inline">\(S\)</span>, а затем по песчаному пляжу шириной <span class="math inline">\(s\)</span>. Скорость передвижения по асфальту <span class="math inline">\(V\)</span> , скорость передвижения по песку <span class="math inline">\(v\)</span>. Спрашивается, в каком месте нужно свернуть с асфальтовой дороги, чтобы затратить меньше времени на путь.</p>
+</div>
+<div id="sol-lab1" class="proof solution">
+<p><span class="proof-title"><em>Решение 24.1</em>. </span>Решим задачу с конкретными значениями, в виду сложности аналитического решения (сводится к уравнению 4 степени): <span class="math inline">\(D = 100\)</span>, <span class="math inline">\(S = 40\)</span>, <span class="math inline">\(V = 5\)</span>, <span class="math inline">\(s = 60\)</span>, <span class="math inline">\(v = 3\)</span></p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="plotly html-widget html-fill-item" id="htmlwidget-722e3106840f8c228b6f" style="width:100%;height:464px;"></div>
@@ -591,13 +571,14 @@ window.Quarto = {
 </div>
 </div>
 <p>Следовательно оптимальное значение пути, пройденного по дороге <span class="math inline">\(x = 65.64\)</span></p>
+</div>
 </section>
-</section>
-<section id="язык-программирования-r" class="level2" data-number="24.2">
-<h2 data-number="24.2" class="anchored" data-anchor-id="язык-программирования-r"><span class="header-section-number">24.2</span> Язык программирования R</h2>
-<section id="задача-1" class="level3" data-number="24.2.1">
-<h3 data-number="24.2.1" class="anchored" data-anchor-id="задача-1"><span class="header-section-number">24.2.1</span> Задача 1</h3>
-<p>Упростите выражение:</p>
+<section id="sec-lab1-task" class="level2" data-number="24.2">
+<h2 data-number="24.2" class="anchored" data-anchor-id="sec-lab1-task"><span class="header-section-number">24.2</span> Задания</h2>
+<section id="sec-lab1-task-r-programming" class="level3" data-number="24.2.1">
+<h3 data-number="24.2.1" class="anchored" data-anchor-id="sec-lab1-task-r-programming"><span class="header-section-number">24.2.1</span> Язык программирования R</h3>
+<div id="exr-lab1-r-lang-vector-seq" class="theorem exercise">
+<p><span class="theorem-title"><strong>Упражнение 24.1</strong></span> Упростите выражение:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">sqrt</span>(<span class="dv">1</span>), <span class="fu">sqrt</span>(<span class="dv">2</span>), <span class="fu">sqrt</span>(<span class="dv">3</span>))</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Создайте последовательность 2 способами <code>(-1, -0.75, -0.5, …, 0.75, 1)</code>.</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="Оценка">
@@ -613,10 +594,9 @@ window.Quarto = {
 <p>1</p>
 </div>
 </div>
-</section>
-<section id="задача-2" class="level3" data-number="24.2.2">
-<h3 data-number="24.2.2" class="anchored" data-anchor-id="задача-2"><span class="header-section-number">24.2.2</span> Задача 2</h3>
-<p>Построить график кусочно-гладкой функции используя функцию <a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></p>
+</div>
+<div id="exr-lab1-r-lang-plot2d" class="theorem exercise">
+<p><span class="theorem-title"><strong>Упражнение 24.2</strong></span> Построить график кусочно-гладкой функции используя функцию <a href="https://rdrr.io/r/base/ifelse.html">ifelse</a></p>
 <p><span class="math display">\[
 f(x)=\begin{cases}
       x^2,\qquad x \leq -3\\
@@ -637,10 +617,9 @@ f(x)=\begin{cases}
 <p>1</p>
 </div>
 </div>
-</section>
-<section id="задача-3" class="level3" data-number="24.2.3">
-<h3 data-number="24.2.3" class="anchored" data-anchor-id="задача-3"><span class="header-section-number">24.2.3</span> Задача 3</h3>
-<p>С помощью <a href="https://ru.wikipedia.org/wiki/%D0%A0%D1%8F%D0%B4_%D0%9B%D0%B5%D0%B9%D0%B1%D0%BD%D0%B8%D1%86%D0%B0">ряда Лейбница</a> можно получить значение числа <span class="math inline">\(\pi\)</span> . Данный ряд сходится очень медленно.</p>
+</div>
+<div id="exr-lab1-r-lang-sum-vectorization" class="theorem exercise">
+<p><span class="theorem-title"><strong>Упражнение 24.3</strong></span> С помощью <a href="https://ru.wikipedia.org/wiki/%D0%A0%D1%8F%D0%B4_%D0%9B%D0%B5%D0%B9%D0%B1%D0%BD%D0%B8%D1%86%D0%B0">ряда Лейбница</a> можно получить значение числа <span class="math inline">\(\pi\)</span> . Данный ряд сходится очень медленно.</p>
 <p><span class="math display">\[
 \pi =\sum_{i=0}^n{\frac{(-1)^i}{2i+1}}
 \]</span></p>
@@ -662,10 +641,9 @@ f(x)=\begin{cases}
 <p>1</p>
 </div>
 </div>
-</section>
-<section id="задача-4" class="level3" data-number="24.2.4">
-<h3 data-number="24.2.4" class="anchored" data-anchor-id="задача-4"><span class="header-section-number">24.2.4</span> Задача 4</h3>
-<p>Создать список содержащий буквы от <code>a</code> до <code>z</code>. Продемонстрировать использование операторов индексации <a href="../r-lang/basic.html#sec-basic-list-indexing" class="quarto-xref"><span>Глава 6.4.1</span></a>.</p>
+</div>
+<div id="exr-lab1-r-lang-list-indexing" class="theorem exercise">
+<p><span class="theorem-title"><strong>Упражнение 24.4</strong></span> Создать список содержащий буквы от <code>a</code> до <code>z</code>. Продемонстрировать использование операторов индексации <a href="../r-lang/basic.html#sec-r-lang-basic-list-indexing" class="quarto-xref"><span>Глава 6.4.1</span></a>.</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="Оценка">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -679,10 +657,9 @@ f(x)=\begin{cases}
 <p>1</p>
 </div>
 </div>
-</section>
-<section id="задача-5" class="level3" data-number="24.2.5">
-<h3 data-number="24.2.5" class="anchored" data-anchor-id="задача-5"><span class="header-section-number">24.2.5</span> Задача 5</h3>
-<p>Создать список матриц размером <code>2x2</code> заполненных случайными целыми числами. Используя циклы получите:</p>
+</div>
+<div id="exr-lab1-r-lang-matrix" class="theorem exercise">
+<p><span class="theorem-title"><strong>Упражнение 24.5</strong></span> Создать список матриц размером <code>2x2</code> заполненных случайными целыми числами. Используя циклы получите:</p>
 <ol type="1">
 <li>список с элементов <code>(2,2)</code> каждой матрицы.</li>
 <li>вектор состоящий из элементов <code>(1,1)</code>, <code>(1,2)</code> этих матриц.</li>
@@ -700,9 +677,9 @@ f(x)=\begin{cases}
 <p>1</p>
 </div>
 </div>
-</section>
-<section id="задача-6" class="level3" data-number="24.2.6">
-<h3 data-number="24.2.6" class="anchored" data-anchor-id="задача-6"><span class="header-section-number">24.2.6</span> Задача 6</h3>
+</div>
+<div id="exr-lab1-r-lang-array" class="theorem exercise">
+<p><span class="theorem-title"><strong>Упражнение 24.6</strong></span> &nbsp;</p>
 <ol type="1">
 <li>создайте пятимерный массив и заполните его целыми числами.</li>
 <li>преобразуйте его как список массивов размерности 4.</li>
@@ -721,13 +698,12 @@ f(x)=\begin{cases}
 <p>1</p>
 </div>
 </div>
+</div>
 </section>
-</section>
-<section id="линейная-алгебра" class="level2" data-number="24.3">
-<h2 data-number="24.3" class="anchored" data-anchor-id="линейная-алгебра"><span class="header-section-number">24.3</span> Линейная алгебра</h2>
-<section id="задача-1-1" class="level3" data-number="24.3.1">
-<h3 data-number="24.3.1" class="anchored" data-anchor-id="задача-1-1"><span class="header-section-number">24.3.1</span> Задача 1</h3>
-<p>Решить СЛАУ <span class="math inline">\(AX=b\)</span> встроенным методом. Элементы матриц сгенерировать произвольно. <a href="https://rdrr.io/r/base/solve.html">solve</a></p>
+<section id="sec-lab1-task-linear-algebra" class="level3" data-number="24.2.2">
+<h3 data-number="24.2.2" class="anchored" data-anchor-id="sec-lab1-task-linear-algebra"><span class="header-section-number">24.2.2</span> Линейная алгебра</h3>
+<div id="exr-lab1-linear-algebra-equation-solve-integrated" class="theorem exercise">
+<p><span class="theorem-title"><strong>Упражнение 24.7</strong></span> Решить СЛАУ <span class="math inline">\(AX=b\)</span> встроенным методом. Элементы матриц сгенерировать произвольно. <a href="https://rdrr.io/r/base/solve.html">solve</a></p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="Оценка">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -741,10 +717,9 @@ f(x)=\begin{cases}
 <p>1</p>
 </div>
 </div>
-</section>
-<section id="задача-2-1" class="level3" data-number="24.3.2">
-<h3 data-number="24.3.2" class="anchored" data-anchor-id="задача-2-1"><span class="header-section-number">24.3.2</span> Задача 2</h3>
-<p>Для произвольных матриц <span class="math inline">\(A\)</span> и <span class="math inline">\(B\)</span> заполненных случайными числами проверить следующие свойства:</p>
+</div>
+<div id="exr-lab1-linear-algebra-formula-check" class="theorem exercise">
+<p><span class="theorem-title"><strong>Упражнение 24.8</strong></span> Для произвольных матриц <span class="math inline">\(A\)</span> и <span class="math inline">\(B\)</span> заполненных случайными числами проверить следующие свойства:</p>
 <ol type="1">
 <li><span class="math inline">\((A+B)^T=A^T+B^T\)</span></li>
 <li><span class="math inline">\((AB)^T=B^TA^T\)</span></li>
@@ -768,10 +743,9 @@ f(x)=\begin{cases}
 <p>1</p>
 </div>
 </div>
-</section>
-<section id="задача-3-1" class="level3" data-number="24.3.3">
-<h3 data-number="24.3.3" class="anchored" data-anchor-id="задача-3-1"><span class="header-section-number">24.3.3</span> Задача 3</h3>
-<p>Реализовать решение системы линейных уравнений методом гаусса жордана используя векторные операции.</p>
+</div>
+<div id="exr-lab1-linear-algebra-equation-solve-custom-gauss" class="theorem exercise">
+<p><span class="theorem-title"><strong>Упражнение 24.9</strong></span> Реализовать решение системы линейных уравнений методом гаусса жордана используя векторные операции.</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="Оценка">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -785,12 +759,12 @@ f(x)=\begin{cases}
 <p>1</p>
 </div>
 </div>
+</div>
 </section>
-</section>
-<section id="исследование-операций" class="level2" data-number="24.4">
-<h2 data-number="24.4" class="anchored" data-anchor-id="исследование-операций"><span class="header-section-number">24.4</span> Исследование операций</h2>
-<section id="задача-1-2" class="level3" data-number="24.4.1">
-<h3 data-number="24.4.1" class="anchored" data-anchor-id="задача-1-2"><span class="header-section-number">24.4.1</span> Задача 1</h3>
+<section id="sec-lab1-task-operations-research" class="level3" data-number="24.2.3">
+<h3 data-number="24.2.3" class="anchored" data-anchor-id="sec-lab1-task-operations-research"><span class="header-section-number">24.2.3</span> Исследование операций</h3>
+<div id="exr-lab1-operations-research-graphical-solution" class="theorem exercise">
+<p><span class="theorem-title"><strong>Упражнение 24.10</strong></span> &nbsp;</p>
 <ol type="1">
 <li>Построить объемный и контурный графики функций <span class="math inline">\(z = x^2 - y^2\)</span> и <span class="math inline">\(z = x^2 + y^2\)</span>.</li>
 <li>Графически определить минимум.</li>
@@ -809,10 +783,9 @@ f(x)=\begin{cases}
 <p>1</p>
 </div>
 </div>
-</section>
-<section id="задача-2-2" class="level3" data-number="24.4.2">
-<h3 data-number="24.4.2" class="anchored" data-anchor-id="задача-2-2"><span class="header-section-number">24.4.2</span> Задача 2</h3>
-<p>Найти максимальную скорость тела движущегося по закону</p>
+</div>
+<div id="exr-lab1-operations-research-moving-body" class="theorem exercise">
+<p><span class="theorem-title"><strong>Упражнение 24.11</strong></span> Найти максимальную скорость тела движущегося по закону</p>
 <p><span class="math display">\[
 s = 18t + 9t^2 - t^3
 \]</span></p>
@@ -834,10 +807,9 @@ s = 18t + 9t^2 - t^3
 <p>1</p>
 </div>
 </div>
-</section>
-<section id="задача-3-2" class="level3" data-number="24.4.3">
-<h3 data-number="24.4.3" class="anchored" data-anchor-id="задача-3-2"><span class="header-section-number">24.4.3</span> Задача 3</h3>
-<p>Суточные расходы при плавании судна состоят из двух частей: постоянной, равной <span class="math inline">\(а\)</span>, и переменной, возрастающий пропорционально кубу скорости. При какой скорости <span class="math inline">\(v\)</span> плавание судна окажется наиболее экономичным?</p>
+</div>
+<div id="exr-lab1-operations-research-ship" class="theorem exercise">
+<p><span class="theorem-title"><strong>Упражнение 24.12</strong></span> Суточные расходы при плавании судна состоят из двух частей: постоянной, равной <span class="math inline">\(а\)</span>, и переменной, возрастающий пропорционально кубу скорости. При какой скорости <span class="math inline">\(v\)</span> плавание судна окажется наиболее экономичным?</p>
 <ol type="1">
 <li>определите целевую функцию</li>
 <li>аналитически определите максимум целевой функции</li>
@@ -856,10 +828,9 @@ s = 18t + 9t^2 - t^3
 <p>1</p>
 </div>
 </div>
-</section>
-<section id="задача-4-1" class="level3" data-number="24.4.4">
-<h3 data-number="24.4.4" class="anchored" data-anchor-id="задача-4-1"><span class="header-section-number">24.4.4</span> Задача 4</h3>
-<p>Имеется квадратный лист жести, сторона которого <span class="math inline">\(а=60\ см\)</span>. Вырезая по всем его углам равные квадраты и загибая оставшуюся часть, нужно изготовить коробку без крышки. Каковы должны быть размеры вырезаемых квадратов, чтобы коробка имела наибольший объем?</p>
+</div>
+<div id="exr-lab1-operations-research-box" class="theorem exercise">
+<p><span class="theorem-title"><strong>Упражнение 24.13</strong></span> Имеется квадратный лист жести, сторона которого <span class="math inline">\(а=60\ см\)</span>. Вырезая по всем его углам равные квадраты и загибая оставшуюся часть, нужно изготовить коробку без крышки. Каковы должны быть размеры вырезаемых квадратов, чтобы коробка имела наибольший объем?</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="box.png" class="img-fluid figure-img"></p>
@@ -884,11 +855,12 @@ s = 18t + 9t^2 - t^3
 <p>1</p>
 </div>
 </div>
+</div>
 </section>
-</section>
-<section id="прикладная-магия" class="level2" data-number="24.5">
-<h2 data-number="24.5" class="anchored" data-anchor-id="прикладная-магия"><span class="header-section-number">24.5</span> Прикладная магия</h2>
-<p>Пусть дана функция общего вида <span class="math inline">\(f(x,y)\)</span> и система уравнений <span class="math inline">\(Ax=b\)</span> для двух переменных. Постройте контурный график функции, на котором изобразите точки пересечения прямых. Обработать случая параллельных прямых, совпадающих прямых.</p>
+<section id="sec-lab1-task-magic" class="level3" data-number="24.2.4">
+<h3 data-number="24.2.4" class="anchored" data-anchor-id="sec-lab1-task-magic"><span class="header-section-number">24.2.4</span> Прикладная магия</h3>
+<div id="exr-lab1-magic" class="theorem exercise">
+<p><span class="theorem-title"><strong>Упражнение 24.14</strong></span> Пусть дана функция общего вида <span class="math inline">\(f(x,y)\)</span> и система уравнений <span class="math inline">\(Ax=b\)</span> для двух переменных. Постройте контурный график функции, на котором изобразите точки пересечения прямых. Обработать случая параллельных прямых, совпадающих прямых.</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="Оценка">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -904,9 +876,11 @@ s = 18t + 9t^2 - t^3
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>(<span class="dv">2</span><span class="sc">*</span>x<span class="sc">+</span><span class="dv">3</span><span class="sc">*</span>y<span class="sc">~</span><span class="dv">0</span>, <span class="dv">2</span><span class="sc">*</span>x<span class="sc">~</span><span class="dv">3</span>y<span class="sc">+</span><span class="dv">1</span>)</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
+</div>
 </section>
-<section id="разбалловка" class="level2" data-number="24.6">
-<h2 data-number="24.6" class="anchored" data-anchor-id="разбалловка"><span class="header-section-number">24.6</span> Разбалловка</h2>
+</section>
+<section id="sec-lab1-scoring" class="level2" data-number="24.3">
+<h2 data-number="24.3" class="anchored" data-anchor-id="sec-lab1-scoring"><span class="header-section-number">24.3</span> Разбалловка</h2>
 <table class="caption-top table">
 <caption>Разбалловка</caption>
 <thead>

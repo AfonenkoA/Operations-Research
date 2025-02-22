@@ -300,7 +300,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../linear/integer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Целочисленное программирование. Метод ветвей и границ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Целочисленное программирование.</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -483,35 +483,35 @@ window.Quarto = {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#блоки-кода" id="toc-блоки-кода" class="nav-link active" data-scroll-target="#блоки-кода"><span class="header-section-number">4.1</span> Блоки кода</a>
+  <li><a href="#sec-markdown-codeblocks" id="toc-sec-markdown-codeblocks" class="nav-link active" data-scroll-target="#sec-markdown-codeblocks"><span class="header-section-number">4.1</span> Блоки кода</a>
   <ul class="collapse">
-  <li><a href="#встраиваемый-код" id="toc-встраиваемый-код" class="nav-link" data-scroll-target="#встраиваемый-код"><span class="header-section-number">4.1.1</span> Встраиваемый код</a></li>
-  <li><a href="#разные-языки-в-одном-документе" id="toc-разные-языки-в-одном-документе" class="nav-link" data-scroll-target="#разные-языки-в-одном-документе"><span class="header-section-number">4.1.2</span> Разные языки в одном документе</a></li>
-  <li><a href="#рендеринг-и-сохранение" id="toc-рендеринг-и-сохранение" class="nav-link" data-scroll-target="#рендеринг-и-сохранение"><span class="header-section-number">4.1.3</span> Рендеринг и сохранение</a></li>
-  <li><a href="#опции-блоков-кода" id="toc-опции-блоков-кода" class="nav-link" data-scroll-target="#опции-блоков-кода"><span class="header-section-number">4.1.4</span> Опции блоков кода</a></li>
-  <li><a href="#параметры-вывода" id="toc-параметры-вывода" class="nav-link" data-scroll-target="#параметры-вывода"><span class="header-section-number">4.1.5</span> Параметры вывода</a></li>
-  <li><a href="#названия-рисунков" id="toc-названия-рисунков" class="nav-link" data-scroll-target="#названия-рисунков"><span class="header-section-number">4.1.6</span> Названия рисунков</a></li>
+  <li><a href="#sec-markdown-codeblocks-inline" id="toc-sec-markdown-codeblocks-inline" class="nav-link" data-scroll-target="#sec-markdown-codeblocks-inline"><span class="header-section-number">4.1.1</span> Встраиваемый код</a></li>
+  <li><a href="#sec-markdown-codeblocks-multilang" id="toc-sec-markdown-codeblocks-multilang" class="nav-link" data-scroll-target="#sec-markdown-codeblocks-multilang"><span class="header-section-number">4.1.2</span> Разные языки в одном документе</a></li>
+  <li><a href="#sec-markdown-codeblocks-render" id="toc-sec-markdown-codeblocks-render" class="nav-link" data-scroll-target="#sec-markdown-codeblocks-render"><span class="header-section-number">4.1.3</span> Рендеринг и сохранение</a></li>
+  <li><a href="#sec-markdown-codeblocks-options" id="toc-sec-markdown-codeblocks-options" class="nav-link" data-scroll-target="#sec-markdown-codeblocks-options"><span class="header-section-number">4.1.4</span> Опции блоков кода</a></li>
+  <li><a href="#sec-markdown-codeblocks-output" id="toc-sec-markdown-codeblocks-output" class="nav-link" data-scroll-target="#sec-markdown-codeblocks-output"><span class="header-section-number">4.1.5</span> Параметры вывода</a></li>
+  <li><a href="#sec-markdown-codeblocks-fig-captions" id="toc-sec-markdown-codeblocks-fig-captions" class="nav-link" data-scroll-target="#sec-markdown-codeblocks-fig-captions"><span class="header-section-number">4.1.6</span> Названия рисунков</a></li>
   </ul></li>
-  <li><a href="#форматирование-текста" id="toc-форматирование-текста" class="nav-link" data-scroll-target="#форматирование-текста"><span class="header-section-number">4.2</span> Форматирование текста</a></li>
-  <li><a href="#заголовки" id="toc-заголовки" class="nav-link" data-scroll-target="#заголовки"><span class="header-section-number">4.3</span> Заголовки</a></li>
-  <li><a href="#ссылки-и-изображения" id="toc-ссылки-и-изображения" class="nav-link" data-scroll-target="#ссылки-и-изображения"><span class="header-section-number">4.5</span> Ссылки и Изображения</a></li>
-  <li><a href="#перекрестные-ссылки" id="toc-перекрестные-ссылки" class="nav-link" data-scroll-target="#перекрестные-ссылки"><span class="header-section-number">4.6</span> Перекрестные ссылки</a>
+  <li><a href="#sec-markdown-text-editing" id="toc-sec-markdown-text-editing" class="nav-link" data-scroll-target="#sec-markdown-text-editing"><span class="header-section-number">4.2</span> Форматирование текста</a></li>
+  <li><a href="#заголовки-sec-markdown-headers" id="toc-заголовки-sec-markdown-headers" class="nav-link" data-scroll-target="#заголовки-sec-markdown-headers"><span class="header-section-number">4.3</span> Заголовки {#sec markdown-headers}</a></li>
+  <li><a href="#sec-markdown-link-and-image" id="toc-sec-markdown-link-and-image" class="nav-link" data-scroll-target="#sec-markdown-link-and-image"><span class="header-section-number">4.5</span> Ссылки и Изображения</a></li>
+  <li><a href="#sec-markdown-crossref" id="toc-sec-markdown-crossref" class="nav-link" data-scroll-target="#sec-markdown-crossref"><span class="header-section-number">4.6</span> Перекрестные ссылки</a>
   <ul class="collapse">
-  <li><a href="#размещение-и-подзаголовки-рисунков" id="toc-размещение-и-подзаголовки-рисунков" class="nav-link" data-scroll-target="#размещение-и-подзаголовки-рисунков"><span class="header-section-number">4.6.1</span> Размещение и подзаголовки рисунков</a></li>
+  <li><a href="#sec-markdown-crossref-subcaption" id="toc-sec-markdown-crossref-subcaption" class="nav-link" data-scroll-target="#sec-markdown-crossref-subcaption"><span class="header-section-number">4.6.1</span> Размещение и подзаголовки рисунков</a></li>
   </ul></li>
-  <li><a href="#списки" id="toc-списки" class="nav-link" data-scroll-target="#списки"><span class="header-section-number">4.7</span> Списки</a>
+  <li><a href="#sec-markdonw-list" id="toc-sec-markdonw-list" class="nav-link" data-scroll-target="#sec-markdonw-list"><span class="header-section-number">4.7</span> Списки</a>
   <ul class="collapse">
-  <li><a href="#блочное-размещение" id="toc-блочное-размещение" class="nav-link" data-scroll-target="#блочное-размещение"><span class="header-section-number">4.7.1</span> Блочное размещение</a></li>
+  <li><a href="#sec-markdown-list-layout" id="toc-sec-markdown-list-layout" class="nav-link" data-scroll-target="#sec-markdown-list-layout"><span class="header-section-number">4.7.1</span> Блочное размещение</a></li>
   </ul></li>
-  <li><a href="#таблицы" id="toc-таблицы" class="nav-link" data-scroll-target="#таблицы"><span class="header-section-number">4.8</span> Таблицы</a>
+  <li><a href="#sec-markdown-tables" id="toc-sec-markdown-tables" class="nav-link" data-scroll-target="#sec-markdown-tables"><span class="header-section-number">4.8</span> Таблицы</a>
   <ul class="collapse">
-  <li><a href="#простые-таблицы" id="toc-простые-таблицы" class="nav-link" data-scroll-target="#простые-таблицы"><span class="header-section-number">4.8.1</span> Простые таблицы</a></li>
-  <li><a href="#расширенные-таблицы" id="toc-расширенные-таблицы" class="nav-link" data-scroll-target="#расширенные-таблицы"><span class="header-section-number">4.8.2</span> Расширенные таблицы</a></li>
+  <li><a href="#sec-markdown-tables-simple" id="toc-sec-markdown-tables-simple" class="nav-link" data-scroll-target="#sec-markdown-tables-simple"><span class="header-section-number">4.8.1</span> Простые таблицы</a></li>
+  <li><a href="#sec-markdown-tables-extended" id="toc-sec-markdown-tables-extended" class="nav-link" data-scroll-target="#sec-markdown-tables-extended"><span class="header-section-number">4.8.2</span> Расширенные таблицы</a></li>
   </ul></li>
-  <li><a href="#формулы" id="toc-формулы" class="nav-link" data-scroll-target="#формулы"><span class="header-section-number">4.9</span> Формулы</a></li>
-  <li><a href="#диаграммы" id="toc-диаграммы" class="nav-link" data-scroll-target="#диаграммы"><span class="header-section-number">4.10</span> Диаграммы</a></li>
-  <li><a href="#цитаты" id="toc-цитаты" class="nav-link" data-scroll-target="#цитаты"><span class="header-section-number">4.11</span> Цитаты</a></li>
-  <li><a href="#специальные-символы" id="toc-специальные-символы" class="nav-link" data-scroll-target="#специальные-символы"><span class="header-section-number">4.12</span> Специальные символы</a></li>
+  <li><a href="#sec-markdown-equations" id="toc-sec-markdown-equations" class="nav-link" data-scroll-target="#sec-markdown-equations"><span class="header-section-number">4.9</span> Формулы</a></li>
+  <li><a href="#sec-markdown-diagram" id="toc-sec-markdown-diagram" class="nav-link" data-scroll-target="#sec-markdown-diagram"><span class="header-section-number">4.10</span> Диаграммы</a></li>
+  <li><a href="#sec-markdown-quote" id="toc-sec-markdown-quote" class="nav-link" data-scroll-target="#sec-markdown-quote"><span class="header-section-number">4.11</span> Цитаты</a></li>
+  <li><a href="#sec-markdown-special-symbols" id="toc-sec-markdown-special-symbols" class="nav-link" data-scroll-target="#sec-markdown-special-symbols"><span class="header-section-number">4.12</span> Специальные символы</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li></ul></div></nav>
     </div>
@@ -520,7 +520,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../enviroment/overview.html">Среда разработки</a></li><li class="breadcrumb-item"><a href="../enviroment/markdown.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Язык разметки Markdown</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Язык разметки Markdown</span></h1>
+<h1 class="title"><span id="sec-markdown" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Язык разметки Markdown</span></span></h1>
 </div>
 
 
@@ -544,8 +544,8 @@ window.Quarto = {
 <p>Документ в формате Markdown должен быть доступен для публикации как есть, как обычный текст, не создавая впечатление, будто он размечен тегами или инструкциями по форматированию. – <a href="https://daringfireball.net/projects/markdown/syntax#philosophy">John Gruber</a></p>
 </blockquote>
 <p>Рассмотрим наиболее часто встречаемые примитивы разметки</p>
-<section id="блоки-кода" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="блоки-кода"><span class="header-section-number">4.1</span> Блоки кода</h2>
+<section id="sec-markdown-codeblocks" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="sec-markdown-codeblocks"><span class="header-section-number">4.1</span> Блоки кода</h2>
 <p>Quarto позволяет объединить исполняемый код и сопутствующее описание в готовый документ. Чтобы узнать больше о Quarto, посетите <a href="https://quarto.org" class="uri">https://quarto.org</a>. Блоки кода, которые используют фигурные скобки вокруг имени языка (например, <code>```{r}</code>), являются исполняемыми и будут запущены Quarto во время рендеринга</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Качество воздуха</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -583,8 +583,8 @@ window.Quarto = {
 </div>
 </div>
 <p>Из исполняемых блоков кода можно создавать самые разные типы выходных данных, включая графики, таблицы и простой текст.</p>
-<section id="встраиваемый-код" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="встраиваемый-код"><span class="header-section-number">4.1.1</span> Встраиваемый код</h3>
+<section id="sec-markdown-codeblocks-inline" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="sec-markdown-codeblocks-inline"><span class="header-section-number">4.1.1</span> Встраиваемый код</h3>
 <p>Встраиваемый (Inline) код позволяет вам выполнять код в markdown, например, для автоматического использования самых последних вычислений в повествовании. Синтаксис встроенного кода похож на блоки кода, за исключением того, что используеся один тик (<code>`</code>) вместо тройных тиков (<code>```</code>). Встраиваемый код может использоваться в середине markdown. Например, следующий код сохраняет переменную <code>radius</code> в блоке кода, а затем обращается к ней в предложении с помощью встроенного кода:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>radius <span class="ot">&lt;-</span> <span class="dv">5</span></span>
@@ -607,8 +607,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="разные-языки-в-одном-документе" class="level3" data-number="4.1.2">
-<h3 data-number="4.1.2" class="anchored" data-anchor-id="разные-языки-в-одном-документе"><span class="header-section-number">4.1.2</span> Разные языки в одном документе</h3>
+<section id="sec-markdown-codeblocks-multilang" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="sec-markdown-codeblocks-multilang"><span class="header-section-number">4.1.2</span> Разные языки в одном документе</h3>
 <p>Движки рендеринга <strong>Knitr</strong> и <strong>Jupyter</strong> позволяют совмещать вычисления на разных языках в одном документе. Например:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
@@ -677,12 +677,12 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="рендеринг-и-сохранение" class="level3" data-number="4.1.3">
-<h3 data-number="4.1.3" class="anchored" data-anchor-id="рендеринг-и-сохранение"><span class="header-section-number">4.1.3</span> Рендеринг и сохранение</h3>
+<section id="sec-markdown-codeblocks-render" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="sec-markdown-codeblocks-render"><span class="header-section-number">4.1.3</span> Рендеринг и сохранение</h3>
 <p>При рендеринге документа Quarto блоки кода выполняются автоматически. Прямо над документом находится панель инструментов, содержащая различные параметры, включая <strong>Render</strong> (сегментированная синяя стрелка). По умолчанию документ qmd конвертируется в html.</p>
 </section>
-<section id="опции-блоков-кода" class="level3" data-number="4.1.4">
-<h3 data-number="4.1.4" class="anchored" data-anchor-id="опции-блоков-кода"><span class="header-section-number">4.1.4</span> Опции блоков кода</h3>
+<section id="sec-markdown-codeblocks-options" class="level3" data-number="4.1.4">
+<h3 data-number="4.1.4" class="anchored" data-anchor-id="sec-markdown-codeblocks-options"><span class="header-section-number">4.1.4</span> Опции блоков кода</h3>
 <p>Задать название блока можно с помощь параметра <code>label</code>:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: convert</span></span>
@@ -705,8 +705,8 @@ window.Quarto = {
 <span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>Lines 4-7  </span>
 <span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>add new columns for the bill ratio and bill area.</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="параметры-вывода" class="level3" data-number="4.1.5">
-<h3 data-number="4.1.5" class="anchored" data-anchor-id="параметры-вывода"><span class="header-section-number">4.1.5</span> Параметры вывода</h3>
+<section id="sec-markdown-codeblocks-output" class="level3" data-number="4.1.5">
+<h3 data-number="4.1.5" class="anchored" data-anchor-id="sec-markdown-codeblocks-output"><span class="header-section-number">4.1.5</span> Параметры вывода</h3>
 <p>Существует широкий спектр опций для настройки вывода из выполненного кода. Все эти опции могут быть указаны либо глобально (в front-matter документа), либо для каждого блока кода. Например, вот модификация примера R, указывающая, что мы не хотим “отражать” код в выходном документе:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
@@ -776,8 +776,8 @@ window.Quarto = {
 <span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(airquality)</span>
 <span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="названия-рисунков" class="level3" data-number="4.1.6">
-<h3 data-number="4.1.6" class="anchored" data-anchor-id="названия-рисунков"><span class="header-section-number">4.1.6</span> Названия рисунков</h3>
+<section id="sec-markdown-codeblocks-fig-captions" class="level3" data-number="4.1.6">
+<h3 data-number="4.1.6" class="anchored" data-anchor-id="sec-markdown-codeblocks-fig-captions"><span class="header-section-number">4.1.6</span> Названия рисунков</h3>
 <p>Можно указать подпись и замещающий текст для рисунков, сгенерированных из кода, используя параметры <code>fig-cap</code> и <code>fig-alt</code>. Например, здесь эти параметры добавлются в ячейку кода которая создает график:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
@@ -807,8 +807,8 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="форматирование-текста" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="форматирование-текста"><span class="header-section-number">4.2</span> Форматирование текста</h2>
+<section id="sec-markdown-text-editing" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="sec-markdown-text-editing"><span class="header-section-number">4.2</span> Форматирование текста</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -836,8 +836,8 @@ window.Quarto = {
 </tbody>
 </table>
 </section>
-<section id="заголовки" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="заголовки"><span class="header-section-number">4.3</span> Заголовки</h2>
+<section id="заголовки-sec-markdown-headers" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="заголовки-sec-markdown-headers"><span class="header-section-number">4.3</span> Заголовки {#sec markdown-headers}</h2>
 <table class="caption-top table">
 <caption>Заголовки</caption>
 <colgroup>
@@ -874,8 +874,8 @@ window.Quarto = {
 </tbody>
 </table>
 </section>
-<section id="ссылки-и-изображения" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="ссылки-и-изображения"><span class="header-section-number">4.5</span> Ссылки и Изображения</h2>
+<section id="sec-markdown-link-and-image" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="sec-markdown-link-and-image"><span class="header-section-number">4.5</span> Ссылки и Изображения</h2>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -909,8 +909,8 @@ window.Quarto = {
 </tbody>
 </table>
 </section>
-<section id="перекрестные-ссылки" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="перекрестные-ссылки"><span class="header-section-number">4.6</span> Перекрестные ссылки</h2>
+<section id="sec-markdown-crossref" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="sec-markdown-crossref"><span class="header-section-number">4.6</span> Перекрестные ссылки</h2>
 <p>Перекрестные ссылки на рисунки создаются, добавлением к ним идентификатора с префиксом <code>fig-</code>, а затем ссылаясь на рисунок с помощью префикса <code>@</code>. Например:</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Грач](rctbsu.png)</span>{#fig-grach}</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -946,8 +946,8 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<section id="размещение-и-подзаголовки-рисунков" class="level3" data-number="4.6.1">
-<h3 data-number="4.6.1" class="anchored" data-anchor-id="размещение-и-подзаголовки-рисунков"><span class="header-section-number">4.6.1</span> Размещение и подзаголовки рисунков</h3>
+<section id="sec-markdown-crossref-subcaption" class="level3" data-number="4.6.1">
+<h3 data-number="4.6.1" class="anchored" data-anchor-id="sec-markdown-crossref-subcaption"><span class="header-section-number">4.6.1</span> Размещение и подзаголовки рисунков</h3>
 <p>Подзаголовки для вычисляемых рисунков задаются с использованием опций <code>fig-cap</code> и <code>fig-subcap</code>. Если использовать параметр <code>label</code> с префиксом <code>fig-</code> то рисунок будет пронумерован и [перекрестно-ссылаемым].</p>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-charts</span></span>
@@ -1011,8 +1011,8 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="списки" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="списки"><span class="header-section-number">4.7</span> Списки</h2>
+<section id="sec-markdonw-list" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="sec-markdonw-list"><span class="header-section-number">4.7</span> Списки</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 45%">
@@ -1091,9 +1091,9 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<section id="блочное-размещение" class="level3" data-number="4.7.1">
-<h3 data-number="4.7.1" class="anchored" data-anchor-id="блочное-размещение"><span class="header-section-number">4.7.1</span> Блочное размещение</h3>
-<p>Например, например мы можем разместиить 2 списка рядом:</p>
+<section id="sec-markdown-list-layout" class="level3" data-number="4.7.1">
+<h3 data-number="4.7.1" class="anchored" data-anchor-id="sec-markdown-list-layout"><span class="header-section-number">4.7.1</span> Блочное размещение</h3>
+<p>Например, например мы можем разместить 2 списка рядом:</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>::: {layout-ncol=2}</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">### List One</span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1112,8 +1112,8 @@ window.Quarto = {
 </div>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
-<section id="первый-списко" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<h4 class="anchored" data-anchor-id="первый-списко">Первый списко</h4>
+<section id="первый-список" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h4 class="anchored" data-anchor-id="первый-список">Первый список</h4>
 <ul>
 <li>Элемент A</li>
 <li>Элемент B</li>
@@ -1145,10 +1145,10 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="таблицы" class="level2" data-number="4.8">
-<h2 data-number="4.8" class="anchored" data-anchor-id="таблицы"><span class="header-section-number">4.8</span> Таблицы</h2>
-<section id="простые-таблицы" class="level3" data-number="4.8.1">
-<h3 data-number="4.8.1" class="anchored" data-anchor-id="простые-таблицы"><span class="header-section-number">4.8.1</span> Простые таблицы</h3>
+<section id="sec-markdown-tables" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="sec-markdown-tables"><span class="header-section-number">4.8</span> Таблицы</h2>
+<section id="sec-markdown-tables-simple" class="level3" data-number="4.8.1">
+<h3 data-number="4.8.1" class="anchored" data-anchor-id="sec-markdown-tables-simple"><span class="header-section-number">4.8.1</span> Простые таблицы</h3>
 <p>В обычных таблицах могут содержаться только элементы представленные простым текстом.</p>
 <section id="разметка-markdown" class="level4">
 <h4 class="anchored" data-anchor-id="разметка-markdown">Разметка Markdown</h4>
@@ -1194,8 +1194,8 @@ window.Quarto = {
 </table>
 </section>
 </section>
-<section id="расширенные-таблицы" class="level3" data-number="4.8.2">
-<h3 data-number="4.8.2" class="anchored" data-anchor-id="расширенные-таблицы"><span class="header-section-number">4.8.2</span> Расширенные таблицы</h3>
+<section id="sec-markdown-tables-extended" class="level3" data-number="4.8.2">
+<h3 data-number="4.8.2" class="anchored" data-anchor-id="sec-markdown-tables-extended"><span class="header-section-number">4.8.2</span> Расширенные таблицы</h3>
 <p>Расширенные таблицы (grid tables) — это более продвинутый тип таблиц разметки, которые допускают произвольные блочные элементы (несколько абзацев, блоков кода, списков и т. д.). Например: строка =s отделяет заголовок от тела таблицы и может быть опущена для таблицы без заголовка. Ячейки таблиц сетки могут содержать произвольные блочные элементы (несколько абзацев, блоков кода, списков и т. д.)</p>
 <p>Выравнивания можно указывать так же, как и в случае с таблицами конвейера, помещая двоеточия на границах разделительной линии после заголовка.</p>
 <section id="разметка-markdown-1" class="level4">
@@ -1217,8 +1217,8 @@ window.Quarto = {
 <table class="caption-top table">
 <caption>Пример расширенной таблицы</caption>
 <colgroup>
-<col style="width: 13%">
-<col style="width: 12%">
+<col style="width: 18%">
+<col style="width: 18%">
 <col style="width: 31%">
 </colgroup>
 <thead>
@@ -1250,8 +1250,8 @@ window.Quarto = {
 </section>
 </section>
 </section>
-<section id="формулы" class="level2" data-number="4.9">
-<h2 data-number="4.9" class="anchored" data-anchor-id="формулы"><span class="header-section-number">4.9</span> Формулы</h2>
+<section id="sec-markdown-equations" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="sec-markdown-equations"><span class="header-section-number">4.9</span> Формулы</h2>
 <p>Для вставки формулы в текст используется <code>$</code>. Для выделения отдельным блоком используется <code>$$</code>. Например:</p>
 <table class="caption-top table">
 <caption>Формулы</caption>
@@ -1279,10 +1279,10 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p>Перекрёстная ссылка на LaTeX</p>
+<p>Выражения записываются на языке <a href="https://www.latex-project.org/">LaTeX</a>, подробнее <a href="latex.html" class="quarto-xref"><span>Глава 5</span></a></p>
 </section>
-<section id="диаграммы" class="level2" data-number="4.10">
-<h2 data-number="4.10" class="anchored" data-anchor-id="диаграммы"><span class="header-section-number">4.10</span> Диаграммы</h2>
+<section id="sec-markdown-diagram" class="level2" data-number="4.10">
+<h2 data-number="4.10" class="anchored" data-anchor-id="sec-markdown-diagram"><span class="header-section-number">4.10</span> Диаграммы</h2>
 <p>Quarto имеет встроенную поддержку для диаграмм <a href="https://mermaid-js.github.io/mermaid/#/">Mermaid</a> и <a href="https://graphviz.org/">Graphviz</a>. Mermaid – это инструмент для создания диаграмм и графиков на основе Javascript, который использует определения текста, вдохновленные Markdown, и рендерер для создания и изменения сложных диаграмм.</p>
 <div class="cell" data-layout-align="default">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
@@ -1308,19 +1308,19 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="цитаты" class="level2" data-number="4.11">
-<h2 data-number="4.11" class="anchored" data-anchor-id="цитаты"><span class="header-section-number">4.11</span> Цитаты</h2>
+<section id="sec-markdown-quote" class="level2" data-number="4.11">
+<h2 data-number="4.11" class="anchored" data-anchor-id="sec-markdown-quote"><span class="header-section-number">4.11</span> Цитаты</h2>
 <div class="sourceCode" id="cb41"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a> <span class="at">&gt; Blockquote</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <blockquote class="blockquote">
 <p>Это короткая цитата</p>
 </blockquote>
 </section>
-<section id="специальные-символы" class="level2" data-number="4.12">
-<h2 data-number="4.12" class="anchored" data-anchor-id="специальные-символы"><span class="header-section-number">4.12</span> Специальные символы</h2>
+<section id="sec-markdown-special-symbols" class="level2" data-number="4.12">
+<h2 data-number="4.12" class="anchored" data-anchor-id="sec-markdown-special-symbols"><span class="header-section-number">4.12</span> Специальные символы</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
-<col style="width: 19%">
+<col style="width: 22%">
 </colgroup>
 <thead>
 <tr class="header">

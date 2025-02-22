@@ -288,7 +288,7 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../linear/integer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Целочисленное программирование. Метод ветвей и границ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Целочисленное программирование.</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -471,44 +471,44 @@ div.csl-indent {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#переменные" id="toc-переменные" class="nav-link active" data-scroll-target="#переменные"><span class="header-section-number">6.1</span> Переменные</a></li>
-  <li><a href="#типы-данных" id="toc-типы-данных" class="nav-link" data-scroll-target="#типы-данных"><span class="header-section-number">6.2</span> Типы данных</a></li>
-  <li><a href="#sec-vector" id="toc-sec-vector" class="nav-link" data-scroll-target="#sec-vector"><span class="header-section-number">6.3</span> Вектор</a>
+  <li><a href="#sec-r-lang-basic-variables-naming" id="toc-sec-r-lang-basic-variables-naming" class="nav-link active" data-scroll-target="#sec-r-lang-basic-variables-naming"><span class="header-section-number">6.1</span> Переменные</a></li>
+  <li><a href="#sec-r-lang-basic-data-types" id="toc-sec-r-lang-basic-data-types" class="nav-link" data-scroll-target="#sec-r-lang-basic-data-types"><span class="header-section-number">6.2</span> Типы данных</a></li>
+  <li><a href="#sec-r-lang-basic-vector" id="toc-sec-r-lang-basic-vector" class="nav-link" data-scroll-target="#sec-r-lang-basic-vector"><span class="header-section-number">6.3</span> Вектор</a>
   <ul class="collapse">
-  <li><a href="#последовательности" id="toc-последовательности" class="nav-link" data-scroll-target="#последовательности"><span class="header-section-number">6.3.1</span> Последовательности</a></li>
-  <li><a href="#доступ-к-элементам" id="toc-доступ-к-элементам" class="nav-link" data-scroll-target="#доступ-к-элементам"><span class="header-section-number">6.3.2</span> Доступ к элементам</a></li>
+  <li><a href="#sec-r-lang-basic-sequence" id="toc-sec-r-lang-basic-sequence" class="nav-link" data-scroll-target="#sec-r-lang-basic-sequence"><span class="header-section-number">6.3.1</span> Последовательности</a></li>
+  <li><a href="#sec-r-lang-basic-indexing" id="toc-sec-r-lang-basic-indexing" class="nav-link" data-scroll-target="#sec-r-lang-basic-indexing"><span class="header-section-number">6.3.2</span> Доступ к элементам</a></li>
   </ul></li>
-  <li><a href="#sec-basic-list" id="toc-sec-basic-list" class="nav-link" data-scroll-target="#sec-basic-list"><span class="header-section-number">6.4</span> Список</a>
+  <li><a href="#sec-r-lang-basic-list" id="toc-sec-r-lang-basic-list" class="nav-link" data-scroll-target="#sec-r-lang-basic-list"><span class="header-section-number">6.4</span> Список</a>
   <ul class="collapse">
-  <li><a href="#sec-basic-list-indexing" id="toc-sec-basic-list-indexing" class="nav-link" data-scroll-target="#sec-basic-list-indexing"><span class="header-section-number">6.4.1</span> Доступ к элементам</a></li>
+  <li><a href="#sec-r-lang-basic-list-indexing" id="toc-sec-r-lang-basic-list-indexing" class="nav-link" data-scroll-target="#sec-r-lang-basic-list-indexing"><span class="header-section-number">6.4.1</span> Доступ к элементам</a></li>
   </ul></li>
-  <li><a href="#sec-matrix" id="toc-sec-matrix" class="nav-link" data-scroll-target="#sec-matrix"><span class="header-section-number">6.5</span> Матрицы и массивы</a></li>
-  <li><a href="#sec-table" id="toc-sec-table" class="nav-link" data-scroll-target="#sec-table"><span class="header-section-number">6.6</span> Таблицы</a></li>
-  <li><a href="#преобразование-объектов" id="toc-преобразование-объектов" class="nav-link" data-scroll-target="#преобразование-объектов"><span class="header-section-number">6.7</span> Преобразование объектов</a></li>
-  <li><a href="#векторные-операции" id="toc-векторные-операции" class="nav-link" data-scroll-target="#векторные-операции"><span class="header-section-number">6.8</span> Векторные операции</a>
+  <li><a href="#sec-r-lang-basic-matrix" id="toc-sec-r-lang-basic-matrix" class="nav-link" data-scroll-target="#sec-r-lang-basic-matrix"><span class="header-section-number">6.5</span> Матрицы и массивы</a></li>
+  <li><a href="#sec-r-lang-basic-table" id="toc-sec-r-lang-basic-table" class="nav-link" data-scroll-target="#sec-r-lang-basic-table"><span class="header-section-number">6.6</span> Таблицы</a></li>
+  <li><a href="#sec-r-lang-basic-cast" id="toc-sec-r-lang-basic-cast" class="nav-link" data-scroll-target="#sec-r-lang-basic-cast"><span class="header-section-number">6.7</span> Преобразование объектов</a></li>
+  <li><a href="#sec-r-lang-basic-vectorization" id="toc-sec-r-lang-basic-vectorization" class="nav-link" data-scroll-target="#sec-r-lang-basic-vectorization"><span class="header-section-number">6.8</span> Векторные операции</a>
   <ul class="collapse">
-  <li><a href="#арифметические-операторы" id="toc-арифметические-операторы" class="nav-link" data-scroll-target="#арифметические-операторы"><span class="header-section-number">6.8.1</span> Арифметические операторы</a></li>
-  <li><a href="#операторы-сравнения" id="toc-операторы-сравнения" class="nav-link" data-scroll-target="#операторы-сравнения"><span class="header-section-number">6.8.2</span> Операторы сравнения</a></li>
-  <li><a href="#логические" id="toc-логические" class="nav-link" data-scroll-target="#логические"><span class="header-section-number">6.8.3</span> Логические</a></li>
+  <li><a href="#sec-r-lang-basic-vectorization-arithmetic" id="toc-sec-r-lang-basic-vectorization-arithmetic" class="nav-link" data-scroll-target="#sec-r-lang-basic-vectorization-arithmetic"><span class="header-section-number">6.8.1</span> Арифметические операторы</a></li>
+  <li><a href="#sec-r-lang-basic-vectorization-comparison" id="toc-sec-r-lang-basic-vectorization-comparison" class="nav-link" data-scroll-target="#sec-r-lang-basic-vectorization-comparison"><span class="header-section-number">6.8.2</span> Операторы сравнения</a></li>
+  <li><a href="#sec-r-lang-basic-vectorization-logical" id="toc-sec-r-lang-basic-vectorization-logical" class="nav-link" data-scroll-target="#sec-r-lang-basic-vectorization-logical"><span class="header-section-number">6.8.3</span> Логические</a></li>
   </ul></li>
-  <li><a href="#ветвление" id="toc-ветвление" class="nav-link" data-scroll-target="#ветвление"><span class="header-section-number">6.9</span> Ветвление</a>
+  <li><a href="#sec-r-lang-basic-branching" id="toc-sec-r-lang-basic-branching" class="nav-link" data-scroll-target="#sec-r-lang-basic-branching"><span class="header-section-number">6.9</span> Ветвление</a>
   <ul class="collapse">
-  <li><a href="#оператор-if" id="toc-оператор-if" class="nav-link" data-scroll-target="#оператор-if"><span class="header-section-number">6.9.1</span> Оператор <code>if</code></a></li>
-  <li><a href="#оператор-else" id="toc-оператор-else" class="nav-link" data-scroll-target="#оператор-else"><span class="header-section-number">6.9.2</span> Оператор <code>else</code></a></li>
-  <li><a href="#функция-switch" id="toc-функция-switch" class="nav-link" data-scroll-target="#функция-switch"><span class="header-section-number">6.9.3</span> Функция <code>switch</code></a></li>
+  <li><a href="#sec-r-lang-basic-branching-if" id="toc-sec-r-lang-basic-branching-if" class="nav-link" data-scroll-target="#sec-r-lang-basic-branching-if"><span class="header-section-number">6.9.1</span> Оператор <code>if</code></a></li>
+  <li><a href="#sec-r-lang-basic-branching-else" id="toc-sec-r-lang-basic-branching-else" class="nav-link" data-scroll-target="#sec-r-lang-basic-branching-else"><span class="header-section-number">6.9.2</span> Оператор <code>else</code></a></li>
+  <li><a href="#sec-r-lang-basic-branching-switch" id="toc-sec-r-lang-basic-branching-switch" class="nav-link" data-scroll-target="#sec-r-lang-basic-branching-switch"><span class="header-section-number">6.9.3</span> Функция <code>switch</code></a></li>
   </ul></li>
-  <li><a href="#циклы" id="toc-циклы" class="nav-link" data-scroll-target="#циклы"><span class="header-section-number">6.10</span> Циклы</a>
+  <li><a href="#sec-r-lang-basic-cylce" id="toc-sec-r-lang-basic-cylce" class="nav-link" data-scroll-target="#sec-r-lang-basic-cylce"><span class="header-section-number">6.10</span> Циклы</a>
   <ul class="collapse">
-  <li><a href="#типы-циклов" id="toc-типы-циклов" class="nav-link" data-scroll-target="#типы-циклов"><span class="header-section-number">6.10.1</span> Типы циклов</a></li>
-  <li><a href="#операторы-управления" id="toc-операторы-управления" class="nav-link" data-scroll-target="#операторы-управления"><span class="header-section-number">6.10.2</span> Операторы управления</a></li>
+  <li><a href="#sec-r-lang-basic-cycle-types" id="toc-sec-r-lang-basic-cycle-types" class="nav-link" data-scroll-target="#sec-r-lang-basic-cycle-types"><span class="header-section-number">6.10.1</span> Типы циклов</a></li>
+  <li><a href="#sec-r-lang-basic-cycle-control" id="toc-sec-r-lang-basic-cycle-control" class="nav-link" data-scroll-target="#sec-r-lang-basic-cycle-control"><span class="header-section-number">6.10.2</span> Операторы управления</a></li>
   </ul></li>
-  <li><a href="#функции" id="toc-функции" class="nav-link" data-scroll-target="#функции"><span class="header-section-number">6.11</span> Функции</a>
+  <li><a href="#sec-r-lang-basic-function" id="toc-sec-r-lang-basic-function" class="nav-link" data-scroll-target="#sec-r-lang-basic-function"><span class="header-section-number">6.11</span> Функции</a>
   <ul class="collapse">
-  <li><a href="#определение-функции" id="toc-определение-функции" class="nav-link" data-scroll-target="#определение-функции"><span class="header-section-number">6.11.1</span> Определение функции</a></li>
-  <li><a href="#элементы-объекта-функции" id="toc-элементы-объекта-функции" class="nav-link" data-scroll-target="#элементы-объекта-функции"><span class="header-section-number">6.11.2</span> Элементы объекта функции</a></li>
-  <li><a href="#встроенные-функции" id="toc-встроенные-функции" class="nav-link" data-scroll-target="#встроенные-функции"><span class="header-section-number">6.11.3</span> Встроенные функции</a></li>
-  <li><a href="#пользовательские-функции" id="toc-пользовательские-функции" class="nav-link" data-scroll-target="#пользовательские-функции"><span class="header-section-number">6.11.4</span> Пользовательские функции</a></li>
-  <li><a href="#вызов-функции" id="toc-вызов-функции" class="nav-link" data-scroll-target="#вызов-функции"><span class="header-section-number">6.11.5</span> Вызов функции</a></li>
+  <li><a href="#sec-r-lang-basic-function-defenition" id="toc-sec-r-lang-basic-function-defenition" class="nav-link" data-scroll-target="#sec-r-lang-basic-function-defenition"><span class="header-section-number">6.11.1</span> Определение функции</a></li>
+  <li><a href="#sec-r-lang-basic-function-elements" id="toc-sec-r-lang-basic-function-elements" class="nav-link" data-scroll-target="#sec-r-lang-basic-function-elements"><span class="header-section-number">6.11.2</span> Элементы объекта функции</a></li>
+  <li><a href="#sec-r-lang-basic-function-integrated" id="toc-sec-r-lang-basic-function-integrated" class="nav-link" data-scroll-target="#sec-r-lang-basic-function-integrated"><span class="header-section-number">6.11.3</span> Встроенные функции</a></li>
+  <li><a href="#sec-r-lang-basic-function-user-defined" id="toc-sec-r-lang-basic-function-user-defined" class="nav-link" data-scroll-target="#sec-r-lang-basic-function-user-defined"><span class="header-section-number">6.11.4</span> Пользовательские функции</a></li>
+  <li><a href="#sec-r-lang-basic-function-call" id="toc-sec-r-lang-basic-function-call" class="nav-link" data-scroll-target="#sec-r-lang-basic-function-call"><span class="header-section-number">6.11.5</span> Вызов функции</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li></ul></div></nav>
@@ -518,7 +518,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../r-lang/overview.html">Язык программирования R</a></li><li class="breadcrumb-item"><a href="../r-lang/basic.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Основы языка R</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Основы языка R</span></h1>
+<h1 class="title"><span id="sec-r-lang-basic" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Основы языка R</span></span></h1>
 </div>
 
 
@@ -535,16 +535,17 @@ div.csl-indent {
 </header>
 
 
-<p><span class="citation" data-cites="w3schools-r">[<a href="../references.html#ref-w3schools-r" role="doc-biblioref">1</a>]</span> <span class="citation" data-cites="tutorialspoint-r">[<a href="../references.html#ref-tutorialspoint-r" role="doc-biblioref">2</a>]</span></p>
-<section id="переменные" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="переменные"><span class="header-section-number">6.1</span> Переменные</h2>
+<p><span class="citation" data-cites="bib-r-lang-tutorialspoint">[<a href="../references.html#ref-bib-r-lang-tutorialspoint" role="doc-biblioref">1</a>]</span></p>
+<p><span class="citation" data-cites="bib-r-lang-w3schools">[<a href="../references.html#ref-bib-r-lang-w3schools" role="doc-biblioref">2</a>]</span></p>
+<section id="sec-r-lang-basic-variables-naming" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="sec-r-lang-basic-variables-naming"><span class="header-section-number">6.1</span> Переменные</h2>
 <p>Правильное имя переменной состоит из букв, цифр и символов точки или подчеркивания. Имя переменной начинается с буквы или точки, за которыми не следует число.</p>
 <table class="caption-top table">
 <caption>Правила именования переменных</caption>
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 22%">
+<col style="width: 12%">
+<col style="width: 63%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -626,17 +627,23 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="типы-данных" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="типы-данных"><span class="header-section-number">6.2</span> Типы данных</h2>
+<section id="sec-r-lang-basic-data-types" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="sec-r-lang-basic-data-types"><span class="header-section-number">6.2</span> Типы данных</h2>
 <p>В отличие от других языков программирования, таких как C и java, в R переменные не объявляются как некоторый тип данных. Переменным присваиваются R-объекты, и тип данных R-объекта становится типом данных переменной. Существует множество типов R-объектов. Наиболее часто используемые из них:</p>
 <ul>
-<li><a href="#sec-vector" class="quarto-xref">Вектор&nbsp;<span>6.3</span></a></li>
-<li><a href="#sec-basic-list" class="quarto-xref">Список&nbsp;<span>6.4</span></a></li>
-<li><a href="#sec-matrix" class="quarto-xref">Матрица&nbsp;<span>6.5</span></a></li>
-<li><a href="#sec-matrix" class="quarto-xref">Массивы&nbsp;<span>6.5</span></a></li>
-<li><a href="#sec-table" class="quarto-xref">Таблицы&nbsp;<span>6.6</span></a></li>
+<li><a href="#sec-r-lang-basic-vector" class="quarto-xref">Вектор&nbsp;<span>6.3</span></a></li>
+<li><a href="#sec-r-lang-basic-list" class="quarto-xref">Список&nbsp;<span>6.4</span></a></li>
+<li><a href="#sec-r-lang-basic-matrix" class="quarto-xref">Матрица&nbsp;<span>6.5</span></a></li>
+<li><a href="#sec-r-lang-basic-matrix" class="quarto-xref">Массивы&nbsp;<span>6.5</span></a></li>
+<li><a href="#sec-r-lang-basic-table" class="quarto-xref">Таблицы&nbsp;<span>6.6</span></a></li>
 </ul>
 <p>Все объекты в R строятся на основе интерфейса вектор. Два основных типа которые реализуют этот интерфейс: <a href="https://rdrr.io/r/base/list.html">list()</a> и <a href="https://rdrr.io/r/base/vector.html">vector()</a> остальные R-объекты строятся на основе этих типов. Существует шесть типов <a href="https://rdrr.io/r/base/typeof.html">typeof</a> данных атомарных векторов.</p>
+<div id="tbl-r-lang-basic-data-types" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-r-lang-basic-data-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;6.1: Базовые типы данных
+</figcaption>
+<div aria-describedby="tbl-r-lang-basic-data-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
 <col style="width: 17%">
@@ -689,9 +696,12 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 </section>
-<section id="sec-vector" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="sec-vector"><span class="header-section-number">6.3</span> Вектор</h2>
+<section id="sec-r-lang-basic-vector" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="sec-r-lang-basic-vector"><span class="header-section-number">6.3</span> Вектор</h2>
 <p>Все данные в языке R векторные. Даже если определить численный литерал его внутреннее представление будет вектором.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.vector</span>(<span class="dv">1</span>)</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -699,8 +709,8 @@ div.csl-indent {
 <pre><code>[1] TRUE</code></pre>
 </div>
 </div>
-<section id="последовательности" class="level3" data-number="6.3.1">
-<h3 data-number="6.3.1" class="anchored" data-anchor-id="последовательности"><span class="header-section-number">6.3.1</span> Последовательности</h3>
+<section id="sec-r-lang-basic-sequence" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="sec-r-lang-basic-sequence"><span class="header-section-number">6.3.1</span> Последовательности</h3>
 <p>Для объединения элементов в вектор используется функция <a href="https://rdrr.io/r/base/c.html">c()</a> – <em>combine</em>. При комбинации элементов различных типов общий тип выводится по правилам (ссылка).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
@@ -744,8 +754,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="доступ-к-элементам" class="level3" data-number="6.3.2">
-<h3 data-number="6.3.2" class="anchored" data-anchor-id="доступ-к-элементам"><span class="header-section-number">6.3.2</span> Доступ к элементам</h3>
+<section id="sec-r-lang-basic-indexing" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="sec-r-lang-basic-indexing"><span class="header-section-number">6.3.2</span> Доступ к элементам</h3>
 <section id="оператор" class="level4">
 <h4 class="anchored" data-anchor-id="оператор">Оператор <code>[</code></h4>
 <p>Оператор объект того же класса что и объект-оригинал. Может быть выделено <strong>более 1</strong> элемента!</p>
@@ -793,8 +803,8 @@ div.csl-indent {
 </section>
 </section>
 </section>
-<section id="sec-basic-list" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="sec-basic-list"><span class="header-section-number">6.4</span> Список</h2>
+<section id="sec-r-lang-basic-list" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="sec-r-lang-basic-list"><span class="header-section-number">6.4</span> Список</h2>
 <p>Списки - это объекты R, которые содержат элементы различных типов, такие как числа, строки, векторы и другие списки внутри них. Список также может содержать матрицу или функцию в качестве своих элементов. Список создается с помощью функции <a href="https://rdrr.io/r/base/list.html">list()</a>. Ниже приведен пример создания списка, содержащего строки, числа, векторы и логические значения.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>list_data <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">'Red'</span>, <span class="st">'Green'</span>, <span class="fu">c</span>(<span class="dv">21</span>,<span class="dv">32</span>,<span class="dv">11</span>), <span class="cn">TRUE</span>, <span class="fl">51.23</span>, <span class="fl">119.1</span>)</span>
@@ -820,8 +830,8 @@ div.csl-indent {
 </div>
 </div>
 <p>Список совмещает в себе свойства списка и словаря из других языков программирования. Поэтому элементам мы можем задавать имена.</p>
-<section id="sec-basic-list-indexing" class="level3" data-number="6.4.1">
-<h3 data-number="6.4.1" class="anchored" data-anchor-id="sec-basic-list-indexing"><span class="header-section-number">6.4.1</span> Доступ к элементам</h3>
+<section id="sec-r-lang-basic-list-indexing" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="sec-r-lang-basic-list-indexing"><span class="header-section-number">6.4.1</span> Доступ к элементам</h3>
 <section id="оператор-2" class="level4">
 <h4 class="anchored" data-anchor-id="оператор-2">Оператор <code>[</code></h4>
 <p>Позволяет выбрать один или несколько элементов по индексу. Всегда возвращает тип списка</p>
@@ -882,8 +892,8 @@ div.csl-indent {
 </section>
 </section>
 </section>
-<section id="sec-matrix" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="sec-matrix"><span class="header-section-number">6.5</span> Матрицы и массивы</h2>
+<section id="sec-r-lang-basic-matrix" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="sec-r-lang-basic-matrix"><span class="header-section-number">6.5</span> Матрицы и массивы</h2>
 <p>Матрица – это специальный тип вектора в R, который имеет атрибут <em>dim</em>. <em>dim</em> – это вектор типа integer, состоящий из 2 элементов ( <em>nrow</em> - число строк и <em>ncol</em> - число столбцов). Матрицы заполняются по правилу: сверху вниз слева направо.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>), <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span>
@@ -975,8 +985,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="sec-table" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="sec-table"><span class="header-section-number">6.6</span> Таблицы</h2>
+<section id="sec-r-lang-basic-table" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="sec-r-lang-basic-table"><span class="header-section-number">6.6</span> Таблицы</h2>
 <p>Таблица (Data Frame)– специальный тип списка, в котором каждый элемент имеет фиксированную длину. Используется для хранения табулированных данных. Каждая колонка может представлять различные типы данных, включая факторы. Data Frame имеют специализированный атрибут <em>row.names</em>, указывающий имена строк. Это помогает упростить аннотацию данных. Для создания Data Frame из табулированных данных используются функции <strong>read.table</strong> и <strong>read.csv</strong>. Для создания матрицы из Data Frame используется функция <strong>data.matrix</strong>. <strong>data.frame</strong> – функция для создания Data Frame.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">foo =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">bar =</span> <span class="fu">c</span>(T, T, F, F))</span>
@@ -990,8 +1000,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="преобразование-объектов" class="level2" data-number="6.7">
-<h2 data-number="6.7" class="anchored" data-anchor-id="преобразование-объектов"><span class="header-section-number">6.7</span> Преобразование объектов</h2>
+<section id="sec-r-lang-basic-cast" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="sec-r-lang-basic-cast"><span class="header-section-number">6.7</span> Преобразование объектов</h2>
 <p>Для преобразования объекта к другому типу используются функции семейства <a href="https://rdrr.io/r/base/numeric.html">as.*</a></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>))</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1008,16 +1018,22 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="векторные-операции" class="level2" data-number="6.8">
-<h2 data-number="6.8" class="anchored" data-anchor-id="векторные-операции"><span class="header-section-number">6.8</span> Векторные операции</h2>
+<section id="sec-r-lang-basic-vectorization" class="level2" data-number="6.8">
+<h2 data-number="6.8" class="anchored" data-anchor-id="sec-r-lang-basic-vectorization"><span class="header-section-number">6.8</span> Векторные операции</h2>
 <p>В R можно осуществлять операции над векторами. Это позволяет значительно упростить программный код, не программировать циклы, ускорить процесс написания программ.</p>
-<section id="арифметические-операторы" class="level3" data-number="6.8.1">
-<h3 data-number="6.8.1" class="anchored" data-anchor-id="арифметические-операторы"><span class="header-section-number">6.8.1</span> Арифметические операторы</h3>
+<section id="sec-r-lang-basic-vectorization-arithmetic" class="level3" data-number="6.8.1">
+<h3 data-number="6.8.1" class="anchored" data-anchor-id="sec-r-lang-basic-vectorization-arithmetic"><span class="header-section-number">6.8.1</span> Арифметические операторы</h3>
+<div id="tbl-r-lang-basic-vectorization-arithmetic" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-r-lang-basic-vectorization-arithmetic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;6.2: Векторные арифметические операции
+</figcaption>
+<div aria-describedby="tbl-r-lang-basic-vectorization-arithmetic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 11%">
-<col style="width: 53%">
-<col style="width: 34%">
+<col style="width: 14%">
+<col style="width: 51%">
+<col style="width: 32%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1085,6 +1101,9 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 <p>Аналогично векторные операции осуществляются над матрицами.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">2</span>);</span>
@@ -1112,12 +1131,18 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="операторы-сравнения" class="level3" data-number="6.8.2">
-<h3 data-number="6.8.2" class="anchored" data-anchor-id="операторы-сравнения"><span class="header-section-number">6.8.2</span> Операторы сравнения</h3>
+<section id="sec-r-lang-basic-vectorization-comparison" class="level3" data-number="6.8.2">
+<h3 data-number="6.8.2" class="anchored" data-anchor-id="sec-r-lang-basic-vectorization-comparison"><span class="header-section-number">6.8.2</span> Операторы сравнения</h3>
 <p>В следующей таблице приведены операторы сравнения, поддерживаемые языком R. Каждый элемент первого вектора сравнивается с соответствующим элементом второго вектора. Результатом сравнения является булево значение.</p>
+<div id="tbl-r-lang-basic-vectorization-comparison" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-r-lang-basic-vectorization-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;6.3: Векторные операторы сравнения
+</figcaption>
+<div aria-describedby="tbl-r-lang-basic-vectorization-comparison-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
-<col style="width: 7%">
+<col style="width: 8%">
 <col style="width: 71%">
 <col style="width: 20%">
 </colgroup>
@@ -1179,11 +1204,20 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 </section>
-<section id="логические" class="level3" data-number="6.8.3">
-<h3 data-number="6.8.3" class="anchored" data-anchor-id="логические"><span class="header-section-number">6.8.3</span> Логические</h3>
+<section id="sec-r-lang-basic-vectorization-logical" class="level3" data-number="6.8.3">
+<h3 data-number="6.8.3" class="anchored" data-anchor-id="sec-r-lang-basic-vectorization-logical"><span class="header-section-number">6.8.3</span> Логические</h3>
 <p>В следующей таблице приведены логические операторы, поддерживаемые языком R. Они применимы только к векторам типа <a href="https://rdrr.io/r/base/logical.html">logical</a>, <a href="https://rdrr.io/r/base/numeric.html">numeric</a> или <a href="https://rdrr.io/r/base/complex.html">complex</a>. Все числа больше 1 считаются логическим значением TRUE.</p>
 <p>Каждый элемент первого вектора сравнивается с соответствующим элементом второго вектора. Результатом сравнения является булево значение.</p>
+<div id="tbl-r-lang-basic-vectorization-logical-vector" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-r-lang-basic-vectorization-logical-vector-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;6.4: Векторные логические операторы
+</figcaption>
+<div aria-describedby="tbl-r-lang-basic-vectorization-logical-vector-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
 <col style="width: 5%">
@@ -1225,7 +1259,16 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 <p>Логические операторы <code>&amp;&amp;</code> и <code>||</code> учитывают только первый элемент векторов и выдают на выходе вектор из одного элемента.</p>
+<div id="tbl-r-lang-basic-vectorization-logical-scalar" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-r-lang-basic-vectorization-logical-scalar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Таблица&nbsp;6.5: Скалярные векторные операторы
+</figcaption>
+<div aria-describedby="tbl-r-lang-basic-vectorization-logical-scalar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
 <colgroup>
 <col style="width: 7%">
@@ -1258,20 +1301,23 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
+</div>
+</figure>
+</div>
 </section>
 </section>
-<section id="ветвление" class="level2" data-number="6.9">
-<h2 data-number="6.9" class="anchored" data-anchor-id="ветвление"><span class="header-section-number">6.9</span> Ветвление</h2>
-<section id="оператор-if" class="level3" data-number="6.9.1">
-<h3 data-number="6.9.1" class="anchored" data-anchor-id="оператор-if"><span class="header-section-number">6.9.1</span> Оператор <code>if</code></h3>
+<section id="sec-r-lang-basic-branching" class="level2" data-number="6.9">
+<h2 data-number="6.9" class="anchored" data-anchor-id="sec-r-lang-basic-branching"><span class="header-section-number">6.9</span> Ветвление</h2>
+<section id="sec-r-lang-basic-branching-if" class="level3" data-number="6.9.1">
+<h3 data-number="6.9.1" class="anchored" data-anchor-id="sec-r-lang-basic-branching-if"><span class="header-section-number">6.9.1</span> Оператор <code>if</code></h3>
 <p>Оператор <a href="https://rdrr.io/r/base/Control.html">if</a> состоит из булева выражения, за которым следует один или несколько операторов. Синтаксис оператора выглядит следующим образом</p>
 <div class="sourceCode" id="cb134"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(boolean_expression) {</span>
 <span id="cb134-2"><a href="#cb134-2" aria-hidden="true" tabindex="-1"></a>   <span class="co"># Инструкции будут выполненны, если значение выражения TRUE</span></span>
 <span id="cb134-3"><a href="#cb134-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Если булево выражение равно <code>true</code>, то будет выполнен блок кода внутри оператора <code>if</code>. Если булево выражение равно <code>false</code>, то будет выполнен первый набор кода после конца оператора <code>if</code> (после закрывающей фигурной скобки).</p>
 </section>
-<section id="оператор-else" class="level3" data-number="6.9.2">
-<h3 data-number="6.9.2" class="anchored" data-anchor-id="оператор-else"><span class="header-section-number">6.9.2</span> Оператор <code>else</code></h3>
+<section id="sec-r-lang-basic-branching-else" class="level3" data-number="6.9.2">
+<h3 data-number="6.9.2" class="anchored" data-anchor-id="sec-r-lang-basic-branching-else"><span class="header-section-number">6.9.2</span> Оператор <code>else</code></h3>
 <div class="sourceCode" id="cb135"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(boolean_expression) {</span>
 <span id="cb135-2"><a href="#cb135-2" aria-hidden="true" tabindex="-1"></a>   <span class="co"># Инструкции будут выполненны, если значение выражения TRUE</span></span>
 <span id="cb135-3"><a href="#cb135-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
@@ -1316,8 +1362,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="функция-switch" class="level3" data-number="6.9.3">
-<h3 data-number="6.9.3" class="anchored" data-anchor-id="функция-switch"><span class="header-section-number">6.9.3</span> Функция <code>switch</code></h3>
+<section id="sec-r-lang-basic-branching-switch" class="level3" data-number="6.9.3">
+<h3 data-number="6.9.3" class="anchored" data-anchor-id="sec-r-lang-basic-branching-switch"><span class="header-section-number">6.9.3</span> Функция <code>switch</code></h3>
 <p>Оператор <a href="https://rdrr.io/r/base/switch.html">switch</a> позволяет проверить переменную на равенство со списком значений. Каждое значение называется случаем, и переменная, которая включается, проверяется для каждого случая. Оператор записывается следующим образом:</p>
 <div class="sourceCode" id="cb141"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="cf">switch</span>(expression, case1, case2, case3, ....)</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>К оператору switch применяются следующие правила.</p>
@@ -1353,13 +1399,13 @@ div.csl-indent {
 </div>
 </section>
 </section>
-<section id="циклы" class="level2" data-number="6.10">
-<h2 data-number="6.10" class="anchored" data-anchor-id="циклы"><span class="header-section-number">6.10</span> Циклы</h2>
+<section id="sec-r-lang-basic-cylce" class="level2" data-number="6.10">
+<h2 data-number="6.10" class="anchored" data-anchor-id="sec-r-lang-basic-cylce"><span class="header-section-number">6.10</span> Циклы</h2>
 <p>Оператор цикла позволяет выполнить оператор или группу операторов несколько раз.</p>
-<section id="типы-циклов" class="level3" data-number="6.10.1">
-<h3 data-number="6.10.1" class="anchored" data-anchor-id="типы-циклов"><span class="header-section-number">6.10.1</span> Типы циклов</h3>
-<section id="цикл-for" class="level4">
-<h4 class="anchored" data-anchor-id="цикл-for">Цикл <code>for</code></h4>
+<section id="sec-r-lang-basic-cycle-types" class="level3" data-number="6.10.1">
+<h3 data-number="6.10.1" class="anchored" data-anchor-id="sec-r-lang-basic-cycle-types"><span class="header-section-number">6.10.1</span> Типы циклов</h3>
+<section id="sec-r-lang-basic-cycle-type-for" class="level4">
+<h4 class="anchored" data-anchor-id="sec-r-lang-basic-cycle-type-for">Цикл <code>for</code></h4>
 <p>Цикл <a href="https://rdrr.io/r/base/Control.html">for</a> используется когда количество итераций известно до начала цикла.</p>
 <div class="sourceCode" id="cb148"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb148-1"><a href="#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (value <span class="cf">in</span> vector) {</span>
 <span id="cb148-2"><a href="#cb148-2" aria-hidden="true" tabindex="-1"></a>   statements</span>
@@ -1378,8 +1424,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="цикл-while" class="level4">
-<h4 class="anchored" data-anchor-id="цикл-while">Цикл <code>while</code></h4>
+<section id="sec-r-lang-basic-cycle-type-while" class="level4">
+<h4 class="anchored" data-anchor-id="sec-r-lang-basic-cycle-type-while">Цикл <code>while</code></h4>
 <p>Цикл <a href="https://rdrr.io/r/base/Control.html">while</a> выполняет один и тот же код снова и снова, пока не будет выполнено условие остановки.</p>
 <div class="sourceCode" id="cb151"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb151-1"><a href="#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (test_expression) {</span>
 <span id="cb151-2"><a href="#cb151-2" aria-hidden="true" tabindex="-1"></a>   statement</span>
@@ -1402,8 +1448,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="цикл-repeat" class="level4">
-<h4 class="anchored" data-anchor-id="цикл-repeat">Цикл <code>repeat</code></h4>
+<section id="sec-r-lang-basic-cycle-type-repeat" class="level4">
+<h4 class="anchored" data-anchor-id="sec-r-lang-basic-cycle-type-repeat">Цикл <code>repeat</code></h4>
 <p>Цикл <a href="https://rdrr.io/r/base/Control.html">repeat</a> выполняет один и тот же код снова и снова, пока не будет выполнено условие остановки.</p>
 <div class="sourceCode" id="cb154"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb154-1"><a href="#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="cf">repeat</span> { </span>
 <span id="cb154-2"><a href="#cb154-2" aria-hidden="true" tabindex="-1"></a>   commands </span>
@@ -1432,11 +1478,11 @@ div.csl-indent {
 </div>
 </section>
 </section>
-<section id="операторы-управления" class="level3" data-number="6.10.2">
-<h3 data-number="6.10.2" class="anchored" data-anchor-id="операторы-управления"><span class="header-section-number">6.10.2</span> Операторы управления</h3>
+<section id="sec-r-lang-basic-cycle-control" class="level3" data-number="6.10.2">
+<h3 data-number="6.10.2" class="anchored" data-anchor-id="sec-r-lang-basic-cycle-control"><span class="header-section-number">6.10.2</span> Операторы управления</h3>
 <p>Операторы управления циклом изменяют обычную последовательность выполнения. Когда выполнение покидает область видимости, все автоматические объекты, которые были созданы в этой области, уничтожаются.</p>
-<section id="ключевое-слово-next" class="level4">
-<h4 class="anchored" data-anchor-id="ключевое-слово-next">Ключевое слово <code>next</code></h4>
+<section id="sec-r-lang-basic-cycle-control-next" class="level4">
+<h4 class="anchored" data-anchor-id="sec-r-lang-basic-cycle-control-next">Ключевое слово <code>next</code></h4>
 <p>Оператор <a href="https://rdrr.io/r/base/Control.html">next</a> в языке полезен, когда требуется пропустить текущую итерацию цикла, не завершая его. При встрече с next синтаксический анализатор R пропускает дальнейшие вычисления и начинает следующую итерацию цикла.</p>
 <div class="sourceCode" id="cb157"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb157-1"><a href="#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="cf">next</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell">
@@ -1457,8 +1503,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="ключевое-слово-break" class="level4">
-<h4 class="anchored" data-anchor-id="ключевое-слово-break">Ключевое слово <code>break</code></h4>
+<section id="sec-r-lang-basic-cycle-control-break" class="level4">
+<h4 class="anchored" data-anchor-id="sec-r-lang-basic-cycle-control-break">Ключевое слово <code>break</code></h4>
 <p>Оператор <a href="https://rdrr.io/r/base/Control.html">break</a> в языке программирования R используется следующим образом.</p>
 <ul>
 <li>Когда оператор <code>break</code> встречается внутри цикла, цикл немедленно завершается, и управление программой возобновляется в следующем операторе, следующем за циклом.</li>
@@ -1488,22 +1534,22 @@ div.csl-indent {
 </section>
 </section>
 </section>
-<section id="функции" class="level2" data-number="6.11">
-<h2 data-number="6.11" class="anchored" data-anchor-id="функции"><span class="header-section-number">6.11</span> Функции</h2>
+<section id="sec-r-lang-basic-function" class="level2" data-number="6.11">
+<h2 data-number="6.11" class="anchored" data-anchor-id="sec-r-lang-basic-function"><span class="header-section-number">6.11</span> Функции</h2>
 <p>Функция - это набор операторов, организованных вместе для выполнения определенной задачи. В R имеется большое количество встроенных функций, и пользователь может создавать свои собственные функции.</p>
 <p>В R функция - это объект, поэтому интерпретатор R может передавать функции управление, а также аргументы, которые могут потребоваться функции для выполнения действий.</p>
 <p>Функция, в свою очередь, выполняет свою задачу и возвращает управление интерпретатору, а также любой результат, который может быть сохранен в других объектах.</p>
 <p><a href="https://cran.r-project.org/doc/contrib/Short-refcard.pdf">Часто используемые функции</a></p>
-<section id="определение-функции" class="level3" data-number="6.11.1">
-<h3 data-number="6.11.1" class="anchored" data-anchor-id="определение-функции"><span class="header-section-number">6.11.1</span> Определение функции</h3>
+<section id="sec-r-lang-basic-function-defenition" class="level3" data-number="6.11.1">
+<h3 data-number="6.11.1" class="anchored" data-anchor-id="sec-r-lang-basic-function-defenition"><span class="header-section-number">6.11.1</span> Определение функции</h3>
 <p>Функция R создается с помощью ключевого слова <a href="https://rdrr.io/r/base/function.html">function</a>. Основной синтаксис определения функции R выглядит следующим образом</p>
 <div class="sourceCode" id="cb163"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb163-1"><a href="#cb163-1" aria-hidden="true" tabindex="-1"></a>function_name <span class="ot">&lt;-</span> <span class="cf">function</span>(arg_1, arg_2, ...) {</span>
 <span id="cb163-2"><a href="#cb163-2" aria-hidden="true" tabindex="-1"></a>   <span class="co"># Инструкции</span></span>
 <span id="cb163-3"><a href="#cb163-3" aria-hidden="true" tabindex="-1"></a>   <span class="co"># Инструкции</span></span>
 <span id="cb163-4"><a href="#cb163-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="элементы-объекта-функции" class="level3" data-number="6.11.2">
-<h3 data-number="6.11.2" class="anchored" data-anchor-id="элементы-объекта-функции"><span class="header-section-number">6.11.2</span> Элементы объекта функции</h3>
+<section id="sec-r-lang-basic-function-elements" class="level3" data-number="6.11.2">
+<h3 data-number="6.11.2" class="anchored" data-anchor-id="sec-r-lang-basic-function-elements"><span class="header-section-number">6.11.2</span> Элементы объекта функции</h3>
 <p>Функция состоит из</p>
 <ul>
 <li><p>Имени – Функция хранится в среде R как объект с этим именем.</p></li>
@@ -1513,8 +1559,8 @@ div.csl-indent {
 </ul>
 <p>В R есть множество встроенных функций, которые можно вызывать непосредственно в программе, не определяя их предварительно. Также можно создавать и использовать собственные функции, называемые функциями, определяемыми пользователем.</p>
 </section>
-<section id="встроенные-функции" class="level3" data-number="6.11.3">
-<h3 data-number="6.11.3" class="anchored" data-anchor-id="встроенные-функции"><span class="header-section-number">6.11.3</span> Встроенные функции</h3>
+<section id="sec-r-lang-basic-function-integrated" class="level3" data-number="6.11.3">
+<h3 data-number="6.11.3" class="anchored" data-anchor-id="sec-r-lang-basic-function-integrated"><span class="header-section-number">6.11.3</span> Встроенные функции</h3>
 <p>Простыми примерами встроенных функций являются <a href="https://rdrr.io/r/base/seq.html">seq()</a>, <a href="https://rdrr.io/r/base/mean.html">mean()</a>, <a href="https://rdrr.io/r/base/sum.html">sum()</a>, <a href="https://rdrr.io/r/base/paste.html">paste()</a> и т. д. Они напрямую вызываются программами, написанными пользователем.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb164"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb164-1"><a href="#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">32</span>,<span class="dv">44</span>)</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1531,8 +1577,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="пользовательские-функции" class="level3" data-number="6.11.4">
-<h3 data-number="6.11.4" class="anchored" data-anchor-id="пользовательские-функции"><span class="header-section-number">6.11.4</span> Пользовательские функции</h3>
+<section id="sec-r-lang-basic-function-user-defined" class="level3" data-number="6.11.4">
+<h3 data-number="6.11.4" class="anchored" data-anchor-id="sec-r-lang-basic-function-user-defined"><span class="header-section-number">6.11.4</span> Пользовательские функции</h3>
 <p>Они определяют, что нужно пользователю, и после создания могут использоваться так же, как и встроенные функции. Ниже приведен пример создания и использования функции.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb170"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb170-1"><a href="#cb170-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(a) {</span>
@@ -1543,8 +1589,8 @@ div.csl-indent {
 <span id="cb170-6"><a href="#cb170-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="вызов-функции" class="level3" data-number="6.11.5">
-<h3 data-number="6.11.5" class="anchored" data-anchor-id="вызов-функции"><span class="header-section-number">6.11.5</span> Вызов функции</h3>
+<section id="sec-r-lang-basic-function-call" class="level3" data-number="6.11.5">
+<h3 data-number="6.11.5" class="anchored" data-anchor-id="sec-r-lang-basic-function-call"><span class="header-section-number">6.11.5</span> Вызов функции</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb171"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb171-1"><a href="#cb171-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(a) {</span>
 <span id="cb171-2"><a href="#cb171-2" aria-hidden="true" tabindex="-1"></a>   <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>a) {</span>
@@ -1563,8 +1609,8 @@ div.csl-indent {
 [1] 36</code></pre>
 </div>
 </div>
-<section id="без-аргументов" class="level4">
-<h4 class="anchored" data-anchor-id="без-аргументов">Без аргументов</h4>
+<section id="sec-r-lang-basic-function-call-no-args" class="level4">
+<h4 class="anchored" data-anchor-id="sec-r-lang-basic-function-call-no-args">Без аргументов</h4>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb173"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb173-1"><a href="#cb173-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
 <span id="cb173-2"><a href="#cb173-2" aria-hidden="true" tabindex="-1"></a>   <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) {</span>
@@ -1582,8 +1628,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="позиционные-и-именованные-аргументы" class="level4">
-<h4 class="anchored" data-anchor-id="позиционные-и-именованные-аргументы">Позиционные и именованные аргументы</h4>
+<section id="sec-r-lang-basic-function-call-with-args" class="level4">
+<h4 class="anchored" data-anchor-id="sec-r-lang-basic-function-call-with-args">Позиционные и именованные аргументы</h4>
 <p>Аргументы вызова функции могут быть представлены в той же последовательности, что и определены в функции, или же они могут быть представлены в другой последовательности, но приписаны к именам аргументов.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb175"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb175-1"><a href="#cb175-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(a,b,c) {</span>
@@ -1600,8 +1646,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="аргументы-по-умолчанию" class="level4">
-<h4 class="anchored" data-anchor-id="аргументы-по-умолчанию">Аргументы по умолчанию</h4>
+<section id="sec-r-lang-basic-function-integrated-call-default-args" class="level4">
+<h4 class="anchored" data-anchor-id="sec-r-lang-basic-function-integrated-call-default-args">Аргументы по умолчанию</h4>
 <p>Можно задать значения аргументов в определении функции и вызвать функцию без указания аргументов, чтобы получить результат по умолчанию.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb179"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb179-1"><a href="#cb179-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">a =</span> <span class="dv">3</span>, <span class="at">b =</span> <span class="dv">6</span>) {</span>
@@ -1620,11 +1666,11 @@ div.csl-indent {
 
 
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-w3schools-r" class="csl-entry" role="listitem">
-<div class="csl-left-margin">1. </div><div class="csl-right-inline">R Tutorial [Электронный ресурс]. URL: <a href="https://www.w3schools.com/r/">https://www.w3schools.com/r/</a> (дата обращения: 20.02.2025).</div>
+<div id="ref-bib-r-lang-tutorialspoint" class="csl-entry" role="listitem">
+<div class="csl-left-margin">1. </div><div class="csl-right-inline">R Tutorial [Электронный ресурс]. URL: <a href="https://www.tutorialspoint.com/r/index.htm">https://www.tutorialspoint.com/r/index.htm</a> (дата обращения: 20.02.2025).</div>
 </div>
-<div id="ref-tutorialspoint-r" class="csl-entry" role="listitem">
-<div class="csl-left-margin">2. </div><div class="csl-right-inline">R Tutorial [Электронный ресурс]. URL: <a href="https://www.tutorialspoint.com/r/index.htm">https://www.tutorialspoint.com/r/index.htm</a> (дата обращения: 20.02.2025).</div>
+<div id="ref-bib-r-lang-w3schools" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">R Tutorial [Электронный ресурс]. URL: <a href="https://www.w3schools.com/r/">https://www.w3schools.com/r/</a> (дата обращения: 20.02.2025).</div>
 </div>
 </div>
 </section>
