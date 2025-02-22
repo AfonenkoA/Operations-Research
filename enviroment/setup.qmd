@@ -1,12 +1,12 @@
-# Установка и настройка
+# Установка и настройка {#sec-enviroment-setup}
 
 ::: {.callout-important title="Состояние разработки"}
 В разработке
 :::
 
-## Quarto
+## Quarto {#sec-enviroment-setup-quarto}
 
-### Установка
+### Установка {#sec-enviroment-setup-quarto-install}
 
 ::: panel-tabset
 #### Windows
@@ -42,9 +42,9 @@ plot(pressure)
 
 дальнейшее изучение
 
-## R
+## R {#sec-enviroment-setup-r}
 
-### Установка
+### Установка {#sec-enviroment-setup-r-install}
 
 ::: panel-tabset
 #### Windows
@@ -80,9 +80,9 @@ plot(pressure)
 
 ссылка на язык
 
-## RTools
+## RTools {#sec-enviroment-setup-rtools}
 
-### Установка
+### Установка {#sec-enviroment-setup-rtools-install}
 
 ::: panel-tabset
 #### Windows
@@ -118,9 +118,9 @@ plot(pressure)
 
 установка пакетов lpSolve
 
-## RStudio
+## RStudio {#sec-enviroment-setup-rstudio}
 
-### Установка
+### Установка {#sec-enviroment-setup-rstudio-install}
 
 ::: panel-tabset
 #### Windows
@@ -154,16 +154,4 @@ plot(pressure)
 
 ### Приступая к работе
 
-#### Создание проекта
-
-проект quarto
-
-#### Сочетание клавиш
-
-Картинки и обзор панели редактирования
-
-#### Отладка
-
-Здесь обзор конопок, а функции типа browser() и trace() ссылка на продвинутый r
-
-## VSCode
+## VSCode {#sec-enviroment-setup-vscode}
