@@ -12,12 +12,11 @@ format:
 #| file: ../util/add_region.R
 ```
 
-# Графическое решение
+# Графическое решение {#sec-linear-graphical-solution}
 
 ::: {.callout-caution title="Состояние разработки"}
 Требуется доработка
 :::
-
 
 $$\begin{cases}
       \max{F(x)=2x_1+6x_2}\\

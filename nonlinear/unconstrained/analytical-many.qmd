@@ -1,12 +1,17 @@
-# Безусловная оптимизация функции многих переменных
+# Безусловная оптимизация функции многих переменных {#sec-nonlinear-unconstrained-many}
 
-@mathprofi-extremum-many
+@bib-mathprofi-extremum-many
 
-## Определение
+## Определение {#sec-nonlinear-unconstrained-many-defenition}
+
+::: {#def-nonlinear-unconstrained-many-maximum}
 
 Точкой локального максимума
 
 :   называется такая точка $M_0(x_0,y_0,...)$, что в некоторой $\delta$-окрестности этой точки выполняется неравенство $f(x,y,...) \lt f(x_0,y_0,...)$.
+:::
+
+::: {#def-nonlinear-unconstrained-many-minimum}
 
 Точкой локального минимума
 
@@ -29,10 +34,12 @@ z <- outer(x, y, \(x,y) { (x-1)^2 + (y+2)^2 })  |> t()
 plot_ly(x=x, y=y, z = z, type = "surface") |>
   add_trace(x=1, y=-2, z = 0, type='scatter3d', mode='markers', name='M0',  marker = list(size = 10, color = "red", symbol = 104))
 ```
+:::
 
-## Экстремум функции двух переменных
+## Экстремум функции двух переменных {#sec-nonlinear-unconstrained-many-2vars}
 
-### Необходимое условие
+::: {#thm-nonlinear-unconstrained-many-2vars-necessity}
+### Необходимое условие {#sec-nonlinear-unconstrained-many-2vars-necessity}
 
 Если дифференцируемая функция имеет экстремум в точке , то обе частные производные 1-го порядка в данной точке равны нулю:
 
@@ -40,10 +47,14 @@ $$
 \frac{\partial F(x,y)}{\partial x}=0 \qquad
 \frac{\partial F(x,y)}{\partial y}=0
 $$
+:::
+
+::: {#def-nonlinear-stationary-point}
 
 Стационарной точкой
 
 :   называется точка. удовлетворяющая этим условиям. Также эту точку называют критической.
+:::
 
 Но у функции с производными , равными нулю в этой же точке, не наблюдается ничего подобного. Это гиперболический параболоид или «седло» Для точки не существует окрестности, в которой поверхность располагалась бы только вверху или только внизу .
 
@@ -63,35 +74,21 @@ plot_ly(x=x, y=y, z = z, type = "surface") |>
   add_trace(x=0, y=0, z = 0, type='scatter3d', mode='markers', name='M0', marker = list(size = 10, color = "red", symbol = 104))
 ```
 
+::: {#def-nonlinear-saddle-point}
+
 Следовой точкой
 
 :   называется точку такого рода.
+:::
 
-#### Пример
-
-##### Задание
-
+::: {#exm-nonlinear-unconstrained-many-2vars-necessity}
 Исследовать на экстремум функцию
 
 $$z=3x^2 + xy + 2y^2 -x -4y$$
+:::
 
-```{r}
-#| warning: false
-#| message: false
-#| echo: false
-
-library(plotly)
-
-x <- y <-  seq(-5, 5, length.out = 100)
-z <- outer(x, y, \(x,y) { 3*x^2+x*y+2*y^2-x-4*y })  |> t()
-
-plot_ly(x=x, y=y, z = z, type = "surface") |>
-  add_trace(x=0, y=1, z = -2, type='scatter3d', mode='markers', name='M0', marker = list(size = 10, color = "red", symbol = 104))
-```
-
-##### Решение
-
-на первом шаге нужно отыскать стационарные точки. Для этого найдём частные производные 1-го порядка:
+::: {#sol-nonlinear-unconstrained-many-2vars-necessity}
+на первом шаге нужно отыскать стационарные точки. Для этого найдем частные производные 1-го порядка:
 
 $$
 \begin{align*}
@@ -114,6 +111,20 @@ x+4y-1=0
 \end{cases}\,
 $$
 
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+
+library(plotly)
+
+x <- y <-  seq(-5, 5, length.out = 100)
+z <- outer(x, y, \(x,y) { 3*x^2+x*y+2*y^2-x-4*y })  |> t()
+
+plot_ly(x=x, y=y, z = z, type = "surface") |>
+  add_trace(x=0, y=1, z = -2, type='scatter3d', mode='markers', name='M0', marker = list(size = 10, color = "red", symbol = 104))
+```
+
 Таким образом
 
 $$
@@ -123,11 +134,11 @@ x=0
 \end{align*}
 $$
 
-##### Ответ
-
 Найдена стационарная точка $M_0(0,1)$. В найденной точке может быть минимум, максимум либо перевал.
+:::
 
-### Достаточное условие
+::: {#thm-nonlinear-unconstrained-many-2vars-sufficiency}
+### Достаточное условие {#sec-nonlinear-unconstrained-many-2vars-sufficiency}
 
 Для применения достаточного условия нужно вычислить частные производные 2-го порядка в точке Для компактности обычно используют следующие обозначения
 
@@ -142,15 +153,13 @@ $$
 1.  Если $AC-B^2>0$, то функция $z=f(x,y)$ имеет экстремум в точке $M_0$, причём, если $A>0$, то это минимум, а если $A<0$ -- то максимум.
 2.  Если $AC-B^2<0$, то в точке $M_0$ нет экстремума.
 3.  Если $AC-B^2=0$, то требуется дополнительное исследование.
+:::
 
-#### Пример
-
-##### Задание
-
+::: {#exm-nonlinear-unconstrained-many-2vars-sufficiency}
 Определить тип стационарной точки $M_0(0,1)$ для функции $$z=3x^2 + xy + 2y^2 -x -4y$$
+:::
 
-##### Решение
-
+::: {#sol-nonlinear-unconstrained-many-2vars-sufficiency}
 Найдем все вторые частные производные.
 
 $$
@@ -161,15 +170,13 @@ $$
 \end{align*}
 $$
 
-Таким образом $AC-B^2=6\cdot 4-1^2=23>0$, следовательно в точке $M_0$ есть экстремум, и так как $A>0$, то это минимум.
+Таким образом $AC-B^2=6\cdot 4-1^2=23>0$, следовательно в точке $M_0$ есть экстремум, и так как $A>0$, то это минимум. Ответ $\min{z}=z(0,1)=-2$.
+:::
 
-##### Ответ
+## Экстремумы трёх переменных {#sec-nonlinear-unconstrained-many-3vars}
 
-$$\min{z}=z(0,1)=-2$$
-
-## Экстремумы трёх переменных
-
-### Необходимое условие
+::: {#thm-nonlinear-unconstrained-many-3vars-necessity}
+### Необходимое условие {#sec-nonlinear-unconstrained-many-3vars-necessity}
 
 Как и для функции двух переменных общий вид необходимых условий сохраняется.
 
@@ -178,11 +185,9 @@ $$
 \frac{\partial F(x,y,z)}{\partial y}=0 \qquad
 \frac{\partial F(x,y,z)}{\partial z}=0
 $$
+:::
 
-#### Пример
-
-##### Задание
-
+::: {#exm-nonlinear-unconstrained-many-3vars-necessity}
 Найти стационарные точки функции
 
 $$
@@ -218,9 +223,9 @@ plot_ly(data = d,
   caps = list(x = list(show = FALSE),y = list(show = FALSE))) |>
   add_trace(x=4, y=1, z = 2, type='scatter3d', mode='markers', name='M0',  marker = list(size = 10, color = "green", symbol = 104))
 ```
+:::
 
-##### Решение
-
+::: {#sol-nonlinear-unconstrained-many-3vars-necessity}
 Найдем все первые частные производные
 
 $$
@@ -257,11 +262,11 @@ $$
 \end{align*}
 $$
 
-##### Ответ
-
 Найдена единственная стационарная точка $M_0(4,1,2)$
+:::
 
-### Достаточное условие
+::: {#thm-nonlinear-unconstrained-many-3vars-sufficiency}
+### Достаточное условие {#sec-nonlinear-unconstrained-many-3vars-sufficiency}
 
 Для проверки достаточное условия требуется построить **матрицу Гессе**, состоящую из всех частных производных второго порядка
 
@@ -292,19 +297,17 @@ $$
 \frac{\partial^2 u(M_0)}{\partial z \partial x} &  \frac{\partial^2 u(M_0)}{\partial y \partial z} & \frac{\partial^2 u(M_0)}{\partial z^2}
 \end{vmatrix}
 $$ 1. Если $\delta_1>0,\quad \delta_2>0,\quad \delta_3>0$, то функция $u=f(x,y,z)$ достигает минимума в точке $M_0$ 2. Если $\delta_1<0,\quad \delta_2>0,\quad \delta_3<0$ (так и только так!), то функция $u=f(x,y,z)$ достигает максимума в точке $M_0$. 3. Если получилось что-то другое и при этом $\delta_3=|H|\neq0$, то $M_0$ -- следовая точка. Здесь это уже во многом условное название. 4. Если $\delta_3=|H|=0$, то признак не даёт ответа о характере точки $M_0$.
+:::
 
-#### Пример
-
-##### Задача
-
+::: {#exm-nonlinear-unconstrained-many-3vars-sufficiency}
 Определить тип стационарной точки $M_0(4,1,2)$ для функции
 
 $$
 u=-x^2-5y^2-3z^2+xy-2xz+2yz+11x+2y+18z+10
 $$
+:::
 
-##### Решение
-
+::: {#sol-nonlinear-unconstrained-many-3vars-sufficiency}
 В нашем примере все производные 2-го порядка равны константам
 
 $$
@@ -346,13 +349,14 @@ $$
 -2 & 2 & -6
 \end{vmatrix}=-74<0
 \end{align*}
-$$ Вывод: функция достигает максимума в точке $M_0(4,1,2)$
+$$
 
-##### Ответ
+Вывод: функция достигает максимума в точке $M_0(4,1,2)$
 
-$$\max{u}=u(4,1,2)=51$$
+$\max{u}=u(4,1,2)=51$
+:::
 
-## Экстремум функции четырех переменных
+## Экстремум функции четырех переменных {#sec-nonlinear-unconstrained-many-4vars}
 
 Рассмотренный алгоритм исследования распространяется и на функции большего количества переменных Разберём ещё случай функции 4 переменных, а дальше – будет понятно. Чтобы исследовать на экстремум дифференцируемую функцию четырёх аргументов, нужно найти частные производные 1-го порядка и решить систему:
 

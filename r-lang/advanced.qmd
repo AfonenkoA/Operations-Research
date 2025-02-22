@@ -1,11 +1,12 @@
-# Продвинутый R
+# Продвинутый R {#sec-r-lang-advanced}
 
 ::: {.callout-important title="Состояние разработки"}
 В разработке
 :::
 
+@bib-r-lang-advanced-r
 
-@advanced-r @deep-r
+@bib-r-lang-deep-r
 
 При объединении объектов разных типов в вектор, они приводятся к более широкому (implicit coercion)
 

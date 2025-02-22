@@ -1,4 +1,4 @@
-# Матричные игры
+# Матричные игры {#sec-game-theory-matrix}
 
 ::: {.callout-important title="Состояние разработки"}
 В разработке
