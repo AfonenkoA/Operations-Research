@@ -1,9 +1,3 @@
----
-format:
-  html:
-    html-math-method: katex
----
-
 # Условная оптимизация функции многих переменных {#sec-nonlinear-constrained-many}
 
 ::: {.callout-caution title="Состояние разработки"}
@@ -31,6 +25,7 @@ $$
 #| message: false
 
 library(plotly)
+library(widgetframe)
 
 x <- y <- seq(-5, 5, length.out = 100)
 z <- outer(x, y, \(p1,p2) { p1^2+p2^2+p1*p2+2*p1+4*p2 +5}) |> slog() |> t()
@@ -47,7 +42,8 @@ plot_ly(x=x, y=y, z=z, type="contour", ncontours=25, name='F(p)') |>
     y = -2,
     name = 'безусловный минимум',
     type = 'scatter',
-    marker = list(color = 'red'))
+    marker = list(color = 'red')) |>
+  frameWidget()
 ```
 
 Преобразуем ограничения
@@ -116,6 +112,7 @@ $$
 #| message: false
 
 library(plotly)
+library(widgetframe)
 
 x <- y <- seq(-5, 5, length.out = 100)
 z <- outer(x, y, \(p1,p2) { p1^2+p2^2+p1*p2+2*p1+4*p2 +5}) |> slog() |> t()
@@ -138,7 +135,8 @@ plot_ly(x=x, y=y, z=z, type='contour', ncontours=30 , name='F(p)') |>
     y = 2,
     name = 'условный минимум',
     type = "scatter",
-    marker = list(color = "red"))
+    marker = list(color = "red")) |>
+  frameWidget()
 ```
 
 ## Линейные ограничения неравенства {#sec-nonlinear-constrained-many-linear}
@@ -159,6 +157,7 @@ $$
 #| message: false
 
 library(plotly)
+library(widgetframe)
 
 x <- y <- seq(-5, 5, length.out = 100)
 z <- outer(x, y, \(p1, p2) {p1 ^ 2 + p2 ^ 2 + p1 * p2 + 2 * p1 + 4 * p2 + 5}) |> slog() |> t()
@@ -190,7 +189,8 @@ plot_ly(
   ) |>
   add_trace(x=l1_x,y=l1,type='scatter', mode='lines', name=TeX('l_1')) |>
   add_trace(x=x,y=l2,type='scatter', mode='lines', name=TeX('l_2')) |> 
-  config(mathjax = 'cdn')
+  config(mathjax = 'cdn') |>
+  frameWidget()
 ```
 
 Преобразуем ограничения
@@ -263,6 +263,7 @@ $$
 #| message: false
 
 library(plotly)
+library(widgetframe)
 
 x <- y <- seq(-5, 5, length.out = 100)
 z <- outer(x, y, \(p1, p2) {p1 ^ 2 + p2 ^ 2 + p1 * p2 + 2 * p1 + 4 * p2 + 5}) |> slog() |> t()
@@ -300,7 +301,8 @@ plot_ly(
     marker = list(color = "red")) |>
   add_trace(x=l1_x,y=l1,type='scatter', mode='lines', name=TeX('l_1')) |>
   add_trace(x=x,y=l2,type='scatter', mode='lines', name=TeX('l_2')) |> 
-  config(mathjax = 'cdn')
+  config(mathjax = 'cdn') |>
+  frameWidget()
 ```
 
 ## Нелинейные ограничения равенства {#sec-nonlinear-constrained-nonlinear}
@@ -318,6 +320,7 @@ $$
 #| message: false
 
 library(plotly)
+library(widgetframe)
 
 x <- y <- seq(-5, 5, length.out = 100)
 z <- outer(x, y, \(p1, p2) {p1 ^ 2 + p2 ^ 2 + p1 * p2 + 2 * p1 + 4 * p2 + 5}) |> slog() |> t()
@@ -342,7 +345,8 @@ plot_ly(
   ) |>
   add_trace(x=p1_x,y=p1,type='scatter', mode='lines', name=TeX('l_1')) |>
   add_trace(x=p2_x,y=p2,type='scatter', mode='lines', name=TeX('l_2')) |> 
-  config(mathjax = 'cdn')
+  config(mathjax = 'cdn') |>
+  frameWidget()
 ```
 
 Переформулируем ограничения
@@ -381,7 +385,7 @@ x_1^2(3-\mu_1)+2x_1+\mu_1+2=0\\
 \end{cases}
 $$
 
-Выразим из второго уравненя
+Выразим из второго уравнения
 
 $$
 \mu_1=-\frac{3x_1^2+4x_1+4}{x_1^2}
@@ -409,6 +413,7 @@ $$
 #| message: false
 
 library(plotly)
+library(widgetframe)
 
 x <- y <- seq(-5, 5, length.out = 100)
 z <- outer(x, y, \(p1, p2) {p1 ^ 2 + p2 ^ 2 + p1 * p2 + 2 * p1 + 4 * p2 + 5}) |> slog() |> t()
@@ -440,5 +445,6 @@ plot_ly(
   ) |>
   add_trace(x=p1_x,y=p1,type='scatter', mode='lines', name=TeX('l_1')) |>
   add_trace(x=p2_x,y=p2,type='scatter', mode='lines', name=TeX('l_2')) |> 
-  config(mathjax = 'cdn')
+  config(mathjax = 'cdn') |>
+  frameWidget()
 ```

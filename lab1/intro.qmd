@@ -4,11 +4,23 @@
 Требуется доработка
 :::
 
-## Теория {#sec-lab1-instructions}
+## Инструкции {#sec-lab1-instructions}
 
-Установить среду разработки
+### Установка
 
-Сделать то то и то, посмотреть то то и то
+1.  Установить R @sec-enviroment-setup-r
+
+2.  Установить RTools @sec-enviroment-setup-rtools
+
+3.  Установить IDE для работы: RStudio @sec-enviroment-setup-rstudio или другу IDE, которую поддерживает [Quarto](https://quarto.org/docs/get-started/).
+
+### Теория
+
+1.  Изучить язык разметки `Quarto Markdown` @sec-markdown и `LaTeX` @sec-latex
+2.  Изучить основы языка `R` @sec-r-lang-basic
+3.  Изучить библиотеку для построения графиков `plotly` @sec-r-tools-plotly или `ggplot` @sec-r-tools-ggplo2
+4.  Повторить отдельные элементы из линейной алгебры @sec-linear-algebra
+5.  Повторить теорию определения экстремумов функций @sec-nonlinear-unconstrained-one и @sec-nonlinear-unconstrained-many
 
 ::: {#exm-lab1}
 Чтобы попасть из пункта А (остановка автобуса) в пункт В (лодочная станция) человек должен пройти сначала по асфальтовой дороге шириной $S$, а затем по песчаному пляжу шириной $s$. Скорость передвижения по асфальту $V$ , скорость передвижения по песку $v$. Спрашивается, в каком месте нужно свернуть с асфальтовой дороги, чтобы затратить меньше времени на путь.
@@ -124,6 +136,10 @@ plot_ly(x= x, y=y, type = 'scatter', mode = 'lines')
 :::
 
 ## Задания {#sec-lab1-task}
+
+### Отчёт
+
+Создать документ `Quarto Markdown` в RStudio @sec-enviroment-rstudio-quarto-project или через командную строку @sec-enviroment-quarto. Отчёт загружается на образовательный портал.
 
 ### Язык программирования R {#sec-lab1-task-r-programming}
 
