@@ -1,10 +1,17 @@
+---
+cache: false
+freeze: false
+---
+
 ```{r}
-#| label: init
+#| label: import
 #| echo: false
 #| warning: false
 #| message: false
-#| include: false
-#| file: ../util/add_region.R
+#| include: false 
+
+source('../util/frameWidget.R')
+source('../util/add_region.R')
 ```
 
 # Графическое решение {#sec-linear-graphical-solution}
@@ -27,9 +34,7 @@ $$\begin{cases}
 #| echo: false
 #| warning: false
 #| message: false
-#| dependson: init
 
-library(widgetframe)
 plot_ly(mode = 'lines+markers') |>
   add_region(
     xy = rbind(c(0, 0), c(0, 2048 / 4), c(2048, 0)),
@@ -43,7 +48,7 @@ plot_ly(mode = 'lines+markers') |>
     xy = rbind(c(0, 0), c(0, 480), c(2048, 480), c(2048, 0)),
     color = 'rgba(255, 255, 0, 0.4)',
     name = 'x_2\\leq480') |> 
-  config(mathjax = 'cdn') |> 
+  config(mathjax = 'cdn') |>
   frameWidget()
 ```
 
@@ -53,7 +58,6 @@ plot_ly(mode = 'lines+markers') |>
 #| echo: false
 #| warning: false
 #| message: false
-#| dependson: init
 
 plot_ly(mode = 'lines+markers') |>
   add_region(
@@ -69,7 +73,6 @@ plot_ly(mode = 'lines+markers') |>
 #| echo: false
 #| warning: false
 #| message: false
-#| dependson: init
 
 x <- seq(0, 1100, length.out = 100)
 y <- seq(0, 500, length.out = 100)

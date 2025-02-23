@@ -1,3 +1,17 @@
+---
+cache: false
+freeze: false
+---
+
+```{r}
+#| label: import
+#| echo: false
+#| warning: false
+#| message: false
+#| include: false
+source('../../util/frameWidget.R')
+```
+
 # Условная оптимизация функции многих переменных {#sec-nonlinear-constrained-many}
 
 ::: {.callout-caution title="Состояние разработки"}
@@ -25,7 +39,6 @@ $$
 #| message: false
 
 library(plotly)
-library(widgetframe)
 
 x <- y <- seq(-5, 5, length.out = 100)
 z <- outer(x, y, \(p1,p2) { p1^2+p2^2+p1*p2+2*p1+4*p2 +5}) |> slog() |> t()
@@ -112,7 +125,7 @@ $$
 #| message: false
 
 library(plotly)
-library(widgetframe)
+
 
 x <- y <- seq(-5, 5, length.out = 100)
 z <- outer(x, y, \(p1,p2) { p1^2+p2^2+p1*p2+2*p1+4*p2 +5}) |> slog() |> t()
@@ -136,7 +149,7 @@ plot_ly(x=x, y=y, z=z, type='contour', ncontours=30 , name='F(p)') |>
     name = 'условный минимум',
     type = "scatter",
     marker = list(color = "red")) |>
-  frameWidget()
+  frameWidget() 
 ```
 
 ## Линейные ограничения неравенства {#sec-nonlinear-constrained-many-linear}
@@ -157,7 +170,6 @@ $$
 #| message: false
 
 library(plotly)
-library(widgetframe)
 
 x <- y <- seq(-5, 5, length.out = 100)
 z <- outer(x, y, \(p1, p2) {p1 ^ 2 + p2 ^ 2 + p1 * p2 + 2 * p1 + 4 * p2 + 5}) |> slog() |> t()
@@ -263,7 +275,6 @@ $$
 #| message: false
 
 library(plotly)
-library(widgetframe)
 
 x <- y <- seq(-5, 5, length.out = 100)
 z <- outer(x, y, \(p1, p2) {p1 ^ 2 + p2 ^ 2 + p1 * p2 + 2 * p1 + 4 * p2 + 5}) |> slog() |> t()
@@ -320,7 +331,6 @@ $$
 #| message: false
 
 library(plotly)
-library(widgetframe)
 
 x <- y <- seq(-5, 5, length.out = 100)
 z <- outer(x, y, \(p1, p2) {p1 ^ 2 + p2 ^ 2 + p1 * p2 + 2 * p1 + 4 * p2 + 5}) |> slog() |> t()
@@ -413,7 +423,6 @@ $$
 #| message: false
 
 library(plotly)
-library(widgetframe)
 
 x <- y <- seq(-5, 5, length.out = 100)
 z <- outer(x, y, \(p1, p2) {p1 ^ 2 + p2 ^ 2 + p1 * p2 + 2 * p1 + 4 * p2 + 5}) |> slog() |> t()
