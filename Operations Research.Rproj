@@ -16,4 +16,6 @@ LaTeX: XeLaTeX
 AutoAppendNewline: Yes
 StripTrailingWhitespace: Yes
 
+UseNativePipeOperator: Yes
+
 SpellingDictionary: ru_RU

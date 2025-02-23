@@ -5,5 +5,3 @@
 :::
 
 ## Декартово (внешнее) произведение `crossing` {#sec-r-tools-tidyr-crossing}
-
-

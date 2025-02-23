@@ -1,10 +1,5 @@
----
-format:
-  html:
-    html-math-method: katex
----
-
 ```{r}
+#| label: init
 #| echo: false
 #| warning: false
 #| message: false
@@ -32,9 +27,9 @@ $$\begin{cases}
 #| echo: false
 #| warning: false
 #| message: false
+#| dependson: init
 
-library(plotly)
-
+library(widgetframe)
 plot_ly(mode = 'lines+markers') |>
   add_region(
     xy = rbind(c(0, 0), c(0, 2048 / 4), c(2048, 0)),
@@ -48,7 +43,8 @@ plot_ly(mode = 'lines+markers') |>
     xy = rbind(c(0, 0), c(0, 480), c(2048, 480), c(2048, 0)),
     color = 'rgba(255, 255, 0, 0.4)',
     name = 'x_2\\leq480') |> 
-  config(mathjax = 'cdn')
+  config(mathjax = 'cdn') |> 
+  frameWidget()
 ```
 
 Итоговая область поиска:
@@ -57,12 +53,14 @@ plot_ly(mode = 'lines+markers') |>
 #| echo: false
 #| warning: false
 #| message: false
+#| dependson: init
 
 plot_ly(mode = 'lines+markers') |>
   add_region(
     xy = rbind(c(0, 0), c(0, 480), c(128, 480), c(6144 / 7, 2048 / 7), c(2048 / 2, 0)),
     name = 'region',
-    color = 'rgba(51, 0, 153, 0.4)')
+    color = 'rgba(51, 0, 153, 0.4)') |> 
+  frameWidget()
 ```
 
 Теперь можно добавить график уровня функции и совместить его с графиком ограничений
@@ -71,6 +69,7 @@ plot_ly(mode = 'lines+markers') |>
 #| echo: false
 #| warning: false
 #| message: false
+#| dependson: init
 
 x <- seq(0, 1100, length.out = 100)
 y <- seq(0, 500, length.out = 100)
@@ -81,7 +80,8 @@ z <- outer(x, y, FUN = \(x1, x2) {
 plot_ly(x = x, y = y, z = z, type = 'contour') |>
   add_region(
     xy = rbind(c(0, 0), c(0, 480), c(128, 480), c(6144 / 7, 2048 / 7), c(2048 / 2, 0)),
-    color = 'rgba(0, 0, 0, 0.3)')
+    color = 'rgba(0, 0, 0, 0.3)') |> 
+  frameWidget()
 ```
 
 Следовательно наилучшее значение функции в точке $(x=\frac{6144}{7},y=\frac{2048}{7})$

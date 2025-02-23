@@ -1,122 +1,78 @@
 # Установка и настройка {#sec-enviroment-setup}
 
-::: {.callout-important title="Состояние разработки"}
-В разработке
-:::
-
-## Quarto {#sec-enviroment-setup-quarto}
-
-### Установка {#sec-enviroment-setup-quarto-install}
-
-::: panel-tabset
-#### Windows
-
-```{{python}}
-#| layout-ncol: 2
-#| fig-cap: 
-#|   - "Line Plot 1"
-#|   - "Line Plot 2"
-
-import matplotlib.pyplot as plt
-plt.plot([1,23,2,4])
-plt.show()
-
-plt.plot([8,65,23,90])
-plt.show()
-```
-
-#### Arch linux
-
-```{{r}}
-#| layout-ncol: 2
-#| fig-cap: 
-#|   - "Speed and Stopping Distances of Cars"
-#|   - "Vapor Pressure of Mercury as a Function of Temperature"
-
-plot(cars)
-plot(pressure)
-```
-:::
-
-### Работа
-
-дальнейшее изучение
-
 ## R {#sec-enviroment-setup-r}
+
+Для установки на другие платформы смотрите <https://cloud.r-project.org/>
 
 ### Установка {#sec-enviroment-setup-r-install}
 
-::: panel-tabset
+:::: panel-tabset
 #### Windows
 
-```{{python}}
-#| layout-ncol: 2
-#| fig-cap: 
-#|   - "Line Plot 1"
-#|   - "Line Plot 2"
+Скачать и установить
 
-import matplotlib.pyplot as plt
-plt.plot([1,23,2,4])
-plt.show()
+<https://cran.r-project.org/bin/windows/base/release.html>
 
-plt.plot([8,65,23,90])
-plt.show()
-```
+::: callout-tip
+Рекомендуется установить в расположение по умолчанию. Иначе придется настраивать пути в ручную для RStudio или через переменные среды.
+:::
 
 #### Arch linux
 
-```{{r}}
-#| layout-ncol: 2
-#| fig-cap: 
-#|   - "Speed and Stopping Distances of Cars"
-#|   - "Vapor Pressure of Mercury as a Function of Temperature"
+<https://archlinux.org/packages/extra/x86_64/r/>
 
-plot(cars)
-plot(pressure)
+``` bash
+sudo pacman -S r
 ```
-:::
+::::
 
-### Интерфейс командной строки
+### Дальнейшие действия
 
-ссылка на язык
+Проверит установку можно вызвав интерпретатор R:
+
+``` bash
+Rscript --version
+```
+
+получается следующий вывод
+
+```         
+Rscript (R) version 4.4.2 (2024-10-31)
+```
 
 ## RTools {#sec-enviroment-setup-rtools}
 
+В состав RTools входят компиляторы C, C++, Fortran, библиотеки линейной алгебры LAPAK и BLAS, и другие утилиты необходимые для сборки некоторых пакетов в R. Название RTools специфично для Windows, для других платформ требуется установить отдельные пакеты.
+
 ### Установка {#sec-enviroment-setup-rtools-install}
 
-::: panel-tabset
+:::: panel-tabset
 #### Windows
 
-```{{python}}
-#| layout-ncol: 2
-#| fig-cap: 
-#|   - "Line Plot 1"
-#|   - "Line Plot 2"
+Скачать и установить
 
-import matplotlib.pyplot as plt
-plt.plot([1,23,2,4])
-plt.show()
+<https://cran.r-project.org/bin/windows/Rtools/rtools44/rtools.html>
 
-plt.plot([8,65,23,90])
-plt.show()
-```
+::: callout-tip
+Рекомендуется установить в расположение по умолчанию. Иначе придется настраивать пути в ручную для RStudio или через переменные среды.
+:::
 
 #### Arch linux
 
-```{{r}}
-#| layout-ncol: 2
-#| fig-cap: 
-#|   - "Speed and Stopping Distances of Cars"
-#|   - "Vapor Pressure of Mercury as a Function of Temperature"
-
-plot(cars)
-plot(pressure)
+``` bash
+sudo pacman -S blas-openblas gcc-fortran gcc
 ```
-:::
+::::
 
-### Проверка
+### Дальнейшие действия
 
-установка пакетов lpSolve
+Для проверки установки рекмендуется выполнить в командной строке
+
+``` bash
+Rscript -e "install.packages('lpSolve'); library(lpSolve)"
+```
+
+Если установка прошла успешно, то команда завершится с кодом 0 (ничего не выведет).
 
 ## RStudio {#sec-enviroment-setup-rstudio}
 
@@ -125,33 +81,45 @@ plot(pressure)
 ::: panel-tabset
 #### Windows
 
-```{{python}}
-#| layout-ncol: 2
-#| fig-cap: 
-#|   - "Line Plot 1"
-#|   - "Line Plot 2"
+Скачать и установить
 
-import matplotlib.pyplot as plt
-plt.plot([1,23,2,4])
-plt.show()
-
-plt.plot([8,65,23,90])
-plt.show()
-```
+<https://rstudio.org/download/latest/stable/desktop/windows/RStudio-latest.exe>
 
 #### Arch linux
 
-```{{r}}
-#| layout-ncol: 2
-#| fig-cap: 
-#|   - "Speed and Stopping Distances of Cars"
-#|   - "Vapor Pressure of Mercury as a Function of Temperature"
-
-plot(cars)
-plot(pressure)
+``` bash
+yay -S rstudio-desktop-daily-bin
 ```
 :::
 
-### Приступая к работе
+### Дальнейшие действия
+
+После установки проверить создание проекта @sec-enviroment-rstudio .
 
 ## VSCode {#sec-enviroment-setup-vscode}
+
+Для работы с VSCode требуется установить расширение [Quarto](https://quarto.org/docs/tools/vscode.html).
+
+## Quarto {#sec-enviroment-setup-quarto}
+
+Далее приводится отдельная установка, которая подходит если не используется RStudio, например VSCode или Vim. Quarto входит в состав RStudio @sec-enviroment-setup-rstudio поэтому этот шаг можно пропустить.
+
+### Установка {#sec-enviroment-setup-quarto-install}
+
+::: panel-tabset
+#### Windows
+
+Скачать и установить
+
+<https://github.com/quarto-dev/quarto-cli/releases/download/v1.6.41/quarto-1.6.41-win.msi>
+
+#### Arch linux
+
+``` bash
+yay -S quarto-cli-bin-pre-release
+```
+:::
+
+### Дальнейшие действия
+
+После установки изучите @sec-enviroment-quarto для создания проекта.
