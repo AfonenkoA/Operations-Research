@@ -16,5 +16,6 @@ cp <- function(cur_path)
 }
 
 dir_ls(recurse = TRUE, type = "file") |>
-path_filter(glob = '*_files/figure-html/widgets/widget_*.html') |>
-walk(cp)
+  path_filter(glob = '*_files/figure-html/widgets/widget_*.html') |>
+  discard(\(p) grepl('unconstrained/analytical-many', p)) |>
+  walk(cp)
