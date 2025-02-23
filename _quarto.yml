@@ -1,7 +1,13 @@
 project:
   type: book
+  pre-render:
+    - scripts/widgets/pre.R
   post-render:
-    - copy-widgets.R
+    - scripts/widgets/post.R
+
+
+profile:
+  default: development
 
 book:
   title: "Исследование операций"
@@ -80,10 +86,6 @@ lang: ru
 
 bibliography: references.bib
 csl: gost-r-7-0-5-2008-numeric.csl
-
-execute:
-  freeze: auto
-  cache: true
 
 format:
   html:
