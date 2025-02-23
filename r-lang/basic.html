@@ -556,9 +556,9 @@ div.csl-indent {
 <table class="caption-top table">
 <caption>Правила именования переменных</caption>
 <colgroup>
-<col style="width: 20%">
-<col style="width: 19%">
-<col style="width: 59%">
+<col style="width: 22%">
+<col style="width: 12%">
+<col style="width: 63%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -631,7 +631,7 @@ div.csl-indent {
 <p>Рекомендуется использовать оператор <code>&lt;-</code>.</p>
 </div>
 </div>
-<p>Так как R интерпретируемый язык переменные можно удалять с помощью функции <a href="https://rdrr.io/r/base/rm.html">rm()</a>. После удаления обращение по имени <code>var_1</code> генерирует предупреждение.</p>
+<p>Так как R интерпретируемый язык переменные можно удалять с помощью функции <a href="https://rdrr.io/r/base/rm.html"><code>rm()</code></a>. После удаления обращение по имени <code>var_1</code> генерирует предупреждение.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(var_1)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>var_1</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -650,7 +650,7 @@ div.csl-indent {
 <li><a href="#sec-r-lang-basic-array" class="quarto-xref">Массивы&nbsp;<span>6.6</span></a></li>
 <li><a href="#sec-r-lang-basic-table" class="quarto-xref">Таблицы&nbsp;<span>6.7</span></a></li>
 </ul>
-<p>Все объекты в R строятся на основе интерфейса вектор. Два основных типа которые реализуют этот интерфейс: <a href="https://rdrr.io/r/base/list.html">list()</a> и <a href="https://rdrr.io/r/base/vector.html">vector()</a> остальные R-объекты строятся на основе этих типов. Существует шесть типов <a href="https://rdrr.io/r/base/typeof.html">typeof</a> данных атомарных векторов.</p>
+<p>Все объекты в R строятся на основе интерфейса вектор. Два основных типа которые реализуют этот интерфейс: <a href="https://rdrr.io/r/base/list.html"><code>list()</code></a> и <a href="https://rdrr.io/r/base/vector.html"><code>vector()</code></a> остальные R-объекты строятся на основе этих типов. Существует шесть типов <a href="https://rdrr.io/r/base/typeof.html"><code>typeof()</code></a> данных атомарных векторов.</p>
 <div id="tbl-r-lang-basic-data-types" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-r-lang-basic-data-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -724,7 +724,7 @@ div.csl-indent {
 </div>
 <section id="sec-r-lang-basic-vector-sequence" class="level3" data-number="6.3.1">
 <h3 data-number="6.3.1" class="anchored" data-anchor-id="sec-r-lang-basic-vector-sequence"><span class="header-section-number">6.3.1</span> Последовательности</h3>
-<p>Для объединения элементов в вектор используется функция <a href="https://rdrr.io/r/base/c.html">c()</a> – <em>combine</em>. При комбинации элементов различных типов общий тип выводится по правилам (ссылка).</p>
+<p>Для объединения элементов в вектор используется функция <a href="https://rdrr.io/r/base/c.html"><code>c()</code></a> – <em>combine</em>. При комбинации элементов различных типов общий тип выводится по правилам (ссылка).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>)</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>a</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -732,7 +732,7 @@ div.csl-indent {
 <pre><code>[1] 1 2 3</code></pre>
 </div>
 </div>
-<p>Для задания целочисленных последовательностей могут использоваться например оператор двоеточия <a href="https://rdrr.io/r/base/Colon.html">1:5</a>,</p>
+<p>Для задания целочисленных последовательностей могут использоваться например оператор двоеточия <a href="https://rdrr.io/r/base/Colon.html"><code>1:5</code></a>,</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>numbers</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -747,7 +747,7 @@ div.csl-indent {
 <pre><code> [1] 5.0 5.4 5.8 6.2 6.6 7.0 7.4 7.8 8.2 8.6 9.0</code></pre>
 </div>
 </div>
-<p>Повторить элементы вектора можно с помощью функции <a href="https://rdrr.io/r/base/rep.html">rep()</a></p>
+<p>Повторить элементы вектора можно с помощью функции <a href="https://rdrr.io/r/base/rep.html"><code>rep()</code></a></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rep</span>(<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>), <span class="at">each =</span> <span class="dv">3</span>)</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -758,7 +758,7 @@ div.csl-indent {
 <pre><code>[1] 1 2 3 1 2 3 1 2 3</code></pre>
 </div>
 </div>
-<p>Длина вектора получается функцией <a href="https://rdrr.io/r/base/length.html">length()</a></p>
+<p>Длина вектора получается функцией <a href="https://rdrr.io/r/base/length.html"><code>length()</code></a></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(v)</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -818,7 +818,7 @@ div.csl-indent {
 </section>
 <section id="sec-r-lang-basic-list" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="sec-r-lang-basic-list"><span class="header-section-number">6.4</span> Список</h2>
-<p>Списки - это объекты R, которые содержат элементы различных типов, такие как числа, строки, векторы и другие списки внутри них. Список также может содержать матрицу или функцию в качестве своих элементов. Список создается с помощью функции <a href="https://rdrr.io/r/base/list.html">list()</a>. Ниже приведен пример создания списка, содержащего строки, числа, векторы и логические значения.</p>
+<p>Списки - это объекты R, которые содержат элементы различных типов, такие как числа, строки, векторы и другие списки внутри них. Список также может содержать матрицу или функцию в качестве своих элементов. Список создается с помощью функции <a href="https://rdrr.io/r/base/list.html"><code>list()</code></a>. Ниже приведен пример создания списка, содержащего строки, числа, векторы и логические значения.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>list_data <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">'Red'</span>, <span class="st">'Green'</span>, <span class="fu">c</span>(<span class="dv">21</span>,<span class="dv">32</span>,<span class="dv">11</span>), <span class="cn">TRUE</span>, <span class="fl">51.23</span>, <span class="fl">119.1</span>)</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>list_data</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1024,7 +1024,7 @@ div.csl-indent {
 </section>
 <section id="sec-r-lang-basic-cast" class="level2" data-number="6.8">
 <h2 data-number="6.8" class="anchored" data-anchor-id="sec-r-lang-basic-cast"><span class="header-section-number">6.8</span> Преобразование объектов</h2>
-<p>Для преобразования объекта к другому типу используются функции семейства <a href="https://rdrr.io/r/base/numeric.html">as.*</a></p>
+<p>Для преобразования объекта к другому типу используются функции семейства <a href="https://rdrr.io/r/base/numeric.html"><code>as.*</code></a></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.logical</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>))</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1054,8 +1054,8 @@ div.csl-indent {
 <table class="caption-top table">
 <colgroup>
 <col style="width: 14%">
-<col style="width: 52%">
-<col style="width: 33%">
+<col style="width: 51%">
+<col style="width: 32%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -1143,7 +1143,7 @@ div.csl-indent {
 [2,]  0.2  0.4</code></pre>
 </div>
 </div>
-<p>Оператор <a href="https://rdrr.io/r/base/matmult.html">%*%</a> используется для матричное перемножение по правилам линейной алгебры.</p>
+<p>Оператор <a href="https://rdrr.io/r/base/matmult.html"><code>%*%</code></a> используется для матричное перемножение по правилам линейной алгебры.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a>x <span class="sc">%*%</span> y</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1232,7 +1232,7 @@ div.csl-indent {
 </section>
 <section id="sec-r-lang-basic-vectorization-logical" class="level3" data-number="6.9.3">
 <h3 data-number="6.9.3" class="anchored" data-anchor-id="sec-r-lang-basic-vectorization-logical"><span class="header-section-number">6.9.3</span> Логические</h3>
-<p>В следующей таблице приведены логические операторы, поддерживаемые языком R. Они применимы только к векторам типа <a href="https://rdrr.io/r/base/logical.html">logical</a>, <a href="https://rdrr.io/r/base/numeric.html">numeric</a> или <a href="https://rdrr.io/r/base/complex.html">complex</a>. Все числа больше 1 считаются логическим значением TRUE.</p>
+<p>В следующей таблице приведены логические операторы, поддерживаемые языком R. Они применимы только к векторам типа <a href="https://rdrr.io/r/base/logical.html"><code>logical</code></a>, <a href="https://rdrr.io/r/base/numeric.html"><code>numeric</code></a> или <a href="https://rdrr.io/r/base/complex.html"><code>complex</code></a>. Все числа больше 1 считаются логическим значением TRUE.</p>
 <p>Каждый элемент первого вектора сравнивается с соответствующим элементом второго вектора. Результатом сравнения является булево значение.</p>
 <div id="tbl-r-lang-basic-vectorization-logical-vector" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -1332,7 +1332,7 @@ div.csl-indent {
 <h2 data-number="6.10" class="anchored" data-anchor-id="sec-r-lang-basic-branching"><span class="header-section-number">6.10</span> Ветвление</h2>
 <section id="sec-r-lang-basic-branching-if" class="level3" data-number="6.10.1">
 <h3 data-number="6.10.1" class="anchored" data-anchor-id="sec-r-lang-basic-branching-if"><span class="header-section-number">6.10.1</span> Оператор <code>if</code></h3>
-<p>Оператор <a href="https://rdrr.io/r/base/Control.html">if</a> состоит из булева выражения, за которым следует один или несколько операторов. Синтаксис оператора выглядит следующим образом</p>
+<p>Оператор <a href="https://rdrr.io/r/base/Control.html"><code>if</code></a> состоит из булева выражения, за которым следует один или несколько операторов. Синтаксис оператора выглядит следующим образом</p>
 <div class="sourceCode" id="cb134"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(boolean_expression) {</span>
 <span id="cb134-2"><a href="#cb134-2" aria-hidden="true" tabindex="-1"></a>   <span class="co"># Инструкции будут выполненны, если значение выражения TRUE</span></span>
 <span id="cb134-3"><a href="#cb134-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1386,7 +1386,7 @@ div.csl-indent {
 </section>
 <section id="sec-r-lang-basic-branching-switch" class="level3" data-number="6.10.3">
 <h3 data-number="6.10.3" class="anchored" data-anchor-id="sec-r-lang-basic-branching-switch"><span class="header-section-number">6.10.3</span> Функция <code>switch</code></h3>
-<p>Оператор <a href="https://rdrr.io/r/base/switch.html">switch</a> позволяет проверить переменную на равенство со списком значений. Каждое значение называется случаем, и переменная, которая включается, проверяется для каждого случая. Оператор записывается следующим образом:</p>
+<p>Оператор <a href="https://rdrr.io/r/base/switch.html"><code>switch</code></a> позволяет проверить переменную на равенство со списком значений. Каждое значение называется случаем, и переменная, которая включается, проверяется для каждого случая. Оператор записывается следующим образом:</p>
 <div class="sourceCode" id="cb141"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="cf">switch</span>(expression, case1, case2, case3, ....)</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>К оператору switch применяются следующие правила.</p>
 <ul>
@@ -1428,7 +1428,7 @@ div.csl-indent {
 <h3 data-number="6.11.1" class="anchored" data-anchor-id="sec-r-lang-basic-cycle-types"><span class="header-section-number">6.11.1</span> Типы циклов</h3>
 <section id="sec-r-lang-basic-cycle-type-for" class="level4">
 <h4 class="anchored" data-anchor-id="sec-r-lang-basic-cycle-type-for">Цикл <code>for</code></h4>
-<p>Цикл <a href="https://rdrr.io/r/base/Control.html">for</a> используется когда количество итераций известно до начала цикла.</p>
+<p>Цикл <a href="https://rdrr.io/r/base/Control.html"><code>for</code></a> используется когда количество итераций известно до начала цикла.</p>
 <div class="sourceCode" id="cb148"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb148-1"><a href="#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (value <span class="cf">in</span> vector) {</span>
 <span id="cb148-2"><a href="#cb148-2" aria-hidden="true" tabindex="-1"></a>   statements</span>
 <span id="cb148-3"><a href="#cb148-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1448,7 +1448,7 @@ div.csl-indent {
 </section>
 <section id="sec-r-lang-basic-cycle-type-while" class="level4">
 <h4 class="anchored" data-anchor-id="sec-r-lang-basic-cycle-type-while">Цикл <code>while</code></h4>
-<p>Цикл <a href="https://rdrr.io/r/base/Control.html">while</a> выполняет один и тот же код снова и снова, пока не будет выполнено условие остановки.</p>
+<p>Цикл <a href="https://rdrr.io/r/base/Control.html"><code>while</code></a> выполняет один и тот же код снова и снова, пока не будет выполнено условие остановки.</p>
 <div class="sourceCode" id="cb151"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb151-1"><a href="#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (test_expression) {</span>
 <span id="cb151-2"><a href="#cb151-2" aria-hidden="true" tabindex="-1"></a>   statement</span>
 <span id="cb151-3"><a href="#cb151-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1472,7 +1472,7 @@ div.csl-indent {
 </section>
 <section id="sec-r-lang-basic-cycle-type-repeat" class="level4">
 <h4 class="anchored" data-anchor-id="sec-r-lang-basic-cycle-type-repeat">Цикл <code>repeat</code></h4>
-<p>Цикл <a href="https://rdrr.io/r/base/Control.html">repeat</a> выполняет один и тот же код снова и снова, пока не будет выполнено условие остановки.</p>
+<p>Цикл <a href="https://rdrr.io/r/base/Control.html"><code>repeat</code></a> выполняет один и тот же код снова и снова, пока не будет выполнено условие остановки.</p>
 <div class="sourceCode" id="cb154"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb154-1"><a href="#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="cf">repeat</span> { </span>
 <span id="cb154-2"><a href="#cb154-2" aria-hidden="true" tabindex="-1"></a>   commands </span>
 <span id="cb154-3"><a href="#cb154-3" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span>(condition) {</span>
@@ -1505,7 +1505,7 @@ div.csl-indent {
 <p>Операторы управления циклом изменяют обычную последовательность выполнения. Когда выполнение покидает область видимости, все автоматические объекты, которые были созданы в этой области, уничтожаются.</p>
 <section id="sec-r-lang-basic-cycle-control-next" class="level4">
 <h4 class="anchored" data-anchor-id="sec-r-lang-basic-cycle-control-next">Ключевое слово <code>next</code></h4>
-<p>Оператор <a href="https://rdrr.io/r/base/Control.html">next</a> в языке полезен, когда требуется пропустить текущую итерацию цикла, не завершая его. При встрече с next синтаксический анализатор R пропускает дальнейшие вычисления и начинает следующую итерацию цикла.</p>
+<p>Оператор <a href="https://rdrr.io/r/base/Control.html"><code>next</code></a> в языке полезен, когда требуется пропустить текущую итерацию цикла, не завершая его. При встрече с next синтаксический анализатор R пропускает дальнейшие вычисления и начинает следующую итерацию цикла.</p>
 <div class="sourceCode" id="cb157"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb157-1"><a href="#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="cf">next</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb158"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb158-1"><a href="#cb158-1" aria-hidden="true" tabindex="-1"></a>v <span class="ot">&lt;-</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>]</span>
@@ -1527,7 +1527,7 @@ div.csl-indent {
 </section>
 <section id="sec-r-lang-basic-cycle-control-break" class="level4">
 <h4 class="anchored" data-anchor-id="sec-r-lang-basic-cycle-control-break">Ключевое слово <code>break</code></h4>
-<p>Оператор <a href="https://rdrr.io/r/base/Control.html">break</a> в языке программирования R используется следующим образом.</p>
+<p>Оператор <a href="https://rdrr.io/r/base/Control.html"><code>break</code></a> в языке программирования R используется следующим образом.</p>
 <ul>
 <li>Когда оператор <code>break</code> встречается внутри цикла, цикл немедленно завершается, и управление программой возобновляется в следующем операторе, следующем за циклом.</li>
 <li>Он может быть использован для завершения случая в операторе <code>switch</code>.</li>
@@ -1564,7 +1564,7 @@ div.csl-indent {
 <p><a href="https://cran.r-project.org/doc/contrib/Short-refcard.pdf">Часто используемые функции</a></p>
 <section id="sec-r-lang-basic-function-defenition" class="level3" data-number="6.12.1">
 <h3 data-number="6.12.1" class="anchored" data-anchor-id="sec-r-lang-basic-function-defenition"><span class="header-section-number">6.12.1</span> Определение функции</h3>
-<p>Функция R создается с помощью ключевого слова <a href="https://rdrr.io/r/base/function.html">function</a>. Основной синтаксис определения функции R выглядит следующим образом</p>
+<p>Функция R создается с помощью ключевого слова <a href="https://rdrr.io/r/base/function.html"><code>function</code></a>. Основной синтаксис определения функции R выглядит следующим образом</p>
 <div class="sourceCode" id="cb163"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb163-1"><a href="#cb163-1" aria-hidden="true" tabindex="-1"></a>function_name <span class="ot">&lt;-</span> <span class="cf">function</span>(arg_1, arg_2, ...) {</span>
 <span id="cb163-2"><a href="#cb163-2" aria-hidden="true" tabindex="-1"></a>   <span class="co"># Инструкции</span></span>
 <span id="cb163-3"><a href="#cb163-3" aria-hidden="true" tabindex="-1"></a>   <span class="co"># Инструкции</span></span>
@@ -1583,7 +1583,7 @@ div.csl-indent {
 </section>
 <section id="sec-r-lang-basic-function-integrated" class="level3" data-number="6.12.3">
 <h3 data-number="6.12.3" class="anchored" data-anchor-id="sec-r-lang-basic-function-integrated"><span class="header-section-number">6.12.3</span> Встроенные функции</h3>
-<p>Простыми примерами встроенных функций являются <a href="https://rdrr.io/r/base/seq.html">seq()</a>, <a href="https://rdrr.io/r/base/mean.html">mean()</a>, <a href="https://rdrr.io/r/base/sum.html">sum()</a>, <a href="https://rdrr.io/r/base/paste.html">paste()</a> и т. д. Они напрямую вызываются программами, написанными пользователем.</p>
+<p>Простыми примерами встроенных функций являются <a href="https://rdrr.io/r/base/seq.html"><code>seq()</code></a>, <a href="https://rdrr.io/r/base/mean.html"><code>mean()</code></a>, <a href="https://rdrr.io/r/base/sum.html"><code>sum()</code></a>, <a href="https://rdrr.io/r/base/paste.html"><code>paste()</code></a> и т. д. Они напрямую вызываются программами, написанными пользователем.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb164"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb164-1"><a href="#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">32</span>,<span class="dv">44</span>)</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">

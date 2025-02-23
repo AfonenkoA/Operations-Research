@@ -495,13 +495,18 @@ window.Quarto = {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#sec-lab1-instructions" id="toc-sec-lab1-instructions" class="nav-link active" data-scroll-target="#sec-lab1-instructions"><span class="header-section-number">24.1</span> Теория</a></li>
+  <li><a href="#sec-lab1-instructions" id="toc-sec-lab1-instructions" class="nav-link active" data-scroll-target="#sec-lab1-instructions"><span class="header-section-number">24.1</span> Инструкции</a>
+  <ul class="collapse">
+  <li><a href="#установка" id="toc-установка" class="nav-link" data-scroll-target="#установка"><span class="header-section-number">24.1.1</span> Установка</a></li>
+  <li><a href="#теория" id="toc-теория" class="nav-link" data-scroll-target="#теория"><span class="header-section-number">24.1.2</span> Теория</a></li>
+  </ul></li>
   <li><a href="#sec-lab1-task" id="toc-sec-lab1-task" class="nav-link" data-scroll-target="#sec-lab1-task"><span class="header-section-number">24.2</span> Задания</a>
   <ul class="collapse">
-  <li><a href="#sec-lab1-task-r-programming" id="toc-sec-lab1-task-r-programming" class="nav-link" data-scroll-target="#sec-lab1-task-r-programming"><span class="header-section-number">24.2.1</span> Язык программирования R</a></li>
-  <li><a href="#sec-lab1-task-linear-algebra" id="toc-sec-lab1-task-linear-algebra" class="nav-link" data-scroll-target="#sec-lab1-task-linear-algebra"><span class="header-section-number">24.2.2</span> Линейная алгебра</a></li>
-  <li><a href="#sec-lab1-task-operations-research" id="toc-sec-lab1-task-operations-research" class="nav-link" data-scroll-target="#sec-lab1-task-operations-research"><span class="header-section-number">24.2.3</span> Исследование операций</a></li>
-  <li><a href="#sec-lab1-task-magic" id="toc-sec-lab1-task-magic" class="nav-link" data-scroll-target="#sec-lab1-task-magic"><span class="header-section-number">24.2.4</span> Прикладная магия</a></li>
+  <li><a href="#отчёт" id="toc-отчёт" class="nav-link" data-scroll-target="#отчёт"><span class="header-section-number">24.2.1</span> Отчёт</a></li>
+  <li><a href="#sec-lab1-task-r-programming" id="toc-sec-lab1-task-r-programming" class="nav-link" data-scroll-target="#sec-lab1-task-r-programming"><span class="header-section-number">24.2.2</span> Язык программирования R</a></li>
+  <li><a href="#sec-lab1-task-linear-algebra" id="toc-sec-lab1-task-linear-algebra" class="nav-link" data-scroll-target="#sec-lab1-task-linear-algebra"><span class="header-section-number">24.2.3</span> Линейная алгебра</a></li>
+  <li><a href="#sec-lab1-task-operations-research" id="toc-sec-lab1-task-operations-research" class="nav-link" data-scroll-target="#sec-lab1-task-operations-research"><span class="header-section-number">24.2.4</span> Исследование операций</a></li>
+  <li><a href="#sec-lab1-task-magic" id="toc-sec-lab1-task-magic" class="nav-link" data-scroll-target="#sec-lab1-task-magic"><span class="header-section-number">24.2.5</span> Прикладная магия</a></li>
   </ul></li>
   <li><a href="#sec-lab1-scoring" id="toc-sec-lab1-scoring" class="nav-link" data-scroll-target="#sec-lab1-scoring"><span class="header-section-number">24.3</span> Разбалловка</a></li>
   </ul>
@@ -543,9 +548,24 @@ window.Quarto = {
 </div>
 </div>
 <section id="sec-lab1-instructions" class="level2" data-number="24.1">
-<h2 data-number="24.1" class="anchored" data-anchor-id="sec-lab1-instructions"><span class="header-section-number">24.1</span> Теория</h2>
-<p>Установить среду разработки</p>
-<p>Сделать то то и то, посмотреть то то и то</p>
+<h2 data-number="24.1" class="anchored" data-anchor-id="sec-lab1-instructions"><span class="header-section-number">24.1</span> Инструкции</h2>
+<section id="установка" class="level3" data-number="24.1.1">
+<h3 data-number="24.1.1" class="anchored" data-anchor-id="установка"><span class="header-section-number">24.1.1</span> Установка</h3>
+<ol type="1">
+<li><p>Установить R <a href="../enviroment/setup.html#sec-enviroment-setup-r" class="quarto-xref"><span>Глава 1.1</span></a></p></li>
+<li><p>Установить RTools <a href="../enviroment/setup.html#sec-enviroment-setup-rtools" class="quarto-xref"><span>Глава 1.2</span></a></p></li>
+<li><p>Установить IDE для работы: RStudio <a href="../enviroment/setup.html#sec-enviroment-setup-rstudio" class="quarto-xref"><span>Глава 1.3</span></a> или другу IDE, которую поддерживает <a href="https://quarto.org/docs/get-started/">Quarto</a>.</p></li>
+</ol>
+</section>
+<section id="теория" class="level3" data-number="24.1.2">
+<h3 data-number="24.1.2" class="anchored" data-anchor-id="теория"><span class="header-section-number">24.1.2</span> Теория</h3>
+<ol type="1">
+<li>Изучить язык разметки <code>Quarto Markdown</code> <a href="../enviroment/markdown.html" class="quarto-xref"><span>Глава 4</span></a> и <code>LaTeX</code> <a href="../enviroment/latex.html" class="quarto-xref"><span>Глава 5</span></a></li>
+<li>Изучить основы языка <code>R</code> <a href="../r-lang/basic.html" class="quarto-xref"><span>Глава 6</span></a></li>
+<li>Изучить библиотеку для построения графиков <code>plotly</code> <a href="../r-tools/plotly.html" class="quarto-xref"><span>Приложение C</span></a> или <code>ggplot</code> <a href="../r-tools/ggplot2.html" class="quarto-xref"><span>Приложение D</span></a></li>
+<li>Повторить отдельные элементы из линейной алгебры <a href="../linear/algebra.html" class="quarto-xref"><span>Глава 8</span></a></li>
+<li>Повторить теорию определения экстремумов функций <a href="../nonlinear/unconstrained/analytical-one.html" class="quarto-xref"><span>Глава 18</span></a> и <a href="../nonlinear/unconstrained/analytical-many.html" class="quarto-xref"><span>Глава 19</span></a></li>
+</ol>
 <div id="exm-lab1" class="theorem example">
 <p><span class="theorem-title"><strong>Пример 24.1</strong></span> Чтобы попасть из пункта А (остановка автобуса) в пункт В (лодочная станция) человек должен пройти сначала по асфальтовой дороге шириной <span class="math inline">\(S\)</span>, а затем по песчаному пляжу шириной <span class="math inline">\(s\)</span>. Скорость передвижения по асфальту <span class="math inline">\(V\)</span> , скорость передвижения по песку <span class="math inline">\(v\)</span>. Спрашивается, в каком месте нужно свернуть с асфальтовой дороги, чтобы затратить меньше времени на путь.</p>
 </div>
@@ -579,10 +599,15 @@ window.Quarto = {
 <p>Следовательно оптимальное значение пути, пройденного по дороге <span class="math inline">\(x = 65.64\)</span></p>
 </div>
 </section>
+</section>
 <section id="sec-lab1-task" class="level2" data-number="24.2">
 <h2 data-number="24.2" class="anchored" data-anchor-id="sec-lab1-task"><span class="header-section-number">24.2</span> Задания</h2>
-<section id="sec-lab1-task-r-programming" class="level3" data-number="24.2.1">
-<h3 data-number="24.2.1" class="anchored" data-anchor-id="sec-lab1-task-r-programming"><span class="header-section-number">24.2.1</span> Язык программирования R</h3>
+<section id="отчёт" class="level3" data-number="24.2.1">
+<h3 data-number="24.2.1" class="anchored" data-anchor-id="отчёт"><span class="header-section-number">24.2.1</span> Отчёт</h3>
+<p>Создать документ <code>Quarto Markdown</code> в RStudio <a href="../enviroment/rstudio.html#sec-enviroment-rstudio-quarto-project" class="quarto-xref"><span>Глава 2.1</span></a> или через командную строку <a href="../enviroment/quarto.html" class="quarto-xref"><span>Глава 3</span></a>. Отчёт загружается на образовательный портал.</p>
+</section>
+<section id="sec-lab1-task-r-programming" class="level3" data-number="24.2.2">
+<h3 data-number="24.2.2" class="anchored" data-anchor-id="sec-lab1-task-r-programming"><span class="header-section-number">24.2.2</span> Язык программирования R</h3>
 <div id="exr-lab1-r-lang-vector-seq" class="theorem exercise">
 <p><span class="theorem-title"><strong>Упражнение 24.1</strong></span> Упростите выражение (<a href="../r-lang/basic.html#sec-r-lang-basic-vector-sequence" class="quarto-xref"><span>Глава 6.3.1</span></a>):</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">sqrt</span>(<span class="dv">1</span>), <span class="fu">sqrt</span>(<span class="dv">2</span>), <span class="fu">sqrt</span>(<span class="dv">3</span>))</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -706,8 +731,8 @@ f(x)=\begin{cases}
 </div>
 </div>
 </section>
-<section id="sec-lab1-task-linear-algebra" class="level3" data-number="24.2.2">
-<h3 data-number="24.2.2" class="anchored" data-anchor-id="sec-lab1-task-linear-algebra"><span class="header-section-number">24.2.2</span> Линейная алгебра</h3>
+<section id="sec-lab1-task-linear-algebra" class="level3" data-number="24.2.3">
+<h3 data-number="24.2.3" class="anchored" data-anchor-id="sec-lab1-task-linear-algebra"><span class="header-section-number">24.2.3</span> Линейная алгебра</h3>
 <div id="exr-lab1-linear-algebra-equation-solve-integrated" class="theorem exercise">
 <p><span class="theorem-title"><strong>Упражнение 24.7</strong></span> Решить СЛАУ <span class="math inline">\(AX=b\)</span> встроенным методом. Элементы матриц сгенерировать произвольно. <a href="https://rdrr.io/r/base/solve.html">solve</a></p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="Оценка">
@@ -767,8 +792,8 @@ f(x)=\begin{cases}
 </div>
 </div>
 </section>
-<section id="sec-lab1-task-operations-research" class="level3" data-number="24.2.3">
-<h3 data-number="24.2.3" class="anchored" data-anchor-id="sec-lab1-task-operations-research"><span class="header-section-number">24.2.3</span> Исследование операций</h3>
+<section id="sec-lab1-task-operations-research" class="level3" data-number="24.2.4">
+<h3 data-number="24.2.4" class="anchored" data-anchor-id="sec-lab1-task-operations-research"><span class="header-section-number">24.2.4</span> Исследование операций</h3>
 <div id="exr-lab1-operations-research-graphical-solution" class="theorem exercise">
 <p><span class="theorem-title"><strong>Упражнение 24.10</strong></span> &nbsp;</p>
 <ol type="1">
@@ -863,8 +888,8 @@ s = 18t + 9t^2 - t^3
 </div>
 </div>
 </section>
-<section id="sec-lab1-task-magic" class="level3" data-number="24.2.4">
-<h3 data-number="24.2.4" class="anchored" data-anchor-id="sec-lab1-task-magic"><span class="header-section-number">24.2.4</span> Прикладная магия</h3>
+<section id="sec-lab1-task-magic" class="level3" data-number="24.2.5">
+<h3 data-number="24.2.5" class="anchored" data-anchor-id="sec-lab1-task-magic"><span class="header-section-number">24.2.5</span> Прикладная магия</h3>
 <div id="exr-lab1-magic" class="theorem exercise">
 <p><span class="theorem-title"><strong>Упражнение 24.14</strong></span> Пусть дана функция общего вида <span class="math inline">\(f(x,y)\)</span> и система уравнений <span class="math inline">\(Ax=b\)</span> для двух переменных. Постройте контурный график функции, на котором изобразите точки пересечения прямых. Обработать случая параллельных прямых, совпадающих прямых. <a href="../r-lang/advanced.html#sec-r-lang-advanced-formula" class="quarto-xref"><span>Глава 7.10</span></a></p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled" title="Оценка">
