@@ -1,7 +1,0 @@
-# Функциональные операторы Purrr {#sec-r-tools-purrr}
-
-::: {.callout-important title="Состояние разработки"}
-В разработке
-:::
-
-## `pmap` {#sec-r-tools-purrr-pmap}

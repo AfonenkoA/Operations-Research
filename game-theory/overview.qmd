@@ -1,5 +1,0 @@
-# Теория игр {#sec-game-theory-overview}
-
-::: {.callout-important title="Состояние разработки"}
-В разработке
-:::

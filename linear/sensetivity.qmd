@@ -1,5 +1,0 @@
-# Анализ чувствительности {#sec-linear-sensetivity}
-
-::: {.callout-important title="Состояние разработки"}
-В разработке
-:::

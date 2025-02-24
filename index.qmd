@@ -1,3 +1,0 @@
-# Интерактивный курс по исследованию операций {.unnumbered}
-
-Основная литература @bib-taha-issledovanie-operacij

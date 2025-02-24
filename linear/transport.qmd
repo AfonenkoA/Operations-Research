@@ -1,5 +1,0 @@
-# Транспортная задача {#sec-linear-transport}
-
-::: {.callout-important title="Состояние разработки"}
-В разработке
-:::
