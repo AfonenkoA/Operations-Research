@@ -1,11 +1,104 @@
 # Quarto {#sec-enviroment-quarto}
 
-::: {.callout-important title="Состояние разработки"}
-В разработке
-:::
+При использовании из командной строки **без IDE**.
 
-При использовании из командной строки без IDE.
+## Установка примера {#sec-enviroment-quarto-example-install}
 
-## Render
+Для дальнейших действий необходимо
 
-## Preview
+1.  скачать пример файла `.qmd` [`example.qmd`](https://github.com/AfonenkoA/Operations-Research/tree/master/enviroment/example.qmd)
+2.  Вызвав интерактивный сеанс R установить пакеты
+
+``` r
+install.packages("ggplot2")
+install.packages("palmerpenguins")
+```
+
+Если пакет `tidyverse` устанавливается с ошибками см. @sec-lab1-instructions пункт `renv`
+
+## Render {#sec-enviroment-quarto-render}
+
+При рендеринге Quarto генерирует новый файл, содержащий выделенный текст, код и результаты из файла `.qmd`. Новый файл может представлять собой документ `HTML`, `PDF`, `MS Word` и другие форматы. По умолчанию Quarto рендерит в `HTML` . Например:
+
+``` bash
+quarto render example.qmd
+```
+
+Результат выполнения команды
+
+```         
+processing file: example.qmd
+1/5                
+2/5 [load-packages]
+3/5                
+4/5 [plot-penguins]
+5/5                
+output file: example.knit.md
+
+pandoc 
+  to: html
+  output-file: example.html
+  standalone: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  
+metadata
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  title: Пример блокнота Quarto
+  editor: visual
+  
+Output created: example.html
+```
+
+`example.html` представляет собой @fig-preview-example
+
+## Preview {#sec-enviroment-quarto-preview}
+
+Рендеринг и предварительный просмотр документа или проекта веб-сайта. Автоматически перезагружает браузер при изменении входных файлов или ресурсов документа. При предварительном просмотре для рендеринга используются самые последние результаты выполнения вычислительных документов.
+
+``` bash
+quarto preview example.qmd
+```
+
+Результат выполнения команды примерно такой:
+
+```         
+processing file: example.qmd
+1/5                
+2/5 [load-packages]
+3/5                
+4/5 [plot-penguins]
+5/5                
+output file: example.knit.md
+
+pandoc 
+  to: html
+  output-file: example.html
+  standalone: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  
+metadata
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  title: Пример блокнота Quarto
+  editor: visual
+  
+Output created: example.html
+
+Watching files for changes
+Browse at http://localhost:7980/
+```
+
+В браузере отобразится следующая страничка
+
+![Пример preview в html](preview-example.png){#fig-preview-example fig-align="center"}

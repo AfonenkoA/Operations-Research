@@ -9,10 +9,11 @@
 ### Установка
 
 1.  Установить R @sec-enviroment-setup-r
-
 2.  Установить RTools @sec-enviroment-setup-rtools
-
 3.  Установить IDE для работы: RStudio @sec-enviroment-setup-rstudio или другу IDE, которую поддерживает [Quarto](https://quarto.org/docs/get-started/).
+4.  Скачать пример интерактивного блокнот Quarto @sec-enviroment-quarto-example-install и сохранить его в отдельном каталоге (например `lab1` ).
+5.  Скопировать в рабочий каталог файлы [окружения renv](https://github.com/AfonenkoA/Operations-Research/tree/renv) и восстановить пакеты @sec-r-tools-renv-project-restore
+6.  Отрендерить пример @sec-enviroment-quarto-preview или @sec-enviroment-rstudio-quarto-document
 
 ### Теория
 
@@ -139,7 +140,7 @@ plot_ly(x= x, y=y, type = 'scatter', mode = 'lines')
 
 ### Отчёт
 
-Создать документ `Quarto Markdown` в RStudio @sec-enviroment-rstudio-quarto-project или через командную строку @sec-enviroment-quarto. Отчёт загружается на образовательный портал.
+Создать документ `Quarto` в RStudio @sec-enviroment-rstudio-quarto-project или через командную строку @sec-enviroment-quarto. Отчёт загружается на образовательный портал.
 
 ### Язык программирования R {#sec-lab1-task-r-programming}
 
