@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -423,8 +457,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#render" id="toc-render" class="nav-link active" data-scroll-target="#render"><span class="header-section-number">3.1</span> Render</a></li>
-  <li><a href="#preview" id="toc-preview" class="nav-link" data-scroll-target="#preview"><span class="header-section-number">3.2</span> Preview</a></li>
+  <li><a href="#sec-enviroment-quarto-example-install" id="toc-sec-enviroment-quarto-example-install" class="nav-link active" data-scroll-target="#sec-enviroment-quarto-example-install"><span class="header-section-number">3.1</span> Установка примера</a></li>
+  <li><a href="#sec-enviroment-quarto-render" id="toc-sec-enviroment-quarto-render" class="nav-link" data-scroll-target="#sec-enviroment-quarto-render"><span class="header-section-number">3.2</span> Render</a></li>
+  <li><a href="#sec-enviroment-quarto-preview" id="toc-sec-enviroment-quarto-preview" class="nav-link" data-scroll-target="#sec-enviroment-quarto-preview"><span class="header-section-number">3.3</span> Preview</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li></ul></div></nav>
     </div>
@@ -450,25 +485,96 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled" title="Состояние разработки">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Состояние разработки
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>В разработке</p>
-</div>
-</div>
-<p>При использовании из командной строки без IDE.</p>
-<section id="render" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="render"><span class="header-section-number">3.1</span> Render</h2>
+<p>При использовании из командной строки <strong>без IDE</strong>.</p>
+<section id="sec-enviroment-quarto-example-install" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="sec-enviroment-quarto-example-install"><span class="header-section-number">3.1</span> Установка примера</h2>
+<p>Для дальнейших действий необходимо</p>
+<ol type="1">
+<li>скачать пример файла <code>.qmd</code> <a href="https://github.com/AfonenkoA/Operations-Research/tree/master/enviroment/example.qmd"><code>example.qmd</code></a></li>
+<li>Вызвав интерактивный сеанс R установить пакеты</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"palmerpenguins"</span>)</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Если пакет <code>tidyverse</code> устанавливается с ошибками см. <a href="../lab1/intro.html#sec-lab1-instructions" class="quarto-xref"><span>Глава 24.1</span></a> пункт <code>renv</code></p>
 </section>
-<section id="preview" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="preview"><span class="header-section-number">3.2</span> Preview</h2>
+<section id="sec-enviroment-quarto-render" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="sec-enviroment-quarto-render"><span class="header-section-number">3.2</span> Render</h2>
+<p>При рендеринге Quarto генерирует новый файл, содержащий выделенный текст, код и результаты из файла <code>.qmd</code>. Новый файл может представлять собой документ <code>HTML</code>, <code>PDF</code>, <code>MS Word</code> и другие форматы. По умолчанию Quarto рендерит в <code>HTML</code> . Например:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render example.qmd</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Результат выполнения команды</p>
+<pre><code>processing file: example.qmd
+1/5                
+2/5 [load-packages]
+3/5                
+4/5 [plot-penguins]
+5/5                
+output file: example.knit.md
+
+pandoc 
+  to: html
+  output-file: example.html
+  standalone: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  
+metadata
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  title: Пример блокнота Quarto
+  editor: visual
+  
+Output created: example.html</code></pre>
+<p><code>example.html</code> представляет собой <a href="#fig-preview-example" class="quarto-xref">Рисунок&nbsp;<span>3.1</span></a></p>
+</section>
+<section id="sec-enviroment-quarto-preview" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="sec-enviroment-quarto-preview"><span class="header-section-number">3.3</span> Preview</h2>
+<p>Рендеринг и предварительный просмотр документа или проекта веб-сайта. Автоматически перезагружает браузер при изменении входных файлов или ресурсов документа. При предварительном просмотре для рендеринга используются самые последние результаты выполнения вычислительных документов.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview example.qmd</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Результат выполнения команды примерно такой:</p>
+<pre><code>processing file: example.qmd
+1/5                
+2/5 [load-packages]
+3/5                
+4/5 [plot-penguins]
+5/5                
+output file: example.knit.md
+
+pandoc 
+  to: html
+  output-file: example.html
+  standalone: true
+  section-divs: true
+  html-math-method: mathjax
+  wrap: none
+  default-image-extension: png
+  
+metadata
+  document-css: false
+  link-citations: true
+  date-format: long
+  lang: en
+  title: Пример блокнота Quarto
+  editor: visual
+  
+Output created: example.html
+
+Watching files for changes
+Browse at http://localhost:7980/</code></pre>
+<p>В браузере отобразится следующая страничка</p>
+<div id="fig-preview-example" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-preview-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="preview-example.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-preview-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Рисунок&nbsp;3.1: Пример preview в html
+</figcaption>
+</figure>
+</div>
 
 
 </section>
