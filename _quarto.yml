@@ -1,9 +1,7 @@
 project:
   type: book
-  pre-render:
-    - scripts/widgets/pre.R
   post-render:
-    - scripts/widgets/post.R
+    - scripts/widgets/resolve-lib-ref.R
 
 
 profile:

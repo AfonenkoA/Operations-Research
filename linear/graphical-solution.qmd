@@ -10,8 +10,8 @@ freeze: false
 #| message: false
 #| include: false 
 
-source('../util/frameWidget.R')
 source('../util/add_region.R')
+library(widgetframe)
 ```
 
 # Графическое решение {#sec-linear-graphical-solution}

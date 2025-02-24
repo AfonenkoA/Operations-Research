@@ -1,0 +1,43 @@
+---
+title: "Пример блокнота Quarto"
+format: html
+editor: visual
+---
+
+```{r}
+#| label: load-packages
+#| include: false
+
+library(ggplot2)
+library(palmerpenguins)
+```
+
+## Quarto
+
+Quarto позволяет объединить содержимое и исполняемый код в готовый документ. Узнать больше о Quarto можно на сайте <https://quarto.org>.
+
+## Пингвины
+
+![](https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/get-started/hello/rstudio/lter_penguins.png){style="float:right;" fig-alt="Иллюстрация трех видов пингвинов архипелага Палмера: Chinstrap, Gentoo и Adelie. Автор иллюстрации - @allison_horst." width="401"}
+
+Датасет `penguins` из пакета [**palmerpenguins**](https://allisonhorst.github.io/palmerpenguins%20«palmerpenguins%20R%20package») содержат измерения размеров `{r} nrow(penguins)` пингвинов трех видов, наблюдавшихся на трех островах архипелага Палмера, Антарктида.
+
+На графике ниже показана зависимость между длиной ласт и клюва у этих пингвинов.
+
+```{r}
+#| label: plot-penguins
+#| warning: false
+#| echo: false
+
+ggplot(penguins, 
+       aes(x = flipper_length_mm, y = bill_length_mm)) +
+  geom_point(aes(color = species, shape = species)) +
+  scale_color_manual(values = c("darkorange","purple","cyan4")) +
+  labs(
+    title = "Длина ласт и клюва",
+    subtitle = "Размеры для пингвинов на станции Палмер LTER",
+    x = "Длина ласт (мм)", y = "Длина клюва (mm)",
+    color = "Вид пингвина", shape = "Вид пигвина"
+  ) +
+  theme_minimal()
+```
