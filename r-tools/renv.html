@@ -385,13 +385,13 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab1/intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../lab/1/intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Лабораторная работа 1. Введение</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab2/linear.html" class="sidebar-item-text sidebar-link">
+  <a href="../lab/2/linear.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Лабораторная работа 2. Линейное программирование</span></span></a>
   </div>
 </li>
@@ -552,10 +552,10 @@ div.csl-indent {
 <section id="sec-r-tools-renv-project-restore" class="level3" data-number="B.2.3">
 <h3 data-number="B.2.3" class="anchored" data-anchor-id="sec-r-tools-renv-project-restore"><span class="header-section-number">B.2.3</span> Восстановление</h3>
 <p>Для того, чтобы восстановить пакеты из другого проекта (например размещённого на github) требуется 4 файла:</p>
-<pre><code>renv.lock
-.Rprofile
-renv/activate.R
-renv/settings.json</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource console number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>renv.lock</span>
+<span id="cb1-2"><a href="#cb1-2"></a>.Rprofile</span>
+<span id="cb1-3"><a href="#cb1-3"></a>renv/activate.R</span>
+<span id="cb1-4"><a href="#cb1-4"></a>renv/settings.json</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>После сохранения этих файлов в каталоге проекта для восстановления пакетов выполняется команда <a href="https://rdrr.io/github/rstudio/renv/man/restore.html"><code>renv::restore()</code></a></p>
 </section>
 <section id="sec-r-tools-renv-project-install" class="level3" data-number="B.2.4">
