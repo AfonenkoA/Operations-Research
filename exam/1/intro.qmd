@@ -1,0 +1,25 @@
+---
+params:
+  alpha: 0.1
+  ratio: 0.1
+  seed-random: 123
+---
+
+
+# Проверочная работа 1. Введение
+
+```{r}
+params$alpha
+```
+
+:::: {.content-visible unless-profile="advanced" when-meta="linear-select-det"}
+::: {#exm-exam-1-intro-ship}
+### ship
+:::
+::::
+
+
+```bash
+quarto render document.qmd --execute-params params.yml
+quarto render document.qmd -P alpha:0.2
+```

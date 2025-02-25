@@ -4,9 +4,11 @@
 
 ## Установка примера {#sec-enviroment-quarto-example-install}
 
-Для дальнейших действий необходимо
+````markdown
+{{< include _example.qmd >}}
+````
 
-1.  скачать пример файла `.qmd` [`example.qmd`](https://github.com/AfonenkoA/Operations-Research/tree/master/enviroment/example.qmd)
+1.  Сохранить код приведённый выше код в файл (например `example.qmd`)
 2.  Вызвав интерактивный сеанс R установить пакеты
 
 ``` r
@@ -14,7 +16,18 @@ install.packages("ggplot2")
 install.packages("palmerpenguins")
 ```
 
-Если пакет `tidyverse` устанавливается с ошибками см. @sec-lab1-instructions пункт `renv`
+Если пакет `tidyverse` устанавливается с ошибками см. @sec-lab-1-instructions пункт `renv`
+
+```{r}
+#| label: import
+#| echo: false
+#| warning: false
+#| message: false
+#| include: false 
+
+library(palmerpenguins)
+library(ggplot2)
+```
 
 ## Render {#sec-enviroment-quarto-render}
 
@@ -26,7 +39,7 @@ quarto render example.qmd
 
 Результат выполнения команды
 
-```         
+``` {.console code-line-numbers="true"}
 processing file: example.qmd
 1/5                
 2/5 [load-packages]
@@ -67,7 +80,7 @@ quarto preview example.qmd
 
 Результат выполнения команды примерно такой:
 
-```         
+``` {.console code-line-numbers="true"}
 processing file: example.qmd
 1/5                
 2/5 [load-packages]

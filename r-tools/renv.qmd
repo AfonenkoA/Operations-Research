@@ -36,7 +36,7 @@
 
 Для того, чтобы восстановить пакеты из другого проекта (например размещённого на github) требуется 4 файла:
 
-```         
+```{.console code-line-numbers="true"}          
 renv.lock
 .Rprofile
 renv/activate.R
