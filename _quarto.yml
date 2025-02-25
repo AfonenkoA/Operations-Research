@@ -5,7 +5,9 @@ project:
 
 
 profile:
-  default: development
+  group:
+    - [base, advanced]
+    - [dev, prod]
 
 book:
   title: "Исследование операций"
@@ -16,69 +18,6 @@ book:
   repo-url: "https://github.com/AfonenkoA/Operations-Research"
   repo-actions: [issue]
   repo-branch: master
-
-  chapters:
-    - index.qmd
-
-    - part: enviroment/overview.qmd
-      chapters:
-        - enviroment/setup.qmd
-        - enviroment/rstudio.qmd
-        - enviroment/quarto.qmd
-        - enviroment/markdown.qmd
-        - enviroment/latex.qmd
-
-    - part: r-lang/overview.qmd
-      chapters:
-        - r-lang/basic.qmd
-        - r-lang/advanced.qmd
-
-    - part: linear/overview.qmd
-      chapters:
-        - linear/algebra.qmd
-        - linear/graphical-solution.qmd
-        - linear/sensetivity.qmd
-        - linear/dual.qmd
-        - linear/simplex.qmd
-        - linear/simplex-spec.qmd
-        - linear/simplex-ext.qmd
-        - linear/integer.qmd
-        - linear/transport.qmd
-        - linear/network.qmd
-
-    - part: nonlinear/overview.qmd
-      chapters:
-        - nonlinear/unconstrained/analytical-one.qmd
-        - nonlinear/unconstrained/analytical-many.qmd
-        - nonlinear/constrained/analytical-one.qmd
-        - nonlinear/constrained/analytical-many.qmd
-
-    - part: graph-theory/overview.qmd
-      chapters:
-        - graph-theory/dijkstra.qmd
-
-    - part: game-theory/overview.qmd
-      chapters:
-        - game-theory/matrix.qmd
-
-    - part: "Лабораторные работы"
-      chapters:
-        - lab1/intro.qmd
-        - lab2/linear.qmd
-    - references.qmd
-
-
-  appendices:
-    - part: "Язык программирования R"
-      chapters:
-        - r-tools/basic.qmd
-        - r-tools/renv.qmd
-        - r-tools/plotly.qmd
-        - r-tools/ggplot2.qmd
-        - r-tools/tibble.qmd
-        - r-tools/purrr.qmd
-        - r-tools/tidyr.qmd
-
 
 lang: ru
 

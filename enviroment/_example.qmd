@@ -4,7 +4,7 @@ format: html
 editor: visual
 ---
 
-```{r}
+```{{r}}
 #| label: load-packages
 #| include: false
 
@@ -20,11 +20,11 @@ Quarto позволяет объединить содержимое и испо�
 
 ![](https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/get-started/hello/rstudio/lter_penguins.png){style="float:right;" fig-alt="Иллюстрация трех видов пингвинов архипелага Палмера: Chinstrap, Gentoo и Adelie. Автор иллюстрации - @allison_horst." width="401"}
 
-Датасет `penguins` из пакета [**palmerpenguins**](https://allisonhorst.github.io/palmerpenguins%20«palmerpenguins%20R%20package») содержат измерения размеров `{r} nrow(penguins)` пингвинов трех видов, наблюдавшихся на трех островах архипелага Палмера, Антарктида.
+Датасет `penguins` из пакета [**palmerpenguins**](https://allisonhorst.github.io/palmerpenguins%20«palmerpenguins%20R%20package») содержат измерения размеров `{{r}} nrow(penguins)` пингвинов трех видов, наблюдавшихся на трех островах архипелага Палмера, Антарктида.
 
 На графике ниже показана зависимость между длиной ласт и клюва у этих пингвинов.
 
-```{r}
+```{{r}}
 #| label: plot-penguins
 #| warning: false
 #| echo: false
