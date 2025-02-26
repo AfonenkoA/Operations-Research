@@ -1,24 +1,80 @@
 # RStudio IDE {#sec-enviroment-rstudio}
 
-::: {.callout-important title="Состояние разработки"}
-В разработке
-:::
+## Quarto {#sec-enviroment-rstudio-quarto}
 
-## Quarto
+### Создать новый документ {#sec-enviroment-rstudio-quarto-new}
 
-### Quarto Document {#sec-enviroment-rstudio-quarto-document}
+![Меню создания документа](rstudio-quarto-img/new-document.png){fig-align="center"}
 
+![Опции при создании документа](rstudio-quarto-img/new-document-options.png){fig-align="center"}
 
-### Создание проекта {#sec-enviroment-rstudio-quarto-project}
+### Визуальный редактор {#sec-enviroment-rstudio-quarto-visual-editor}
 
-проект quarto
+![Пример в визуальном редакторе](rstudio-quarto-img/editor-visual.png){fig-align="center"}
 
+#### Форматирование {#sec-enviroment-rstudio-quarto-visual-editor-format}
 
+![Меню форматирование](rstudio-quarto-img/editor-panel-format.png){fig-align="center"}
 
-## Сочетание клавиш
+#### Заголовки {#sec-enviroment-rstudio-quarto-visual-header}
 
-Картинки и обзор панели редактирования
+![Меню стиля заголовка](rstudio-quarto-img/editor-panel-header.png){fig-align="center"}
 
-## Отладка
+#### Вставка ресурсов {#sec-enviroment-rstudio-quarto-visual-insert}
 
-Здесь обзор кнопок, а функции типа browser() и trace() ссылка на продвинутый r
+![Вставка ресурсов](rstudio-quarto-img/editor-panel-insert.png){fig-align="center"}
+
+#### Вставка изображения {#sec-enviroment-rstudio-quarto-visual-image}
+
+![Меню вставки изображения](rstudio-quarto-img/editor-panel-image.png){fig-align="center"}
+
+#### Вставка ссылки {#sec-enviroment-rstudio-quarto-visual-link}
+
+![Меню вставки ссылки](rstudio-quarto-img/editor-panel-link.png){fig-align="center"}
+
+#### Редактирование таблиц {#sec-enviroment-rstudio-quarto-visual-table}
+
+![Меню редактора таблиц](rstudio-quarto-img/editor-panel-table.png){fig-align="center"}
+
+### Редактор исходного кода {#sec-enviroment-rstudio-quarto-source-editor}
+
+![Редактор исходного кода](rstudio-quarto-img/editor-source.png){fig-align="center"}
+
+## Сочетание клавиш {#sec-enviroment-rstudio-shortcuts}
+
+Большинство сочетаний клавиш работают в `visual` режиме. Вызов меню интерактивного выбора для вставки конвента {{< kbd Crtl-/ >}}
+
+![](rstudio-quarto-img/editor-popup-menu.png)
+
+### Форматирование и написание текста {#sec-enviroment-rstudio-shortcuts-formating}
+
+Выделив текст к нему можно применить стили
+
+| Действие                           | Сочетание клавиш         |
+|------------------------------------|--------------------------|
+| **Жирный**                         | {{< kbd Ctrl-B >}}       |
+| *Курсив*                           | {{< kbd Ctrl-I >}}       |
+| `Код`                              | {{< kbd Ctrl-D >}}       |
+| Вставить ссылку                    | {{< kbd Ctrl-K >}}       |
+| Вставить изображение               | {{< kbd Ctrl-Shift-I >}} |
+| Отменить действие                  | {{< kbd Ctrl-Z >}}       |
+| Повторить отмененное действие      | {{< kbd Ctrl-Shift-Z >}} |
+| Свернуть все блоки (текст и код)   | {{< kbd Alt-O >}}        |
+| Развернуть все блоки (текст и код) | {{< kbd Alt-Shift-O >}}  |
+
+### Код {#sec-enviroment-rstudio-shortcuts-code}
+
+| Действие | Сочетание клавиш |
+|------------------------------------|------------------------------------|
+| Вставить блок кода на языке R | {{< kbd Ctrl-Alt-I >}} |
+| Присваивание на языке R `<-` | {{< kbd Alt-- >}} |
+| Выполнить блок кода | {{< kbd Crtl-Shift-Enter >}}, {{< kbd Ctrl-Alt-C >}} |
+| Выполнить предыдущий блок кода | {{< kbd Crtl-Shift-Alt-P >}} |
+| Выполнить все предидущие блоки кода | {{< kbd Ctrl-Alt-P >}} |
+| Выполнить следующий блок кода | {{< kbd Ctrl-Alt-N >}} |
+| Выполнить все блоки кода | {{< kbd Ctrl-Alt-R >}} |
+| Автодополнение кода | {{< kbd Tab >}}, {{< kbd Ctrl-Space >}} |
+
+### Рендеринг {#sec-enviroment-rstudio-shortcuts-rendering}
+
+Вызов предпросмотра в файлах и проектах Quarto `.qmd` или конвертации в `.Rmd` {{< kbd Ctrl-Shift-K >}}
