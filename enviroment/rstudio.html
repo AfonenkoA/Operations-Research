@@ -42,6 +42,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-4fa55f62383448b489c88c030bb35243.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/kbd/kbd.js"></script>
+<link href="../site_libs/quarto-contrib/kbd/kbd.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -423,13 +425,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#quarto" id="toc-quarto" class="nav-link active" data-scroll-target="#quarto"><span class="header-section-number">2.1</span> Quarto</a>
+  <li><a href="#sec-enviroment-rstudio-quarto" id="toc-sec-enviroment-rstudio-quarto" class="nav-link active" data-scroll-target="#sec-enviroment-rstudio-quarto"><span class="header-section-number">2.1</span> Quarto</a>
   <ul class="collapse">
-  <li><a href="#sec-enviroment-rstudio-quarto-document" id="toc-sec-enviroment-rstudio-quarto-document" class="nav-link" data-scroll-target="#sec-enviroment-rstudio-quarto-document"><span class="header-section-number">2.1.1</span> Quarto Document</a></li>
-  <li><a href="#sec-enviroment-rstudio-quarto-project" id="toc-sec-enviroment-rstudio-quarto-project" class="nav-link" data-scroll-target="#sec-enviroment-rstudio-quarto-project"><span class="header-section-number">2.1.2</span> Создание проекта</a></li>
+  <li><a href="#sec-enviroment-rstudio-quarto-new" id="toc-sec-enviroment-rstudio-quarto-new" class="nav-link" data-scroll-target="#sec-enviroment-rstudio-quarto-new"><span class="header-section-number">2.1.1</span> Создать новый документ</a></li>
+  <li><a href="#sec-enviroment-rstudio-quarto-visual-editor" id="toc-sec-enviroment-rstudio-quarto-visual-editor" class="nav-link" data-scroll-target="#sec-enviroment-rstudio-quarto-visual-editor"><span class="header-section-number">2.1.2</span> Визуальный редактор</a></li>
+  <li><a href="#sec-enviroment-rstudio-quarto-source-editor" id="toc-sec-enviroment-rstudio-quarto-source-editor" class="nav-link" data-scroll-target="#sec-enviroment-rstudio-quarto-source-editor"><span class="header-section-number">2.1.3</span> Редактор исходного кода</a></li>
   </ul></li>
-  <li><a href="#сочетание-клавиш" id="toc-сочетание-клавиш" class="nav-link" data-scroll-target="#сочетание-клавиш"><span class="header-section-number">2.2</span> Сочетание клавиш</a></li>
-  <li><a href="#отладка" id="toc-отладка" class="nav-link" data-scroll-target="#отладка"><span class="header-section-number">2.3</span> Отладка</a></li>
+  <li><a href="#sec-enviroment-rstudio-shortcuts" id="toc-sec-enviroment-rstudio-shortcuts" class="nav-link" data-scroll-target="#sec-enviroment-rstudio-shortcuts"><span class="header-section-number">2.2</span> Сочетание клавиш</a>
+  <ul class="collapse">
+  <li><a href="#sec-enviroment-rstudio-shortcuts-formating" id="toc-sec-enviroment-rstudio-shortcuts-formating" class="nav-link" data-scroll-target="#sec-enviroment-rstudio-shortcuts-formating"><span class="header-section-number">2.2.1</span> Форматирование и написание текста</a></li>
+  <li><a href="#sec-enviroment-rstudio-shortcuts-code" id="toc-sec-enviroment-rstudio-shortcuts-code" class="nav-link" data-scroll-target="#sec-enviroment-rstudio-shortcuts-code"><span class="header-section-number">2.2.2</span> Код</a></li>
+  <li><a href="#sec-enviroment-rstudio-shortcuts-rendering" id="toc-sec-enviroment-rstudio-shortcuts-rendering" class="nav-link" data-scroll-target="#sec-enviroment-rstudio-shortcuts-rendering"><span class="header-section-number">2.2.3</span> Рендеринг</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li></ul></div></nav>
     </div>
@@ -455,38 +462,209 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled" title="Состояние разработки">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="sec-enviroment-rstudio-quarto" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="sec-enviroment-rstudio-quarto"><span class="header-section-number">2.1</span> Quarto</h2>
+<section id="sec-enviroment-rstudio-quarto-new" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="sec-enviroment-rstudio-quarto-new"><span class="header-section-number">2.1.1</span> Создать новый документ</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rstudio-quarto-img/new-document.png" class="img-fluid figure-img"></p>
+<figcaption>Меню создания документа</figcaption>
+</figure>
 </div>
-<div class="callout-title-container flex-fill">
-Состояние разработки
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rstudio-quarto-img/new-document-options.png" class="img-fluid figure-img"></p>
+<figcaption>Опции при создании документа</figcaption>
+</figure>
 </div>
-</div>
-<div class="callout-body-container callout-body">
-<p>В разработке</p>
-</div>
-</div>
-<section id="quarto" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="quarto"><span class="header-section-number">2.1</span> Quarto</h2>
-<section id="sec-enviroment-rstudio-quarto-document" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="sec-enviroment-rstudio-quarto-document"><span class="header-section-number">2.1.1</span> Quarto Document</h3>
 </section>
-<section id="sec-enviroment-rstudio-quarto-project" class="level3" data-number="2.1.2">
-<h3 data-number="2.1.2" class="anchored" data-anchor-id="sec-enviroment-rstudio-quarto-project"><span class="header-section-number">2.1.2</span> Создание проекта</h3>
-<p>проект quarto</p>
+<section id="sec-enviroment-rstudio-quarto-visual-editor" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="sec-enviroment-rstudio-quarto-visual-editor"><span class="header-section-number">2.1.2</span> Визуальный редактор</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rstudio-quarto-img/editor-visual.png" class="img-fluid figure-img"></p>
+<figcaption>Пример в визуальном редакторе</figcaption>
+</figure>
+</div>
+<section id="sec-enviroment-rstudio-quarto-visual-editor-format" class="level4">
+<h4 class="anchored" data-anchor-id="sec-enviroment-rstudio-quarto-visual-editor-format">Форматирование</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rstudio-quarto-img/editor-panel-format.png" class="img-fluid figure-img"></p>
+<figcaption>Меню форматирование</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-enviroment-rstudio-quarto-visual-header" class="level4">
+<h4 class="anchored" data-anchor-id="sec-enviroment-rstudio-quarto-visual-header">Заголовки</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rstudio-quarto-img/editor-panel-header.png" class="img-fluid figure-img"></p>
+<figcaption>Меню стиля заголовка</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-enviroment-rstudio-quarto-visual-insert" class="level4">
+<h4 class="anchored" data-anchor-id="sec-enviroment-rstudio-quarto-visual-insert">Вставка ресурсов</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rstudio-quarto-img/editor-panel-insert.png" class="img-fluid figure-img"></p>
+<figcaption>Вставка ресурсов</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-enviroment-rstudio-quarto-visual-image" class="level4">
+<h4 class="anchored" data-anchor-id="sec-enviroment-rstudio-quarto-visual-image">Вставка изображения</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rstudio-quarto-img/editor-panel-image.png" class="img-fluid figure-img"></p>
+<figcaption>Меню вставки изображения</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-enviroment-rstudio-quarto-visual-link" class="level4">
+<h4 class="anchored" data-anchor-id="sec-enviroment-rstudio-quarto-visual-link">Вставка ссылки</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rstudio-quarto-img/editor-panel-link.png" class="img-fluid figure-img"></p>
+<figcaption>Меню вставки ссылки</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-enviroment-rstudio-quarto-visual-table" class="level4">
+<h4 class="anchored" data-anchor-id="sec-enviroment-rstudio-quarto-visual-table">Редактирование таблиц</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rstudio-quarto-img/editor-panel-table.png" class="img-fluid figure-img"></p>
+<figcaption>Меню редактора таблиц</figcaption>
+</figure>
+</div>
 </section>
 </section>
-<section id="сочетание-клавиш" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="сочетание-клавиш"><span class="header-section-number">2.2</span> Сочетание клавиш</h2>
-<p>Картинки и обзор панели редактирования</p>
+<section id="sec-enviroment-rstudio-quarto-source-editor" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="sec-enviroment-rstudio-quarto-source-editor"><span class="header-section-number">2.1.3</span> Редактор исходного кода</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rstudio-quarto-img/editor-source.png" class="img-fluid figure-img"></p>
+<figcaption>Редактор исходного кода</figcaption>
+</figure>
+</div>
 </section>
-<section id="отладка" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="отладка"><span class="header-section-number">2.3</span> Отладка</h2>
-<p>Здесь обзор кнопок, а функции типа browser() и trace() ссылка на продвинутый r</p>
+</section>
+<section id="sec-enviroment-rstudio-shortcuts" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="sec-enviroment-rstudio-shortcuts"><span class="header-section-number">2.2</span> Сочетание клавиш</h2>
+<p>Большинство сочетаний клавиш работают в <code>visual</code> режиме. Вызов меню интерактивного выбора для вставки конвента <kbd aria-hidden="true">Crtl-/</kbd><span class="visually-hidden">Crtl-/</span></p>
+<p><img src="rstudio-quarto-img/editor-popup-menu.png" class="img-fluid"></p>
+<section id="sec-enviroment-rstudio-shortcuts-formating" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="sec-enviroment-rstudio-shortcuts-formating"><span class="header-section-number">2.2.1</span> Форматирование и написание текста</h3>
+<p>Выделив текст к нему можно применить стили</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 58%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Действие</th>
+<th>Сочетание клавиш</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Жирный</strong></td>
+<td><p><kbd aria-hidden="true">Ctrl-B</kbd><span class="visually-hidden">Ctrl-B</span></p></td>
+</tr>
+<tr class="even">
+<td><em>Курсив</em></td>
+<td><p><kbd aria-hidden="true">Ctrl-I</kbd><span class="visually-hidden">Ctrl-I</span></p></td>
+</tr>
+<tr class="odd">
+<td><code>Код</code></td>
+<td><p><kbd aria-hidden="true">Ctrl-D</kbd><span class="visually-hidden">Ctrl-D</span></p></td>
+</tr>
+<tr class="even">
+<td>Вставить ссылку</td>
+<td><p><kbd aria-hidden="true">Ctrl-K</kbd><span class="visually-hidden">Ctrl-K</span></p></td>
+</tr>
+<tr class="odd">
+<td>Вставить изображение</td>
+<td><p><kbd aria-hidden="true">Ctrl-Shift-I</kbd><span class="visually-hidden">Ctrl-Shift-I</span></p></td>
+</tr>
+<tr class="even">
+<td>Отменить действие</td>
+<td><p><kbd aria-hidden="true">Ctrl-Z</kbd><span class="visually-hidden">Ctrl-Z</span></p></td>
+</tr>
+<tr class="odd">
+<td>Повторить отмененное действие</td>
+<td><p><kbd aria-hidden="true">Ctrl-Shift-Z</kbd><span class="visually-hidden">Ctrl-Shift-Z</span></p></td>
+</tr>
+<tr class="even">
+<td>Свернуть все блоки (текст и код)</td>
+<td><p><kbd aria-hidden="true">Alt-O</kbd><span class="visually-hidden">Alt-O</span></p></td>
+</tr>
+<tr class="odd">
+<td>Развернуть все блоки (текст и код)</td>
+<td><p><kbd aria-hidden="true">Alt-Shift-O</kbd><span class="visually-hidden">Alt-Shift-O</span></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sec-enviroment-rstudio-shortcuts-code" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="sec-enviroment-rstudio-shortcuts-code"><span class="header-section-number">2.2.2</span> Код</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Действие</th>
+<th>Сочетание клавиш</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Вставить блок кода на языке R</td>
+<td><p><kbd aria-hidden="true">Ctrl-Alt-I</kbd><span class="visually-hidden">Ctrl-Alt-I</span></p></td>
+</tr>
+<tr class="even">
+<td>Присваивание на языке R <code>&lt;-</code></td>
+<td><p><kbd aria-hidden="true">Alt--</kbd><span class="visually-hidden">Alt--</span></p></td>
+</tr>
+<tr class="odd">
+<td>Выполнить блок кода</td>
+<td><kbd aria-hidden="true">Crtl-Shift-Enter</kbd><span class="visually-hidden">Crtl-Shift-Enter</span>, <kbd aria-hidden="true">Ctrl-Alt-C</kbd><span class="visually-hidden">Ctrl-Alt-C</span></td>
+</tr>
+<tr class="even">
+<td>Выполнить предыдущий блок кода</td>
+<td><p><kbd aria-hidden="true">Crtl-Shift-Alt-P</kbd><span class="visually-hidden">Crtl-Shift-Alt-P</span></p></td>
+</tr>
+<tr class="odd">
+<td>Выполнить все предидущие блоки кода</td>
+<td><p><kbd aria-hidden="true">Ctrl-Alt-P</kbd><span class="visually-hidden">Ctrl-Alt-P</span></p></td>
+</tr>
+<tr class="even">
+<td>Выполнить следующий блок кода</td>
+<td><p><kbd aria-hidden="true">Ctrl-Alt-N</kbd><span class="visually-hidden">Ctrl-Alt-N</span></p></td>
+</tr>
+<tr class="odd">
+<td>Выполнить все блоки кода</td>
+<td><p><kbd aria-hidden="true">Ctrl-Alt-R</kbd><span class="visually-hidden">Ctrl-Alt-R</span></p></td>
+</tr>
+<tr class="even">
+<td>Автодополнение кода</td>
+<td><kbd aria-hidden="true">Tab</kbd><span class="visually-hidden">Tab</span>, <kbd aria-hidden="true">Ctrl-Space</kbd><span class="visually-hidden">Ctrl-Space</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sec-enviroment-rstudio-shortcuts-rendering" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="sec-enviroment-rstudio-shortcuts-rendering"><span class="header-section-number">2.2.3</span> Рендеринг</h3>
+<p>Вызов предпросмотра в файлах и проектах Quarto <code>.qmd</code> или конвертации в <code>.Rmd</code> <kbd aria-hidden="true">Ctrl-Shift-K</kbd><span class="visually-hidden">Ctrl-Shift-K</span></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

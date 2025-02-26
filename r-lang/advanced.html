@@ -674,24 +674,24 @@ $dimnames[[2]]
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span> (<span class="dv">5</span>, <span class="dv">1</span>, <span class="dv">2</span>)</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  2.8250822  1.4453347 -0.1516484  5.0014035  3.0373074</code></pre>
+<pre><code>[1] 1.4576457 0.6025131 5.7707071 0.9202167 0.2401239</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mapply</span>(rnorm, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">2</span>)</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
-[1] 3.656413
+[1] -0.5371525
 
 [[2]]
-[1] -0.1617563  1.3310423
+[1] 1.967556 1.512142
 
 [[3]]
-[1] 6.529554 3.131731 2.768942
+[1] 0.277254 3.064476 0.597392
 
 [[4]]
-[1] 2.210047 3.161041 5.892845 3.909095
+[1] 0.7916126 6.0514796 6.0765760 2.8171140
 
 [[5]]
-[1] 5.934869 1.832994 5.078929 6.767012 4.044008</code></pre>
+[1] 5.1665930 0.7328287 7.1634629 5.6934130 6.6190668</code></pre>
 </div>
 </div>
 <p><strong>tapply</strong> – используется для расчета некоторой функции в цикле по группам элементов вектора. Это удобно когда один вектор формирует несколько выборок.</p>
@@ -714,23 +714,23 @@ $dimnames[[2]]
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>mydata <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(mydata)</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9337527</code></pre>
+<pre><code>[1] 1.070903</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(<span class="at">x =</span> mydata)</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9337527</code></pre>
+<pre><code>[1] 1.070903</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(<span class="at">x =</span> mydata, <span class="at">na.rm =</span> <span class="cn">FALSE</span>)</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9337527</code></pre>
+<pre><code>[1] 1.070903</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">FALSE</span>, <span class="at">x =</span> mydata)</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9337527</code></pre>
+<pre><code>[1] 1.070903</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(<span class="at">na.rm =</span> <span class="cn">FALSE</span>, mydata)</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9337527</code></pre>
+<pre><code>[1] 1.070903</code></pre>
 </div>
 </div>
 <section id="сопоставление-аргументов" class="level3" data-number="7.6.1">
