@@ -90,6 +90,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="/Operations-Research/site_libs/mathjax-3.2.2/tex-svg-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -438,8 +467,30 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Содержание</h2>
+   
+  <ul>
+  <li><a href="#вектор" id="toc-вектор" class="nav-link active" data-scroll-target="#вектор"><span class="header-section-number">8.1</span> Вектор</a>
+  <ul class="collapse">
+  <li><a href="#операции" id="toc-операции" class="nav-link" data-scroll-target="#операции"><span class="header-section-number">8.1.1</span> Операции</a></li>
+  <li><a href="#линейная-независимость-векторов" id="toc-линейная-независимость-векторов" class="nav-link" data-scroll-target="#линейная-независимость-векторов"><span class="header-section-number">8.1.2</span> Линейная независимость векторов</a></li>
+  </ul></li>
+  <li><a href="#матрица" id="toc-матрица" class="nav-link" data-scroll-target="#матрица"><span class="header-section-number">8.2</span> Матрица</a>
+  <ul class="collapse">
+  <li><a href="#типы-матриц" id="toc-типы-матриц" class="nav-link" data-scroll-target="#типы-матриц"><span class="header-section-number">8.2.1</span> Типы матриц</a></li>
+  <li><a href="#операции-1" id="toc-операции-1" class="nav-link" data-scroll-target="#операции-1"><span class="header-section-number">8.2.2</span> Операции</a></li>
+  <li><a href="#определитель" id="toc-определитель" class="nav-link" data-scroll-target="#определитель"><span class="header-section-number">8.2.3</span> Определитель</a></li>
+  <li><a href="#обратная-матрица" id="toc-обратная-матрица" class="nav-link" data-scroll-target="#обратная-матрица"><span class="header-section-number">8.2.4</span> Обратная матрица</a></li>
+  </ul></li>
+  <li><a href="#система-линейных-алгебраических-уравнений" id="toc-система-линейных-алгебраических-уравнений" class="nav-link" data-scroll-target="#система-линейных-алгебраических-уравнений"><span class="header-section-number">8.3</span> Система линейных алгебраических уравнений</a>
+  <ul class="collapse">
+  <li><a href="#случай-двух-переменных" id="toc-случай-двух-переменных" class="nav-link" data-scroll-target="#случай-двух-переменных"><span class="header-section-number">8.3.1</span> Случай двух переменных</a></li>
+  <li><a href="#случай-n-переменных.-метод-гаусса-жордана" id="toc-случай-n-переменных.-метод-гаусса-жордана" class="nav-link" data-scroll-target="#случай-n-переменных.-метод-гаусса-жордана"><span class="header-section-number">8.3.2</span> Случай n переменных. Метод Гаусса — Жордана</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -476,22 +527,520 @@ div.csl-indent {
 <p>В разработке</p>
 </div>
 </div>
-<p>Системы линейных алгебраических уравнений. Решение СЛАУ методом Гаусса. Описание алгоритма + пример. Many solutions. One solution. Zero solutions</p>
-<p>Определитель, линейная независимость.</p>
-<p>Графическое решение СЛАУ для двух переменных</p>
-<p><span class="citation" data-cites="bib-linear-algebra-rpubs">[<a href="../references.html#ref-bib-linear-algebra-rpubs" role="doc-biblioref">1</a>]</span></p>
-<p>Обратная матрица. Определение и свойства</p>
-<p>Дать задачку на решение слау</p>
-<p>Заголовок операции над матрицами. Транспонирование. В примерах рассчитать сложное выражение используя все правила. Проверить свойства транспонирования и обратной матрицы. Единичная матрица и её свойства. Свойства диагональной матрицы. Свойство блочной матрицы. Свойства определителя, возможно задачка проверить свойства через компьютер. Через перекрестные ссылки</p>
-<p>Нормированиие вектора и норма вектора</p>
-<p>Линии и плоскости.</p>
+<p><span class="citation" data-cites="bib-linear-algebra-rpubs">[<a href="../references.html#ref-bib-linear-algebra-rpubs" role="doc-biblioref">1</a>]</span> <span class="citation" data-cites="bib-golshtejn-zadachi-i-metody-linejnogo-programmirovaniya-1">[<a href="../references.html#ref-bib-golshtejn-zadachi-i-metody-linejnogo-programmirovaniya-1" role="doc-biblioref">2</a>]</span></p>
+<p><span class="citation" data-cites="bib-taha-issledovanie-operacij">[<a href="../references.html#ref-bib-taha-issledovanie-operacij" role="doc-biblioref">3</a>]</span></p>
+<section id="вектор" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="вектор"><span class="header-section-number">8.1</span> Вектор</h2>
+<div id="def-linear-algebra-vector" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 8.1</strong></span> &nbsp;</p>
+<dl>
+<dt>Вектор</dt>
+<dd>
+<p><span class="math inline">\(\mathbf{P}=(p_1,p_2,\dots,p_n)\)</span> упорядоченная система <span class="math inline">\(n\)</span> действительных чисел</p>
+</dd>
+</dl>
+</div>
+<section id="операции" class="level3" data-number="8.1.1">
+<h3 data-number="8.1.1" class="anchored" data-anchor-id="операции"><span class="header-section-number">8.1.1</span> Операции</h3>
+<section id="равенство" class="level4">
+<h4 class="anchored" data-anchor-id="равенство">Равенство</h4>
+<p>Два <span class="math inline">\(n\)</span>-мерных вектора <span class="math inline">\(\mathbf{X}=(x_1,x_2,\dots,x_n)\)</span> и <span class="math inline">\(\mathbf{Y}=(y_1,y_2,\dots,y_n)\)</span> считаются равными, если их соответствующие компоненты совпадают, т.е. если</p>
+<p><span class="math display">\[
+x_i=y_i,\quad для \quad i=1,2,\dots,n
+\]</span></p>
+</section>
+<section id="сложение-и-вычитание" class="level4">
+<h4 class="anchored" data-anchor-id="сложение-и-вычитание">Сложение и вычитание</h4>
+<p>Пусть <span class="math inline">\(\mathbf{P}=(p_1,p_2,\dots,p_n)\)</span> и <span class="math inline">\(\mathbf{Q}=(q_1,q_2,\dots,q_n\)</span> – два <span class="math inline">\(n\)</span>-мерных вектора. Тогда элементы вектора <span class="math inline">\(\mathbf{R}=(r_1,r_2,\dots,r_n)\)</span>, равного <span class="math inline">\(\mathbf{R}=\mathbf{P}\pm\mathbf{Q}\)</span> определяются следующими соотношениями <span class="math inline">\(r_i=p_i \pm q_i\)</span>.</p>
+<p>В общем случае для любых векторов <span class="math inline">\(\mathbf{P}\)</span>, <span class="math inline">\(\mathbf{Q}\)</span> и <span class="math inline">\(\mathbf{S}\)</span>, имеющих одинаковую размерность, выполняются следующие соотношения</p>
+<p><span class="math display">\[
+\begin{align*}
+&amp; \mathbf{P} \pm \mathbf{Q} = \mathbf{Q} \pm \mathbf{P} \quad \\
+&amp; (\mathbf{P} + \mathbf{Q}) + \mathbf{S} = \mathbf{P} + (\mathbf{Q}+\mathbf{S})\\
+&amp; \mathbf{P} + (-\mathbf{P}) = \mathbf{0}
+\end{align*}
+\]</span></p>
+</section>
+<section id="умножения-на-скаляр" class="level4">
+<h4 class="anchored" data-anchor-id="умножения-на-скаляр">Умножения на скаляр</h4>
+<p>Для произвольного вектора <span class="math inline">\(\mathbf{P}\)</span> и скаляра <span class="math inline">\(\theta\)</span> (произвольного действительного числа) произведение вектора <span class="math inline">\(\mathbf{P}\)</span> на скаляр <span class="math inline">\(\theta\)</span> определяет новый вектор <span class="math inline">\(\mathbf{Q}\)</span>, задаваемый соотноешнием</p>
+<p><span class="math display">\[
+\mathbf{Q}=\theta \mathbf{P}=(\theta p_1,\theta p_2,\dots ,\theta p_n)
+\]</span></p>
+<p>В общем случае для любых векторов <span class="math inline">\(\mathbf{P}\)</span> и <span class="math inline">\(\mathbf{S}\)</span> имеющих одинаковую размерность, произвольных скалярных величин <span class="math inline">\(\theta\)</span> и <span class="math inline">\(\gamma\)</span> выполняются следющие соотношения</p>
+<p><span class="math display">\[
+\begin{align*}
+&amp;\theta(\mathbf{P}+\mathbf{S})=\theta \mathbf{P} + \theta \mathbf{S}\\
+&amp;\theta(\gamma \mathbf{P})=(\theta \gamma)\mathbf{P}
+\end{align*}
+\]</span></p>
+</section>
+<section id="скалярное-произведение" class="level4">
+<h4 class="anchored" data-anchor-id="скалярное-произведение">Скалярное произведение</h4>
+<p>Каждой паре векторов <span class="math inline">\(\mathbf{A}=(a_1,a_2,\dots,a_n)\)</span> и <span class="math inline">\(\mathbf{B}=(b_1,b_2,\dots,b_n)\)</span> может быть сопоставлено число</p>
+<p><span class="math display">\[
+(\mathbf{A},\mathbf{B})=\sum_{i=1}^n{a_i b_i}
+\]</span></p>
+<p>называемое их скалярным произведением.</p>
+<p>Скалярное произведение обладает следующими свойствами</p>
+<p><span class="math display">\[
+\begin{align*}
+&amp;(\mathbf{A},\mathbf{B})=(\mathbf{B},\mathbf{A})\\
+&amp;(\mathbf{A}_1 + \mathbf{A}_2,\mathbf{B}) = (\mathbf{A}_1,\mathbf{B}) + (\mathbf{A}_2,\mathbf{B})\\
+&amp;(\lambda \mathbf{A},\mathbf{B})=\lambda(\mathbf{A},\mathbf{B})\\
+&amp;(\mathbf{A},\mathbf{A})\ge0\\
+\end{align*}
+\]</span></p>
+</section>
+<section id="нормирование-и-норма" class="level4">
+<h4 class="anchored" data-anchor-id="нормирование-и-норма">Нормирование и норма</h4>
+<p>Длиной или нормой вектора <span class="math inline">\(A=(a_1,a_2,\dots,a_n)\)</span> называется число</p>
+<p><span class="math display">\[
+|\mathbf{A}|=\sqrt{(\mathbf{A},\mathbf{A})}=\sqrt{\sum_{i=1}^n{a_i^2}}
+\]</span></p>
+</section>
+</section>
+<section id="линейная-независимость-векторов" class="level3" data-number="8.1.2">
+<h3 data-number="8.1.2" class="anchored" data-anchor-id="линейная-независимость-векторов"><span class="header-section-number">8.1.2</span> Линейная независимость векторов</h3>
+<p>Векторы <span class="math inline">\(\mathbf{P}_1,\mathbf{P}_2,\dots,\mathbf{P}_n\)</span> называются <strong>линейно независимыми</strong>, если равенство</p>
+<p><span class="math display">\[
+\sum_{j=1}^n{\theta_j \mathbf{P}_i}=0 \quad \implies \quad \theta_j=0,\quad j=1,2,\dots,n
+\]</span></p>
+<p>выполняется тогда и только тогда, когда все <span class="math inline">\(\theta_j\)</span> равны нулю (<span class="math inline">\(\theta_j\)</span> – произвольные действительные числа). Если равенство <span class="math inline">\(\sum_{j=1}^n{\theta_j \mathbf{P}_j}=\mathbf{0}\)</span> выполняются при некоторых <span class="math inline">\(\theta_j \ne 0\)</span>, то векторы <span class="math inline">\(\mathbf{P}_1,\mathbf{P}_2,\dots,\mathbf{P}_n\)</span> называются линейно зависимыми.</p>
+<p>Например, векторы <span class="math inline">\(\mathbf{P}_1=(1,2)\)</span> и <span class="math inline">\(\mathbf{P}_2=(2,4)\)</span> линейно зависимы, поскольку существуют ненулевые числа <span class="math inline">\(\theta_1=2\)</span> и <span class="math inline">\(\theta_2=-1\)</span> при которых выполняется равенство <span class="math inline">\(\theta_1 \mathbf{P}_1 + \theta_2 \mathbf{P}_2=\mathbf{0}\)</span></p>
+<div id="thm-linear-algebra-vector-linear-independence" class="theorem">
+<p><span class="theorem-title"><strong>Теорема 8.1</strong></span> Для линейной независимости системы векторов <span class="math inline">\(\mathbf{A}_i=(a_{i1},a_{i2},\dots,a_{in})\)</span> для <span class="math inline">\(i=1,2,\dots,s\)</span>, необходимо и достаточно существование квадратной матрицы порядка <span class="math inline">\(s\)</span></p>
+<p><span class="math display">\[
+\begin{pmatrix}
+a_{1j_1} &amp; a_{1j_2} &amp; \dots &amp; a_{1j_s} \\
+a_{1j_1} &amp; a_{1j_2} &amp; \dots &amp; a_{1j_s} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{sj_1} &amp; a_{sj_2} &amp; \dots &amp; a_{sj_s}
+\end{pmatrix}
+\]</span></p>
+<p>составленной из координат векторов <span class="math inline">\(\mathbf{A}_i\)</span>, с определителем, отличным от нуля. Если в частности, <span class="math inline">\(s=n\)</span>, то для линейной независимости данной системы векторов необходимо и достаточно, чтобы</p>
+<p><span class="math display">\[
+|(\mathbf{A}_1,\mathbf{A}_2,\dots,\mathbf{A}_n)| \ne 0
+\]</span></p>
+</div>
+<div id="def-linear-algebra-rank" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 8.2</strong></span> &nbsp;</p>
+<dl>
+<dt>Рангом</dt>
+<dd>
+<p>произвольной системы векторов называется максимальное число линейно независимых векторов данной системы.</p>
+</dd>
+</dl>
+</div>
+<div id="def-linear-algebra-basis" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 8.3</strong></span> &nbsp;</p>
+<dl>
+<dt>Базисом</dt>
+<dd>
+<p>называет совокупность линейно независимых векторов системы, число которых равно её рангу.</p>
+</dd>
+</dl>
+</div>
+<p>Множество линейно независимых векторов данной системы является её базисом в том и только в том случае, если любой вектор системы представим в виде линейной комбинации векторов рассматриваемого множества.</p>
+</section>
+</section>
+<section id="матрица" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="матрица"><span class="header-section-number">8.2</span> Матрица</h2>
+<div id="def-linear-algebra-matrix" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 8.4</strong></span> &nbsp;</p>
+<dl>
+<dt>Матрицей</dt>
+<dd>
+<p>называется прямоугольный массив элементов, структурированный строками и столбцами. В матрице <span class="math inline">\(\mathbf{A}\)</span> элемент <span class="math inline">\(a_{ij}\)</span> расположен на пересечении <span class="math inline">\(i\)</span>-й строки и <span class="math inline">\(j\)</span>-го столбца массива.</p>
+</dd>
+</dl>
+</div>
+<p>Говорят, что матрица имеет порядок (размерность) <span class="math inline">\(m \times n\)</span>, если она состоит из <span class="math inline">\(m\)</span> строк b <span class="math inline">\(n\)</span> столбцов. Например следующая матрица имеет размерность <span class="math inline">\(4 \times 3\)</span></p>
+<p><span class="math display">\[
+\begin{pmatrix}
+a_{11} &amp; a_{12} &amp; a_{13} \\
+a_{21} &amp; a_{22} &amp; a_{23} \\
+a_{31} &amp; a_{32} &amp; a_{33} \\
+a_{41} &amp; a_{42} &amp; a_{43}
+\end{pmatrix} = {\|a_{ij}\|}_{4 \times 3}
+\]</span></p>
+<section id="типы-матриц" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="типы-матриц"><span class="header-section-number">8.2.1</span> Типы матриц</h3>
+<div id="def-linear-algebra-matrix-square" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 8.5</strong></span> &nbsp;</p>
+<dl>
+<dt>Квадратная матрица</dt>
+<dd>
+<p>это матрица, имеющая одинаковое количество строк и столбцов, т.е. у нее <span class="math inline">\(m=n\)</span>.</p>
+</dd>
+</dl>
+</div>
+<div id="def-linear-algebra-matrix-identity" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 8.6</strong></span> &nbsp;</p>
+<dl>
+<dt>Единичная матрица</dt>
+<dd>
+<p>это квадратная матрица, у которой все элементы главной диагонали равны 1, а все остальные – нулю.</p>
+</dd>
+</dl>
+</div>
+<p>Например, единичная матрица порядка <span class="math inline">\(3 \times 3\)</span> имеет вид</p>
+<p><span class="math display">\[
+\mathbf{I_3}=
+\begin{pmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{pmatrix}
+\]</span></p>
+<div id="def-linear-algebra-matrix-zero" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 8.7</strong></span> &nbsp;</p>
+<dl>
+<dt>Нулевая матрица</dt>
+<dd>
+<p>это матрица все элементы которой равны нулю <span class="math inline">\(\mathbf{B}=\mathbf{0}\)</span>.</p>
+</dd>
+</dl>
+</div>
+<div id="def-linear-algebra-vector-row" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 8.8</strong></span> &nbsp;</p>
+<dl>
+<dt>Вектор-строка</dt>
+<dd>
+<p>это матрица, имеющая одну строку и <span class="math inline">\(n\)</span> столбцов.</p>
+</dd>
+</dl>
+</div>
+<p><span class="math display">\[
+\mathbf{P}=(p_1,p_2,\dots,p_n)
+\]</span></p>
+<div id="def-linear-algebra-vector-column" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 8.9</strong></span> &nbsp;</p>
+<dl>
+<dt>Вектор-столбец</dt>
+<dd>
+<p>это матрица, имеющая <span class="math inline">\(m\)</span> строк и один столбец.</p>
+</dd>
+</dl>
+</div>
+<p><span class="math display">\[
+\mathbf{P}=
+\begin{pmatrix}
+p_1 \\
+p_2 \\
+\vdots \\
+p_n
+\end{pmatrix}
+\]</span></p>
+<div id="def-linear-algebra-matrix-diag" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 8.10</strong></span> &nbsp;</p>
+<dl>
+<dt>Диагональная матрица</dt>
+<dd>
+<p>квадратная матрица, все элементы которой, стоящие вне главной диагонали, равны нулю.</p>
+</dd>
+</dl>
+</div>
+<p><span class="math display">\[
+\mathbf{D}=
+\begin{pmatrix}
+d_{11} &amp; 0 &amp; \cdots &amp; 0 \\
+0 &amp; d_{22} &amp; \cdots &amp; 0 \\
+\vdots &amp; \vdots  &amp; \ddots &amp; \vdots \\
+0 &amp; 0 &amp; 0 &amp; d_{nn} \
+\end{pmatrix}
+\]</span></p>
+<p>Диагональная матрица <span class="math inline">\(\mathbf{D}\)</span> с элементами <span class="math inline">\((d_1,d_2,\dots,d_n)\)</span>, стоящими на главной диагонали, обозначается <span class="math inline">\(\mathrm{diag}\{d_1,d_2,\dots,d_n\}\)</span></p>
+<div id="def-linear-algebra-matrix-block" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 8.11</strong></span> &nbsp;</p>
+<dl>
+<dt>Блочная матрица</dt>
+<dd>
+<p>это представление матрицы, при котором она рассекается вертикальными и горизонтальными линиями на прямоугольные части — блоки</p>
+</dd>
+</dl>
+</div>
+<p><span class="math display">\[
+\mathbf{A}=
+\begin{pmatrix}
+\mathbf{A}_{11} &amp; \mathbf{A}_{12} &amp; \dots &amp; \mathbf{A}_{1t} \\
+\mathbf{A}_{21} &amp; \mathbf{A}_{22} &amp; \dots &amp; \mathbf{A}_{2t} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\mathbf{A}_{s1} &amp; \mathbf{A}_{s2} &amp; \dots &amp; \mathbf{A}_{st}
+\end{pmatrix}
+\]</span></p>
+<p>где блок <span class="math inline">\(\mathbf{A}_{\alpha \beta}\)</span> имеет размер <span class="math inline">\(m_\alpha \times n_\beta\)</span> для <span class="math inline">\(\alpha=1,2,\dots,s\)</span> и <span class="math inline">\(\beta=1,2,\dots,t\)</span>.</p>
+<p>Например матрица размером <span class="math inline">\(4 \times 4\)</span></p>
+<p><span class="math display">\[
+\mathbf{P} =
+\begin{pmatrix}
+1 &amp; 1 &amp; 2 &amp; 2 \\
+1 &amp; 1 &amp; 2 &amp; 2 \\
+3 &amp; 3 &amp; 4 &amp; 4 \\
+3 &amp; 3 &amp; 4 &amp; 4
+\end{pmatrix}
+\]</span></p>
+<p>Может быть представлена в виде блочной матрицы из четырёх блоков размера <span class="math inline">\(2 \times 2\)</span> каждый. При следующем определении блоков</p>
+<p><span class="math display">\[
+\mathbf{P}_{11}=
+\begin{pmatrix}
+1 &amp; 1 \\
+1 &amp; 1
+\end{pmatrix},
+\mathbf{P}_{12}=
+\begin{pmatrix}
+2 &amp; 2 \\
+2 &amp; 2
+\end{pmatrix},
+\mathbf{P}_{21}=
+\begin{pmatrix}
+3 &amp; 3 \\
+3 &amp; 3
+\end{pmatrix},
+\mathbf{P}_{22}=
+\begin{pmatrix}
+4 &amp; 4 \\
+4 &amp; 4
+\end{pmatrix}
+\]</span></p>
+<p>блочная матрица может быть записана в таком виде:</p>
+<p><span class="math display">\[
+\mathbf{P}=
+\left(
+\begin{array}{@{}c|c@{}}
+\mathbf{P}_{11} &amp; \mathbf{P}_{12} \\
+\hline
+\mathbf{P}_{21} &amp; \mathbf{P}_{22}
+\end{array}\right)
+\]</span></p>
+</section>
+<section id="операции-1" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="операции-1"><span class="header-section-number">8.2.2</span> Операции</h3>
+<p>Для матриц определены только операции сложения (вычитания) и умножения Операция деления матриц не определена, но в некоторых случаях её может заменить операция обращения матриц.</p>
+<section id="сложение-и-вычитание-1" class="level4">
+<h4 class="anchored" data-anchor-id="сложение-и-вычитание-1">Сложение и вычитание</h4>
+<p>Сложение (вычитание) двух матриц <span class="math inline">\(\mathbf{A}=\|a_{ij}\|\)</span> и <span class="math inline">\(\mathbf{B}=\|b_{ij}\|\)</span> возможно только тогда, когда они имеют одинаковую размерность <span class="math inline">\((m \times n)\)</span>. Матрица суммы <span class="math inline">\(\mathbf{D}=\mathbf{A}+\mathbf{B}\)</span> получается путём сложения соответствующих элементов матриц <span class="math inline">\(A\)</span> и <span class="math inline">\(B\)</span>, т.е. <span class="math inline">\({\|d_{ij}\|}_{m \times n} = {\|a_{ij}+b_{ij}\|}_{m \times n}\)</span>.</p>
+<p>Для произвольных матриц <span class="math inline">\(\mathbf{A}\)</span>, <span class="math inline">\(\mathbf{B}\)</span> и <span class="math inline">\(\mathbf{C}\)</span>, имеющих одинаковую размерность справедливы следующие соотношения</p>
+<p><span class="math display">\[
+\begin{align*}
+&amp; \mathbf{A} \pm \mathbf{B} = \mathbf{B} \pm \mathbf{A} \\
+&amp; \mathbf{A} \pm (\mathbf{B} \pm \mathbf{C}) = (\mathbf{A} \pm \mathbf{B}) \pm \mathbf{C} \\
+&amp; {(\mathbf{A} \pm \mathbf{B})}^T = \mathbf{A}^T \pm \mathbf{B}^T
+\end{align*}
+\]</span></p>
+</section>
+<section id="произведение" class="level4">
+<h4 class="anchored" data-anchor-id="произведение">Произведение</h4>
+<p>Произведение <span class="math inline">\(\mathbf{D}=\mathbf{AB}\)</span> для двух матриц <span class="math inline">\(\mathbf{A}=\|a_{ij}\|\)</span> и <span class="math inline">\(\mathbf{B}=\|b_{ij}\|\)</span> определено тогда и только тогда, когда количество столбцов матрицы <span class="math inline">\(\mathbf{A}\)</span> равно количеству строк матрицы <span class="math inline">\(\mathbf{B}\)</span>. Таким образом, если матрица <span class="math inline">\(\mathbf{A}\)</span> имеет размерность <span class="math inline">\(m \times r\)</span>, матрица <span class="math inline">\(\mathbf{B}\)</span> должна иметь размерность <span class="math inline">\(r \times n\)</span>, где <span class="math inline">\(m\)</span> и <span class="math inline">\(n\)</span> — произвольные положительные целые числа. В этом случае матрица их произведения <span class="math inline">\(\mathbf{D}\)</span> будет иметь размерность <span class="math inline">\(m \times n\)</span>, а её элементы <span class="math inline">\(d_{ij}\)</span> для всех <span class="math inline">\(i\)</span> и <span class="math inline">\(j\)</span> вычисляются по формуле</p>
+<p><span class="math display">\[
+d_{ij}=\sum_{k=1}^r{a_{ik}b_{kj}}
+\]</span></p>
+<p>Например, если</p>
+<p><span class="math display">\[
+\mathbf{A}=
+\begin{pmatrix}
+1 &amp; 3 \\
+2 &amp; 4
+\end{pmatrix}
+\quad и \quad
+\mathbf{B}=
+\begin{pmatrix}
+5 &amp; 7 &amp; 9 \\
+6 &amp; 8 &amp; 0
+\end{pmatrix}
+\]</span> то</p>
+<p><span class="math display">\[
+\mathbf{D}=
+\begin{pmatrix}
+1 &amp; 3 \\
+2 &amp; 4
+\end{pmatrix}
+\begin{pmatrix}
+5 &amp; 7 &amp; 9 \\
+6 &amp; 8 &amp; 0
+\end{pmatrix} = \\
+=
+\begin{pmatrix}
+1 \cdot 5 + 3 \cdot 6 &amp; 1 \cdot 7 + 3 \cdot 8 &amp; 1 \cdot 9 + 3 \cdot 0 \\
+2 \cdot 5 + 4 \cdot 6 &amp; 2 \cdot 7 + 4 \cdot 8 &amp; 2 \cdot 9 + 4 \cdot 0
+\end{pmatrix} =\\
+=
+\begin{pmatrix}
+23 &amp; 31 &amp; 9 \\
+34 &amp; 46 &amp; 18
+\end{pmatrix}
+\]</span></p>
+<p>В общем случае <span class="math inline">\(\mathbf{AB} \ne \mathbf{BA}\)</span>, даже если произведение <span class="math inline">\(\mathbf{BA}\)</span> определено.</p>
+<p>Произведение матриц обладает следующими свойствами</p>
+<p><span class="math display">\[
+\begin{align*}
+&amp; \mathbf{I}_m \mathbf{A} = \mathbf{A}\mathbf{I}_n,\quad \text{где} \ \mathbf{I}_m \ и \ \mathbf{I}_n \ - \ \text{единичные матрицы} \\
+&amp; \mathbf{(AB)C} = \mathbf{A(BC)} \\
+&amp; \mathbf{C(A+B)} = \mathbf{CA + CB} \\
+&amp; \mathbf{(A+B)C} = \mathbf{AC + BC} \\
+&amp; \alpha \mathbf{(AB)} = \mathbf{A} (\alpha \mathbf{B}),\quad \text{где} \ \alpha \ - \text{скаляр}
+\end{align*}
+\]</span></p>
+<p>Пусть матрицы <span class="math inline">\(\mathbf{A}\)</span> и <span class="math inline">\(\mathbf{B}\)</span> имеют размерности <span class="math inline">\(m \times r\)</span> и <span class="math inline">\(r \times n\)</span> соответственно. Предположим, что эти матрицы представимы в виде совокупности блоков</p>
+<p><span class="math display">\[
+\mathbf{A} =
+\left(
+\begin{array}{@{}c|c@{}}
+\mathbf{A}_{11} &amp; \mathbf{A}_{12} &amp; \mathbf{A}_{13}  \\
+\hline
+\mathbf{A}_{21} &amp; \mathbf{A}_{22} &amp; \mathbf{A}_{23}
+\end{array}
+\right)
+\quad и \quad
+\mathbf{B} =
+\left(
+\begin{array}{@{}c|c@{}}
+\mathbf{B}_{11} &amp; \mathbf{B}_{12} \\
+\hline
+\mathbf{B}_{21} &amp; \mathbf{B}_{22} \\
+\hline
+\mathbf{B}_{31} &amp; \mathbf{B}_{32} \\
+\end{array}
+\right)
+\]</span></p>
+<p>причём для всех <span class="math inline">\(i\)</span> и <span class="math inline">\(j\)</span> число столбцов в блоке <span class="math inline">\(\mathbf{A}_{ij}\)</span> равно числу строк в блоке <span class="math inline">\(\mathbf{B}_{ji}\)</span>. Тогда</p>
+<p><span class="math display">\[
+\mathbf{A} \times \mathbf{B} =
+\left(
+\begin{array}{@{}c|c@{}}
+\mathbf{A}_{11} \mathbf{B}_{11} + \mathbf{A}_{12} \mathbf{B}_{21} + \mathbf{A}_{13} \mathbf{B}_{31} &amp;
+\mathbf{A}_{11} \mathbf{A}_{12} + \mathbf{A}_{12} \mathbf{B}_{22} + \mathbf{A}_{13} \mathbf{B}_{32} \\
+\hline
+\mathbf{A}_{21} \mathbf{B}_{11} + \mathbf{A}_{22} \mathbf{B}_{21} + \mathbf{A}_{23} \mathbf{B}_{31} &amp;
+\mathbf{A}_{21} \mathbf{A}_{12} + \mathbf{A}_{22} \mathbf{B}_{22} + \mathbf{A}_{23} \mathbf{B}_{32} \\
+\end{array}
+\right)
+\]</span></p>
+<p>Например</p>
+<p><span class="math display">\[
+\left(
+\begin{array}{@{}c|c@{}}
+1 &amp;
+\begin{matrix}
+2 &amp; 3
+\end{matrix} \\
+\hline
+\begin{matrix}
+1 \\ 2
+\end{matrix} &amp;
+\begin{matrix}
+0 &amp; 5 \\
+5 &amp; 6
+\end{matrix}
+\end{array}
+\right)
+\begin{pmatrix}
+4\\
+\hline
+1 \\
+8
+\end{pmatrix} =
+\begin{pmatrix}
+(1)(4) +
+\begin{pmatrix}
+2 &amp; 3
+\end{pmatrix}
+\begin{pmatrix}
+1 \\
+8
+\end{pmatrix} \\
+\hline
+\begin{pmatrix}
+1 \\
+2
+\end{pmatrix}
+(4) +
+\begin{pmatrix}
+0 &amp; 5 \\
+5 &amp; 6
+\end{pmatrix}
+\begin{pmatrix}
+1 \\ 8
+\end{pmatrix}
+\end{pmatrix} =
+\begin{pmatrix}
+4+2+24\\
+\hline
+\begin{pmatrix}
+4 \\ 8
+\end{pmatrix} +
+\begin{pmatrix}
+40 \\ 53
+\end{pmatrix}
+\end{pmatrix} =
+\begin{pmatrix}
+30 \\ 44 \\ 61
+\end{pmatrix}
+\]</span></p>
+</section>
+<section id="транспонирование" class="level4">
+<h4 class="anchored" data-anchor-id="транспонирование">Транспонирование</h4>
+<p>Матрица <span class="math inline">\(\mathbf{A}^T\)</span> называется <em>транспонированной</em> к матрице <span class="math inline">\(\mathbf{A}\)</span>, если элемент <span class="math inline">\(a_{ij}\)</span> матрицы <span class="math inline">\(\mathbf{A}^T\)</span> равен элементу <span class="math inline">\(a_{ji}\)</span> матрицы <span class="math inline">\(\mathbf{A}\)</span>. Например</p>
+<p><span class="math display">\[
+\mathbf{A}=
+\begin{pmatrix}
+1 &amp; 4 \\
+2 &amp; 5 \\
+3 &amp; 6
+\end{pmatrix}
+\implies
+\mathbf{A}^T=
+\begin{pmatrix}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6
+\end{pmatrix}
+\]</span></p>
+</section>
+</section>
+<section id="определитель" class="level3" data-number="8.2.3">
+<h3 data-number="8.2.3" class="anchored" data-anchor-id="определитель"><span class="header-section-number">8.2.3</span> Определитель</h3>
+</section>
+<section id="обратная-матрица" class="level3" data-number="8.2.4">
+<h3 data-number="8.2.4" class="anchored" data-anchor-id="обратная-матрица"><span class="header-section-number">8.2.4</span> Обратная матрица</h3>
+</section>
+</section>
+<section id="система-линейных-алгебраических-уравнений" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="система-линейных-алгебраических-уравнений"><span class="header-section-number">8.3</span> Система линейных алгебраических уравнений</h2>
+<section id="случай-двух-переменных" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="случай-двух-переменных"><span class="header-section-number">8.3.1</span> Случай двух переменных</h3>
+<section id="единственное-решение" class="level4">
+<h4 class="anchored" data-anchor-id="единственное-решение">Единственное решение</h4>
+</section>
+<section id="множество-решений" class="level4">
+<h4 class="anchored" data-anchor-id="множество-решений">Множество решений</h4>
+</section>
+<section id="отсутствие-решений" class="level4">
+<h4 class="anchored" data-anchor-id="отсутствие-решений">Отсутствие решений</h4>
+</section>
+</section>
+<section id="случай-n-переменных.-метод-гаусса-жордана" class="level3" data-number="8.3.2">
+<h3 data-number="8.3.2" class="anchored" data-anchor-id="случай-n-переменных.-метод-гаусса-жордана"><span class="header-section-number">8.3.2</span> Случай n переменных. Метод Гаусса — Жордана</h3>
+<section id="алгоритм" class="level4">
+<h4 class="anchored" data-anchor-id="алгоритм">Алгоритм</h4>
+</section>
+<section id="пример" class="level4">
+<h4 class="anchored" data-anchor-id="пример">Пример</h4>
 
 
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-bib-linear-algebra-rpubs" class="csl-entry" role="listitem">
 <div class="csl-left-margin">1. </div><div class="csl-right-inline">Eager E. Linear Algebra for Data Science in R [Электронный ресурс]. 2021. URL: <a href="https://rpubs.com/odenipinedo/linear-algebra-for-data-science-in-R">https://rpubs.com/odenipinedo/linear-algebra-for-data-science-in-R</a> (дата обращения: 20.02.2025).</div>
 </div>
+<div id="ref-bib-golshtejn-zadachi-i-metody-linejnogo-programmirovaniya-1" class="csl-entry" role="listitem">
+<div class="csl-left-margin">2. </div><div class="csl-right-inline">Гольштейн Евгений Григорьевич Ю.Д.Б. Математические основы и практические задачи. стереотипное. Москва: ЛЕНАНД, 2022. Т. 1. С. 320.</div>
 </div>
+<div id="ref-bib-taha-issledovanie-operacij" class="csl-entry" role="listitem">
+<div class="csl-left-margin">3. </div><div class="csl-right-inline">А. Т.Х. Исследование операций. 10-е изд. / под ред. Слепцова А.В. Санкт-Петербург: ООО "Диалектика", 2019. С. 1056.</div>
+</div>
+</div>
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -928,4 +1477,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li></ul></div></div></div></footer></body></html>

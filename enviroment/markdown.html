@@ -98,7 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Поиск"
   }
 }</script><script src="../site_libs/quarto-diagram/mermaid.min.js"></script><script src="../site_libs/quarto-diagram/mermaid-init.js"></script><link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script><script type="text/javascript">
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="/Operations-Research/site_libs/mathjax-3.2.2/tex-svg-full.js" type="text/javascript"></script><script type="text/javascript">
 const typesetMath = (el) => {
   if (window.MathJax) {
     // MathJax Typeset
@@ -683,7 +683,7 @@ window.Quarto = {
 <span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>add new columns for the bill ratio and bill area.</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section><section id="sec-markdown-codeblocks-output" class="level3" data-number="4.1.5"><h3 data-number="4.1.5" class="anchored" data-anchor-id="sec-markdown-codeblocks-output">
 <span class="header-section-number">4.1.5</span> Параметры вывода</h3>
-<p>Существует широкий спектр опций для настройки вывода из выполненного кода. Все эти опции могут быть указаны либо глобально (в front-matter документа), либо для каждого блока кода. Например, вот модификация примера R, указывающая, что мы не хотим “отражать” код в выходном документе:</p>
+<p>Существует широкий спектр опций для настройки вывода из выполненного кода. Все эти опции могут быть указаны либо глобально, либо для каждого блока кода. Например, вот модификация примера R, указывающая, что мы не хотим “отражать” код в выходном документе:</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
@@ -753,7 +753,7 @@ window.Quarto = {
 <span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section><section id="sec-markdown-codeblocks-fig-captions" class="level3" data-number="4.1.6"><h3 data-number="4.1.6" class="anchored" data-anchor-id="sec-markdown-codeblocks-fig-captions">
 <span class="header-section-number">4.1.6</span> Названия рисунков</h3>
-<p>Можно указать подпись и замещающий текст для рисунков, сгенерированных из кода, используя параметры <code>fig-cap</code> и <code>fig-alt</code>. Например, здесь эти параметры добавлются в ячейку кода которая создает график:</p>
+<p>Можно указать подпись и замещающий текст для рисунков, сгенерированных из кода, используя параметры <code>fig-cap</code> и <code>fig-alt</code>. Например, здесь эти параметры добавляются в ячейку кода которая создает график:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "График в полярных координатах"</span></span>
@@ -1157,8 +1157,8 @@ window.Quarto = {
 <table class="caption-top table">
 <caption>Пример расширенной таблицы</caption>
 <colgroup>
-<col style="width: 18%">
-<col style="width: 18%">
+<col style="width: 13%">
+<col style="width: 12%">
 <col style="width: 31%">
 </colgroup>
 <thead><tr class="header">
@@ -1252,7 +1252,7 @@ window.Quarto = {
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
-<col style="width: 22%">
+<col style="width: 19%">
 </colgroup>
 <thead><tr class="header">
 <th>Markdown Syntax</th>
