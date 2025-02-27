@@ -202,7 +202,7 @@ plot_ly(
   ) |>
   add_trace(x=l1_x,y=l1,type='scatter', mode='lines', name=TeX('l_1')) |>
   add_trace(x=x,y=l2,type='scatter', mode='lines', name=TeX('l_2')) |> 
-  config(mathjax = 'cdn') |>
+  config(mathjax = 'local') |>
   frameWidget()
 ```
 
@@ -313,7 +313,7 @@ plot_ly(
     marker = list(color = "red")) |>
   add_trace(x=l1_x,y=l1,type='scatter', mode='lines', name=TeX('l_1')) |>
   add_trace(x=x,y=l2,type='scatter', mode='lines', name=TeX('l_2')) |> 
-  config(mathjax = 'cdn') |>
+  config(mathjax = 'local') |>
   frameWidget()
 ```
 
@@ -356,7 +356,7 @@ plot_ly(
   ) |>
   add_trace(x=p1_x,y=p1,type='scatter', mode='lines', name=TeX('l_1')) |>
   add_trace(x=p2_x,y=p2,type='scatter', mode='lines', name=TeX('l_2')) |> 
-  config(mathjax = 'cdn') |>
+  config(mathjax = 'local') |>
   frameWidget()
 ```
 
@@ -455,6 +455,6 @@ plot_ly(
   ) |>
   add_trace(x=p1_x,y=p1,type='scatter', mode='lines', name=TeX('l_1')) |>
   add_trace(x=p2_x,y=p2,type='scatter', mode='lines', name=TeX('l_2')) |> 
-  config(mathjax = 'cdn') |>
+  config(mathjax = 'local') |>
   frameWidget()
 ```

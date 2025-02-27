@@ -1,0 +1,8 @@
+mathjax_*/
+
+.quarto/
+_site/
+_book/
+_freeze/
+*_cache/
+*_files/

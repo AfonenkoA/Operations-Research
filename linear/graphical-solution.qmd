@@ -48,7 +48,7 @@ plot_ly(mode = 'lines+markers') |>
     xy = rbind(c(0, 0), c(0, 480), c(2048, 480), c(2048, 0)),
     color = 'rgba(255, 255, 0, 0.4)',
     name = 'x_2\\leq480') |> 
-  config(mathjax = 'cdn') |>
+  config(mathjax = 'local') |>
   frameWidget()
 ```
 

@@ -97,7 +97,7 @@ plot_ly(mode = 'lines+markers') |>
     xy = rbind(c(0, 0), c(4, 0), c(0, 6)),
     name = '3x+2y\\leq12',
     color = 'rgba(255, 212, 96, 0.5)') |>
-  config(mathjax = 'cdn')
+  config(mathjax = 'local')
 ```
 
 ```{r}
@@ -128,7 +128,7 @@ plot_ly(x = x, y = y, z = z, type = 'contour') |>
     type = 'scatter',
     name = 'решение в\nдействительных\nчислах',
     marker = list(color = 'black')) |>
-  config(mathjax = 'cdn')
+  config(mathjax = 'local')
 ```
 
 ## Бинарная

@@ -12,3 +12,5 @@ _freeze/
 *figure/
 
 /.quarto/
+
+/_*.local

@@ -1,0 +1,6 @@
+[submodule "mathjax_quarto"]
+	path = mathjax_quarto
+	url = https://github.com/mathjax/MathJax.git
+[submodule "mathjax_plotly"]
+	path = mathjax_plotly
+	url = https://github.com/mathjax/MathJax.git
