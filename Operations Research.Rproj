@@ -18,4 +18,8 @@ StripTrailingWhitespace: Yes
 
 UseNativePipeOperator: Yes
 
+PythonType: virtualenv
+PythonVersion: 3.13.2
+PythonPath: venv/bin/python
+
 SpellingDictionary: ru_RU

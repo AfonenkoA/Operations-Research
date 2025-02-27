@@ -4,20 +4,520 @@
 В разработке
 :::
 
-Системы линейных алгебраических уравнений. Решение СЛАУ методом Гаусса. Описание алгоритма + пример. Many solutions. One solution. Zero solutions
+@bib-linear-algebra-rpubs @bib-golshtejn-zadachi-i-metody-linejnogo-programmirovaniya-1
 
-Определитель, линейная независимость.
+@bib-taha-issledovanie-operacij
 
-Графическое решение СЛАУ для двух переменных
+## Вектор
 
-@bib-linear-algebra-rpubs
+::: {#def-linear-algebra-vector}
 
-Обратная матрица. Определение и свойства
+Вектор
 
-Дать задачку на решение слау
+:   $\mathbf{P}=(p_1,p_2,\dots,p_n)$ упорядоченная система $n$ действительных чисел
+:::
 
-Заголовок операции над матрицами. Транспонирование. В примерах рассчитать сложное выражение используя все правила. Проверить свойства транспонирования и обратной матрицы. Единичная матрица и её свойства. Свойства диагональной матрицы. Свойство блочной матрицы. Свойства определителя, возможно задачка проверить свойства через компьютер. Через перекрестные ссылки
+### Операции
 
-Нормированиие вектора и норма вектора
+#### Равенство
 
-Линии и плоскости.
+Два $n$-мерных вектора $\mathbf{X}=(x_1,x_2,\dots,x_n)$ и $\mathbf{Y}=(y_1,y_2,\dots,y_n)$ считаются равными, если их соответствующие компоненты совпадают, т.е. если
+
+$$
+x_i=y_i,\quad для \quad i=1,2,\dots,n 
+$$
+
+#### Сложение и вычитание
+
+Пусть $\mathbf{P}=(p_1,p_2,\dots,p_n)$ и $\mathbf{Q}=(q_1,q_2,\dots,q_n$ -- два $n$-мерных вектора. Тогда элементы вектора $\mathbf{R}=(r_1,r_2,\dots,r_n)$, равного $\mathbf{R}=\mathbf{P}\pm\mathbf{Q}$ определяются следующими соотношениями $r_i=p_i \pm q_i$.
+
+В общем случае для любых векторов $\mathbf{P}$, $\mathbf{Q}$ и $\mathbf{S}$, имеющих одинаковую размерность, выполняются следующие соотношения
+
+$$
+\begin{align*}
+& \mathbf{P} \pm \mathbf{Q} = \mathbf{Q} \pm \mathbf{P} \quad \\
+& (\mathbf{P} + \mathbf{Q}) + \mathbf{S} = \mathbf{P} + (\mathbf{Q}+\mathbf{S})\\
+& \mathbf{P} + (-\mathbf{P}) = \mathbf{0}
+\end{align*}
+$$
+
+#### Умножения на скаляр
+
+Для произвольного вектора $\mathbf{P}$ и скаляра $\theta$ (произвольного действительного числа) произведение вектора $\mathbf{P}$ на скаляр $\theta$ определяет новый вектор $\mathbf{Q}$, задаваемый соотноешнием
+
+$$
+\mathbf{Q}=\theta \mathbf{P}=(\theta p_1,\theta p_2,\dots ,\theta p_n)
+$$
+
+В общем случае для любых векторов $\mathbf{P}$ и $\mathbf{S}$ имеющих одинаковую размерность, произвольных скалярных величин $\theta$ и $\gamma$ выполняются следющие соотношения
+
+$$
+\begin{align*}
+&\theta(\mathbf{P}+\mathbf{S})=\theta \mathbf{P} + \theta \mathbf{S}\\
+&\theta(\gamma \mathbf{P})=(\theta \gamma)\mathbf{P}
+\end{align*}
+$$
+
+#### Скалярное произведение
+
+Каждой паре векторов $\mathbf{A}=(a_1,a_2,\dots,a_n)$ и $\mathbf{B}=(b_1,b_2,\dots,b_n)$ может быть сопоставлено число
+
+$$
+(\mathbf{A},\mathbf{B})=\sum_{i=1}^n{a_i b_i}
+$$
+
+называемое их скалярным произведением.
+
+Скалярное произведение обладает следующими свойствами
+
+$$
+\begin{align*}
+&(\mathbf{A},\mathbf{B})=(\mathbf{B},\mathbf{A})\\
+&(\mathbf{A}_1 + \mathbf{A}_2,\mathbf{B}) = (\mathbf{A}_1,\mathbf{B}) + (\mathbf{A}_2,\mathbf{B})\\
+&(\lambda \mathbf{A},\mathbf{B})=\lambda(\mathbf{A},\mathbf{B})\\
+&(\mathbf{A},\mathbf{A})\ge0\\
+\end{align*}
+$$
+
+#### Нормирование и норма
+
+Длиной или нормой вектора $A=(a_1,a_2,\dots,a_n)$ называется число
+
+$$
+|\mathbf{A}|=\sqrt{(\mathbf{A},\mathbf{A})}=\sqrt{\sum_{i=1}^n{a_i^2}}
+$$
+
+### Линейная независимость векторов
+
+Векторы $\mathbf{P}_1,\mathbf{P}_2,\dots,\mathbf{P}_n$ называются **линейно независимыми**, если равенство
+
+$$
+\sum_{j=1}^n{\theta_j \mathbf{P}_i}=0 \quad \implies \quad \theta_j=0,\quad j=1,2,\dots,n
+$$
+
+выполняется тогда и только тогда, когда все $\theta_j$ равны нулю ($\theta_j$ -- произвольные действительные числа). Если равенство $\sum_{j=1}^n{\theta_j \mathbf{P}_j}=\mathbf{0}$ выполняются при некоторых $\theta_j \ne 0$, то векторы $\mathbf{P}_1,\mathbf{P}_2,\dots,\mathbf{P}_n$ называются линейно зависимыми.
+
+Например, векторы $\mathbf{P}_1=(1,2)$ и $\mathbf{P}_2=(2,4)$ линейно зависимы, поскольку существуют ненулевые числа $\theta_1=2$ и $\theta_2=-1$ при которых выполняется равенство $\theta_1 \mathbf{P}_1 + \theta_2 \mathbf{P}_2=\mathbf{0}$
+
+::: {#thm-linear-algebra-vector-linear-independence}
+Для линейной независимости системы векторов $\mathbf{A}_i=(a_{i1},a_{i2},\dots,a_{in})$ для $i=1,2,\dots,s$, необходимо и достаточно существование квадратной матрицы порядка $s$
+
+$$
+\begin{pmatrix}
+a_{1j_1} & a_{1j_2} & \dots & a_{1j_s} \\
+a_{1j_1} & a_{1j_2} & \dots & a_{1j_s} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{sj_1} & a_{sj_2} & \dots & a_{sj_s}
+\end{pmatrix}
+$$
+
+составленной из координат векторов $\mathbf{A}_i$, с определителем, отличным от нуля. Если в частности, $s=n$, то для линейной независимости данной системы векторов необходимо и достаточно, чтобы
+
+$$
+|(\mathbf{A}_1,\mathbf{A}_2,\dots,\mathbf{A}_n)| \ne 0
+$$
+:::
+
+::: {#def-linear-algebra-rank}
+
+Рангом
+
+:   произвольной системы векторов называется максимальное число линейно независимых векторов данной системы.
+:::
+
+::: {#def-linear-algebra-basis}
+
+Базисом
+
+:   называет совокупность линейно независимых векторов системы, число которых равно её рангу.
+:::
+
+Множество линейно независимых векторов данной системы является её базисом в том и только в том случае, если любой вектор системы представим в виде линейной комбинации векторов рассматриваемого множества.
+
+## Матрица
+
+::: {#def-linear-algebra-matrix}
+
+Матрицей
+
+:   называется прямоугольный массив элементов, структурированный строками и столбцами. В матрице $\mathbf{A}$ элемент $a_{ij}$ расположен на пересечении $i$-й строки и $j$-го столбца массива.
+:::
+
+Говорят, что матрица имеет порядок (размерность) $m \times n$, если она состоит из $m$ строк b $n$ столбцов. Например следующая матрица имеет размерность $4 \times 3$
+
+$$
+\begin{pmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33} \\
+a_{41} & a_{42} & a_{43}
+\end{pmatrix} = {\|a_{ij}\|}_{4 \times 3}
+$$
+
+### Типы матриц
+
+::: {#def-linear-algebra-matrix-square}
+
+Квадратная матрица
+
+:   это матрица, имеющая одинаковое количество строк и столбцов, т.е. у нее $m=n$.
+:::
+
+::: {#def-linear-algebra-matrix-identity}
+
+Единичная матрица
+
+:   это квадратная матрица, у которой все элементы главной диагонали равны 1, а все остальные -- нулю.
+:::
+
+Например, единичная матрица порядка $3 \times 3$ имеет вид
+
+$$
+\mathbf{I_3}=
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 
+\end{pmatrix}
+$$
+
+::: {#def-linear-algebra-matrix-zero}
+
+Нулевая матрица
+
+:   это матрица все элементы которой равны нулю $\mathbf{B}=\mathbf{0}$.
+:::
+
+::: {#def-linear-algebra-vector-row}
+
+Вектор-строка
+
+:   это матрица, имеющая одну строку и $n$ столбцов.
+:::
+
+$$
+\mathbf{P}=(p_1,p_2,\dots,p_n)
+$$
+
+::: {#def-linear-algebra-vector-column}
+
+Вектор-столбец
+
+:   это матрица, имеющая $m$ строк и один столбец.
+:::
+
+$$
+\mathbf{P}=
+\begin{pmatrix}
+p_1 \\
+p_2 \\
+\vdots \\
+p_n
+\end{pmatrix}
+$$
+
+::: {#def-linear-algebra-matrix-diag}
+
+Диагональная матрица
+
+:   квадратная матрица, все элементы которой, стоящие вне главной диагонали, равны нулю.
+:::
+
+$$
+\mathbf{D}=
+\begin{pmatrix}
+d_{11} & 0 & \cdots & 0 \\
+0 & d_{22} & \cdots & 0 \\
+\vdots & \vdots  & \ddots & \vdots \\
+0 & 0 & 0 & d_{nn} \
+\end{pmatrix}
+$$
+
+Диагональная матрица $\mathbf{D}$ с элементами $(d_1,d_2,\dots,d_n)$, стоящими на главной диагонали, обозначается $\mathrm{diag}\{d_1,d_2,\dots,d_n\}$
+
+::: {#def-linear-algebra-matrix-block}
+
+Блочная матрица
+
+:   это представление матрицы, при котором она рассекается вертикальными и горизонтальными линиями на прямоугольные части — блоки
+:::
+
+$$
+\mathbf{A}=
+\begin{pmatrix}
+\mathbf{A}_{11} & \mathbf{A}_{12} & \dots & \mathbf{A}_{1t} \\
+\mathbf{A}_{21} & \mathbf{A}_{22} & \dots & \mathbf{A}_{2t} \\
+\vdots & \vdots & \ddots & \vdots \\
+\mathbf{A}_{s1} & \mathbf{A}_{s2} & \dots & \mathbf{A}_{st}
+\end{pmatrix}
+$$
+
+где блок $\mathbf{A}_{\alpha \beta}$ имеет размер $m_\alpha \times n_\beta$ для $\alpha=1,2,\dots,s$ и $\beta=1,2,\dots,t$.
+
+Например матрица размером $4 \times 4$
+
+$$
+\mathbf{P} =
+\begin{pmatrix}
+1 & 1 & 2 & 2 \\
+1 & 1 & 2 & 2 \\
+3 & 3 & 4 & 4 \\
+3 & 3 & 4 & 4
+\end{pmatrix}
+$$
+
+Может быть представлена в виде блочной матрицы из четырёх блоков размера $2 \times 2$ каждый. При следующем определении блоков
+
+$$
+\mathbf{P}_{11}=
+\begin{pmatrix}
+1 & 1 \\
+1 & 1
+\end{pmatrix},
+\mathbf{P}_{12}=
+\begin{pmatrix}
+2 & 2 \\
+2 & 2
+\end{pmatrix},
+\mathbf{P}_{21}=
+\begin{pmatrix}
+3 & 3 \\
+3 & 3
+\end{pmatrix},
+\mathbf{P}_{22}=
+\begin{pmatrix}
+4 & 4 \\
+4 & 4
+\end{pmatrix}
+$$
+
+блочная матрица может быть записана в таком виде:
+
+$$
+\mathbf{P}=
+\left(
+\begin{array}{@{}c|c@{}}
+\mathbf{P}_{11} & \mathbf{P}_{12} \\
+\hline
+\mathbf{P}_{21} & \mathbf{P}_{22}
+\end{array}\right)
+$$
+
+### Операции
+
+Для матриц определены только операции сложения (вычитания) и умножения Операция деления матриц не определена, но в некоторых случаях её может заменить операция обращения матриц.
+
+#### Сложение и вычитание
+
+Сложение (вычитание) двух матриц $\mathbf{A}=\|a_{ij}\|$ и $\mathbf{B}=\|b_{ij}\|$ возможно только тогда, когда они имеют одинаковую размерность $(m \times n)$. Матрица суммы $\mathbf{D}=\mathbf{A}+\mathbf{B}$ получается путём сложения соответствующих элементов матриц $A$ и $B$, т.е. ${\|d_{ij}\|}_{m \times n} = {\|a_{ij}+b_{ij}\|}_{m \times n}$.
+
+Для произвольных матриц $\mathbf{A}$, $\mathbf{B}$ и $\mathbf{C}$, имеющих одинаковую размерность справедливы следующие соотношения
+
+$$
+\begin{align*}
+& \mathbf{A} \pm \mathbf{B} = \mathbf{B} \pm \mathbf{A} \\
+& \mathbf{A} \pm (\mathbf{B} \pm \mathbf{C}) = (\mathbf{A} \pm \mathbf{B}) \pm \mathbf{C} \\
+& {(\mathbf{A} \pm \mathbf{B})}^T = \mathbf{A}^T \pm \mathbf{B}^T
+\end{align*}
+$$
+
+#### Произведение
+
+Произведение $\mathbf{D}=\mathbf{AB}$ для двух матриц $\mathbf{A}=\|a_{ij}\|$ и $\mathbf{B}=\|b_{ij}\|$ определено тогда и только тогда, когда количество столбцов матрицы $\mathbf{A}$ равно количеству строк матрицы $\mathbf{B}$. Таким образом, если матрица $\mathbf{A}$ имеет размерность $m \times r$, матрица $\mathbf{B}$ должна иметь размерность $r \times n$, где $m$ и $n$ --- произвольные положительные целые числа. В этом случае матрица их произведения $\mathbf{D}$ будет иметь размерность $m \times n$, а её элементы $d_{ij}$ для всех $i$ и $j$ вычисляются по формуле
+
+$$
+d_{ij}=\sum_{k=1}^r{a_{ik}b_{kj}}
+$$
+
+Например, если
+
+$$
+\mathbf{A}=
+\begin{pmatrix}
+1 & 3 \\
+2 & 4
+\end{pmatrix}
+\quad и \quad
+\mathbf{B}=
+\begin{pmatrix}
+5 & 7 & 9 \\
+6 & 8 & 0
+\end{pmatrix}
+$$ то
+
+$$
+\mathbf{D}=
+\begin{pmatrix}
+1 & 3 \\
+2 & 4
+\end{pmatrix}
+\begin{pmatrix}
+5 & 7 & 9 \\
+6 & 8 & 0
+\end{pmatrix} = \\
+=
+\begin{pmatrix}
+1 \cdot 5 + 3 \cdot 6 & 1 \cdot 7 + 3 \cdot 8 & 1 \cdot 9 + 3 \cdot 0 \\
+2 \cdot 5 + 4 \cdot 6 & 2 \cdot 7 + 4 \cdot 8 & 2 \cdot 9 + 4 \cdot 0
+\end{pmatrix} =\\
+=
+\begin{pmatrix}
+23 & 31 & 9 \\
+34 & 46 & 18
+\end{pmatrix}
+$$
+
+В общем случае $\mathbf{AB} \ne \mathbf{BA}$, даже если произведение $\mathbf{BA}$ определено.
+
+Произведение матриц обладает следующими свойствами
+
+$$
+\begin{align*}
+& \mathbf{I}_m \mathbf{A} = \mathbf{A}\mathbf{I}_n,\quad \text{где} \ \mathbf{I}_m \ и \ \mathbf{I}_n \ - \ \text{единичные матрицы} \\
+& \mathbf{(AB)C} = \mathbf{A(BC)} \\
+& \mathbf{C(A+B)} = \mathbf{CA + CB} \\
+& \mathbf{(A+B)C} = \mathbf{AC + BC} \\
+& \alpha \mathbf{(AB)} = \mathbf{A} (\alpha \mathbf{B}),\quad \text{где} \ \alpha \ - \text{скаляр} 
+\end{align*}
+$$
+
+Пусть матрицы $\mathbf{A}$ и $\mathbf{B}$ имеют размерности $m \times r$ и $r \times n$ соответственно. Предположим, что эти матрицы представимы в виде совокупности блоков
+
+$$
+\mathbf{A} = 
+\left(
+\begin{array}{@{}c|c@{}}
+\mathbf{A}_{11} & \mathbf{A}_{12} & \mathbf{A}_{13}  \\
+\hline
+\mathbf{A}_{21} & \mathbf{A}_{22} & \mathbf{A}_{23} 
+\end{array}
+\right)
+\quad и \quad
+\mathbf{B} = 
+\left(
+\begin{array}{@{}c|c@{}}
+\mathbf{B}_{11} & \mathbf{B}_{12} \\
+\hline
+\mathbf{B}_{21} & \mathbf{B}_{22} \\
+\hline
+\mathbf{B}_{31} & \mathbf{B}_{32} \\
+\end{array}
+\right)
+$$
+
+причём для всех $i$ и $j$ число столбцов в блоке $\mathbf{A}_{ij}$ равно числу строк в блоке $\mathbf{B}_{ji}$. Тогда
+
+$$
+\mathbf{A} \times \mathbf{B} =
+\left(
+\begin{array}{@{}c|c@{}}
+\mathbf{A}_{11} \mathbf{B}_{11} + \mathbf{A}_{12} \mathbf{B}_{21} + \mathbf{A}_{13} \mathbf{B}_{31} &
+\mathbf{A}_{11} \mathbf{A}_{12} + \mathbf{A}_{12} \mathbf{B}_{22} + \mathbf{A}_{13} \mathbf{B}_{32} \\
+\hline
+\mathbf{A}_{21} \mathbf{B}_{11} + \mathbf{A}_{22} \mathbf{B}_{21} + \mathbf{A}_{23} \mathbf{B}_{31} &
+\mathbf{A}_{21} \mathbf{A}_{12} + \mathbf{A}_{22} \mathbf{B}_{22} + \mathbf{A}_{23} \mathbf{B}_{32} \\
+\end{array}
+\right)
+$$
+
+Например
+
+$$
+\left(
+\begin{array}{@{}c|c@{}}
+1 & 
+\begin{matrix}
+2 & 3
+\end{matrix} \\
+\hline
+\begin{matrix}
+1 \\ 2
+\end{matrix} &
+\begin{matrix}
+0 & 5 \\
+5 & 6
+\end{matrix}
+\end{array}
+\right)
+\begin{pmatrix}
+4\\
+\hline
+1 \\
+8
+\end{pmatrix} = 
+\begin{pmatrix}
+(1)(4) +
+\begin{pmatrix}
+2 & 3
+\end{pmatrix} 
+\begin{pmatrix}
+1 \\ 
+8
+\end{pmatrix} \\
+\hline
+\begin{pmatrix}
+1 \\ 
+2
+\end{pmatrix}
+(4) + 
+\begin{pmatrix}
+0 & 5 \\
+5 & 6
+\end{pmatrix}
+\begin{pmatrix}
+1 \\ 8
+\end{pmatrix}
+\end{pmatrix} =
+\begin{pmatrix}
+4+2+24\\
+\hline
+\begin{pmatrix}
+4 \\ 8
+\end{pmatrix} +
+\begin{pmatrix}
+40 \\ 53
+\end{pmatrix}
+\end{pmatrix} =
+\begin{pmatrix}
+30 \\ 44 \\ 61
+\end{pmatrix}
+$$
+
+#### Транспонирование
+
+Матрица $\mathbf{A}^T$ называется *транспонированной* к матрице $\mathbf{A}$, если элемент $a_{ij}$ матрицы $\mathbf{A}^T$ равен элементу $a_{ji}$ матрицы $\mathbf{A}$. Например
+
+$$
+\mathbf{A}=
+\begin{pmatrix}
+1 & 4 \\
+2 & 5 \\
+3 & 6
+\end{pmatrix}
+\implies
+\mathbf{A}^T=
+\begin{pmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6
+\end{pmatrix}
+$$
+
+### Определитель
+
+### Обратная матрица
+
+## Система линейных алгебраических уравнений
+
+### Случай двух переменных
+
+#### Единственное решение
+
+#### Множество решений
+
+#### Отсутствие решений
+
+### Случай n переменных. Метод Гаусса — Жордана
+
+#### Алгоритм
+
+#### Пример

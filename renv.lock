@@ -8,6 +8,11 @@
       }
     ]
   },
+  "Python": {
+    "Version": "3.13.2",
+    "Type": "virtualenv",
+    "Name": "./venv"
+  },
   "Packages": {
     "MASS": {
       "Package": "MASS",
@@ -3192,7 +3197,7 @@
     },
     "tinytex": {
       "Package": "tinytex",
-      "Version": "0.55",
+      "Version": "0.56",
       "Source": "Repository",
       "Type": "Package",
       "Title": "Helper Functions to Install and Maintain TeX Live, and Compile LaTeX Documents",

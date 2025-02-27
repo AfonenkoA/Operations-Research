@@ -1,3 +1,13 @@
+```{r}
+#| label: import
+#| echo: false
+#| warning: false
+#| message: false
+#| include: false 
+
+source('../../util/doc_link.R')
+```
+
 # Лабораторная работа 1. Введение {#sec-lab-1}
 
 ::: {.callout-caution title="Состояние разработки"}
@@ -160,7 +170,7 @@ c(sqrt(1), sqrt(2), sqrt(3))
 ::::
 
 :::: {#exr-lab-1-r-lang-plot2d}
-Построить график (@sec-r-tools-plotly-line2d) кусочно-гладкой функции (@sec-r-lang-basic-function-defenition) используя функцию [ifelse](https://rdrr.io/r/base/ifelse.html)
+Построить график (@sec-r-tools-plotly-line2d) кусочно-гладкой функции (@sec-r-lang-basic-function-defenition) используя функцию `{r} ifelse() |> dl()`
 
 $$
 f(x)=\begin{cases}
@@ -219,7 +229,7 @@ $$
 ### Линейная алгебра {#sec-lab-1-task-linear-algebra}
 
 :::: {#exr-lab-1-linear-algebra-equation-solve-integrated}
-Решить СЛАУ $AX=b$ встроенным методом. Элементы матриц сгенерировать произвольно. [solve](https://rdrr.io/r/base/solve.html)
+Решить СЛАУ $AX=b$ встроенным методом. Элементы матриц сгенерировать произвольно. `{r} solve() |> dl()`
 
 ::: {.callout-note appearance="minimal" title="Уровень 1"}
 :::
@@ -236,7 +246,7 @@ $$
 6.  $(AB)^{-1}=B^{-1}A^{-1}$
 7.  $(A-B)^{-1}=A^{-1}+A^{-1}B(A-B)^{-1}$
 
-Рассмотрите функции [inverse](https://rdrr.io/cran/matlib/man/Inverse.html), [det](https://rdrr.io/r/base/det.html)
+Рассмотрите функции `{r} inverse() |> dl()`, `{r} det() |> dl()`
 
 ::: {.callout-note appearance="minimal" title="Уровень 1"}
 :::

@@ -2,6 +2,7 @@ project:
   type: book
   post-render:
     - scripts/widgets/resolve-lib-ref.R
+    - scripts/mathjax/resolve-lib-ref.R
 
 
 profile:
@@ -28,7 +29,10 @@ format:
   html:
     number-depth: 3
     theme: cosmo
-    html-math-method: mathjax
+    html-math-method:
+      method: mathjax
+      url: QUARTO_MATHJAX_SVG
+#
 #  pdf:
 #    include-in-header:
 #      - file: preamble.tex
