@@ -442,10 +442,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
 <li><a href="#sec-enviroment-quarto-example-install" id="toc-sec-enviroment-quarto-example-install" class="nav-link active" data-scroll-target="#sec-enviroment-quarto-example-install"><span class="header-section-number">3.1</span> Установка примера</a></li>
-  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto"><span class="header-section-number">3.2</span> Quarto</a></li>
-  <li><a href="#%D0%BF%D0%B8%D0%BD%D0%B3%D0%B2%D0%B8%D0%BD%D1%8B" id="toc-пингвины" class="nav-link" data-scroll-target="#%D0%BF%D0%B8%D0%BD%D0%B3%D0%B2%D0%B8%D0%BD%D1%8B"><span class="header-section-number">3.3</span> Пингвины</a></li>
-  <li><a href="#sec-enviroment-quarto-render" id="toc-sec-enviroment-quarto-render" class="nav-link" data-scroll-target="#sec-enviroment-quarto-render"><span class="header-section-number">3.4</span> Render</a></li>
-  <li><a href="#sec-enviroment-quarto-preview" id="toc-sec-enviroment-quarto-preview" class="nav-link" data-scroll-target="#sec-enviroment-quarto-preview"><span class="header-section-number">3.5</span> Preview</a></li>
+  <li><a href="#sec-enviroment-quarto-render" id="toc-sec-enviroment-quarto-render" class="nav-link" data-scroll-target="#sec-enviroment-quarto-render"><span class="header-section-number">3.2</span> Render</a></li>
+  <li><a href="#sec-enviroment-quarto-preview" id="toc-sec-enviroment-quarto-preview" class="nav-link" data-scroll-target="#sec-enviroment-quarto-preview"><span class="header-section-number">3.3</span> Preview</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li></ul></div></nav>
     </div>
 <!-- main -->
@@ -478,106 +476,115 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section><section id="quarto" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="quarto">
-<span class="header-section-number">3.2</span> Quarto</h2>
-<p>Quarto позволяет объединить содержимое и исполняемый код в готовый документ. Узнать больше о Quarto можно на сайте <a href="https://quarto.org" class="uri">https://quarto.org</a>.</p>
-</section><section id="пингвины" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="пингвины">
-<span class="header-section-number">3.3</span> Пингвины</h2>
-<p><img src="https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/get-started/hello/rstudio/lter_penguins.png" class="img-fluid" style="float:right;" alt="Иллюстрация трех видов пингвинов архипелага Палмера: Chinstrap, Gentoo и Adelie. Автор иллюстрации - @allison_horst." width="401"></p>
-<p>Датасет <code>penguins</code> из пакета <a href="https://allisonhorst.github.io/palmerpenguins%20%C2%ABpalmerpenguins%20R%20package%C2%BB"><strong>palmerpenguins</strong></a> содержат измерения размеров <code>{r} nrow(penguins)</code> пингвинов трех видов, наблюдавшихся на трех островах архипелага Палмера, Антарктида.</p>
-<p>На графике ниже показана зависимость между длиной ласт и клюва у этих пингвинов.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: plot-penguins</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, </span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> bill_length_mm)) <span class="sc">+</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>,<span class="st">"purple"</span>,<span class="st">"cyan4"</span>)) <span class="sc">+</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Длина ласт и клюва"</span>,</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Размеры для пингвинов на станции Палмер LTER"</span>,</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Длина ласт (мм)"</span>, <span class="at">y =</span> <span class="st">"Длина клюва (mm)"</span>,</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Вид пингвина"</span>, <span class="at">shape =</span> <span class="st">"Вид пигвина"</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>
-1.  Сохранить код приведённый выше код в файл (например `example.qmd`)
-2.  Вызвав интерактивный сеанс R установить пакеты
-
-``` r
-install.packages("ggplot2")
-install.packages("palmerpenguins")</code></pre>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quarto</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Quarto позволяет объединить содержимое и исполняемый код в готовый документ. Узнать больше о Quarto можно на сайте <span class="ot">&lt;https://quarto.org&gt;</span>.</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## Пингвины</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://raw.githubusercontent.com/quarto-dev/quarto-web/main/docs/get-started/hello/rstudio/lter_penguins.png)</span>{style="float:right;" fig-alt="Иллюстрация трех видов пингвинов архипелага Палмера: Chinstrap, Gentoo и Adelie. Автор иллюстрации - @allison_horst." width="401"}</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Датасет <span class="in">`penguins`</span> из пакета <span class="co">[</span><span class="ot">**palmerpenguins**</span><span class="co">](https://allisonhorst.github.io/palmerpenguins%20«palmerpenguins%20R%20package»)</span> содержат измерения размеров <span class="in">`{r} nrow(penguins)`</span> пингвинов трех видов, наблюдавшихся на трех островах архипелага Палмера, Антарктида.</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>На графике ниже показана зависимость между длиной ласт и клюва у этих пингвинов.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: plot-penguins</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(penguins, </span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> bill_length_mm)) <span class="sc">+</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species, <span class="at">shape =</span> species)) <span class="sc">+</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>,<span class="st">"purple"</span>,<span class="st">"cyan4"</span>)) <span class="sc">+</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Длина ласт и клюва"</span>,</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Размеры для пингвинов на станции Палмер LTER"</span>,</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Длина ласт (мм)"</span>, <span class="at">y =</span> <span class="st">"Длина клюва (mm)"</span>,</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Вид пингвина"</span>, <span class="at">shape =</span> <span class="st">"Вид пигвина"</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="in">```{.markdown}</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="1">
+<li>Сохранить код приведённый выше код в файл (например <code>example.qmd</code>)</li>
+<li>Вызвав интерактивный сеанс R установить пакеты</li>
+</ol>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"ggplot2"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"palmerpenguins"</span><span class="op">)</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Если пакет <code>tidyverse</code> устанавливается с ошибками см. <a href="../lab/1/intro.html#sec-lab-1-instructions" class="quarto-xref"><span>Глава 24.1</span></a> пункт <code>renv</code></p>
-</section><section id="sec-enviroment-quarto-render" class="level2" data-number="3.4"><h2 data-number="3.4" class="anchored" data-anchor-id="sec-enviroment-quarto-render">
-<span class="header-section-number">3.4</span> Render</h2>
+</section><section id="sec-enviroment-quarto-render" class="level2" data-number="3.2"><h2 data-number="3.2" class="anchored" data-anchor-id="sec-enviroment-quarto-render">
+<span class="header-section-number">3.2</span> Render</h2>
 <p>При рендеринге Quarto генерирует новый файл, содержащий выделенный текст, код и результаты из файла <code>.qmd</code>. Новый файл может представлять собой документ <code>HTML</code>, <code>PDF</code>, <code>MS Word</code> и другие форматы. По умолчанию Quarto рендерит в <code>HTML</code> . Например:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render example.qmd</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render example.qmd</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Результат выполнения команды</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource console number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a href="#cb5-1"></a>processing file: example.qmd</span>
-<span id="cb5-2"><a href="#cb5-2"></a>1/5                </span>
-<span id="cb5-3"><a href="#cb5-3"></a>2/5 [load-packages]</span>
-<span id="cb5-4"><a href="#cb5-4"></a>3/5                </span>
-<span id="cb5-5"><a href="#cb5-5"></a>4/5 [plot-penguins]</span>
-<span id="cb5-6"><a href="#cb5-6"></a>5/5                </span>
-<span id="cb5-7"><a href="#cb5-7"></a>output file: example.knit.md</span>
-<span id="cb5-8"><a href="#cb5-8"></a></span>
-<span id="cb5-9"><a href="#cb5-9"></a>pandoc </span>
-<span id="cb5-10"><a href="#cb5-10"></a>  to: html</span>
-<span id="cb5-11"><a href="#cb5-11"></a>  output-file: example.html</span>
-<span id="cb5-12"><a href="#cb5-12"></a>  standalone: true</span>
-<span id="cb5-13"><a href="#cb5-13"></a>  section-divs: true</span>
-<span id="cb5-14"><a href="#cb5-14"></a>  html-math-method: mathjax</span>
-<span id="cb5-15"><a href="#cb5-15"></a>  wrap: none</span>
-<span id="cb5-16"><a href="#cb5-16"></a>  default-image-extension: png</span>
-<span id="cb5-17"><a href="#cb5-17"></a>  </span>
-<span id="cb5-18"><a href="#cb5-18"></a>metadata</span>
-<span id="cb5-19"><a href="#cb5-19"></a>  document-css: false</span>
-<span id="cb5-20"><a href="#cb5-20"></a>  link-citations: true</span>
-<span id="cb5-21"><a href="#cb5-21"></a>  date-format: long</span>
-<span id="cb5-22"><a href="#cb5-22"></a>  lang: en</span>
-<span id="cb5-23"><a href="#cb5-23"></a>  title: Пример блокнота Quarto</span>
-<span id="cb5-24"><a href="#cb5-24"></a>  editor: visual</span>
-<span id="cb5-25"><a href="#cb5-25"></a>  </span>
-<span id="cb5-26"><a href="#cb5-26"></a>Output created: example.html</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource console number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a href="#cb4-1"></a>processing file: example.qmd</span>
+<span id="cb4-2"><a href="#cb4-2"></a>1/5                </span>
+<span id="cb4-3"><a href="#cb4-3"></a>2/5 [load-packages]</span>
+<span id="cb4-4"><a href="#cb4-4"></a>3/5                </span>
+<span id="cb4-5"><a href="#cb4-5"></a>4/5 [plot-penguins]</span>
+<span id="cb4-6"><a href="#cb4-6"></a>5/5                </span>
+<span id="cb4-7"><a href="#cb4-7"></a>output file: example.knit.md</span>
+<span id="cb4-8"><a href="#cb4-8"></a></span>
+<span id="cb4-9"><a href="#cb4-9"></a>pandoc </span>
+<span id="cb4-10"><a href="#cb4-10"></a>  to: html</span>
+<span id="cb4-11"><a href="#cb4-11"></a>  output-file: example.html</span>
+<span id="cb4-12"><a href="#cb4-12"></a>  standalone: true</span>
+<span id="cb4-13"><a href="#cb4-13"></a>  section-divs: true</span>
+<span id="cb4-14"><a href="#cb4-14"></a>  html-math-method: mathjax</span>
+<span id="cb4-15"><a href="#cb4-15"></a>  wrap: none</span>
+<span id="cb4-16"><a href="#cb4-16"></a>  default-image-extension: png</span>
+<span id="cb4-17"><a href="#cb4-17"></a>  </span>
+<span id="cb4-18"><a href="#cb4-18"></a>metadata</span>
+<span id="cb4-19"><a href="#cb4-19"></a>  document-css: false</span>
+<span id="cb4-20"><a href="#cb4-20"></a>  link-citations: true</span>
+<span id="cb4-21"><a href="#cb4-21"></a>  date-format: long</span>
+<span id="cb4-22"><a href="#cb4-22"></a>  lang: en</span>
+<span id="cb4-23"><a href="#cb4-23"></a>  title: Пример блокнота Quarto</span>
+<span id="cb4-24"><a href="#cb4-24"></a>  editor: visual</span>
+<span id="cb4-25"><a href="#cb4-25"></a>  </span>
+<span id="cb4-26"><a href="#cb4-26"></a>Output created: example.html</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><code>example.html</code> представляет собой <a href="#fig-preview-example" class="quarto-xref">Рисунок&nbsp;<span>3.1</span></a></p>
-</section><section id="sec-enviroment-quarto-preview" class="level2" data-number="3.5"><h2 data-number="3.5" class="anchored" data-anchor-id="sec-enviroment-quarto-preview">
-<span class="header-section-number">3.5</span> Preview</h2>
+</section><section id="sec-enviroment-quarto-preview" class="level2" data-number="3.3"><h2 data-number="3.3" class="anchored" data-anchor-id="sec-enviroment-quarto-preview">
+<span class="header-section-number">3.3</span> Preview</h2>
 <p>Рендеринг и предварительный просмотр документа или проекта веб-сайта. Автоматически перезагружает браузер при изменении входных файлов или ресурсов документа. При предварительном просмотре для рендеринга используются самые последние результаты выполнения вычислительных документов.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview example.qmd</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview example.qmd</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Результат выполнения команды примерно такой:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource console number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a href="#cb7-1"></a>processing file: example.qmd</span>
-<span id="cb7-2"><a href="#cb7-2"></a>1/5                </span>
-<span id="cb7-3"><a href="#cb7-3"></a>2/5 [load-packages]</span>
-<span id="cb7-4"><a href="#cb7-4"></a>3/5                </span>
-<span id="cb7-5"><a href="#cb7-5"></a>4/5 [plot-penguins]</span>
-<span id="cb7-6"><a href="#cb7-6"></a>5/5                </span>
-<span id="cb7-7"><a href="#cb7-7"></a>output file: example.knit.md</span>
-<span id="cb7-8"><a href="#cb7-8"></a></span>
-<span id="cb7-9"><a href="#cb7-9"></a>pandoc </span>
-<span id="cb7-10"><a href="#cb7-10"></a>  to: html</span>
-<span id="cb7-11"><a href="#cb7-11"></a>  output-file: example.html</span>
-<span id="cb7-12"><a href="#cb7-12"></a>  standalone: true</span>
-<span id="cb7-13"><a href="#cb7-13"></a>  section-divs: true</span>
-<span id="cb7-14"><a href="#cb7-14"></a>  html-math-method: mathjax</span>
-<span id="cb7-15"><a href="#cb7-15"></a>  wrap: none</span>
-<span id="cb7-16"><a href="#cb7-16"></a>  default-image-extension: png</span>
-<span id="cb7-17"><a href="#cb7-17"></a>  </span>
-<span id="cb7-18"><a href="#cb7-18"></a>metadata</span>
-<span id="cb7-19"><a href="#cb7-19"></a>  document-css: false</span>
-<span id="cb7-20"><a href="#cb7-20"></a>  link-citations: true</span>
-<span id="cb7-21"><a href="#cb7-21"></a>  date-format: long</span>
-<span id="cb7-22"><a href="#cb7-22"></a>  lang: en</span>
-<span id="cb7-23"><a href="#cb7-23"></a>  title: Пример блокнота Quarto</span>
-<span id="cb7-24"><a href="#cb7-24"></a>  editor: visual</span>
-<span id="cb7-25"><a href="#cb7-25"></a>  </span>
-<span id="cb7-26"><a href="#cb7-26"></a>Output created: example.html</span>
-<span id="cb7-27"><a href="#cb7-27"></a></span>
-<span id="cb7-28"><a href="#cb7-28"></a>Watching files for changes</span>
-<span id="cb7-29"><a href="#cb7-29"></a>Browse at http://localhost:7980/</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource console number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>processing file: example.qmd</span>
+<span id="cb6-2"><a href="#cb6-2"></a>1/5                </span>
+<span id="cb6-3"><a href="#cb6-3"></a>2/5 [load-packages]</span>
+<span id="cb6-4"><a href="#cb6-4"></a>3/5                </span>
+<span id="cb6-5"><a href="#cb6-5"></a>4/5 [plot-penguins]</span>
+<span id="cb6-6"><a href="#cb6-6"></a>5/5                </span>
+<span id="cb6-7"><a href="#cb6-7"></a>output file: example.knit.md</span>
+<span id="cb6-8"><a href="#cb6-8"></a></span>
+<span id="cb6-9"><a href="#cb6-9"></a>pandoc </span>
+<span id="cb6-10"><a href="#cb6-10"></a>  to: html</span>
+<span id="cb6-11"><a href="#cb6-11"></a>  output-file: example.html</span>
+<span id="cb6-12"><a href="#cb6-12"></a>  standalone: true</span>
+<span id="cb6-13"><a href="#cb6-13"></a>  section-divs: true</span>
+<span id="cb6-14"><a href="#cb6-14"></a>  html-math-method: mathjax</span>
+<span id="cb6-15"><a href="#cb6-15"></a>  wrap: none</span>
+<span id="cb6-16"><a href="#cb6-16"></a>  default-image-extension: png</span>
+<span id="cb6-17"><a href="#cb6-17"></a>  </span>
+<span id="cb6-18"><a href="#cb6-18"></a>metadata</span>
+<span id="cb6-19"><a href="#cb6-19"></a>  document-css: false</span>
+<span id="cb6-20"><a href="#cb6-20"></a>  link-citations: true</span>
+<span id="cb6-21"><a href="#cb6-21"></a>  date-format: long</span>
+<span id="cb6-22"><a href="#cb6-22"></a>  lang: en</span>
+<span id="cb6-23"><a href="#cb6-23"></a>  title: Пример блокнота Quarto</span>
+<span id="cb6-24"><a href="#cb6-24"></a>  editor: visual</span>
+<span id="cb6-25"><a href="#cb6-25"></a>  </span>
+<span id="cb6-26"><a href="#cb6-26"></a>Output created: example.html</span>
+<span id="cb6-27"><a href="#cb6-27"></a></span>
+<span id="cb6-28"><a href="#cb6-28"></a>Watching files for changes</span>
+<span id="cb6-29"><a href="#cb6-29"></a>Browse at http://localhost:7980/</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>В браузере отобразится следующая страничка</p>
 <div id="fig-preview-example" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-preview-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
