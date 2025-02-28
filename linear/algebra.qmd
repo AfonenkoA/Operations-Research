@@ -1,14 +1,14 @@
 # Элементы линейной алгебры {#sec-linear-algebra}
 
-::: {.callout-important title="Состояние разработки"}
-В разработке
+::: {.callout-caution title="Состояние разработки"}
+Требуется доработка
 :::
 
 @bib-linear-algebra-rpubs @bib-golshtejn-zadachi-i-metody-linejnogo-programmirovaniya-1
 
 @bib-taha-issledovanie-operacij
 
-## Вектор
+## Вектор {#sec-linear-algebra-vector}
 
 ::: {#def-linear-algebra-vector}
 
@@ -17,9 +17,9 @@
 :   $\mathbf{P}=(p_1,p_2,\dots,p_n)$ упорядоченная система $n$ действительных чисел
 :::
 
-### Операции
+### Операции {#sec-linear-algebra-vector-operations}
 
-#### Равенство
+#### Равенство {#sec-linear-algebra-vector-operations-equality}
 
 Два $n$-мерных вектора $\mathbf{X}=(x_1,x_2,\dots,x_n)$ и $\mathbf{Y}=(y_1,y_2,\dots,y_n)$ считаются равными, если их соответствующие компоненты совпадают, т.е. если
 
@@ -27,7 +27,7 @@ $$
 x_i=y_i,\quad для \quad i=1,2,\dots,n 
 $$
 
-#### Сложение и вычитание
+#### Сложение и вычитание {#sec-linear-algebra-vector-operations-arithmetic}
 
 Пусть $\mathbf{P}=(p_1,p_2,\dots,p_n)$ и $\mathbf{Q}=(q_1,q_2,\dots,q_n$ -- два $n$-мерных вектора. Тогда элементы вектора $\mathbf{R}=(r_1,r_2,\dots,r_n)$, равного $\mathbf{R}=\mathbf{P}\pm\mathbf{Q}$ определяются следующими соотношениями $r_i=p_i \pm q_i$.
 
@@ -41,9 +41,9 @@ $$
 \end{align*}
 $$
 
-#### Умножения на скаляр
+#### Умножения на скаляр {#sec-linear-algebra-vector-operations-mult-by-scalar}
 
-Для произвольного вектора $\mathbf{P}$ и скаляра $\theta$ (произвольного действительного числа) произведение вектора $\mathbf{P}$ на скаляр $\theta$ определяет новый вектор $\mathbf{Q}$, задаваемый соотноешнием
+Для произвольного вектора $\mathbf{P}$ и скаляра $\theta$ (произвольного действительного числа) произведение вектора $\mathbf{P}$ на скаляр $\theta$ определяет новый вектор $\mathbf{Q}$, задаваемый соотношением
 
 $$
 \mathbf{Q}=\theta \mathbf{P}=(\theta p_1,\theta p_2,\dots ,\theta p_n)
@@ -58,7 +58,7 @@ $$
 \end{align*}
 $$
 
-#### Скалярное произведение
+#### Скалярное произведение  {#sec-linear-algebra-vector-operations-scalar-product}
 
 Каждой паре векторов $\mathbf{A}=(a_1,a_2,\dots,a_n)$ и $\mathbf{B}=(b_1,b_2,\dots,b_n)$ может быть сопоставлено число
 
@@ -79,7 +79,7 @@ $$
 \end{align*}
 $$
 
-#### Нормирование и норма
+#### Нормирование и норма {#sec-linear-algebra-vector-operations-norm}
 
 Длиной или нормой вектора $A=(a_1,a_2,\dots,a_n)$ называется число
 
@@ -87,7 +87,7 @@ $$
 |\mathbf{A}|=\sqrt{(\mathbf{A},\mathbf{A})}=\sqrt{\sum_{i=1}^n{a_i^2}}
 $$
 
-### Линейная независимость векторов
+### Линейная независимость векторов {#sec-linear-algebra-vector-linear-independence}
 
 Векторы $\mathbf{P}_1,\mathbf{P}_2,\dots,\mathbf{P}_n$ называются **линейно независимыми**, если равенство
 
@@ -134,7 +134,7 @@ $$
 
 Множество линейно независимых векторов данной системы является её базисом в том и только в том случае, если любой вектор системы представим в виде линейной комбинации векторов рассматриваемого множества.
 
-## Матрица
+## Матрица {#sec-linear-algebra-matrix}
 
 ::: {#def-linear-algebra-matrix}
 
@@ -154,7 +154,7 @@ a_{41} & a_{42} & a_{43}
 \end{pmatrix} = {\|a_{ij}\|}_{4 \times 3}
 $$
 
-### Типы матриц
+### Типы матриц {#sec-linear-algebra-matrix-types}
 
 ::: {#def-linear-algebra-matrix-square}
 
@@ -303,11 +303,11 @@ $$
 \end{array}\right)
 $$
 
-### Операции
+### Операции  {#sec-linear-algebra-matrix-operations}
 
 Для матриц определены только операции сложения (вычитания) и умножения Операция деления матриц не определена, но в некоторых случаях её может заменить операция обращения матриц.
 
-#### Сложение и вычитание
+#### Сложение и вычитание  {#sec-linear-algebra-matrix-operations-arithmetic}
 
 Сложение (вычитание) двух матриц $\mathbf{A}=\|a_{ij}\|$ и $\mathbf{B}=\|b_{ij}\|$ возможно только тогда, когда они имеют одинаковую размерность $(m \times n)$. Матрица суммы $\mathbf{D}=\mathbf{A}+\mathbf{B}$ получается путём сложения соответствующих элементов матриц $A$ и $B$, т.е. ${\|d_{ij}\|}_{m \times n} = {\|a_{ij}+b_{ij}\|}_{m \times n}$.
 
@@ -321,7 +321,7 @@ $$
 \end{align*}
 $$
 
-#### Произведение
+#### Произведение {#sec-linear-algebra-matrix-operations-product}
 
 Произведение $\mathbf{D}=\mathbf{AB}$ для двух матриц $\mathbf{A}=\|a_{ij}\|$ и $\mathbf{B}=\|b_{ij}\|$ определено тогда и только тогда, когда количество столбцов матрицы $\mathbf{A}$ равно количеству строк матрицы $\mathbf{B}$. Таким образом, если матрица $\mathbf{A}$ имеет размерность $m \times r$, матрица $\mathbf{B}$ должна иметь размерность $r \times n$, где $m$ и $n$ --- произвольные положительные целые числа. В этом случае матрица их произведения $\mathbf{D}$ будет иметь размерность $m \times n$, а её элементы $d_{ij}$ для всех $i$ и $j$ вычисляются по формуле
 
@@ -483,7 +483,7 @@ $$
 \end{pmatrix}
 $$
 
-#### Транспонирование
+#### Транспонирование {#sec-linear-algebra-matrix-operations-transpose}
 
 Матрица $\mathbf{A}^T$ называется *транспонированной* к матрице $\mathbf{A}$, если элемент $a_{ij}$ матрицы $\mathbf{A}^T$ равен элементу $a_{ji}$ матрицы $\mathbf{A}$. Например
 
@@ -502,22 +502,320 @@ $$
 \end{pmatrix}
 $$
 
-### Определитель
+### Определитель {#sec-linear-algebra-matrix-determinant}
 
-### Обратная матрица
+Определитель матрицы обычно обозначается как $\det{\mathbf{A}}$ или $|\mathbf{A}|$. Для квадратной матрицы $\mathbf{A}$ порядка $3$
 
-## Система линейных алгебраических уравнений
+$$
+\mathbf{A}=
+\begin{pmatrix}
+a_{11} & a_{12} & a_{13} \\
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33}
+\end{pmatrix}
+$$
+то 
+$$
+|\mathbf{A}|=
+a_{11}(a_{22}a_{33} - a_{23}a_{32}) - a_{12}(a_{21}a_{33}-a_{31}a_{23}) + a_{13}(a_{21}a_{32} - a_{22}a_{31})
+$$
 
-### Случай двух переменных
+Определитель обладает следующими свойствами
 
-#### Единственное решение
+1. Если все элементы какого-нибудь столбца или строки матрицы равны нулю, определитель этой матрицы равен нулю.
+2. Определитель транспонированной матрицы равен определителю исходной матрицы, $|{\mathbf{A}}^T|=|\mathbf{A}|$
+3. Если матрица $\mathbf{B}$ получена из матрицы $\mathbf{A}$ путём перестановки двух каких либо строк (или двух столбцов), тогда $|\mathbf{B}|=-|\mathbf{A}|$\
+4. Если две строки (или два столбца) в матрице одинаковы, то её определитель равен нулю.
+5. Значение определителя |\mathbf{A}| не изменяется, если какую-либо строку матрицы (столбец) умножить на скаляр $\alpha$ и затем прибавить её к другой строке (столбцу).
+6. Если каждый элемент какой-либо строки (столбца) умножить на скаляр $\alpha$, то значение определителя также будет умножено на это число $\alpha$.
+7. Если $\mathbf{A}$ и $\mathbf{B}$ -- две квадратные матрицы порядка $n$, то $|\mathbf{AB}|=|\mathbf{A}||\mathbf{B}|$
 
-#### Множество решений
+### Обратная матрица {#sec-linear-algebra-matrix-inverse}
 
-#### Отсутствие решений
+Если $\mathbf{B}$ и $\mathbf{C}$ -- две квадратные матрицы порядка $n$, причём такие, что $\mathbf{BC}=\mathbf{CD}=I$, тогда матрица $\mathbf{B}$ называется обратной к матрице $\mathbf{C}$, при этом матрица $\mathbf{C}$ также будет опратной к матрице $\mathbf{B}$. Обратные матрицы обозначаются как ${\mathbf{B}}^{-1}$ и ${\mathbf{C}}^{-1}$.
 
-### Случай n переменных. Метод Гаусса — Жордана
+:::{#thm-linear-algebra-matrix-inverse}
+Если $\mathbf{BC}=\mathbf{I}$ и $\mathbf{B}$ -- *невырожденная* матрица, тогда $\mathbf{C}={\mathbf{B}}^{-1}$, причём матрица $\mathbf{C}$ определяется единственным образом.
+:::
 
-#### Алгоритм
+Обратные матрицы находят применение при решении систем линейных уравнений. Рассмотрим систему из $т$ линейных уравнений
 
-#### Пример
+$$
+\begin{pmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \cdots & a_{nn} 
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\ x_2 \\ \vdots \\ x_n
+\end{pmatrix}
+=
+\begin{pmatrix}
+b_1 \\ b_2 \\ \vdots \\ b_n
+\end{pmatrix}
+$$
+
+где $x_i$ -- неизвестные, $a_{ij}$ и $b_{i}$ -- заданные константы. Эта система и $n$ уравнений в матричной форме запишется так: $\mathbf{AB}=\mathbf{b}$. Поскольку уравнения системы линейно независимы, матрица $\mathbf{A}$ будет невырожденной, и, следовательно, будет существовать обратная к ней матрица. Таким образом,имеем
+
+$$
+{\mathbf{A}}^{-1}\mathbf{AX}={\mathbf{A}}^{-1}\mathbf{b}
+$$
+
+откуда получаем решение системы: $\mathbf{X}={\mathbf{A}}^{-1}\mathbf{b}$.
+
+#### Вычисление методом последовательных исключений (метод Гаусса--Жордана) {#sec-linear-algebra-matrix-inverse-algorithm-gauss}
+
+Рассмотрим блочную матрицу $\mathbf{A}|\mathbf{I}$, где $\mathbf{A}$ -- невырожденная матрица. Умножая слева эту матрицу на матрицу ${\mathbf{A}}^{-1}$, получим
+
+$$
+({\mathbf{A}}^{-1}\mathbf{A} | {\mathbf{A}}^{-1} I) = (\mathbf{I} | {\mathbf{A}}^{-1})
+$$
+
+Таким образом, при последовательном преобразовании строк исходной матрицы, обеспечивающем преобразование матрицы $\mathbf{A}$ в $\mathbf{I}$, одновременно матрица $\mathbf{I}$ преобразуется в матрицу ${\mathbf{A}}^{-1}$. Как пример рассмотрим систему линейных уравнений 
+
+$$
+\begin{pmatrix}
+1 & 2 & 3 \\
+2 & 3 & 2 \\
+3 & 3 & 4
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\ x_2 \\ x_3
+\end{pmatrix}
+=
+\begin{pmatrix}
+3 \\ 4 \\ 5
+\end{pmatrix}
+$$
+
+Вектор решений $\mathbf{X}$ и матрицу, обратную к матрице данной системы, можно получить из соотношения
+
+$$
+{\mathbf{A}}^{-1}(\mathbf{A} | \mathbf{I} | \mathbf{b}) =
+(\mathbf{I} | {\mathbf{A}}^{-1} | {\mathbf{A}}^{-1} \mathbf{b} )
+$$
+
+Реализация метода последовательных исключений приводит к следующей последовательности действий. Исходная матрица имеет вид
+
+$$
+\left( \begin{array}{@{}c|c@{}} 
+\begin{matrix}
+1 & 2 & 3 \\
+2 & 3 & 2 \\
+3 & 3 & 4
+\end{matrix}
+&
+\begin{matrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{matrix}
+&
+\begin{matrix}
+3 \\ 4 \\ 5
+\end{matrix}
+\end{array}\right)
+$$
+*Итерация 1*
+
+$$
+\left( \begin{array}{@{}c|c@{}} 
+\begin{matrix}
+1 & 2 & 3 \\
+0 & -1 & -4 \\
+0 & -3 & -5
+\end{matrix}
+&
+\begin{matrix}
+1 & 0 & 0 \\
+-2 & 1 & 0 \\
+-3 & 0 & 1
+\end{matrix}
+&
+\begin{matrix}
+3 \\ -2 \\ -4
+\end{matrix}
+\end{array}\right)
+$$
+
+*Итерация 2*
+
+$$
+\left( \begin{array}{@{}c|c@{}} 
+\begin{matrix}
+1 & 0 & -5 \\
+0 & 1 & 4 \\
+0 & 0 & 7
+\end{matrix}
+&
+\begin{matrix}
+-3 & 2 & 0 \\
+2 & 1 & 0 \\
+3 & -3 & 1
+\end{matrix}
+&
+\begin{matrix}
+-1 \\ 2 \\ 2
+\end{matrix}
+\end{array}\right)
+$$
+
+*Итерация 3*
+
+$$
+\left( \begin{array}{@{}c|c@{}} 
+\begin{matrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{matrix}
+&
+\begin{matrix}
+-\frac{6}{7} & -\frac{1}{7} & \frac{5}{7} \\
+\frac{2}{7} & \frac{5}{7} & -\frac{4}{7} \\
+\frac{3}{7} & -\frac{3}{7} & \frac{1}{7}
+\end{matrix}
+&
+\begin{matrix}
+\frac{3}{7} \\ 
+\frac{6}{7} \\
+\frac{2}{7}
+\end{matrix}
+\end{array}\right)
+$$
+
+В результате получено решение системы: $x_1=\frac{3}{7}$, $x_2=\frac{6}{7}$, $x_3=\frac{2}{7}$. Обратная матрица ${\mathbf{A}}^{-1}$ приведена справа от единичной матрицы.
+
+## Система линейных алгебраических уравнений {#sec-linear-algebra-equation-system}
+
+### Случай двух переменных {#sec-linear-algebra-equation-system-two-variables}
+
+#### Несовместимость системы {#sec-linear-algebra-equation-system-two-variables-inconsistent}
+
+$$
+\begin{pmatrix}
+1 & -1 \\
+0 & 0
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\ x_2
+\end{pmatrix} = 
+\begin{pmatrix}
+-1 \\ 2
+\end{pmatrix} \\
+\begin{align*}
+x_1 - x_2 &= -1 \\
+0 &= 2
+\end{align*}
+$$
+
+#### Единственное решение {#sec-linear-algebra-equation-system-two-variables-single}
+
+$$
+\begin{pmatrix}
+1 & -1 \\
+1 & 2
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\ x_2
+\end{pmatrix} = 
+\begin{pmatrix}
+-1 \\ 2
+\end{pmatrix} \\
+\begin{align*}
+x_1 &= 0\\
+x_2 &= 1
+\end{align*}
+$$
+
+```{r}
+#| message: false
+#| warning: false
+#| echo: false
+
+library(plotly)
+
+x1 <- seq(-5, 5, length.out = 100)
+l1 <- x1 + 1
+l2 <- (2 - x1)/2
+
+plot_ly(x = x1, y = l1, type = 'scatter', mode = 'lines', name = 'l1') |>
+  add_trace(x = x1, y= l2, type = 'scatter', mode = 'lines', name = 'l2') |>
+  add_trace(x = 0, y = 1, type = 'scatter', mode = 'markers', marker = list(color = 'red', size = 12), name = 'решение')
+```
+
+
+#### Бесконечное множество решений {#sec-linear-algebra-equation-system-two-variables-infinity}
+
+$$
+\begin{pmatrix}
+1 & -1 \\
+0 & 0
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\ x_2
+\end{pmatrix} = 
+\begin{pmatrix}
+-1 \\ 0
+\end{pmatrix} \\
+\begin{align*}
+x_1 - x_2 &= -1 \\
+0 &= 0
+\end{align*}
+$$
+
+```{r}
+#| message: false
+#| warning: false
+#| echo: false
+
+library(plotly)
+
+x1 <- seq(-5, 5, length.out = 100)
+x2 <- x1 + 1
+
+plot_ly(x = ~x1, y = ~x2, type = 'scatter', mode = 'lines')
+```
+
+
+#### Отсутствие решений {#sec-linear-algebra-equation-system-two-variables-zero}
+
+$$
+\begin{pmatrix}
+1 & -1 \\
+1 & -1
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \\ x_2
+\end{pmatrix} = 
+\begin{pmatrix}
+-1 \\ 2
+\end{pmatrix} \\
+\begin{align*}
+x_1 - x_2 &= -1 \\
+0 &= 3
+\end{align*}
+$$
+
+```{r}
+#| message: false
+#| warning: false
+#| echo: false
+
+library(plotly)
+
+x1 <- seq(-5, 5, length.out = 100)
+l1 <- x1 + 1
+l2 <- x1 - 2
+
+plot_ly(x = x1, y = l1, type = 'scatter', mode = 'lines', name = 'l1') |>
+  add_trace(x = x1, y= l2, type = 'scatter', mode = 'lines', name = 'l2')
+```
+
+
+### Случай n переменных. Метод Гаусса — Жордана {#sec-linear-algebra-equation-system-many-variables}
+
+#### Алгоритм {#sec-linear-algebra-equation-system-many-variables-alghorythm-gauss}
+
+#### Пример 
