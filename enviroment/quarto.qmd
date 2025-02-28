@@ -4,9 +4,12 @@
 
 ## Установка примера {#sec-enviroment-quarto-example-install}
 
-``` markdown
+```` markdown
 {{< include _example.qmd >}}
+```{.markdown}
+  
 ```
+````
 
 1.  Сохранить код приведённый выше код в файл (например `example.qmd`)
 2.  Вызвав интерактивный сеанс R установить пакеты
