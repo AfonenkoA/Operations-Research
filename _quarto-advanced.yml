@@ -47,6 +47,11 @@ book:
       chapters:
         - lab/1/intro.qmd
         - lab/2/linear.qmd
+
+    - part: "Проверочные работы"
+      chapters:
+        - exam/1/intro.qmd
+
     - references.qmd
 
 

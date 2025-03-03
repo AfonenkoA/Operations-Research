@@ -3,6 +3,7 @@ mathjax_*/
 .quarto/
 _site/
 _book/
+site_libs/
 _freeze/
 *_cache/
 *_files/

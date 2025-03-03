@@ -1,1 +1,42 @@
-linear-select-det: true
+operations-research:
+    table-lamp:
+      select: true
+    avia-tickets:
+      select: true
+      params:
+        one-way-cost:
+          type: integer
+          min: 40
+          max: 90
+          step: 10
+        return-later-cost:
+          type: integer
+          min: 40
+          max: 90
+          step: 10
+        return-cost:
+          type: integer
+          min: 100
+          max: 1000
+          step: 50
+
+linear-algebra:
+  det:
+    select: true
+  equations:
+    select: true
+
+
+bibliography: ref.bib
+
+lang: ru
+
+format:
+  pdf:
+    documentclass: scrartcl
+    fontsize: 11pt
+    papersize: a4
+    colorlinks: true
+    mainfont: Times New Roman
+    sansfont: Times New Roman
+    monofont: Noto Sans Mono Black
