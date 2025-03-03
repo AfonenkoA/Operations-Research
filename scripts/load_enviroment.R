@@ -15,7 +15,7 @@ has_html_out <- Sys.getenv('QUARTO_PROJECT_OUTPUT_FILES') |>
 if(!has_html_out)
   quit()
 
-site_libs_dir <- 'site_libs'
+site_libs_dir <- Sys.getenv('SITE_LIBS_PATH')
 
 out <- Sys.getenv('QUARTO_PROJECT_OUTPUT_DIR')
 proj_dir <- Sys.getenv('QUARTO_PROJECT_ROOT')

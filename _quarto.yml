@@ -7,7 +7,7 @@ project:
 
 profile:
   group:
-    - [base, advanced]
+    - [base, advanced, exam-gen]
     - [dev, prod]
 
 book:
@@ -22,7 +22,11 @@ book:
 
 lang: ru
 
-bibliography: references.bib
+
+bibliography:
+  - references.bib
+  - exam/1/ref.bib
+
 csl: gost-r-7-0-5-2008-numeric.csl
 
 format:
@@ -32,9 +36,5 @@ format:
     html-math-method:
       method: mathjax
       url: QUARTO_MATHJAX_SVG
-#
-#  pdf:
-#    include-in-header:
-#      - file: preamble.tex
 
 editor: visual

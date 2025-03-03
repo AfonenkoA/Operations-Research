@@ -1,3 +1,13 @@
 # Интерактивный курс по исследованию операций {.unnumbered}
 
+::: {.callout-important title="Состояние разработки"}
+В разработке
+:::
+
+![](https://neos-guide.org/wp-content/uploads/2022/08/Taxonomy.svg){fig-align="center"}
+
+Обзор методов и разделов.
+
+[Neos alghorytm guide](https://neos-guide.org/guide/algorithms/)
+
 Основная литература @bib-taha-issledovanie-operacij
