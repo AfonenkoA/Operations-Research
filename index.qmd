@@ -4,7 +4,7 @@
 В разработке
 :::
 
-![](https://neos-guide.org/wp-content/uploads/2022/08/Taxonomy.svg){fig-align="center"}
+![](taxonomy.svg){fig-align="center"}
 
 Обзор методов и разделов.
 

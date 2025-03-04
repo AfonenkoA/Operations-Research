@@ -34,11 +34,11 @@ $$
 В общем случае для любых векторов $\mathbf{P}$, $\mathbf{Q}$ и $\mathbf{S}$, имеющих одинаковую размерность, выполняются следующие соотношения
 
 $$
-\begin{align*}
+\begin{aligned}
 & \mathbf{P} \pm \mathbf{Q} = \mathbf{Q} \pm \mathbf{P} \quad \\
 & (\mathbf{P} + \mathbf{Q}) + \mathbf{S} = \mathbf{P} + (\mathbf{Q}+\mathbf{S})\\
 & \mathbf{P} + (-\mathbf{P}) = \mathbf{0}
-\end{align*}
+\end{aligned}
 $$
 
 #### Умножения на скаляр {#sec-linear-algebra-vector-operations-mult-by-scalar}
@@ -52,10 +52,10 @@ $$
 В общем случае для любых векторов $\mathbf{P}$ и $\mathbf{S}$ имеющих одинаковую размерность, произвольных скалярных величин $\theta$ и $\gamma$ выполняются следющие соотношения
 
 $$
-\begin{align*}
+\begin{aligned}
 &\theta(\mathbf{P}+\mathbf{S})=\theta \mathbf{P} + \theta \mathbf{S}\\
 &\theta(\gamma \mathbf{P})=(\theta \gamma)\mathbf{P}
-\end{align*}
+\end{aligned}
 $$
 
 #### Скалярное произведение {#sec-linear-algebra-vector-operations-scalar-product}
@@ -71,12 +71,12 @@ $$
 Скалярное произведение обладает следующими свойствами
 
 $$
-\begin{align*}
+\begin{aligned}
 &(\mathbf{A},\mathbf{B})=(\mathbf{B},\mathbf{A})\\
 &(\mathbf{A}_1 + \mathbf{A}_2,\mathbf{B}) = (\mathbf{A}_1,\mathbf{B}) + (\mathbf{A}_2,\mathbf{B})\\
 &(\lambda \mathbf{A},\mathbf{B})=\lambda(\mathbf{A},\mathbf{B})\\
 &(\mathbf{A},\mathbf{A})\ge0\\
-\end{align*}
+\end{aligned}
 $$
 
 #### Нормирование и норма {#sec-linear-algebra-vector-operations-norm}
@@ -296,7 +296,7 @@ $$
 $$
 \mathbf{P}=
 \left(
-\begin{array}{@{}c|c@{}}
+\begin{array}{c | c}
 \mathbf{P}_{11} & \mathbf{P}_{12} \\
 \hline
 \mathbf{P}_{21} & \mathbf{P}_{22}
@@ -314,11 +314,11 @@ $$
 Для произвольных матриц $\mathbf{A}$, $\mathbf{B}$ и $\mathbf{C}$, имеющих одинаковую размерность справедливы следующие соотношения
 
 $$
-\begin{align*}
+\begin{aligned}
 & \mathbf{A} \pm \mathbf{B} = \mathbf{B} \pm \mathbf{A} \\
 & \mathbf{A} \pm (\mathbf{B} \pm \mathbf{C}) = (\mathbf{A} \pm \mathbf{B}) \pm \mathbf{C} \\
 & {(\mathbf{A} \pm \mathbf{B})}^T = \mathbf{A}^T \pm \mathbf{B}^T
-\end{align*}
+\end{aligned}
 $$
 
 #### Произведение {#sec-linear-algebra-matrix-operations-product}
@@ -372,13 +372,13 @@ $$
 Произведение матриц обладает следующими свойствами
 
 $$
-\begin{align*}
+\begin{aligned}
 & \mathbf{I}_m \mathbf{A} = \mathbf{A}\mathbf{I}_n,\quad \text{где} \ \mathbf{I}_m \ и \ \mathbf{I}_n \ - \ \text{единичные матрицы} \\
 & \mathbf{(AB)C} = \mathbf{A(BC)} \\
 & \mathbf{C(A+B)} = \mathbf{CA + CB} \\
 & \mathbf{(A+B)C} = \mathbf{AC + BC} \\
 & \alpha \mathbf{(AB)} = \mathbf{A} (\alpha \mathbf{B}),\quad \text{где} \ \alpha \ - \text{скаляр} 
-\end{align*}
+\end{aligned}
 $$
 
 Пусть матрицы $\mathbf{A}$ и $\mathbf{B}$ имеют размерности $m \times r$ и $r \times n$ соответственно. Предположим, что эти матрицы представимы в виде совокупности блоков
@@ -386,7 +386,7 @@ $$
 $$
 \mathbf{A} = 
 \left(
-\begin{array}{@{}c|c@{}}
+\begin{array}{c | c | c}
 \mathbf{A}_{11} & \mathbf{A}_{12} & \mathbf{A}_{13}  \\
 \hline
 \mathbf{A}_{21} & \mathbf{A}_{22} & \mathbf{A}_{23} 
@@ -395,7 +395,7 @@ $$
 \quad и \quad
 \mathbf{B} = 
 \left(
-\begin{array}{@{}c|c@{}}
+\begin{array}{c | c}
 \mathbf{B}_{11} & \mathbf{B}_{12} \\
 \hline
 \mathbf{B}_{21} & \mathbf{B}_{22} \\
@@ -410,7 +410,7 @@ $$
 $$
 \mathbf{A} \times \mathbf{B} =
 \left(
-\begin{array}{@{}c|c@{}}
+\begin{array}{c | c}
 \mathbf{A}_{11} \mathbf{B}_{11} + \mathbf{A}_{12} \mathbf{B}_{21} + \mathbf{A}_{13} \mathbf{B}_{31} &
 \mathbf{A}_{11} \mathbf{A}_{12} + \mathbf{A}_{12} \mathbf{B}_{22} + \mathbf{A}_{13} \mathbf{B}_{32} \\
 \hline
@@ -424,7 +424,7 @@ $$
 
 $$
 \left(
-\begin{array}{@{}c|c@{}}
+\begin{array}{c | c}
 1 & 
 \begin{matrix}
 2 & 3
@@ -513,7 +513,11 @@ a_{11} & a_{12} & a_{13} \\
 a_{21} & a_{22} & a_{23} \\
 a_{31} & a_{32} & a_{33}
 \end{pmatrix}
-$$ то $$
+$$
+
+то
+
+$$
 |\mathbf{A}|=
 a_{11}(a_{22}a_{33} - a_{23}a_{32}) - a_{12}(a_{21}a_{33}-a_{31}a_{23}) + a_{13}(a_{21}a_{32} - a_{22}a_{31})
 $$
@@ -524,7 +528,7 @@ $$
 2.  Определитель транспонированной матрицы равен определителю исходной матрицы, $|{\mathbf{A}}^T|=|\mathbf{A}|$
 3.  Если матрица $\mathbf{B}$ получена из матрицы $\mathbf{A}$ путём перестановки двух каких либо строк (или двух столбцов), тогда $|\mathbf{B}|=-|\mathbf{A}|$\
 4.  Если две строки (или два столбца) в матрице одинаковы, то её определитель равен нулю.
-5.  Значение определителя \|\mathbf{A}\| не изменяется, если какую-либо строку матрицы (столбец) умножить на скаляр $\alpha$ и затем прибавить её к другой строке (столбцу).
+5.  Значение определителя $|\mathbf{A}|$ не изменяется, если какую-либо строку матрицы (столбец) умножить на скаляр $\alpha$ и затем прибавить её к другой строке (столбцу).
 6.  Если каждый элемент какой-либо строки (столбца) умножить на скаляр $\alpha$, то значение определителя также будет умножено на это число $\alpha$.
 7.  Если $\mathbf{A}$ и $\mathbf{B}$ -- две квадратные матрицы порядка $n$, то $|\mathbf{AB}|=|\mathbf{A}||\mathbf{B}|$
 
@@ -597,7 +601,7 @@ $$
 Реализация метода последовательных исключений приводит к следующей последовательности действий. Исходная матрица имеет вид
 
 $$
-\left( \begin{array}{@{}c|c@{}} 
+\left( \begin{array}{c | c |c} 
 \begin{matrix}
 1 & 2 & 3 \\
 2 & 3 & 2 \\
@@ -614,10 +618,12 @@ $$
 3 \\ 4 \\ 5
 \end{matrix}
 \end{array}\right)
-$$ *Итерация 1*
+$$
+
+*Итерация 1*
 
 $$
-\left( \begin{array}{@{}c|c@{}} 
+\left( \begin{array}{c | c | c} 
 \begin{matrix}
 1 & 2 & 3 \\
 0 & -1 & -4 \\
@@ -639,7 +645,7 @@ $$
 *Итерация 2*
 
 $$
-\left( \begin{array}{@{}c|c@{}} 
+\left( \begin{array}{c | c | c} 
 \begin{matrix}
 1 & 0 & -5 \\
 0 & 1 & 4 \\
@@ -661,7 +667,7 @@ $$
 *Итерация 3*
 
 $$
-\left( \begin{array}{@{}c|c@{}} 
+\left( \begin{array}{c | c | c} 
 \begin{matrix}
 1 & 0 & 0 \\
 0 & 1 & 0 \\
@@ -703,10 +709,10 @@ x_1 \\ x_2
 \begin{pmatrix}
 -1 \\ 2
 \end{pmatrix} \\
-\begin{align*}
+\begin{aligned}
 x_1 - x_2 &= -1 \\
 0 &= 2
-\end{align*}
+\end{aligned}
 $$
 
 #### Единственное решение {#sec-linear-algebra-equation-system-two-variables-single}
@@ -722,16 +728,16 @@ x_1 \\ x_2
 \begin{pmatrix}
 -1 \\ 2
 \end{pmatrix} \\
-\begin{align*}
+\begin{aligned}
 x_1 &= 0\\
 x_2 &= 1
-\end{align*}
+\end{aligned}
 $$
 
 ```{r}
 #| message: false
 #| warning: false
-#| echo: false
+#| include: false
 
 library(plotly)
 
@@ -739,10 +745,12 @@ x1 <- seq(-5, 5, length.out = 100)
 l1 <- x1 + 1
 l2 <- (2 - x1)/2
 
-plot_ly(x = x1, y = l1, type = 'scatter', mode = 'lines', name = 'l1') |>
+fig <- plot_ly(x = x1, y = l1, type = 'scatter', mode = 'lines', name = 'l1') |>
   add_trace(x = x1, y= l2, type = 'scatter', mode = 'lines', name = 'l2') |>
   add_trace(x = 0, y = 1, type = 'scatter', mode = 'markers', marker = list(color = 'red', size = 12), name = 'решение')
 ```
+
+{{< include ../util/_plotly_show.qmd >}}
 
 #### Бесконечное множество решений {#sec-linear-algebra-equation-system-two-variables-infinity}
 
@@ -757,24 +765,26 @@ x_1 \\ x_2
 \begin{pmatrix}
 -1 \\ 0
 \end{pmatrix} \\
-\begin{align*}
+\begin{aligned}
 x_1 - x_2 &= -1 \\
 0 &= 0
-\end{align*}
+\end{aligned}
 $$
 
 ```{r}
 #| message: false
 #| warning: false
-#| echo: false
+#| include: false
 
 library(plotly)
 
 x1 <- seq(-5, 5, length.out = 100)
 x2 <- x1 + 1
 
-plot_ly(x = ~x1, y = ~x2, type = 'scatter', mode = 'lines')
+fig <- plot_ly(x = ~x1, y = ~x2, type = 'scatter', mode = 'lines')
 ```
+
+{{< include ../util/_plotly_show.qmd >}}
 
 #### Отсутствие решений {#sec-linear-algebra-equation-system-two-variables-zero}
 
@@ -789,16 +799,16 @@ x_1 \\ x_2
 \begin{pmatrix}
 -1 \\ 2
 \end{pmatrix} \\
-\begin{align*}
+\begin{aligned}
 x_1 - x_2 &= -1 \\
 0 &= 3
-\end{align*}
+\end{aligned}
 $$
 
 ```{r}
 #| message: false
 #| warning: false
-#| echo: false
+#| include: false
 
 library(plotly)
 
@@ -806,9 +816,11 @@ x1 <- seq(-5, 5, length.out = 100)
 l1 <- x1 + 1
 l2 <- x1 - 2
 
-plot_ly(x = x1, y = l1, type = 'scatter', mode = 'lines', name = 'l1') |>
+fig <- plot_ly(x = x1, y = l1, type = 'scatter', mode = 'lines', name = 'l1') |>
   add_trace(x = x1, y= l2, type = 'scatter', mode = 'lines', name = 'l2')
 ```
+
+{{< include ../util/_plotly_show.qmd >}}
 
 ### Случай n переменных. Метод Гаусса — Жордана {#sec-linear-algebra-equation-system-many-variables}
 

@@ -7,7 +7,7 @@ project:
 
 profile:
   group:
-    - [base, advanced, exam-gen]
+    - [base, advanced, exam-gen, test]
     - [dev, prod]
 
 book:

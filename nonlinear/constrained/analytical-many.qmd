@@ -3,17 +3,6 @@ cache: false
 freeze: false
 ---
 
-
-```{r}
-#| label: import
-#| echo: false
-#| warning: false
-#| message: false
-#| include: false
-
-library(widgetframe)
-```
-
 # Условная оптимизация функции многих переменных {#sec-nonlinear-constrained-many}
 
 ::: {.callout-caution title="Состояние разработки"}
@@ -21,7 +10,7 @@ library(widgetframe)
 :::
 
 ```{r}
-#| echo: false
+#| include: false
 slog <- \(x) sign(x)*log(abs(x))
 ```
 
@@ -36,7 +25,7 @@ $$
 $$
 
 ```{r}
-#| echo: false
+#| include: false
 #| warning: false
 #| message: false
 
@@ -44,7 +33,7 @@ library(plotly)
 
 x <- y <- seq(-5, 5, length.out = 100)
 z <- outer(x, y, \(p1,p2) { p1^2+p2^2+p1*p2+2*p1+4*p2 +5}) |> slog() |> t()
-plot_ly(x=x, y=y, z=z, type="contour", ncontours=25, name='F(p)') |> 
+fig <- plot_ly(x=x, y=y, z=z, type="contour", ncontours=25, name='F(p)') |> 
   add_trace(
     x = c(-4,-4,4,4),
     y = c(2,3,3,2),
@@ -57,9 +46,10 @@ plot_ly(x=x, y=y, z=z, type="contour", ncontours=25, name='F(p)') |>
     y = -2,
     name = 'безусловный минимум',
     type = 'scatter',
-    marker = list(color = 'red')) |>
-  frameWidget()
+    marker = list(color = 'red'))
 ```
+
+{{< include ../../util/_plotly_show.qmd >}}
 
 Преобразуем ограничения
 
@@ -122,7 +112,7 @@ $$
 $$
 
 ```{r}
-#| echo: false
+#| include: false
 #| warning: false
 #| message: false
 
@@ -131,7 +121,7 @@ library(plotly)
 
 x <- y <- seq(-5, 5, length.out = 100)
 z <- outer(x, y, \(p1,p2) { p1^2+p2^2+p1*p2+2*p1+4*p2 +5}) |> slog() |> t()
-plot_ly(x=x, y=y, z=z, type='contour', ncontours=30 , name='F(p)') |> 
+fig <- plot_ly(x=x, y=y, z=z, type='contour', ncontours=30 , name='F(p)') |> 
   add_trace(
     x = c(-4,-4,4,4),
     y = c(2,3,3,2),
@@ -150,9 +140,10 @@ plot_ly(x=x, y=y, z=z, type='contour', ncontours=30 , name='F(p)') |>
     y = 2,
     name = 'условный минимум',
     type = "scatter",
-    marker = list(color = "red")) |>
-  frameWidget() 
+    marker = list(color = "red"))
 ```
+
+{{< include ../../util/_plotly_show.qmd >}}
 
 ## Линейные ограничения неравенства {#sec-nonlinear-constrained-many-linear}
 
@@ -167,7 +158,7 @@ $$
 $$
 
 ```{r}
-#| echo: false
+#| include: false
 #| warning: false
 #| message: false
 
@@ -178,7 +169,7 @@ z <- outer(x, y, \(p1, p2) {p1 ^ 2 + p2 ^ 2 + p1 * p2 + 2 * p1 + 4 * p2 + 5}) |>
 l1_x <- seq(-5/2, 5/2, length.out = 100)
 l2 <- (1 - x) / 2
 l1 <- -2 * l1_x
-plot_ly(
+fig <- plot_ly(
   x = x,
   y = y,
   z = z,
@@ -202,10 +193,11 @@ plot_ly(
     marker = list(color = 'red')
   ) |>
   add_trace(x=l1_x,y=l1,type='scatter', mode='lines', name=TeX('l_1')) |>
-  add_trace(x=x,y=l2,type='scatter', mode='lines', name=TeX('l_2')) |> 
-  config(mathjax = 'local') |>
-  frameWidget()
+  add_trace(x=x,y=l2,type='scatter', mode='lines', name=TeX('l_2')) |>
+  config(mathjax = 'local')
 ```
+
+{{< include ../../util/_plotly_show_safe.qmd >}}
 
 Преобразуем ограничения
 
@@ -272,7 +264,7 @@ x_2 = -2\\
 $$
 
 ```{r}
-#| echo: false
+#| include: false
 #| warning: false
 #| message: false
 
@@ -283,7 +275,7 @@ z <- outer(x, y, \(p1, p2) {p1 ^ 2 + p2 ^ 2 + p1 * p2 + 2 * p1 + 4 * p2 + 5}) |>
 l1_x <- seq(-5/2, 5/2, length.out = 100)
 l2 <- (1 - x) / 2
 l1 <- -2 * l1_x
-plot_ly(
+fig <- plot_ly(
   x = x,
   y = y,
   z = z,
@@ -313,10 +305,11 @@ plot_ly(
     type = 'scatter',
     marker = list(color = "red")) |>
   add_trace(x=l1_x,y=l1,type='scatter', mode='lines', name=TeX('l_1')) |>
-  add_trace(x=x,y=l2,type='scatter', mode='lines', name=TeX('l_2')) |> 
-  config(mathjax = 'local') |>
-  frameWidget()
+  add_trace(x=x,y=l2,type='scatter', mode='lines', name=TeX('l_2')) |>
+  config(mathjax = 'local')
 ```
+
+{{< include ../../util/_plotly_show_safe.qmd >}}
 
 ## Нелинейные ограничения равенства {#sec-nonlinear-constrained-nonlinear}
 
@@ -328,7 +321,7 @@ g1:x_1^2 - x_1 x_2 = -2
 $$
 
 ```{r}
-#| echo: false
+#| include: false
 #| warning: false
 #| message: false
 
@@ -340,7 +333,7 @@ p1_x <- seq(1/2*(5-sqrt(17)), 1/2*(5+sqrt(17)), length.out = 100)
 p2_x <- seq(1/2*(-5-sqrt(17)), 1/2*(-5+sqrt(17)), length.out = 100)
 p1 <- (2 + p1_x^2)/p1_x
 p2 <- (2 + p2_x^2)/p2_x
-plot_ly(
+fig <- plot_ly(
   x = x,
   y = y,
   z = z,
@@ -356,10 +349,11 @@ plot_ly(
     marker = list(color = 'red')
   ) |>
   add_trace(x=p1_x,y=p1,type='scatter', mode='lines', name=TeX('l_1')) |>
-  add_trace(x=p2_x,y=p2,type='scatter', mode='lines', name=TeX('l_2')) |> 
-  config(mathjax = 'local') |>
-  frameWidget()
+  add_trace(x=p2_x,y=p2,type='scatter', mode='lines', name=TeX('l_2')) |>
+  config(mathjax = 'local')
 ```
+
+{{< include ../../util/_plotly_show_safe.qmd >}}
 
 Переформулируем ограничения
 
@@ -420,7 +414,7 @@ x_2=-3\\
 $$
 
 ```{r}
-#| echo: false
+#| include: false
 #| warning: false
 #| message: false
 
@@ -432,7 +426,7 @@ p1_x <- seq(1/2*(5-sqrt(17)), 1/2*(5+sqrt(17)), length.out = 100)
 p2_x <- seq(1/2*(-5-sqrt(17)), 1/2*(-5+sqrt(17)), length.out = 100)
 p1 <- (2 + p1_x^2)/p1_x
 p2 <- (2 + p2_x^2)/p2_x
-plot_ly(
+fig <- plot_ly(
   x = x,
   y = y,
   z = z,
@@ -455,7 +449,8 @@ plot_ly(
     marker = list(color = 'red')
   ) |>
   add_trace(x=p1_x,y=p1,type='scatter', mode='lines', name=TeX('l_1')) |>
-  add_trace(x=p2_x,y=p2,type='scatter', mode='lines', name=TeX('l_2')) |> 
-  config(mathjax = 'local') |>
-  frameWidget()
+  add_trace(x=p2_x,y=p2,type='scatter', mode='lines', name=TeX('l_2')) |>
+  config(mathjax = 'local')
 ```
+
+{{< include ../../util/_plotly_show_safe.qmd >}}
