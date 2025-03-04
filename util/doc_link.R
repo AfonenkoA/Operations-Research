@@ -1,3 +1,6 @@
+require(downlit)
+require(xml2)
+
 dl <- doc_link <-
   \(fun) fun |>
   rlang::enquo() |>

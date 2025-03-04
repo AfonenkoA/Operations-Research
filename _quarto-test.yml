@@ -1,0 +1,8 @@
+book:
+  chapters:
+    - index.qmd
+    - linear/algebra.qmd
+    - linear/graphical-solution.qmd
+    - nonlinear/constrained/analytical-many.qmd
+
+prefer-html: false

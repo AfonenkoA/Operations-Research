@@ -3,16 +3,13 @@ cache: false
 freeze: false
 ---
 
-
 ```{r}
 #| label: import
-#| echo: false
 #| warning: false
 #| message: false
 #| include: false 
 
 source('../util/add_region.R')
-library(widgetframe)
 ```
 
 # Графическое решение {#sec-linear-graphical-solution}
@@ -32,11 +29,13 @@ $$\begin{cases}
 Задача 1 найти область удовлетворяющую ограничениям. Сразу можно сказать, что рассматривается первая четверть из-за ограничения на положительность переменных. Определим функцию для построения замкнутой области на графике используя библиотеку **plotly**.
 
 ```{r}
-#| echo: false
+#| include: false
 #| warning: false
 #| message: false
 
-plot_ly(mode = 'lines+markers') |>
+library(plotly)
+
+fig <- plot_ly(mode = 'lines+markers') |>
   add_region(
     xy = rbind(c(0, 0), c(0, 2048 / 4), c(2048, 0)),
     color = 'rgba(0, 0, 0, 0.2)',
@@ -48,30 +47,33 @@ plot_ly(mode = 'lines+markers') |>
   add_region(
     xy = rbind(c(0, 0), c(0, 480), c(2048, 480), c(2048, 0)),
     color = 'rgba(255, 255, 0, 0.4)',
-    name = 'x_2\\leq480') |> 
-  config(mathjax = 'local') |>
-  frameWidget()
+    name = 'x_2\\leq480') |>
+  config(mathjax = 'local')
 ```
+
+{{< include ../util/_plotly_show_safe.qmd >}}
 
 Итоговая область поиска:
 
 ```{r}
-#| echo: false
+#| include: false
 #| warning: false
 #| message: false
 
-plot_ly(mode = 'lines+markers') |>
+fig <- plot_ly(mode = 'lines+markers') |>
   add_region(
     xy = rbind(c(0, 0), c(0, 480), c(128, 480), c(6144 / 7, 2048 / 7), c(2048 / 2, 0)),
     name = 'region',
-    color = 'rgba(51, 0, 153, 0.4)') |> 
-  frameWidget()
+    color = 'rgba(51, 0, 153, 0.4)') |>
+  config(mathjax = 'local')
 ```
+
+{{< include ../util/_plotly_show_safe.qmd >}}
 
 Теперь можно добавить график уровня функции и совместить его с графиком ограничений
 
 ```{r}
-#| echo: false
+#| include: false
 #| warning: false
 #| message: false
 
@@ -81,11 +83,13 @@ z <- outer(x, y, FUN = \(x1, x2) {
   2 * x1 + 6 * x2
 }) |> t()
 
-plot_ly(x = x, y = y, z = z, type = 'contour') |>
+fig <- plot_ly(x = x, y = y, z = z, type = 'contour') |>
   add_region(
     xy = rbind(c(0, 0), c(0, 480), c(128, 480), c(6144 / 7, 2048 / 7), c(2048 / 2, 0)),
-    color = 'rgba(0, 0, 0, 0.3)') |> 
-  frameWidget()
+    color = 'rgba(0, 0, 0, 0.3)') |>
+  config(mathjax = 'local')
 ```
+
+{{< include ../util/_plotly_show_safe.qmd >}}
 
 Следовательно наилучшее значение функции в точке $(x=\frac{6144}{7},y=\frac{2048}{7})$

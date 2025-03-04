@@ -11,6 +11,8 @@ _freeze/
 *_files/
 *figure/
 
+*pdfgen_*
+
 /.quarto/
 
 /_*.local

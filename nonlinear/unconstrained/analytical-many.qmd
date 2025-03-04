@@ -91,10 +91,10 @@ $$z=3x^2 + xy + 2y^2 -x -4y$$
 на первом шаге нужно отыскать стационарные точки. Для этого найдем частные производные 1-го порядка:
 
 $$
-\begin{align*}
+\begin{aligned}
 &\frac{\partial z}{\partial x}=\frac{\partial}{\partial x}\bigl(3x^2+xy+2y^2-x-4y \bigr)=6x+y-1 \\
 &\frac{\partial z}{\partial x}=\frac{\partial}{\partial x}\bigl(3x^2+xy+2y^2-x-4y \bigr)=x+4y-4
-\end{align*}
+\end{aligned}
 $$
 
 Решим систему уравнений
@@ -128,10 +128,10 @@ plot_ly(x=x, y=y, z = z, type = "surface") |>
 Таким образом
 
 $$
-\begin{align*}
+\begin{aligned}
 y=1\\
 x=0
-\end{align*}
+\end{aligned}
 $$
 
 Найдена стационарная точка $M_0(0,1)$. В найденной точке может быть минимум, максимум либо перевал.
@@ -143,11 +143,11 @@ $$
 Для применения достаточного условия нужно вычислить частные производные 2-го порядка в точке Для компактности обычно используют следующие обозначения
 
 $$
-\begin{align*}
+\begin{aligned}
 &A=\frac{\partial^2 z}{\partial x^2}\\
 &B=\frac{\partial^2 z}{\partial x \partial y}\\
 &C=\frac{\partial^2 z}{\partial x^2}\\
-\end{align*}
+\end{aligned}
 $$
 
 1.  Если $AC-B^2>0$, то функция $z=f(x,y)$ имеет экстремум в точке $M_0$, причём, если $A>0$, то это минимум, а если $A<0$ -- то максимум.
@@ -163,11 +163,11 @@ $$
 Найдем все вторые частные производные.
 
 $$
-\begin{align*}
+\begin{aligned}
 &\frac{\partial^2 z}{\partial x^2}=\frac{\partial z}{\partial x} \bigl(6x+y-1\bigr)=A=6\\
 &\frac{\partial^2 z}{\partial x \partial y}=\frac{\partial z}{\partial y} \bigl(6x+y-1\bigr)=B=1\\
 &\frac{\partial^2 z}{\partial y^2}=\frac{\partial z}{\partial x} \bigl(x+4y-4\bigr)=C=4
-\end{align*}
+\end{aligned}
 $$
 
 Таким образом $AC-B^2=6\cdot 4-1^2=23>0$, следовательно в точке $M_0$ есть экстремум, и так как $A>0$, то это минимум. Ответ $\min{z}=z(0,1)=-2$.
@@ -230,11 +230,11 @@ plot_ly(data = d,
 Найдем все первые частные производные
 
 $$
-\begin{align*}
+\begin{aligned}
 &\frac{\partial u}{\partial x}=-2x+y-2z+11\\
 &\frac{\partial u}{\partial y}=-10y+x+2z+2\\
 &\frac{\partial u}{\partial z}=-6z-2x+2y+18
-\end{align*}
+\end{aligned}
 $$
 
 Чтобы найти стационарные точки, составим и решим следующую систему
@@ -256,11 +256,11 @@ $$
 Таким образом
 
 $$
-\begin{align*}
+\begin{aligned}
 &x=4\\
 &y=1\\
 &z=2
-\end{align*}
+\end{aligned}
 $$
 
 Найдена единственная стационарная точка $M_0(4,1,2)$
@@ -312,14 +312,14 @@ $$
 В нашем примере все производные 2-го порядка равны константам
 
 $$
-\begin{align*}
+\begin{aligned}
 &\frac{\partial^2 u}{\partial x^2}=-2\\
 &\frac{\partial^2 u}{\partial y^2}=-10\\
 &\frac{\partial^2 u}{\partial z^2}=-6\\
 &\frac{\partial^2 u}{\partial x \partial y}=1\\
 &\frac{\partial^2 u}{\partial x \partial z}=-2\\
 &\frac{\partial^2 u}{\partial y \partial z}=2\\
-\end{align*}
+\end{aligned}
 $$
 
 Составим матрицу Гессе
@@ -336,7 +336,7 @@ $$
 и вычислим её угловые миноры
 
 $$
-\begin{align*}
+\begin{aligned}
 &\delta_1=2<0\\
 &\delta_2=
 \begin{vmatrix}
@@ -349,7 +349,7 @@ $$
 1 & -10 & 2\\
 -2 & 2 & -6
 \end{vmatrix}=-74<0
-\end{align*}
+\end{aligned}
 $$
 
 Вывод: функция достигает максимума в точке $M_0(4,1,2)$
