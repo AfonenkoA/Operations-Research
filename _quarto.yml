@@ -1,14 +1,11 @@
 project:
   type: book
-  post-render:
-    - scripts/widgets/resolve-lib-ref.R
-    - scripts/mathjax/resolve-lib-ref.R
-
 
 profile:
   group:
-    - [base, advanced, exam-gen, test]
+    - [student, full, exam, test]
     - [dev, prod]
+    - [html, pdf, pdf-exam]
 
 book:
   title: "Исследование операций"
@@ -22,19 +19,11 @@ book:
 
 lang: ru
 
-
 bibliography:
   - references.bib
   - exam/1/ref.bib
 
 csl: gost-r-7-0-5-2008-numeric.csl
 
-format:
-  html:
-    number-depth: 3
-    theme: cosmo
-    html-math-method:
-      method: mathjax
-      url: QUARTO_MATHJAX_SVG
-
 editor: visual
+engine: knitr

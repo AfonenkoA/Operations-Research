@@ -1,18 +1,18 @@
 ---
-format:
-  html:
-    html-math-method: katex
+cache: false
+freeze: false
 ---
 
 ```{r}
-#| echo: false
 #| warning: false
 #| message: false
 #| include: false
-#| file: ../util/add_region.R
+
+source('../util/add_region.R')
+source('../util/plotly_show.R')
 ```
 
-# Особые случаи применеия симплекс метода {#sec-linear-simplex-spec}
+# Особые случаи применения симплекс метода {#sec-linear-simplex-spec}
 
 ::: {.callout-caution title="Состояние разработки"}
 Требуется доработка
@@ -48,7 +48,8 @@ plot_ly(mode = 'lines+markers') |>
     xy = rbind(c(0, 0), c(0, 100), c(80, 100), c(80, 0)),
     name = 'x_1\\leq80',
     color = 'rgba(255, 255, 0, 0.3)') |>
-  config(mathjax = 'local')
+  config(mathjax = 'local')  |>
+  pshow_safe()
 ```
 
 Теперь можно добавить график уровня функции и совместить его с графиком ограничений
@@ -68,7 +69,8 @@ plot_ly(x = x, y = y, z = z, type = 'contour') |>
   add_region(
     xy = rbind(c(0, 0), c(0, 80), c(60, 50), c(80, 100 / 3), c(80, 0)),
     name = 'region',
-    color = 'rgba(0, 0, 0, 0.4)')
+    color = 'rgba(0, 0, 0, 0.4)') |>
+  pshow_safe()
 ```
 
 Из графика следует то, что прямая постоянного уровня целевой функции $F(x)=x_1+2x_2$ совпала с прямой задающей ограничение $x_1+2x_2\leq160$. Значит все точки принадлежащие прямой проходящей через координаты $P(0,80)$ и $Q(60,50)$ будут соответствовать оптимальному решению.
@@ -137,8 +139,10 @@ plot_ly(mode = 'lines+markers') |>
     xy = rbind(c(0, 600), c(450, 0), c(600, 0), c(600, 600)),
     name = '2x_1+1.5x_2\\geq900',
     color = 'rgba(255, 255, 0, 0.4)') |>
-  config(mathjax = 'local')
+  config(mathjax = 'local') |>
+  pshow_safe()
 ```
+
 
 ```{r}
 library(lpSolve)
@@ -191,7 +195,8 @@ plot_ly(mode = 'lines+markers') |>
     xy = rbind(c(0, 40), c(0, 30), c(90, 0), c(90, 40)),
     name = 'x_1+3x_2\\geq90',
     color = 'rgba(255, 255, 0, 0.4)') |>
-  config(mathjax = 'local')
+  config(mathjax = 'local') |>
+  pshow_safe()
 ```
 
 Объединяя добавляя контурный график
@@ -211,7 +216,8 @@ plot_ly(x = x, y = y, z = z, type = 'contour', colorscale = 'YlOrRd') |>
   add_region(
     xy = rbind(c(15, 40), c(24, 22), c(90, 0), c(90, 40)),
     name = 'region',
-    color = 'rgba(255, 255, 255, 0.5)')
+    color = 'rgba(255, 255, 255, 0.5)') |>
+  pshow_safe()
 ```
 
 Ограничения заданные в этом примере не ограничивают область поиска в направлениии $x\to\infty$ и $y\to\infty$. Целевая функция неограниченно возрастает в этом направлении, следовательно и решение неограниченно.

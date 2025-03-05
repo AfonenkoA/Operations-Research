@@ -33,7 +33,7 @@ $$
 0.5
 :::
 
-::: {.content-hidden unless-profile="exam-gen"}
+::: {.content-hidden unless-profile="pdf-exam"}
 \vspace{1cm}
 :::
 :::::
@@ -62,7 +62,7 @@ $$
 2
 :::
 
-::: {.content-hidden unless-profile="exam-gen"}
+::: {.content-hidden unless-profile="pdf-exam"}
 \vspace{1cm}
 :::
 :::::
@@ -84,13 +84,13 @@ $$
 2
 :::
 
-::: {.content-hidden unless-profile="exam-gen"}
+::: {.content-hidden unless-profile="pdf-exam"}
 \vspace{3cm}
 :::
 :::::
 ::::::
 
-:::: {.content-hidden when-profile="exam-gen"}
+:::: {.content-hidden when-profile="exam"}
 ::: {#sol-exam-1-operations-research-avia-tickets}
 {{< lipsum 2 >}}
 :::
@@ -110,13 +110,13 @@ $$
 2
 :::
 
-::: {.content-hidden unless-profile="exam-gen"}
+::: {.content-hidden unless-profile="pdf-exam"}
 \vspace{3cm}
 :::
 :::::
 ::::::
 
-:::: {.content-hidden when-profile="exam-gen"}
+:::: {.content-hidden when-profile="exam"}
 ::: {#sol-exam-1-operations-research-table-lamp}
 {{< lipsum 2 >}}
 :::

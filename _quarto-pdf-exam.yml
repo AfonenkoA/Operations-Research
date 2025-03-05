@@ -1,0 +1,12 @@
+format:
+  pdf:
+    use-rsvg-convert: true
+    documentclass: scrartcl
+    fontsize: 11pt
+    papersize: a4
+    colorlinks: true
+    mainfont: Times New Roman
+    sansfont: Times New Roman
+    monofont: Noto Sans Mono Black
+    fig-width: 5
+    fig-height: 4

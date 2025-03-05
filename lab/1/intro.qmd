@@ -6,6 +6,7 @@
 #| include: false 
 
 source('../../util/doc_link.R')
+source('../../util/plotly_show.R')
 ```
 
 # Лабораторная работа 1. Введение {#sec-lab-1}
@@ -62,26 +63,26 @@ library(plotly)
 aval <- list()
 n <- 51
 
-x_par <- seq(1, D-1, length.out = n)
+x_par <- seq(1, D - 1, length.out = n)
 
-for(step in 1:n)
+for (step in 1:n)
 {
-  road_x <- seq(0, x_par[step], length.out = 100);
-  road_y <- h_road/x_par[step]*road_x;
+  road_x <- seq(0, x_par[step], length.out = 100)
+  road_y <- h_road / x_par[step] * road_x
+  sand_x <- seq(x_par[step], D, length.out = 100)
+  sand_y <- h_road + h_sand / (D - x_par[step]) * (sand_x - x_par[step])
+  t <-  sqrt(step^2 + h_road^2) / v_road + sqrt((D - step)^2 + h_sand^2) /
+    v_sand
   
-  sand_x <- seq(x_par[step], D, length.out = 100);
-  sand_y <- h_road + h_sand/(D - x_par[step])*(sand_x-x_par[step]);
   
-  t <-  sqrt(step^2+h_road^2)/v_road + sqrt((D-step)^2+h_sand^2)/v_sand
-  
-  
-  aval[[step]] <- list(visible = FALSE,
-                      name = paste0('t = ', format(round(t, 2), nsmall = 2)
-),
-                      road_x = road_x,
-                      road_y = road_y,
-                      sand_x = sand_x,
-                      sand_y = sand_y)
+  aval[[step]] <- list(
+    visible = FALSE,
+    name = paste0('t = ', format(round(t, 2), nsmall = 2)),
+    road_x = road_x,
+    road_y = road_y,
+    sand_x = sand_x,
+    sand_y = sand_y
+  )
 }
 
 aval[3][[1]]$visible = TRUE
@@ -90,29 +91,73 @@ aval[3][[1]]$visible = TRUE
 steps <- list()
 fig <- plot_ly()
 for (i in 1:n) {
- fig <- fig |> add_lines(x = aval[[i]]$road_x,  y = aval[[i]]$road_y, visible = aval[[i]]$visible, 
-                 name = aval[[i]]$name, type = 'scatter', mode = 'lines', 
-                 line=list(color='00CED1'), showlegend = TRUE)
- 
- fig <- fig |> add_lines(x = aval[[i]]$sand_x,  y = aval[[i]]$sand_y, visible = aval[[i]]$visible, 
-                 name = aval[[i]]$name, type = 'scatter', mode = 'lines', 
-                 line=list(color="red"), showlegend = FALSE)
-
-  step <- list(args = list('visible', rep(FALSE, 2*n)), method = 'restyle', label = paste0(x_par[i]))
-  step$args[[2]][2*i] = step$args[[2]][2*i - 1] = TRUE
-  steps[[i]] = step 
-}  
+  fig <- fig |> add_lines(
+    x = aval[[i]]$road_x,
+    y = aval[[i]]$road_y,
+    visible = aval[[i]]$visible,
+    name = aval[[i]]$name,
+    type = 'scatter',
+    mode = 'lines',
+    line = list(color = '00CED1'),
+    showlegend = TRUE
+  )
+  
+  fig <- fig |> add_lines(
+    x = aval[[i]]$sand_x,
+    y = aval[[i]]$sand_y,
+    visible = aval[[i]]$visible,
+    name = aval[[i]]$name,
+    type = 'scatter',
+    mode = 'lines',
+    line = list(color = "red"),
+    showlegend = FALSE
+  )
+  
+  step <- list(
+    args = list('visible', rep(FALSE, 2 * n)),
+    method = 'restyle',
+    label = paste0(x_par[i])
+  )
+  step$args[[2]][2 * i] = step$args[[2]][2 * i - 1] = TRUE
+  steps[[i]] = step
+}
 
 
 fig |>
-  layout(yaxis = list(range = c(-1,D + 1)),
-         xaxis = list(range = c(-1,D + 1)),
-         sliders = list(list(active = 3,
-                             currentvalue = list(prefix = "x = "),
-                             steps = steps)),
-         shapes = list(list(type = "rect", fillcolor = "red", line = list(color = "red"), opacity = 0.2, y0 = 0, y1 = h_road, x0 = 0, x1 = D),
-                       list(type = "rect", fillcolor = "blue", line = list(color = "blue"), opacity = 0.2, y0 = h_road, y1 = D, x0 = 0, x1 = D)),
-         c)
+  layout(
+    yaxis = list(range = c(-1, D + 1)),
+    xaxis = list(range = c(-1, D + 1)),
+    sliders = list(list(
+      active = round(n/2),
+      currentvalue = list(prefix = "x = "),
+      steps = steps
+    )),
+    shapes = list(
+      list(
+        type = "rect",
+        fillcolor = "red",
+        line = list(color = "red"),
+        opacity = 0.2,
+        y0 = 0,
+        y1 = h_road,
+        x0 = 0,
+        x1 = D
+      ),
+      list(
+        type = "rect",
+        fillcolor = "blue",
+        line = list(color = "blue"),
+        opacity = 0.2,
+        y0 = h_road,
+        y1 = D,
+        x0 = 0,
+        x1 = D
+      )
+    ),
+    c
+  ) |>
+  pshow()
+
 ```
 
 Критерий оптимальности задается функцией $t(x)$, которую надо минимизировать, изменяя варьируемый параметр $х$. Остальные параметры задачи $(v,V,D,s,S)$ являются фиксированными. $$t(x) = \frac{\sqrt{x^2+S^2}}{V} + \frac{\sqrt{(D-x)^2+s^2}}{v}$$ $$\begin{cases}
@@ -130,7 +175,7 @@ fig |>
 
 x <- seq(0, D, length.out=100)
 y <- sqrt(x^2+h_road^2)/v_road + sqrt((D-x)^2+h_sand^2)/v_sand
-plot_ly(x=x, y=y, type = 'scatter', mode = 'lines')
+plot_ly(x=x, y=y, type = 'scatter', mode = 'lines') |> pshow()
 ```
 
 График производной целевой функции $t'(x)$
@@ -142,7 +187,8 @@ plot_ly(x=x, y=y, type = 'scatter', mode = 'lines')
 
 x <- seq(0, D, length.out=100)
 y <- x/(v_road*sqrt(h_road^2+x^2)) - (D-x)/(v_sand*sqrt(h_sand^2+(D-x)^2))
-plot_ly(x= x, y=y, type = 'scatter', mode = 'lines')
+plot_ly(x= x, y=y, type = 'scatter', mode = 'lines') |> pshow()
+
 ```
 
 Следовательно оптимальное значение пути, пройденного по дороге $x = 65.64$
