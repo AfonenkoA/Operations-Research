@@ -314,7 +314,7 @@ x[1, , drop = FALSE]
 
 ## Массивы {#sec-r-lang-basic-array}
 
-### Доступ к элементам {sec-r-lang-basic-array-indexing}
+### Доступ к элементам {#sec-r-lang-basic-array-indexing}
 
 ## Таблицы {#sec-r-lang-basic-table}
 

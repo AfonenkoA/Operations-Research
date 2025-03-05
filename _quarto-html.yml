@@ -1,0 +1,12 @@
+project:
+  post-render:
+    - scripts/widgets/resolve-lib-ref.R
+    - scripts/mathjax/resolve-lib-ref.R
+
+format:
+  html:
+    number-depth: 3
+    theme: cosmo
+    html-math-method:
+      method: mathjax
+      url: QUARTO_MATHJAX_SVG

@@ -1,3 +1,12 @@
+```{r}
+#| warning: false
+#| message: false
+#| include: false
+
+source('../util/plotly_show.R')
+```
+
+
 # Элементы линейной алгебры {#sec-linear-algebra}
 
 ::: {.callout-caution title="Состояние разработки"}
@@ -737,7 +746,7 @@ $$
 ```{r}
 #| message: false
 #| warning: false
-#| include: false
+#| echo: false
 
 library(plotly)
 
@@ -745,12 +754,11 @@ x1 <- seq(-5, 5, length.out = 100)
 l1 <- x1 + 1
 l2 <- (2 - x1)/2
 
-fig <- plot_ly(x = x1, y = l1, type = 'scatter', mode = 'lines', name = 'l1') |>
+plot_ly(x = x1, y = l1, type = 'scatter', mode = 'lines', name = 'l1') |>
   add_trace(x = x1, y= l2, type = 'scatter', mode = 'lines', name = 'l2') |>
-  add_trace(x = 0, y = 1, type = 'scatter', mode = 'markers', marker = list(color = 'red', size = 12), name = 'решение')
+  add_trace(x = 0, y = 1, type = 'scatter', mode = 'markers', marker = list(color = 'red', size = 12), name = 'решение') |>
+  pshow()
 ```
-
-{{< include ../util/_plotly_show.qmd >}}
 
 #### Бесконечное множество решений {#sec-linear-algebra-equation-system-two-variables-infinity}
 
@@ -774,17 +782,16 @@ $$
 ```{r}
 #| message: false
 #| warning: false
-#| include: false
+#| echo: false
 
 library(plotly)
 
 x1 <- seq(-5, 5, length.out = 100)
 x2 <- x1 + 1
 
-fig <- plot_ly(x = ~x1, y = ~x2, type = 'scatter', mode = 'lines')
+plot_ly(x = x1, y = x2, type = 'scatter', mode = 'lines') |>
+  pshow()
 ```
-
-{{< include ../util/_plotly_show.qmd >}}
 
 #### Отсутствие решений {#sec-linear-algebra-equation-system-two-variables-zero}
 
@@ -816,11 +823,10 @@ x1 <- seq(-5, 5, length.out = 100)
 l1 <- x1 + 1
 l2 <- x1 - 2
 
-fig <- plot_ly(x = x1, y = l1, type = 'scatter', mode = 'lines', name = 'l1') |>
-  add_trace(x = x1, y= l2, type = 'scatter', mode = 'lines', name = 'l2')
+plot_ly(x = x1, y = l1, type = 'scatter', mode = 'lines', name = 'l1') |>
+  add_trace(x = x1, y= l2, type = 'scatter', mode = 'lines', name = 'l2') |>
+  pshow()
 ```
-
-{{< include ../util/_plotly_show.qmd >}}
 
 ### Случай n переменных. Метод Гаусса — Жордана {#sec-linear-algebra-equation-system-many-variables}
 

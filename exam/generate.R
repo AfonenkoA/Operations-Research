@@ -1,1 +1,1 @@
-library(quarto)
+loadNamespace('quarto')

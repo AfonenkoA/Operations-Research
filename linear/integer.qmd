@@ -1,15 +1,15 @@
 ---
-format:
-  html:
-    html-math-method: katex
+cache: false
+freeze: false
 ---
 
 ```{r}
-#| echo: false
 #| warning: false
 #| message: false
 #| include: false
-#| file: ../util/add_region.R
+
+source('../util/add_region.R')
+source('../util/plotly_show.R')
 ```
 
 # Целочисленное программирование. {#sec-linear-integer}
@@ -62,7 +62,7 @@ optimum$solution
 Округляя до ближайшего целого получаем что точка (1.8,2.8) выходит из области определения
 
 ```{r}
-#| echo: false
+#| include: false
 #| warning: false
 #| message: false
 
@@ -84,6 +84,7 @@ optimum$solution
 #| echo: false
 
 library(plotly)
+
 plot_ly(mode = 'lines+markers') |>
   add_region(
     xy = rbind(c(0, 0), c(0, 1), c(6, 7), c(6, 0)),
@@ -97,7 +98,9 @@ plot_ly(mode = 'lines+markers') |>
     xy = rbind(c(0, 0), c(4, 0), c(0, 6)),
     name = '3x+2y\\leq12',
     color = 'rgba(255, 212, 96, 0.5)') |>
-  config(mathjax = 'local')
+  config(mathjax = 'local') |>
+  pshow_safe()
+
 ```
 
 ```{r}
@@ -128,7 +131,8 @@ plot_ly(x = x, y = y, z = z, type = 'contour') |>
     type = 'scatter',
     name = 'решение в\nдействительных\nчислах',
     marker = list(color = 'black')) |>
-  config(mathjax = 'local')
+  config(mathjax = 'local') |>
+  pshow_safe()
 ```
 
 ## Бинарная

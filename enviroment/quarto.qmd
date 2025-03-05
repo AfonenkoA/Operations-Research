@@ -1,3 +1,14 @@
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+
+loadNamespace('ggplot2')
+loadNamespace('palmerpenguins')
+loadNamespace('lpSolve')
+loadNamespace('lpSolveAPI')
+```
+
 # Quarto {#sec-enviroment-quarto}
 
 При использовании из командной строки **без IDE**.

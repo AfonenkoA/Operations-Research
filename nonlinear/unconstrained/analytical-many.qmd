@@ -1,3 +1,17 @@
+---
+cache: false
+freeze: false
+---
+
+```{r}
+#| label: import
+#| warning: false
+#| message: false
+#| include: false 
+
+source('../../util/plotly_show.R')
+```
+
 # Безусловная оптимизация функции многих переменных {#sec-nonlinear-unconstrained-many}
 
 @bib-mathprofi-extremum-many
@@ -8,14 +22,15 @@
 
 Точкой локального максимума
 
-:   называется такая точка $M_0(x_0,y_0,...)$, что в некоторой $\delta$-окрестности этой точки выполняется неравенство $f(x,y,...) \lt f(x_0,y_0,...)$.
+:   называется такая точка $M_0(x_0,y_0,...)$, что в некоторой $\delta$-окрестности этой точки выполняется неравенство $f(x,y,...) < f(x_0,y_0,...)$.
 :::
 
 ::: {#def-nonlinear-unconstrained-many-minimum}
 
 Точкой локального минимума
 
-:   называется такая точка $M_0(x_0,y_0,...)$, что в некоторой $\delta$-окрестности этой точки выполняется неравенство $f(x,y,...) \gt f(x_0,y_0,...)$.
+:   называется такая точка $M_0(x_0,y_0,...)$, что в некоторой $\delta$-окрестности этой точки выполняется неравенство $f(x,y,...) > f(x_0,y_0,...)$.
+:::
 
 Например для функции $f(x,y)=(x-1)^2 +(y+2)^2$ точка $M(x_0=1,y_0=-2)$ будет точкой локального минимума
 
@@ -26,15 +41,21 @@
 
 library(plotly)
 
-
 x <- seq(0, 1.5, length.out = 100)
 y <- seq(-3, -1 , length.out = 100)
 z <- outer(x, y, \(x,y) { (x-1)^2 + (y+2)^2 })  |> t()
 
-plot_ly(x=x, y=y, z = z, type = "surface") |>
-  add_trace(x=1, y=-2, z = 0, type='scatter3d', mode='markers', name='M0',  marker = list(size = 10, color = "red", symbol = 104))
+plot_ly(x = x, y = y, z = z, type = 'surface') |>
+  add_trace(x = 1,y = -2, z = 0,
+            type='scatter3d',
+            mode='markers',
+            name='M0',
+            marker = list(size = 10,
+                          color = 'red',
+                          symbol = 104)) |>
+  pshow()
+
 ```
-:::
 
 ## Экстремум функции двух переменных {#sec-nonlinear-unconstrained-many-2vars}
 
@@ -62,16 +83,22 @@ $$
 #| warning: false
 #| message: false
 #| echo: false
-#| fig-cap: "Гиперболический параболоид"
 
 library(plotly)
 
 
-x <- y <-  seq(-5, 5, length.out = 100)
+x <- y <- seq(-5, 5, length.out = 100)
 z <- outer(x, y, \(x,y) { x^2 - y^2 })  |> t()
 
-plot_ly(x=x, y=y, z = z, type = "surface") |>
-  add_trace(x=0, y=0, z = 0, type='scatter3d', mode='markers', name='M0', marker = list(size = 10, color = "red", symbol = 104))
+plot_ly(x = x, y = y, z = z, type = 'surface') |>
+  add_trace(x = 0, y = 0, z = 0,
+            type = 'scatter3d',
+            mode = 'markers',
+            name = 'M0',
+            marker = list(size = 10,
+                          color = 'red',
+                          symbol = 104)) |>
+  pshow()
 ```
 
 ::: {#def-nonlinear-saddle-point}
@@ -87,8 +114,11 @@ plot_ly(x=x, y=y, z = z, type = "surface") |>
 $$z=3x^2 + xy + 2y^2 -x -4y$$
 :::
 
-::: {#sol-nonlinear-unconstrained-many-2vars-necessity}
+:::: {#sol-nonlinear-unconstrained-many-2vars-necessity}
 на первом шаге нужно отыскать стационарные точки. Для этого найдем частные производные 1-го порядка:
+
+::: content-hidden
+:::
 
 $$
 \begin{aligned}
@@ -121,8 +151,15 @@ library(plotly)
 x <- y <-  seq(-5, 5, length.out = 100)
 z <- outer(x, y, \(x,y) { 3*x^2+x*y+2*y^2-x-4*y })  |> t()
 
-plot_ly(x=x, y=y, z = z, type = "surface") |>
-  add_trace(x=0, y=1, z = -2, type='scatter3d', mode='markers', name='M0', marker = list(size = 10, color = "red", symbol = 104))
+plot_ly(x=x, y=y, z = z, type = 'surface') |>
+  add_trace(x = 0, y = 1, z = -2,
+            type='scatter3d',
+            mode='markers',
+            name='M0',
+            marker = list(size = 10,
+                          color = 'red',
+                          symbol = 104))  |>
+  pshow()
 ```
 
 Таким образом
@@ -135,7 +172,7 @@ x=0
 $$
 
 Найдена стационарная точка $M_0(0,1)$. В найденной точке может быть минимум, максимум либо перевал.
-:::
+::::
 
 ::: {#thm-nonlinear-unconstrained-many-2vars-sufficiency}
 ### Достаточное условие {#sec-nonlinear-unconstrained-many-2vars-sufficiency}
@@ -193,6 +230,7 @@ $$
 $$
 u=-x^2-5y^2-3z^2+xy-2xz+2yz+11x+2y+18z+10
 $$
+:::
 
 График сечений
 
@@ -202,7 +240,6 @@ $$
 #| echo: false
 
 library(plotly)
-library(widgetframe)
 
 f <- \(x,y,z) x^2-5*y^2-3*z^2+x*y-2*x*z+2*y*z+11*x+2*y+18*z+10
 x <- y <- z <- seq(-5, 5, length.out = 20)
@@ -221,10 +258,9 @@ plot_ly(data = d,
   surface = list(show = TRUE, count = 1),
   slices = list(z = list(show = TRUE,locations=-5:5), y=list(show=TRUE,locations=c(0))),
   caps = list(x = list(show = FALSE),y = list(show = FALSE))) |>
-  add_trace(x=4, y=1, z = 2, type='scatter3d', mode='markers', name='M0',  marker = list(size = 10, color = "green", symbol = 104)) |> 
-  frameableWidget()
+  add_trace(x=4, y=1, z = 2, type='scatter3d', mode='markers', name='M0',  marker = list(size = 10, color = 'green', symbol = 104)) |>
+  pshow_protected()
 ```
-:::
 
 ::: {#sol-nonlinear-unconstrained-many-3vars-necessity}
 Найдем все первые частные производные

@@ -6,12 +6,20 @@
 .quarto/
 _site/
 _book/
+_exam/
 _freeze/
 *_cache/
 *_files/
 *figure/
+*test.qmd
 
-*pdfgen_*
+*.aux
+*.log
+*.pdf
+*.toc
+
+*gensvg*
+*.html
 
 /.quarto/
 
