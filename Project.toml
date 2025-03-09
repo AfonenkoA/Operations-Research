@@ -1,0 +1,8 @@
+[deps]
+BSON = "fbb218c0-5317-5bc6-957e-2ee96dd4b1f0"
+DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
+RCall = "6f49c342-dc21-5d91-9882-a32aef131414"
+Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
+Suppressor = "fd094767-a336-5f1f-9728-57cf17d0bbfb"
+ZMQ = "c2297ded-f4af-51ae-bb23-16f91089e4e1"

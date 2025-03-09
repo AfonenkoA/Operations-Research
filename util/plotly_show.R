@@ -6,7 +6,7 @@ loadNamespace('fs')
 
 show_non_html <- function(fig)
 {
-  dir_name <- knitr::current_input() |> fs::path_ext_remove() |> paste0('_gensvg_files')
+  dir_name <- knitr::current_input() |> fs::path_ext_remove() |> paste0('_gensvg_flcs')
   fig_name <- paste0(knitr::opts_current$get("label"), '.svg')
   fig_path <- fs::path(dir_name, fig_name)
   fs::dir_create(dir_name)

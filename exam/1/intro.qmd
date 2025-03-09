@@ -33,9 +33,8 @@ $$
 0.5
 :::
 
-::: {.content-hidden unless-profile="pdf-exam"}
-\vspace{1cm}
-:::
+[`\vspace{1cm}`{=latex}]{.content-visible when-profile="exam"}
+
 :::::
 ::::::
 
@@ -62,9 +61,7 @@ $$
 2
 :::
 
-::: {.content-hidden unless-profile="pdf-exam"}
-\vspace{1cm}
-:::
+[`\vspace{1cm}`{=latex}]{.content-visible when-profile="exam"}
 :::::
 ::::::
 
@@ -84,9 +81,7 @@ $$
 2
 :::
 
-::: {.content-hidden unless-profile="pdf-exam"}
-\vspace{3cm}
-:::
+[`\vspace{3cm}`{=latex}]{.content-visible when-profile="exam"}
 :::::
 ::::::
 
@@ -110,9 +105,8 @@ $$
 2
 :::
 
-::: {.content-hidden unless-profile="pdf-exam"}
-\vspace{3cm}
-:::
+[`\vspace{3cm}`{=latex}]{.content-visible when-profile="exam"}
+
 :::::
 ::::::
 

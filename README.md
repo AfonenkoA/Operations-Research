@@ -1,6 +1,6 @@
 # Установка
 
-Установить julia, python, RStudio (не обязательно), Quarto CLI.
+Установить julia, python, RStudio (не обязательно), Quarto CLI, texlive.
 
 ``` r
 renv::restore()
@@ -15,6 +15,31 @@ git clean -fxd
 ```
 
 Файлы использующие widgetframe обязаны отключать `cache` и `freeze` иначе файлы виджетов не копируются в итоговый каталог.
+
+## Обновить пакеты 
+
+### R
+
+```r
+renv::update()
+```
+
+### Python
+
+```bash
+pip --disable-pip-version-check list --outdated --format=json | python -c "import json, sys; print('\n'.join([x['name'] for x in json.load(sys.stdin)]))" | xargs -n1 pip install -U
+```
+
+### Julia
+
+```bash
+julia --project=.
+```
+
+```julia
+]
+update
+```
 
 ## Методичка
 
@@ -56,4 +81,10 @@ quarto render --to pdf --profile dev,exam,pdf-exam
 
 ``` bash
 quarto render --to html --profile dev,exam,html
+```
+
+## Подсчёт строк кода
+
+```bash
+cloc --vcs=git --read-lang-def=cloc-qmd-lang-def --exclude-ext=json,svg --exclude-dir=renv
 ```

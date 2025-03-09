@@ -9,5 +9,6 @@ mathjax_quarto_local_out_path |> fs::path_dir() |> fs::dir_create()
 fs::file_copy(mathjax_quarto_local_in_path, mathjax_quarto_local_out_path)
 
 mathjax_quarto_lib_path <- path(proj_abs_path, mathjax_rel_path)
+
 fs::dir_ls(out, recurse = TRUE, glob = '*.html', type = 'file') |>
   purrr::walk(file_string_replace, pattern = 'QUARTO_MATHJAX_SVG', replacement = mathjax_quarto_lib_path)

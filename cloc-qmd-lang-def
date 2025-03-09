@@ -1,0 +1,7 @@
+qmd
+    filter reduce_to_rmd_code_blocks
+    filter remove_matches ^\s*#
+    filter remove_inline #.*$
+    extension qmd
+    3rd_gen_scale 3.00
+    end_of_line_continuation \\$

@@ -211,7 +211,8 @@ c(sqrt(1), sqrt(2), sqrt(3))
 
 Создайте последовательность 2 способами `(-1, -0.75, -0.5, …, 0.75, 1)`.
 
-::: {.callout-note appearance="minimal" title="Уровень 1"}
+::: {.callout-note appearance="minimal"}
+Уровень 1
 :::
 ::::
 
@@ -221,12 +222,13 @@ c(sqrt(1), sqrt(2), sqrt(3))
 $$
 f(x)=\begin{cases}
       x^2,\qquad x \leq -3\\
-      x^3, \qquad -3 \leq x \leq 3\\
+      x^3, \qquad -3 < x < 3\\
       2x+1, 3\leq x
 \end{cases}\,
 $$
 
-::: {.callout-note appearance="minimal" title="Уровень 1"}
+::: {.callout-note appearance="minimal"}
+Уровень 1
 :::
 ::::
 
@@ -242,14 +244,16 @@ $$
 1.  число $\pi$ и его ошибку
 2.  постройте график (@sec-r-tools-plotly-line2d) ошибки от $n$
 
-::: {.callout-note appearance="minimal" title="Уровень 2"}
+::: {.callout-note appearance="minimal"}
+Уровень 2
 :::
 ::::
 
 :::: {#exr-lab-1-r-lang-list-indexing}
 Создать список (@sec-r-lang-basic-list) содержащий буквы от '`a'` до '`z'`. Продемонстрировать использование операторов индексации (@sec-r-lang-basic-list-indexing).
 
-::: {.callout-note appearance="minimal" title="Уровень 1"}
+::: {.callout-note appearance="minimal"}
+Уровень 1
 :::
 ::::
 
@@ -259,7 +263,8 @@ $$
 1.  список с элементов `(2,2)` каждой матрицы (@sec-r-lang-basic-list-indexing , @sec-r-lang-basic-matrix-indexing).
 2.  вектор состоящий из элементов `(1,1)`, `(1,2)` этих матриц.
 
-::: {.callout-note appearance="minimal" title="Уровень 1"}
+::: {.callout-note appearance="minimal"}
+Уровень 1
 :::
 ::::
 
@@ -268,7 +273,8 @@ $$
 2.  преобразуйте его как список массивов размерности 4.
 3.  преобразуйте его как список списков массивов размерности 3.
 
-::: {.callout-note appearance="minimal" title="Уровень 2"}
+::: {.callout-note appearance="minimal"}
+Уровень 2
 :::
 ::::
 
@@ -277,7 +283,8 @@ $$
 :::: {#exr-lab-1-linear-algebra-equation-solve-integrated}
 Решить СЛАУ (@sec-linear-algebra-equation-system) $AX=b$ встроенным методом (@sec-r-tools-basic-solve). Элементы матриц сгенерировать произвольно. `{r} solve() |> dl()`
 
-::: {.callout-note appearance="minimal" title="Уровень 1"}
+::: {.callout-note appearance="minimal"}
+Уровень 1
 :::
 ::::
 
@@ -294,14 +301,16 @@ $$
 
 Рассмотрите функции `{r} inverse() |> dl()` @sec-r-tools-basic-inverse, `{r} det() |> dl()` @sec-r-tools-basic-det
 
-::: {.callout-note appearance="minimal" title="Уровень 1"}
+::: {.callout-note appearance="minimal"}
+Уровень 1
 :::
 ::::
 
 :::: {#exr-lab-1-linear-algebra-equation-solve-custom-gauss}
 Реализовать решение системы линейных уравнений методом гаусса @sec-linear-algebra-equation-system-many-variables-alghorythm-gauss используя векторные операции.
 
-::: {.callout-note appearance="minimal" title="Уровень 3"}
+::: {.callout-note appearance="minimal"}
+Уровень 3
 :::
 ::::
 
@@ -312,7 +321,8 @@ $$
 2.  Графически определить минимум.
 3.  К какому типу относятся кривые, изображенные на контурном графике.
 
-::: {.callout-note appearance="minimal" title="Уровень 1"}
+::: {.callout-note appearance="minimal"}
+Уровень 1
 :::
 ::::
 
@@ -327,7 +337,8 @@ $$
 2.  Аналитически определить максимум функции (@sec-nonlinear-unconstrained-one).
 3.  Доказать, что данная точка является максимумом (@thm-nonlinear-unconstrained-one-sufficiency-1) или (@thm-nonlinear-unconstrained-one-sufficiency-2) .
 
-::: {.callout-note appearance="minimal" title="Уровень 2"}
+::: {.callout-note appearance="minimal"}
+Уровень 2
 :::
 ::::
 
@@ -338,7 +349,8 @@ $$
 2.  аналитически определите максимум целевой функции (@sec-nonlinear-unconstrained-one)
 3.  постройте график целевой функции (@sec-r-tools-plotly-line2d)
 
-::: {.callout-note appearance="minimal" title="Уровень 2"}
+::: {.callout-note appearance="minimal"}
+Уровень 2
 :::
 ::::
 
@@ -351,7 +363,8 @@ $$
 2.  аналитически определите максимум целевой функции (@sec-nonlinear-unconstrained-one)
 3.  постройте график целевой функции (@sec-r-tools-plotly-line2d)
 
-::: {.callout-note appearance="minimal" title="Уровень 3"}
+::: {.callout-note appearance="minimal"}
+Уровень 3
 :::
 ::::
 
@@ -360,7 +373,8 @@ $$
 :::: {#exr-lab-1-magic}
 Пусть дана функция общего вида $f(x,y)$ и система уравнений $Ax=b$ для двух переменных. Постройте контурный график функции, на котором изобразите точки пересечения прямых. Обработать случаи параллельных прямых, совпадающих прямых @sec-linear-algebra-equation-system-two-variables.
 
-::: {.callout-note appearance="minimal" title="Уровень 4"}
+::: {.callout-note appearance="minimal"}
+Уровень 4
 :::
 
 Дополнительно попробуйте использовать встроенный интерфейса формулы используя переменно число аргументов для функции. Считайте символ `~` эквивалентом символу `=`. @sec-r-lang-advanced-formula

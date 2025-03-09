@@ -6,6 +6,8 @@
 
 ## `outer` {#sec-r-tools-basic-outer}
 
+"%o%"
+
 ```{r}
 outer(1:2,2:1)
 ```
