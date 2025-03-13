@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.15">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>4&nbsp; Язык разметки Markdown – Исследование операций</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../enviroment/latex.html" rel="next">
+<link href="../enviroment/quarto.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-26a54071d5a5d1f5c34874d8d975e232.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-4fa55f62383448b489c88c030bb35243.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Поиск не дал результатов",
+    "search-matching-documents-text": "Результаты поиска",
+    "search-copy-link-title": "Скопировать ссылку",
+    "search-hide-matches-text": "Скрыть дополнительные результаты",
+    "search-more-match-text": "дополнительный результат в этом документе",
+    "search-more-matches-text": "дополнительных результата(-ов) в этом документе",
+    "search-clear-button-title": "Очистить",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Отменить",
+    "search-submit-button-title": "Найти",
+    "search-label": "Поиск"
+  }
+}</script><script src="../site_libs/quarto-diagram/mermaid.min.js"></script><script src="../site_libs/quarto-diagram/mermaid-init.js"></script><link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="/Operations-Research/site_libs/mathjax-3.2.2/tex-svg-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+</head>
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключить боковую панель навигации" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../enviroment/overview.html">Среда разработки</a></li><li class="breadcrumb-item"><a href="../enviroment/markdown.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Язык разметки Markdown</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключить боковую панель навигации" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Поиск" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Исследование операций</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/AfonenkoA/Operations-Research" title="Исходный код" class="quarto-navigation-tool px-1" aria-label="Исходный код"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Поиск"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Интерактивный курс по исследованию операций</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../TODO.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Замечания</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../enviroment/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Среда разработки</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../enviroment/setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Установка и настройка</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../enviroment/rstudio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">RStudio IDE</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../enviroment/quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quarto</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../enviroment/markdown.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Язык разметки Markdown</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../enviroment/latex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Язык разметки LaTeX</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../r-lang/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Язык программирования R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r-lang/basic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Основы языка R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r-lang/advanced.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Продвинутый R</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../linear/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Линейное программирование</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../linear/algebra.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Элементы линейной алгебры</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../linear/graphical-solution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Графическое решение</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../linear/sensetivity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Анализ чувствительности оптимального решения</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../linear/dual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Двойственная задача линейного программирования</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../linear/simplex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Симплекс метод</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../linear/simplex-spec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Особые случаи применения симплекс метода</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../linear/simplex-ext.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Двухэтапный симплекс метод и M-метод</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../linear/integer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Целочисленное программирование</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../linear/transport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Транспортная задача</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../linear/network.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Сетевая задача</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../nonlinear/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Нелинейное программирование</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nonlinear/unconstrained/analytical-one.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Безусловная оптимизация функции одной переменной</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nonlinear/unconstrained/analytical-many.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Безусловная оптимизация функции многих переменных</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nonlinear/constrained/analytical-one.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Условная оптимизация функции одной переменной</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../nonlinear/constrained/analytical-many.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Условная оптимизация функции многих переменных</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../graph-theory/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Элементы теории графов</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../graph-theory/dijkstra.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Алгоритм дейкстры</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../game-theory/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Теория игр</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../game-theory/matrix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Матричные игры</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Лабораторные работы</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lab/1/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Лабораторная работа 1. Введение</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lab/2/linear.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Лабораторная работа 2. Линейное программирование</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Литература</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Приложения</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
+ <span class="menu-text">Язык программирования R</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Переключить раздел">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r-tools/basic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Методы встроенных пакетов</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r-tools/renv.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Система управления пакетами renv</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r-tools/plotly.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Графическая библиотека plotly</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r-tools/ggplot2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Графическая библиотека ggplot2</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r-tools/tibble.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Датафрейм Tibble</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r-tools/purrr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Функциональные операторы Purrr</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r-tools/tidyr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">tidyr</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../r-tools/lpsolve.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Решатель LPSolve</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+      </ul>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Содержание</h2>
+   
+  <ul>
+<li>
+<a href="#sec-markdown-codeblocks" id="toc-sec-markdown-codeblocks" class="nav-link active" data-scroll-target="#sec-markdown-codeblocks"><span class="header-section-number">4.1</span> Блоки кода</a>
+  <ul class="collapse">
+<li><a href="#sec-markdown-codeblocks-inline" id="toc-sec-markdown-codeblocks-inline" class="nav-link" data-scroll-target="#sec-markdown-codeblocks-inline"><span class="header-section-number">4.1.1</span> Встраиваемый код</a></li>
+  <li><a href="#sec-markdown-codeblocks-multilang" id="toc-sec-markdown-codeblocks-multilang" class="nav-link" data-scroll-target="#sec-markdown-codeblocks-multilang"><span class="header-section-number">4.1.2</span> Разные языки в одном документе</a></li>
+  <li><a href="#sec-markdown-codeblocks-render" id="toc-sec-markdown-codeblocks-render" class="nav-link" data-scroll-target="#sec-markdown-codeblocks-render"><span class="header-section-number">4.1.3</span> Рендеринг и сохранение</a></li>
+  <li><a href="#sec-markdown-codeblocks-options" id="toc-sec-markdown-codeblocks-options" class="nav-link" data-scroll-target="#sec-markdown-codeblocks-options"><span class="header-section-number">4.1.4</span> Опции блоков кода</a></li>
+  <li><a href="#sec-markdown-codeblocks-output" id="toc-sec-markdown-codeblocks-output" class="nav-link" data-scroll-target="#sec-markdown-codeblocks-output"><span class="header-section-number">4.1.5</span> Параметры вывода</a></li>
+  <li><a href="#sec-markdown-codeblocks-fig-captions" id="toc-sec-markdown-codeblocks-fig-captions" class="nav-link" data-scroll-target="#sec-markdown-codeblocks-fig-captions"><span class="header-section-number">4.1.6</span> Названия рисунков</a></li>
+  </ul>
+</li>
+  <li><a href="#sec-markdown-text-editing" id="toc-sec-markdown-text-editing" class="nav-link" data-scroll-target="#sec-markdown-text-editing"><span class="header-section-number">4.2</span> Форматирование текста</a></li>
+  <li><a href="#sec-markdown-headers" id="toc-sec-markdown-headers" class="nav-link" data-scroll-target="#sec-markdown-headers"><span class="header-section-number">4.3</span> Заголовки</a></li>
+  <li><a href="#sec-markdown-link-and-image" id="toc-sec-markdown-link-and-image" class="nav-link" data-scroll-target="#sec-markdown-link-and-image"><span class="header-section-number">4.5</span> Ссылки и Изображения</a></li>
+  <li>
+<a href="#sec-markdown-crossref" id="toc-sec-markdown-crossref" class="nav-link" data-scroll-target="#sec-markdown-crossref"><span class="header-section-number">4.6</span> Перекрестные ссылки</a>
+  <ul class="collapse">
+<li><a href="#sec-markdown-crossref-subcaption" id="toc-sec-markdown-crossref-subcaption" class="nav-link" data-scroll-target="#sec-markdown-crossref-subcaption"><span class="header-section-number">4.6.1</span> Размещение и подзаголовки рисунков</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#sec-markdonw-list" id="toc-sec-markdonw-list" class="nav-link" data-scroll-target="#sec-markdonw-list"><span class="header-section-number">4.7</span> Списки</a>
+  <ul class="collapse">
+<li><a href="#sec-markdown-list-layout" id="toc-sec-markdown-list-layout" class="nav-link" data-scroll-target="#sec-markdown-list-layout"><span class="header-section-number">4.7.1</span> Блочное размещение</a></li>
+  </ul>
+</li>
+  <li>
+<a href="#sec-markdown-tables" id="toc-sec-markdown-tables" class="nav-link" data-scroll-target="#sec-markdown-tables"><span class="header-section-number">4.8</span> Таблицы</a>
+  <ul class="collapse">
+<li><a href="#sec-markdown-tables-simple" id="toc-sec-markdown-tables-simple" class="nav-link" data-scroll-target="#sec-markdown-tables-simple"><span class="header-section-number">4.8.1</span> Простые таблицы</a></li>
+  <li><a href="#sec-markdown-tables-extended" id="toc-sec-markdown-tables-extended" class="nav-link" data-scroll-target="#sec-markdown-tables-extended"><span class="header-section-number">4.8.2</span> Расширенные таблицы</a></li>
+  </ul>
+</li>
+  <li><a href="#sec-markdown-equations" id="toc-sec-markdown-equations" class="nav-link" data-scroll-target="#sec-markdown-equations"><span class="header-section-number">4.9</span> Формулы</a></li>
+  <li><a href="#sec-markdown-diagram" id="toc-sec-markdown-diagram" class="nav-link" data-scroll-target="#sec-markdown-diagram"><span class="header-section-number">4.10</span> Диаграммы</a></li>
+  <li><a href="#sec-markdown-quote" id="toc-sec-markdown-quote" class="nav-link" data-scroll-target="#sec-markdown-quote"><span class="header-section-number">4.11</span> Цитаты</a></li>
+  <li><a href="#sec-markdown-special-symbols" id="toc-sec-markdown-special-symbols" class="nav-link" data-scroll-target="#sec-markdown-special-symbols"><span class="header-section-number">4.12</span> Специальные символы</a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../enviroment/overview.html">Среда разработки</a></li><li class="breadcrumb-item"><a href="../enviroment/markdown.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Язык разметки Markdown</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-markdown" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Язык разметки Markdown</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header><p>диаграмма обработки markdown</p>
+<p>Рабочие блокноты Quarto основаны на проекте Pandoc и используют язык разметки Мarkdown.</p>
+<p>Markdown — это простой текстовый формат, который легко писать и, что еще более важно, легко читать:</p>
+<blockquote class="blockquote">
+<p>Документ в формате Markdown должен быть доступен для публикации как есть, как обычный текст, не создавая впечатление, будто он размечен тегами или инструкциями по форматированию. – <a href="https://daringfireball.net/projects/markdown/syntax#philosophy">John Gruber</a></p>
+</blockquote>
+<p>Рассмотрим наиболее часто встречаемые примитивы разметки</p>
+<section id="sec-markdown-codeblocks" class="level2" data-number="4.1"><h2 data-number="4.1" class="anchored" data-anchor-id="sec-markdown-codeblocks">
+<span class="header-section-number">4.1</span> Блоки кода</h2>
+<p>Quarto позволяет объединить исполняемый код и сопутствующее описание в готовый документ. Чтобы узнать больше о Quarto, посетите <a href="https://quarto.org" class="uri">https://quarto.org</a>. Блоки кода, которые используют фигурные скобки вокруг имени языка (например, <code>```{r}</code>), являются исполняемыми и будут запущены Quarto во время рендеринга</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Качество воздуха</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>@fig-airquality более подробно изучает влияние температуры на уровень озона.</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-airquality</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Температура и уровень озона."</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>В результате получим следующее. <a href="#fig-airquality" class="quarto-xref">Рисунок&nbsp;<span>4.1</span></a> более подробно изучает влияние температуры на уровень озона.</p>
+<div class="cell">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">airquality</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">Temp</span>, <span class="va">Ozone</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> </span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"loess"</span><span class="op">)</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-airquality" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-airquality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="markdown_files/figure-html/fig-airquality-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-airquality-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Рисунок&nbsp;4.1: Температура и уровень озона.
+</figcaption></figure>
+</div>
+</div>
+</div>
+<p>Из исполняемых блоков кода можно создавать самые разные типы выходных данных, включая графики, таблицы и простой текст.</p>
+<section id="sec-markdown-codeblocks-inline" class="level3" data-number="4.1.1"><h3 data-number="4.1.1" class="anchored" data-anchor-id="sec-markdown-codeblocks-inline">
+<span class="header-section-number">4.1.1</span> Встраиваемый код</h3>
+<p>Встраиваемый (Inline) код позволяет вам выполнять код в markdown, например, для автоматического использования самых последних вычислений в повествовании. Синтаксис встроенного кода похож на блоки кода, за исключением того, что используеся один тик (<code>`</code>) вместо тройных тиков (<code>```</code>). Встраиваемый код может использоваться в середине markdown. Например, следующий код сохраняет переменную <code>radius</code> в блоке кода, а затем обращается к ней в предложении с помощью встроенного кода:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>radius <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>The radius of the circle is <span class="in">`{r} radius`</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>В результате получаем:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>The radius of the circle is 5.</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Осторожность
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Встроенные выражения должны быть ограничены простыми значениями, которые предварительно вычисляются в обычных ячейках кода (а не вызовами функций, которые выполняют нетривиальную работу). Это связано с тем, что протокол, используемый для встроенных выражений, несовместим с библиотеками, использующими многопоточность.</p>
+</div>
+</div>
+</section><section id="sec-markdown-codeblocks-multilang" class="level3" data-number="4.1.2"><h3 data-number="4.1.2" class="anchored" data-anchor-id="sec-markdown-codeblocks-multilang">
+<span class="header-section-number">4.1.2</span> Разные языки в одном документе</h3>
+<p>Движки рендеринга <strong>Knitr</strong> и <strong>Jupyter</strong> позволяют совмещать вычисления на разных языках в одном документе. Например:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: true</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pressure, <span class="at">pch=</span><span class="dv">21</span>, <span class="at">col=</span><span class="st">'blue'</span>, <span class="at">bg=</span><span class="st">'lightblue'</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="markdown_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: false</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: true</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Data for plotting</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.arange(<span class="fl">0.0</span>, <span class="fl">2.0</span>, <span class="fl">0.01</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>s <span class="op">=</span> <span class="dv">1</span> <span class="op">+</span> np.sin(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> t)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>ax.plot(t, s)</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'time (s)'</span>, ylabel<span class="op">=</span><span class="st">'voltage (mV)'</span>,</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>       title<span class="op">=</span><span class="st">'About as simple as it gets, folks'</span>)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>ax.grid()</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>fig.savefig(<span class="st">"test.png"</span>)</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="markdown_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{julia}</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| error: false</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: true</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="im">using</span> <span class="bu">Plots</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="fu">range</span>(<span class="fl">0</span>, <span class="fl">10</span>, length<span class="op">=</span><span class="fl">100</span>);</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>y1 <span class="op">=</span> <span class="fu">sin</span>.(x);</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>y2 <span class="op">=</span> <span class="fu">cos</span>.(x);</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, [y1 y2])</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure"><p><img src="markdown_files/figure-html/unnamed-chunk-5-J1.png" class="img-fluid figure-img" width="300"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="sec-markdown-codeblocks-render" class="level3" data-number="4.1.3"><h3 data-number="4.1.3" class="anchored" data-anchor-id="sec-markdown-codeblocks-render">
+<span class="header-section-number">4.1.3</span> Рендеринг и сохранение</h3>
+<p>При рендеринге документа Quarto блоки кода выполняются автоматически. Прямо над документом находится панель инструментов, содержащая различные параметры, включая <strong>Render</strong> (сегментированная синяя стрелка). По умолчанию документ qmd конвертируется в html.</p>
+</section><section id="sec-markdown-codeblocks-options" class="level3" data-number="4.1.4"><h3 data-number="4.1.4" class="anchored" data-anchor-id="sec-markdown-codeblocks-options">
+<span class="header-section-number">4.1.4</span> Опции блоков кода</h3>
+<p>Задать название блока можно с помощь параметра <code>label</code>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: convert</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>airquality<span class="sc">$</span>TempC <span class="ot">&lt;-</span> (<span class="dv">5</span> <span class="sc">/</span> <span class="dv">9</span>) <span class="sc">*</span> (airquality<span class="sc">$</span>Temp <span class="sc">-</span> <span class="dv">32</span>)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Параметр <code>echo: false</code> отключает печать кода (отображается только вывод).</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="in">``` r</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">bill_ratio =</span> bill_depth_mm <span class="sc">/</span> bill_length_mm,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">bill_area  =</span> bill_depth_mm <span class="sc">*</span> bill_length_mm</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>Line 3  </span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>Take <span class="in">`penguins`</span>, and then,</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>Lines 4-7  </span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>add new columns for the bill ratio and bill area.</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="sec-markdown-codeblocks-output" class="level3" data-number="4.1.5"><h3 data-number="4.1.5" class="anchored" data-anchor-id="sec-markdown-codeblocks-output">
+<span class="header-section-number">4.1.5</span> Параметры вывода</h3>
+<p>Существует широкий спектр опций для настройки вывода из выполненного кода. Все эти опции могут быть указаны либо глобально, либо для каждого блока кода. Например, вот модификация примера R, указывающая, что мы не хотим “отражать” код в выходном документе:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">execute</span><span class="kw">:</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">echo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Параметр <code>echo</code> может быть переопределен для конкретно блока кода. Например:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: true</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Параметры блока кода включены в специальный комментарий в верхней части блока (строки в верхней части, начинающиеся с <code>#|</code>, считаются параметрами).</p>
+<p>Наиболее распространенные параметры приведены далее:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 90%">
+</colgroup>
+<thead><tr class="header">
+<th>Option</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><code>eval</code></td>
+<td>Вычислить блок (если <code>false</code>, то блок кода просто дублируется в вывод).</td>
+</tr>
+<tr class="even">
+<td><code>echo</code></td>
+<td>Включить исходный код в вывод</td>
+</tr>
+<tr class="odd">
+<td><code>output</code></td>
+<td>
+<p>Включить результаты выполнения кода в выходные данные (<code>true</code>, <code>false</code>)</p>
+<p><code>asis</code>, чтобы указать, что выходные данные представляют собой markdown и не должны содержать расширений Quarto).</p>
+</td>
+</tr>
+<tr class="even">
+<td><code>warning</code></td>
+<td>Включать предупреждения в вывод</td>
+</tr>
+<tr class="odd">
+<td><code>error</code></td>
+<td>Включать ошибки в вывод (это подразумевает, что ошибки выполнения кода не остановят обработку документа).</td>
+</tr>
+</tbody>
+</table>
+<p>Пример Knitr с некоторыми из этих дополнительных параметров:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Knitr Document"</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: false</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(airquality, <span class="fu">aes</span>(Temp, Ozone)) <span class="sc">+</span> </span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(airquality)</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="sec-markdown-codeblocks-fig-captions" class="level3" data-number="4.1.6"><h3 data-number="4.1.6" class="anchored" data-anchor-id="sec-markdown-codeblocks-fig-captions">
+<span class="header-section-number">4.1.6</span> Названия рисунков</h3>
+<p>Можно указать подпись и замещающий текст для рисунков, сгенерированных из кода, используя параметры <code>fig-cap</code> и <code>fig-alt</code>. Например, здесь эти параметры добавляются в ячейку кода которая создает график:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "График в полярных координатах"</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-alt: "График линии в полярных координатах"</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: true</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(subplot_kw<span class="op">=</span>{<span class="st">'projection'</span>: <span class="st">'polar'</span>})</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>ax.plot(theta, r)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="markdown_files/figure-html/unnamed-chunk-6-4.png" class="img-fluid figure-img" alt="График линии в полярных координатах" width="672"></p>
+<figcaption>График в полярных координатах</figcaption></figure>
+</div>
+</div>
+</div>
+</section></section><section id="sec-markdown-text-editing" class="level2" data-number="4.2"><h2 data-number="4.2" class="anchored" data-anchor-id="sec-markdown-text-editing">
+<span class="header-section-number">4.2</span> Форматирование текста</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead><tr class="header">
+<th>Язык разметки Markdown</th>
+<th>Результат</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>*курсив*, **жирный**, ***жирный курсив***</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td>
+<em>курсив</em>, <strong>жирный</strong>, <strong><em>жирный курсив</em></strong>
+</td>
+</tr>
+<tr class="even">
+<td><div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>верхний индекс^2^ / subscript~2~</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td>верхний индекс<sup>2</sup> / нижний индекс<sub>2</sub>
+</td>
+</tr>
+<tr class="odd">
+<td><div class="sourceCode" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>~~зачёркнутый~~</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><del>зачёркутый</del></td>
+</tr>
+</tbody>
+</table></section><section id="sec-markdown-headers" class="level2" data-number="4.3"><h2 data-number="4.3" class="anchored" data-anchor-id="sec-markdown-headers">
+<span class="header-section-number">4.3</span> Заголовки</h2>
+<table class="caption-top table">
+<caption>Заголовки</caption>
+<colgroup>
+<col style="width: 34%">
+<col style="width: 29%">
+</colgroup>
+<thead><tr class="header">
+<th>Язык разметки Markdown</th>
+<th>Результат</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">## Заголовок 2</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><h2 id="заголовок-2" data-number="4.4" class="anchored">
+<span class="header-section-number">4.4</span> Заголовок 2</h2></td>
+</tr>
+<tr class="even">
+<td><div class="sourceCode" id="cb18"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">### Заголовок 3</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><h3 id="заголовок-3" data-number="4.4.1" class="anchored">
+<span class="header-section-number">4.4.1</span> Заголовок 3</h3></td>
+</tr>
+<tr class="odd">
+<td><div class="sourceCode" id="cb19"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Заголовок 4</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><h4 id="заголовок-4" class="anchored">Заголовок 4</h4></td>
+</tr>
+<tr class="even">
+<td><div class="sourceCode" id="cb20"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">##### Заголовок 5</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><h5 id="заголовок-5" class="anchored">Заголовок 5</h5></td>
+</tr>
+<tr class="odd">
+<td><div class="sourceCode" id="cb21"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">###### Заголовок 6</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><h6 id="заголовок-6" class="anchored">Заголовок 6</h6></td>
+</tr>
+</tbody>
+</table></section><section id="sec-markdown-link-and-image" class="level2" data-number="4.5"><h2 data-number="4.5" class="anchored" data-anchor-id="sec-markdown-link-and-image">
+<span class="header-section-number">4.5</span> Ссылки и Изображения</h2>
+<table class="caption-top table">
+<thead><tr class="header">
+<th>Язык разметки Markdown</th>
+<th>Результат</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb22"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;https://rct.bsu.by&gt;</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><a href="https://rct.bsu.by" class="uri">https://rct.bsu.by</a></td>
+</tr>
+<tr class="even">
+<td><div class="sourceCode" id="cb23"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Название</span><span class="co">](https://rct.bsu.by)</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><a href="https://bsu.by">Наш факультет</a></td>
+</tr>
+<tr class="odd">
+<td><div class="sourceCode" id="cb24"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Название](rctbsu.png)</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="rctbsu.png" class="img-fluid figure-img" width="100"></p>
+<figcaption>Наш факультет</figcaption></figure>
+</div></td>
+</tr>
+<tr class="even">
+<td>
+<div class="sourceCode" id="cb25"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="al">![Название](rctbsu.png)</span><span class="co">](https://rct.bsu.by)</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Картинка становится кликабельной при рендеринге</p>
+</td>
+<td><a href="https://rct.bsu.by"><img src="rctbsu.png" class="img-fluid" width="100" alt="Наш факультет"></a></td>
+</tr>
+</tbody>
+</table></section><section id="sec-markdown-crossref" class="level2" data-number="4.6"><h2 data-number="4.6" class="anchored" data-anchor-id="sec-markdown-crossref">
+<span class="header-section-number">4.6</span> Перекрестные ссылки</h2>
+<p>Перекрестные ссылки на рисунки создаются, добавлением к ним идентификатора с префиксом <code>fig-</code>, а затем ссылаясь на рисунок с помощью префикса <code>@</code>. Например:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Грач](rctbsu.png)</span>{#fig-grach}</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>Как показано на рисунке @fig-grach.</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Для рисунков, созданных блоками исполняемого кода, используется <code>label</code> с префиксом <code>fig-</code>, чтобы сделать их перекрестно-ссылочными. Например:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>Для демонстрации графика линии используется @fig-cars-plot.</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-cars-plot</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Cars plot "</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars)</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Для демонстрации графика линии используется <a href="#fig-cars-plot" class="quarto-xref">Рисунок&nbsp;<span>4.2</span></a>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-cars-plot</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Cars plot "</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: true</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars)</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-cars-plot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-cars-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="markdown_files/figure-html/fig-cars-plot-6.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cars-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Рисунок&nbsp;4.2: Cars plot
+</figcaption></figure>
+</div>
+</div>
+</div>
+<section id="sec-markdown-crossref-subcaption" class="level3" data-number="4.6.1"><h3 data-number="4.6.1" class="anchored" data-anchor-id="sec-markdown-crossref-subcaption">
+<span class="header-section-number">4.6.1</span> Размещение и подзаголовки рисунков</h3>
+<p>Подзаголовки для вычисляемых рисунков задаются с использованием опций <code>fig-cap</code> и <code>fig-subcap</code>. Если использовать параметр <code>label</code> с префиксом <code>fig-</code> то рисунок будет пронумерован и [перекрестно-ссылаемым].</p>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: fig-charts</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Charts"</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-subcap: </span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="co">#|   - "Cars"</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="co">#|   - "Pressure"</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="co">#| layout-ncol: 2</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a><span class="co">#| cache: true</span></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars)</span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pressure)</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-charts" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure"><div aria-describedby="fig-charts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-charts" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-charts-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure"><div aria-describedby="fig-charts-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="markdown_files/figure-html/fig-charts-1.png" class="img-fluid figure-img" data-ref-parent="fig-charts" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-charts-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Cars
+</figcaption></figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-charts" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-charts-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure"><div aria-describedby="fig-charts-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="markdown_files/figure-html/fig-charts-2.png" class="img-fluid figure-img" data-ref-parent="fig-charts" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-charts-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Pressure
+</figcaption></figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-charts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Рисунок&nbsp;4.3: Charts
+</figcaption></figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Уведомление
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Рисунки будут размещены в две колонки только при конвертации в <code>html</code></p>
+</div>
+</div>
+</section></section><section id="sec-markdonw-list" class="level2" data-number="4.7"><h2 data-number="4.7" class="anchored" data-anchor-id="sec-markdonw-list">
+<span class="header-section-number">4.7</span> Списки</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 44%">
+</colgroup>
+<thead><tr class="header">
+<th>Язык разметки Markdown</th>
+<th>Output</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb30"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>маркированный список</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="ss">    + </span>пункт 1</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="ss">    + </span>пункт 2</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="ss">        - </span>подпункт 1</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><ul>
+<li>маркированный список
+<ul>
+<li>пункт 1</li>
+<li>пункт 2
+<ul>
+<li>подпункт 1</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td><div class="sourceCode" id="cb31"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>нумерованный список</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>пункт 2</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    i) подпункт 1</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>         A.  вложение 1</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><ol type="1">
+<li>ordered list</li>
+<li>item 2
+<ol type="i">
+<li>sub-item 1
+<ol type="A">
+<li>sub-sub-item 1</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol></td>
+</tr>
+<tr class="odd">
+<td><div class="sourceCode" id="cb32"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[ ]</span> Задача 1</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="va">[x]</span> Задача 2</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><ul class="task-list">
+<li><label><input type="checkbox">Задача 1</label></li>
+<li><label><input type="checkbox" checked="">Задача 2</label></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td><div class="sourceCode" id="cb33"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>(@)  Сквозная нумерация списка</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>продолжается после</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>(@)  прерывания</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td>
+<ol type="1">
+<li>Сквозная нумерация списка</li>
+</ol>
+<p>продолжается после</p>
+<ol start="2" type="1">
+<li>прерывания</li>
+</ol>
+</td>
+</tr>
+<tr class="odd">
+<td><div class="sourceCode" id="cb34"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>термин</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>: его определение</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><dl>
+<dt>термин</dt>
+<dd>
+<p>его определение</p>
+</dd>
+</dl></td>
+</tr>
+</tbody>
+</table>
+<section id="sec-markdown-list-layout" class="level3" data-number="4.7.1"><h3 data-number="4.7.1" class="anchored" data-anchor-id="sec-markdown-list-layout">
+<span class="header-section-number">4.7.1</span> Блочное размещение</h3>
+<p>Например, например мы можем разместить 2 списка рядом:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>::: {layout-ncol=2}</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">### List One</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item A</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item B</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item C</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a><span class="fu">### List Two</span></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item X</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item Y</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Item Z</span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<section id="первый-список" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;"><h4 class="anchored" data-anchor-id="первый-список">Первый список</h4>
+<ul>
+<li>Элемент A</li>
+<li>Элемент B</li>
+<li>Элемент C</li>
+</ul></section><section id="второй-список" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;"><h4 class="anchored" data-anchor-id="второй-список">Второй список</h4>
+<ul>
+<li>Элемент X</li>
+<li>Элемент Y</li>
+<li>Элемент Z</li>
+</ul></section>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Уведомление
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Списки будут размещены в две колонки только при конвертации в <code>html</code></p>
+</div>
+</div>
+</section></section><section id="sec-markdown-tables" class="level2" data-number="4.8"><h2 data-number="4.8" class="anchored" data-anchor-id="sec-markdown-tables">
+<span class="header-section-number">4.8</span> Таблицы</h2>
+<section id="sec-markdown-tables-simple" class="level3" data-number="4.8.1"><h3 data-number="4.8.1" class="anchored" data-anchor-id="sec-markdown-tables-simple">
+<span class="header-section-number">4.8.1</span> Простые таблицы</h3>
+<p>В обычных таблицах могут содержаться только элементы представленные простым текстом.</p>
+<section id="разметка-markdown" class="level4"><h4 class="anchored" data-anchor-id="разметка-markdown">Разметка Markdown</h4>
+<p>Выравнивание по</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Правому краю <span class="pp">|</span> Левому краю <span class="pp">|</span> Умолчанию <span class="pp">|</span> Центру <span class="pp">|</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|-------------:|:------------|-----------|:------:|</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>           12 <span class="pp">|</span> 12          <span class="pp">|</span> 12        <span class="pp">|</span>   12   <span class="pp">|</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>          123 <span class="pp">|</span> 123         <span class="pp">|</span> 123       <span class="pp">|</span>  123   <span class="pp">|</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>            1 <span class="pp">|</span> 1           <span class="pp">|</span> 1         <span class="pp">|</span>   1    <span class="pp">|</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="результат" class="level4"><h4 class="anchored" data-anchor-id="результат">Результат</h4>
+<p>Выравнивание по</p>
+<table class="caption-top table">
+<thead><tr class="header">
+<th style="text-align: right;">Правому краю</th>
+<th style="text-align: left;">Левому краю</th>
+<th>Умолчанию</th>
+<th style="text-align: center;">Центру</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">12</td>
+<td>12</td>
+<td style="text-align: center;">12</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">123</td>
+<td style="text-align: left;">123</td>
+<td>123</td>
+<td style="text-align: center;">123</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">1</td>
+<td>1</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table></section></section><section id="sec-markdown-tables-extended" class="level3" data-number="4.8.2"><h3 data-number="4.8.2" class="anchored" data-anchor-id="sec-markdown-tables-extended">
+<span class="header-section-number">4.8.2</span> Расширенные таблицы</h3>
+<p>Расширенные таблицы (grid tables) — это более продвинутый тип таблиц разметки, которые допускают произвольные блочные элементы (несколько абзацев, блоков кода, списков и т. д.). Например: строка =s отделяет заголовок от тела таблицы и может быть опущена для таблицы без заголовка. Ячейки таблиц сетки могут содержать произвольные блочные элементы (несколько абзацев, блоков кода, списков и т. д.)</p>
+<p>Выравнивания можно указывать так же, как и в случае с таблицами конвейера, помещая двоеточия на границах разделительной линии после заголовка.</p>
+<section id="разметка-markdown-1" class="level4"><h4 class="anchored" data-anchor-id="разметка-markdown-1">Разметка Markdown</h4>
+<div class="sourceCode" id="cb37"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>+-----------+-----------+--------------------+</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Fruit     <span class="pp">|</span> Price     <span class="pp">|</span> Advantages         <span class="pp">|</span></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>+=========<span class="al">==+===========+==</span>==================+</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Bananas   <span class="pp">|</span> $1.34     <span class="pp">|</span> - built-in wrapper <span class="pp">|</span></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>           <span class="pp">|</span>           <span class="pp">|</span> - bright color     <span class="pp">|</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>+-----------+-----------+--------------------+</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Oranges   <span class="pp">|</span> $2.10     <span class="pp">|</span> - cures scurvy     <span class="pp">|</span></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>           <span class="pp">|</span>           <span class="pp">|</span> - tasty            <span class="pp">|</span></span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>+-----------+-----------+--------------------+</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>: Пример расширенной таблицы</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section><section id="результат-1" class="level4"><h4 class="anchored" data-anchor-id="результат-1">Результат</h4>
+<table class="caption-top table">
+<caption>Пример расширенной таблицы</caption>
+<colgroup>
+<col style="width: 13%">
+<col style="width: 12%">
+<col style="width: 31%">
+</colgroup>
+<thead><tr class="header">
+<th>Fruit</th>
+<th>Price</th>
+<th>Advantages</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Bananas</td>
+<td>$1.34</td>
+<td><ul>
+<li>built-in wrapper</li>
+<li>bright color</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td>Oranges</td>
+<td>$2.10</td>
+<td><ul>
+<li>cures scurvy</li>
+<li>tasty</li>
+</ul></td>
+</tr>
+</tbody>
+</table></section></section></section><section id="sec-markdown-equations" class="level2" data-number="4.9"><h2 data-number="4.9" class="anchored" data-anchor-id="sec-markdown-equations">
+<span class="header-section-number">4.9</span> Формулы</h2>
+<p>Для вставки формулы в текст используется <code>$</code>. Для выделения отдельным блоком используется <code>$$</code>. Например:</p>
+<table class="caption-top table">
+<caption>Формулы</caption>
+<colgroup>
+<col style="width: 45%">
+<col style="width: 43%">
+</colgroup>
+<thead><tr class="header">
+<th>Язык разметки Markdown</th>
+<th>Результат</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb38"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>формула в тексте: $E = mc^{2}$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td>формула в тексте: <span class="math inline">\(E=mc^{2}\)</span>
+</td>
+</tr>
+<tr class="even">
+<td><div class="sourceCode" id="cb39"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>отдельный блок формул:</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>$$E = mc^{2}$$</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td>
+<p>отдельный блок формул:</p>
+<p><span class="math display">\[E = mc^{2}\]</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Выражения записываются на языке <a href="https://www.latex-project.org/">LaTeX</a>, подробнее <a href="latex.html" class="quarto-xref"><span>Глава 5</span></a></p>
+</section><section id="sec-markdown-diagram" class="level2" data-number="4.10"><h2 data-number="4.10" class="anchored" data-anchor-id="sec-markdown-diagram">
+<span class="header-section-number">4.10</span> Диаграммы</h2>
+<p>Quarto имеет встроенную поддержку для диаграмм <a href="https://mermaid-js.github.io/mermaid/#/">Mermaid</a> и <a href="https://graphviz.org/">Graphviz</a>. Mermaid – это инструмент для создания диаграмм и графиков на основе Javascript, который использует определения текста, вдохновленные Markdown, и рендерер для создания и изменения сложных диаграмм.</p>
+<div class="cell" data-layout-align="default">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  A[Hard edge] --&gt; B(Round edge)</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  B --&gt; C{Decision}</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>  C --&gt; D[Result one]</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>  C --&gt; E[Result two]</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"></figure><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A[Hard edge] --&gt; B(Round edge)
+  B --&gt; C{Decision}
+  C --&gt; D[Result one]
+  C --&gt; E[Result two]
+</pre>
+</div>
+<p></p>
+</div>
+</div>
+</div>
+</section><section id="sec-markdown-quote" class="level2" data-number="4.11"><h2 data-number="4.11" class="anchored" data-anchor-id="sec-markdown-quote">
+<span class="header-section-number">4.11</span> Цитаты</h2>
+<div class="sourceCode" id="cb41"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a> <span class="at">&gt; Blockquote</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p>Это короткая цитата</p>
+</blockquote>
+</section><section id="sec-markdown-special-symbols" class="level2" data-number="4.12"><h2 data-number="4.12" class="anchored" data-anchor-id="sec-markdown-special-symbols">
+<span class="header-section-number">4.12</span> Специальные символы</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 19%">
+</colgroup>
+<thead><tr class="header">
+<th>Markdown Syntax</th>
+<th>Output</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb42"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="an">endash:</span><span class="co"> --</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td>endash: –</td>
+</tr>
+<tr class="even">
+<td><div class="sourceCode" id="cb43"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="an">emdash:</span><span class="co"> ---</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td>emdash: —</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Уведомление
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Символы подставляются только при конвертации в <code>html</code></p>
+</div>
+</div>
+
+
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Скопировано");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Скопировано");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="../enviroment/quarto.html" class="pagination-link" aria-label="Quarto">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quarto</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../enviroment/latex.html" class="pagination-link" aria-label="Язык разметки LaTeX">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Язык разметки LaTeX</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li></ul></div></div></div></footer></body></html>
