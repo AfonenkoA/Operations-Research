@@ -1,0 +1,82 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Operations Research",
+    "section": "",
+    "text": "Интерактивный курс по исследованию операций",
+    "crumbs": [
+      "Интерактивный курс по исследованию операций"
+    ]
+  },
+  {
+    "objectID": "latex.html",
+    "href": "latex.html",
+    "title": "2  Язык разметки LaTeX",
+    "section": "",
+    "text": "2.1 Специальные символы",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "latex.html#специальные-символы",
+    "href": "latex.html#специальные-символы",
+    "title": "2  Язык разметки LaTeX",
+    "section": "",
+    "text": "Греческие символы\n\n\n\n\n\n\n\n\n\n\nСтрочная\n\nПрописная\n\nАльтернативная\n\n\n\n\n\n$\\alpha$\n\\(\\alpha\\)\n$A$\n\\(A\\)\n\n\n\n\n$\\beta$\n\\(\\beta\\)\n$B$\n\\(B\\)\n\n\n\n\n$\\gamma$\n\\(\\gamma\\)\n$\\Gamma$\n\\(\\Gamma\\)\n\n\n\n\n$\\delta$\n\\(\\delta\\)\n$\\Delta$\n\\(\\Delta\\)\n\n\n\n\n$\\epsilon$\n\\(\\epsilon\\)\n$E$\n\\(E\\)\n$\\varepsilon$\n\\(\\varepsilon\\)\n\n\n$\\zeta$\n\\(\\zeta\\)\n$Z$\n\\(Z\\)\n\n\n\n\n$\\eta$\n\\(\\eta\\)\n$H$\n\\(H\\)\n\n\n\n\n$\\theta$\n\\(\\theta\\)\n$\\Theta$\n\\(\\Theta\\)\n$\\vartheta$\n\\(\\vartheta\\)\n\n\n$\\zeta$\n\\(\\zeta\\)\n$Z$\n\\(Z\\)\n\n\n\n\n$\\kappa$\n\\(\\kappa\\)\n$K$\n\\(K\\)\n$\\varkappa$\n\\(\\varkappa\\)\n\n\n$\\lambda$\n\\(\\lambda\\)\n$Lambda$\n\\(\\Lambda\\)\n\n\n\n\n$\\mu$\n\\(\\mu\\)\n$M$\n\\(M\\)\n\n\n\n\n$\\nu$\n\\(\\nu\\)\n$N$\n\\(N\\)\n\n\n\n\n$\\xi$\n\\(\\xi\\)\n$\\Xi$\n\\(\\Xi\\)\n\n\n\n\n$\\omicron$\n\\(\\omicron\\)\n$O$\n\\(O\\)\n\n\n\n\n$\\pi$\n\\(\\pi\\)\n$\\Pi$\n\\(\\Pi\\)\n$\\varpi$\n\\(\\varpi\\)\n\n\n$\\rho$\n\\(\\rho\\)\n$P$\n\\(P\\)\n$\\varrho$\n\\(\\varrho\\)\n\n\n$\\sigma$\n\\(\\sigma\\)\n$\\Sigma$\n\\(\\Sigma\\)\n$\\varsigma$\n\\(\\varsigma\\)\n\n\n$\\tau$\n\\(\\tau\\)\n$T$\n\\(T\\)\n\n\n\n\n$\\upsilon$\n\\(\\upsilon\\)\n$\\Upsilon$\n\\(\\Upsilon\\)\n\n\n\n\n$\\phi$\n\\(\\phi\\)\n$\\Phi$\n\\(\\Phi\\)\n$\\varphi$\n\\(\\varphi\\)\n\n\n$\\varphi$\n\n\n\n\n\n\n\n$\\chi$\n\\(\\chi\\)\n$X$\n\\(X\\)\n\n\n\n\n$\\psi$\n\\(\\psi\\)\n$\\Psi$\n\\(\\Psi\\)\n\n\n\n\n$\\omega$\n\\(\\omega\\)\n$\\Omega$\n\\(\\Omega\\)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "latex.html#операторы",
+    "href": "latex.html#операторы",
+    "title": "2  Язык разметки LaTeX",
+    "section": "2.2 Операторы",
+    "text": "2.2 Операторы\n\nОператоры\n\n\n\n\n\n\nLaTeX\nРезультат\n\n\n\n\n$\\cos{x}$\n\\(\\cos{x}\\)\n\n\n$\\sin{x}$\n\\(\\sin{x}\\)\n\n\n$\\csc{x}$\n\\(\\csc{x}\\)\n\n\n$\\exp{x}$\n\\(\\exp\\biggl(\\, \\sum_{n=1}^{10} \\frac{1}{n} \\biggr)\\)\n\n\n$\\min_{sub} expr$\n\\(\\min_{\\forall s \\in S_j} q_k(s)\\)\n\n\n$\\gcd$\n\\(\\gcd{144,12}\\)\n\n\n$\\log_b n$\n\\(A(n) \\in \\Theta(n^{\\log_b a}) = \\Theta(n^{\\log_2 2} ) = \\Theta(n)\\)\n\n\n$\\sup_i f$\n\\(\\sup_{x&gt;0}f(x)\\)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "latex.html#скобки",
+    "href": "latex.html#скобки",
+    "title": "2  Язык разметки LaTeX",
+    "section": "2.3 Скобки",
+    "text": "2.3 Скобки",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "latex.html#матрицы",
+    "href": "latex.html#матрицы",
+    "title": "2  Язык разметки LaTeX",
+    "section": "2.4 Матрицы",
+    "text": "2.4 Матрицы\n\nМатрицы\n\n\n\n\n\n\n\nТип\nLaTeX\nРезультат\n\n\n\n\nОбычная\n$$\n\\begin{matrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9\n\\end{matrix}\n$$\n\\[\n\\begin{matrix}\n1 & 2 & 3 \\\\\n4 & 5 & 6 \\\\\n7 & 8 & 9\n\\end{matrix}\n\\]\n\n\nКвадратные скобки\n$$ M =\n\\begin{bmatrix}\n\\frac{5}{6} & \\frac{1}{6} & 0 \\\\\n\\frac{5}{6} & 0 & \\frac{1}{6} \\\\\n0 & \\frac{5}{6} & \\frac{1}{6}\n\\end{bmatrix}\n$$\n\\[ M =\n\\begin{bmatrix}\n\\frac{5}{6} & \\frac{1}{6} & 0 \\\\\n\\frac{5}{6} & 0 & \\frac{1}{6} \\\\\n0 & \\frac{5}{6} & \\frac{1}{6}\n\\end{bmatrix}\n\\]\n\n\nВыражение\n$$\nM =\n\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix}\n\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix}\n$$\n\\[\nM =\n\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix}\n\\begin{bmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{bmatrix}\n\\]\n\n\nКруглые скобки\n$$\nM =\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n$$\n\\[\nM =\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n\\begin{pmatrix}\n1 & 0 \\\\\n0 & 1\n\\end{pmatrix}\n\\]\n\n\nОбщий вид\n$$\nA_{m,n} =\n\\begin{pmatrix}\na_{1,1} & a_{1,2} & \\cdots & a_{1,n} \\\\\na_{2,1} & a_{2,2} & \\cdots & a_{2,n} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\na_{m,1} & a_{m,2} & \\cdots & a_{m,n}\n\\end{pmatrix}\n$$\n\\[\nA_{m,n} =\n\\begin{pmatrix}\na_{1,1} & a_{1,2} & \\cdots & a_{1,n} \\\\\na_{2,1} & a_{2,2} & \\cdots & a_{2,n} \\\\\n\\vdots & \\vdots & \\ddots & \\vdots \\\\\na_{m,1} & a_{m,2} & \\cdots & a_{m,n}\n\\end{pmatrix}\n\\]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Язык разметки LaTeX</span>"
+    ]
+  },
+  {
+    "objectID": "figure-plot-r.html",
+    "href": "figure-plot-r.html",
+    "title": "5  Графические библиотеки",
+    "section": "",
+    "text": "5.1 plotly",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Графические библиотеки</span>"
+    ]
+  },
+  {
+    "objectID": "figure-plot-r.html#ggplot2",
+    "href": "figure-plot-r.html#ggplot2",
+    "title": "5  Графические библиотеки",
+    "section": "5.2 GGPlot2",
+    "text": "5.2 GGPlot2",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Графические библиотеки</span>"
+    ]
+  }
+]

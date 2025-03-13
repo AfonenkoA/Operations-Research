@@ -1,0 +1,29 @@
+project:
+  type: book
+
+book:
+  title: "Operations Research"
+  author: "Афоненко Анатолий"
+  date: today
+  date-format: long
+  chapters:
+    - index.qmd
+    - markdown.qmd
+    - latex.qmd
+    - basic-r.qmd
+    - advanced-r.qmd
+    - figure-plot-r.qmd
+    - linear-algebra-r.qmd
+    - linear-intro-r.qmd
+    - lab1-intro.qmd
+    - lab2-linear.qmd
+
+bibliography: references.bib
+
+freeze: auto
+
+format:
+  html:
+    theme: cosmo
+
+editor: visual
