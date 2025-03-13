@@ -669,24 +669,24 @@ $dimnames[[2]]
 <div class="cell">
 <div class="sourceCode" id="cb31"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span> <span class="op">(</span><span class="fl">5</span>, <span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.2232810 0.5024673 1.8576475 4.5526712 3.5062541</code></pre>
+<pre><code>[1] -1.6482702  2.7531998 -0.2123551  0.4563096 -1.9857124</code></pre>
 </div>
 <div class="sourceCode" id="cb33"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/mapply.html">mapply</a></span><span class="op">(</span><span class="va">rnorm</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">5</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">5</span>, <span class="fl">2</span><span class="op">)</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
-[1] -1.391533
+[1] 0.3912525
 
 [[2]]
-[1] 0.2105125 3.7942878
+[1] 1.381698 0.759785
 
 [[3]]
-[1] 1.6245977 1.1596639 0.3447435
+[1] 3.722039 4.619882 2.102472
 
 [[4]]
-[1] 4.987515 4.002735 4.594053 4.217651
+[1] 5.633441 4.058708 3.344698 1.092638
 
 [[5]]
-[1] 4.950439 5.174756 3.928377 3.087350 4.926829</code></pre>
+[1] 9.754935 3.782304 5.579148 8.412594 6.078610</code></pre>
 </div>
 </div>
 <p><strong>tapply</strong> – используется для расчета некоторой функции в цикле по группам элементов вектора. Это удобно когда один вектор формирует несколько выборок.</p>
@@ -708,23 +708,23 @@ $dimnames[[2]]
 <div class="sourceCode" id="cb36"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">mydata</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">mydata</span><span class="op">)</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9964677</code></pre>
+<pre><code>[1] 1.000144</code></pre>
 </div>
 <div class="sourceCode" id="cb38"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">mydata</span><span class="op">)</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9964677</code></pre>
+<pre><code>[1] 1.000144</code></pre>
 </div>
 <div class="sourceCode" id="cb40"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">mydata</span>, na.rm <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9964677</code></pre>
+<pre><code>[1] 1.000144</code></pre>
 </div>
 <div class="sourceCode" id="cb42"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span>na.rm <span class="op">=</span> <span class="cn">FALSE</span>, x <span class="op">=</span> <span class="va">mydata</span><span class="op">)</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9964677</code></pre>
+<pre><code>[1] 1.000144</code></pre>
 </div>
 <div class="sourceCode" id="cb44"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span>na.rm <span class="op">=</span> <span class="cn">FALSE</span>, <span class="va">mydata</span><span class="op">)</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9964677</code></pre>
+<pre><code>[1] 1.000144</code></pre>
 </div>
 </div>
 <section id="сопоставление-аргументов" class="level3" data-number="7.6.1"><h3 data-number="7.6.1" class="anchored" data-anchor-id="сопоставление-аргументов">
