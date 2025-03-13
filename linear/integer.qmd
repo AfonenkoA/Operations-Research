@@ -12,7 +12,9 @@ source('../util/add_region.R')
 source('../util/plotly_show.R')
 ```
 
-# Целочисленное программирование. {#sec-linear-integer}
+# Целочисленное программирование {#sec-linear-integer}
+
+## Метод ветвей и границ {#sec-linear-integer-method-branch-and-bound}
 
 ::: {.callout-important title="Состояние разработки"}
 Требуется доработка

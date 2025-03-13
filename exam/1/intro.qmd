@@ -6,12 +6,6 @@ params:
   AviaTicketsOneWayCost: 70
 ---
 
-```{r}
-#| echo: false
-#| include: false
-1+1
-```
-
 # Проверочная работа 1. Введение
 
 ## Линейная алгебра

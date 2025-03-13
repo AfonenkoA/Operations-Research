@@ -60,4 +60,5 @@ book:
         - r-tools/tibble.qmd
         - r-tools/purrr.qmd
         - r-tools/tidyr.qmd
+        - r-tools/lpsolve.qmd
 

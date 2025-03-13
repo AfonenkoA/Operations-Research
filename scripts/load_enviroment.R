@@ -25,7 +25,6 @@ proj_abs_paths <- list('dev' = path_abs(out),
                        'prod' = Sys.getenv('PROJECT_PATH'))
 
 proj_abs_path <- proj_abs_paths[[intersect(names(proj_abs_paths), proj_profiles)]]
-site_lib_path <-path(proj_abs_path, site_libs_dir)
 
 file_string_replace <- function(p, pattern, replacement)
 {
