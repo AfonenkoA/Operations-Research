@@ -338,3 +338,11 @@ get.sensitivity.rhs(lprob)
 {{< include _lpsolve/constraints.qmd >}}
 
 {{< include _lpsolve/constraints_summary.qmd >}}
+
+```         
+set.objfn(LP, c(-mat[, 'score'], 0, 0))
+set.type(LP, n+1, "binary")
+set.type(LP, n+2, "binary")
+set.bounds(LP, lower = c(mat[, 'lb'], 0, 0))
+set.bounds(LP, upper = c(mat[, 'ub'], 1, 1))
+```

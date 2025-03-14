@@ -3,7 +3,7 @@ project:
 
 profile:
   group:
-    - [student, full, exam, test]
+    - [full, student, exam, test]
     - [dev, prod]
     - [html, pdf, pdf-exam]
 
@@ -21,6 +21,7 @@ lang: ru
 
 bibliography:
   - references.bib
+  - lab/2/ref.bib
   - exam/1/ref.bib
 
 csl: gost-r-7-0-5-2008-numeric.csl

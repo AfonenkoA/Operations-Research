@@ -5,5 +5,6 @@ invisible(capture.output(st <- renv::status()))
 
 if(!st$synchronized)
     renv::restore()
+rm(st)
 
 Sys.setenv(PLOTLY_MATHJAX_PATH=fs::path_abs('mathjax_plotly'))

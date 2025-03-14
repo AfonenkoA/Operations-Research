@@ -6,12 +6,19 @@ params:
   AviaTicketsOneWayCost: 70
 ---
 
+```{r}
+#| include: false
+# Ячейка нужна для инициализации движка knitr, для вычислений r inline expressions
+1+1
+```
+
+
 # Проверочная работа 1. Введение
 
 ## Линейная алгебра
 
-:::::: {.content-hidden unless-meta="linear-algebra.det.select"}
-::::: {#exr-exam-1-linear-algebra-det}
+::::: {.content-hidden unless-meta="linear-algebra.det.select"}
+:::: {#exr-exam-1-linear-algebra-det}
 ### Найти определитель
 
 $$
@@ -28,12 +35,11 @@ $$
 :::
 
 [`\vspace{1cm}`{=latex}]{.content-visible when-profile="exam"}
-
+::::
 :::::
-::::::
 
-:::::: {.content-hidden unless-meta="linear-algebra.equations.select"}
-::::: {#exr-exam-1-linear-algebra-equations}
+::::: {.content-hidden unless-meta="linear-algebra.equations.select"}
+:::: {#exr-exam-1-linear-algebra-equations}
 ### СЛАУ
 
 Сколько решений будет иметь система уравнений? Показать графически.
@@ -56,13 +62,13 @@ $$
 :::
 
 [`\vspace{1cm}`{=latex}]{.content-visible when-profile="exam"}
+::::
 :::::
-::::::
 
 ## Исследование операций
 
-:::::: {.content-hidden unless-meta="operations-research.avia-tickets.select"}
-::::: {#exr-exam-1-operations-research-avia-tickets}
+::::: {.content-hidden unless-meta="operations-research.avia-tickets.select"}
+:::: {#exr-exam-1-operations-research-avia-tickets}
 ### Авиа-билеты
 
 Предположим, что по работе вам необходимо в течение пяти недель пять раз посетить город *B* (а живёте вы в городе *A*, расположенном достаточно далеко от города *B*). Каждую неделю по понедельникам, выполняется авиарейс из города *A* в город *B*, а обратный рейс выполняется каждую среду. Вы должны быть в городе *B* в понедельник первой недели и окончательно возвратится в город *A* в среду пятой недели. Билет в обе стороны (т.е. из города *A* в город *B* и обратно) стоит `{r} params$AviaTicketsReturnCost`, однако стоимость снижается до `{r} params$AviaTicketsReturnLaterCost`%, если обратный вылет состоится после выходных в любую из следующих недель. Кроме того, следует учесть, что стоимость билета только в одну сторону (из A в B или из B в A -- безразлично) равна `{r} params$AviaTicketsOneWayCost`% от стоимости полного билета "туда и обратно". Как минимизировать стоимость перелётов? @bib-taha
@@ -76,8 +82,8 @@ $$
 :::
 
 [`\vspace{3cm}`{=latex}]{.content-visible when-profile="exam"}
+::::
 :::::
-::::::
 
 :::: {.content-hidden when-profile="exam"}
 ::: {#sol-exam-1-operations-research-avia-tickets}
@@ -85,8 +91,8 @@ $$
 :::
 ::::
 
-:::::: {.content-hidden unless-meta="operations-research.table-lamp.select"}
-::::: {#exr-exam-1-operations-research-table-lamp}
+::::: {.content-hidden unless-meta="operations-research.table-lamp.select"}
+:::: {#exr-exam-1-operations-research-table-lamp}
 ### Стол и лампа
 
 Лампа висит над центром круглого стола радиуса $r$. Освещение прямо пропорционально косинусу угла падения световых лучей и обратно пропорционально квадрату расстояния до источника света. На какой высоте лампы над столом $x$ освещение предмета, лежащего на краю стола, будет наилучшим? Пусть $r=1 м.$ ![Стол с лампой](Img1.png){fig-align="center"}
@@ -100,9 +106,8 @@ $$
 :::
 
 [`\vspace{3cm}`{=latex}]{.content-visible when-profile="exam"}
-
+::::
 :::::
-::::::
 
 :::: {.content-hidden when-profile="exam"}
 ::: {#sol-exam-1-operations-research-table-lamp}

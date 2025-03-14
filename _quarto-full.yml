@@ -51,6 +51,7 @@ book:
     - part: "Проверочные работы"
       chapters:
         - exam/1/intro.qmd
+        - exam/2/linear.qmd
 
     - references.qmd
 
@@ -65,3 +66,4 @@ book:
         - r-tools/tibble.qmd
         - r-tools/purrr.qmd
         - r-tools/tidyr.qmd
+        - r-tools/lpsolve.qmd
