@@ -1,17 +1,11 @@
 ---
+engine: knitr
 params:
   seed-random: 123
   AviaTicketsReturnCost: 400
   AviaTicketsReturnLaterCost: 80
   AviaTicketsOneWayCost: 70
 ---
-
-```{r}
-#| include: false
-# Ячейка нужна для инициализации движка knitr, для вычислений r inline expressions
-1+1
-```
-
 
 # Проверочная работа 1. Введение
 

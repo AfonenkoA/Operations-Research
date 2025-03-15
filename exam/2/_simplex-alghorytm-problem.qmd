@@ -1,0 +1,10 @@
+$$
+\begin{aligned}
+&\mathrm{F}=2x_1+3x_2 \rightarrow \max \\
+&\begin{cases}
+x_1+x_2 \leq 6,\\
+x1 +2x_2 \geq 3, \\
+x_1,x_2 \geq 0
+\end{cases}
+\end{aligned}
+$$

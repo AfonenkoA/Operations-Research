@@ -15,7 +15,7 @@ source('../util/latex_format.R')
 Рассмотрим задачу
 
 $$
-\begin{align*}
+\begin{aligned}
 &\mathrm{Z}=11x_1+5x_2+4x_3 \rightarrow \max\\
 &\begin{cases}
 3x_1+2x_2+8x_3 \leq 11\\
@@ -23,7 +23,7 @@ $$
 3x_1+3x_2+x_3 \leq13 \\
 x_1,x_2,x_3 \geq 0
 \end{cases}
-\end{align*}
+\end{aligned}
 $$ В данном случае решается задача макисимизации целевой функции $\mathrm{Z}=11x_1+5x_2+4x_3$. При ограничениях вида $\mathbf{Ax} \leq \mathbf{b}$, где
 
 $$

@@ -1,9 +1,9 @@
 Соответственно точка $`{r} latex_vector(sol)`$ соответствующая оптимальному решению не сдвинется, если по одному изменять коэффициенты в следующих пределах
 
 $$
-\begin{align*}
+\begin{aligned}
 &`{r} c1f`  \leq c_1 \leq `{r} c1t`\\
 &`{r} c2f`  \leq c_2 \leq `{r} c2t`\\
 &`{r} c3f`  \leq c_3 \leq `{r} c3t`
-\end{align*}
+\end{aligned}
 $$

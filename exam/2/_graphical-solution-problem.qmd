@@ -1,0 +1,11 @@
+$$
+\begin{aligned}
+&\mathrm{F}=3x_1+2x_2 \rightarrow \max \\
+&\begin{cases}
+4x_1+x_2 \leq 6 \\
+3x_1+6x_2 \leq 12 \\
+5x_1+2x_2 \leq 8 \\
+x1,x2 \geq 0
+\end{cases}
+\end{aligned}
+$$

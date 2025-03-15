@@ -1,27 +1,17 @@
-operations-research:
-  table-lamp:
-    select: true
-  avia-tickets:
-    select: true
-    params:
-      one-way-cost:
-        type: integer
-        min: 40
-        max: 90
-        step: 10
-      return-later-cost:
-        type: integer
-        min: 40
-        max: 90
-        step: 10
-      return-cost:
-        type: integer
-        min: 100
-        max: 1000
-        step: 50
+graphical-solution:
+  select: true
 
-linear-algebra:
-  det:
-    select: true
-  equations:
-    select: true
+standard-form:
+  select: true
+
+build-model:
+  select: true
+
+dual-problem:
+  select: true
+
+simplex-alghorytm:
+  select: true
+
+simplex-path:
+  select: true
