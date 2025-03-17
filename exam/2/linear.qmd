@@ -14,14 +14,14 @@ params:
 {{< include _graphical-solution-problem.qmd >}}
 :::
 
-::: {.content-visible when-profile="exam" layout-ncol="2"}
+::: {.content-visible when-profile="exam" layout-ncol=2}
 {{< include _graphical-solution-problem.qmd >}}
 
 ![](graphical-solution-grid.svg){fig-align="center" width="5cm"}
 :::
 
 ::: {.callout-note appearance="minimal" title="Оценка"}
-2
+0.25
 :::
 ::::::
 :::::::
@@ -38,11 +38,12 @@ params:
 
 Минимизировать $z=\max\{|x_1-x_2+3x_3|,|-x_1+3x_2-x_3|\}$, при ограничениях $x_1,x_2,x_3 \geq 0$. Подсказка: представьте, что $z$ это число, которое не меньше, чем аргументы $\max$ и примените свойство модуля $|a|\leq b$ эквивалентна записи $a\leq b$ и $a \geq -b$.
 
+::: {.callout-note appearance="minimal" title="Оценка"}
+0.25
+:::
+
 [`\vspace{3cm}`{=latex}]{.content-visible when-profile="exam"}
 
-::: {.callout-note appearance="minimal" title="Оценка"}
-2
-:::
 ::::
 :::::
 
@@ -58,11 +59,12 @@ params:
 
 Активист творческого союза пришёл к выводу, что только одна учёба плохо повлияет на его умственное и физическое развитие. Поэтому он решил распределить всё своё свободное время на неделю 70 часов между учёбой, спортом, организацией мероприятий и тусовками. Он полагает, что тусовки в два раза круче мероприятий и в 1.5 раза лучше, чем спорт, а мероприятия интереснее учёбы в 2 раза. Однако тусовок организуется в два раза меньше, чем мероприятий, а на учёбу придётся тратить не меньше 6 часов в день. Составьте модель, которая позволит активисту получить максимальное удовольствие от жизни.
 
+::: {.callout-note appearance="minimal" title="Оценка"}
+0.5
+:::
+
 [`\vspace{3cm}`{=latex}]{.content-visible when-profile="exam"}
 
-::: {.callout-note appearance="minimal" title="Оценка"}
-2
-:::
 ::::
 :::::
 
@@ -72,51 +74,90 @@ params:
 :::
 ::::
 
+:::::: {.content-hidden unless-meta="special.select"}
+::::: {#exr-exam-2-special}
 ## Особенная задачка
 
-Определить 
+Определить какой особый случай реализован. <!-- 3.5 Особые случаи применения симплекс-метода Таха 113-->
 
-### Вырожденность
+::: {.content-hidden unless-meta="special.type1.select" layout-ncol=2}
+{{< include _no-fesiable-solution-problem.qmd >}}
 
-Degeneracy
+{{< include _alternative_problem.qmd >}}
+:::
 
-### Альтернативные оптимальные решения
+::: {.content-hidden unless-meta="special.type2.select" layout-ncol=2}
+{{< include _unbounded_problem.qmd >}}
 
-### Отсутсвие допустимых решений
+{{< include _degeneracy-problem.qmd >}}
+:::
 
-### Неограниченность области
+::: {.callout-note appearance="minimal" title="Оценка"}
+0.25
+:::
 
-## Графический анализ чувствительности оптимального решения
+::: {.content-visible when-profile="exam" layout-ncol=2}
+![](special-grid.svg){fig-align="center" width="5cm"} 
+
+![](special-grid.svg){fig-align="center" width="5cm"}
+:::
+
+:::::
+::::::
+
+:::::: {.content-hidden unless-meta="graphical-sensetivity.select"}
+::::: {#exr-exam-2-graphical-sensetivity}
+## Завод
 
 Завод Интеграл выпускает две модели электронных приборов, при изготовлении которых используются резисторы, конденсаторы и микросхемы. В таблице приведены данные по использованию ресурсов в каждой выпускаемой модели.
 
+| Ресурс          | Модель 1 (шт.) | Модель 2 (шт.) | Доступность ресурса (шт.) |
+|----------------|----------------|----------------|------------------------|
+| Резистор        | 2              | 3              | 1200                      |
+| Конденсатор     | 2              | 1              | 500                       |
+| Микросхема      | 0              | 4              | 800                       |
+| Цена за 1 (руб) | 3              | 4              |                           |
 
-Пусть переменные $x_1$ и $x_2$ представляют количество выпущенных изделий модели 1 и модели 2. Ниже приведена сооответсвующая модель ЛП. // Таха 3.78 с 157
+Пусть переменные $x_1$ и $x_2$ представляют количество выпущенных изделий модели 1 и модели 2. Ниже приведена соответствующая модель ЛП. <!--// Таха 3.78 с 157-->
 
 $$
 \begin{aligned}
 &\mathrm{F}=3x_1+4x_2 \rightarrow \max \\
 &\begin{cases}
 2x_1 + 3x_2 \leq 1200, \\
-2x_1 + x_2 \leq 1000, \\
+2x_1 + x_2 \leq 500, \\
 4x_1 \leq 800,\\
 x_1,x_2 \geq 0
 \end{cases}
 \end{aligned}
 $$
 
-1.  
+1.  Как измениться прибыль, если станет доступно 600 конденсаторов? (Определить двойственное значение и область его определения).
+2.  Как измениться решение, если цена модель 1 возрастёт до 9? Определите интервал стоимости первого изделия, внутри которого оптимальное решение не изменится.
 
-### По коэффициентам целевой функции
+::: {.callout-note appearance="minimal" title="Оценка"}
+1
+:::
 
-### По ограничениям
+::: {.content-visible when-profile="exam" layout-ncol=2}
+![](graphical-sensetivity-grid.svg){fig-align="center" height="5cm"} 
 
-::::: {.content-hidden unless-meta="dual-problem.select"}
-::: {#exr-exam-2-dual}
+![](graphical-sensetivity-grid.svg){fig-align="center" height="5cm"}
+
+:::
+
+[`\vspace{4cm}`{=latex}]{.content-visible when-profile="exam"}
+
+:::::
+::::::
+
+:::::: {.content-hidden unless-meta="dual-problem.select"}
+::::: {#exr-exam-2-dual}
 ## Двойственность
 
-Сформулировать двойственную задачу // Таха 4.4 189
+Сформулировать двойственную задачу <!--// Таха 4.4 189-->
 
+::: {layout-ncol=2}
 $$
 \begin{aligned}
 &\mathrm{F}=-5x_1+2x_2 \rightarrow \max \\
@@ -128,8 +169,6 @@ x_1,x_2 \geq 0
 \end{aligned}
 $$
 
-[`\vspace{3cm}`{=latex}]{.content-visible when-profile="exam"}
-
 $$
 \begin{aligned}
 &\mathrm{F}=x_1+x_2 \rightarrow \max \\
@@ -140,14 +179,16 @@ x_1,x_2 \in \mathbb{R}
 \end{cases}
 \end{aligned}
 $$
-
-[`\vspace{3cm}`{=latex}]{.content-visible when-profile="exam"}
 :::
 
 ::: {.callout-note appearance="minimal" title="Оценка"}
-2
+0.75
 :::
+
+[`\vspace{3cm}`{=latex}]{.content-visible when-profile="exam"}
+
 :::::
+::::::
 
 :::: {.content-hidden when-profile="exam"}
 ::: {#sol-exam-2-dual-problem}
@@ -159,7 +200,9 @@ $$
 :::: {#exr-exam-2-simplex-path}
 ## Кривая дорожка
 
-![](simplex-path.png){fig-align="center"}
+На рисунке показано пространство допустимых решений трехмерной задачи ЛП с угловыми точками $A$, $B$, $C$, $\dots$, $J$. <!-- // Таха 3.18 c 142-->
+
+![](simplex-path.png){fig-align="center" width="5cm"}
 
 -   Могут ли следующие пары угловых точек составить часть пути при успешном выполнении симплекс метода: $(A,B)$, $(B,D)$, $(E,H)$, $(A,I)$? Поясните ответ.
 -   Предположим, что реализация симплекс-метода начинается в точке $A$ и заканчивается в точке оптимума $H$. Определите, какие из следующих последовательностей угловых точек могут привести к точке оптимума. Обоснуйте свой вывод.
@@ -167,11 +210,12 @@ $$
     2.  $A \rightarrow E \rightarrow I \rightarrow H$
     3.  $A \rightarrow C \rightarrow E \rightarrow B \rightarrow A \rightarrow D \rightarrow G \rightarrow H$
 
-[`\vspace{4cm}`{=latex}]{.content-visible when-profile="exam"}
-
 ::: {.callout-note appearance="minimal" title="Оценка"}
-2
+1
 :::
+
+[`\vspace{1cm}`{=latex}]{.content-visible when-profile="exam"}
+
 ::::
 :::::
 
@@ -183,23 +227,25 @@ $$
 
 ::::::: {.content-hidden unless-meta="simplex-alghorytm.select"}
 :::::: {#exr-exam-2-simplex-alghorytm}
-## Решить задачу двухэтапным методом
+## Алгоритм
+
+Решить задачу двухэтапным методом.
 
 ::: {.content-hidden when-profile="exam"}
 {{< include _simplex-alghorytm-problem.qmd >}}
 :::
 
-::: {.content-visible when-profile="exam" layout-ncol="2"}
+::: {.content-visible when-profile="exam" layout-ncol=2}
 {{< include _simplex-alghorytm-problem.qmd >}}
 
-![](simplex-alghorytm-grid.svg){fig-align="center" width="5cm"}
+![](simplex-alghorytm-grid.svg){fig-align="center" width="4cm"}
+:::
+
+::: {.callout-note appearance="minimal" title="Оценка"}
+1
 :::
 
 [`\vspace{8cm}`{=latex}]{.content-visible when-profile="exam"}
-
-::: {.callout-note appearance="minimal" title="Оценка"}
-2
-:::
 ::::::
 :::::::
 
