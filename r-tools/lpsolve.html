@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Приложение H — Решатель LPSolve – Исследование операций</title>
+<title>Приложение D — Решатель LPSolve – Исследование операций</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../r-tools/tidyr.html" rel="prev">
+<link href="../r-tools/purrr.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -144,7 +144,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключить боковую панель навигации" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Приложения</li><li class="breadcrumb-item"><a href="../r-tools/basic.html">Язык программирования R</a></li><li class="breadcrumb-item"><a href="../r-tools/lpsolve.html"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Решатель LPSolve</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Приложения</li><li class="breadcrumb-item"><a href="../r-tools/renv.html">Язык программирования R</a></li><li class="breadcrumb-item"><a href="../r-tools/lpsolve.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Решатель LPSolve</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключить боковую панель навигации" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Поиск" onclick="window.quartoOpenSearch();">
@@ -237,7 +237,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../r-lang/basic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Основы языка R</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Основы R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -277,44 +277,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../linear/dual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Двойственная задача линейного программирования</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../linear/simplex.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Симплекс метод</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Симплекс метод</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../linear/simplex-spec.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Особые случаи применения симплекс метода</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../linear/simplex-ext.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Двухэтапный симплекс метод и M-метод</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../linear/integer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Целочисленное программирование</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../linear/transport.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Транспортная задача</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../linear/network.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Сетевая задача</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Особые случаи применения симплекс метода</span></span></a>
   </div>
 </li>
       </ul>
@@ -331,33 +301,33 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../nonlinear/unconstrained/analytical-one.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Безусловная оптимизация функции одной переменной</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Безусловная оптимизация функции одной переменной</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../nonlinear/unconstrained/analytical-many.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Безусловная оптимизация функции многих переменных</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Безусловная оптимизация функции многих переменных</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../nonlinear/constrained/analytical-one.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Условная оптимизация функции одной переменной</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Условная оптимизация функции одной переменной</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../nonlinear/constrained/analytical-many.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Условная оптимизация функции многих переменных</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Условная оптимизация функции многих переменных</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../graph-theory/overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Элементы теории графов</span></a>
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Лабораторные работы</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -365,48 +335,14 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../graph-theory/dijkstra.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Алгоритм дейкстры</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../game-theory/overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Теория игр</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../game-theory/matrix.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Матричные игры</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Лабораторные работы</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../lab/1/intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Лабораторная работа 1. Введение</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">1. Введение</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lab/2/linear.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Лабораторная работа 2. Линейное программирование</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">2. Линейное программирование</span></span></a>
   </div>
 </li>
       </ul>
@@ -419,68 +355,44 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
  <span class="menu-text">Приложения</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Язык программирования R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth2 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../r-tools/basic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Методы встроенных пакетов</span></span></a>
-  </div>
-</li>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../r-tools/renv.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Система управления пакетами renv</span></span></a>
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Система управления пакетами renv</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../r-tools/plotly.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Графическая библиотека plotly</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../r-tools/ggplot2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Графическая библиотека ggplot2</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../r-tools/tibble.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Датафрейм Tibble</span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Графическая библиотека plotly</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../r-tools/purrr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Функциональные операторы Purrr</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../r-tools/tidyr.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">tidyr</span></span></a>
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Функциональные операторы Purrr</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../r-tools/lpsolve.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Решатель LPSolve</span></span></a>
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Решатель LPSolve</span></span></a>
   </div>
 </li>
       </ul>
@@ -497,20 +409,20 @@ window.Quarto = {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#sec-r-tools-lpsolve-lpsolve" id="toc-sec-r-tools-lpsolve-lpsolve" class="nav-link active" data-scroll-target="#sec-r-tools-lpsolve-lpsolve"><span class="header-section-number">H.1</span> lpSolve</a>
+  <li><a href="#sec-r-tools-lpsolve-lpsolve" id="toc-sec-r-tools-lpsolve-lpsolve" class="nav-link active" data-scroll-target="#sec-r-tools-lpsolve-lpsolve"><span class="header-section-number">D.1</span> lpSolve</a>
   <ul class="collapse">
-  <li><a href="#sec-r-tools-lpsolve-lpsolve-install" id="toc-sec-r-tools-lpsolve-lpsolve-install" class="nav-link" data-scroll-target="#sec-r-tools-lpsolve-lpsolve-install"><span class="header-section-number">H.1.1</span> Установка</a></li>
-  <li><a href="#sec-r-tools-lpsolve-lpsolve-model" id="toc-sec-r-tools-lpsolve-lpsolve-model" class="nav-link" data-scroll-target="#sec-r-tools-lpsolve-lpsolve-model"><span class="header-section-number">H.1.2</span> Модель</a></li>
-  <li><a href="#sec-r-tools-lpsolve-lpsolve-solution" id="toc-sec-r-tools-lpsolve-lpsolve-solution" class="nav-link" data-scroll-target="#sec-r-tools-lpsolve-lpsolve-solution"><span class="header-section-number">H.1.3</span> Решение</a></li>
-  <li><a href="#sec-r-tools-lpsolve-lpsolve-sensetivity" id="toc-sec-r-tools-lpsolve-lpsolve-sensetivity" class="nav-link" data-scroll-target="#sec-r-tools-lpsolve-lpsolve-sensetivity"><span class="header-section-number">H.1.4</span> Анализ чувствительности оптимального решения</a></li>
-  <li><a href="#целочисленная-модель" id="toc-целочисленная-модель" class="nav-link" data-scroll-target="#целочисленная-модель"><span class="header-section-number">H.1.5</span> Целочисленная модель</a></li>
+  <li><a href="#sec-r-tools-lpsolve-lpsolve-install" id="toc-sec-r-tools-lpsolve-lpsolve-install" class="nav-link" data-scroll-target="#sec-r-tools-lpsolve-lpsolve-install"><span class="header-section-number">D.1.1</span> Установка</a></li>
+  <li><a href="#sec-r-tools-lpsolve-lpsolve-model" id="toc-sec-r-tools-lpsolve-lpsolve-model" class="nav-link" data-scroll-target="#sec-r-tools-lpsolve-lpsolve-model"><span class="header-section-number">D.1.2</span> Модель</a></li>
+  <li><a href="#sec-r-tools-lpsolve-lpsolve-solution" id="toc-sec-r-tools-lpsolve-lpsolve-solution" class="nav-link" data-scroll-target="#sec-r-tools-lpsolve-lpsolve-solution"><span class="header-section-number">D.1.3</span> Решение</a></li>
+  <li><a href="#sec-r-tools-lpsolve-lpsolve-sensetivity" id="toc-sec-r-tools-lpsolve-lpsolve-sensetivity" class="nav-link" data-scroll-target="#sec-r-tools-lpsolve-lpsolve-sensetivity"><span class="header-section-number">D.1.4</span> Анализ чувствительности оптимального решения</a></li>
+  <li><a href="#целочисленная-модель" id="toc-целочисленная-модель" class="nav-link" data-scroll-target="#целочисленная-модель"><span class="header-section-number">D.1.5</span> Целочисленная модель</a></li>
   </ul></li>
-  <li><a href="#sec-r-tools-lpsolve-lpsolveapi" id="toc-sec-r-tools-lpsolve-lpsolveapi" class="nav-link" data-scroll-target="#sec-r-tools-lpsolve-lpsolveapi"><span class="header-section-number">H.2</span> lpSolveAPI</a>
+  <li><a href="#sec-r-tools-lpsolve-lpsolveapi" id="toc-sec-r-tools-lpsolve-lpsolveapi" class="nav-link" data-scroll-target="#sec-r-tools-lpsolve-lpsolveapi"><span class="header-section-number">D.2</span> lpSolveAPI</a>
   <ul class="collapse">
-  <li><a href="#установка" id="toc-установка" class="nav-link" data-scroll-target="#установка"><span class="header-section-number">H.2.1</span> Установка</a></li>
-  <li><a href="#модель" id="toc-модель" class="nav-link" data-scroll-target="#модель"><span class="header-section-number">H.2.2</span> Модель</a></li>
-  <li><a href="#решение" id="toc-решение" class="nav-link" data-scroll-target="#решение"><span class="header-section-number">H.2.3</span> Решение</a></li>
-  <li><a href="#анализ-чувствительности-оптимального-решения" id="toc-анализ-чувствительности-оптимального-решения" class="nav-link" data-scroll-target="#анализ-чувствительности-оптимального-решения"><span class="header-section-number">H.2.4</span> Анализ чувствительности оптимального решения</a></li>
+  <li><a href="#установка" id="toc-установка" class="nav-link" data-scroll-target="#установка"><span class="header-section-number">D.2.1</span> Установка</a></li>
+  <li><a href="#модель" id="toc-модель" class="nav-link" data-scroll-target="#модель"><span class="header-section-number">D.2.2</span> Модель</a></li>
+  <li><a href="#решение" id="toc-решение" class="nav-link" data-scroll-target="#решение"><span class="header-section-number">D.2.3</span> Решение</a></li>
+  <li><a href="#анализ-чувствительности-оптимального-решения" id="toc-анализ-чувствительности-оптимального-решения" class="nav-link" data-scroll-target="#анализ-чувствительности-оптимального-решения"><span class="header-section-number">D.2.4</span> Анализ чувствительности оптимального решения</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li></ul></div></nav>
@@ -518,9 +430,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Приложения</li><li class="breadcrumb-item"><a href="../r-tools/basic.html">Язык программирования R</a></li><li class="breadcrumb-item"><a href="../r-tools/lpsolve.html"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Решатель LPSolve</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Приложения</li><li class="breadcrumb-item"><a href="../r-tools/renv.html">Язык программирования R</a></li><li class="breadcrumb-item"><a href="../r-tools/lpsolve.html"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Решатель LPSolve</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-r-tools-lpsolve" class="quarto-section-identifier">Приложение H — Решатель LPSolve</span></h1>
+<h1 class="title"><span id="sec-r-tools-lpsolve" class="quarto-section-identifier">Приложение D — Решатель LPSolve</span></h1>
 </div>
 
 
@@ -538,7 +450,7 @@ window.Quarto = {
 
 
 <div id="exm-r-tools-lpsolve" class="theorem example">
-<p><span class="theorem-title"><strong>Пример H.1</strong></span> Рассмотрим задачу</p>
+<p><span class="theorem-title"><strong>Пример D.1</strong></span> Рассмотрим задачу</p>
 <p><span class="math display">\[
 \begin{aligned}
 &amp;\mathrm{Z}=11x_1+5x_2+4x_3 \rightarrow \max\\
@@ -559,10 +471,10 @@ x_1,x_2,x_3 \geq 0
 \end{pmatrix}
 \]</span> матрица коэффициентов ограничений (матрица ограничений). <span class="math inline">\(\mathbf{b}=(11,5,13)\)</span> вектор-столбец правых частей.</p>
 </div>
-<section id="sec-r-tools-lpsolve-lpsolve" class="level2" data-number="H.1">
-<h2 data-number="H.1" class="anchored" data-anchor-id="sec-r-tools-lpsolve-lpsolve"><span class="header-section-number">H.1</span> lpSolve</h2>
-<section id="sec-r-tools-lpsolve-lpsolve-install" class="level3" data-number="H.1.1">
-<h3 data-number="H.1.1" class="anchored" data-anchor-id="sec-r-tools-lpsolve-lpsolve-install"><span class="header-section-number">H.1.1</span> Установка</h3>
+<section id="sec-r-tools-lpsolve-lpsolve" class="level2" data-number="D.1">
+<h2 data-number="D.1" class="anchored" data-anchor-id="sec-r-tools-lpsolve-lpsolve"><span class="header-section-number">D.1</span> lpSolve</h2>
+<section id="sec-r-tools-lpsolve-lpsolve-install" class="level3" data-number="D.1.1">
+<h3 data-number="D.1.1" class="anchored" data-anchor-id="sec-r-tools-lpsolve-lpsolve-install"><span class="header-section-number">D.1.1</span> Установка</h3>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -580,9 +492,9 @@ x_1,x_2,x_3 \geq 0
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'lpSolve'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="sec-r-tools-lpsolve-lpsolve-model" class="level3" data-number="H.1.2">
-<h3 data-number="H.1.2" class="anchored" data-anchor-id="sec-r-tools-lpsolve-lpsolve-model"><span class="header-section-number">H.1.2</span> Модель</h3>
-<p>На основе примера <a href="#exm-r-tools-lpsolve" class="quarto-xref">Пример&nbsp;<span>H.1</span></a>. Для начала требуется определить целевую функцию <span class="math inline">\(\mathrm{Z}\)</span>. В пакете <code>lpsolve</code> целевая функция задается как вектор <a href="../r-lang/basic.html#sec-r-lang-basic-vector" class="quarto-xref"><span>Глава 6.3</span></a> коэффициентов.</p>
+<section id="sec-r-tools-lpsolve-lpsolve-model" class="level3" data-number="D.1.2">
+<h3 data-number="D.1.2" class="anchored" data-anchor-id="sec-r-tools-lpsolve-lpsolve-model"><span class="header-section-number">D.1.2</span> Модель</h3>
+<p>На основе примера <a href="#exm-r-tools-lpsolve" class="quarto-xref">Пример&nbsp;<span>D.1</span></a>. Для начала требуется определить целевую функцию <span class="math inline">\(\mathrm{Z}\)</span>. В пакете <code>lpsolve</code> целевая функция задается как вектор <a href="../r-lang/basic.html#sec-r-lang-basic-vector" class="quarto-xref"><span>Глава 6.3</span></a> коэффициентов.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Z <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">11</span>, <span class="dv">5</span>, <span class="dv">4</span>)</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -633,8 +545,8 @@ x_1,x_2,x_3 \geq 0
 </div>
 </div>
 </section>
-<section id="sec-r-tools-lpsolve-lpsolve-solution" class="level3" data-number="H.1.3">
-<h3 data-number="H.1.3" class="anchored" data-anchor-id="sec-r-tools-lpsolve-lpsolve-solution"><span class="header-section-number">H.1.3</span> Решение</h3>
+<section id="sec-r-tools-lpsolve-lpsolve-solution" class="level3" data-number="D.1.3">
+<h3 data-number="D.1.3" class="anchored" data-anchor-id="sec-r-tools-lpsolve-lpsolve-solution"><span class="header-section-number">D.1.3</span> Решение</h3>
 <p>Для поиска решения вызывается функция <a href="https://rdrr.io/pkg/lpSolve/man/lp.html"><code>lpSolve::lp()</code></a></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="annotated-cell-5"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-5-1"><a href="#annotated-cell-5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lpSolve)</span>
@@ -730,8 +642,8 @@ x_1,x_2,x_3 \geq 0
 </div>
 </div>
 </section>
-<section id="sec-r-tools-lpsolve-lpsolve-sensetivity" class="level3" data-number="H.1.4">
-<h3 data-number="H.1.4" class="anchored" data-anchor-id="sec-r-tools-lpsolve-lpsolve-sensetivity"><span class="header-section-number">H.1.4</span> Анализ чувствительности оптимального решения</h3>
+<section id="sec-r-tools-lpsolve-lpsolve-sensetivity" class="level3" data-number="D.1.4">
+<h3 data-number="D.1.4" class="anchored" data-anchor-id="sec-r-tools-lpsolve-lpsolve-sensetivity"><span class="header-section-number">D.1.4</span> Анализ чувствительности оптимального решения</h3>
 <section id="sec-r-tools-lpsolve-lpsolve-sensetivity-objective" class="level4">
 <h4 class="anchored" data-anchor-id="sec-r-tools-lpsolve-lpsolve-sensetivity-objective">Целевой функции</h4>
 <p>Диапазон в кортом можно изменять коэффициенты целевой функции <a href="../linear/sensetivity.html#sec-linear-sensetivity-objective" class="quarto-xref"><span>Глава 10.1</span></a> не меняя при этом характер решения (точку, соответствующую оптимальному решению) можно определить следующим образом</p>
@@ -780,9 +692,9 @@ x_1,x_2,x_3 \geq 0
 <p>Таким образом для первого ограничения <span class="math inline">\(3x_1+2x_2+8x_3 \leq 11\)</span> двойственное значение <span class="math inline">\(2.5\)</span> сохраняется при изменении правой части <span class="math inline">\(7.5 \leq b_1 \leq 7.5\)</span></p>
 </section>
 </section>
-<section id="целочисленная-модель" class="level3" data-number="H.1.5">
-<h3 data-number="H.1.5" class="anchored" data-anchor-id="целочисленная-модель"><span class="header-section-number">H.1.5</span> Целочисленная модель</h3>
-<p>Для решения задачи <a href="#exm-r-tools-lpsolve" class="quarto-xref">Пример&nbsp;<span>H.1</span></a> в целых числах при построении модели добавляется параметр <code>all.int=TRUE</code>. В этом случае анализ чувствительности <a href="#sec-r-tools-lpsolve-lpsolve-sensetivity" class="quarto-xref"><span>Глава H.1.4</span></a> не применим и параметр <code>compute.sens = TRUE</code> будет проигнорирован</p>
+<section id="целочисленная-модель" class="level3" data-number="D.1.5">
+<h3 data-number="D.1.5" class="anchored" data-anchor-id="целочисленная-модель"><span class="header-section-number">D.1.5</span> Целочисленная модель</h3>
+<p>Для решения задачи <a href="#exm-r-tools-lpsolve" class="quarto-xref">Пример&nbsp;<span>D.1</span></a> в целых числах при построении модели добавляется параметр <code>all.int=TRUE</code>. В этом случае анализ чувствительности <a href="#sec-r-tools-lpsolve-lpsolve-sensetivity" class="quarto-xref"><span>Глава D.1.4</span></a> не применим и параметр <code>compute.sens = TRUE</code> будет проигнорирован</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>optimum <span class="ot">&lt;-</span> <span class="fu">lp</span>(           </span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">direction =</span> <span class="st">'max'</span>,</span>
@@ -818,13 +730,13 @@ x_1,x_2,x_3 \geq 0
 <pre><code>[1] 1 1 0</code></pre>
 </div>
 </div>
-<p>Задача целочисленного и двоичного программирования в пакете <code>lpSolve</code> решается методом ветвей и границ <a href="../linear/integer.html#sec-linear-integer-method-branch-and-bound" class="quarto-xref"><span>Глава 15.1</span></a>.</p>
+<p>Задача целочисленного и двоичного программирования в пакете <code>lpSolve</code> решается методом ветвей и границ <span class="quarto-unresolved-ref">?sec-linear-integer-method-branch-and-bound</span>.</p>
 </section>
 </section>
-<section id="sec-r-tools-lpsolve-lpsolveapi" class="level2" data-number="H.2">
-<h2 data-number="H.2" class="anchored" data-anchor-id="sec-r-tools-lpsolve-lpsolveapi"><span class="header-section-number">H.2</span> lpSolveAPI</h2>
-<section id="установка" class="level3" data-number="H.2.1">
-<h3 data-number="H.2.1" class="anchored" data-anchor-id="установка"><span class="header-section-number">H.2.1</span> Установка</h3>
+<section id="sec-r-tools-lpsolve-lpsolveapi" class="level2" data-number="D.2">
+<h2 data-number="D.2" class="anchored" data-anchor-id="sec-r-tools-lpsolve-lpsolveapi"><span class="header-section-number">D.2</span> lpSolveAPI</h2>
+<section id="установка" class="level3" data-number="D.2.1">
+<h3 data-number="D.2.1" class="anchored" data-anchor-id="установка"><span class="header-section-number">D.2.1</span> Установка</h3>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -842,9 +754,9 @@ x_1,x_2,x_3 \geq 0
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">'lpSolveAPI'</span>)</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="модель" class="level3" data-number="H.2.2">
-<h3 data-number="H.2.2" class="anchored" data-anchor-id="модель"><span class="header-section-number">H.2.2</span> Модель</h3>
-<p>На основе примера <a href="#exm-r-tools-lpsolve" class="quarto-xref">Пример&nbsp;<span>H.1</span></a> создаём объект модели задачи линейного программирования <a href="https://rdrr.io/pkg/lpSolveAPI/man/make.lp.html"><code>lpSolveAPI::make.lp()</code></a> с 3 переменными и 0 ограничений (будут добавлены позднее).</p>
+<section id="модель" class="level3" data-number="D.2.2">
+<h3 data-number="D.2.2" class="anchored" data-anchor-id="модель"><span class="header-section-number">D.2.2</span> Модель</h3>
+<p>На основе примера <a href="#exm-r-tools-lpsolve" class="quarto-xref">Пример&nbsp;<span>D.1</span></a> создаём объект модели задачи линейного программирования <a href="https://rdrr.io/pkg/lpSolveAPI/man/make.lp.html"><code>lpSolveAPI::make.lp()</code></a> с 3 переменными и 0 ограничений (будут добавлены позднее).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lpSolveAPI)</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>lprob <span class="ot">&lt;-</span> <span class="fu">make.lp</span>(<span class="dv">0</span>, <span class="dv">3</span>)</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -880,8 +792,8 @@ Lower        0     0     0        </code></pre>
 </div>
 </div>
 </section>
-<section id="решение" class="level3" data-number="H.2.3">
-<h3 data-number="H.2.3" class="anchored" data-anchor-id="решение"><span class="header-section-number">H.2.3</span> Решение</h3>
+<section id="решение" class="level3" data-number="D.2.3">
+<h3 data-number="D.2.3" class="anchored" data-anchor-id="решение"><span class="header-section-number">D.2.3</span> Решение</h3>
 <p>Далее вызовом <code>lpSolveAPI::solve()</code> полученная модель решается. В случае успеха возвращается <code>status_code == 0</code></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>status_code <span class="ot">&lt;-</span> <span class="fu">solve</span>(lprob)</span>
@@ -905,8 +817,8 @@ Lower        0     0     0        </code></pre>
 </div>
 </div>
 </section>
-<section id="анализ-чувствительности-оптимального-решения" class="level3" data-number="H.2.4">
-<h3 data-number="H.2.4" class="anchored" data-anchor-id="анализ-чувствительности-оптимального-решения"><span class="header-section-number">H.2.4</span> Анализ чувствительности оптимального решения</h3>
+<section id="анализ-чувствительности-оптимального-решения" class="level3" data-number="D.2.4">
+<h3 data-number="D.2.4" class="anchored" data-anchor-id="анализ-чувствительности-оптимального-решения"><span class="header-section-number">D.2.4</span> Анализ чувствительности оптимального решения</h3>
 <section id="целевая-функция" class="level4">
 <h4 class="anchored" data-anchor-id="целевая-функция">Целевая функция</h4>
 <p>Получим список с двумя ключами <code>objfrom</code> и <code>objtill</code> с помощью функции <a href="https://rdrr.io/pkg/lpSolveAPI/man/get.sensitivity.obj.html"><code>lpSolveAPI::get.sensitivity.obj()</code></a></p>
@@ -1364,8 +1276,8 @@ set.bounds(LP, upper = c(mat[, 'ub'], 1, 1))</code></pre>
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../r-tools/tidyr.html" class="pagination-link" aria-label="tidyr">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">tidyr</span></span>
+      <a href="../r-tools/purrr.html" class="pagination-link" aria-label="Функциональные операторы Purrr">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Функциональные операторы Purrr</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
