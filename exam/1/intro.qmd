@@ -52,7 +52,7 @@ x_1 \\ x_2
 $$
 
 ::: {.callout-note appearance="minimal" title="Оценка"}
-2
+0.5
 :::
 
 [`\vspace{1cm}`{=latex}]{.content-visible when-profile="exam"}

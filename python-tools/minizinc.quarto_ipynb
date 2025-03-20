@@ -1,0 +1,85 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "# Язык моделирования MiniZinc\n",
+        "\n",
+        "## Интерфейс `minizinc`"
+      ],
+      "id": "647250e8"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import minizinc\n",
+        "\n",
+        "# Create a MiniZinc model\n",
+        "model = minizinc.Model()\n",
+        "model.add_string(\"\"\"\n",
+        "var -100..100: x;\n",
+        "int: a; int: b; int: c;\n",
+        "constraint a*(x*x) + b*x = c;\n",
+        "solve satisfy;\n",
+        "\"\"\")\n",
+        "\n",
+        "# Transform Model into a instance\n",
+        "gecode = minizinc.Solver.lookup(\"gecode\")\n",
+        "inst = minizinc.Instance(gecode, model)\n",
+        "inst[\"a\"] = 1\n",
+        "inst[\"b\"] = 4\n",
+        "inst[\"c\"] = 0\n",
+        "\n",
+        "# Solve the instance\n",
+        "result = inst.solve(all_solutions=True)\n",
+        "for i in range(len(result)):\n",
+        "    print(\"x = {}\".format(result[i, \"x\"]))"
+      ],
+      "id": "d1a892a0",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "## Интерфейс `zython`"
+      ],
+      "id": "abbc3e6f"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "from zython import Model, var, range\n",
+        "\n",
+        "class MyModel(Model):\n",
+        "    def __init__(self, a: int, b: int, c: int):\n",
+        "        self.a = var(int, a)\n",
+        "        self.b = var(int, b)\n",
+        "        self.c = var(int, c)\n",
+        "        self.x = var(range(-100, 101))\n",
+        "        self.constraints = [self.a * self.x ** 2 + self.b * self.x + self.c == 0]\n",
+        "\n",
+        "model = MyModel(1, 4, 0)\n",
+        "result = model.solve_satisfy(all_solutions=True)\n",
+        "print(result)"
+      ],
+      "id": "782f9c56",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/usr/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

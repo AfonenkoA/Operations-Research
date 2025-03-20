@@ -15,6 +15,16 @@ book:
         - r-lang/basic.qmd
         - r-lang/advanced.qmd
 
+    - part: minizinc/overview.qmd
+      chapters:
+        - minizinc/basic.qmd
+        - minizinc/advanced.qmd
+
+    - part: python-lang/overview.qmd
+      chapters:
+        - python-lang/basic.qmd
+        - python-lang/advanced.qmd
+
     - part: linear/overview.qmd
       chapters:
         - linear/algebra.qmd
@@ -35,18 +45,33 @@ book:
         - nonlinear/constrained/analytical-one.qmd
         - nonlinear/constrained/analytical-many.qmd
 
-    - part: graph-theory/overview.qmd
+    - part: combinatorial/overview.qmd
       chapters:
-        - graph-theory/dijkstra.qmd
+        - combinatorial/graph-theory.qmd
+        - combinatorial/problems/constraint-satisfy.qmd
+        - combinatorial/problems/optimal-facility-location.qmd
+        - combinatorial/problems/network-design.qmd
+        - combinatorial/problems/shortest-path.qmd
+        - combinatorial/problems/knapsack.qmd
+        - combinatorial/problems/bin-packing.qmd
+        - combinatorial/problems/minimum-spanning-tree.qmd
+        - combinatorial/problems/travelling-salesman.qmd
+        - combinatorial/algorithm/dijkstra.qmd
+        - combinatorial/algorithm/branch-and-bound.qmd
+        - combinatorial/algorithm/dynamic-programming.qmd
+        - combinatorial/algorithm/backtracking.qmd
 
     - part: game-theory/overview.qmd
       chapters:
         - game-theory/matrix.qmd
 
+    - part: multi-objective/overview.qmd
+
     - part: "Лабораторные работы"
       chapters:
         - lab/1/intro.qmd
         - lab/2/linear.qmd
+        - lab/5/constraint.qmd
 
     - part: "Проверочные работы"
       chapters:
@@ -67,3 +92,6 @@ book:
         - r-tools/purrr.qmd
         - r-tools/tidyr.qmd
         - r-tools/lpsolve.qmd
+    - part: "Язык программирования Python"
+      chapters:
+        - python-tools/minizinc.qmd

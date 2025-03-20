@@ -830,6 +830,6 @@ plot_ly(x = x1, y = l1, type = 'scatter', mode = 'lines', name = 'l1') |>
 
 ### Случай n переменных. Метод Гаусса — Жордана {#sec-linear-algebra-equation-system-many-variables}
 
-#### Алгоритм {#sec-linear-algebra-equation-system-many-variables-alghorythm-gauss}
+#### Алгоритм {#sec-linear-algebra-equation-system-many-variables-algorithm-gauss}
 
 #### Пример

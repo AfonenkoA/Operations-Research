@@ -9,7 +9,7 @@ source('../../util/doc_link.R')
 source('../../util/plotly_show.R')
 ```
 
-# Лабораторная работа 1. Введение {#sec-lab-1}
+# 1. Введение {#sec-lab-1}
 
 ::: {.callout-caution title="Состояние разработки"}
 Требуется доработка
@@ -307,7 +307,7 @@ $$
 ::::
 
 :::: {#exr-lab-1-linear-algebra-equation-solve-custom-gauss}
-Реализовать решение системы линейных уравнений методом гаусса @sec-linear-algebra-equation-system-many-variables-alghorythm-gauss используя векторные операции.
+Реализовать решение системы линейных уравнений методом гаусса @sec-linear-algebra-equation-system-many-variables-algorithm-gauss используя векторные операции.
 
 ::: {.callout-note appearance="minimal"}
 Уровень 3

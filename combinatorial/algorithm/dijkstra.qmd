@@ -1,6 +1,5 @@
 # Алгоритм дейкстры {#sec-graph-theory-dijkstra}
 
-
 ::: {.callout-important title="Состояние разработки"}
 В разработке
 :::

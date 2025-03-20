@@ -19,5 +19,3 @@ outer(1:2,2:1)
 ## `inverse` {#sec-r-tools-basic-inverse}
 
 ## `det` {#sec-r-tools-basic-det}
-
-

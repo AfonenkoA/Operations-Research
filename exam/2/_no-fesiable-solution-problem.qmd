@@ -3,7 +3,7 @@ $$
 &\mathrm{F}=3x_1+2x_2 \rightarrow \max \\
 &\begin{cases}
 2x_1+x_2 \leq 2,\\
-3x_2 + 4x_2 \geq 12, \\
+3x_1 + 4x_2 \geq 12, \\
 x_1,x_2 \geq 0
 \end{cases}
 \end{aligned}

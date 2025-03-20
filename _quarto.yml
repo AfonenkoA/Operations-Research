@@ -20,9 +20,24 @@ book:
 lang: ru
 
 bibliography:
-  - references.bib
-  - lab/2/ref.bib
+  - combinatorial/ref.bib
+  - evolutionary/ref.bib
+  - exam/2/ref.bib
   - exam/1/ref.bib
+  - minizinc/ref.bib
+  - python-lang/ref.bib
+  - r-tools/ref.bib
+  - r-lang/ref.bib
+  - enviroment/ref.bib
+  - game-theory/ref.bib
+  - lab/5/ref.bib
+  - lab/ref.bib
+  - lab/2/ref.bib
+  - multi-objective/ref.bib
+  - linear/ref.bib
+  - nonlinear/ref.bib
+  - nonlinear/unconstrained/ref.bib
+  - global-ref.bib
 
 csl: gost-r-7-0-5-2008-numeric.csl
 

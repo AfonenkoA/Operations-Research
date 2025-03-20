@@ -1,6 +1,6 @@
 # Установка
 
-Установить julia, python, RStudio (не обязательно), Quarto CLI, texlive.
+Установить julia, python, RStudio (не обязательно), Quarto CLI, texlive. Дополнительная зависимость gdal, asymptote.
 
 ``` r
 renv::restore()

@@ -8,7 +8,7 @@
 source('../util/doc_link.R')
 ```
 
-# Основы языка R {#sec-r-lang-basic}
+# Основы R {#sec-r-lang-basic}
 
 @bib-r-lang-tutorialspoint
 
@@ -907,3 +907,4 @@ f()
 
 f(9,5)
 ```
+
