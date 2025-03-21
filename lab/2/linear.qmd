@@ -8,13 +8,13 @@ source('../../util/doc_link.R')
 source('../../util/plotly_show.R')
 ```
 
-# 2. Линейное программирование {#sec-lab2}
+# 2. Линейное программирование {#sec-lab-2}
 
 ::: {.callout-important title="Состояние разработки"}
 Требуется доработка
 :::
 
-## Инструкции {#sec-lab-1-instructions}
+## Инструкции {#sec-lab-2-instructions}
 
 ### Установка
 

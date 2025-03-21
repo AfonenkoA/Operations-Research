@@ -1,8 +1,11 @@
 graphical-solution:
   select: true
 
+convert-to-linear:
+  select: false
+
 standard-form:
-  select: true
+    select: true
 
 build-model:
   select: true

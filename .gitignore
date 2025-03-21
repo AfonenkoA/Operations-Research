@@ -18,7 +18,7 @@ _freeze/
 *.pdf
 *.toc
 
-*gensvg*
+*_gen*
 *.html
 
 /.quarto/

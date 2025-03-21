@@ -1,7 +1,6 @@
-operations-research:
-  table-lamp:
+table-lamp:
     select: true
-  avia-tickets:
+avia-tickets:
     select: true
     params:
       one-way-cost:
@@ -20,8 +19,7 @@ operations-research:
         max: 1000
         step: 50
 
-linear-algebra:
-  det:
+det:
     select: true
-  equations:
+equations:
     select: true

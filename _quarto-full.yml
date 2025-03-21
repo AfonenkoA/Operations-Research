@@ -69,6 +69,7 @@ book:
 
     - part: "Лабораторные работы"
       chapters:
+        - lab/report.qmd
         - lab/1/intro.qmd
         - lab/2/linear.qmd
         - lab/5/constraint.qmd

@@ -14,7 +14,7 @@ params:
 {{< include _graphical-solution-problem.qmd >}}
 :::
 
-::: {.content-visible when-profile="exam" layout-ncol=2}
+::: {.content-visible when-profile="exam" layout-ncol="2"}
 {{< include _graphical-solution-problem.qmd >}}
 
 ![](graphical-solution-grid.svg){fig-align="center" width="5cm"}
@@ -32,18 +32,50 @@ params:
 :::
 ::::
 
-::::: {.content-hidden unless-meta="standard-form.select"}
-:::: {#exr-exam-2-standard-form}
-## Привести в стандартную форму
+::::: {.content-hidden unless-meta="convert-to-linear.select"}
+:::: {#exr-exam-2-convert-to-linear}
+## Линейная модель
 
-Минимизировать $z=\max\{|x_1-x_2+3x_3|,|-x_1+3x_2-x_3|\}$, при ограничениях $x_1,x_2,x_3 \geq 0$. Подсказка: представьте, что $z$ это число, которое не меньше, чем аргументы $\max$ и примените свойство модуля $|a|\leq b$ эквивалентна записи $a\leq b$ и $a \geq -b$.
+Минимизировать $z=\max\{|x_1-x_2+3x_3|,|-x_1+3x_2-x_3|\}$, при ограничениях $x_1,x_2,x_3 \geq 0$. Подсказка: представьте, что $z$ это число, которое не меньше, чем аргументы $\max$ и примените свойство модуля $|a|\leq b$ эквивалентна записи $a\leq b$ и $a \geq -b$. Привести к линейной модели.
 
 ::: {.callout-note appearance="minimal" title="Оценка"}
 0.25
 :::
 
 [`\vspace{3cm}`{=latex}]{.content-visible when-profile="exam"}
+::::
+:::::
 
+:::: {.content-hidden when-profile="exam"}
+::: {#sol-exam-2-convert-to-linear}
+{{< lipsum 1 >}}
+:::
+::::
+
+::::: {.content-hidden unless-meta="standard-form.select"}
+:::: {#exr-exam-2-standard-form}
+## Стандартная форма
+
+Привести к задаче максимизации в стандартной форме. 
+
+$$
+\begin{aligned}
+&\mathrm{F}=-2x_1+5x_2-3x_3+x_4 \rightarrow \min \\
+&\begin{cases}
+2x_1+3x_2+x_3+2x_4 \leq 18, \\
+x_1+6x_2+11x_3-x_4 \geq 25, \\
+3x_2+2x_3+x_4 \leq -8, \\
+x_1,x_2,x_3 \geq 0\\
+x_4 \in \mathbb{R}
+\end{cases}
+\end{aligned}
+$$
+
+::: {.callout-note appearance="minimal" title="Оценка"}
+0.25
+:::
+
+[`\vspace{3cm}`{=latex}]{.content-visible when-profile="exam"}
 ::::
 :::::
 
@@ -55,16 +87,15 @@ params:
 
 ::::: {.content-hidden unless-meta="build-model.select"}
 :::: {#exr-exam-2-build-model}
-## Построить модель
+## Dolce vita
 
-Активист творческого союза пришёл к выводу, что только одна учёба плохо повлияет на его умственное и физическое развитие. Поэтому он решил распределить всё своё свободное время на неделю 70 часов между учёбой, спортом, организацией мероприятий и тусовками. Он полагает, что тусовки в два раза круче мероприятий и в 1.5 раза лучше, чем спорт, а мероприятия интереснее учёбы в 2 раза. Однако тусовок организуется в два раза меньше, чем мероприятий, а на учёбу придётся тратить не меньше 6 часов в день. Составьте модель, которая позволит активисту получить максимальное удовольствие от жизни.
+Активист творческого союза пришёл к выводу, что только одна учёба плохо повлияет на его умственное и физическое развитие. Поэтому он решил распределить всё своё свободное время на неделю 70 часов между учёбой, спортом, организацией мероприятий и тусовками. Он полагает, что тусовки в два раза круче мероприятий и в 1.5 раза лучше, чем спорт, а мероприятия интереснее учёбы в 2 раза. Однако тусовок организуется в два раза меньше, чем мероприятий, а на учёбу придётся тратить не меньше 6 часов в день 6 дней в неделю. Составьте модель, которая позволит активисту получить максимальное удовольствие от жизни.
 
 ::: {.callout-note appearance="minimal" title="Оценка"}
 0.5
 :::
 
 [`\vspace{3cm}`{=latex}]{.content-visible when-profile="exam"}
-
 ::::
 :::::
 
@@ -74,19 +105,19 @@ params:
 :::
 ::::
 
-:::::: {.content-hidden unless-meta="special.select"}
-::::: {#exr-exam-2-special}
+:::::::: {.content-hidden unless-meta="special.select"}
+::::::: {#exr-exam-2-special}
 ## Особенная задачка
 
 Определить какой особый случай реализован. <!-- 3.5 Особые случаи применения симплекс-метода Таха 113-->
 
-::: {.content-hidden unless-meta="special.type1.select" layout-ncol=2}
+::: {.content-hidden unless-meta="special.type1.select" layout-ncol="2"}
 {{< include _no-fesiable-solution-problem.qmd >}}
 
 {{< include _alternative_problem.qmd >}}
 :::
 
-::: {.content-hidden unless-meta="special.type2.select" layout-ncol=2}
+::: {.content-hidden unless-meta="special.type2.select" layout-ncol="2"}
 {{< include _unbounded_problem.qmd >}}
 
 {{< include _degeneracy-problem.qmd >}}
@@ -96,14 +127,13 @@ params:
 0.25
 :::
 
-::: {.content-visible when-profile="exam" layout-ncol=2}
-![](special-grid.svg){fig-align="center" width="5cm"} 
+::: {.content-visible when-profile="exam" layout-ncol="2"}
+![](special-grid.svg){fig-align="center" width="5cm"}
 
 ![](special-grid.svg){fig-align="center" width="5cm"}
 :::
-
-:::::
-::::::
+:::::::
+::::::::
 
 :::::: {.content-hidden unless-meta="graphical-sensetivity.select"}
 ::::: {#exr-exam-2-graphical-sensetivity}
@@ -112,7 +142,7 @@ params:
 Завод Интеграл выпускает две модели электронных приборов, при изготовлении которых используются резисторы, конденсаторы и микросхемы. В таблице приведены данные по использованию ресурсов в каждой выпускаемой модели.
 
 | Ресурс          | Модель 1 (шт.) | Модель 2 (шт.) | Доступность ресурса (шт.) |
-|----------------|----------------|----------------|------------------------|
+|-----------------|-----------------|-----------------|---------------------|
 | Резистор        | 2              | 3              | 1200                      |
 | Конденсатор     | 2              | 1              | 500                       |
 | Микросхема      | 0              | 4              | 800                       |
@@ -133,21 +163,19 @@ x_1,x_2 \geq 0
 $$
 
 1.  Как измениться прибыль, если станет доступно 600 конденсаторов? (Определить двойственное значение и область его определения).
-2.  Как измениться решение, если цена модель 1 возрастёт до 9? Определите интервал стоимости первого изделия, внутри которого оптимальное решение не изменится.
+2.  Как измениться решение, если цена модель 1 возрастёт до 9? Определите интервал стоимости первого изделия, внутри которого оптимальное решение исходной задачи не изменится.
 
 ::: {.callout-note appearance="minimal" title="Оценка"}
 1
 :::
 
-::: {.content-visible when-profile="exam" layout-ncol=2}
-![](graphical-sensetivity-grid.svg){fig-align="center" height="5cm"} 
+::: {.content-visible when-profile="exam" layout-ncol="2"}
+![](graphical-sensetivity-grid.svg){fig-align="center" width="7cm"}
 
-![](graphical-sensetivity-grid.svg){fig-align="center" height="5cm"}
-<!-- Растянуть масштаб до 700 на 700 -->
+![](graphical-sensetivity-grid.svg){fig-align="center" width="7cm"} <!-- Растянуть масштаб до 700 на 700 -->
 :::
 
 [`\vspace{4cm}`{=latex}]{.content-visible when-profile="exam"}
-
 :::::
 ::::::
 
@@ -157,7 +185,7 @@ $$
 
 Сформулировать двойственную задачу <!--// Таха 4.4 189-->
 
-::: {layout-ncol=2}
+::: {layout-ncol="2"}
 $$
 \begin{aligned}
 &\mathrm{F}=-5x_1+2x_2 \rightarrow \max \\
@@ -169,13 +197,13 @@ x_1,x_2 \geq 0
 \end{aligned}
 $$
 
+
 $$
 \begin{aligned}
-&\mathrm{F}=x_1+x_2 \rightarrow \max \\
+&\mathrm{F}=3x_1+4x_2 \rightarrow \max \\
 &\begin{cases}
-2x_1+x_2=5,\\
-3x_1-x_2=6, \\
-x_1,x_2 \in \mathbb{R}
+5x_1+6x_2=7,\\
+x_1,x_2 \geq 0
 \end{cases}
 \end{aligned}
 $$
@@ -186,7 +214,6 @@ $$
 :::
 
 [`\vspace{3cm}`{=latex}]{.content-visible when-profile="exam"}
-
 :::::
 ::::::
 
@@ -215,7 +242,6 @@ $$
 :::
 
 [`\vspace{1cm}`{=latex}]{.content-visible when-profile="exam"}
-
 ::::
 :::::
 
@@ -235,10 +261,10 @@ $$
 {{< include _simplex-alghorytm-problem.qmd >}}
 :::
 
-::: {.content-visible when-profile="exam" layout-ncol=2}
+::: {.content-visible when-profile="exam" layout-ncol="2"}
 {{< include _simplex-alghorytm-problem.qmd >}}
 
-![](simplex-alghorytm-grid.svg){fig-align="center" width="4cm"}
+![](simplex-alghorytm-grid.svg){fig-align="right" width="6cm"}
 :::
 
 ::: {.callout-note appearance="minimal" title="Оценка"}
