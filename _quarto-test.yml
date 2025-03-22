@@ -1,6 +1,5 @@
-book:
-  chapters:
-    - index.qmd
-    - test.qmd
-
-prefer-html: false
+project:
+  type: default
+  output-dir: _test
+  render:
+    - practice/basic-model/main.qmd

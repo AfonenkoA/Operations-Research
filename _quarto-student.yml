@@ -1,3 +1,7 @@
+project:
+  type: book
+  output-dir: _student-book
+
 book:
   chapters:
     - index.qmd
@@ -20,7 +24,8 @@ book:
         - linear/algebra.qmd
         - linear/graphical-solution.qmd
         - linear/sensetivity.qmd
-        - linear/simplex-spec.qmd
+        - linear/simplex-special-cases.qmd
+        - linear/integer.qmd
 
     - part: nonlinear/overview.qmd
       chapters:

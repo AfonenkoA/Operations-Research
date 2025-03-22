@@ -5,7 +5,8 @@
 
 .quarto/
 _site/
-_book/
+_*book/
+_test/
 _practice/
 _freeze/
 *_cache/
@@ -17,6 +18,7 @@ _freeze/
 *.log
 *.pdf
 *.toc
+*.tex
 
 *_gen*
 *.html

@@ -1,5 +1,7 @@
 project:
   type: book
+  pre-render:
+    - scripts/ensure_profile.R
 
 profile:
   group:

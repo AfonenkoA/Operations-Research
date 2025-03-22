@@ -95,7 +95,7 @@ names(tbl) <- c('lon','lat','name')
 tbl$pop <- sample.int(1e3, nrow(tbl))
 ```
 
-```{{r}}
+```{r}
 tbl <- readr::read_delim('BSU.csv',delim = ';',col_types=c('d','d','c'))
 names(tbl) <- c('lon','lat','name')
 tbl$pop <- sample.int(1e3, nrow(tbl))
@@ -110,13 +110,13 @@ geo_map <- leaflet::leaflet() |>
                       label = res$cluster,
                       labelOptions = leaflet::labelOptions(noHide = TRUE))
 
-geo_map_path <- '1.png'
+geo_map_path <- fs::file_temp(ext='.png')
 html_fl = fs::file_temp(ext = ".html")
 
-mapview::mapshot2(geo_map,html_fl,geo_map_path)
+#mapview::mapshot2(geo_map,html_fl,geo_map_path)
 ```
 
-```{r}
+```{{r}}
 d <- geodist::geodist(tbl)
 res <- kmeans(d,12)
 

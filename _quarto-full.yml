@@ -1,3 +1,7 @@
+project:
+  type: book
+  output-dir: _full-book
+
 book:
   chapters:
     - index.qmd
@@ -70,7 +74,7 @@ book:
       chapters:
         - lab/report.qmd
         - lab/programming/r/main.qmd
-#        - lab/basic-model/main.qmd
+        - lab/basic-model/main.qmd
         - lab/linear/algebra/main.qmd
         - lab/linear/programming/main.qmd
         - lab/linear/integer/main.qmd

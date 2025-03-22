@@ -6,10 +6,14 @@ params:
   AviaTicketsReturnLaterCost: 80
   AviaTicketsOneWayCost: 70
 ---
-:::{.content-visible when-profile="practice"}
-# Практическая работа: Моделирование
+
+{{< meta table-lamp.select >}}
+
+::: {.content-hidden unsless-profile="practice"}
+# Практическая работа: Модели исследования операций
 :::
-:::{.content-hidden when-profile="practice"}
+
+::: {.content-hidden when-profile="practice"}
 # Моделирование
 :::
 

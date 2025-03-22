@@ -2,5 +2,8 @@ project:
   type: default
   output-dir: _practice
   render:
-    - practice/1/intro.qmd
-    - practice/2/linear.qmd
+    - practice/basic-model/main.qmd
+    - practice/linear/simplex/main.qmd
+    - practice/linear/graphical/main.qmd
+    - practice/linear/algebra/main.qmd
+    - practice/linear/model/main.qmd

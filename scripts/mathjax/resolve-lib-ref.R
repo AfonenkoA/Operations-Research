@@ -1,5 +1,7 @@
 source('scripts/load_enviroment.R')
 
+cat(proj_dir)
+
 mathjax_rel_path <- path(site_libs_dir, 'mathjax-3.2.2', 'tex-svg-full.js')
 
 mathjax_quarto_local_out_path <- path(out, mathjax_rel_path)
