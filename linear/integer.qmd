@@ -3,15 +3,6 @@ cache: false
 freeze: false
 ---
 
-```{r}
-#| warning: false
-#| message: false
-#| include: false
-
-source('../util/add_region.R')
-source('../util/plotly_show.R')
-```
-
 # Целочисленное программирование {#sec-linear-integer}
 
 ## Метод ветвей и границ {#sec-linear-integer-method-branch-and-bound}
@@ -85,9 +76,7 @@ optimum$solution
 #| message: false
 #| echo: false
 
-library(plotly)
-
-plot_ly(mode = 'lines+markers') |>
+plotly::plot_ly(mode = 'lines+markers') |>
   add_region(
     xy = rbind(c(0, 0), c(0, 1), c(6, 7), c(6, 0)),
     name = '-x+y\\leq1',
@@ -100,9 +89,8 @@ plot_ly(mode = 'lines+markers') |>
     xy = rbind(c(0, 0), c(4, 0), c(0, 6)),
     name = '3x+2y\\leq12',
     color = 'rgba(255, 212, 96, 0.5)') |>
-  config(mathjax = 'local') |>
+  plotly::config(mathjax = 'local') |>
   pshow_safe()
-
 ```
 
 ```{r}
@@ -116,24 +104,24 @@ z <- outer(x, y, FUN = \(x, y) {
   y
 }) |> t()
 
-plot_ly(x = x, y = y, z = z, type = 'contour') |>
+plotly::plot_ly(x = x, y = y, z = z, type = 'contour') |>
   add_region(
     xy = rbind(c(0, 0), c(0, 1), c(1.8, 2.8), c(12 / 5, 12 / 5), c(4, 0)),
     name = '-x+y\\leq1',
     color = 'rgba(255, 212, 96, 0.5)') |>
-  add_trace(
+  plotly::add_trace(
     x = c(0, 0, 1, 1, 1, 2, 2, 3, 3, 2, 4),
     y = c(0, 1, 0, 1, 2, 1, 2, 1, 0, 0, 0),
     type = 'scatter',
     name = 'допустимые решения',
     marker = list(color = 'purple')) |>
-  add_trace(
+  plotly::add_trace(
     x = c(1.8, 2),
     y = c(2.8, 3),
     type = 'scatter',
     name = 'решение в\nдействительных\nчислах',
     marker = list(color = 'black')) |>
-  config(mathjax = 'local') |>
+  plotly::config(mathjax = 'local') |>
   pshow_safe()
 ```
 

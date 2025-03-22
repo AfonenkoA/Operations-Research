@@ -3,9 +3,9 @@ project:
 
 profile:
   group:
-    - [full, student, exam, test]
+    - [full, student, practice, test]
     - [dev, prod]
-    - [html, pdf, pdf-exam]
+    - [html, pdf, pdf-practice]
 
 book:
   title: "Исследование операций"
@@ -21,23 +21,26 @@ lang: ru
 
 bibliography:
   - combinatorial/ref.bib
+  - practice/basic-model/ref.bib
+  - practice/linear/simplex/ref.bib
+  - practice/linear/graphical/ref.bib
+  - practice/linear/algebra/ref.bib
   - evolutionary/ref.bib
-  - exam/2/ref.bib
-  - exam/1/ref.bib
   - minizinc/ref.bib
-  - python-lang/ref.bib
-  - r-tools/ref.bib
-  - r-lang/ref.bib
   - enviroment/ref.bib
   - game-theory/ref.bib
-  - lab/5/ref.bib
   - lab/ref.bib
-  - lab/2/ref.bib
+  - lab/constraint/ref.bib
+  - lab/linear/algebra/ref.bib
   - multi-objective/ref.bib
   - linear/ref.bib
+  - python/lang/ref.bib
+  - r/lang/ref.bib
+  - r/tools/ref.bib
   - nonlinear/ref.bib
   - nonlinear/unconstrained/ref.bib
   - global-ref.bib
+
 
 csl: gost-r-7-0-5-2008-numeric.csl
 

@@ -10,33 +10,32 @@ book:
         - enviroment/markdown.qmd
         - enviroment/latex.qmd
 
-    - part: r-lang/overview.qmd
+    - part: r/overview.qmd
       chapters:
-        - r-lang/basic.qmd
-        - r-lang/advanced.qmd
+        - r/lang/basic.qmd
+        - r/lang/advanced.qmd
 
     - part: minizinc/overview.qmd
       chapters:
         - minizinc/basic.qmd
         - minizinc/advanced.qmd
 
-    - part: python-lang/overview.qmd
+    - part: python/lang/overview.qmd
       chapters:
-        - python-lang/basic.qmd
-        - python-lang/advanced.qmd
+        - python/lang/advanced.qmd
+        - python/lang/basic.qmd
 
     - part: linear/overview.qmd
       chapters:
         - linear/algebra.qmd
         - linear/graphical-solution.qmd
         - linear/sensetivity.qmd
-        - linear/dual.qmd
-        - linear/simplex.qmd
-        - linear/simplex-spec.qmd
-        - linear/simplex-ext.qmd
+        - linear/dual-problem.qmd
+        - linear/simplex-alghoritm.qmd
+        - linear/simplex-special-cases.qmd
+        - linear/simplex-artificial-initial-solution.qmd
         - linear/integer.qmd
         - linear/transport.qmd
-        - linear/network.qmd
 
     - part: nonlinear/overview.qmd
       chapters:
@@ -50,7 +49,7 @@ book:
         - combinatorial/graph-theory.qmd
         - combinatorial/problems/constraint-satisfy.qmd
         - combinatorial/problems/optimal-facility-location.qmd
-        - combinatorial/problems/network-design.qmd
+        - combinatorial/problems/network.qmd
         - combinatorial/problems/shortest-path.qmd
         - combinatorial/problems/knapsack.qmd
         - combinatorial/problems/bin-packing.qmd
@@ -67,32 +66,56 @@ book:
 
     - part: multi-objective/overview.qmd
 
-    - part: "Лабораторные работы"
+    - part: lab/overview.qmd
       chapters:
         - lab/report.qmd
-        - lab/1/intro.qmd
-        - lab/2/linear.qmd
-        - lab/5/constraint.qmd
+        - lab/programming/r/main.qmd
+#        - lab/basic-model/main.qmd
+        - lab/linear/algebra/main.qmd
+        - lab/linear/programming/main.qmd
+        - lab/linear/integer/main.qmd
+        - lab/linear/transport/main.qmd
+        - lab/constraint/main.qmd
+        - lab/network/main.qmd
+        - lab/combinatorial/main.qmd
+        - lab/dynamic-programming/main.qmd
+        - lab/nonlinear/main.qmd
+        - lab/evolutionary/main.qmd
+        - lab/game-theory/main.qmd
+        - lab/multi-objective/main.qmd
 
-    - part: "Проверочные работы"
+    - part: practice/overview.qmd
       chapters:
-        - exam/1/intro.qmd
-        - exam/2/linear.qmd
+        - practice/basic-model/main.qmd
+        - practice/linear/algebra/main.qmd
+        - practice/linear/graphical/main.qmd
+        - practice/linear/model/main.qmd
+        - practice/linear/simplex/main.qmd
+        - practice/network/main.qmd
+        - practice/evolutionary/main.qmd
+        - practice/nonlinear/main.qmd
+        - practice/game-theory/main.qmd
+
+    - part: exam/overview.qmd
+      chapters:
+        - exam/basic-model/main.qmd
+        - exam/linear/main.qmd
+        - exam/nonlinear/main.qmd
+        - exam/evolutionary/main.qmd
 
     - references.qmd
-
 
   appendices:
     - part: "Язык программирования R"
       chapters:
-        - r-tools/basic.qmd
-        - r-tools/renv.qmd
-        - r-tools/plotly.qmd
-        - r-tools/ggplot2.qmd
-        - r-tools/tibble.qmd
-        - r-tools/purrr.qmd
-        - r-tools/tidyr.qmd
-        - r-tools/lpsolve.qmd
+        - r/tools/basic.qmd
+        - r/tools/renv.qmd
+        - r/tools/plotly.qmd
+        - r/tools/ggplot2.qmd
+        - r/tools/tibble.qmd
+        - r/tools/purrr.qmd
+        - r/tools/tidyr.qmd
+        - r/tools/lpsolve.qmd
     - part: "Язык программирования Python"
       chapters:
-        - python-tools/minizinc.qmd
+        - python/tools/minizinc.qmd

@@ -80,13 +80,13 @@ quarto render --to html --profile full,dev,html
 ### pdf
 
 ``` bash
-quarto render --to pdf --profile dev,exam,pdf-exam
+quarto render --to pdf --profile dev,practice,pdf-practice
 ```
 
 ### html
 
 ``` bash
-quarto render --to html --profile dev,exam,html
+quarto render --to html --profile dev,practice,html
 ```
 
 ## Подсчёт строк кода

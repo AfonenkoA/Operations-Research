@@ -1,0 +1,10 @@
+::: {.content-visible when-profile="practice"}
+# Практическая работа: Сетевые задачи
+:::
+
+::: {.content-hidden when-profile="practice"}
+# Сетевые задачи
+:::
+
+
+Построить граф, найти его минимальное остовное дерево.

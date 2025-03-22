@@ -5,12 +5,12 @@
 #| message: false
 #| include: false 
 
-loadNamespace('reticulate')
-loadNamespace('JuliaCall')
-loadNamespace('webshot2')
-loadNamespace('htmlwidgets')
-loadNamespace('ggplot2')
-loadNamespace('tidyverse')
+loadNamespace('reticulate') |> invisible()
+loadNamespace('JuliaCall') |> invisible()
+loadNamespace('webshot2') |> invisible()
+loadNamespace('htmlwidgets') |> invisible()
+loadNamespace('ggplot2') |> invisible()
+loadNamespace('tidyverse') |> invisible()
 ```
 
 # Язык разметки Markdown {#sec-markdown}

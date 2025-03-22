@@ -1,0 +1,67 @@
+---
+engine: knitr
+---
+
+# Линейная алгебра {#sec-lab-linear-algebra}
+
+## Теория 
+
+1.  Повторить отдельные элементы из линейной алгебры @sec-linear-algebra
+
+
+## Задания {#sec-lab-task}
+
+:::: {#exr-lab-linear-algebra-equation-solve-integrated}
+### СЛАУ
+Решить СЛАУ (@sec-linear-algebra-equation-system) $AX=b$ встроенным методом. Элементы матриц сгенерировать произвольно. 
+
+::: {.panel-tabset}
+#### R
+`{r} solve() |> dl()` @sec-r-tools-basic-solve
+#### Python
+numpy
+:::
+
+
+::: {.callout-note appearance="minimal"}
+Уровень 1
+:::
+::::
+
+:::: {#exr-lab-linear-algebra-formula-check}
+### Ого, формулки!
+Для произвольных матриц $A$ и $B$ заполненных случайными числами проверить следующие свойства:
+
+1.  $(A+B)^T=A^T+B^T$ @sec-linear-algebra-matrix-operations-transpose
+2.  $(AB)^T=B^TA^T$
+3.  $\det{A}=\det{A^T}$ @sec-linear-algebra-matrix-determinant
+4.  $\det{AB}=\det{A}\det{B}$
+5.  $\det{A^{-1}}=(\det{A})^{-1}$
+6.  $(AB)^{-1}=B^{-1}A^{-1}$ @sec-linear-algebra-matrix-inverse
+7.  $(A-B)^{-1}=A^{-1}+A^{-1}B(A-B)^{-1}$
+
+::: {.panel-tabset}
+#### R
+Рассмотрите функции `{r} inverse() |> dl()` @sec-r-tools-basic-inverse, `{r} det() |> dl()` @sec-r-tools-basic-det
+#### Python
+numpy
+:::
+
+::: {.callout-note appearance="minimal"}
+Уровень 1
+:::
+::::
+
+:::: {#exr-lab-linear-algebra-equation-solve-custom-gauss}
+### Всё решено
+
+Реализовать решение системы линейных уравнений методом гаусса @sec-linear-algebra-equation-system-many-variables-algorithm-gauss используя векторные операции.
+
+::: {.callout-note appearance="minimal"}
+Уровень 3
+:::
+::::
+
+## Проверочная работа
+
+Определитель, слау, 

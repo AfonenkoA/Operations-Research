@@ -1,0 +1,122 @@
+:::{.content-visible when-profile="practice"}
+# Практическая работа: Линейное программирование. Моделирование
+:::
+:::{.content-hidden when-profile="practice"}
+# Линейное программирование. Моделирование
+:::
+
+::::: {.content-hidden unless-meta="convert-to-linear.select"}
+:::: {#exr-practice-linear-model-convert-to-linear}
+## Линейная модель
+
+Минимизировать $z=\max\{|x_1-x_2+3x_3|,|-x_1+3x_2-x_3|\}$, при ограничениях $x_1,x_2,x_3 \geq 0$. Подсказка: представьте, что $z$ это число, которое не меньше, чем аргументы $\max$ и примените свойство модуля $|a|\leq b$ эквивалентна записи $a\leq b$ и $a \geq -b$. Привести к линейной модели.
+
+::: {.callout-note appearance="minimal" title="Оценка"}
+0.25
+:::
+
+[`\vspace{3cm}`{=latex}]{.content-visible when-profile="practice"}
+::::
+:::::
+
+:::: {.content-hidden when-profile="practice"}
+::: {#sol-practice-linear-model-convert-to-linear}
+{{< lipsum 1 >}}
+:::
+::::
+
+::::: {.content-hidden unless-meta="standard-form.select"}
+:::: {#exr-practice-linear-model-standard-form}
+## Красиво?
+
+Привести к задаче максимизации в стандартной форме.
+
+$$
+\begin{aligned}
+&\mathrm{F}=-2x_1+5x_2-3x_3+x_4 \rightarrow \min \\
+&\begin{cases}
+2x_1+3x_2+x_3+2x_4 \leq 18, \\
+x_1+6x_2+11x_3-x_4 \geq 25, \\
+3x_2+2x_3+x_4 \leq -8, \\
+x_1,x_2,x_3 \geq 0\\
+x_4 \in \mathbb{R}
+\end{cases}
+\end{aligned}
+$$
+
+::: {.callout-note appearance="minimal" title="Оценка"}
+0.25
+:::
+
+[`\vspace{3cm}`{=latex}]{.content-visible when-profile="practice"}
+::::
+:::::
+
+:::: {.content-hidden when-profile="practice"}
+::: {#sol-practice-linear-model-standard-form}
+{{< lipsum 2 >}}
+:::
+::::
+
+::::: {.content-hidden unless-meta="build-model.select"}
+:::: {#exr-practice-linear-model-build-model}
+## Dolce vita
+
+Активист творческого союза пришёл к выводу, что только одна учёба плохо повлияет на его умственное и физическое развитие. Поэтому он решил распределить всё своё свободное время на неделю 70 часов между учёбой, спортом, организацией мероприятий и тусовками. Он полагает, что тусовки в два раза круче мероприятий и в 1.5 раза лучше, чем спорт, а мероприятия интереснее учёбы в 2 раза. Однако тусовок организуется в два раза меньше, чем мероприятий, а на учёбу придётся тратить не меньше 6 часов в день 6 дней в неделю. Составьте модель, которая позволит активисту получить максимальное удовольствие от жизни.
+
+::: {.callout-note appearance="minimal" title="Оценка"}
+0.5
+:::
+
+[`\vspace{3cm}`{=latex}]{.content-visible when-profile="practice"}
+::::
+:::::
+
+:::: {.content-hidden when-profile="practice"}
+::: {#sol-practice-linear-model-build-model}
+{{< lipsum 2 >}}
+:::
+::::
+
+:::::: {.content-hidden unless-meta="dual-problem.select"}
+::::: {#exr-practice-linear-model-dual}
+## Двойственность
+
+Сформулировать двойственную задачу <!--// Таха 4.4 189-->
+
+::: {layout-ncol="2"}
+$$
+\begin{aligned}
+&\mathrm{F}=-5x_1+2x_2 \rightarrow \max \\
+&\begin{cases}
+-x_1+x_2 \leq 2, \\
+2x_1+3x_2 \leq 5, \\
+x_1,x_2 \geq 0
+\end{cases}
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+&\mathrm{F}=3x_1+4x_2 \rightarrow \max \\
+&\begin{cases}
+5x_1+6x_2=7,\\
+x_1,x_2 \geq 0
+\end{cases}
+\end{aligned}
+$$
+:::
+
+::: {.callout-note appearance="minimal" title="Оценка"}
+0.75
+:::
+
+[`\vspace{3cm}`{=latex}]{.content-visible when-profile="practice"}
+:::::
+::::::
+
+:::: {.content-hidden when-profile="practice"}
+::: {#sol-practice-linear-model-dual-problem}
+{{< lipsum 2 >}}
+:::
+::::

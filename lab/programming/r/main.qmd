@@ -1,0 +1,122 @@
+# Язык программирования R {#sec-lab-programming-r}
+
+## Установка
+
+1.  Установить R @sec-enviroment-setup-r
+2.  Установить RTools @sec-enviroment-setup-rtools
+3.  Установить IDE для работы: RStudio @sec-enviroment-setup-rstudio или другу IDE, которую поддерживает [Quarto](https://quarto.org/docs/get-started/).
+4.  Создать интерактивный блокнот Quarto @sec-enviroment-rstudio-quarto-new и сохранить его в отдельном каталоге (например `lab1` ).
+5.  Изучить возможности визуального редактора RStudio IDE @sec-enviroment-rstudio-quarto-visual-editor
+6.  Скопировать код из примера @sec-enviroment-quarto-example-install, вставить в редакторе @sec-enviroment-rstudio-quarto-source-editor и запустить рендер (@sec-enviroment-rstudio-shortcuts-rendering или @sec-enviroment-quarto-preview).
+7.  Скопировать в рабочий каталог файлы [окружения renv](https://github.com/AfonenkoA/Operations-Research/tree/renv) и восстановить пакеты @sec-r-tools-renv-project-restore
+8.  Отрендерить пример @sec-enviroment-quarto-preview или @sec-enviroment-rstudio-shortcuts-rendering
+
+## Теория
+
+1.  Изучить язык разметки `Quarto Markdown` @sec-markdown
+2.  Изучить основы языка `R` @sec-r-lang-basic
+
+## Задачи
+
+:::: {#exr-lab-programming-r-vector-seq}
+### Что может быть проще?
+
+Упростите выражение (@sec-r-lang-basic-vector-sequence):
+
+``` r
+c(sqrt(1), sqrt(2), sqrt(3))
+```
+
+Создайте последовательность 2 способами `(-1, -0.75, -0.5, …, 0.75, 1)`.
+
+::: {.callout-note appearance="minimal"}
+Уровень 1
+:::
+::::
+
+:::: {#exr-lab-programming-r-plot2d}
+### Вершины и овраги
+
+Построить график (@sec-r-tools-plotly-line2d) кусочно-гладкой функции (@sec-r-lang-basic-function-defenition) используя функцию `{r} ifelse() |> dl()`
+
+$$
+f(x)=\begin{cases}
+      x^2,\qquad x \leq -3\\
+      x^3, \qquad -3 < x < 3\\
+      2x+1, 3\leq x
+\end{cases}\,
+$$
+
+::: {.callout-note appearance="minimal"}
+Уровень 1
+:::
+::::
+
+:::: {#exr-lab-programming-r-sum-vectorization}
+### По порядку
+
+С помощью [ряда Лейбница](https://ru.wikipedia.org/wiki/%D0%A0%D1%8F%D0%B4_%D0%9B%D0%B5%D0%B9%D0%B1%D0%BD%D0%B8%D1%86%D0%B0) можно получить значение числа $\pi$ . Данный ряд сходится очень медленно.
+
+$$
+\pi = 4 \sum_{i=0}^n{\frac{(-1)^i}{2i+1}}
+$$
+
+Использовав по максимуму *векторные операции* (@sec-r-lang-basic-vectorization) рассчитайте для различных $n$ от $n=10$ до $n=10^{8}$
+
+1.  число $\pi$ и его ошибку
+2.  постройте график (@sec-r-tools-plotly-line2d) ошибки от $n$
+
+::: {.callout-note appearance="minimal"}
+Уровень 2
+:::
+::::
+
+:::: {#exr-lab-programming-r-list-indexing}
+### Список
+
+Создать список (@sec-r-lang-basic-list) содержащий буквы от '`a'` до '`z'`. Продемонстрировать использование операторов индексации (@sec-r-lang-basic-list-indexing).
+
+::: {.callout-note appearance="minimal"}
+Уровень 1
+:::
+::::
+
+:::: {#exr-lab-programming-r-matrix}
+### Матрица
+
+Создать список (@sec-r-lang-basic-list) матриц (@sec-r-lang-basic-matrix) размером `2x2` заполненных случайными целыми числами. Используя циклы (@sec-r-lang-basic-cylce) получите:
+
+1.  список с элементов `(2,2)` каждой матрицы (@sec-r-lang-basic-list-indexing , @sec-r-lang-basic-matrix-indexing).
+2.  вектор состоящий из элементов `(1,1)`, `(1,2)` этих матриц.
+
+::: {.callout-note appearance="minimal"}
+Уровень 1
+:::
+::::
+
+:::: {#exr-lab-programming-r-array}
+### Массив
+
+1.  создайте пятимерный массив и заполните его целыми числами.
+2.  преобразуйте его как список массивов размерности 4.
+3.  преобразуйте его как список списков массивов размерности 3.
+
+::: {.callout-note appearance="minimal"}
+Уровень 2
+:::
+::::
+
+:::: {#exr-lab-1-magic}
+### Прикладная магия
+Пусть дана функция общего вида $f(x,y)$ и система уравнений $Ax=b$ для двух переменных. Постройте контурный график функции, на котором изобразите точки пересечения прямых. Обработать случаи параллельных прямых, совпадающих прямых @sec-linear-algebra-equation-system-two-variables.
+
+::: {.callout-note appearance="minimal"}
+Уровень 4
+:::
+
+Дополнительно попробуйте использовать встроенный интерфейса формулы используя переменно число аргументов для функции. Считайте символ `~` эквивалентом символу `=`. @sec-r-lang-advanced-formula
+
+```{{r}}
+f(2*x+3*y~0, 2*x~3y+1~0)
+```
+::::

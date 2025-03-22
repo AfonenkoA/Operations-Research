@@ -1,0 +1,12 @@
+convert-to-linear:
+  select: false
+
+standard-form:
+    select: true
+
+build-model:
+  select: true
+
+dual-problem:
+  select: true
+

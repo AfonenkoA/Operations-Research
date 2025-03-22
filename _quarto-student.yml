@@ -10,10 +10,10 @@ book:
         - enviroment/markdown.qmd
         - enviroment/latex.qmd
 
-    - part: r-lang/overview.qmd
+    - part: r/overview.qmd
       chapters:
-        - r-lang/basic.qmd
-        - r-lang/advanced.qmd
+        - r/lang/basic.qmd
+        - r/lang/advanced.qmd
 
     - part: linear/overview.qmd
       chapters:
@@ -30,16 +30,17 @@ book:
 
     - part: "Лабораторные работы"
       chapters:
-        - lab/1/intro.qmd
-        - lab/2/linear.qmd
+        - lab/programming/r/main.qmd
+        - lab/basic-model/main.qmd
+        - lab/linear/algebra/main.qmd
+        - lab/linear/programming/main.qmd
     - references.qmd
 
 
   appendices:
     - part: "Язык программирования R"
       chapters:
-        - r-tools/renv.qmd
-        - r-tools/plotly.qmd
-        - r-tools/purrr.qmd
-        - r-tools/lpsolve.qmd
-
+        - r/tools/renv.qmd
+        - r/tools/plotly.qmd
+        - r/tools/purrr.qmd
+        - r/tools/lpsolve.qmd

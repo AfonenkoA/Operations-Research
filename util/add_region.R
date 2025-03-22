@@ -1,7 +1,5 @@
-library(plotly)
-
 add_region <- function(fig, xy, name = 'region', color) {
-  add_trace(
+  plotly::add_trace(
     fig,
     x = xy[, 1],
     y = xy[, 2],
@@ -13,6 +11,6 @@ add_region <- function(fig, xy, name = 'region', color) {
     line = list(color = color),
     text = apply(xy, 1, paste, collapse = ','),
     hoverinfo = 'text',
-    name = TeX(name)
+    name = plotly::TeX(name)
   )
 }

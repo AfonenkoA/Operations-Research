@@ -3,10 +3,10 @@
 #| warning: false
 #| message: false
 
-loadNamespace('ggplot2')
-loadNamespace('palmerpenguins')
-loadNamespace('lpSolve')
-loadNamespace('lpSolveAPI')
+loadNamespace('ggplot2') |> invisible()
+loadNamespace('palmerpenguins') |> invisible()
+loadNamespace('lpSolve') |> invisible()
+loadNamespace('lpSolveAPI') |> invisible()
 ```
 
 # Quarto {#sec-enviroment-quarto}
@@ -30,18 +30,7 @@ install.packages("ggplot2")
 install.packages("palmerpenguins")
 ```
 
-Если пакет `tidyverse` устанавливается с ошибками см. @sec-lab-1-instructions пункт `renv`
-
-```{r}
-#| label: import
-#| echo: false
-#| warning: false
-#| message: false
-#| include: false 
-
-library(palmerpenguins)
-library(ggplot2)
-```
+Если пакет `tidyverse` устанавливается с ошибками см. пункт `renv`
 
 ## Render {#sec-enviroment-quarto-render}
 

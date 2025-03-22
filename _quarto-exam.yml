@@ -1,6 +1,0 @@
-project:
-  type: default
-  output-dir: _exam
-  render:
-    - exam/1/intro.qmd
-    - exam/2/linear.qmd

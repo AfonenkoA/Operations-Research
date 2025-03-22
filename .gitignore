@@ -6,7 +6,7 @@
 .quarto/
 _site/
 _book/
-_exam/
+_practice/
 _freeze/
 *_cache/
 *_files/

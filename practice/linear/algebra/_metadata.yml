@@ -1,0 +1,4 @@
+det:
+    select: true
+equations:
+    select: true

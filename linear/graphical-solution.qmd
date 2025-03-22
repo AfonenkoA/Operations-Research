@@ -3,18 +3,6 @@ cache: false
 freeze: false
 ---
 
-```{r}
-#| label: import
-#| warning: false
-#| message: false
-#| include: false 
-
-source('../util/add_region.R')
-source('../util/plotly_show.R')
-```
-
-
-
 # Графическое решение {#sec-linear-graphical-solution}
 
 ::: {.callout-caution title="Состояние разработки"}
@@ -36,9 +24,7 @@ $$\begin{cases}
 #| warning: false
 #| message: false
 
-library(plotly)
-
-plot_ly(mode = 'lines+markers') |>
+plotly::plot_ly(mode = 'lines+markers') |>
   add_region(
     xy = rbind(c(0, 0), c(0, 2048 / 4), c(2048, 0)),
     color = 'rgba(0, 0, 0, 0.2)',
@@ -51,7 +37,7 @@ plot_ly(mode = 'lines+markers') |>
     xy = rbind(c(0, 0), c(0, 480), c(2048, 480), c(2048, 0)),
     color = 'rgba(255, 255, 0, 0.4)',
     name = 'x_2\\leq480') |>
-  config(mathjax = 'local') |>
+  plotly::config(mathjax = 'local') |>
   pshow_safe()
 ```
 
@@ -62,13 +48,13 @@ plot_ly(mode = 'lines+markers') |>
 #| warning: false
 #| message: false
 
-plot_ly(mode = "lines+markers") |>
+plotly::plot_ly(mode = "lines+markers") |>
   add_region(
     xy = rbind(c(0, 0), c(0, 480), c(128, 480), c(6144 / 7, 2048 / 7), c(2048 / 2, 0)),
     name = "region",
     color = "rgba(51, 0, 153, 0.4)"
   ) |>
-  config(mathjax = "local") |>
+  plotly::config(mathjax = "local") |>
   pshow_safe()
 ```
 
@@ -85,11 +71,11 @@ z <- outer(x, y, FUN = \(x1, x2) {
   2 * x1 + 6 * x2
 }) |> t()
 
-plot_ly(x = x, y = y, z = z, type = 'contour') |>
+plotly::plot_ly(x = x, y = y, z = z, type = 'contour') |>
   add_region(
     xy = rbind(c(0, 0), c(0, 480), c(128, 480), c(6144 / 7, 2048 / 7), c(2048 / 2, 0)),
     color = 'rgba(0, 0, 0, 0.3)') |>
-  config(mathjax = 'local')  |>
+  plotly::config(mathjax = 'local')  |>
   pshow_safe()
 ```
 

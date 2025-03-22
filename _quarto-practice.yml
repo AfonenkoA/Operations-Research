@@ -1,0 +1,6 @@
+project:
+  type: default
+  output-dir: _practice
+  render:
+    - practice/1/intro.qmd
+    - practice/2/linear.qmd

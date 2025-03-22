@@ -1,0 +1,6 @@
+:::{.content-visible when-profile="practice"}
+# Проверочная работа: Линейное программирование
+:::
+:::{.content-hidden when-profile="practice"}
+# Линейное программирование
+:::

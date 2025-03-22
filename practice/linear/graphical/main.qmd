@@ -1,0 +1,132 @@
+:::{.content-visible when-profile="practice"}
+# Практическая работа: Линейное программирование. Графическое представление
+:::
+:::{.content-hidden when-profile="practice"}
+# Линейное программирование. Графическое представление
+:::
+
+::::::: {.content-hidden unless-meta="solution.select"}
+:::::: {#exr-practice-2-graphical-solution}
+## Графическое решение
+
+::: {.content-hidden when-profile="practice"}
+{{< include _solution-problem.qmd >}}
+:::
+
+::: {.content-visible when-profile="practice" layout-ncol="2"}
+{{< include _solution-problem.qmd >}}
+
+```{r}
+#| fig-align: center
+#| echo: false
+#| out-width: "5cm"
+ashow('grid/solution.asy')
+```
+:::
+
+::: {.callout-note appearance="minimal" title="Оценка"}
+0.25
+:::
+::::::
+:::::::
+
+:::: {.content-hidden when-profile="practice"}
+::: {#sol-practice-2-graphical-solution}
+{{< lipsum 1 >}}
+:::
+::::
+
+:::::::: {.content-hidden unless-meta="special-case.select"}
+::::::: {#exr-practice-2-special}
+## Особенная задачка
+
+Определить какой особый случай реализован. <!-- 3.5 Особые случаи применения симплекс-метода Таха 113-->
+
+::: {.content-hidden unless-meta="special.type1.select" layout-ncol="2"}
+{{< include _special-case-problem/no-fesiable-solution.qmd >}}
+
+{{< include _special-case-problem/alternative.qmd >}}
+:::
+
+::: {.content-hidden unless-meta="special.type2.select" layout-ncol="2"}
+{{< include _special-case-problem/unbounded.qmd >}}
+
+{{< include _special-case-problem/degeneracy.qmd >}}
+:::
+
+::: {.callout-note appearance="minimal" title="Оценка"}
+0.25
+:::
+
+::: {.content-visible when-profile="practice" layout-ncol="2"}
+```{r}
+#| fig-align: center
+#| echo: false
+#| out-width: "5cm"
+ashow('grid/special-case.asy')
+```
+
+```{r}
+#| fig-align: center
+#| echo: false
+#| out-width: "5cm"
+ashow('grid/special-case.asy')
+```
+:::
+:::::::
+::::::::
+
+:::::: {.content-hidden unless-meta="sensetivity.select"}
+::::: {#exr-practice-linear-graphical-sensetivity}
+## Завод
+
+Завод Интеграл выпускает две модели электронных приборов, при изготовлении которых используются резисторы, конденсаторы и микросхемы. В таблице приведены данные по использованию ресурсов в каждой выпускаемой модели.
+
+| Ресурс          | Модель 1 (шт.) | Модель 2 (шт.) | Доступность ресурса (шт.) |
+|-----------------|-----------------|-----------------|---------------------|
+| Резистор        | 2              | 3              | 1200                      |
+| Конденсатор     | 2              | 1              | 500                       |
+| Микросхема      | 0              | 4              | 800                       |
+| Цена за 1 (руб) | 3              | 4              |                           |
+
+Пусть переменные $x_1$ и $x_2$ представляют количество выпущенных изделий модели 1 и модели 2. Ниже приведена соответствующая модель ЛП. <!--// Таха 3.78 с 157-->
+
+$$
+\begin{aligned}
+&\mathrm{F}=3x_1+4x_2 \rightarrow \max \\
+&\begin{cases}
+2x_1 + 3x_2 \leq 1200, \\
+2x_1 + x_2 \leq 500, \\
+4x_2 \leq 800,\\
+x_1,x_2 \geq 0
+\end{cases}
+\end{aligned}
+$$
+
+1.  Как измениться прибыль, если станет доступно 600 конденсаторов? (Определить двойственное значение и область его определения).
+2.  Как измениться решение, если цена модель 1 возрастёт до 9? Определите интервал стоимости первого изделия, внутри которого оптимальное решение исходной задачи не изменится.
+
+::: {.callout-note appearance="minimal" title="Оценка"}
+1
+:::
+
+::: {.content-visible when-profile="practice" layout-ncol="2"}
+```{r}
+#| fig-align: center
+#| echo: false
+#| out-width: "6cm"
+ashow('grid/sensetivity.asy')
+```
+
+```{r}
+#| fig-align: center
+#| echo: false
+#| out-width: "6cm"
+ashow('grid/sensetivity.asy')
+```
+:::
+
+[`\vspace{4cm}`{=latex}]{.content-visible when-profile="practice"}
+:::::
+::::::
+

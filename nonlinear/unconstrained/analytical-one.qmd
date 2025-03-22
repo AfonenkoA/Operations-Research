@@ -1,12 +1,3 @@
-```{r}
-#| label: import
-#| warning: false
-#| message: false
-#| include: false 
-
-source('../../util/plotly_show.R')
-```
-
 # Безусловная оптимизация функции одной переменной {#sec-nonlinear-unconstrained-one}
 
 ## Определение {#sec-nonlinear-unconstrained-one-def}

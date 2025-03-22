@@ -1,5 +1,5 @@
-require(downlit)
-require(xml2)
+loadNamespace('downlit') |> invisible()
+loadNamespace('xml2') |> invisible()
 
 dl <- doc_link <-
   \(fun) fun |>

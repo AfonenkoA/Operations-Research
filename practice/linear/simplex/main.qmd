@@ -1,0 +1,76 @@
+---
+engine: knitr
+params:
+  seed-random: 123
+---
+
+::: {.content-visible when-profile="practice"}
+# Практическая работа: Линейное программирование. Симплекс метод
+:::
+
+::: {.content-hidden when-profile="practice"}
+# Линейное программирование. Симплекс метод
+:::
+
+::::: {.content-hidden unless-meta="path.select"}
+:::: {#exr-practice-linear-simplex-path}
+## Кривая дорожка
+
+На рисунке показано пространство допустимых решений трехмерной задачи ЛП с угловыми точками $A$, $B$, $C$, $\dots$, $J$. <!-- // Таха 3.18 c 142-->
+
+![](path.png){fig-align="center" width="5cm"}
+
+-   Могут ли следующие пары угловых точек составить часть пути при успешном выполнении симплекс метода: $(A,B)$, $(B,D)$, $(E,H)$, $(A,I)$? Поясните ответ.
+-   Предположим, что реализация симплекс-метода начинается в точке $A$ и заканчивается в точке оптимума $H$. Определите, какие из следующих последовательностей угловых точек могут привести к точке оптимума. Обоснуйте свой вывод.
+    1.  $A \rightarrow B \rightarrow G \rightarrow H$
+    2.  $A \rightarrow E \rightarrow I \rightarrow H$
+    3.  $A \rightarrow C \rightarrow E \rightarrow B \rightarrow A \rightarrow D \rightarrow G \rightarrow H$
+
+::: {.callout-note appearance="minimal" title="Оценка"}
+1
+:::
+
+[`\vspace{1cm}`{=latex}]{.content-visible when-profile="practice"}
+::::
+:::::
+
+:::: {.content-hidden when-profile="practice"}
+::: {#sol-practice-2-simplex-path}
+{{< lipsum 2 >}}
+:::
+::::
+
+::::::: {.content-hidden unless-meta="alghoritm.select"}
+:::::: {#exr-practice-linear-simplex-alghoritm}
+## Алгоритм
+
+Решить задачу двухэтапным методом.
+
+::: {.content-hidden when-profile="practice"}
+{{< include _alghorytm-problem.qmd >}}
+:::
+
+::: {.content-visible when-profile="practice" layout-ncol="2"}
+{{< include _alghorytm-problem.qmd >}}
+
+```{r}
+#| fig-align: center
+#| echo: false
+#| out-width: "6cm"
+ashow('grid/alghorytm.asy')
+```
+:::
+
+::: {.callout-note appearance="minimal" title="Оценка"}
+1
+:::
+
+[`\vspace{8cm}`{=latex}]{.content-visible when-profile="practice"}
+::::::
+:::::::
+
+:::: {.content-hidden when-profile="practice"}
+::: {#sol-practice-2-simplex-alghorytm}
+{{< lipsum 2 >}}
+:::
+::::
