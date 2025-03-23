@@ -6,7 +6,7 @@ asymptote_run <- function(script, out_file, ext)
                    '-f',  ext))
 }
 
-ashow <- function(script)
+ashow <- function(script, count = 1)
 {
   if(interactive())
   {
@@ -28,5 +28,5 @@ ashow <- function(script)
   }
 
   asymptote_run(script, f, ext)
-  knitr::include_graphics(p)
+  knitr::include_graphics(rep(p, count))
 }

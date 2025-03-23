@@ -2,6 +2,7 @@ format:
   pdf:
     use-rsvg-convert: true
     documentclass: scrbook
+    classoption: [twoside=false]
     papersize: a4
     colorlinks: true
     fig-width: 5

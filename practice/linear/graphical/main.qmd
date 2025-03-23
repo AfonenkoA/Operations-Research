@@ -1,6 +1,5 @@
 # Линейное программирование. Графическое представление
 
-
 ::::::: {.content-hidden unless-meta="solution.select"}
 :::::: {#exr-practice-2-graphical-solution}
 ## Графическое решение
@@ -15,7 +14,7 @@
 ```{r}
 #| fig-align: center
 #| echo: false
-#| out-width: "5cm"
+#| out-width: 5cm
 ashow('grid/solution.asy')
 ```
 :::
@@ -54,19 +53,14 @@ ashow('grid/solution.asy')
 0.25
 :::
 
-::: {.content-visible when-profile="practice" layout-ncol="2"}
+::: {.content-visible when-profile="practice"}
 ```{r}
-#| fig-align: center
+#| layout-ncol: 2
 #| echo: false
-#| out-width: "5cm"
-ashow('grid/special-case.asy')
-```
+#| fig-align: center
+#| out-width: 5cm
 
-```{r}
-#| fig-align: center
-#| echo: false
-#| out-width: "5cm"
-ashow('grid/special-case.asy')
+ashow('grid/special-case.asy',2)
 ```
 :::
 :::::::
@@ -79,7 +73,7 @@ ashow('grid/special-case.asy')
 Завод Интеграл выпускает две модели электронных приборов, при изготовлении которых используются резисторы, конденсаторы и микросхемы. В таблице приведены данные по использованию ресурсов в каждой выпускаемой модели.
 
 | Ресурс          | Модель 1 (шт.) | Модель 2 (шт.) | Доступность ресурса (шт.) |
-|------------------|------------------|------------------|--------------------|
+|------------------|------------------|------------------|-------------------|
 | Резистор        | 2              | 3              | 1200                      |
 | Конденсатор     | 2              | 1              | 500                       |
 | Микросхема      | 0              | 4              | 800                       |
@@ -106,22 +100,16 @@ $$
 1
 :::
 
-::: {.content-visible when-profile="practice" layout-ncol="2"}
+::: {.content-visible when-profile="practice"}
 ```{r}
-#| fig-align: center
+#| layout-ncol: 2
 #| echo: false
-#| out-width: "6cm"
-ashow('grid/sensetivity.asy')
-```
+#| fig-align: center
+#| out-width: 6cm
 
-```{r}
-#| fig-align: center
-#| echo: false
-#| out-width: "6cm"
-ashow('grid/sensetivity.asy')
+ashow('grid/sensetivity.asy',2)
 ```
 :::
 
-[`\vspace{4cm}`{=latex}]{.content-visible when-profile="practice"}
 :::::
 ::::::
