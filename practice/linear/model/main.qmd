@@ -1,9 +1,5 @@
-:::{.content-visible when-profile="practice"}
-# Практическая работа: Линейное программирование. Моделирование
-:::
-:::{.content-hidden when-profile="practice"}
 # Линейное программирование. Моделирование
-:::
+
 
 ::::: {.content-hidden unless-meta="convert-to-linear.select"}
 :::: {#exr-practice-linear-model-convert-to-linear}

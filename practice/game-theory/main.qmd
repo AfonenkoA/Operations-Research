@@ -1,7 +1,1 @@
-::: {.content-visible when-profile="practice"}
-# Практическая работа: Теория игр
-:::
-
-::: {.content-hidden when-profile="practice"}
 # Теория игр
-:::

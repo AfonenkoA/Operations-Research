@@ -1,6 +1,1 @@
-:::{.content-visible when-profile="practice"}
-# Проверочная работа: Моделирование
-:::
-:::{.content-hidden when-profile="practice"}
 # Моделирование
-:::

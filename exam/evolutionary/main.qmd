@@ -1,6 +1,2 @@
-:::{.content-visible when-profile="practice"}
-# Проверочная работа: Эволюционная оптимизация
-:::
-:::{.content-hidden when-profile="practice"}
 # Эволюционная оптимизация
-:::
+

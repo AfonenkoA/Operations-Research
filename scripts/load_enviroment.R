@@ -6,15 +6,6 @@ library(stringr)
 if (!nzchar(Sys.getenv("QUARTO_PROJECT_RENDER_ALL")))
   quit()
 
-has_html_out <- Sys.getenv('QUARTO_PROJECT_OUTPUT_FILES') |>
-  stringr::str_split_1('\\\\') |>
-  path_ext() |>
-  unique() |>
-  is.element('html', set=_)
-
-if(!has_html_out)
-  quit()
-
 site_libs_dir <- Sys.getenv('SITE_LIBS_PATH')
 
 out <- Sys.getenv('QUARTO_PROJECT_OUTPUT_DIR')

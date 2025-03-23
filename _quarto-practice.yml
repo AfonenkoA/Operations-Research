@@ -7,3 +7,6 @@ project:
     - practice/linear/graphical/main.qmd
     - practice/linear/algebra/main.qmd
     - practice/linear/model/main.qmd
+
+filters:
+  - scripts/header/practice.lua

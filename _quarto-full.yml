@@ -32,12 +32,13 @@ book:
     - part: linear/overview.qmd
       chapters:
         - linear/algebra.qmd
-        - linear/graphical-solution.qmd
-        - linear/sensetivity.qmd
+        - linear/graphical/solution.qmd
+        - linear/graphical/sensetivity.qmd
         - linear/dual-problem.qmd
-        - linear/simplex-alghoritm.qmd
-        - linear/simplex-special-cases.qmd
-        - linear/simplex-artificial-initial-solution.qmd
+        - linear/simplex/alghoritm.qmd
+        - linear/simplex/sensetivity.qmd
+        - linear/simplex/special-cases.qmd
+        - linear/simplex/artificial-initial-solution.qmd
         - linear/integer.qmd
         - linear/transport.qmd
 

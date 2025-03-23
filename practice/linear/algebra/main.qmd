@@ -1,9 +1,4 @@
-:::{.content-visible when-profile="practice"}
-# Практическая работа: Линейная алгебра
-:::
-:::{.content-hidden when-profile="practice"}
 # Линейная алгебра
-:::
 
 ::::: {.content-hidden unless-meta="det.select"}
 :::: {#exr-practice-linear-algebra-det}

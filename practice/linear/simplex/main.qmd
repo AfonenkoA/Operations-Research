@@ -4,13 +4,7 @@ params:
   seed-random: 123
 ---
 
-::: {.content-visible when-profile="practice"}
-# Практическая работа: Линейное программирование. Симплекс метод
-:::
-
-::: {.content-hidden when-profile="practice"}
 # Линейное программирование. Симплекс метод
-:::
 
 ::::: {.content-hidden unless-meta="path.select"}
 :::: {#exr-practice-linear-simplex-path}

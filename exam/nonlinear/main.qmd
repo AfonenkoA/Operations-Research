@@ -1,9 +1,4 @@
-:::{.content-visible when-profile="practice"}
-# Проверочная работа: Нелинейное программирование
-:::
-:::{.content-hidden when-profile="practice"}
 # Нелинейное программирование
-:::
 
 
 

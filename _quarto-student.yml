@@ -22,9 +22,9 @@ book:
     - part: linear/overview.qmd
       chapters:
         - linear/algebra.qmd
-        - linear/graphical-solution.qmd
-        - linear/sensetivity.qmd
-        - linear/simplex-special-cases.qmd
+        - linear/graphical/solution.qmd
+        - linear/simplex/sensetivity.qmd
+        - linear/simplex/special-cases.qmd
         - linear/integer.qmd
 
     - part: nonlinear/overview.qmd
