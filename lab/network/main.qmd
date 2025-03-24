@@ -1,5 +1,132 @@
-Минимальное остовное дерево
+# Сетевые модели
+
+## Кратчайшие пути
 
 Путь через Дейкстру
 
 Путь через Флойда
+
+## Минимальное остовное дереово
+
+```{r}
+g <- igraph::sample_gnp(20, 20/100)
+g_mst <- igraph::mst(g)
+```
+
+```{r}
+g |> igraph::V() |> length()
+```
+
+Идея представить граф как набор рёбер. Используя join мы добавляем цвет рёбрам, которые встретились во втором графе. Значения тех, которые не встретились во втором наборе заполняются через `replace_na`
+
+```{r}
+#| fig-height: 10
+hg <- dplyr::left_join(
+  igraph::as_data_frame(g),
+  cbind(igraph::as_data_frame(g_mst), color = 'red'),
+  by = dplyr::join_by(from, to)) |>
+  dplyr::mutate(color = tidyr::replace_na(color, 'black')) |>
+  igraph::graph_from_data_frame(directed = FALSE)
+
+plot(
+  hg,
+  edge.label = igraph::E(hg)$weight,
+  edge.color = igraph::E(hg)$color,
+  layout = igraph::layout.circle
+)
+```
+
+## Маршрутизация
+
+```{r}
+set.seed(digest::digest2int('Афоненко Анатолий Александрович'))
+```
+
+Переменная *simple* отвечает за выбор варианта сложности.
+
+```{r}
+simple <- TRUE
+```
+
+Далее на основании вашего ФИО и варианта сложности генерируются основные параметры задачи. Число маршрутизаторов $p$:
+
+```{r}
+p <- ifelse(simple, extraDistr::rdunif(1,6,10), extraDistr::rdunif(1,25,50))
+p
+```
+
+Число резервных маршрутов $r$
+
+```{r}
+r <- ifelse(simple,2,extraDistr::rdunif(1,3,5))
+r
+```
+
+Граф маршрутизации
+
+```{r}
+repeat
+{
+g <- igraph::sample_gnp(p, ifelse(simple,0.2,0.05))
+if(igraph::is_connected(g))
+  break
+}
+```
+
+Количество линий связи $q$
+
+```{r}
+q <- length(igraph::E(g))
+q
+```
+
+Задержка линии связи $W$
+
+```{r}
+igraph::E(g)$weight <- extraDistr::rdunif(q,1,100)
+```
+
+Резервирование маршрутизаторов $SR$
+
+```{r}
+igraph::V(g)$standby <- if(simple) rep(2,p) else extraDistr::rdunif(p,r,5)
+```
+
+Резервирование линий связи $SP$
+
+```{r}
+igraph::E(g)$standby <- if(simple) rep(2,q) else extraDistr::rdunif(q,r,5)
+```
+
+Узлы, между которыми требуется обеспечить надежную связь
+
+```{r}
+v <- igraph::farthest_vertices(g)$vertices
+v
+k <- v[1]
+l <- v[2]
+```
+
+```{r}
+plot(g, layout = igraph::layout.circle, edge.label = igraph::E(g)$weight)
+```
+
+```{r}
+igraph::distances(g) |> dim()
+```
+
+<https://optimization-daily.netlify.app/posts/2022-07-09-maximum-network-flows-in-r/>
+
+<https://igraph.org/r/html/1.2.4/min_cut.html>
+
+## Метод критического пути
+
+Сформулировать как задачу линейного программирования. Решить пакетом.
+
+```{r}
+loadNamespace('criticalpath') |> invisible()
+```
+
+Построение расписания
+
+<https://cran.r-project.org/web/packages/criticalpath/vignettes/criticalpath-introduction.html>

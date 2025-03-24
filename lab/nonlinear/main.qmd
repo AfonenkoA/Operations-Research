@@ -1,1 +1,5 @@
 # 4. Нелинейное программирование
+
+```{r}
+loadNamespace('nloptr') |> invisible()
+```

@@ -1,4 +1,4 @@
-# Алгебраический анализ чувствительности {#sec-linear-sensetivity}
+# Алгебраический анализ чувствительности {#sec-linear-simplex-sensetivity}
 
 ::: {.callout-important title="Состояние разработки"}
 В разработке

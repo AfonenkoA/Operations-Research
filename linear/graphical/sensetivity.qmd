@@ -1,4 +1,4 @@
-# Графический анализ чувствительности {#sec-linear-sensetivity}
+# Графический анализ чувствительности {#sec-linear-graphical-sensetivity}
 
 ::: {.callout-important title="Состояние разработки"}
 В разработке

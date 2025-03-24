@@ -47,5 +47,5 @@ book:
       chapters:
         - r/tools/renv.qmd
         - r/tools/plotly.qmd
-        - r/tools/purrr.qmd
+        - r/tools/tidyverse/purrr.qmd
         - r/tools/lpsolve.qmd

@@ -65,6 +65,12 @@ book:
         - combinatorial/algorithm/dynamic-programming.qmd
         - combinatorial/algorithm/backtracking.qmd
 
+    - part: evolutionary/overview.qmd
+      chapters:
+        - evolutionary/simulated-annealing.qmd
+        - evolutionary/ant-colony.qmd
+        - evolutionary/genetic.qmd
+
     - part: game-theory/overview.qmd
       chapters:
         - game-theory/matrix.qmd
@@ -80,8 +86,9 @@ book:
         - lab/linear/programming/main.qmd
         - lab/linear/integer/main.qmd
         - lab/linear/transport/main.qmd
-        - lab/constraint/main.qmd
+        - lab/graph-theory/main.qmd
         - lab/network/main.qmd
+        - lab/constraint/main.qmd
         - lab/combinatorial/main.qmd
         - lab/dynamic-programming/main.qmd
         - lab/nonlinear/main.qmd
@@ -105,6 +112,7 @@ book:
       chapters:
         - exam/basic-model/main.qmd
         - exam/linear/main.qmd
+        - exam/network/main.qmd
         - exam/nonlinear/main.qmd
         - exam/evolutionary/main.qmd
 
@@ -117,10 +125,12 @@ book:
         - r/tools/renv.qmd
         - r/tools/plotly.qmd
         - r/tools/ggplot2.qmd
-        - r/tools/tibble.qmd
-        - r/tools/purrr.qmd
-        - r/tools/tidyr.qmd
+        - r/tools/tidyverse/tibble.qmd
+        - r/tools/tidyverse/purrr.qmd
+        - r/tools/tidyverse/dplyr.qmd
+        - r/tools/tidyverse/tidyr.qmd
         - r/tools/lpsolve.qmd
+        - r/tools/igraph.qmd
     - part: "Язык программирования Python"
       chapters:
         - python/tools/minizinc.qmd
