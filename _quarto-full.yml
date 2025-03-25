@@ -129,7 +129,9 @@ book:
         - r/tools/tidyverse/purrr.qmd
         - r/tools/tidyverse/dplyr.qmd
         - r/tools/tidyverse/tidyr.qmd
-        - r/tools/lpsolve.qmd
+        - r/tools/solver/lpsolve.qmd
+        - r/tools/solver/transport.qmd
+        - r/tools/solver/clue.qmd
         - r/tools/igraph.qmd
     - part: "Язык программирования Python"
       chapters:

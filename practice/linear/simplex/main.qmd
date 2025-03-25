@@ -38,7 +38,7 @@ params:
 :::::: {#exr-practice-linear-simplex-alghoritm}
 ## Алгоритм
 
-Решить задачу двухэтапным методом.
+Получив искусственное базисное решение графически, решить задачу симплекс методом.
 
 ::: {.content-hidden when-profile="practice"}
 {{< include _alghorytm-problem.qmd >}}
