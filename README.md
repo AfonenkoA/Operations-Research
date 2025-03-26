@@ -1,15 +1,75 @@
 # Установка
 
-Установить julia, python, RStudio (не обязательно), Quarto CLI, texlive. Дополнительная зависимость gdal, asymptote, libunits2
+## Программы
 
-``` r
-renv::restore()
+1.  [Julia](https://julialang.org/downloads/)
+2.  [Python](https://www.python.org/downloads/)
+3.  [R](https://cloud.r-project.org/)
+4.  [Quarto CLI](https://quarto.org/docs/get-started/)
+5.  [RStudio](https://posit.co/download/rstudio-desktop/), Quarto входит в состав RStudio
+6.  [Asymptote](https://asymptote.sourceforge.io/doc/Installation.html)
+7.  [TeXLive](https://www.tug.org/texlive/)
+8.  Сhromium совместимый браузер
+
+### Windows
+
+Дополнительно установить 
+1.  [Ghostscript](https://www.ghostscript.com/releases/gsdnld.html)
+2.  [Sumatra PDF](https://www.sumatrapdfreader.org/download-free-pdf-viewer)
+3.  [rsvg-convert](https://sourceforge.net/projects/tumagcc/files/converters/rsvg-convert.exe/download)
+    Перенести в каталог (например `С:\LibExe`) и добавить его в `PATH`.
+
+Существует проблема `rsvg` не находит шрифты windows, текст на svg картинках не отображается.
+
+### Linux
+
+Дополнительно установить зависимости библиотек R для соответствующего дистрибутива
+
+#### Arch
+
+Для библиотеки R `leaflet` (виджеты географических карт).
+
+1.  [gdal](https://archlinux.org/packages/extra/x86_64/gdal/)
+2.  [libunits](https://aur.archlinux.org/packages/udunits)
+
+## Переменные среды
+
+### Windows
+
+Если используется браузер отличный от [Google Chrome](https://www.google.com/intl/ru/chrome/), то установить следующие переменные. Например для [Microsoft Edge](https://www.microsoft.com/ru-ru/edge):
+
+``` bash
+CHROMOTE_CHROME="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+QUARTO_CHROMIUM="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 ```
 
-В случае ошибки установить параметр
+Вместо `<user>` подставить имя пользователя
 
-``` r
-options(renv.config.sysreqs.check = FALSE)
+``` bash
+ASYMPTOTE_PDFVIEWER=C:\Users\<user>\AppData\Local\SumatraPDF\SumatraPDF.exe
+```
+
+
+### Linux
+
+
+## Проверка
+
+Убедиться, что в переменной `PATH` присутствуют все программы. Если используется RStudio, то выполнить команды в терминале, открытом в RStudio
+
+``` bash
+quarto --version
+r --version
+julia --version
+python --version
+asy --version
+xelatex --version
+```
+
+### Windows
+
+``` bash
+gswin64 --version
 ```
 
 # Конфигурации
