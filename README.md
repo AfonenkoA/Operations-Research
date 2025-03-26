@@ -70,14 +70,42 @@ xelatex --version
 
 ``` bash
 gswin64 --version
+=======
+## R и Pyhton
+
+При первом запуске в корне проекта вызвать R интерактивно и согласиться с установкой пакетов. Или запустить R в скриптовом режиме, тогда пакеты для r и python будут установлены автоматически.
+
+``` bash
+Rscript -e '1'
+```
+
+## Julia
+
+``` bash
+julia --project=.
+```
+
+``` julia
+]
+instantiate
 ```
 
 # Конфигурации
 
-Для полного сброса кеша в quarto
+## Полный сброс
 
 ``` bash
 git clean -fxd
+```
+
+``` r
+renv::rebuild()
+```
+
+## Частичный сброс
+
+``` bash
+./qclear.sh
 ```
 
 Файлы использующие widgetframe обязаны отключать `cache` и `freeze` иначе файлы виджетов не копируются в итоговый каталог.
@@ -123,7 +151,7 @@ quarto render --to pdf --profile student,dev,pdf
 quarto render --to html --profile student,dev,html
 ```
 
-## Методичка и проверочные работы с решениями
+## Методичка с решениями
 
 ### pdf
 
@@ -137,7 +165,7 @@ quarto render --to pdf --profile full,dev,pdf
 quarto render --to html --profile full,dev,html
 ```
 
-## Проверочные работы
+## Практические работы
 
 ### pdf
 
@@ -151,8 +179,18 @@ quarto render --to pdf --profile dev,practice,pdf-practice
 quarto render --to html --profile dev,practice,html
 ```
 
+### LaTeX
+
+``` bash
+quarto render --to latex --profile dev,practice,pdf-practice
+```
+
 ## Подсчёт строк кода
 
 ``` bash
-cloc --vcs=git --read-lang-def=cloc-qmd-lang-def --exclude-ext=json,svg --exclude-dir=renv
+cloc --vcs=git\
+ --read-lang-def=cloc-qmd-lang-def\
+ --exclude-ext=json,svg,toml,csv\
+ --exclude-dir=renv\
+ --exclude-list-file=requirements.txt
 ```

@@ -9,3 +9,5 @@ format:
     sansfont: Times New Roman
     monofont: Noto Sans Mono Black
     keep-tex: true
+#    geometry:
+#     - showframe
