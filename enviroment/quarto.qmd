@@ -15,17 +15,15 @@ loadNamespace('lpSolveAPI') |> invisible()
 
 ## Установка примера {#sec-enviroment-quarto-example-install}
 
-```` markdown
-{{< include _example.qmd >}}
-```{.markdown}
-  
-```
-````
+Открыть файл примера кода
 
-1.  Сохранить код приведённый выше код в файл (например `example.qmd`)
-2.  Вызвав интерактивный сеанс R установить пакеты
+::: {.callout appearance="minimal"}
+`⤓`{=html} `\faFile*[regular].`{=latex} [example.qmd](enviroment/_example.qmd)
+:::
 
-``` r
+Вызвав интерактивный сеанс R установить пакеты
+
+```{{r}}
 install.packages("ggplot2")
 install.packages("palmerpenguins")
 ```

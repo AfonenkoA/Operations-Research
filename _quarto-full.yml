@@ -82,15 +82,18 @@ book:
         - lab/report.qmd
         - lab/programming/r/main.qmd
         - lab/basic-model/main.qmd
+
         - lab/linear/algebra/main.qmd
         - lab/linear/programming/main.qmd
         - lab/linear/integer/main.qmd
         - lab/linear/transport/main.qmd
-        - lab/graph-theory/main.qmd
-        - lab/network/main.qmd
-        - lab/constraint/main.qmd
-        - lab/combinatorial/main.qmd
-        - lab/dynamic-programming/main.qmd
+
+        - lab/combinatorial/graph-theory/main.qmd
+        - lab/combinatorial/network/main.qmd
+        - lab/combinatorial/constraint/main.qmd
+        - lab/combinatorial/packing/main.qmd
+        - lab/combinatorial/dynamic-programming/main.qmd
+
         - lab/nonlinear/main.qmd
         - lab/evolutionary/main.qmd
         - lab/game-theory/main.qmd

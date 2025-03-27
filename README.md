@@ -1,4 +1,4 @@
-# Установка
+ Установка
 
 ## Программы
 
@@ -10,6 +10,8 @@
 6.  [Asymptote](https://asymptote.sourceforge.io/doc/Installation.html)
 7.  [TeXLive](https://www.tug.org/texlive/)
 8.  Сhromium совместимый браузер
+9.  [MiniZinc](https://www.minizinc.org/downloads/)
+
 
 ### Windows
 
@@ -49,9 +51,35 @@ QUARTO_CHROMIUM="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 ASYMPTOTE_PDFVIEWER=C:\Users\<user>\AppData\Local\SumatraPDF\SumatraPDF.exe
 ```
 
-
 ### Linux
 
+
+## Пакеты Julia, Python, R
+
+### R и Pyhton
+
+При первом запуске в корне проекта вызвать R интерактивно и согласиться с установкой пакетов.
+
+``` bash
+R
+```
+
+Или запустить R в скриптовом режиме, тогда пакеты для r и python будут установлены автоматически.
+
+``` bash
+Rscript -e '1'
+```
+
+### Julia
+
+``` bash
+julia --project=.
+```
+
+``` julia
+]
+instantiate
+```
 
 ## Проверка
 
@@ -70,24 +98,6 @@ xelatex --version
 
 ``` bash
 gswin64 --version
-=======
-## R и Pyhton
-
-При первом запуске в корне проекта вызвать R интерактивно и согласиться с установкой пакетов. Или запустить R в скриптовом режиме, тогда пакеты для r и python будут установлены автоматически.
-
-``` bash
-Rscript -e '1'
-```
-
-## Julia
-
-``` bash
-julia --project=.
-```
-
-``` julia
-]
-instantiate
 ```
 
 # Конфигурации

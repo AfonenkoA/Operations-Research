@@ -9,7 +9,6 @@ if (!nzchar(Sys.getenv("QUARTO_PROJECT_RENDER_ALL")))
 site_libs_dir <- Sys.getenv('SITE_LIBS_PATH')
 
 out <- Sys.getenv('QUARTO_PROJECT_OUTPUT_DIR')
-proj_dir <- Sys.getenv('QUARTO_PROJECT_ROOT')
 
 proj_profiles <- Sys.getenv('QUARTO_PROFILE') |> str_split_1(',')
 proj_abs_paths <- list('dev' = path_abs(out),

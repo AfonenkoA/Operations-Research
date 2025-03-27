@@ -16,7 +16,7 @@ book:
   date-format: long
 
   repo-url: "https://github.com/AfonenkoA/Operations-Research"
-  repo-actions: [issue]
+  repo-actions: [issue, source]
   repo-branch: master
 
 lang: ru
@@ -32,7 +32,6 @@ bibliography:
   - enviroment/ref.bib
   - game-theory/ref.bib
   - lab/ref.bib
-  - lab/constraint/ref.bib
   - lab/linear/algebra/ref.bib
   - multi-objective/ref.bib
   - linear/ref.bib

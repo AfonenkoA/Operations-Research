@@ -130,3 +130,12 @@ loadNamespace('criticalpath') |> invisible()
 Построение расписания
 
 <https://cran.r-project.org/web/packages/criticalpath/vignettes/criticalpath-introduction.html>
+
+
+## Криптоарбитраж из neos
+
+## MaxFlow
+
+скинуться на тусу <https://hackernoon.com/max-flow-algorithm-in-real-life-551ebd781b25>
+
+Расписание экзаменов на реальных данных из PDF maxflow11

@@ -1,3 +1,9 @@
+project:
+  pre-render:
+    - scripts/content-export/check_existence.R
+  post-render:
+    - scripts/content-export/copy_out.R
+
 format:
   pdf:
     use-rsvg-convert: true
@@ -11,3 +17,7 @@ format:
     sansfont: Times New Roman
     monofont: Noto Sans Mono Black
     top-level-division: chapter
+    include-in-header:
+      - text: |
+         \usepackage{fontspec}
+         \usepackage{fontawesome5}

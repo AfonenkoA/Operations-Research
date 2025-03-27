@@ -48,4 +48,4 @@ book:
         - r/tools/renv.qmd
         - r/tools/plotly.qmd
         - r/tools/tidyverse/purrr.qmd
-        - r/tools/lpsolve.qmd
+        - r/tools/solver/lpsolve.qmd

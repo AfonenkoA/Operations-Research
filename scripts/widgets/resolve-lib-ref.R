@@ -35,7 +35,7 @@ if(is_dev) print_head(plotly_libs_inner_dirs,'PlotlyLibInnerDirs')
 
 if(is_dev) cat('Copy PlotlyLibs -> SiteLibs started','\n')
 plotly_libs_inner_dirs |>
-  purrr::walk(\(d) file.copy(from = fs::path_rel(d),
+  purrr::walk(\(d) file.copy(from = d,
                              to = fs::path(out,site_libs_dir),
                              overwrite = FALSE,
                              recursive = TRUE,

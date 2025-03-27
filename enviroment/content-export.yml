@@ -1,0 +1,3 @@
+---
+- from: quarto.qmd
+  files: [_example.qmd]

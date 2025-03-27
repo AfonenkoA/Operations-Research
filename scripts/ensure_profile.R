@@ -16,12 +16,14 @@ for (i in seq_len(nrow(res)))
     stop(paste0('Неизвестный профиль "', dimnames(res)[[1]][[i]], '"\n'))
 
 re <- r'(:::\s+\{\.content-(?:hidden|visible)\s+(?:when|unless)\-profile=\"?(?<profile>[^\"]+)\"?.+\})'
+
+# Включая зависимые qmd используемые в include
 in_text_profiles <- fs::dir_ls(type = 'file',
                                glob = '*.qmd',
                                recurse = TRUE) |>
   purrr::map_chr(readr::read_file) |>
   stringr::str_match_all(stringr::regex(re)) |>
-  (\(l) l[!purrr::map_lgl(l, rlang::is_empty)])() |>
+  purrr::discard(rlang::is_empty) |> #(\(l) l[!purrr::map_lgl(l, rlang::is_empty)])() |>
   do.call(rbind, args = _) |>
   (\(m) m[, 2])() |>
   unique()
