@@ -1,7 +1,28 @@
-# Линейное программирование. Моделирование
+# Линейное программирование. Модели {#sec-practice-linear-model}
 
+:::: {.content-hidden when-profile="practice"}
+::: {.callout-important title="Состояние разработки"}
+Требуется доработка
+:::
+::::
 
-::::: {.content-hidden unless-meta="convert-to-linear.select"}
+::::: {.content-hidden when-profile="practice"}
+## Темы {#sec-practice-linear-model-topics}
+
+Привести в стандартную форму. Построить модель текстовой задаче. Сформулировать двойственную задачу
+
+::: {#exm-practice-linear-model}
+### Примерчик
+
+Задание
+:::
+
+::: {#sol-practice-linear-model}
+Решение
+:::
+:::::
+
+::::: {.content-hidden when-profile="student" when-profile="practice" unless-meta="convert-to-linear.select"}
 :::: {#exr-practice-linear-model-convert-to-linear}
 ## Линейная модель
 
@@ -15,13 +36,13 @@
 ::::
 :::::
 
-:::: {.content-hidden when-profile="practice"}
+:::: {.content-hidden when-profile="student" when-profile="practice"}
 ::: {#sol-practice-linear-model-convert-to-linear}
 {{< lipsum 1 >}}
 :::
 ::::
 
-::::: {.content-hidden unless-meta="standard-form.select"}
+::::: {.content-hidden when-profile="student" when-profile="practice" unless-meta="standard-form.select"}
 :::: {#exr-practice-linear-model-standard-form}
 ## Красиво?
 
@@ -48,13 +69,13 @@ $$
 ::::
 :::::
 
-:::: {.content-hidden when-profile="practice"}
+:::: {.content-hidden when-profile="student" when-profile="practice"}
 ::: {#sol-practice-linear-model-standard-form}
 {{< lipsum 2 >}}
 :::
 ::::
 
-::::: {.content-hidden unless-meta="build-model.select"}
+::::: {.content-hidden when-profile="student" when-profile="practice" unless-meta="build-model.select"}
 :::: {#exr-practice-linear-model-build-model}
 ## Dolce vita
 
@@ -68,13 +89,13 @@ $$
 ::::
 :::::
 
-:::: {.content-hidden when-profile="practice"}
+:::: {.content-hidden when-profile="student" when-profile="practice"}
 ::: {#sol-practice-linear-model-build-model}
 {{< lipsum 2 >}}
 :::
 ::::
 
-:::::: {.content-hidden unless-meta="dual-problem.select"}
+:::::: {.content-hidden when-profile="student" when-profile="practice" unless-meta="dual-problem.select"}
 ::::: {#exr-practice-linear-model-dual}
 ## Двойственность
 
@@ -111,7 +132,7 @@ $$
 :::::
 ::::::
 
-:::: {.content-hidden when-profile="practice"}
+:::: {.content-hidden when-profile="student" when-profile="practice"}
 ::: {#sol-practice-linear-model-dual-problem}
 {{< lipsum 2 >}}
 :::

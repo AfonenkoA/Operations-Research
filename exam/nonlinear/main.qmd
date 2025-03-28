@@ -1,3 +1,16 @@
-# Нелинейное программирование
+# Нелинейное программирование {#sec-exam-nonlinear}
 
-Чем барьерные функции отличаются от штрафных
+::::{.content-hidden when-profile="exam"}
+## Темы {#sec-exam-network-topics}
+
+
+:::{#exm-exam-network}
+### Примерчик
+
+Задание
+:::
+
+:::{#sol-exam-network}
+Решение
+:::
+::::

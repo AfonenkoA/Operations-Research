@@ -1,6 +1,28 @@
-# Линейная алгебра
+# Линейная алгебра {#sec-practice-linear-algebra}
 
-::::: {.content-hidden unless-meta="det.select"}
+:::: {.content-hidden when-profile="practice"}
+::: {.callout-important title="Состояние разработки"}
+Требуется доработка
+:::
+::::
+
+::::: {.content-hidden when-profile="practice"}
+## Темы {#sec-practice-linear-algebra-topics}
+
+Определитель, слау
+
+::: {#exm-practice-linear-algebra}
+### Примерчик
+
+Задание
+:::
+
+::: {#sol-practice-linear-algebra}
+Решение
+:::
+:::::
+
+::::: {.content-hidden when-profile="student" when-profile="practice" unless-meta="det.select"}
 :::: {#exr-practice-linear-algebra-det}
 ### Найти определитель
 
@@ -21,7 +43,7 @@ $$
 ::::
 :::::
 
-::::: {.content-hidden unless-meta="equations.select"}
+::::: {.content-hidden when-profile="student" when-profile="practice" unless-meta="equations.select"}
 :::: {#exr-practice-linear-algebra-equations}
 ### СЛАУ
 

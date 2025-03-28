@@ -1,20 +1,13 @@
 solution:
-  select: true
+  select: false
 
 special-case:
+  select: false
+
   type1:
     select: true
   type2:
     select: false
-  degeneracy:
-    select: false
-  alternative:
-    select: true
-  unbounded:
-    select: false
-  no-feasible-solution:
-    select: true
-  select: true
 
 sensetivity:
-  select: true
+  select: false

@@ -1,8 +1,8 @@
 table-lamp:
-    select: true
+    select: false
 
 avia-tickets:
-    select: true
+    select: false
     params:
       one-way-cost:
         type: integer
@@ -21,6 +21,6 @@ avia-tickets:
         step: 50
 
 det:
-    select: true
+    select: false
 equations:
-    select: true
+    select: false

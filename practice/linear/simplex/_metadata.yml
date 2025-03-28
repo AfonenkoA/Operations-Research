@@ -1,5 +1,5 @@
 alghorytm:
-  select: true
+  select: false
 
 path:
-  select: true
+  select: false

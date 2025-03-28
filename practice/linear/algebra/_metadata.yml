@@ -1,4 +1,4 @@
 det:
-    select: true
+    select: false
 equations:
-    select: true
+    select: false

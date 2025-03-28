@@ -1,5 +1,6 @@
 format:
   pdf:
+    latex-auto-install: false
     use-rsvg-convert: true
     documentclass: scrartcl
     fontsize: 11pt

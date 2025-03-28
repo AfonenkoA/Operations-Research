@@ -23,7 +23,7 @@ in_text_profiles <- fs::dir_ls(type = 'file',
                                recurse = TRUE) |>
   purrr::map_chr(readr::read_file) |>
   stringr::str_match_all(stringr::regex(re)) |>
-  purrr::discard(rlang::is_empty) |> #(\(l) l[!purrr::map_lgl(l, rlang::is_empty)])() |>
+  purrr::discard(rlang::is_empty) |>
   do.call(rbind, args = _) |>
   (\(m) m[, 2])() |>
   unique()

@@ -17,9 +17,17 @@ loadNamespace('lpSolveAPI') |> invisible()
 
 Открыть файл примера кода
 
+::::{.content-visible when-format="html"}
 ::: {.callout appearance="minimal"}
-`⤓`{=html} `\faFile*[regular].`{=latex} [example.qmd](enviroment/_example.qmd)
+⤓  [example.qmd](_example.qmd)
 :::
+::::
+
+::::{.content-visible unless-format="html"}
+::: {.callout appearance="minimal"}
+`\faFile*[regular].`{=latex}  [example.qmd](enviroment/_example.qmd)
+:::
+::::
 
 Вызвав интерактивный сеанс R установить пакеты
 

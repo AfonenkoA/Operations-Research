@@ -1,6 +1,32 @@
-# Линейное программирование. Графическое представление
+# Линейное программирование. Графическое представление {#sec-practice-linear-graphical}
 
-::::::: {.content-hidden unless-meta="solution.select"}
+:::: {.content-hidden when-profile="practice"}
+::: {.callout-important title="Состояние разработки"}
+Требуется доработка
+:::
+::::
+
+::::: {.content-hidden when-profile="practice"}
+## Темы {#sec-practice-linear-graphical-topics}
+
+Область допустимых решений (симплекс), изображение целевой функции. Решить графически задачу для двух переменных.
+
+Графический анализ чувствительности оптимального решения - По коэффициентам целевой функции - По ограничениям
+
+Определить, какой из особых случаев реализован - Вырожденность - Альтернативные оптимальные решения - Отсутствие допустимых решений - Неограниченность
+
+::: {#exm-practice-linear-graphical}
+### Примерчик
+
+Задание
+:::
+
+::: {#sol-practice-linear-graphical}
+Решение
+:::
+:::::
+
+::::::: {.content-hidden when-profile="student" when-profile="practice" unless-meta="solution.select"}
 :::::: {#exr-practice-2-graphical-solution}
 ## Графическое решение
 
@@ -25,13 +51,13 @@ ashow('grid/solution.asy')
 ::::::
 :::::::
 
-:::: {.content-hidden when-profile="practice"}
+:::: {.content-hidden when-profile="student" when-profile="practice"}
 ::: {#sol-practice-2-graphical-solution}
 {{< lipsum 1 >}}
 :::
 ::::
 
-:::::::: {.content-hidden unless-meta="special-case.select"}
+:::::::: {.content-hidden when-profile="student" when-profile="practice" unless-meta="special-case.select"}
 ::::::: {#exr-practice-2-special}
 ## Особенная задачка
 
@@ -66,7 +92,7 @@ ashow('grid/special-case.asy',2)
 :::::::
 ::::::::
 
-:::::: {.content-hidden unless-meta="sensetivity.select"}
+:::::: {.content-hidden when-profile="student" when-profile="practice" unless-meta="sensetivity.select"}
 ::::: {#exr-practice-linear-graphical-sensetivity}
 ## Завод
 
@@ -110,6 +136,5 @@ $$
 ashow('grid/sensetivity.asy',2)
 ```
 :::
-
 :::::
 ::::::

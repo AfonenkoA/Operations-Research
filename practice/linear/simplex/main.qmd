@@ -4,9 +4,35 @@ params:
   seed-random: 123
 ---
 
-# Линейное программирование. Симплекс метод
+# Линейное программирование. Симплекс метод {#sec-practice-linear-simplex}
 
-::::: {.content-hidden unless-meta="path.select"}
+:::: {.content-hidden when-profile="practice"}
+::: {.callout-important title="Состояние разработки"}
+Требуется доработка
+:::
+::::
+
+::::: {.content-hidden when-profile="practice"}
+## Темы {#sec-practice-linear-simplex-topics}
+
+Решить задачу
+
+-   Симплекс методом
+-   М-Методом
+-   Двухэтапным симплекс методом
+
+::: {#exm-practice-linear-simplex}
+### Примерчик
+
+Задание
+:::
+
+::: {#sol-practice-linear-simplex}
+Решение
+:::
+:::::
+
+::::: {.content-hidden when-profile="student" when-profile="practice" unless-meta="path.select"}
 :::: {#exr-practice-linear-simplex-path}
 ## Кривая дорожка
 
@@ -28,13 +54,13 @@ params:
 ::::
 :::::
 
-:::: {.content-hidden when-profile="practice"}
+:::: {.content-hidden when-profile="student" when-profile="practice"}
 ::: {#sol-practice-2-simplex-path}
 {{< lipsum 2 >}}
 :::
 ::::
 
-::::::: {.content-hidden unless-meta="alghoritm.select"}
+::::::: {.content-hidden when-profile="student" when-profile="practice"}
 :::::: {#exr-practice-linear-simplex-alghoritm}
 ## Алгоритм
 
@@ -63,7 +89,7 @@ ashow('grid/alghorytm.asy')
 ::::::
 :::::::
 
-:::: {.content-hidden when-profile="practice"}
+:::: {.content-hidden when-profile="student" when-profile="practice"}
 ::: {#sol-practice-2-simplex-alghorytm}
 {{< lipsum 2 >}}
 :::

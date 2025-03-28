@@ -1,1 +1,15 @@
-# Моделирование
+# Модели исследования операций {#sec-exam-basic-model}
+
+::::{.content-hidden when-profile="exam"}
+## Темы {#sec-exam-basic-model-topics}
+
+:::{#exm-exam-basic-model}
+### Примерчик
+
+Задание
+:::
+
+:::{#sol-exam-basic-model}
+Решение
+:::
+::::

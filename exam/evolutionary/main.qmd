@@ -1,2 +1,15 @@
-# Эволюционная оптимизация
+# Эволюционная оптимизация {#sec-exam-evolutionary}
 
+::::{.content-hidden when-profile="exam"}
+## Темы {#sec-exam-evolutionary-topics}
+
+:::{#exm-exam-evolutionary}
+### Примерчик
+
+Задание
+:::
+
+:::{#sol-exam-evolutionary}
+Решение
+:::
+::::

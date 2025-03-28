@@ -5,9 +5,9 @@ project:
 
 profile:
   group:
-    - [full, student, practice, test]
+    - [full, student, practice, exam, test]
     - [dev, prod]
-    - [html, pdf, pdf-practice]
+    - [html, pdf, pdf-class]
 
 book:
   title: "Исследование операций"

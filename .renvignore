@@ -1,9 +1,13 @@
 mathjax_*/
 
 .quarto/
+/site_libs/
+.quarto/
 _site/
-_book/
-site_libs/
+_*book/
+_test/
+_practice/
 _freeze/
 *_cache/
 *_files/
+*figure/

@@ -1,4 +1,4 @@
-# 4. Нелинейное программирование
+# Нелинейное программирование {#sec-lab-nonlinear}
 
 ```{r}
 loadNamespace('nloptr') |> invisible()

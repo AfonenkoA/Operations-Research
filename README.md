@@ -180,7 +180,7 @@ quarto render --to html --profile full,dev,html
 ### pdf
 
 ``` bash
-quarto render --to pdf --profile dev,practice,pdf-practice
+quarto render --to pdf --profile dev,practice,pdf-class
 ```
 
 ### html
@@ -192,7 +192,27 @@ quarto render --to html --profile dev,practice,html
 ### LaTeX
 
 ``` bash
-quarto render --to latex --profile dev,practice,pdf-practice
+quarto render --to latex --profile dev,practice,pdf-class
+```
+
+## Проверочные работы
+
+### pdf
+
+``` bash
+quarto render --to pdf --profile dev,exam,pdf-class
+```
+
+### html
+
+``` bash
+quarto render --to html --profile dev,exam,html
+```
+
+### LaTeX
+
+``` bash
+quarto render --to latex --profile dev,exam,pdf-class
 ```
 
 ## Подсчёт строк кода

@@ -1,1 +1,17 @@
-# Эволюционная оптимизация
+# Эволюционная оптимизация {#sec-practice-evolutionary}
+
+::::{.content-hidden when-profile="practice"}
+## Темы {#sec-practice-evolutionary-topics}
+
+Гены, рекомбинация, приведение задачи к итерации.
+
+:::{#exm-practice-evolutionary}
+### Примерчик
+
+Задание
+:::
+
+:::{#sol-practice-evolutionary}
+Решение
+:::
+::::

@@ -1,4 +1,4 @@
-# Моделирование {#sec-lab-basic-model}
+# Модели исследования операций {#sec-lab-basic-model}
 
 ## Теория
 
@@ -56,6 +56,7 @@ aval[round(n/2)][[1]]$visible <- TRUE
 
 ```{r}
 #| label: make-step-figs
+#| include: false
 #| message: false
 #| warning: false
 
@@ -94,7 +95,6 @@ for (i in 1:n) {
   steps[[i]] = step
 }
 ```
-
 
 ```{r}
 #| echo: false
@@ -174,25 +174,23 @@ plot_ly(x= x, y=y, type = 'scatter', mode = 'lines') |> pshow()
 
 ## Задания
 
-:::: {#exr-lab-basic-model-graphical-solution}
+::::: {#exr-lab-basic-model-graphical-solution}
 ### Вспоминая АГИЛу
 
 1.  Построить объемный и контурный графики функций $z = x^2 - y^2$ и $z = x^2 + y^2$.
 2.  Графически определить минимум.
 3.  К какому типу относятся кривые, изображенные на контурном графике.
 
-::: {.panel-tabset}
+::: panel-tabset
 #### R
-объемный (@sec-r-tools-plotly-surface3d), контурный (@sec-r-tools-plotly-contour2d)
-#### Python
 
+объемный (@sec-r-tools-plotly-surface3d), контурный (@sec-r-tools-plotly-contour2d) \#### Python
 :::
-
 
 ::: {.callout-note appearance="minimal"}
 Уровень 1
 :::
-::::
+:::::
 
 :::: {#exr-lab-basic-model-moving-body}
 ### Брось!
@@ -241,7 +239,3 @@ $$
 Уровень 3
 :::
 ::::
-
-## Проверочная работа
-
-Знать понятие модели, критерия, постановки, отличия различных постановок задачи исследования операций.

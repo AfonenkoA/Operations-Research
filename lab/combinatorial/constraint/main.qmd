@@ -4,7 +4,7 @@ cache: false
 freeze: false
 ---
 
-# 5. Программирование в ограничениях {#sec-lab-constraint}
+# Программирование в ограничениях {#sec-lab-combinatorial-constraint}
 
 ::: {.callout-important title="Состояние разработки"}
 Требуется доработка
@@ -12,11 +12,11 @@ freeze: false
 
 ## Теория
 
-::: {#exm-lab-constraint}
+::: {#exm-lab-combinatorial-constraint}
 Пример
 :::
 
-::: {#sol-lab-constraint}
+::: {#sol-lab-combinatorial-constraint}
 Решение примера
 :::
 
@@ -51,7 +51,7 @@ $$
 \end{array}
 $$
 
-:::: {#exr-lab-constraint-jindosh-riddle}
+:::: {#exr-lab-combinatorial-constraint-jindosh-riddle}
 ### Задача Джиндоша
 
 На званом обеде были леди Уинслоу, доктор Марколла, графиня Конти, мадам Нациу и баронесса Финч.

@@ -7,9 +7,31 @@ params:
   AviaTicketsOneWayCost: 70
 ---
 
-# Моделирование
+# Модели исследования операций {#sec-practice-basic-model}
 
-::::: {.content-hidden unless-meta="avia-tickets.select"}
+:::: {.content-hidden when-profile="practice"}
+::: {.callout-important title="Состояние разработки"}
+Требуется доработка
+:::
+::::
+
+::::: {.content-hidden when-profile="practice"}
+## Темы {#sec-practice-base-model-topics}
+
+Целевая функция, ограничения.
+
+::: {#exm-practice-base-model}
+### Примерчик
+
+Задание
+:::
+
+::: {#sol-practice-base-model}
+Решение
+:::
+:::::
+
+::::: {.content-hidden when-profile="student" when-profile="practice" unless-meta="avia-tickets.select"}
 :::: {#exr-practice-avia-tickets}
 ## Авиа-билеты
 
@@ -27,13 +49,13 @@ params:
 ::::
 :::::
 
-:::: {.content-hidden when-profile="practice"}
+:::: {.content-hidden when-profile="student" when-profile="practice"}
 ::: {#sol-practice-avia-tickets}
 {{< lipsum 2 >}}
 :::
 ::::
 
-::::: {.content-hidden unless-meta="table-lamp.select"}
+::::: {.content-hidden when-profile="student" when-profile="practice" unless-meta="table-lamp.select"}
 :::: {#exr-practice-table-lamp}
 ## Стол и лампа
 
@@ -53,7 +75,7 @@ params:
 ::::
 :::::
 
-:::: {.content-hidden when-profile="practice"}
+:::: {.content-hidden when-profile="student" when-profile="practice"}
 ::: {#sol-practice-table-lamp}
 {{< lipsum 2 >}}
 :::

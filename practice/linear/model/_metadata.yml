@@ -2,11 +2,11 @@ convert-to-linear:
   select: false
 
 standard-form:
-    select: true
+    select: false
 
 build-model:
-  select: true
+  select: false
 
 dual-problem:
-  select: true
+  select: false
 

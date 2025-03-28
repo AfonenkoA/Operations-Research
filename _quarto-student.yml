@@ -39,6 +39,15 @@ book:
         - lab/basic-model/main.qmd
         - lab/linear/algebra/main.qmd
         - lab/linear/programming/main.qmd
+
+    - part: "Практические работы"
+      chapters:
+        - practice/basic-model/main.qmd
+        - practice/linear/algebra/main.qmd
+        - practice/linear/graphical/main.qmd
+        - practice/linear/model/main.qmd
+        - practice/linear/simplex/main.qmd
+
     - references.qmd
 
 
