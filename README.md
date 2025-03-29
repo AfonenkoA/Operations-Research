@@ -1,4 +1,4 @@
- Установка
+# Установка
 
 ## Программы
 
@@ -11,15 +11,15 @@
 7.  [TeXLive](https://www.tug.org/texlive/)
 8.  Сhromium совместимый браузер
 9.  [MiniZinc](https://www.minizinc.org/downloads/)
-
+10. [GraphViz](https://graphviz.org/download/)
 
 ### Windows
 
-Дополнительно установить 
+Дополнительно установить
+
 1.  [Ghostscript](https://www.ghostscript.com/releases/gsdnld.html)
 2.  [Sumatra PDF](https://www.sumatrapdfreader.org/download-free-pdf-viewer)
-3.  [rsvg-convert](https://sourceforge.net/projects/tumagcc/files/converters/rsvg-convert.exe/download)
-    Перенести в каталог (например `С:\LibExe`) и добавить его в `PATH`.
+3.  [rsvg-convert](https://sourceforge.net/projects/tumagcc/files/converters/rsvg-convert.exe/download) Перенести в каталог (например `С:\LibExe`) и добавить его в `PATH`.
 
 Существует проблема `rsvg` не находит шрифты windows, текст на svg картинках не отображается.
 
@@ -52,7 +52,6 @@ ASYMPTOTE_PDFVIEWER=C:\Users\<user>\AppData\Local\SumatraPDF\SumatraPDF.exe
 ```
 
 ### Linux
-
 
 ## Пакеты Julia, Python, R
 
@@ -92,6 +91,7 @@ julia --version
 python --version
 asy --version
 xelatex --version
+dot --version
 ```
 
 ### Windows

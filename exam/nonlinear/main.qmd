@@ -1,16 +1,19 @@
 # Нелинейное программирование {#sec-exam-nonlinear}
 
-::::{.content-hidden when-profile="exam"}
+::::: {.content-hidden when-profile="exam"}
 ## Темы {#sec-exam-network-topics}
 
-
-:::{#exm-exam-network}
+::: {#exm-exam-network}
 ### Примерчик
 
 Задание
 :::
 
-:::{#sol-exam-network}
+::: {#sol-exam-network}
 Решение
 :::
-::::
+:::::
+
+Какой алгоритм прошёл этот путь. Определите, какой алгоритм отработает лучше
+
+Проанализируйте графики сходимости методов, выберете наиболее эффективный

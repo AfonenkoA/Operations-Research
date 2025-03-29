@@ -1,26 +1,160 @@
 # Сетевые модели {#sec-lab-combinatorial-network}
 
-## Кратчайшие пути
+## Задачи
 
-Путь через Дейкстру
+### Надёжный маршрут
 
-Путь через Флойда
+М-р Умник ездит на работу на автомобиле. Закончив в своё время полный курс исследования операций, он легко определил самый короткий путь от дома до работы. К сожалению на данном маршруте находится достаточно много камер, и Умнику часто приходят штрафы за превышение скорости (как ему кажется, необоснованно). Таким образом самый короткий путь оказался не самым лучшим. Схема сети дорог, по которой м-р Умник может добраться от дома до работы, приведена ниже. На этой схеме приведены вероятности **попасться** в объектив камеры. Требуется определить такой маршрут, вероятность **проскочить** на котором будет максимальной. (Подсказка: удобней складывать логарифмы вероятностей, чем перемножать исходные значения)
 
-## Минимальное остовное дереово
-
-```{r}
-g <- igraph::sample_gnp(20, 20/100)
-g_mst <- igraph::mst(g)
+```{dot}
+digraph {
+  rankdir=LR;
+  home[label="дом"]
+  rfict[label="работа"]
+  
+  home -> 2 [label="0.15"]
+  2 -> 7 [label="0.95"]
+  3 -> 7 [label="0.4"]
+  2 -> 3 [label="0.84"]
+  5 -> 7 [label="0.32"]
+  4 -> 5 [label="0.78"]
+  4 -> 6 [label="0.9"]
+  2 -> 5 [label="0.56"]
+  5 -> rfict [label="0.88"]
+  3 -> 6 [label="0.22"]
+  6 -> rfict [label="0.65"]
+  7 -> 4 [label="0.05"]
+}
 ```
 
+Уровень 1.
+
+### Алгоритм флойда
+
+После обработки массива трафика на коммутаторах в датацентре был получен следующий массив. Визуально определите наиболее загруженную линию.
+
 ```{r}
-g |> igraph::V() |> length()
+igraph::distances |> invisible()
 ```
+
+<https://web.mit.edu/urban_or_book/www/book/chapter6/6.2.3.html>
+
+
+### Ничего лишнего
+
+Для того, чтобы подключить к сети компьютеры в 505 аудитории Иван Алексеевич заготовил 30м ethernet кабеля категории 6e. Схема приводится на рисунке.
+
+:::: {.content-visible when-format="html"}
+::: {.callout appearance="minimal"}
+⤓ [room505.graphml](room505.graphml)
+:::
+::::
+
+:::: {.content-visible unless-format="html"}
+::: {.callout appearance="minimal"}
+`\faFile*[regular].`{=latex} [room505.graphml](lab/combinatorial/network/room505.graphml)
+:::
+::::
+
+```{r}
+#| fig-width: 15
+
+g <- igraph::read_graph('room505.graphml', format = 'GraphML')
+V(g)$color <- purrr::map_chr(V(g)$type, \(t) switch(
+  t,
+  'коммутатор' = 'red',
+  'угловая точка' = 'skyblue',
+  'компьютер' = 'green',
+  'стенд' = 'yellow',
+  'розетка' = 'white'
+))
+l <- cbind(V(g)$posX, V(g)$posY)
+plot(
+  g,
+  layout = l,
+  vertex.size = 15,
+  edge.label = E(g)$weight
+)
+```
+
+В таблице приведены свойства, которые можно получить после импорта графа из файла.
+
+| Свойство                        | Код           |
+|---------------------------------|---------------|
+| Длина кабеля между устройствами | `E(g)$weight` |
+| Тип устройства                  | `V(g)$type`   |
+| Имя устройства                  | `V(g)$name`   |
+| Координата X в кабинете         | `V(g)$posX`   |
+| Координата Y в кабинете         | `V(g)$posY`   |
+| Группа устройства               | `V(g)$group`  |
+
+Информация об устройствах приведена в таблице ниже.
+
+```{r}
+#| echo: false
+v <- data.frame('Устройство' = V(g)$name,
+           'Тип' = V(g)$type,
+           'Группа' = V(g)$group,
+           'X' = V(g)$posX,
+           'Y' = V(g)$posY)
+readr::write_csv(v, file = 'vertex.csv')
+dplyr::sample_n(v,5)
+```
+
+:::: {.content-visible when-format="html"}
+::: {.callout appearance="minimal"}
+⤓ [vertex.csv](vertex.csv)
+:::
+::::
+
+:::: {.content-visible unless-format="html"}
+::: {.callout appearance="minimal"}
+`\faFile*[regular].`{=latex} [vertex.csv](lab/combinatorial/network/vertex.csv)
+:::
+::::
+
+А в следующей таблице показаны длины обязательных сегментов.
+
+```{r}
+e <- as_data_frame(g)
+readr::write_csv(e, file = 'edge.csv')
+dplyr::sample_n(e,5)
+```
+
+:::: {.content-visible when-format="html"}
+::: {.callout appearance="minimal"}
+⤓ [edge.csv](edge.csv)
+:::
+::::
+
+:::: {.content-visible unless-format="html"}
+::: {.callout appearance="minimal"}
+`\faFile*[regular].`{=latex} [edge.csv](lab/combinatorial/network/edge.csv)
+:::
+::::
+
+Для группы устройств есть возможность подключения к группе розеток. Вам необходимо рассчитать длину кабеля для соединения любого устройства с любой розеткой внутри группы (евклидово расстояние, гипотенуза в декартовых координатах) и добавить эти рёбра к графу.
+
+| Устройства   | Розетки   |
+|--------------|-----------|
+| Компьютеры 1 | Розетки 1 |
+| Компьютеры 2 | Розетки 2 |
+| Компьютеры 3 | Розетки 3 |
+| Стенды 1     | Розетки 4 |
+| Стенды 2     | Розетки 5 |
+
+**Помогите** Ивану Алексеевичу использовать как можно больше сэкономленного кабеля для датчиков цифрового факультета.
+
+Уровень 3
+
+#### Визуализация минимального остовного дерева
 
 Идея представить граф как набор рёбер. Используя join мы добавляем цвет рёбрам, которые встретились во втором графе. Значения тех, которые не встретились во втором наборе заполняются через `replace_na`
 
 ```{r}
-#| fig-height: 10
+g <- igraph::sample_gnp(12,0.4)
+g_mst <- igraph::mst(g)
+
 hg <- dplyr::left_join(
   igraph::as_data_frame(g),
   cbind(igraph::as_data_frame(g_mst), color = 'red'),
@@ -36,106 +170,28 @@ plot(
 )
 ```
 
-## Маршрутизация
-
-```{r}
-set.seed(digest::digest2int('Афоненко Анатолий Александрович'))
-```
-
-Переменная *simple* отвечает за выбор варианта сложности.
-
-```{r}
-simple <- TRUE
-```
-
-Далее на основании вашего ФИО и варианта сложности генерируются основные параметры задачи. Число маршрутизаторов $p$:
-
-```{r}
-p <- ifelse(simple, extraDistr::rdunif(1,6,10), extraDistr::rdunif(1,25,50))
-p
-```
-
-Число резервных маршрутов $r$
-
-```{r}
-r <- ifelse(simple,2,extraDistr::rdunif(1,3,5))
-r
-```
-
-Граф маршрутизации
-
-```{r}
-repeat
-{
-g <- igraph::sample_gnp(p, ifelse(simple,0.2,0.05))
-if(igraph::is_connected(g))
-  break
-}
-```
-
-Количество линий связи $q$
-
-```{r}
-q <- length(igraph::E(g))
-q
-```
-
-Задержка линии связи $W$
-
-```{r}
-igraph::E(g)$weight <- extraDistr::rdunif(q,1,100)
-```
-
-Резервирование маршрутизаторов $SR$
-
-```{r}
-igraph::V(g)$standby <- if(simple) rep(2,p) else extraDistr::rdunif(p,r,5)
-```
-
-Резервирование линий связи $SP$
-
-```{r}
-igraph::E(g)$standby <- if(simple) rep(2,q) else extraDistr::rdunif(q,r,5)
-```
-
-Узлы, между которыми требуется обеспечить надежную связь
-
-```{r}
-v <- igraph::farthest_vertices(g)$vertices
-v
-k <- v[1]
-l <- v[2]
-```
-
-```{r}
-plot(g, layout = igraph::layout.circle, edge.label = igraph::E(g)$weight)
-```
-
-```{r}
-igraph::distances(g) |> dim()
-```
-
 <https://optimization-daily.netlify.app/posts/2022-07-09-maximum-network-flows-in-r/>
 
 <https://igraph.org/r/html/1.2.4/min_cut.html>
 
 ## Метод критического пути
 
-Сформулировать как задачу линейного программирования. Решить пакетом.
-
-```{r}
-loadNamespace('criticalpath') |> invisible()
-```
 
 Построение расписания
 
 <https://cran.r-project.org/web/packages/criticalpath/vignettes/criticalpath-introduction.html>
 
-
 ## Криптоарбитраж из neos
+
+Уровень 3
 
 ## MaxFlow
 
 скинуться на тусу <https://hackernoon.com/max-flow-algorithm-in-real-life-551ebd781b25>
 
+Уровень 2
+
+
 Расписание экзаменов на реальных данных из PDF maxflow11
+
+Уровень 3
