@@ -1,0 +1,5 @@
+---
+- from: main.qmd
+  files:
+    - organizations.csv
+    - questionnaire.csv

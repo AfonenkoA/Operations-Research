@@ -2,9 +2,14 @@
 
 ## Задачи
 
+```{r}
+#| include: false
+```
+
+:::: {#exr-lab-combinatorial-network-mr-umnik}
 ### Надёжный маршрут
 
-М-р Умник ездит на работу на автомобиле. Закончив в своё время полный курс исследования операций, он легко определил самый короткий путь от дома до работы. К сожалению на данном маршруте находится достаточно много камер, и Умнику часто приходят штрафы за превышение скорости (как ему кажется, необоснованно). Таким образом самый короткий путь оказался не самым лучшим. Схема сети дорог, по которой м-р Умник может добраться от дома до работы, приведена ниже. На этой схеме приведены вероятности **попасться** в объектив камеры. Требуется определить такой маршрут, вероятность **проскочить** на котором будет максимальной. (Подсказка: удобней складывать логарифмы вероятностей, чем перемножать исходные значения)
+М-р Умник ездит на работу на автомобиле. Закончив в своё время полный курс исследования операций, он легко определил самый короткий путь от дома до работы. К сожалению на данном маршруте находится достаточно много камер, и Умнику часто приходят штрафы за превышение скорости (как ему кажется, необоснованно). Таким образом самый короткий путь оказался не самым лучшим. Схема сети дорог, по которой м-р Умник может добраться от дома до работы, приведена ниже. На этой схеме приведены вероятности **попасться** в объектив камеры. Требуется определить такой маршрут, вероятность **проскочить** на котором будет максимальной. (Подсказка: удобней складывать логарифмы вероятностей, чем перемножать исходные значения) <!--Таха сетевые-->
 
 ```{dot}
 digraph {
@@ -27,19 +32,79 @@ digraph {
 }
 ```
 
-Уровень 1.
+::: {.callout-note appearance="minimal"}
+Уровень 1
+:::
+::::
 
-### Алгоритм флойда
+::::::::: {#exr-lab-combinatorial-network-coffie-break}
+### Cуета
 
-После обработки массива трафика на коммутаторах в датацентре был получен следующий массив. Визуально определите наиболее загруженную линию.
+Схема переходов между учебными корпусами изображена на рисунке. Расстояние между ними изображены на рёбрах. (Параметр `E(g)$weight`)
 
 ```{r}
-igraph::distances |> invisible()
+#| echo: false
+
+g <- igraph::read_graph('buildings.graphml', format = 'GraphML')
+plot(g, edge.label = igraph::E(g)$weight)
 ```
 
-<https://web.mit.edu/urban_or_book/www/book/chapter6/6.2.3.html>
+:::: {.content-visible when-format="html"}
+::: {.callout appearance="minimal"}
+⤓ [buildings.graphml](buildings.graphml)
+:::
+::::
 
+:::: {.content-visible unless-format="html"}
+::: {.callout appearance="minimal"}
+`\faFile*[regular].`{=latex} [buildings.graphml](lab/combinatorial/network/buildings.graphml)
+:::
+::::
 
+Во время перерыва студенты переходят между корпусами на дальнейшие занятия. В таблице указано сколько человек направляется из корпуса $i$ в корпус $j$ на следующую пару. Студент выбирает свой путь рационально (наименьшее расстояние).
+
+```{r}
+#| echo: false
+
+Pd <- read.table('transition.txt')
+P <- as.matrix(Pd)
+names(Pd) <- row.names(Pd) <- seq_along(Pd)
+Pd
+```
+
+Постройте граф транспортных потоков (вес ребра -- число человек, которые идут между корпусами) и определите, где выгоднее всего установить кофейню.
+
+```{r}
+#| include: false
+
+v <- igraph::V(g)
+D <- purrr::map(v, \(f) igraph::shortest_paths(g, from = f, to = v)$vpath)
+igraph::E(g)$weight <- 1
+vs <- seq_along(v)
+for(i in vs)
+  for(j in vs)
+  {
+    p <- D[[i]][[j]]
+    igraph::E(g, path = p)$weight <- igraph::E(g, path = p)$weight + 
+                                     P[cbind(head(p,-1), tail(p,-1))]
+  }
+plot(g, edge.label = igraph::E(g)$weight)
+```
+
+<!--https://web.mit.edu/urban_or_book/www/book/chapter6/6.2.3.html-->
+
+::: {.callout-note appearance="minimal"}
+Уровень 2
+:::
+
+::: callout-tip
+1.  Матрицу можно индексировать матрицей (полезно при работе с путями).
+2.  Обратите внимание на параметр `path` в функции получению рёбер графа `E(g, path = )`
+3.  Используйте функцию `{r} igraph::shortest_paths() |> dl()`
+:::
+:::::::::
+
+::::::::::::::::: {#exr-lab-combinatorial-network-cable-managment}
 ### Ничего лишнего
 
 Для того, чтобы подключить к сети компьютеры в 505 аудитории Иван Алексеевич заготовил 30м ethernet кабеля категории 6e. Схема приводится на рисунке.
@@ -57,10 +122,10 @@ igraph::distances |> invisible()
 ::::
 
 ```{r}
-#| fig-width: 15
+#| fig-height: 7
 
 g <- igraph::read_graph('room505.graphml', format = 'GraphML')
-V(g)$color <- purrr::map_chr(V(g)$type, \(t) switch(
+igraph::V(g)$color <- purrr::map_chr(igraph::V(g)$type, \(t) switch(
   t,
   'коммутатор' = 'red',
   'угловая точка' = 'skyblue',
@@ -68,12 +133,12 @@ V(g)$color <- purrr::map_chr(V(g)$type, \(t) switch(
   'стенд' = 'yellow',
   'розетка' = 'white'
 ))
-l <- cbind(V(g)$posX, V(g)$posY)
+l <- cbind(igraph::V(g)$posX, igraph::V(g)$posY)
 plot(
   g,
   layout = l,
   vertex.size = 15,
-  edge.label = E(g)$weight
+  edge.label = igraph::E(g)$weight
 )
 ```
 
@@ -92,11 +157,11 @@ plot(
 
 ```{r}
 #| echo: false
-v <- data.frame('Устройство' = V(g)$name,
-           'Тип' = V(g)$type,
-           'Группа' = V(g)$group,
-           'X' = V(g)$posX,
-           'Y' = V(g)$posY)
+v <- data.frame('Устройство' = igraph::V(g)$name,
+           'Тип' = igraph::V(g)$type,
+           'Группа' = igraph::V(g)$group,
+           'X' = igraph::V(g)$posX,
+           'Y' = igraph::V(g)$posY)
 readr::write_csv(v, file = 'vertex.csv')
 dplyr::sample_n(v,5)
 ```
@@ -116,7 +181,7 @@ dplyr::sample_n(v,5)
 А в следующей таблице показаны длины обязательных сегментов.
 
 ```{r}
-e <- as_data_frame(g)
+e <- igraph::as_data_frame(g)
 readr::write_csv(e, file = 'edge.csv')
 dplyr::sample_n(e,5)
 ```
@@ -143,16 +208,23 @@ dplyr::sample_n(e,5)
 | Стенды 1     | Розетки 4 |
 | Стенды 2     | Розетки 5 |
 
-**Помогите** Ивану Алексеевичу использовать как можно больше сэкономленного кабеля для датчиков цифрового факультета.
+**Помогите** Ивану Алексеевичу использовать как можно больше сэкономленного кабеля для датчиков цифрового факультета. Для этого требуется определить минимальное остовное дерево составленного графа.
 
+::: {.callout-note appearance="minimal"}
 Уровень 3
+:::
 
-#### Визуализация минимального остовного дерева
-
-Идея представить граф как набор рёбер. Используя join мы добавляем цвет рёбрам, которые встретились во втором графе. Значения тех, которые не встретились во втором наборе заполняются через `replace_na`
+::: callout-tip
+Идея представить граф как набор рёбер.
 
 ```{r}
 g <- igraph::sample_gnp(12,0.4)
+plot(g)
+```
+
+Используя join мы добавляем цвет рёбрам, которые встретились во втором графе. Значения тех, которые не встретились во втором наборе заполняются через `replace_na`
+
+```{r}
 g_mst <- igraph::mst(g)
 
 hg <- dplyr::left_join(
@@ -165,33 +237,109 @@ hg <- dplyr::left_join(
 plot(
   hg,
   edge.label = igraph::E(hg)$weight,
-  edge.color = igraph::E(hg)$color,
-  layout = igraph::layout.circle
-)
+  edge.color = igraph::E(hg)$color)
 ```
+:::
 
+::: content-hidden
 <https://optimization-daily.netlify.app/posts/2022-07-09-maximum-network-flows-in-r/>
 
 <https://igraph.org/r/html/1.2.4/min_cut.html>
+:::
+:::::::::::::::::
 
-## Метод критического пути
+:::: {#exr-lab-combinatorial-network-division}
+### Соображая на троих
 
+Собираясь на тусовку три товарища с ФСК собрали все деньги, которые у них были (10,40,10) рублей соответственно. На следующее утро возник нетривиальный вопрос о должниках. Считая, что все должны были вложиться поровну определите, кто, кому и сколько должен передать.
+
+```{r}
+#| echo: false
+
+g <- igraph::make_full_graph(3,directed = TRUE)
+igraph::V(g)$label <- 1:3
+igraph::E(g)$capacity <- Inf
+plot(g, edge.curved=0.3)
+```
+
+Данную задачу можно сформулировать как задачу поиска максимального потока в сети, если ввести два фиктивных узла: исток (который распределяет всем поровну) и сток (который показывает сколько кто потратил) и тем самым ограничить вместимость (`capacity`) денежных потоков.
+
+```{r}
+g <- g |> 
+  igraph::add_vertices(1, label = 'soruce') |>
+  igraph::add_vertices(1, label = 'drain') |> 
+  igraph::add_edges(rbind(4,1:3),capacity = rep(20,3)) |>
+  igraph::add_edges(rbind(1:3,5),capacity = c(10,40,10)) 
+
+x <- igraph::E(g)$capacity
+x[x==Inf] <- '' 
+plot(g, edge.label = x, edge.curved=0.3)
+```
+
+```{r}
+#| include: false
+
+plot(g |> igraph::delete_vertices(c(4,5)), edge.label = igraph::max_flow(g, 4, 5)$flow, edge.curved=0.3)
+```
+
+<!-- <https://hackernoon.com/max-flow-algorithm-in-real-life-551ebd781b25> -->
+
+<!-- <https://r-graph-gallery.com/248-igraph-plotting-parameters.html> -->
+
+::: {.callout-note appearance="minimal"}
+Уровень 2
+:::
+::::
+
+:::::: content-hidden
+Расписание экзаменов на реальных данных из PDF maxflow11
+
+::: {.callout-note appearance="minimal"}
+Уровень 4
+:::
+
+Криптоарбитраж из ampl
+
+::: {.callout-note appearance="minimal"}
+Уровень 4
+:::
+
+<https://ampl.com/mo-book/notebooks/04/cryptocurrency-arbitrage.html>
+
+Метод критического пути
+
+Построить граф зависимости активности. Из таблицы задать в tibble, с помощью tibble построить граф и задать critiacal path.
+
+<!--Просто списко активности из тахи.-->
+
+```{r}
+library(criticalpath)
+sch <- sch_new() |>
+sch_add_activity( 1L, "a1" , 0L, 2,3,4) |>
+sch_add_activity( 2L, "a2" , 4L, 5) |>
+sch_add_activity( 3L, "a3" , 9L, 10) |>
+sch_add_activity( 4L, "a4" , 1L, 6) |>
+sch_add_activity( 5L, "a5" , 4L, 9) |>
+sch_add_activity( 6L, "a6" , 5L, 7) |>
+sch_add_activity( 7L, "a7" , 1L, 8,11) |>
+sch_add_activity( 8L, "a8" , 7L, 12) |>
+sch_add_activity( 9L, "a9" , 8L, 12) |>
+sch_add_activity( 10L, "a10", 3L, 12) |>
+sch_add_activity( 11L, "a11", 3L, 12) |>
+sch_add_activity( 12L, "a12", 0L) |>
+sch_plan()
+sch_activities(sch)
+```
+
+```{r}
+sch_duration(sch)
+```
 
 Построение расписания
 
 <https://cran.r-project.org/web/packages/criticalpath/vignettes/criticalpath-introduction.html>
 
-## Криптоарбитраж из neos
-
-Уровень 3
-
-## MaxFlow
-
-скинуться на тусу <https://hackernoon.com/max-flow-algorithm-in-real-life-551ebd781b25>
-
-Уровень 2
-
-
-Расписание экзаменов на реальных данных из PDF maxflow11
-
-Уровень 3
+::: {.callout-note appearance="minimal"}
+Уровень 4
+:::
+::::::

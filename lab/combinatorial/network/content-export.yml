@@ -1,7 +1,9 @@
 ---
 - from: main.qmd
-  files: [vertex.csv]
-- from: main.qmd
-  files: [edge.csv]
-- from: main.qmd
-  files: [room505.graphml]
+  files:
+    - buildings.graphml
+    - vertex.csv
+    - edge.csv
+    - room505.graphml
+
+
