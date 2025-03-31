@@ -1,5 +1,8 @@
 project:
-  type: default
+  type: book
   output-dir: _test
-  render:
-    - practice/basic-model/main.qmd
+
+book:
+  chapters:
+    - index.qmd
+    - TODO.md

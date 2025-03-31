@@ -22,21 +22,25 @@ widgets |> purrr::walk(file_string_replace,
                        replacement = site_lib_path,
                        .progress = is_dev)
 
+if(is_dev) cat('Widgets link replacement completed','\n')
+
 plotly_libs_dirs <-  fs::dir_ls(out,
                                 recurse = TRUE,
                                 glob = '*plotly_libs',
                                 type = 'dir')
+
 if(is_dev) print_head(plotly_libs_dirs,'PlotlyLibDirs')
 
 plotly_libs_inner_dirs <- plotly_libs_dirs |>
   purrr::map(\(d) fs::dir_ls(d, type = 'dir')) |>
-  purrr::flatten_chr()
+  purrr::list_c()
+
 if(is_dev) print_head(plotly_libs_inner_dirs,'PlotlyLibInnerDirs')
 
 if(is_dev) cat('Copy PlotlyLibs -> SiteLibs started','\n')
 plotly_libs_inner_dirs |>
   purrr::walk(\(d) file.copy(from = d,
-                             to = fs::path(out,site_libs_dir),
+                             to = fs::path(out, site_libs_dir),
                              overwrite = FALSE,
                              recursive = TRUE,
                              copy.mode = TRUE),

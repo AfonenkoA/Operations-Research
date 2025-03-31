@@ -48,7 +48,7 @@ QUARTO_CHROMIUM="C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 Вместо `<user>` подставить имя пользователя
 
 ``` bash
-ASYMPTOTE_PDFVIEWER=C:\Users\<user>\AppData\Local\SumatraPDF\SumatraPDF.exe
+ASYMPTOTE_PDFVIEWER="C:\Users\<user>\AppData\Local\SumatraPDF\SumatraPDF.exe"
 ```
 
 ### Linux
@@ -220,7 +220,7 @@ quarto render --to latex --profile dev,exam,pdf-class
 ``` bash
 cloc --vcs=git\
  --read-lang-def=cloc-qmd-lang-def\
- --exclude-ext=json,svg,toml,csv\
+ --exclude-ext=json,svg,toml,csv,graphml,csl\
  --exclude-dir=renv\
  --exclude-list-file=requirements.txt
 ```

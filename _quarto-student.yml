@@ -1,6 +1,6 @@
 project:
   type: book
-  output-dir: _student-book
+  output-dir: _sbook
 
 book:
   chapters:

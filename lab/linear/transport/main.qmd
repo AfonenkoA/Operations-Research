@@ -120,8 +120,12 @@ res <- lpSolve::lp.transport(costs, "min", row.signs, row.rhs, col.signs, col.rh
 В таблице приведены результаты анкетирования студентов записавшихся в студотряд на лето. В таблице приводится запрос от организаций.
 
 ```{r}
+#| echo: false
 org <- readr::read_csv('organizations.csv', col_types = c('c','i'))
-org |> as.data.frame() |> head()
+org |> 
+  as.data.frame() |> 
+  head() |>
+  knitr::kable()
 ```
 
 :::: {.content-visible when-format="html"}
@@ -139,8 +143,12 @@ org |> as.data.frame() |> head()
 В таблице приводится анкета, значениями являются приоритеты, где 1 наивысший.
 
 ```{r}
+#| echo: false
 q <- readr::read_csv('questionnaire.csv', col_types = c('c','i'))
-q |> as.data.frame() |> dplyr::select(1:5) |> head()
+q |> as.data.frame() |>
+  dplyr::select(1:5) |> 
+  head() |> 
+  knitr::kable()
 ```
 
 :::: {.content-visible when-format="html"}
@@ -185,7 +193,9 @@ m <- readr::read_csv('questionnaire.csv', col_types = 'i') |>
 
 Требуется распределить студентов по отрядом максимально учитывая их пожелания. Сравните производительность и объясните различие методов
 
-```{{r}}
+```{r}
+#| eval: false
+
 lpSolve::lp.assign(m)
 clue::solve_LSAP(m)
 ```
