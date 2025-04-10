@@ -19,11 +19,6 @@ book:
         - r/lang/basic.qmd
         - r/lang/advanced.qmd
 
-    - part: minizinc/overview.qmd
-      chapters:
-        - minizinc/basic.qmd
-        - minizinc/advanced.qmd
-
     - part: python/lang/overview.qmd
       chapters:
         - python/lang/advanced.qmd
@@ -65,6 +60,11 @@ book:
         - combinatorial/algorithm/dynamic-programming.qmd
         - combinatorial/algorithm/backtracking.qmd
 
+    - part: minizinc/overview.qmd
+      chapters:
+        - minizinc/basic.qmd
+        - minizinc/advanced.qmd
+
     - part: evolutionary/overview.qmd
       chapters:
         - evolutionary/simulated-annealing.qmd
@@ -77,27 +77,41 @@ book:
 
     - part: multi-objective/overview.qmd
 
-    - part: "Лабораторные работы"
+    - part: "Задания. Программирование"
       chapters:
-        - lab/report.qmd
         - lab/programming/r/main.qmd
-        - lab/basic-model/main.qmd
 
-        - lab/linear/algebra/main.qmd
-        - lab/linear/programming/main.qmd
-        - lab/linear/integer/main.qmd
-        - lab/linear/transport/main.qmd
+    - part: "Задания. Алгоритмы"
+      chapters:
+        - lab/alghorithm/linear/algebra/main.qmd
+        - lab/alghorithm/graph-theory/main.qmd
+        - lab/alghorithm/dynamic-programming/main.qmd
+        - lab/alghorithm/nonlinear/main.qmd
+        - lab/alghorithm/evolutionary/main.qmd
 
-        - lab/combinatorial/graph-theory/main.qmd
-        - lab/combinatorial/network/main.qmd
-        - lab/combinatorial/constraint/main.qmd
-        - lab/combinatorial/packing/main.qmd
-        - lab/combinatorial/dynamic-programming/main.qmd
 
-        - lab/nonlinear/main.qmd
-        - lab/evolutionary/main.qmd
-        - lab/game-theory/main.qmd
-        - lab/multi-objective/main.qmd
+    - part: "Задания. Моделирование"
+      chapters:
+        - lab/model/basic/main.qmd
+
+        - lab/model/linear/standard/main.qmd
+        - lab/model/linear/transport/main.qmd
+        - lab/model/linear/integer/main.qmd
+        - lab/model/network/main.qmd
+        - lab/model/nonlinear/main.qmd
+        - lab/model/evolutionary/main.qmd
+        - lab/model/game-theory/main.qmd
+        - lab/model/multi-objective/main.qmd
+
+    - part: "Задания. Дополнительно"
+      chapters:
+        - lab/extra/programming/r/main.qmd
+        - lab/extra/linear/main.qmd
+        - lab/extra/network/main.qmd
+        - lab/extra/constraint/main.qmd
+        - lab/extra/packing/main.qmd
+        - lab/extra/nonlinear/main.qmd
+        - lab/extra/evolutionary/main.qmd
 
     - part: "Практические работы"
       chapters:
@@ -122,20 +136,35 @@ book:
     - references.qmd
 
   appendices:
+    - lab/report.qmd
     - part: "Язык программирования R"
       chapters:
-        - r/tools/basic.qmd
         - r/tools/renv.qmd
-        - r/tools/plotly.qmd
-        - r/tools/ggplot2.qmd
-        - r/tools/tidyverse/tibble.qmd
+        - r/tools/base.qmd
+        - r/tools/stats.qmd
+        - r/tools/igraph.qmd
+        - r/tools/pracma.qmd
+        - r/tools/smoof.qmd
+
         - r/tools/tidyverse/purrr.qmd
+        - r/tools/tidyverse/tibble.qmd
         - r/tools/tidyverse/dplyr.qmd
         - r/tools/tidyverse/tidyr.qmd
-        - r/tools/solver/lpsolve.qmd
-        - r/tools/solver/transport.qmd
-        - r/tools/solver/clue.qmd
-        - r/tools/igraph.qmd
+
+        - r/tools/plot/plotly.qmd
+        - r/tools/plot/ggplot2.qmd
+
+        - r/tools/solver/linear/transport.qmd
+        - r/tools/solver/linear/lpsolve.qmd
+        - r/tools/solver/linear/clue.qmd
+
+        - r/tools/solver/nonlinear/nloptr.qmd
+
+        - r/tools/solver/evolutionary/gensa.qmd
+        - r/tools/solver/evolutionary/pso.qmd
+        - r/tools/solver/evolutionary/ga.qmd
+        - r/tools/solver/evolutionary/tsp.qmd
+
     - part: "Язык программирования Python"
       chapters:
         - python/tools/minizinc.qmd

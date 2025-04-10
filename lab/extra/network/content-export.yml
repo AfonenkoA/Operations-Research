@@ -1,0 +1,8 @@
+---
+- from: main.qmd
+  files:
+    - vertex.csv
+    - edge.csv
+    - room505.graphml
+
+

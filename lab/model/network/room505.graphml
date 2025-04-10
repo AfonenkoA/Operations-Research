@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns
+         http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="g_name" for="graph" attr.name="name" attr.type="string"/>
+  <key id="g_type" for="graph" attr.name="type" attr.type="string"/>
+  <key id="g_loops" for="graph" attr.name="loops" attr.type="boolean"/>
+  <key id="g_p" for="graph" attr.name="p" attr.type="double"/>
+  <key id="v_type" for="node" attr.name="type" attr.type="string"/>
+  <key id="v_group" for="node" attr.name="group" attr.type="string"/>
+  <key id="v_name" for="node" attr.name="name" attr.type="string"/>
+  <key id="v_posX" for="node" attr.name="posX" attr.type="double"/>
+  <key id="v_posY" for="node" attr.name="posY" attr.type="double"/>
+  <key id="e_weight" for="edge" attr.name="weight" attr.type="double"/>
+  <graph id="G" edgedefault="undirected">
+    <!--Коммутатор-->
+    <node id="switch">
+      <data key="v_type">коммутатор</data>
+      <data key="v_posX">0</data>
+      <data key="v_posY">0</data>
+      <data key="v_group">NA</data>
+      <data key="v_name">Коммутатор</data>
+    </node>
+    <!--Угловые точки-->
+    <node id="fp1">
+        <data key="v_type">угловая точка</data>
+        <data key="v_posX">0</data>
+        <data key="v_posY">300</data>
+        <data key="v_group">NA</data>
+        <data key="v_name">Уг1</data>
+    </node>
+    <node id="fp2">
+        <data key="v_type">угловая точка</data>
+        <data key="v_posX">600</data>
+        <data key="v_posY">300</data>
+        <data key="v_group">NA</data>
+        <data key="v_name">Уг2</data>
+    </node>
+    <node id="fp3">
+        <data key="v_type">угловая точка</data>
+        <data key="v_posX">600</data>
+        <data key="v_posY">-700</data>
+        <data key="v_group">NA</data>
+        <data key="v_name">Уг3</data>
+    </node>
+    <node id="fp4">
+        <data key="v_type">угловая точка</data>
+        <data key="v_posX">0</data>
+        <data key="v_posY">-700</data>
+        <data key="v_group">NA</data>
+        <data key="v_name">Уг4</data>
+    </node>
+    <!--Компьютеры-->
+        <!--Группа 1-->
+    <node id="pc1">
+        <data key="v_type">компьютер</data>
+        <data key="v_posX">100</data>
+        <data key="v_posY">200</data>
+        <data key="v_group">Компьютеры 1</data>
+        <data key="v_name">ПК1</data>
+    </node>
+    <node id="pc2">
+        <data key="v_type">компьютер</data>
+        <data key="v_posX">200</data>
+        <data key="v_posY">200</data>
+        <data key="v_group">Компьютеры 1</data>
+        <data key="v_name">ПК2</data>
+    </node>
+    <node id="pc3">
+        <data key="v_type">компьютер</data>
+        <data key="v_posX">200</data>
+        <data key="v_posY">100</data>
+        <data key="v_group">Компьютеры 1</data>
+        <data key="v_name">ПК3</data>
+    </node>
+    <node id="pc4">
+        <data key="v_type">компьютер</data>
+        <data key="v_posX">100</data>
+        <data key="v_posY">100</data>
+        <data key="v_group">Компьютеры 1</data>
+        <data key="v_name">ПК4</data>
+    </node>
+        <!--Группа 2-->
+    <node id="pc5">
+        <data key="v_type">компьютер</data>
+        <data key="v_posX">400</data>
+        <data key="v_posY">200</data>
+        <data key="v_group">Компьютеры 2</data>
+        <data key="v_name">ПК5</data>
+    </node>
+    <node id="pc6">
+        <data key="v_type">компьютер</data>
+        <data key="v_posX">500</data>
+        <data key="v_posY">200</data>
+        <data key="v_group">Компьютеры 2</data>
+        <data key="v_name">ПК6</data>
+    </node>
+    <node id="pc7">
+        <data key="v_type">компьютер</data>
+        <data key="v_posX">500</data>
+        <data key="v_posY">100</data>
+        <data key="v_group">Компьютеры 2</data>
+        <data key="v_name">ПК7</data>
+    </node>
+    <node id="pc8">
+        <data key="v_type">компьютер</data>
+        <data key="v_posX">400</data>
+        <data key="v_posY">100</data>
+        <data key="v_group">Компьютеры 2</data>
+        <data key="v_name">ПК8</data>
+    </node>
+        <!--Группа препод-->
+    <node id="pc9">
+        <data key="v_type">компьютер</data>
+        <data key="v_posX">300</data>
+        <data key="v_posY">-300</data>
+        <data key="v_group">Компьютеры 3</data>
+        <data key="v_name">ПК9</data>
+    </node>
+    <!--Розетки-->
+        <!--Группа Компьютеры 1-->
+    <node id="so1">
+        <data key="v_type">розетка</data>
+        <data key="v_posX">0</data>
+        <data key="v_posY">100</data>
+        <data key="v_group">Розетки 1</data>
+        <data key="v_name">Рз1</data>
+    </node>
+    <node id="so2">
+        <data key="v_type">розетка</data>
+        <data key="v_posX">0</data>
+        <data key="v_posY">200</data>
+        <data key="v_group">Розетки 1</data>
+        <data key="v_name">Рз2</data>
+    </node>
+    <node id="so3">
+        <data key="v_type">розетка</data>
+        <data key="v_posX">150</data>
+        <data key="v_posY">300</data>
+        <data key="v_group">Розетки 1</data>
+        <data key="v_name">Рз3</data>
+    </node>
+    <node id="so4">
+        <data key="v_type">розетка</data>
+        <data key="v_posX">250</data>
+        <data key="v_posY">300</data>
+        <data key="v_group">Розетки 1</data>
+        <data key="v_name">Рз4</data>
+    </node>
+        <!--Группа Компьютеры 2-->
+    <node id="so5">
+        <data key="v_type">розетка</data>
+        <data key="v_posX">400</data>
+        <data key="v_posY">300</data>
+        <data key="v_group">Розетки 2</data>
+        <data key="v_name">Рз5</data>
+    </node>
+    <node id="so6">
+        <data key="v_type">розетка</data>
+        <data key="v_posX">500</data>
+        <data key="v_posY">300</data>
+        <data key="v_group">Розетки 2</data>
+        <data key="v_name">Рз6</data>
+    </node>
+    <node id="so7">
+        <data key="v_type">розетка</data>
+        <data key="v_posX">600</data>
+        <data key="v_posY">200</data>
+        <data key="v_group">Розетки 2</data>
+        <data key="v_name">Рз7</data>
+    </node>
+    <node id="so8">
+        <data key="v_type">розетка</data>
+        <data key="v_posX">600</data>
+        <data key="v_posY">100</data>
+        <data key="v_group">Розетки 2</data>
+        <data key="v_name">Рз8</data>
+    </node>
+        <!--Группа Компьютеры 3-->
+    <node id="so9">
+        <data key="v_type">розетка</data>
+        <data key="v_posX">600</data>
+        <data key="v_posY">-300</data>
+        <data key="v_group">Розетки 3</data>
+        <data key="v_name">Рз9</data>
+    </node>
+    <node id="so10">
+        <data key="v_type">розетка</data>
+        <data key="v_posX">600</data>
+        <data key="v_posY">-400</data>
+        <data key="v_group">Розетки 3</data>
+        <data key="v_name">Рз10</data>
+    </node>
+        <!--Группа Стенды 1-->
+    <node id="so11">
+        <data key="v_type">розетка</data>
+        <data key="v_posX">600</data>
+        <data key="v_posY">-100</data>
+        <data key="v_group">Розетки 4</data>
+        <data key="v_name">Рз11</data>
+    </node>
+    <node id="so12">
+        <data key="v_type">розетка</data>
+        <data key="v_posX">600</data>
+        <data key="v_posY">-200</data>
+        <data key="v_group">Розетки 4</data>
+        <data key="v_name">Рз12</data>
+    </node>
+         <!--Группа Стенды 2-->
+    <node id="so13">
+        <data key="v_type">розетка</data>
+        <data key="v_posX">600</data>
+        <data key="v_posY">-550</data>
+        <data key="v_group">Розетки 5</data>
+        <data key="v_name">Рз13</data>
+    </node>
+    <node id="so14">
+        <data key="v_type">розетка</data>
+        <data key="v_posX">600</data>
+        <data key="v_posY">-500</data>
+        <data key="v_group">Розетки 5</data>
+        <data key="v_name">Рз14</data>
+    </node>
+    <node id="so15">
+        <data key="v_type">розетка</data>
+        <data key="v_posX">550</data>
+        <data key="v_posY">-700</data>
+        <data key="v_group">Розетки 5</data>
+        <data key="v_name">Рз15</data>
+    </node>
+    <node id="so16">
+        <data key="v_type">розетка</data>
+        <data key="v_posX">500</data>
+        <data key="v_posY">-700</data>
+        <data key="v_group">Розетки 5</data>
+        <data key="v_name">Рз16</data>
+    </node>
+    <!--Стенды-->
+        <!--Группа 1-->
+    <node id="st1">
+        <data key="v_type">стенд</data>
+        <data key="v_posX">550</data>
+        <data key="v_posY">-100</data>
+        <data key="v_group">Стенды 1</data>
+        <data key="v_name">Ст1</data>
+    </node>
+    <node id="st2">
+        <data key="v_type">стенд</data>
+        <data key="v_posX">550</data>
+        <data key="v_posY">-200</data>
+        <data key="v_group">Стенды 1</data>
+        <data key="v_name">Ст1</data>
+    </node>
+        <!--Группа 2-->
+    <node id="st3">
+        <data key="v_type">стенд</data>
+        <data key="v_posX">450</data>
+        <data key="v_posY">-600</data>
+        <data key="v_name">Ст3</data>
+    </node>
+    <node id="st4">
+        <data key="v_type">стенд</data>
+        <data key="v_posX">500</data>
+        <data key="v_posY">-600</data>
+        <data key="v_name">Ст4</data>
+    </node>
+    <!--Возможные соединения-->
+    <edge source="switch" target="so1">
+      <data key="e_weight">100</data>
+    </edge>
+    <edge source="so1" target="so2">
+      <data key="e_weight">100</data>
+    </edge>
+    <edge source="so2" target="fp1">
+        <data key="e_weight">100</data>
+    </edge>
+    <edge source="fp1" target="so3">
+        <data key="e_weight">150</data>
+    </edge>
+    <edge source="so3" target="so4">
+        <data key="e_weight">100</data>
+    </edge>
+    <edge source="so4" target="so5">
+        <data key="e_weight">150</data>
+    </edge>
+    <edge source="so5" target="so6">
+        <data key="e_weight">100</data>
+    </edge>
+    <edge source="so6" target="fp2">
+        <data key="e_weight">100</data>
+    </edge>
+    <edge source="fp2" target="so7">
+        <data key="e_weight">100</data>
+    </edge>
+    <edge source="so7" target="so8">
+        <data key="e_weight">100</data>
+    </edge>
+    <edge source="so8" target="so11">
+        <data key="e_weight">300</data>
+    </edge>
+    <edge source="so11" target="so12">
+        <data key="e_weight">100</data>
+    </edge>
+    <edge source="so12" target="so9">
+        <data key="e_weight">100</data>
+    </edge>
+    <edge source="so9" target="so10">
+        <data key="e_weight">100</data>
+    </edge>
+    <edge source="so10" target="so14">
+        <data key="e_weight">100</data>
+    </edge>
+    <edge source="so14" target="so13">
+        <data key="e_weight">50</data>
+    </edge>
+    <edge source="so13" target="fp3">
+        <data key="e_weight">150</data>
+    </edge>
+    <edge source="fp3" target="so15">
+        <data key="e_weight">50</data>
+    </edge>
+    <edge source="so15" target="so16">
+        <data key="e_weight">50</data>
+    </edge>
+    <edge source="so16" target="fp4">
+        <data key="e_weight">500</data>
+    </edge>
+    <edge source="fp4" target="switch">
+        <data key="e_weight">700</data>
+    </edge>
+  </graph>
+</graphml>

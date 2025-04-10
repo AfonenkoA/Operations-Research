@@ -1,5 +1,0 @@
-# Динамическое программирование {#sec-lab-combinatorial-dynamic-programming}
-
-Задачка жабки
-
-Задача выдачи монет

@@ -17,13 +17,12 @@ book:
     - part: r/overview.qmd
       chapters:
         - r/lang/basic.qmd
-        - r/lang/advanced.qmd
 
     - part: linear/overview.qmd
       chapters:
         - linear/algebra.qmd
         - linear/graphical/solution.qmd
-        - linear/simplex/sensetivity.qmd
+        - linear/graphical/sensetivity.qmd
         - linear/simplex/special-cases.qmd
         - linear/integer.qmd
 
@@ -33,18 +32,28 @@ book:
         - nonlinear/unconstrained/analytical-many.qmd
         - nonlinear/constrained/analytical-many.qmd
 
-    - part: "Лабораторные работы"
+    - part: "Задания. Программирование"
       chapters:
         - lab/programming/r/main.qmd
-        - lab/basic-model/main.qmd
 
-        - lab/linear/algebra/main.qmd
-        - lab/linear/programming/main.qmd
-        - lab/linear/integer/main.qmd
-        - lab/linear/transport/main.qmd
+    - part: "Задания. Алгоритмы"
+      chapters:
+        - lab/alghorithm/linear/algebra/main.qmd
+        - lab/alghorithm/graph-theory/main.qmd
 
-        - lab/combinatorial/graph-theory/main.qmd
-        - lab/combinatorial/network/main.qmd
+
+    - part: "Задания. Моделирование"
+      chapters:
+        - lab/model/basic/main.qmd
+        - lab/model/linear/standard/main.qmd
+        - lab/model/linear/transport/main.qmd
+        - lab/model/linear/integer/main.qmd
+        - lab/model/network/main.qmd
+
+    - part: "Задания. Дополнительно"
+      chapters:
+        - lab/extra/programming/r/main.qmd
+        - lab/extra/network/main.qmd
 
     - part: "Практические работы"
       chapters:
@@ -56,11 +65,9 @@ book:
 
     - references.qmd
 
-
   appendices:
     - part: "Язык программирования R"
       chapters:
         - r/tools/renv.qmd
-        - r/tools/plotly.qmd
-        - r/tools/tidyverse/purrr.qmd
-        - r/tools/solver/lpsolve.qmd
+        - r/tools/plot/plotly.qmd
+        - r/tools/solver/linear/lpsolve.qmd

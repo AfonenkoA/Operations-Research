@@ -1,9 +1,0 @@
----
-- from: main.qmd
-  files:
-    - buildings.graphml
-    - vertex.csv
-    - edge.csv
-    - room505.graphml
-
-

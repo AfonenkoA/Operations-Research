@@ -1,0 +1,30 @@
+# Пакет `stats`
+
+```{r}
+a <- runif(1000000)
+b <- runif(1000000)
+```
+
+Больше p-value лучше
+
+```{r}
+t.test(a,b)
+```
+
+```{r}
+t.test(a,a)
+```
+
+```{r}
+var.test(a,b)
+```
+
+```{r}
+# aov
+```
+
+<https://statsandr.com/blog/anova-in-r/>
+
+```{r}
+?oneway.test()
+```

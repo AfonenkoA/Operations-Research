@@ -1,5 +1,0 @@
-# Задача об упаковке {#sec-lab-combinatorial-packing}
-
-Рюкзак и контейнеры
-
-stable marriage and the college admissions problem, the stable roommates and the house allocation problem

@@ -7,7 +7,7 @@ if (!nzchar(Sys.getenv("QUARTO_PROJECT_RENDER_ALL")))
   quit()
 
 proj_profiles <- Sys.getenv('QUARTO_PROFILE') |> str_split_1(',')
-is_dev <- 'dev' %in% proj_profiles
+is_dev <- TRUE #'dev' %in% proj_profiles
 
 out <- Sys.getenv('QUARTO_PROJECT_OUTPUT_DIR') |> unique()
 if(is_dev)

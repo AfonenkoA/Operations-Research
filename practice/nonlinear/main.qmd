@@ -1,6 +1,6 @@
 # Нелинейное программирование {#sec-practice-nonlinear}
 
-::::{.content-hidden when-profile="practice"}
+::::: {.content-hidden when-profile="practice"}
 ## Темы {#sec-practice-nonlinear-topics}
 
 Безусловная оптимизация
@@ -9,15 +9,15 @@
 
 Анализ чувствительности методом Якоби
 
-:::{#exm-practice-nonlinear}
+::: {#exm-practice-nonlinear}
 ### Примерчик
 
 Задание
 :::
 
-:::{#sol-practice-nonlinear}
+::: {#sol-practice-nonlinear}
 Решение
 :::
-::::
+:::::
 
-
+Пусть параболы и золоте сечение объясняют на листочках

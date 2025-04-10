@@ -1,0 +1,6 @@
+---
+- from: main.qmd
+  files:
+    - buildings.graphml
+
+

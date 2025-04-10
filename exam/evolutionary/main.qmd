@@ -1,15 +1,17 @@
 # Эволюционная оптимизация {#sec-exam-evolutionary}
 
-::::{.content-hidden when-profile="exam"}
+::::: {.content-hidden when-profile="exam"}
 ## Темы {#sec-exam-evolutionary-topics}
 
-:::{#exm-exam-evolutionary}
+::: {#exm-exam-evolutionary}
 ### Примерчик
 
 Задание
 :::
 
-:::{#sol-exam-evolutionary}
+::: {#sol-exam-evolutionary}
 Решение
 :::
-::::
+:::::
+
+А в тесте отвечать основные идеи алгоритмов. Вообще ввести основные идеи в каждый раздел

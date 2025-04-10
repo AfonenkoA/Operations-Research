@@ -32,7 +32,8 @@ bibliography:
   - enviroment/ref.bib
   - game-theory/ref.bib
   - lab/ref.bib
-  - lab/linear/algebra/ref.bib
+  - lab/alghorithm/linear/algebra/ref.bib
+  - lab/extra/constraint/ref.bib
   - multi-objective/ref.bib
   - linear/ref.bib
   - python/lang/ref.bib
@@ -45,5 +46,4 @@ bibliography:
 
 csl: gost-r-7-0-5-2008-numeric.csl
 
-editor: visual
 engine: knitr

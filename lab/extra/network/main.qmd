@@ -1,0 +1,175 @@
+# Cетевые модели {#sec-lab-extra-network}
+
+:::::::::::::::::: {#exr-lab-extra-network-cable-managment}
+### Ничего лишнего
+
+Для того, чтобы подключить к сети компьютеры в 505 аудитории Иван Алексеевич заготовил 30м ethernet кабеля категории 6e. Схема приводится на рисунке.
+
+:::: {.content-visible when-format="html"}
+::: {.callout appearance="minimal"}
+⤓ [room505.graphml](room505.graphml)
+:::
+::::
+
+:::: {.content-visible unless-format="html"}
+::: {.callout appearance="minimal"}
+`\faFile*[regular].`{=latex} [room505.graphml](lab/extra/network/room505.graphml)
+:::
+::::
+
+```{r}
+#| fig-height: 7
+#| fig-align: center
+#| echo: false
+
+g <- igraph::read_graph('room505.graphml', format = 'GraphML')
+igraph::V(g)$color <- purrr::map_chr(igraph::V(g)$type, \(t) switch(
+  t,
+  'коммутатор' = 'red',
+  'угловая точка' = 'skyblue',
+  'компьютер' = 'green',
+  'стенд' = 'yellow',
+  'розетка' = 'white'
+))
+l <- cbind(igraph::V(g)$posX, igraph::V(g)$posY)
+plot(
+  g,
+  layout = l,
+  vertex.size = 15,
+  edge.label = igraph::E(g)$weight
+)
+```
+
+В таблице приведены свойства, которые можно получить после импорта графа из файла.
+
+| Свойство                        | Код           |
+|---------------------------------|---------------|
+| Длина кабеля между устройствами | `E(g)$weight` |
+| Тип устройства                  | `V(g)$type`   |
+| Имя устройства                  | `V(g)$name`   |
+| Координата X в кабинете         | `V(g)$posX`   |
+| Координата Y в кабинете         | `V(g)$posY`   |
+| Группа устройства               | `V(g)$group`  |
+
+Информация об устройствах приведена в таблице ниже.
+
+```{r}
+#| echo: false
+v <- data.frame('Устройство' = igraph::V(g)$name,
+           'Тип' = igraph::V(g)$type,
+           'Группа' = igraph::V(g)$group,
+           'X' = igraph::V(g)$posX,
+           'Y' = igraph::V(g)$posY)
+readr::write_csv(v, file = 'vertex.csv')
+dplyr::sample_n(v,5) |>
+  knitr::kable()
+```
+
+:::: {.content-visible when-format="html"}
+::: {.callout appearance="minimal"}
+⤓ [vertex.csv](vertex.csv)
+:::
+::::
+
+:::: {.content-visible unless-format="html"}
+::: {.callout appearance="minimal"}
+`\faFile*[regular].`{=latex} [vertex.csv](lab/extra/network/vertex.csv)
+:::
+::::
+
+А в следующей таблице показаны длины обязательных сегментов.
+
+```{r}
+#| echo: false
+e <- igraph::as_data_frame(g)
+readr::write_csv(e, file = 'edge.csv')
+dplyr::sample_n(e,5) |>
+  knitr::kable()
+```
+
+:::: {.content-visible when-format="html"}
+::: {.callout appearance="minimal"}
+⤓ [edge.csv](edge.csv)
+:::
+::::
+
+:::: {.content-visible unless-format="html"}
+::: {.callout appearance="minimal"}
+`\faFile*[regular].`{=latex} [edge.csv](lab/extra/network/edge.csv)
+:::
+::::
+
+Для группы устройств есть возможность подключения к группе розеток. Вам необходимо рассчитать длину кабеля для соединения любого устройства с любой розеткой внутри группы (евклидово расстояние, гипотенуза в декартовых координатах) и добавить эти рёбра к графу.
+
+| Устройства   | Розетки   |
+|--------------|-----------|
+| Компьютеры 1 | Розетки 1 |
+| Компьютеры 2 | Розетки 2 |
+| Компьютеры 3 | Розетки 3 |
+| Стенды 1     | Розетки 4 |
+| Стенды 2     | Розетки 5 |
+
+**Помогите** Ивану Алексеевичу использовать как можно больше сэкономленного кабеля для датчиков цифрового факультета. Для этого требуется определить минимальное остовное дерево составленного графа.
+
+::: {.callout-note appearance="minimal"}
+Уровень 4
+:::
+
+::: callout-tip
+Идея представить граф как набор рёбер.
+
+```{r}
+#| fig-align: center
+
+g <- igraph::sample_gnp(12,0.4)
+plot(g)
+```
+
+Используя join мы добавляем цвет рёбрам, которые встретились во втором графе. Значения тех, которые не встретились во втором наборе заполняются через `replace_na`
+
+```{r}
+#| fig-align: center
+
+g_mst <- igraph::mst(g)
+
+hg <- dplyr::left_join(
+  igraph::as_data_frame(g),
+  cbind(igraph::as_data_frame(g_mst), color = 'red'),
+  by = dplyr::join_by(from, to)) |>
+  dplyr::mutate(color = tidyr::replace_na(color, 'black')) |>
+  igraph::graph_from_data_frame(directed = FALSE)
+
+plot(
+  hg,
+  edge.label = igraph::E(hg)$weight,
+  edge.color = igraph::E(hg)$color)
+```
+:::
+
+::::::::::::::::::
+
+:::: content-hidden
+Расписание экзаменов на реальных данных из PDF maxflow11
+
+::: {.callout-note appearance="minimal"}
+Уровень 4
+:::
+
+Криптоарбитраж из ampl
+
+<https://ampl.com/mo-book/notebooks/04/cryptocurrency-arbitrage.html>
+
+Метод критического пути
+
+Построить граф зависимости активности. Из таблицы задать в tibble, с помощью tibble построить граф и задать critiacal path.
+
+<!--Просто списко активности из тахи.-->
+
+Построение расписания
+
+<https://cran.r-project.org/web/packages/sfnetworks/vignettes/sfn04_routing.html>
+
+<https://optimization-daily.netlify.app/posts/2022-07-09-maximum-network-flows-in-r/>
+
+<https://igraph.org/r/html/1.2.4/min_cut.html>
+::::

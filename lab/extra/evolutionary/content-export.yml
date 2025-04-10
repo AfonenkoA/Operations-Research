@@ -1,0 +1,5 @@
+---
+- from: main.qmd
+  files:
+    - tele.h5
+    - ban.csv

@@ -1,18 +1,19 @@
 # Теория игр {#sec-practice-game-theory}
 
-
-::::{.content-hidden when-profile="practice"}
+::::: {.content-hidden when-profile="practice"}
 ## Темы {#sec-practice-game-theory-topics}
 
 Игры с природой, критерии. Антоганистические игры. Биматричные игры, развёрнутая форма, стратегии.
 
-:::{#exm-practice-game-theory}
+::: {#exm-practice-game-theory}
 ### Примерчик
 
 Задание
 :::
 
-:::{#sol-practice-game-theory}
+::: {#sol-practice-game-theory}
 Решение
 :::
-::::
+:::::
+
+обязательно вручную определять доминирующие стратегии

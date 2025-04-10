@@ -1,2 +1,0 @@
-# Теория игр {#sec-lab-game-theory}
-

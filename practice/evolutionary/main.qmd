@@ -1,17 +1,19 @@
 # Эволюционная оптимизация {#sec-practice-evolutionary}
 
-::::{.content-hidden when-profile="practice"}
+::::: {.content-hidden when-profile="practice"}
 ## Темы {#sec-practice-evolutionary-topics}
 
 Гены, рекомбинация, приведение задачи к итерации.
 
-:::{#exm-practice-evolutionary}
+::: {#exm-practice-evolutionary}
 ### Примерчик
 
 Задание
 :::
 
-:::{#sol-practice-evolutionary}
+::: {#sol-practice-evolutionary}
 Решение
 :::
-::::
+:::::
+
+В эволюционном на бумажке точно кодировать генетику

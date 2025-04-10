@@ -1,0 +1,111 @@
+# Эволюционная оптимизация {#sec-lab-alghorithm-evolutionary}
+
+Надо обозначить, что важно сохранять результаты И настраивать seed random
+
+```{r}
+source('../../../r/helper/smoof.R')
+```
+
+## Задания
+
+### Глобальная оптимизация
+
+Попробовать определить глобальный максимум функции с помощью вызова классического метода с разных начальных позиций. Применить различные алгоритмы эволюционный оптимизации (только вызов).
+
+::: {.callout-note appearance="minimal"}
+Уровень 1
+:::
+
+nloptr NLOPT_GD_STOGO
+
+Ограничить объем отображаемых точен линейной, логарифмической и обратной логарифмической выборкой
+
+Поиграться с и выбрать параметры для дальнейшего изучения более сложных функций
+
+```{r}
+f <- smoof::makeSphereFunction(2)
+```
+
+```{r}
+#| warning: false
+#| message: false
+
+lf <- smoof::addLoggingWrapper(f, logg.x = TRUE, size  = 1e5L)
+res <- GenSA::GenSA(
+  par = c(3, 3),
+  fn = lf,
+  lower = smoof::getLowerBoxConstraints(f),
+  upper = smoof::getUpperBoxConstraints(f),
+  control = list(simple.function = TRUE, nb.stop.improvement = 15))
+
+
+rdf <- smoof::getLoggedValues(lf, compact = TRUE) |> rlog_colored_sample(100)
+
+pcontour(f, 30) |> 
+  add_path_points(rdf) |>
+  pshow()
+```
+
+Вопросы к производительности, возможно использовать ggplot
+
+```{r}
+#| warning: false
+#| message: false
+
+lf <- smoof::addLoggingWrapper(f, logg.x = TRUE, size  = 1e5L)
+res <- pso::psoptim(
+  par = c(3, 3),
+  fn = lf,
+  lower = smoof::getLowerBoxConstraints(f),
+  upper = smoof::getUpperBoxConstraints(f),
+  control = list(abstol = 1e-6)
+)
+
+rdf <- smoof::getLoggedValues(lf, compact = TRUE) |> log_colored_sample(100)
+
+pcontour(f, 30) |> 
+  add_path_points(rdf) |>
+  pshow()
+```
+
+<https://cran.r-project.org/web/packages/GA/vignettes/GA.html>
+
+Играться с параметрами подобрав примерно эквивалентное число вызовов. Или попробовать явно ограничить число вызовов. Подумать над permutation в GA. Также в 4 задаче реализовать свой поверх этой библиотеки самостоятельно определив операторы мутации, кросовера и выборки.
+
+```{r}
+#| warning: false
+#| message: false
+
+lf <- smoof::addLoggingWrapper(f, logg.x = TRUE, size  = 1e5L)
+
+res <- GA::ga(type = 'real-valued', 
+         fitness = \(x)  -lf(x),
+         lower = smoof::getLowerBoxConstraints(f), 
+         upper = smoof::getUpperBoxConstraints(f), 
+         popSize = 50, 
+         maxiter = 1000, 
+         run = 20,
+         monitor = FALSE)
+
+rdf <- smoof::getLoggedValues(lf, compact = TRUE) |> log_colored_sample(100)
+
+pcontour(f, 30) |> 
+  add_path_points(rdf) |>
+  pshow()
+```
+
+<https://github.com/DEAP/deap> Также можно строить генетику или реализовывать алгоритмы поверх этого фреймоврка.
+
+```{r}
+loadNamespace('ecr') |> invisible()
+```
+
+### Сравнительный анализ
+
+Для трёх различных функций (должны демонстрировать разное) и для алгоритмов пройтись и посчитать алгоритмов необходимо посчитать статистику по запускам, чтобы ответить, являются ли различия в алогитмах случайными или статистически обоснованными. Тесты статистической значимости крутить именно на отдельном методе. По вариантам или алгоритм роя или генетики или имитации отжига.
+
+Сравнивая два алгоритма (набор параметров в одном алгоритме) используется t-тест Сравнивая 3 и более используется f-test
+
+::: {.callout-note appearance="minimal"}
+Уровень 2
+:::
