@@ -5,7 +5,7 @@ kaleido==0.2.1
 kiwisolver==1.4.8
 matplotlib==3.10.1
 minizinc==0.10.0
-narwhals==1.33.0
+narwhals==1.34.1
 numpy==2.2.4
 packaging==24.2
 pillow==11.1.0

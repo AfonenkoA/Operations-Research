@@ -120,8 +120,7 @@ fig.savefig("test.png")
 plt.show()
 ```
 
-```{julia}
-#| echo: fenced
+```{{julia}}
 #| warning: false
 #| message: false
 #| error: false

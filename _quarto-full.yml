@@ -37,13 +37,6 @@ book:
         - linear/integer.qmd
         - linear/transport.qmd
 
-    - part: nonlinear/overview.qmd
-      chapters:
-        - nonlinear/unconstrained/analytical-one.qmd
-        - nonlinear/unconstrained/analytical-many.qmd
-        - nonlinear/constrained/analytical-one.qmd
-        - nonlinear/constrained/analytical-many.qmd
-
     - part: combinatorial/overview.qmd
       chapters:
         - combinatorial/graph-theory.qmd
@@ -64,6 +57,20 @@ book:
       chapters:
         - minizinc/basic.qmd
         - minizinc/advanced.qmd
+
+    - part: nonlinear/overview.qmd
+      chapters:
+        - nonlinear/unconstrained/analytical/one/main.qmd
+        - nonlinear/unconstrained/analytical/many/main.qmd
+        - nonlinear/unconstrained/numerical/one/main.qmd
+        - nonlinear/unconstrained/numerical/many/direct/main.qmd
+        - nonlinear/unconstrained/numerical/many/gradient/main.qmd
+        - nonlinear/constrained/analytical/one/main.qmd
+        - nonlinear/constrained/analytical/many/main.qmd
+        - nonlinear/constrained/numerical/conversion-to-unconstrained.qmd
+        - nonlinear/constrained/numerical/one/main.qmd
+        - nonlinear/constrained/numerical/many/direct/main.qmd
+        - nonlinear/constrained/numerical/many/gradient/main.qmd
 
     - part: evolutionary/overview.qmd
       chapters:

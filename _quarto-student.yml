@@ -26,12 +26,6 @@ book:
         - linear/simplex/special-cases.qmd
         - linear/integer.qmd
 
-    - part: nonlinear/overview.qmd
-      chapters:
-        - nonlinear/unconstrained/analytical-one.qmd
-        - nonlinear/unconstrained/analytical-many.qmd
-        - nonlinear/constrained/analytical-many.qmd
-
     - part: "Задания. Программирование"
       chapters:
         - lab/programming/r/main.qmd
