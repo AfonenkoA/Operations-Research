@@ -1,8 +1,29 @@
-# Пакет `stats`
+# Пакет `stats` {#sec-r-tools-stats}
+
+## Одномерная оптимизация `optimize` {#sec-r-tools-stats-optimize}
+
+Оптимизация для одномерных смесь обратных парабол и золотого сечения. <https://en.wikipedia.org/wiki/Brent%27s_method>
+```{r}
+a <- optimize
+```
+
+## Символьные производные `deriv`
+
+Символьные вычисления вместе с гессианом и градиентом
+
+```{r}
+stats::deriv(~ -(y * (b0 + x * b1) - log(1 + exp(b0 + b1 * x))),
+             c("b0", "b1"))
+```
+
+## T-тест Стьюдента {#sec-r-tools-stats-ttest}
+
+Равенства средних значений двух выборок
 
 ```{r}
 a <- runif(1000000)
 b <- runif(1000000)
+e <- runif(1000000)
 ```
 
 Больше p-value лучше
@@ -11,20 +32,28 @@ b <- runif(1000000)
 t.test(a,b)
 ```
 
+## F-тест {#sec-r-tools-stats-ftest}
+
+Равенства средних для множества выборок
+
 ```{r}
-t.test(a,a)
+d <- data.frame(value = c(a,b,e), group = sample(paste0('g',1:3), length(a)*3, replace = TRUE))
 ```
 
 ```{r}
-var.test(a,b)
+res <- aov(value ~ group, data = d)
+summary(res)
 ```
 
 ```{r}
-# aov
+res
 ```
+
+
+```{r}
+TukeyHSD(res)
+```
+
 
 <https://statsandr.com/blog/anova-in-r/>
-
-```{r}
-?oneway.test()
-```
+<https://www.sthda.com/english/wiki/one-way-anova-test-in-r>

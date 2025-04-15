@@ -1,6 +1,22 @@
-# Сведение к задаче неограниченной оптимизации
+# Сведение к задаче неограниченной оптимизации {#sec-nonlinear-constrained-numerical-convert-to-unconstrained}
 
-## Штрафные функции
+## Штрафные функции {#sec-nonlinear-constrained-numerical-penalty}
 
-## Барьерные функции
+<https://en.wikipedia.org/wiki/Penalty_method>
 
+$$
+\begin{aligned}
+&\min f(\mathbf{x})\\
+&c_i(\mathbf{x}) \le 0 \, \forall i \in I
+\end{aligned}
+$$
+можно свести к задаче
+
+$$
+\begin{aligned}
+&\min f_p(\mathbf{x}) = f(\mathbf{x})+p\sum_{i\in I}{g(c_i(\mathbf{x}))} \\
+&g(c_i(\mathbf{x})) = \max{(0,c_i(\mathbf{x})}^2
+\end{aligned}
+$$
+
+В каждой итерации метода мы увеличиваем коэффициент штрафа $p$ (например, в 10 раз), решаем задачу без ограничений и используем решение в качестве начального предположения для следующей итерации. Решения последовательных задач без ограничений будут асимптотически сходиться к решению исходной задачи с ограничениями.

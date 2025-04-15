@@ -4,5 +4,9 @@ project:
 
 book:
   chapters:
-    - index.qmd
-    - lab/extra/evolutionary/main.qmd
+        - index.qmd
+        - r/tools/solver/evolutionary/gensa.qmd
+        - r/tools/solver/evolutionary/pso.qmd
+        - r/tools/solver/evolutionary/ga.qmd
+        - r/tools/solver/evolutionary/tsp.qmd
+        - python/tools/minizinc.qmd

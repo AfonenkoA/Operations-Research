@@ -47,6 +47,25 @@ clue::solve_LSAP
 :::
 ::::::
 
+::: content-hidden
+
+```{r}
+C <- rbind(
+  c(408,477,380),
+  c(189,134,435),
+  c(209,199,528),
+  c(147,197,167))
+
+A <- c(90,70,90,120)
+B <- c(100,120,150)
+
+transport::transport(A, B, C)
+```
+
+
+:::
+
+
 :::::: {#exr-lab-model-linear-transport-distribution}
 ### Распределение на практику
 
@@ -110,7 +129,7 @@ res <- lpSolve::lp.transport(costs, "min", row.signs, row.rhs, col.signs, col.rh
 :::
 
 ::: callout-tip
-Используйте функцию `{r} lpSolve::lp.transport() |> dl()`
+Используйте функцию `{r} lpSolve::lp.assign() |> dl()`
 :::
 :::::
 

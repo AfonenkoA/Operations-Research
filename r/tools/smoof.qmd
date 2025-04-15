@@ -5,7 +5,6 @@
 ## Создание функции
 
 ```{r}
-
 objfn <-  smoof::makeSingleObjectiveFunction(
   name = 'Abobus',
   fn = function(x) x * sin(3*x),
@@ -35,3 +34,8 @@ lg <- smoof::getLoggedValues(o1, compact = TRUE)
 ```{r}
 smoof::getLoggedValues(o1)
 ```
+
+## Цветовая маркировка
+
+Показать, как функции выделяются палитрой из smoof_plotly_helper
+

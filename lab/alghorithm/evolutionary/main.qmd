@@ -3,7 +3,10 @@
 Надо обозначить, что важно сохранять результаты И настраивать seed random
 
 ```{r}
+source('../../../r/helper/sample.R')
+source('../../../r/helper/plotly.R')
 source('../../../r/helper/smoof.R')
+source('../../../r/helper/smoof_plotly.R')
 ```
 
 ## Задания
@@ -39,10 +42,10 @@ res <- GenSA::GenSA(
   control = list(simple.function = TRUE, nb.stop.improvement = 15))
 
 
-rdf <- smoof::getLoggedValues(lf, compact = TRUE) |> rlog_colored_sample(100)
+rdf <- smoof::getLoggedValues(lf, compact = TRUE) |> rlog_sample(100)
 
-pcontour(f, 30) |> 
-  add_path_points(rdf) |>
+smoof_pcontour(f, 30) |> 
+  padd_eval_points(rdf) |>
   pshow()
 ```
 
@@ -61,10 +64,10 @@ res <- pso::psoptim(
   control = list(abstol = 1e-6)
 )
 
-rdf <- smoof::getLoggedValues(lf, compact = TRUE) |> log_colored_sample(100)
+rdf <- smoof::getLoggedValues(lf, compact = TRUE) |> log_sample(100)
 
-pcontour(f, 30) |> 
-  add_path_points(rdf) |>
+smoof_pcontour(f, 30) |> 
+  padd_eval_points(rdf) |>
   pshow()
 ```
 
@@ -87,10 +90,10 @@ res <- GA::ga(type = 'real-valued',
          run = 20,
          monitor = FALSE)
 
-rdf <- smoof::getLoggedValues(lf, compact = TRUE) |> log_colored_sample(100)
+rdf <- smoof::getLoggedValues(lf, compact = TRUE) |> log_sample(100)
 
-pcontour(f, 30) |> 
-  add_path_points(rdf) |>
+smoof_pcontour(f, 30) |> 
+  padd_eval_points(rdf) |>
   pshow()
 ```
 

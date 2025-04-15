@@ -1,0 +1,64 @@
+# Optimx
+
+Рассмотрим на основе примера @exm-nonlinear-unconstrained-many-2vars-necessity
+
+Особенностью задания функции является то, что она должна аргументы передаются в неё вектором.
+
+```{r}
+f <- function(par)
+{
+  p1 <- par[[1]]
+  p2 <- par[[2]]
+  3 * p1^2 + p1 * p2 + 2 * p2^2 - p1 - 4 * p2
+}
+```
+
+Также для решателю могут быть переданы градиент
+
+```{r}
+f_g <- function(par)
+{
+  p1 <- par[[1]]
+  p2 <- par[[2]]
+  c(6 * p1 + p2 - 1, p1 + 4 * p2 - 4)
+}
+```
+
+и гессиан функции
+
+```{r}
+f_h <- function(par)
+{
+  rbind(c(6, 1), c(1, 4))
+}
+```
+
+Для использования метода необходимо выбрать начальное приближение
+
+```{r}
+start <- c(3,3)
+```
+
+## Метод
+
+```{r}
+optimx_trace_path <- function(...)
+{
+  args <- list(...)
+  x <- list()
+  y <- list()
+  val <- list()
+  for (i in 1:100)
+  {
+    res <- optimx::optimx(..., itnmax = i)
+    x[[i]] <- res$solution[[1]]
+    y[[i]] <- res$solution[[2]]
+    val[[i]] <- res$objective
+    if (res$convcode %in% c(0,2))
+      break
+  }
+  df <- cbind(unlist(x), unlist(y), unlist(val)) |> unique() |> as.data.frame()
+  colnames(df) <- c('x', 'y', 'z')
+  df
+}
+```

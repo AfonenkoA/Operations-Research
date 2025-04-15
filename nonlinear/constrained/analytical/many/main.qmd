@@ -149,7 +149,7 @@ plot_ly(x=x, y=y, z=z, type='contour', ncontours=30 , name='F(p)') |>
   pshow()
 ```
 
-## Линейные ограничения неравенства {#sec-nonlinear-constrained-many-linear}
+## Ограничения неравенства {#sec-nonlinear-constrained-many-inequality}
 
 Являются частным случаем нелинейных, большинство алгоритмов работает с ними, как с нелинейными.
 
@@ -312,10 +312,9 @@ plot_ly(
   add_trace(x=x,y=l2,type='scatter', mode='lines', name=TeX('l_2')) |>
   config(mathjax = 'local') |>
   pshow_safe()
-
 ```
 
-## Нелинейные ограничения равенства {#sec-nonlinear-constrained-nonlinear}
+## Нелинейные ограничения равенства {#sec-nonlinear-constrained-many-equality}
 
 $$
 \begin{cases}

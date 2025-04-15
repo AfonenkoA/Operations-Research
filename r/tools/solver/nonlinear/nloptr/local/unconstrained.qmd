@@ -1,0 +1,361 @@
+# Nloptr. Локальная безуслованя {#sec-r-tools-solver-nonlinear-nloptr-local-unconstrained}
+
+::: {#exm-r-tools-solver-nonlinear-nloptr-local-unconstrained}
+
+Рассмотрим на основе примера @exm-nonlinear-unconstrained-many-2vars-necessity
+
+Особенностью задания функции является то, что она должна аргументы передаются в неё вектором.
+
+```{r}
+f <- function(par)
+{
+  p1 <- par[[1]]
+  p2 <- par[[2]]
+  3 * p1^2 + p1 * p2 + 2 * p2^2 - p1 - 4 * p2
+}
+```
+
+Также для решателю могут быть переданы градиент
+
+```{r}
+f_g <- function(par)
+{
+  p1 <- par[[1]]
+  p2 <- par[[2]]
+  c(6 * p1 + p2 - 1, p1 + 4 * p2 - 4)
+}
+```
+
+Теперь добавим для функций обёртку. Задание прямоугольных ограничений неравенства рассматривается в пункте @sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-directed-bobyqa
+
+```{r}
+par <- ParamHelpers::makeNumericParamSet(
+    len = 2L,
+    lower = c(-3, -3),
+    upper = c(3, 3))
+
+objfn <- smoof::makeSingleObjectiveFunction(
+  fn = f,
+  par.set = par)
+
+objfn_g <- smoof::makeMultiObjectiveFunction(
+  fn = f_g,
+  par.set = par,
+  n.objectives = 2)
+```
+
+Стартовая точка для всех методов. 
+Для использования метода необходимо выбрать начальное приближение
+
+```{r}
+x0 <- c(3,3)
+```
+
+:::
+
+```{r}
+#| include: false
+
+source('../../../../../helper/sample.R')
+source('../../../../../helper/plotly.R')
+source('../../../../../helper/smoof.R')
+source('../../../../../helper/smoof_plotly.R')
+source('../../../../../helper/nloptr.R')
+```
+
+## Прямого поиска {#sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-directed}
+
+### Метод Нелдера-Мида {#sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-directed-nelder-mead}
+
+```{r}
+#| label: nelder-mead-eval
+
+res <- nloptr::nloptr(
+  x0 = x0,
+  eval_f = f,
+  opts = list(algorithm = 'NLOPT_LN_NELDERMEAD', xtol_rel = 1.0e-8)
+)
+
+trace <- nloptr_trace(
+  x0 = x0,
+  eval_f = objfn,
+  opts = list(algorithm = 'NLOPT_LN_NELDERMEAD', xtol_rel = 1.0e-8)
+)
+res
+```
+
+
+```{r}
+#| label: nelder-mead-plot
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap:
+#|   - "Вычисления функции"
+#|   - "Путь оптимизации"
+#| layout-ncol: 2
+
+fig <- smoof_pcontour(objfn, 30) 
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_f, 100)) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  pshow()
+
+fig |>
+  padd_path_points(trace$path) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  pshow()
+```
+
+
+### Метод локальной вариации {#sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-directed-praxis}
+
+PRAXIS (PRincipal AXIS)
+
+```{r}
+#| label: PRAXIS-eval
+
+res <- nloptr::nloptr(
+  x0 = x0,
+  eval_f = f,
+  opts = list(algorithm = 'NLOPT_LN_PRAXIS', xtol_rel = 1.0e-8)
+)
+
+trace <- nloptr_trace(
+  x0 = x0,
+  eval_f = objfn,
+  opts = list(algorithm = 'NLOPT_LN_PRAXIS', xtol_rel = 1.0e-8)
+)
+res
+```
+
+
+```{r}
+#| label: PRAXIS-plot
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap:
+#|   - "Вычисления функции"
+#|   - "Путь оптимизации"
+#| layout-ncol: 2
+
+fig <- smoof_pcontour(objfn, 30) 
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_f, 100)) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  pshow()
+
+fig |>
+  padd_path_points(trace$path) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  pshow()
+```
+
+### BOBYQA {#sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-directed-bobyqa}
+
+```{r}
+#| label: bobyqa-eval
+
+res <- nloptr::nloptr(
+  x0 = x0,
+  eval_f = f,
+  lb = smoof::getLowerBoxConstraints(objfn),
+  ub = smoof::getUpperBoxConstraints(objfn),
+  opts = list(algorithm = 'NLOPT_LN_BOBYQA', xtol_rel = 1.0e-8)
+)
+
+trace <- nloptr_trace(
+  x0 = x0,
+  eval_f = objfn,
+  lb = smoof::getLowerBoxConstraints(objfn),
+  ub = smoof::getUpperBoxConstraints(objfn),
+  opts = list(algorithm = 'NLOPT_LN_BOBYQA', xtol_rel = 1.0e-8)
+)
+res
+```
+
+```{r}
+#| label: bobyqa-plot
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap:
+#|   - "Вычисления функции"
+#|   - "Путь оптимизации"
+#| layout-ncol: 2
+
+fig <- smoof_pcontour(objfn, 30) 
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_f, 100)) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  pshow()
+
+fig |>
+  padd_path_points(trace$path) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  pshow()
+```
+
+## Градиентные {#sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-gradient}
+
+### BFGS {#sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-gradient-bfgs}
+
+На основе метода ньютона
+
+```{r}
+#| label: L-BFGS-eval
+
+res <- nloptr::nloptr(
+  x0 = x0,
+  eval_f = f,
+  eval_grad_f = f_g,
+  opts = list(algorithm = 'NLOPT_LD_LBFGS', xtol_rel = 1.0e-8)
+)
+
+trace <- nloptr_trace(
+  x0 = x0,
+  eval_f = objfn,
+  eval_grad_f = objfn_g,
+  opts = list(algorithm = 'NLOPT_LD_LBFGS', xtol_rel = 1.0e-8)
+)
+res
+```
+
+```{r}
+#| label: L-BFGS-plot
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap:
+#|   - "Вычисления функции"
+#|   - "Вычисления градиента"
+#|   - "Путь оптимизации"
+#| layout: "[[1,1], [1]]"
+
+fig <- smoof_pcontour(objfn, 30) 
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_f, 100)) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  pshow()
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_grad_f, 100)) |>
+  padd_start_stop_points(trace$eval$eval_grad_f) |>
+  pshow()
+
+fig |>
+  padd_path_points(trace$path) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  pshow()
+```
+
+
+### Ньютона {#sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-gradient-newton}
+
+Preconditioned truncated Newton
+
+```{r}
+#| label: L-newton-eval
+
+res <- nloptr::nloptr(
+  x0 = x0,
+  eval_f = f,
+  eval_grad_f = f_g,
+  opts = list(algorithm = 'NLOPT_LD_TNEWTON_PRECOND_RESTART', xtol_rel = 1.0e-8)
+)
+
+trace <- nloptr_trace(
+  x0 = x0,
+  eval_f = objfn,
+  eval_grad_f = objfn_g,
+  opts = list(algorithm = 'NLOPT_LD_TNEWTON_PRECOND_RESTART', xtol_rel = 1.0e-8)
+)
+res
+```
+
+
+```{r}
+#| label: newton-plot
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap:
+#|   - "Вычисления функции"
+#|   - "Вычисления градиента"
+#|   - "Путь оптимизации"
+#| layout: "[[1,1], [1]]"
+
+fig <- smoof_pcontour(objfn, 30) 
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_f, 100)) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  pshow()
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_grad_f, 100)) |>
+  padd_start_stop_points(trace$eval$eval_grad_f) |>
+  pshow()
+
+fig |>
+  padd_path_points(trace$path) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  pshow()
+```
+
+### Varmetric {#sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-gradient-varmetric}
+
+Shifted limited-memory variable-metric
+
+```{r}
+#| label: varmetric-eval
+
+res <- nloptr::nloptr(
+  x0 = x0,
+  eval_f = f,
+  eval_grad_f = f_g,
+  opts = list(algorithm = 'NLOPT_LD_VAR2', xtol_rel = 1.0e-8)
+)
+
+trace <- nloptr_trace(
+  x0 = x0,
+  eval_f = objfn,
+  eval_grad_f = objfn_g,
+  opts = list(algorithm = 'NLOPT_LD_VAR2', xtol_rel = 1.0e-8)
+)
+res
+```
+
+```{r}
+#| label: varmetric-plot
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap:
+#|   - "Вычисления функции"
+#|   - "Вычисления градиента"
+#|   - "Путь оптимизации"
+#| layout: "[[1,1], [1]]"
+
+fig <- smoof_pcontour(objfn, 30) 
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_f, 100)) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  pshow()
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_grad_f, 100)) |>
+  padd_start_stop_points(trace$eval$eval_grad_f) |>
+  pshow()
+
+fig |>
+  padd_path_points(trace$path) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  pshow()
+```

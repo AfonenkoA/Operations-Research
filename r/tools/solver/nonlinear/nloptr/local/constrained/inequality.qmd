@@ -1,0 +1,445 @@
+---
+cache: false
+freeze: false
+---
+
+# Nloptr. Локальная. Ограничения неравенства {#exm-r-tools-solver-nonlinear-nloptr-local-constrained-inequality}
+
+::: {#exm-r-tools-solver-nonlinear-nloptr-local-constrained-inequality}
+
+Рассмотрим на основе примера @sec-nonlinear-constrained-many-inequality
+
+```{r}
+f <- function(par)
+{
+  p1 <- par[[1]]
+  p2 <- par[[2]]
+  p1^2 + p2^2 + p1*p2 + 2*p1+4*p2 + 5
+}
+```
+
+Также для решателю могут быть переданы градиент
+
+```{r}
+f_g <- function(par)
+{
+  p1 <- par[[1]]
+  p2 <- par[[2]]
+  c(2*p1 + p2 + 2, 2*p2 + p1 + 4)
+}
+```
+
+Теперь добавим для функций обёртку. Задание прямоугольных ограничений неравенства рассматривается в пункте
+
+```{r}
+par <- ParamHelpers::makeNumericParamSet(
+    len = 2L,
+    lower = c(-5, -5),
+    upper = c(5, 5))
+
+objfn <- smoof::makeSingleObjectiveFunction(
+  fn = f,
+  par.set = par)
+
+objfn_g <- smoof::makeMultiObjectiveFunction(
+  fn = f_g,
+  par.set = par,
+  n.objectives = 2)
+```
+
+Стартовая точка для всех методов. 
+Для использования метода необходимо выбрать начальное приближение
+
+```{r}
+x0 <- c(4,-4)
+```
+
+Задаваемые ограничения дожны быть преведены к форме
+
+$$
+\begin{cases}
+ g(x) \leq 0 \\
+ h(x) = 0 \\
+\end{cases}
+$$
+
+Преобразуем ограничения из примера
+
+$$
+\begin{cases}
+ 2p_1+p_2 \geq 0 \\
+ p_1+2p_2 \leq 1 \\
+\end{cases}
+$$
+
+к форме, принимаемой методом
+
+$$
+\begin{cases}
+ -2p_1-p_2 \leq 0 \\
+ p_1+2p_2 - 1 \leq 0 \\
+\end{cases}
+$$
+
+Функция ограничений возвращает вектор размерности количества ограничений
+
+```{r}
+constr_ineq <- function(par)
+{
+  p1 <- par[[1]]
+  p2 <- par[[2]]
+  c(-2 * p1 - p2, p1 + 2 * p2 - 1)
+}
+```
+
+А также якобиан ограничений.
+Колличество строк равно колличеству ограничений, а колличество столбцов это колличество переменных.
+
+```{r}
+constr_ineq_jac <- function(par)
+{
+  rbind(c(-2, -1),
+        c(1, 2))
+}
+```
+
+И их обёртки
+
+```{r}
+constr_ineq_fn <- smoof::makeMultiObjectiveFunction(
+  fn = constr_ineq,
+  par.set = par,
+  n.objectives = 2)
+
+constr_ineq_jac_fn <- smoof::makeMultiObjectiveFunction(
+  fn = constr_ineq_jac,
+  par.set = par,
+  n.objectives = 4)
+```
+:::
+
+
+```{r}
+#| include: false
+
+source('../../../../../../helper/sample.R')
+source('../../../../../../helper/plotly.R')
+source('../../../../../../helper/smoof.R')
+source('../../../../../../helper/smoof_plotly.R')
+source('../../../../../../helper/nloptr.R')
+```
+
+```{r}
+#| include: false
+# Отрисовка ограниченией
+
+add_constr <- function(fig)
+{
+  x <- seq(-5, 5, length.out = 100)
+  l1_x <- seq(-5 / 2, 5 / 2, length.out = 100)
+  l2 <- (1 - x) / 2
+  l1 <- -2 * l1_x
+  
+  plotly::add_trace(
+    fig,
+    x = c(5, 5, -1 / 3, 2.5),
+    y = c(-5, -2, 2 / 3, -5),
+    name = 'ограничения',
+    type = "scatter",
+    marker = list(color = 'red')
+  ) |>
+    plotly::add_trace(
+      x = l1_x,
+      y = l1,
+      type = 'scatter',
+      mode = 'lines',
+      name = plotly::TeX('l_1')
+    ) |>
+    plotly::add_trace(
+      x = x,
+      y = l2,
+      type = 'scatter',
+      mode = 'lines',
+      name = plotly::TeX('l_2')
+    ) |>
+    plotly::config(mathjax = 'local') |>
+    pshow_safe()
+}
+```
+
+## Прямого поиска {#exm-r-tools-solver-nonlinear-nloptr-local-constrained-inequality-directed}
+
+### COBYLA {#exm-r-tools-solver-nonlinear-nloptr-local-constrained-inequality-directed-cobyla}
+
+```{r}
+#| label: cobyla-eval
+
+res <- nloptr::nloptr(
+  x0 = x0,
+  eval_f = f,
+  eval_g_ineq = constr_ineq,
+  opts = list(
+    algorithm = 'NLOPT_LN_COBYLA',
+    xtol_rel = 1.0e-8)
+)
+
+trace <- nloptr_trace(
+  x0 = x0,
+  eval_f = objfn,
+  eval_g_ineq = constr_ineq_fn,
+  opts = list(
+    algorithm = 'NLOPT_LN_COBYLA',
+    xtol_rel = 1.0e-8)
+)
+res
+```
+
+```{r}
+#| label: cobyla-plot
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap:
+#|   - "Вычисления функции"
+#|   - "Вычисления ограничений"
+#|   - "Путь оптимизации"
+#| layout: "[[1,1], [1]]"
+
+fig <- smoof_pcontour(objfn, 30) 
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_f, 100)) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  add_constr()
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_g_ineq, 100)) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  add_constr()
+
+fig |>
+  padd_path_points(trace$path) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  add_constr()
+```
+
+## Градиентные {#exm-r-tools-solver-nonlinear-nloptr-local-constrained-inequality-gradient}
+
+### Method moving asymptotes {#exm-r-tools-solver-nonlinear-nloptr-local-constrained-inequality-gradient-mma}
+
+В том числе показать в каких точках были вызовы ограничений и градиента
+
+```{r}
+#| label: mma-eval
+
+res <- nloptr::nloptr(
+  x0 = x0,
+  eval_f = f,
+  eval_grad_f = f_g,
+  eval_g_ineq = constr_ineq,
+  eval_jac_g_ineq = constr_ineq_jac,
+  opts = list(
+    algorithm = 'NLOPT_LD_MMA',
+    xtol_rel = 1.0e-8
+  )
+)
+
+trace <- nloptr_trace(
+  x0 = x0,
+  eval_f = objfn,
+  eval_grad_f = objfn_g,
+  eval_g_ineq = constr_ineq_fn,
+  eval_jac_g_ineq = constr_ineq_jac_fn,
+  opts = list(
+    algorithm = 'NLOPT_LD_MMA',
+    xtol_rel = 1.0e-8
+  )
+)
+res
+```
+
+```{r}
+#| label: mma-plot
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap:
+#|   - "Вычисления функции"
+#|   - "Вычисления градиента функции"
+#|   - "Вычисления ограничений"
+#|   - "Вычисления якобиана ограничений"
+#|   - "Путь оптимизации"
+#| layout: "[[1,1], [1,1], [1]]"
+
+fig <- smoof_pcontour(objfn, 30) 
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_f, 100)) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  add_constr()
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_grad_f, 100)) |>
+  padd_start_stop_points(trace$eval$eval_grad_f) |>
+  add_constr()
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_g_ineq, 100)) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  add_constr()
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_jac_g_ineq, 100)) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  add_constr()
+
+fig |>
+  padd_path_points(trace$path) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  add_constr()
+```
+
+
+### CCSAQ {#exm-r-tools-solver-nonlinear-nloptr-local-constrained-inequality-gradient-ccsaq}
+
+```{r}
+#| label: ccsaq-eval
+
+res <- nloptr::nloptr(
+  x0 = x0,
+  eval_f = f,
+  eval_grad_f = f_g,
+  eval_g_ineq = constr_ineq,
+  eval_jac_g_ineq = constr_ineq_jac,
+  opts = list(
+    algorithm = 'NLOPT_LD_CCSAQ',
+    xtol_rel = 1.0e-8
+  )
+)
+
+trace <- nloptr_trace(
+  x0 = x0,
+  eval_f = objfn,
+  eval_grad_f = objfn_g,
+  eval_g_ineq = constr_ineq_fn,
+  eval_jac_g_ineq = constr_ineq_jac_fn,
+  opts = list(
+    algorithm = 'NLOPT_LD_CCSAQ',
+    xtol_rel = 1.0e-8
+  )
+)
+res
+```
+
+```{r}
+#| label: ccsaq-plot
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap:
+#|   - "Вычисления функции"
+#|   - "Вычисления градиента функции"
+#|   - "Вычисления ограничений"
+#|   - "Вычисления якобиана ограничений"
+#|   - "Путь оптимизации"
+#| layout: "[[1,1], [1,1], [1]]"
+
+fig <- smoof_pcontour(objfn, 30) 
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_f, 100)) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  add_constr()
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_grad_f, 100)) |>
+  padd_start_stop_points(trace$eval$eval_grad_f) |>
+  add_constr()
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_g_ineq, 100)) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  add_constr()
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_jac_g_ineq, 100)) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  add_constr()
+
+fig |>
+  padd_path_points(trace$path) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  add_constr()
+```
+
+### SSQLP {#exm-r-tools-solver-nonlinear-nloptr-local-constrained-inequality-gradient-ssqlp}
+
+```{r}
+#| label: ssqlp-eval
+
+res <- nloptr::nloptr(
+  x0 = x0,
+  eval_f = f,
+  eval_grad_f = f_g,
+  eval_g_ineq = constr_ineq,
+  eval_jac_g_ineq = constr_ineq_jac,
+  opts = list(
+    algorithm = 'NLOPT_LD_SLSQP',
+    xtol_rel = 1.0e-8
+  )
+)
+
+trace <- nloptr_trace(
+  x0 = x0,
+  eval_f = objfn,
+  eval_grad_f = objfn_g,
+  eval_g_ineq = constr_ineq_fn,
+  eval_jac_g_ineq = constr_ineq_jac_fn,
+  opts = list(
+    algorithm = 'NLOPT_LD_SLSQP',
+    xtol_rel = 1.0e-8
+  )
+)
+res
+```
+
+```{r}
+#| label: ssqlp-plot
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap:
+#|   - "Вычисления функции"
+#|   - "Вычисления градиента функции"
+#|   - "Вычисления ограничений"
+#|   - "Вычисления якобиана ограничений"
+#|   - "Путь оптимизации"
+#| layout: "[[1,1], [1,1], [1]]"
+
+fig <- smoof_pcontour(objfn, 30) 
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_f, 100)) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  add_constr()
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_grad_f, 100)) |>
+  padd_start_stop_points(trace$eval$eval_grad_f) |>
+  add_constr()
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_g_ineq, 100)) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  add_constr()
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_jac_g_ineq, 100)) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  add_constr()
+
+fig |>
+  padd_path_points(trace$path) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  add_constr()
+```

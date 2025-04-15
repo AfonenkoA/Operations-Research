@@ -165,7 +165,10 @@ book:
         - r/tools/solver/linear/lpsolve.qmd
         - r/tools/solver/linear/clue.qmd
 
-        - r/tools/solver/nonlinear/nloptr.qmd
+        - r/tools/solver/nonlinear/nloptr/analysis.qmd
+        - r/tools/solver/nonlinear/nloptr/local/unconstrained.qmd
+        - r/tools/solver/nonlinear/nloptr/local/constrained/inequality.qmd
+        - r/tools/solver/nonlinear/nloptr/local/constrained/equality.qmd
 
         - r/tools/solver/evolutionary/gensa.qmd
         - r/tools/solver/evolutionary/pso.qmd
