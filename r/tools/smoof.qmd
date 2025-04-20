@@ -1,12 +1,12 @@
-# Smoof
+# Smoof {#sec-r-tools-smoof}
 
-Инфраструктура нелинейной и глобальной оптимизации
+Инфраструктура целевых функций нелинейной и глобальной оптимизации
 
-## Создание функции
+## Создание функции {#sec-r-tools-smoof-assigment}
 
 ```{r}
 objfn <-  smoof::makeSingleObjectiveFunction(
-  name = 'Abobus',
+  name = 'Example',
   fn = function(x) x * sin(3*x),
   par.set = ParamHelpers::makeNumericParamSet('x', len = 1L, lower = 0, upper = 2 * pi),
   tags = c('single-objective', 'differentiable', 'continuous'),
@@ -16,26 +16,26 @@ objfn <-  smoof::makeSingleObjectiveFunction(
 ggplot2::autoplot(objfn)
 ```
 
-## Простой подсчёт вызовов функции
+## Простой подсчёт вызовов функции {#sec-r-tools-smoof-counting}
 
-## Логирование промежуточных вычислений
+```{r}
+#| echo: fenced
+
+o1 <- objfn |>
+  smoof::addCountingWrapper()
+
+res <- optim(par = 1, fn = o1, lower = 0, upper = pi, method = 'Brent')
+
+smoof::getNumberOfEvaluations(o1)
+```
+
+## Логирование промежуточных вычислений {#sec-r-tools-smoof-logging}
 
 ```{r}
 o1 <- objfn |>
-#  smoof::addCountingWrapper() |>
   smoof::addLoggingWrapper(logg.x = TRUE, logg.y = TRUE)
 
 res <- optim(par = 1, fn = o1, lower = 0, upper = pi, method = 'Brent')
 
-#smoof::getNumberOfEvaluations(o1)
-lg <- smoof::getLoggedValues(o1, compact = TRUE)
+smoof::getLoggedValues(o1, compact = TRUE)
 ```
-
-```{r}
-smoof::getLoggedValues(o1)
-```
-
-## Цветовая маркировка
-
-Показать, как функции выделяются палитрой из smoof_plotly_helper
-

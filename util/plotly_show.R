@@ -8,9 +8,17 @@ loadNamespace('plotly') |> invisible()
 plotly_show_non_html <- function(fig)
 {
   dir_name <- knitr::current_input() |> fs::path_ext_remove() |> paste0('_gen')
-  fig_name <- paste0(knitr::opts_current$get("label"), '.svg')
-  fig_path <- fs::path(dir_name, fig_name)
   fs::dir_create(dir_name)
+  i <- 0
+  repeat
+  {
+    fig_name <- paste0(knitr::opts_current$get("label"), i,'.svg')
+    fig_path <- fs::path(dir_name, fig_name)
+    if(fs::file_exists(fig_path))
+      i <- i + 1
+    else
+      break
+  }
 
   fig |>
   plotly::save_image(fig_path) |>

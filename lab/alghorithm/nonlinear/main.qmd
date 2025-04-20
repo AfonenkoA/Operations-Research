@@ -1,57 +1,65 @@
----
-editor: 
-  markdown: 
-    wrap: 72
----
-
 # Нелинейное программирование {#sec-lab-alghorithm-nonlinear}
 
 ## Теория
 
-Пример анализа алгоритма
+Изучить из лекций
 
-Процедура анализа. Для всех методов требуемых в условии
+-   Метод Нелдера-Мида
+-   Метод локальной вариации
+-   Методы градиентного спуска
 
-1.  Найти минимум функции простым вызовом метода.
-2.  С определить количество вычислений функции.
-3.  С помощью функций trace\_\* найти путь поиска решения
-4.  Построить график поиска решения с точками, в которых была вычислена
-    функция
-5.  Построить график поиска решения с градиентом.
+Из методички
+
+-   @sec-nonlinear-unconstrained-numerical-one
+-   @sec-nonlinear-unconstrained-numerical-many-direct
+-   @sec-nonlinear-unconstrained-numerical-many-gradient
+-   @sec-nonlinear-constrained-numerical-convert-to-unconstrained
+-   @sec-nonlinear-constrained-numerical-many-direct
+-   @sec-nonlinear-constrained-numerical-many-gradient
 
 ## Задачи
 
-::: {#exr-lab-alghoritm-basic-one-dim}
+Используя несколько методов для решения одной задачи провести сравнение их эффективности используя процедуру анализа, предложенную в @sec-r-tools-solver-nonlinear-nloptr-analysis.
+
+:::: {#exr-lab-alghoritm-nonlinear-one-dim}
 ### Одномерная минимизация
 
 $$
 \frac{11}{1+\mathrm{e}^{-x}}+7 \cos{(3x)} + x^2 - 1
 $$
 
-@sec-r-tools-stats-optimize
-
-optimx
-
-Conjugated Gradient Quasi newton
+Применить @sec-r-tools-stats-optimize
 
 1.  Найти минимум функции
-2.  Построить график, выделить точку минимума
-:::
+2.  Построить график, отобразив на нём точки вычисления функции и точки минимума
 
+::: {.callout-note appearance="minimal"}
+Уровень 1
+:::
+::::
+
+:::: {#exr-lab-alghoritm-nonlinear-unconstrained}
 ### Неограниченная
+
+Найти минимум функции
 
 $$
 7x^2+27xy+9y^2+8\exp{\bigg[-\bigg(\frac{x^2}{3}-\frac{(y+3)^2}{5}\bigg)\bigg]}+9\exp{\bigg[-\bigg(\frac{(x-1)^2}{5}+\frac{(y-2)^2}{2}\bigg)\bigg]}
 $$
 
-1.  Применить @sec-r-tools-solver-nonlinear-nloptr-nelder-mead и
-    @sec-r-tools-solver-nonlinear-nloptr-praxis
-2.  Применить @sec-r-tools-solver-nonlinear-nloptr-bfgs и
-    @sec-r-tools-solver-nonlinear-nloptr-newton
+1.  Применить @sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-directed-nelder-mead и @sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-directed-praxis
 
-### Минимизация с ограничениями
+2.  Применить @sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-gradient-bfgs и @sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-gradient-newton
 
-Решить предыдущий пример с помощью при ограничениях
+::: {.callout-note appearance="minimal"}
+Уровень 1
+:::
+::::
+
+:::: {#exr-lab-alghoritm-nonlinear-constrained}
+### С ограничениями
+
+Решить предыдущий пример с помощью при ограничениях. Изобразить область ограничений линиями поверх контурного графика
 
 $$
 \begin{aligned}
@@ -60,89 +68,58 @@ $$
 \end{aligned}
 $$
 
-Изобразить область ограничений линиями поверх контурного графика
+Применить @sec-r-tools-solver-nonlinear-nloptr-local-constrained-inequality-directed-cobyla и @sec-r-tools-solver-nonlinear-nloptr-local-constrained-inequality-gradient-mma
 
-cobyla, mma
+::: {.callout-note appearance="minimal"}
+Уровень 1
+:::
+::::
 
-Определим простую функцию $x^2 - \sqrt{2} x + 1$. Её минимум очевиден
-$M=(\frac{1}{\sqrt{2}},\frac{1}{2})$
-
-```{{r}}
-f <- \(x) x^2 - sqrt(2)*x + 1
-```
-
-plot_ly
-
-Комбинированный метод золотого сечения и обратных парабол method =
-c("Brent
-
-Аргументами interval или lower, upper задаётся область поиска. Аргумент
-maximum отвечает за цель оптимизации.
-
-```{{r}}
-optimise(f, c(-5,5))
-```
-
-Важный параметр tol, задаёт точность, с которой будет найден оптимум.
-Сравним с аналитическим решением разные параметры точности.
-
-```{{r}}
-sapply(10^c(-(1:10)),\(t) list(tolerance=t,result=sprintf('%.10f',optimise(f,c(-5,5),tol=t)$minimum ))) |> t()
-
-sprintf('%.10f',1/sqrt(2))
-```
-
-## Методы без вычисления производных
-
-1.  Не сходимость если ограничения совпадают
-2.  Не локализация, если два экстремума
-
-В связи с особенностью одномерного случая введём для рассмотрения две
-функции: выпуклую и невыпуклую
-
-### Метод золотого сечения
-
-Алгоритм брента.
-
-```{r}
-# optimise()
-```
-
-1.  Расходимость при невыпуклой функции
-
-Пауэл и золотое сечение
-
-### Горбы и ямы
-
-Найти безусловный минимум функции двух переменных, провести сравнение из
-предложенных методов. Графики, анимации, итерации. Нелдермид локальной
-вариации LBFGS
-
-### Ограничения
-
-Решить задачу с ограничениями
-
+:::: {#exr-lab-alghoritm-nonlinear-ravine}
 ### Овраг
+
+Найти минимум функции
 
 $$
 (9x+8y-5)^4 + (5x+2y-1)^4
 $$
 
-Nelder-Mead, Newton
+Применить @sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-directed-nelder-mead и @sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-gradient-newton
 
+::: {.callout-note appearance="minimal"}
+Уровень 1
+:::
+::::
+
+:::: {#exr-lab-alghoritm-nonlinear-high-order}
 ### Много переменных
 
-Провести анализ для всех предложенных функций (n=20,50,200)
-$$F=(\sum_{i=1}^N{L_ix_i}-b)^2$$ Вектор коэффициентов Li сгенерировать
-случайным образом
+Найти минимум ряда целевых функций для $N=20,50,200$. Вектор коэффициентов $L_i$ и $b_i$ генерировать случайным образом\
+$$F=(\sum_{i=1}^N{L_ix_i}-b)^2$$
 
-### Условия не писаны
+Применить @sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-directed-nelder-mead и @sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-gradient-bfgs
 
-Уровень 3 попробовать барьерные функиции
+::: {.callout-note appearance="minimal"}
+Уровень 2
+:::
+::::
 
-Найти условно минимум функции двух переменных, с ограничениями.
-Использовать доступные методы, провести сравнение.
+:::: {#exr-lab-alghoritm-nonlinear-penalty}
+### Штраф
 
-Свести задачу условной оптимизации к безусловной выбрав барьерные
-функции. Там где надо применить штрафные или барьерные функции
-обязательно подробная инструкция
+Решить задачу @exr-lab-alghoritm-nonlinear-constrained используя барьерные функции @sec-nonlinear-constrained-numerical-convert-to-unconstrained-penalty.
+
+::: {.callout-note appearance="minimal"}
+Уровень 3
+:::
+::::
+
+:::: {#exr-lab-alghoritm-nonlinear-barier}
+### Барьер
+
+Решить задачу @exr-lab-alghoritm-nonlinear-constrained используя барьерные функции. @sec-nonlinear-constrained-numerical-convert-to-unconstrained-barier
+
+::: {.callout-note appearance="minimal"}
+Уровень 3
+:::
+::::

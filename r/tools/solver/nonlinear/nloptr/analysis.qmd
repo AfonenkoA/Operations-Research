@@ -1,3 +1,303 @@
-# Nloptr. Анализ
+---
+cache: false
+freeze: false
+---
 
-Общая процедура анализа используя все хелперы
+# Nloptr. Анализ {#sec-r-tools-solver-nonlinear-nloptr-analysis}
+
+Процедура анализа построена на возможностях библиотеки @sec-r-tools-smoof по подсчёту и логированию вызовов целевой функции.
+
+::: {#exm-r-tools-solver-nonlinear-nloptr-analysis}
+В качестве примера, демонстрирующего большинство возможностей рассмотрим задачу минимизации функции двух переменных с ограничениями.
+
+$$
+F={(x-1)}^2 + {(y-1)}^2 + {\biggl[\tan^{-1}{\biggl((x-1) {(y-2)}^2 \biggr)} \biggr]}^2
+$$
+при ограничении
+
+$$
+x^2-y^2 \geq 1
+$$
+:::
+
+## Подготовка {#sec-r-tools-solver-nonlinear-nloptr-assigment}
+
+Зададим целевую функцию
+
+```{r}
+f <- function(par)
+{
+  x <- par[[1]]
+  y <- par[[2]]
+  (x-1)^2 + (y-1)^2 + atan( (x-1)^2 * (y-2)^2 )^2
+}
+```
+
+Также для решателю могут быть переданы градиент
+
+```{r}
+f_g <- function(par)
+{
+  x <- par[[1]]
+  y <- par[[2]]
+  
+  dx <- 2*(-1 + x + ((-2 + y)^2*atan((1 + x)*(-2 + y)^2))/(1 + (1 + x)^2*(-2 + y)^4))
+  dy <- 2*(1 + y + (2*(1 + x)*(-2 + y)*atan((1 + x)*(-2 + y)^2))/(1 + (1 + x)^2*(-2 + y)^4))
+  
+  c(dx,dy)
+}
+```
+
+Зададим область прямоугольных ограничений для задчи выбранных произвольно от -5 до 5 по двум осям.
+
+```{r}
+par <- ParamHelpers::makeNumericParamSet(
+    len = 2L,
+    lower = c(-5, -5),
+    upper = c(5, 5))
+
+objfn <- smoof::makeSingleObjectiveFunction(
+  fn = f,
+  par.set = par)
+
+objfn_g <- smoof::makeMultiObjectiveFunction(
+  fn = f_g,
+  par.set = par,
+  n.objectives = 2)
+```
+
+
+Преобразуем ограничения к форме, принимаемой методом
+
+$$
+y^2 - x^2 + 1 \leq 0 \\
+$$
+```{r}
+constr_ineq <- function(par)
+{
+  x <- par[[1]]
+  y <- par[[2]]
+  
+  y^2 - x^2 + 1
+}
+```
+
+А также якобиан ограничений.
+
+```{r}
+constr_ineq_jac <- function(par)
+{
+  x <- par[[1]]
+  y <- par[[2]]
+  
+  c(-2*x,2*y)
+}
+```
+
+И их обёртки
+
+```{r}
+constr_ineq_fn <- smoof::makeMultiObjectiveFunction(
+  fn = constr_ineq,
+  par.set = par,
+  n.objectives = 2)
+
+constr_ineq_jac_fn <- smoof::makeMultiObjectiveFunction(
+  fn = constr_ineq_jac,
+  par.set = par,
+  n.objectives = 4)
+```
+
+Зададим стартовую точку
+
+```{r}
+x0 <- c(-4,2)
+```
+
+И определим функцию для отрисовки ограничений
+
+```{r}
+add_constr <- function(fig)
+{
+  xm <- seq(-5, 1, length.out = 50) # отрицательная кривая
+  ymm <- -sqrt(-1 + xm^2) # отрицательная ветвь
+  ymp <- sqrt(-1 + xm^2) # положительная ветвь
+  
+  xp <- seq(1, 5, length.out = 50)
+  ypm <- -sqrt(-1 + xp^2) # отрицательная ветвь
+  ypp <- sqrt(-1 + xp^2) # положительная ветвь
+  
+  purrr::reduce2(
+    list(xm, xm, xp, xp),
+    list(ymm, ymp, ypm, ypp),
+    \(fig, x, y) plotly::add_trace(
+      fig,
+      x = x,
+      y = y,
+      type = "scatter",
+      mode = 'lines'
+    ) ,
+    .init = fig) |>
+    pshow_safe()
+}
+```
+
+::: callout-important
+При использовании удалите вызов функции `pshow()`
+:::
+
+## Загрузка вспомогательных функций {#sec-r-tools-solver-nonlinear-nloptr-analysis-helper}
+
+```{r}
+source('../../../../helper/sample.R')
+source('../../../../helper/plotly.R')
+source('../../../../helper/smoof.R')
+source('../../../../helper/smoof_plotly.R')
+source('../../../../helper/nloptr.R')
+```
+
+:::: {.content-visible when-format="html"}
+::: {.callout appearance="minimal"}
+⤓ [sample.R](../../../../helper/sample.R)
+
+⤓ [plotly.R](../../../../helper/plotly.R)
+
+⤓ [smoof.R](../../../../helper/smoof.R)
+
+⤓ [smoof_plotly.R](../../../../helper/smoof_plotly.R)
+
+⤓ [nloptr.R](../../../../helper/nloptr.R)
+:::
+::::
+
+:::: {.content-visible unless-format="html"}
+::: {.callout appearance="minimal"}
+`\faFile*[regular].`{=latex} [sample.R](r/helper/sample.R)
+
+`\faFile*[regular].`{=latex} [plotly.R](r/helper/plotly.R)
+
+`\faFile*[regular].`{=latex} [smoof.R](r/helper/smoof.R)
+
+`\faFile*[regular].`{=latex} [smoof_plotly.R](r/helper/smoof_plotly.R)
+
+`\faFile*[regular].`{=latex} [nloptr.R](r/helper/nloptr.R)
+:::
+::::
+
+## Решение задачи {#sec-r-tools-solver-nonlinear-nloptr-analysis-solution}
+
+Решим задачу методом @sec-r-tools-solver-nonlinear-nloptr-local-constrained-inequality-gradient-ccsaq 
+
+```{r}
+res <- nloptr::nloptr(
+  x0 = x0,
+  eval_f = f,
+  eval_grad_f = f_g,
+  eval_g_ineq = constr_ineq,
+  eval_jac_g_ineq = constr_ineq_jac,
+  opts = list(
+    algorithm = 'NLOPT_LD_CCSAQ',
+    xtol_rel = 1.0e-8
+  )
+)
+
+res
+```
+
+А также получим данные анализа работы алгоритма с помощью функции `nloptr_trace` из вспомогательного файла `nloptr.R`.
+
+```{r}
+trace <- nloptr_trace(
+  x0 = x0,
+  eval_f = objfn,
+  eval_grad_f = objfn_g,
+  eval_g_ineq = constr_ineq_fn,
+  eval_jac_g_ineq = constr_ineq_jac_fn,
+  opts = list(
+    algorithm = 'NLOPT_LD_CCSAQ',
+    xtol_rel = 1.0e-8
+  )
+)
+```
+
+## Графический анализ {#sec-r-tools-solver-nonlinear-nloptr-analysis-graphical}
+
+
+```{r}
+#| label: graphical-contour
+#| echo: fenced
+
+fig <- smoof_pcontour(objfn, 50) 
+```
+
+```{r}
+#| label: graphical-eval-obj
+#| echo: fenced
+#| message: false
+#| warning: false
+#| fig-cap: "Вычисления функции"
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_f, 100)) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  add_constr()
+```
+
+```{r}
+#| label: graphical-eval-grad
+#| echo: fenced
+#| message: false
+#| warning: false
+#| fig-cap: "Вычисления градиента функции"
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_grad_f, 100)) |>
+  padd_start_stop_points(trace$eval$eval_grad_f) |>
+  add_constr()
+```
+
+```{r}
+#| label: graphical-eval-constr
+#| echo: fenced
+#| message: false
+#| warning: false
+#| fig-cap: "Вычисления ограничений"
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_g_ineq, 100)) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  add_constr()
+```
+
+```{r}
+#| label: graphical-eval-constr-jac
+#| echo: fenced
+#| message: false
+#| warning: false
+#| fig-cap: "Вычисления якобиана ограничений"
+
+fig |>
+  padd_eval_points(uni_sample(trace$eval$eval_jac_g_ineq, 100)) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  add_constr()
+```
+
+```{r}
+#| label: graphical-path
+#| echo: fenced
+#| message: false
+#| warning: false
+#| fig-cap: "Путь оптимизации"
+
+fig |>
+  padd_path_points(trace$path) |>
+  padd_start_stop_points(trace$eval$eval_f) |>
+  add_constr()
+```
+
+## Подсчёт числа вызовов {#sec-r-tools-solver-nonlinear-nloptr-analysis-count}
+
+```{r}
+trace$count |>
+  knitr::kable()
+```

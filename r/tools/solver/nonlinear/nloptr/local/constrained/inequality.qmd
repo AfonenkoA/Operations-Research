@@ -131,7 +131,6 @@ source('../../../../../../helper/nloptr.R')
 
 ```{r}
 #| include: false
-# Отрисовка ограниченией
 
 add_constr <- function(fig)
 {
@@ -167,9 +166,16 @@ add_constr <- function(fig)
 }
 ```
 
-## Прямого поиска {#exm-r-tools-solver-nonlinear-nloptr-local-constrained-inequality-directed}
+```{r}
+#| label: obj-contour
+#| include: false
 
-### COBYLA {#exm-r-tools-solver-nonlinear-nloptr-local-constrained-inequality-directed-cobyla}
+fig <- smoof_pcontour(objfn, 50) 
+```
+
+## Прямого поиска {#sec-r-tools-solver-nonlinear-nloptr-local-constrained-inequality-directed}
+
+### COBYLA {#sec-r-tools-solver-nonlinear-nloptr-local-constrained-inequality-directed-cobyla}
 
 ```{r}
 #| label: cobyla-eval
@@ -195,27 +201,37 @@ res
 ```
 
 ```{r}
-#| label: cobyla-plot
+#| label: cobyla-eval-obj
 #| echo: false
 #| message: false
 #| warning: false
-#| fig-cap:
-#|   - "Вычисления функции"
-#|   - "Вычисления ограничений"
-#|   - "Путь оптимизации"
-#| layout: "[[1,1], [1]]"
-
-fig <- smoof_pcontour(objfn, 30) 
+#| fig-cap: "Вычисления функции"
 
 fig |>
   padd_eval_points(uni_sample(trace$eval$eval_f, 100)) |>
   padd_start_stop_points(trace$eval$eval_f) |>
   add_constr()
+```
+
+```{r}
+#| label: cobyla-eval-constr
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Вычисления ограничений"
 
 fig |>
   padd_eval_points(uni_sample(trace$eval$eval_g_ineq, 100)) |>
   padd_start_stop_points(trace$eval$eval_f) |>
   add_constr()
+```
+
+```{r}
+#| label: cobyla-path
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Путь оптимизации"
 
 fig |>
   padd_path_points(trace$path) |>
@@ -223,11 +239,17 @@ fig |>
   add_constr()
 ```
 
-## Градиентные {#exm-r-tools-solver-nonlinear-nloptr-local-constrained-inequality-gradient}
+```{r}
+#| label: cobyla-count
+#| echo: false
 
-### Method moving asymptotes {#exm-r-tools-solver-nonlinear-nloptr-local-constrained-inequality-gradient-mma}
+trace$count |>
+  knitr::kable()
+```
 
-В том числе показать в каких точках были вызовы ограничений и градиента
+## Градиентные {#sec-r-tools-solver-nonlinear-nloptr-local-constrained-inequality-gradient}
+
+### Method moving asymptotes {#sec-r-tools-solver-nonlinear-nloptr-local-constrained-inequality-gradient-mma}
 
 ```{r}
 #| label: mma-eval
@@ -259,39 +281,63 @@ res
 ```
 
 ```{r}
-#| label: mma-plot
+#| label: mma-eval-obj
 #| echo: false
 #| message: false
 #| warning: false
-#| fig-cap:
-#|   - "Вычисления функции"
-#|   - "Вычисления градиента функции"
-#|   - "Вычисления ограничений"
-#|   - "Вычисления якобиана ограничений"
-#|   - "Путь оптимизации"
-#| layout: "[[1,1], [1,1], [1]]"
-
-fig <- smoof_pcontour(objfn, 30) 
+#| fig-cap: "Вычисления функции"
 
 fig |>
   padd_eval_points(uni_sample(trace$eval$eval_f, 100)) |>
   padd_start_stop_points(trace$eval$eval_f) |>
   add_constr()
+```
+
+```{r}
+#| label: mma-eval-grad
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Вычисления градиента функции"
 
 fig |>
   padd_eval_points(uni_sample(trace$eval$eval_grad_f, 100)) |>
   padd_start_stop_points(trace$eval$eval_grad_f) |>
   add_constr()
+```
+
+```{r}
+#| label: mma-eval-constr
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Вычисления ограничений"
 
 fig |>
   padd_eval_points(uni_sample(trace$eval$eval_g_ineq, 100)) |>
   padd_start_stop_points(trace$eval$eval_f) |>
   add_constr()
+```
+
+```{r}
+#| label: mma-eval-constr-jac
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Вычисления якобиана ограничений"
 
 fig |>
   padd_eval_points(uni_sample(trace$eval$eval_jac_g_ineq, 100)) |>
   padd_start_stop_points(trace$eval$eval_f) |>
   add_constr()
+```
+
+```{r}
+#| label: mma-path
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Путь оптимизации"
 
 fig |>
   padd_path_points(trace$path) |>
@@ -299,8 +345,15 @@ fig |>
   add_constr()
 ```
 
+```{r}
+#| label: mma-count
+#| echo: false
 
-### CCSAQ {#exm-r-tools-solver-nonlinear-nloptr-local-constrained-inequality-gradient-ccsaq}
+trace$count |>
+  knitr::kable()
+```
+
+### CCSAQ {#sec-r-tools-solver-nonlinear-nloptr-local-constrained-inequality-gradient-ccsaq}
 
 ```{r}
 #| label: ccsaq-eval
@@ -332,39 +385,63 @@ res
 ```
 
 ```{r}
-#| label: ccsaq-plot
+#| label: ccsaq-eval-obj
 #| echo: false
 #| message: false
 #| warning: false
-#| fig-cap:
-#|   - "Вычисления функции"
-#|   - "Вычисления градиента функции"
-#|   - "Вычисления ограничений"
-#|   - "Вычисления якобиана ограничений"
-#|   - "Путь оптимизации"
-#| layout: "[[1,1], [1,1], [1]]"
-
-fig <- smoof_pcontour(objfn, 30) 
+#| fig-cap: "Вычисления функции"
 
 fig |>
   padd_eval_points(uni_sample(trace$eval$eval_f, 100)) |>
   padd_start_stop_points(trace$eval$eval_f) |>
   add_constr()
+```
+
+```{r}
+#| label: ccsaq-eval-grad
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Вычисления градиента функции"
 
 fig |>
   padd_eval_points(uni_sample(trace$eval$eval_grad_f, 100)) |>
   padd_start_stop_points(trace$eval$eval_grad_f) |>
   add_constr()
+```
+
+```{r}
+#| label: ccsaq-eval-constr
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Вычисления ограничений"
 
 fig |>
   padd_eval_points(uni_sample(trace$eval$eval_g_ineq, 100)) |>
   padd_start_stop_points(trace$eval$eval_f) |>
   add_constr()
+```
+
+```{r}
+#| label: ccsaq-eval-constr-jac
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Вычисления якобиана ограничений"
 
 fig |>
   padd_eval_points(uni_sample(trace$eval$eval_jac_g_ineq, 100)) |>
   padd_start_stop_points(trace$eval$eval_f) |>
   add_constr()
+```
+
+```{r}
+#| label: ccsaq-path
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Путь оптимизации"
 
 fig |>
   padd_path_points(trace$path) |>
@@ -372,7 +449,16 @@ fig |>
   add_constr()
 ```
 
-### SSQLP {#exm-r-tools-solver-nonlinear-nloptr-local-constrained-inequality-gradient-ssqlp}
+
+```{r}
+#| label: ccsaq-count
+#| echo: false
+
+trace$count |>
+  knitr::kable()
+```
+
+### SSQLP {#sec-r-tools-solver-nonlinear-nloptr-local-constrained-inequality-gradient-ssqlp}
 
 ```{r}
 #| label: ssqlp-eval
@@ -404,42 +490,74 @@ res
 ```
 
 ```{r}
-#| label: ssqlp-plot
+#| label: ssqlp-eval-obj
 #| echo: false
 #| message: false
 #| warning: false
-#| fig-cap:
-#|   - "Вычисления функции"
-#|   - "Вычисления градиента функции"
-#|   - "Вычисления ограничений"
-#|   - "Вычисления якобиана ограничений"
-#|   - "Путь оптимизации"
-#| layout: "[[1,1], [1,1], [1]]"
-
-fig <- smoof_pcontour(objfn, 30) 
+#| fig-cap: "Вычисления функции"
 
 fig |>
   padd_eval_points(uni_sample(trace$eval$eval_f, 100)) |>
   padd_start_stop_points(trace$eval$eval_f) |>
   add_constr()
+```
+
+```{r}
+#| label: ssqlp-eval-grad
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Вычисления градиента функции"
 
 fig |>
   padd_eval_points(uni_sample(trace$eval$eval_grad_f, 100)) |>
   padd_start_stop_points(trace$eval$eval_grad_f) |>
   add_constr()
+```
+
+```{r}
+#| label: ssqlp-eval-constr
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Вычисления ограничений"
 
 fig |>
   padd_eval_points(uni_sample(trace$eval$eval_g_ineq, 100)) |>
   padd_start_stop_points(trace$eval$eval_f) |>
   add_constr()
+```
+
+```{r}
+#| label: ssqlp-eval-constr-jac
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Вычисления якобиана ограничений"
 
 fig |>
   padd_eval_points(uni_sample(trace$eval$eval_jac_g_ineq, 100)) |>
   padd_start_stop_points(trace$eval$eval_f) |>
   add_constr()
+```
+
+```{r}
+#| label: ssqlp-path
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Путь оптимизации"
 
 fig |>
   padd_path_points(trace$path) |>
   padd_start_stop_points(trace$eval$eval_f) |>
   add_constr()
+```
+
+```{r}
+#| label: ssqlp-count
+#| echo: false
+
+trace$count |>
+  knitr::kable()
 ```

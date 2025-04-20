@@ -1,4 +1,4 @@
-# Модели исследования операций {#sec-lab-model-basic}
+# Введение {#sec-lab-model-basic}
 
 ## Теория
 

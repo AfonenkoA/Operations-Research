@@ -1,4 +1,4 @@
-# Безусловная оптимизация функции одной переменной {#sec-nonlinear-unconstrained-one}
+# Безусловная оптимизация функции одной переменной {#sec-nonlinear-unconstrained-analytical-one}
 
 ## Определение {#sec-nonlinear-unconstrained-one-def}
 

@@ -50,6 +50,10 @@ nloptr_trace_eval <- function(...)
 
 nloptr_trace <- function(...)
 {
+  e <- nloptr_trace_eval(...)
   list(path = nloptr_trace_path(...),
-       eval = nloptr_trace_eval(...))
+       eval = e,
+       count = purrr::map(e, nrow) |>
+         (\(e) tibble::tibble(func = names(e), count = as.numeric(e)))()
+       )
 }

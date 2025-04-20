@@ -3,7 +3,7 @@ cache: false
 freeze: false
 ---
 
-# Безусловная оптимизация функции многих переменных {#sec-nonlinear-unconstrained-many}
+# Безусловная оптимизация функции многих переменных {#sec-nonlinear-unconstrained-analytical-many}
 
 @bib-mathprofi-extremum-many
 

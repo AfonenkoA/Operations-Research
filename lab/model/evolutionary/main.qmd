@@ -1,4 +1,4 @@
-# Модели эволюционной оптимизации {#sec-lab-model-evolutionary}
+# Эволюционная оптимизация {#sec-lab-model-evolutionary}
 
 ### Jeely
 
@@ -134,3 +134,8 @@ tours <- sapply(methods, \(m) TSP::solve_TSP(USCA50, method = m), simplify = FAL
 ::: {.callout-note appearance='minimal'}
 Уровень 3
 :::
+
+
+### Военная игра
+
+Военная игра с битовыми строками из 7269.PDF.pdf

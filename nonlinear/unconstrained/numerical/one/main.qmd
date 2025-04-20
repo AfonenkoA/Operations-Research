@@ -1,4 +1,4 @@
-# Численная одномерная
+# Численная одномерная {#sec-nonlinear-unconstrained-numerical-one}
 
 ## Золотое сечение
 

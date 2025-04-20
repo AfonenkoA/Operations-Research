@@ -3,7 +3,7 @@ cache: false
 freeze: false
 ---
 
-# Условная оптимизация функции многих переменных {#sec-nonlinear-constrained-many}
+# Условная оптимизация функции многих переменных {#sec-nonlinear-constrained-analytical-many}
 
 ::: {.callout-caution title="Состояние разработки"}
 Требуется доработка

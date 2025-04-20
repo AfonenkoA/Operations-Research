@@ -113,7 +113,6 @@ constr_eq_jac_fn <- smoof::makeMultiObjectiveFunction(
 ```
 :::
 
-
 ```{r}
 #| include: false
 
@@ -126,7 +125,6 @@ source('../../../../../../helper/nloptr.R')
 
 ```{r}
 #| include: false
-# Отрисовка ограниченией
 
 add_constr <- function(fig)
 {
@@ -155,9 +153,16 @@ add_constr <- function(fig)
 }
 ```
 
-## Градиентные {#exm-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient}
+```{r}
+#| label: ssqlp-contour
+#| include: false
 
-### SSQLP {#exm-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient-ssqlp}
+fig <- smoof_pcontour(objfn, 50)
+```
+
+## Градиентные {#sec-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient}
+
+### SSQLP {#sec-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient-ssqlp}
 
 ```{r}
 #| label: ssqlp-eval
@@ -189,42 +194,74 @@ res
 ```
 
 ```{r}
-#| label: ssqlp-plot
+#| label: ssqlp-eval-obj
 #| echo: false
 #| message: false
 #| warning: false
-#| fig-cap:
-#|   - "Вычисления функции"
-#|   - "Вычисления градиента функции"
-#|   - "Вычисления ограничений"
-#|   - "Вычисления якобиана ограничений"
-#|   - "Путь оптимизации"
-#| layout: "[[1,1], [1,1], [1]]"
-
-fig <- smoof_pcontour(objfn, 30) 
+#| fig-cap: "Вычисления функции"
 
 fig |>
   padd_eval_points(uni_sample(trace$eval$eval_f, 100)) |>
   padd_start_stop_points(trace$eval$eval_f) |>
   add_constr()
+```
+
+```{r}
+#| label: ssqlp-eval-grad
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Вычисления градиента функции"
 
 fig |>
   padd_eval_points(uni_sample(trace$eval$eval_grad_f, 100)) |>
   padd_start_stop_points(trace$eval$eval_grad_f) |>
   add_constr()
+```
+
+```{r}
+#| label: ssqlp-eval-constr
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Вычисления ограничений"
 
 fig |>
   padd_eval_points(uni_sample(trace$eval$eval_g_eq, 100)) |>
   padd_start_stop_points(trace$eval$eval_f) |>
   add_constr()
+```
+
+```{r}
+#| label: ssqlp-eval-constr-jac
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Вычисления якобиана ограничений"
 
 fig |>
   padd_eval_points(uni_sample(trace$eval$eval_jac_g_eq, 100)) |>
   padd_start_stop_points(trace$eval$eval_f) |>
   add_constr()
+```
+
+```{r}
+#| label: ssqlp-path
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-cap: "Путь оптимизации"
 
 fig |>
   padd_path_points(trace$path) |>
   padd_start_stop_points(trace$eval$eval_f) |>
   add_constr()
+```
+
+```{r}
+#| label: ssqlp-count
+#| echo: false
+
+trace$count |>
+  knitr::kable()
 ```

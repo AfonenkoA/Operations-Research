@@ -1,6 +1,6 @@
 # Сведение к задаче неограниченной оптимизации {#sec-nonlinear-constrained-numerical-convert-to-unconstrained}
 
-## Штрафные функции {#sec-nonlinear-constrained-numerical-penalty}
+## Штрафные функции {#sec-nonlinear-constrained-numerical-convert-to-unconstrained-penalty}
 
 <https://en.wikipedia.org/wiki/Penalty_method>
 
@@ -20,3 +20,7 @@ $$
 $$
 
 В каждой итерации метода мы увеличиваем коэффициент штрафа $p$ (например, в 10 раз), решаем задачу без ограничений и используем решение в качестве начального предположения для следующей итерации. Решения последовательных задач без ограничений будут асимптотически сходиться к решению исходной задачи с ограничениями.
+
+## Барьерные функции {#sec-nonlinear-constrained-numerical-convert-to-unconstrained-barier}
+
+<https://en.wikipedia.org/wiki/Barrier_function>

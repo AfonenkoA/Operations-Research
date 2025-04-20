@@ -1,0 +1,8 @@
+---
+- from: analysis.qmd
+  files:
+   - ../../../../helper/sample.R
+   - ../../../../helper/plotly.R
+   - ../../../../helper/smoof.R
+   - ../../../../helper/smoof_plotly.R
+   - ../../../../helper/nloptr.R

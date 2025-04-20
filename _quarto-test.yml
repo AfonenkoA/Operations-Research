@@ -5,8 +5,7 @@ project:
 book:
   chapters:
         - index.qmd
-        - r/tools/solver/evolutionary/gensa.qmd
-        - r/tools/solver/evolutionary/pso.qmd
-        - r/tools/solver/evolutionary/ga.qmd
-        - r/tools/solver/evolutionary/tsp.qmd
-        - python/tools/minizinc.qmd
+        - r/tools/solver/nonlinear/nloptr/analysis.qmd
+        - r/tools/solver/nonlinear/nloptr/local/unconstrained.qmd
+        - r/tools/solver/nonlinear/nloptr/local/constrained/inequality.qmd
+        - r/tools/solver/nonlinear/nloptr/local/constrained/equality.qmd

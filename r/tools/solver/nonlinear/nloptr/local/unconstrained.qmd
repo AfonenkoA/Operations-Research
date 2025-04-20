@@ -84,7 +84,6 @@ trace <- nloptr_trace(
 res
 ```
 
-
 ```{r}
 #| label: nelder-mead-plot
 #| echo: false
@@ -93,7 +92,6 @@ res
 #| fig-cap:
 #|   - "Вычисления функции"
 #|   - "Путь оптимизации"
-#| layout-ncol: 2
 
 fig <- smoof_pcontour(objfn, 30) 
 
@@ -108,6 +106,13 @@ fig |>
   pshow()
 ```
 
+```{r}
+#| label: nelder-mead-count
+#| echo: false
+
+trace$count |>
+  knitr::kable()
+```
 
 ### Метод локальной вариации {#sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-directed-praxis}
 
@@ -130,7 +135,6 @@ trace <- nloptr_trace(
 res
 ```
 
-
 ```{r}
 #| label: PRAXIS-plot
 #| echo: false
@@ -139,7 +143,6 @@ res
 #| fig-cap:
 #|   - "Вычисления функции"
 #|   - "Путь оптимизации"
-#| layout-ncol: 2
 
 fig <- smoof_pcontour(objfn, 30) 
 
@@ -152,6 +155,14 @@ fig |>
   padd_path_points(trace$path) |>
   padd_start_stop_points(trace$eval$eval_f) |>
   pshow()
+```
+
+```{r}
+#| label: praxis-count
+#| echo: false
+
+trace$count |>
+  knitr::kable()
 ```
 
 ### BOBYQA {#sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-directed-bobyqa}
@@ -185,7 +196,6 @@ res
 #| fig-cap:
 #|   - "Вычисления функции"
 #|   - "Путь оптимизации"
-#| layout-ncol: 2
 
 fig <- smoof_pcontour(objfn, 30) 
 
@@ -200,6 +210,14 @@ fig |>
   pshow()
 ```
 
+```{r}
+#| label: bobyqa-count
+#| echo: false
+
+trace$count |>
+  knitr::kable()
+```
+
 ## Градиентные {#sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-gradient}
 
 ### BFGS {#sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-gradient-bfgs}
@@ -207,7 +225,7 @@ fig |>
 На основе метода ньютона
 
 ```{r}
-#| label: L-BFGS-eval
+#| label: bfgs-eval
 
 res <- nloptr::nloptr(
   x0 = x0,
@@ -226,7 +244,7 @@ res
 ```
 
 ```{r}
-#| label: L-BFGS-plot
+#| label: bfgs-plot
 #| echo: false
 #| message: false
 #| warning: false
@@ -234,7 +252,6 @@ res
 #|   - "Вычисления функции"
 #|   - "Вычисления градиента"
 #|   - "Путь оптимизации"
-#| layout: "[[1,1], [1]]"
 
 fig <- smoof_pcontour(objfn, 30) 
 
@@ -254,6 +271,13 @@ fig |>
   pshow()
 ```
 
+```{r}
+#| label: bfgs-count
+#| echo: false
+
+trace$count |>
+  knitr::kable()
+```
 
 ### Ньютона {#sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-gradient-newton}
 
@@ -278,7 +302,6 @@ trace <- nloptr_trace(
 res
 ```
 
-
 ```{r}
 #| label: newton-plot
 #| echo: false
@@ -288,7 +311,6 @@ res
 #|   - "Вычисления функции"
 #|   - "Вычисления градиента"
 #|   - "Путь оптимизации"
-#| layout: "[[1,1], [1]]"
 
 fig <- smoof_pcontour(objfn, 30) 
 
@@ -306,6 +328,14 @@ fig |>
   padd_path_points(trace$path) |>
   padd_start_stop_points(trace$eval$eval_f) |>
   pshow()
+```
+
+```{r}
+#| label: newton-count
+#| echo: false
+
+trace$count |>
+  knitr::kable()
 ```
 
 ### Varmetric {#sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-gradient-varmetric}
@@ -340,7 +370,6 @@ res
 #|   - "Вычисления функции"
 #|   - "Вычисления градиента"
 #|   - "Путь оптимизации"
-#| layout: "[[1,1], [1]]"
 
 fig <- smoof_pcontour(objfn, 30) 
 
@@ -358,4 +387,12 @@ fig |>
   padd_path_points(trace$path) |>
   padd_start_stop_points(trace$eval$eval_f) |>
   pshow()
+```
+
+```{r}
+#| label: varmetric-count
+#| echo: false
+
+trace$count |>
+  knitr::kable()
 ```

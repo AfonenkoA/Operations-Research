@@ -51,6 +51,7 @@ fs::dir_ls(out,
            recurse = TRUE,
            glob = '*plotly_libs',
            type = 'dir') |>
+  unique() |>
   purrr::walk(fs::dir_delete,
               .progress = is_dev)
 
