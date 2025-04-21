@@ -5,7 +5,4 @@ project:
 book:
   chapters:
         - index.qmd
-        - r/tools/solver/nonlinear/nloptr/analysis.qmd
-        - r/tools/solver/nonlinear/nloptr/local/unconstrained.qmd
-        - r/tools/solver/nonlinear/nloptr/local/constrained/inequality.qmd
-        - r/tools/solver/nonlinear/nloptr/local/constrained/equality.qmd
+        - lab/extra/evolutionary/main.qmd

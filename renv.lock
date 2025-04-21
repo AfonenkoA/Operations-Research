@@ -9,18 +9,62 @@
     ]
   },
   "Python": {
-    "Version": "3.13.2",
+    "Version": "3.13.3",
     "Type": "virtualenv",
     "Name": "./venv"
   },
   "Packages": {
+    "AFM": {
+      "Package": "AFM",
+      "Version": "2.0",
+      "Source": "Repository",
+      "Type": "Package",
+      "Date": "2020-10-07",
+      "Title": "Atomic Force Microscope Image Analysis",
+      "Authors@R": "c(person(\"Mathieu\", \"Beauvais\", role = c(\"aut\", \"cre\"), email = \"beauvais.escp@gmail.com\"),person(\"Irma\", \"Liascukiene\", role = \"aut\"),person(\"Jessem\", \"Landoulsi\", role = \"aut\"))",
+      "Author": "Mathieu Beauvais [aut, cre], Irma Liascukiene [aut], Jessem Landoulsi [aut]",
+      "Maintainer": "Mathieu Beauvais <beauvais.escp@gmail.com>",
+      "Description": "Provides Atomic Force Microscope images analysis such as Gaussian mixes identification, Power Spectral Density, roughness against lengthscale, experimental variogram and variogram models, fractal dimension and scale, 2D network analysis. The AFM images can be exported to STL format for 3D printing.",
+      "NeedsCompilation": "no",
+      "Repository": "CRAN",
+      "License": "AGPL-3",
+      "Encoding": "UTF-8",
+      "Depends": [
+        "R (>= 3.4)"
+      ],
+      "Imports": [
+        "data.table(>= 1.9.6)",
+        "stringr(>= 1.0.0)",
+        "gstat(>= 1.0-26)",
+        "fractaldim(>= 0.8-4)",
+        "rgl(>= 0.96)",
+        "pracma(>= 1.8.6)",
+        "grid(>= 3.1.3)",
+        "gridExtra(>= 2.0.0)",
+        "moments(>= 0.14)",
+        "ggplot2(>= 1.0.1)",
+        "sp(>= 1.2-0)",
+        "png(>= 0.1-7)",
+        "plyr(>= 1.8.3)",
+        "igraph(>= 1.0.1)",
+        "methods(>= 3.1.3)",
+        "shiny(>= 0.12.2)",
+        "shinyjs(>= 0.4.0)",
+        "scales(>= 0.4.0)",
+        "dbscan(>= 0.9-8)",
+        "mixtools(>= 1.0.4)",
+        "fftwtools(>= 0.9-8)"
+      ],
+      "Collate": "'AFM3DPrinter.R' 'AFMFractalDimensionAnalyser.R' 'AFMGaussianMixAnalyser.R' 'AFMImage.R' 'AFMNetworksAnalyser.R' 'AFMPSDAnalyser.R' 'AFMVariogramAnalyser.R' 'AFMImageAnalyser.R' 'AFMReportMaker.R' 'pkgname.R' 'runAFMApp.R'",
+      "RoxygenNote": "7.1.1"
+    },
     "AsioHeaders": {
       "Package": "AsioHeaders",
-      "Version": "1.28.2-1",
+      "Version": "1.30.2-1",
       "Source": "Repository",
       "Type": "Package",
       "Title": "'Asio' C++ Header Files",
-      "Date": "2025-04-08",
+      "Date": "2025-04-15",
       "Authors@R": "c(person(\"Dirk\", \"Eddelbuettel\", role = c(\"aut\", \"cre\"), email = \"edd@debian.org\", comment = c(ORCID = \"0000-0001-6419-907X\")), person(\"Christopher M.\", \"Kohlhoff\", role = \"aut\", comment = \"Author of Asio\"))",
       "Description": "'Asio' is a cross-platform C++ library for network and low-level I/O programming that provides developers with a consistent asynchronous model using a modern C++ approach. It is also included in Boost but requires linking when used with Boost. Standalone it can be used header-only (provided a recent compiler). 'Asio' is written and maintained by Christopher M. Kohlhoff, and released under the 'Boost Software License', Version 1.0.",
       "Copyright": "file inst/COPYRIGHTS",
@@ -2375,6 +2419,49 @@
       "Maintainer": "Hadley Wickham <hadley@posit.co>",
       "Repository": "CRAN"
     },
+    "dbscan": {
+      "Package": "dbscan",
+      "Version": "1.2.2",
+      "Source": "Repository",
+      "Title": "Density-Based Spatial Clustering of Applications with Noise (DBSCAN) and Related Algorithms",
+      "Date": "2025-01-25",
+      "Authors@R": "c( person(\"Michael\", \"Hahsler\", email = \"mhahsler@lyle.smu.edu\",  role = c(\"aut\", \"cre\", \"cph\"), comment = c(ORCID = \"0000-0003-2716-1405\")), person(\"Matthew\", \"Piekenbrock\", role = c(\"aut\", \"cph\")), person(\"Sunil\", \"Arya\", role = c(\"ctb\", \"cph\")), person(\"David\", \"Mount\", role = c(\"ctb\", \"cph\")), person(\"Claudia\", \"Malzer\", role = \"ctb\") )",
+      "Description": "A fast reimplementation of several density-based algorithms of the DBSCAN family. Includes the clustering algorithms DBSCAN (density-based spatial clustering of applications with noise) and HDBSCAN (hierarchical DBSCAN), the ordering algorithm OPTICS (ordering points to identify the clustering structure), shared nearest neighbor clustering, and the outlier detection algorithms LOF (local outlier factor) and GLOSH (global-local outlier score from hierarchies). The implementations use the kd-tree data structure (from library ANN) for faster k-nearest neighbor search. An R interface to fast kNN and fixed-radius NN search is also provided.  Hahsler, Piekenbrock and Doran (2019) <doi:10.18637/jss.v091.i01>.",
+      "License": "GPL (>= 2)",
+      "URL": "https://github.com/mhahsler/dbscan",
+      "BugReports": "https://github.com/mhahsler/dbscan/issues",
+      "Depends": [
+        "R (>= 3.2.0)"
+      ],
+      "Imports": [
+        "generics",
+        "graphics",
+        "Rcpp (>= 1.0.0)",
+        "stats"
+      ],
+      "Suggests": [
+        "dendextend",
+        "fpc",
+        "igraph",
+        "knitr",
+        "microbenchmark",
+        "rmarkdown",
+        "testthat (>= 3.0.0)",
+        "tibble"
+      ],
+      "LinkingTo": [
+        "Rcpp"
+      ],
+      "VignetteBuilder": "knitr",
+      "Config/testthat/edition": "3",
+      "Copyright": "ANN library is copyright by University of Maryland, Sunil Arya and David Mount. All other code is copyright by Michael Hahsler and Matthew Piekenbrock.",
+      "Encoding": "UTF-8",
+      "RoxygenNote": "7.3.2",
+      "NeedsCompilation": "yes",
+      "Author": "Michael Hahsler [aut, cre, cph] (<https://orcid.org/0000-0003-2716-1405>), Matthew Piekenbrock [aut, cph], Sunil Arya [ctb, cph], David Mount [ctb, cph], Claudia Malzer [ctb]",
+      "Maintainer": "Michael Hahsler <mhahsler@lyle.smu.edu>",
+      "Repository": "CRAN"
+    },
     "desc": {
       "Package": "desc",
       "Version": "1.4.3",
@@ -2860,6 +2947,28 @@
       "Repository": "CRAN",
       "Encoding": "UTF-8"
     },
+    "fftwtools": {
+      "Package": "fftwtools",
+      "Version": "0.9-11",
+      "Source": "Repository",
+      "Title": "Wrapper for 'FFTW3' Includes: One-Dimensional, Two-Dimensional, Three-Dimensional, and Multivariate Transforms",
+      "Author": "Karim Rahim <karim.rahim@queensu.ca>",
+      "Maintainer": "Karim Rahim <karim.rahim@queensu.ca>",
+      "Depends": [
+        "R (>= 3.0)"
+      ],
+      "SystemRequirements": "fftw3 (libfftw3-dev (deb), or fftw-devel (rpm))",
+      "Suggests": [
+        "fftw"
+      ],
+      "Description": "Provides a wrapper for several 'FFTW' functions. This package provides access to the two-dimensional 'FFT', the multivariate 'FFT', and the one-dimensional real to complex 'FFT' using the 'FFTW3' library. The package includes the functions fftw() and mvfftw() which are designed to mimic the functionality of the R functions fft() and mvfft(). The 'FFT' functions have a parameter that allows them to not return the redundant complex conjugate when the input is real data.",
+      "License": "GPL (>= 2)",
+      "ByteCompile": "true",
+      "URL": "https://github.com/krahim/fftwtools",
+      "NeedsCompilation": "yes",
+      "Repository": "CRAN",
+      "Encoding": "UTF-8"
+    },
     "fontawesome": {
       "Package": "fontawesome",
       "Version": "0.5.3",
@@ -2970,6 +3079,30 @@
       "NeedsCompilation": "no",
       "Author": "Folashade Daniel [cre], Hong Ooi [ctb], Rich Calaway [ctb], Microsoft [aut, cph], Steve Weston [aut]",
       "Maintainer": "Folashade Daniel <fdaniel@microsoft.com>",
+      "Repository": "CRAN",
+      "Encoding": "UTF-8"
+    },
+    "fractaldim": {
+      "Package": "fractaldim",
+      "Version": "0.8-5",
+      "Source": "Repository",
+      "Date": "2021-10-05",
+      "Title": "Estimation of Fractal Dimensions",
+      "Author": "Hana Sevcikova <hanas@uw.edu>,  Don Percival <dbp@apl.washington.edu>, Tilmann Gneiting <tilmann@stat.washington.edu>",
+      "Maintainer": "Hana Sevcikova <hanas@uw.edu>",
+      "Depends": [
+        "R (>= 2.11.0)",
+        "abind"
+      ],
+      "Suggests": [
+        "wavelets",
+        "pcaPP",
+        "RandomFields",
+        "snowFT"
+      ],
+      "Description": "Implements various methods for estimating fractal dimension of time series and 2-dimensional data <doi:10.1214/11-STS370>.",
+      "License": "GPL (>= 2)",
+      "NeedsCompilation": "no",
       "Repository": "CRAN",
       "Encoding": "UTF-8"
     },
@@ -3582,6 +3715,52 @@
       "Repository": "CRAN",
       "Encoding": "UTF-8"
     },
+    "gstat": {
+      "Package": "gstat",
+      "Version": "2.1-3",
+      "Source": "Repository",
+      "Title": "Spatial and Spatio-Temporal Geostatistical Modelling, Prediction and Simulation",
+      "Authors@R": "c(person(given = \"Edzer\",  family = \"Pebesma\",  role = c(\"aut\", \"cre\"), email = \"edzer.pebesma@uni-muenster.de\", comment = c(ORCID = \"0000-0001-8049-7069\")), person(\"Benedikt\", \"Graeler\", role = \"aut\"))",
+      "Description": "Variogram modelling; simple, ordinary and universal point or block (co)kriging; spatio-temporal kriging; sequential Gaussian or indicator (co)simulation; variogram and variogram map plotting utility functions; supports sf and stars.",
+      "Depends": [
+        "R (>= 2.10)"
+      ],
+      "Imports": [
+        "utils",
+        "stats",
+        "graphics",
+        "methods",
+        "lattice",
+        "sp (>= 0.9-72)",
+        "zoo",
+        "sf (>= 0.7-2)",
+        "sftime",
+        "spacetime (>= 1.2-8)",
+        "stars",
+        "FNN"
+      ],
+      "Suggests": [
+        "fields",
+        "maps",
+        "mapdata",
+        "xts",
+        "raster",
+        "future",
+        "future.apply",
+        "RColorBrewer",
+        "geoR",
+        "ggplot2"
+      ],
+      "License": "GPL (>= 2.0)",
+      "URL": "https://github.com/r-spatial/gstat/, https://r-spatial.github.io/gstat/",
+      "Encoding": "UTF-8",
+      "BugReports": "https://github.com/r-spatial/gstat/issues/",
+      "NeedsCompilation": "yes",
+      "RoxygenNote": "6.1.1",
+      "Author": "Edzer Pebesma [aut, cre] (<https://orcid.org/0000-0001-8049-7069>), Benedikt Graeler [aut]",
+      "Maintainer": "Edzer Pebesma <edzer.pebesma@uni-muenster.de>",
+      "Repository": "CRAN"
+    },
     "gtable": {
       "Package": "gtable",
       "Version": "0.3.6",
@@ -3923,7 +4102,7 @@
     },
     "httpuv": {
       "Package": "httpuv",
-      "Version": "1.6.15",
+      "Version": "1.6.16",
       "Source": "Repository",
       "Type": "Package",
       "Title": "HTTP and WebSocket Server Library",
@@ -3945,6 +4124,7 @@
       "Suggests": [
         "callr",
         "curl",
+        "jsonlite",
         "testthat",
         "websocket"
       ],
@@ -3953,7 +4133,7 @@
         "Rcpp"
       ],
       "Encoding": "UTF-8",
-      "RoxygenNote": "7.3.1",
+      "RoxygenNote": "7.3.2",
       "SystemRequirements": "GNU make, zlib",
       "Collate": "'RcppExports.R' 'httpuv.R' 'random_port.R' 'server.R' 'staticServer.R' 'static_paths.R' 'utils.R'",
       "NeedsCompilation": "yes",
@@ -4092,6 +4272,31 @@
       "Author": "Gábor Csárdi [aut] (<https://orcid.org/0000-0001-7098-9676>), Tamás Nepusz [aut] (<https://orcid.org/0000-0002-1451-338X>), Vincent Traag [aut] (<https://orcid.org/0000-0003-3170-3879>), Szabolcs Horvát [aut] (<https://orcid.org/0000-0002-3100-523X>), Fabio Zanini [aut] (<https://orcid.org/0000-0001-7097-8539>), Daniel Noom [aut], Kirill Müller [aut, cre] (<https://orcid.org/0000-0002-1416-3412>), Maëlle Salmon [ctb], Michael Antonov [ctb], Chan Zuckerberg Initiative [fnd]",
       "Maintainer": "Kirill Müller <kirill@cynkra.com>",
       "Repository": "CRAN"
+    },
+    "intervals": {
+      "Package": "intervals",
+      "Version": "0.15.5",
+      "Source": "Repository",
+      "Type": "Package",
+      "Title": "Tools for Working with Points and Intervals",
+      "Authors@R": "c(person(given = \"Richard\", family = \"Bourgon\", role = \"aut\", email = \"bourgon.richard@gene.com\"), person(given = \"Edzer\", family = \"Pebesma\", role = \"cre\", email = \"edzer.pebesma@uni-muenster.de\"))",
+      "Depends": [
+        "R (>= 2.9.0)"
+      ],
+      "Imports": [
+        "utils",
+        "graphics",
+        "methods"
+      ],
+      "Description": "Tools for working with and comparing sets of points and intervals.",
+      "License": "Artistic-2.0",
+      "LazyLoad": "yes",
+      "URL": "https://github.com/edzer/intervals",
+      "NeedsCompilation": "yes",
+      "Author": "Richard Bourgon [aut], Edzer Pebesma [cre]",
+      "Maintainer": "Edzer Pebesma <edzer.pebesma@uni-muenster.de>",
+      "Repository": "CRAN",
+      "Encoding": "UTF-8"
     },
     "isoband": {
       "Package": "isoband",
@@ -4791,15 +4996,16 @@
     },
     "lpSolveAPI": {
       "Package": "lpSolveAPI",
-      "Version": "5.5.2.0-17.12",
+      "Version": "5.5.2.0-17.14",
       "Source": "Repository",
       "Title": "R Interface to 'lp_solve' Version 5.5.2.0",
-      "Author": "lp_solve <https://lpsolve.sourceforge.net/> [aut], Kjell Konis [aut], Florian Schwendinger [aut, cre], Kurt Hornik [ctb]",
-      "Maintainer": "Florian Schwendinger <FlorianSchwendinger@gmx.at>",
+      "Authors@R": "c(person(family = \"lp_solve\", role = \"aut\", email = \"https://lpsolve.sourceforge.net/\"), person(given = \"Kjell\", family = \"Konis\", role = \"aut\"), person(given = \"Florian\", family = \"Schwendinger\", role = c(\"aut\", \"cre\"), email = \"FlorianSchwendinger@gmx.at\"), person(given = \"Kurt\", family = \"Hornik\", role = \"ctb\"))",
       "Description": "The lpSolveAPI package provides an R interface to 'lp_solve', a Mixed Integer Linear Programming (MILP) solver with support for pure linear, (mixed) integer/binary, semi-continuous and special ordered sets (SOS) models.",
       "License": "LGPL-2",
       "RoxygenNote": "7.2.0",
       "NeedsCompilation": "yes",
+      "Author": "lp_solve [aut], Kjell Konis [aut], Florian Schwendinger [aut, cre], Kurt Hornik [ctb]",
+      "Maintainer": "Florian Schwendinger <FlorianSchwendinger@gmx.at>",
       "Repository": "CRAN",
       "Encoding": "UTF-8"
     },
@@ -5237,6 +5443,34 @@
       "Repository": "CRAN",
       "Encoding": "UTF-8"
     },
+    "mixtools": {
+      "Package": "mixtools",
+      "Version": "2.0.0.1",
+      "Source": "Repository",
+      "Date": "2022-12-04",
+      "Title": "Tools for Analyzing Finite Mixture Models",
+      "Authors@R": "c(person(\"Derek\", \"Young\", role = c(\"aut\", \"cre\"), email = \"derek.young@uky.edu\", comment = c(ORCID = \"0000-0002-3048-3803\")), person(\"Tatiana\", \"Benaglia\", role = \"aut\"), person(\"Didier\", \"Chauveau\", role = \"aut\"), person(\"David\", \"Hunter\", role = \"aut\"), person(\"Kedai\", \"Cheng\", role = \"aut\"), person(\"Ryan\", \"Elmore\", role = \"ctb\"), person(\"Thomas\", \"Hettmansperger\", role = \"ctb\"), person(\"Hoben\", \"Thomas\", role = \"ctb\"), person(\"Fengjuan\", \"Xuan\", role = \"ctb\"))",
+      "Depends": [
+        "R (>= 4.0.0)"
+      ],
+      "Imports": [
+        "kernlab",
+        "MASS",
+        "plotly",
+        "scales",
+        "segmented",
+        "stats",
+        "survival"
+      ],
+      "URL": "https://github.com/dsy109/mixtools",
+      "Description": "Analyzes finite mixture models for various parametric and semiparametric settings.  This includes mixtures of parametric distributions (normal, multivariate normal, multinomial, gamma), various Reliability Mixture Models (RMMs), mixtures-of-regressions settings (linear regression, logistic regression, Poisson regression, linear regression with changepoints, predictor-dependent mixing proportions, random effects regressions, hierarchical mixtures-of-experts), and tools for selecting the number of components (bootstrapping the likelihood ratio test statistic, mixturegrams, and model selection criteria).  Bayesian estimation of mixtures-of-linear-regressions models is available as well as a novel data depth method for obtaining credible bands.  This package is based upon work supported by the National Science Foundation under Grant No. SES-0518772 and the Chan Zuckerberg Initiative: Essential Open Source Software for Science (Grant No. 2020-255193).",
+      "License": "GPL (>= 2)",
+      "NeedsCompilation": "yes",
+      "Author": "Derek Young [aut, cre] (<https://orcid.org/0000-0002-3048-3803>), Tatiana Benaglia [aut], Didier Chauveau [aut], David Hunter [aut], Kedai Cheng [aut], Ryan Elmore [ctb], Thomas Hettmansperger [ctb], Hoben Thomas [ctb], Fengjuan Xuan [ctb]",
+      "Maintainer": "Derek Young <derek.young@uky.edu>",
+      "Repository": "CRAN",
+      "Encoding": "UTF-8"
+    },
     "modelr": {
       "Package": "modelr",
       "Version": "0.1.11",
@@ -5275,6 +5509,22 @@
       "Author": "Hadley Wickham [aut, cre], Posit Software, PBC [cph, fnd]",
       "Maintainer": "Hadley Wickham <hadley@posit.co>",
       "Repository": "CRAN"
+    },
+    "moments": {
+      "Package": "moments",
+      "Version": "0.14.1",
+      "Source": "Repository",
+      "Type": "Package",
+      "Title": "Moments, Cumulants, Skewness, Kurtosis and Related Tests",
+      "Date": "2015-01-05",
+      "Author": "Lukasz Komsta <lukasz.komsta@umlub.pl>, Frederick Novomestky <fnovomes@poly.edu>",
+      "Maintainer": "Lukasz Komsta <lukasz.komsta@umlub.pl>",
+      "Description": "Functions to calculate: moments, Pearson's kurtosis, Geary's kurtosis and skewness; tests related to them (Anscombe-Glynn, D'Agostino, Bonett-Seier).",
+      "License": "GPL (>= 2)",
+      "URL": "https://www.r-project.org, http://www.komsta.net/",
+      "NeedsCompilation": "no",
+      "Repository": "CRAN",
+      "Encoding": "UTF-8"
     },
     "multicool": {
       "Package": "multicool",
@@ -5759,6 +6009,33 @@
       "Encoding": "UTF-8",
       "NeedsCompilation": "no",
       "Repository": "RSPM"
+    },
+    "plot.matrix": {
+      "Package": "plot.matrix",
+      "Version": "1.6.2",
+      "Source": "Repository",
+      "Type": "Package",
+      "Title": "Visualizes a Matrix as Heatmap",
+      "Date": "2022-03-16",
+      "Authors@R": "c(person(\"Sigbert\", \"Klinke\", email=\"sigbert@hu-berlin.de\", role=c(\"aut\", \"cre\")), person(\"Frédéric\", \"Chevalier\",  email=\"fcheval@txbiomed.org\", role=\"ctb\"))",
+      "Description": "Visualizes a matrix object plainly as heatmap. It provides S3 functions to plot simple matrices and loading matrices.",
+      "License": "GPL-3",
+      "URL": "https://github.com/sigbertklinke/plot.matrix (development version)",
+      "RoxygenNote": "7.1.2",
+      "LazyData": "true",
+      "Suggests": [
+        "devtools",
+        "knitr",
+        "rmarkdown",
+        "psych",
+        "png"
+      ],
+      "VignetteBuilder": "knitr",
+      "Encoding": "UTF-8",
+      "NeedsCompilation": "no",
+      "Author": "Sigbert Klinke [aut, cre], Frédéric Chevalier [ctb]",
+      "Maintainer": "Sigbert Klinke <sigbert@hu-berlin.de>",
+      "Repository": "CRAN"
     },
     "plot3D": {
       "Package": "plot3D",
@@ -7468,6 +7745,28 @@
       "NeedsCompilation": "no",
       "Repository": "CRAN"
     },
+    "segmented": {
+      "Package": "segmented",
+      "Version": "2.1-4",
+      "Source": "Repository",
+      "Type": "Package",
+      "Title": "Regression Models with Break-Points / Change-Points Estimation (with Possibly Random Effects)",
+      "Date": "2025-02-26",
+      "Authors@R": "c(person(given = c(\"Vito\",\"M.\",\"R.\"), family = \"Muggeo\", role = c(\"aut\", \"cre\"), email = \"vito.muggeo@unipa.it\", comment=c(ORCID=\"0000-0002-3386-4054\")))",
+      "Maintainer": "Vito M. R. Muggeo <vito.muggeo@unipa.it>",
+      "Description": "Fitting regression models where, in addition to possible linear terms, one or more covariates have segmented (i.e., broken-line or piece-wise linear) or stepmented (i.e. piece-wise constant) effects. Multiple breakpoints for the same variable are allowed.  The estimation method is discussed in Muggeo (2003, <doi:10.1002/sim.1545>) and  illustrated in Muggeo (2008, <https://www.r-project.org/doc/Rnews/Rnews_2008-1.pdf>). An approach for hypothesis testing is presented  in Muggeo (2016, <doi:10.1080/00949655.2016.1149855>), and interval estimation for the breakpoint is discussed in Muggeo (2017, <doi:10.1111/anzs.12200>).  Segmented mixed models, i.e. random effects in the change point, are discussed in Muggeo (2014, <doi:10.1177/1471082X13504721>). Estimation of piecewise-constant relationships and changepoints (mean-shift models) is  discussed in Fasola et al. (2018, <doi:10.1007/s00180-017-0740-4>).",
+      "Depends": [
+        "R (>= 3.5.0)",
+        "MASS",
+        "nlme"
+      ],
+      "License": "GPL",
+      "NeedsCompilation": "no",
+      "Author": "Vito M. R. Muggeo [aut, cre] (<https://orcid.org/0000-0002-3386-4054>)",
+      "RoxygenNote": "7.3.1",
+      "Repository": "CRAN",
+      "Encoding": "UTF-8"
+    },
     "selectr": {
       "Package": "selectr",
       "Version": "0.4-2",
@@ -7673,6 +7972,51 @@
       "Maintainer": "David Cooley <david.cooley.au@gmail.com>",
       "Repository": "CRAN"
     },
+    "sftime": {
+      "Package": "sftime",
+      "Version": "0.3.0",
+      "Source": "Repository",
+      "Title": "Classes and Methods for Simple Feature Objects that Have a Time Column",
+      "Description": "Classes and methods for spatial objects that have a registered time  column, in particular for irregular spatiotemporal data. The time column can  be of any type, but needs to be ordinal. Regularly laid out spatiotemporal  data (vector or raster data cubes) are handled by package 'stars'.",
+      "Depends": [
+        "sf (>= 1.0.9)"
+      ],
+      "Imports": [
+        "methods"
+      ],
+      "Suggests": [
+        "knitr",
+        "spacetime",
+        "rmarkdown",
+        "dplyr (>= 0.8-3)",
+        "trajectories (>= 0.2.2)",
+        "stars",
+        "ncmeta",
+        "tidyr",
+        "ggplot2",
+        "magrittr",
+        "sp",
+        "rlang",
+        "vctrs",
+        "spatstat.geom",
+        "spatstat.linnet",
+        "sftrack",
+        "cubble (>= 0.3.0)"
+      ],
+      "Authors@R": "c(person(given = \"Henning\", family = \"Teickner\", role = c(\"aut\", \"cre\", \"cph\"), email = \"henning.teickner@uni-muenster.de\", comment = c(ORCID = \"0000-0002-3993-1182\")), person(given = \"Edzer\", family = \"Pebesma\", role = c(\"aut\", \"cph\"), email = \"edzer.pebesma@uni-muenster.de\", comment = c(ORCID = \"0000-0001-8049-7069\")), person(given = \"Benedikt\", family = \"Graeler\", role = c(\"aut\", \"cph\"), email = \"b.graeler@52north.org\", comment = c(ORCID = \"0000-0001-5443-4304\")))",
+      "License": "Apache License",
+      "Type": "Package",
+      "Encoding": "UTF-8",
+      "VignetteBuilder": "knitr",
+      "RoxygenNote": "7.2.3",
+      "URL": "https://r-spatial.github.io/sftime/, https://github.com/r-spatial/sftime",
+      "BugReports": "https://github.com/r-spatial/sftime/issues/",
+      "Collate": "sftime.R init.R join.R plot.R st_cast.R st_geometry.R st_time.R tidyverse.R bind.R crop.R geom-transformers.R",
+      "NeedsCompilation": "no",
+      "Author": "Henning Teickner [aut, cre, cph] (<https://orcid.org/0000-0002-3993-1182>), Edzer Pebesma [aut, cph] (<https://orcid.org/0000-0001-8049-7069>), Benedikt Graeler [aut, cph] (<https://orcid.org/0000-0001-5443-4304>)",
+      "Maintainer": "Henning Teickner <henning.teickner@uni-muenster.de>",
+      "Repository": "CRAN"
+    },
     "shiny": {
       "Package": "shiny",
       "Version": "1.10.0",
@@ -7740,6 +8084,40 @@
       "NeedsCompilation": "no",
       "Author": "Winston Chang [aut, cre] (<https://orcid.org/0000-0002-1576-2126>), Joe Cheng [aut], JJ Allaire [aut], Carson Sievert [aut] (<https://orcid.org/0000-0002-4958-2844>), Barret Schloerke [aut] (<https://orcid.org/0000-0001-9986-114X>), Yihui Xie [aut], Jeff Allen [aut], Jonathan McPherson [aut], Alan Dipert [aut], Barbara Borges [aut], Posit Software, PBC [cph, fnd], jQuery Foundation [cph] (jQuery library and jQuery UI library), jQuery contributors [ctb, cph] (jQuery library; authors listed in inst/www/shared/jquery-AUTHORS.txt), jQuery UI contributors [ctb, cph] (jQuery UI library; authors listed in inst/www/shared/jqueryui/AUTHORS.txt), Mark Otto [ctb] (Bootstrap library), Jacob Thornton [ctb] (Bootstrap library), Bootstrap contributors [ctb] (Bootstrap library), Twitter, Inc [cph] (Bootstrap library), Prem Nawaz Khan [ctb] (Bootstrap accessibility plugin), Victor Tsaran [ctb] (Bootstrap accessibility plugin), Dennis Lembree [ctb] (Bootstrap accessibility plugin), Srinivasu Chakravarthula [ctb] (Bootstrap accessibility plugin), Cathy O'Connor [ctb] (Bootstrap accessibility plugin), PayPal, Inc [cph] (Bootstrap accessibility plugin), Stefan Petre [ctb, cph] (Bootstrap-datepicker library), Andrew Rowls [ctb, cph] (Bootstrap-datepicker library), Brian Reavis [ctb, cph] (selectize.js library), Salmen Bejaoui [ctb, cph] (selectize-plugin-a11y library), Denis Ineshin [ctb, cph] (ion.rangeSlider library), Sami Samhuri [ctb, cph] (Javascript strftime library), SpryMedia Limited [ctb, cph] (DataTables library), John Fraser [ctb, cph] (showdown.js library), John Gruber [ctb, cph] (showdown.js library), Ivan Sagalaev [ctb, cph] (highlight.js library), R Core Team [ctb, cph] (tar implementation from R)",
       "Maintainer": "Winston Chang <winston@posit.co>",
+      "Repository": "CRAN"
+    },
+    "shinyjs": {
+      "Package": "shinyjs",
+      "Version": "2.1.0",
+      "Source": "Repository",
+      "Title": "Easily Improve the User Experience of Your Shiny Apps in Seconds",
+      "Authors@R": "person(\"Dean\", \"Attali\",  email = \"daattali@gmail.com\", role = c(\"aut\", \"cre\"), comment= c(ORCID=\"0000-0002-5645-3493\"))",
+      "Description": "Perform common useful JavaScript operations in Shiny apps that will greatly improve your apps without having to know any JavaScript. Examples include: hiding an element, disabling an input, resetting an input back to its original value, delaying code execution by a few seconds, and many more useful functions for both the end user and the developer. 'shinyjs' can also be used to easily call your own custom JavaScript functions from R.",
+      "URL": "https://deanattali.com/shinyjs/",
+      "BugReports": "https://github.com/daattali/shinyjs/issues",
+      "Depends": [
+        "R (>= 3.1.0)"
+      ],
+      "Imports": [
+        "digest (>= 0.6.8)",
+        "jsonlite",
+        "shiny (>= 1.0.0)"
+      ],
+      "Suggests": [
+        "htmltools (>= 0.2.9)",
+        "knitr (>= 1.7)",
+        "rmarkdown",
+        "shinyAce",
+        "shinydisconnect",
+        "testthat (>= 0.9.1)"
+      ],
+      "License": "MIT + file LICENSE",
+      "VignetteBuilder": "knitr",
+      "RoxygenNote": "7.1.1",
+      "Encoding": "UTF-8",
+      "NeedsCompilation": "no",
+      "Author": "Dean Attali [aut, cre] (<https://orcid.org/0000-0002-5645-3493>)",
+      "Maintainer": "Dean Attali <daattali@gmail.com>",
       "Repository": "CRAN"
     },
     "smoof": {
@@ -7848,6 +8226,137 @@
       "Repository": "CRAN",
       "Encoding": "UTF-8"
     },
+    "spacetime": {
+      "Package": "spacetime",
+      "Version": "1.3-3",
+      "Source": "Repository",
+      "Title": "Classes and Methods for Spatio-Temporal Data",
+      "Authors@R": "c(person(\"Edzer\",  \"Pebesma\", role = c(\"aut\", \"cre\"), email = \"edzer.pebesma@uni-muenster.de\", comment = c(ORCID = \"0000-0001-8049-7069\")), person(\"Benedikt\", \"Graeler\", role = \"ctb\"), person(\"Tom\", \"Gottfried\", role = \"ctb\"), person(\"Robert J.\", \"Hijmans\", role = \"ctb\"))",
+      "Depends": [
+        "R (>= 3.0.0)"
+      ],
+      "Imports": [
+        "graphics",
+        "utils",
+        "stats",
+        "methods",
+        "lattice",
+        "sp (>= 1.1-0)",
+        "zoo (>= 1.7-9)",
+        "xts (>= 0.8-8)",
+        "intervals"
+      ],
+      "Suggests": [
+        "adehabitatLT",
+        "cshapes (>= 2.0)",
+        "foreign",
+        "googleVis",
+        "gstat (>= 1.0-16)",
+        "maps",
+        "mapdata",
+        "plm",
+        "raster",
+        "RColorBrewer",
+        "rmarkdown",
+        "RPostgreSQL",
+        "knitr",
+        "ISOcodes",
+        "markdown",
+        "sf",
+        "sftime",
+        "spdep"
+      ],
+      "LazyData": "no",
+      "Description": "Classes and methods for spatio-temporal data, including space-time regular lattices, sparse lattices, irregular data, and trajectories; utility functions for plotting data as map sequences (lattice or animation) or multiple time series; methods for spatial and temporal selection and subsetting, as well as for spatial/temporal/spatio-temporal matching or aggregation, retrieving coordinates, print, summary, etc.",
+      "License": "GPL (>= 2)",
+      "URL": "https://github.com/edzer/spacetime",
+      "BugReports": "https://github.com/edzer/spacetime/issues",
+      "Encoding": "UTF-8",
+      "VignetteBuilder": "knitr",
+      "Collate": "Class-xts.R Class-ST.R Class-STFDF.R Class-STSDF.R Class-STIDF.R Class-STTDF.R interval.R endtime.R ST-methods.R STFDF-methods.R STSDF-methods.R STIDF-methods.R STTDF-methods.R apply.R coerce.R stconstruct.R plot.R stplot.R timematch.R over.R aggregate.R eof.R mnf.R bind.R na.R raster.R tgrass.R stinteraction.R",
+      "NeedsCompilation": "no",
+      "Author": "Edzer Pebesma [aut, cre] (<https://orcid.org/0000-0001-8049-7069>), Benedikt Graeler [ctb], Tom Gottfried [ctb], Robert J. Hijmans [ctb]",
+      "Maintainer": "Edzer Pebesma <edzer.pebesma@uni-muenster.de>",
+      "Repository": "CRAN"
+    },
+    "stars": {
+      "Package": "stars",
+      "Version": "0.6-8",
+      "Source": "Repository",
+      "Title": "Spatiotemporal Arrays, Raster and Vector Data Cubes",
+      "Authors@R": "c(person(given = \"Edzer\", family = \"Pebesma\", role = c(\"aut\", \"cre\"), email = \"edzer.pebesma@uni-muenster.de\", comment = c(ORCID = \"0000-0001-8049-7069\")), person(given = \"Michael\", family = \"Sumner\", role = \"ctb\",  comment=c(ORCID = \"0000-0002-2471-7511\")), person(given = \"Etienne\", family = \"Racine\", role = \"ctb\"), person(given = \"Adriano\", family = \"Fantini\", role = \"ctb\"),  person(given = \"David\",  family = \"Blodgett\",  role = \"ctb\"),  person(given = \"Krzysztof\",  family = \"Dyba\",  role = \"ctb\", comment=c(ORCID = \"0000-0002-8614-3816\")))",
+      "Description": "Reading, manipulating, writing and plotting spatiotemporal arrays (raster and vector data cubes) in 'R', using 'GDAL' bindings provided by 'sf', and 'NetCDF' bindings by 'ncmeta' and 'RNetCDF'.",
+      "License": "Apache License",
+      "URL": "https://r-spatial.github.io/stars/, https://github.com/r-spatial/stars/",
+      "BugReports": "https://github.com/r-spatial/stars/issues/",
+      "Additional_repositories": "https://cran.uni-muenster.de/pebesma/",
+      "LazyData": "true",
+      "Depends": [
+        "R (>= 3.3.0)",
+        "abind",
+        "sf (>= 1.0-19)"
+      ],
+      "Imports": [
+        "methods",
+        "parallel",
+        "classInt (>= 0.4-1)",
+        "rlang",
+        "units"
+      ],
+      "Suggests": [
+        "Cairo",
+        "OpenStreetMap",
+        "PCICt",
+        "RNetCDF (>= 1.8-2)",
+        "clue",
+        "covr",
+        "cubble (>= 0.3.0)",
+        "cubelyr",
+        "digest",
+        "dplyr (>= 0.7-0)",
+        "exactextractr",
+        "FNN",
+        "future.apply",
+        "ggforce",
+        "ggplot2",
+        "ggthemes",
+        "gstat",
+        "httr",
+        "jsonlite",
+        "knitr",
+        "lwgeom",
+        "maps",
+        "mapdata",
+        "ncdfgeom",
+        "ncmeta (>= 0.0.3)",
+        "pbapply",
+        "plm",
+        "randomForest",
+        "raster",
+        "rmarkdown",
+        "sp",
+        "spacetime",
+        "spatstat (>= 2.0-1)",
+        "spatstat.geom",
+        "starsdata",
+        "terra (>= 1.4-22)",
+        "testthat",
+        "tibble",
+        "tidyr",
+        "tsibble",
+        "viridis",
+        "xts",
+        "zoo"
+      ],
+      "VignetteBuilder": "knitr",
+      "Encoding": "UTF-8",
+      "RoxygenNote": "7.3.2",
+      "Collate": "'aggregate.R' 'cubble.R' 'datasets.R' 'dimensions.R' 'extract.R' 'factors.R' 'geom.R' 'gt.R' 'init.R' 'intervals.R' 'mdim.R' 'mosaic.R' 'ncdf.R' 'ncproxy.R' 'OpenStreetMap.R' 'ops.R' 'plot.R' 'prcomp.R' 'proxy.R' 'rasterize.R' 'raster.R' 'read.R' 'rotate.R' 'sample.R' 'sf.R' 'spacetime.R' 'spatstat.R' 'sp.R' 'stars.R' 'subset.R' 'tidyverse.R' 'tile.R' 'transform.R' 'values.R' 'warp.R' 'write.R' 'xts.R'",
+      "NeedsCompilation": "no",
+      "Author": "Edzer Pebesma [aut, cre] (<https://orcid.org/0000-0001-8049-7069>), Michael Sumner [ctb] (<https://orcid.org/0000-0002-2471-7511>), Etienne Racine [ctb], Adriano Fantini [ctb], David Blodgett [ctb], Krzysztof Dyba [ctb] (<https://orcid.org/0000-0002-8614-3816>)",
+      "Maintainer": "Edzer Pebesma <edzer.pebesma@uni-muenster.de>",
+      "Repository": "CRAN"
+    },
     "stringi": {
       "Package": "stringi",
       "Version": "1.8.7",
@@ -7920,6 +8429,36 @@
       "NeedsCompilation": "no",
       "Author": "Hadley Wickham [aut, cre, cph], Posit Software, PBC [cph, fnd]",
       "Maintainer": "Hadley Wickham <hadley@posit.co>",
+      "Repository": "CRAN"
+    },
+    "survival": {
+      "Package": "survival",
+      "Version": "3.8-3",
+      "Source": "Repository",
+      "Title": "Survival Analysis",
+      "Priority": "recommended",
+      "Date": "2024-12-17",
+      "Depends": [
+        "R (>= 3.5.0)"
+      ],
+      "Imports": [
+        "graphics",
+        "Matrix",
+        "methods",
+        "splines",
+        "stats",
+        "utils"
+      ],
+      "LazyData": "Yes",
+      "LazyDataCompression": "xz",
+      "ByteCompile": "Yes",
+      "Authors@R": "c(person(c(\"Terry\", \"M\"), \"Therneau\", email=\"therneau.terry@mayo.edu\", role=c(\"aut\", \"cre\")), person(\"Thomas\", \"Lumley\", role=c(\"ctb\", \"trl\"), comment=\"original S->R port and R maintainer until 2009\"), person(\"Atkinson\", \"Elizabeth\", role=\"ctb\"), person(\"Crowson\", \"Cynthia\", role=\"ctb\"))",
+      "Description": "Contains the core survival analysis routines, including definition of Surv objects,  Kaplan-Meier and Aalen-Johansen (multi-state) curves, Cox models, and parametric accelerated failure time models.",
+      "License": "LGPL (>= 2)",
+      "URL": "https://github.com/therneau/survival",
+      "NeedsCompilation": "yes",
+      "Author": "Terry M Therneau [aut, cre], Thomas Lumley [ctb, trl] (original S->R port and R maintainer until 2009), Atkinson Elizabeth [ctb], Crowson Cynthia [ctb]",
+      "Maintainer": "Terry M Therneau <therneau.terry@mayo.edu>",
       "Repository": "CRAN"
     },
     "svglite": {
@@ -8369,7 +8908,7 @@
     },
     "tinytex": {
       "Package": "tinytex",
-      "Version": "0.56",
+      "Version": "0.57",
       "Source": "Repository",
       "Type": "Package",
       "Title": "Helper Functions to Install and Maintain TeX Live, and Compile LaTeX Documents",
@@ -9089,6 +9628,41 @@
       "Author": "David B. Dahl [aut], David Scott [aut, cre], Charles Roosen [aut], Arni Magnusson [aut], Jonathan Swinton [aut], Ajay Shah [ctb], Arne Henningsen [ctb], Benno Puetz [ctb], Bernhard Pfaff [ctb], Claudio Agostinelli [ctb], Claudius Loehnert [ctb], David Mitchell [ctb], David Whiting [ctb], Fernando da Rosa [ctb], Guido Gay [ctb], Guido Schulz [ctb], Ian Fellows [ctb], Jeff Laake [ctb], John Walker [ctb], Jun Yan [ctb], Liviu Andronic [ctb], Markus Loecher [ctb], Martin Gubri [ctb], Matthieu Stigler [ctb], Robert Castelo [ctb], Seth Falcon [ctb], Stefan Edwards [ctb], Sven Garbade [ctb], Uwe Ligges [ctb]",
       "Encoding": "UTF-8"
     },
+    "xts": {
+      "Package": "xts",
+      "Version": "0.14.1",
+      "Source": "Repository",
+      "Type": "Package",
+      "Title": "eXtensible Time Series",
+      "Authors@R": "c( person(given=c(\"Jeffrey\",\"A.\"), family=\"Ryan\", role=c(\"aut\",\"cph\")), person(given=c(\"Joshua\",\"M.\"), family=\"Ulrich\", role=c(\"cre\",\"aut\"), email=\"josh.m.ulrich@gmail.com\"), person(given=\"Ross\", family=\"Bennett\", role=\"ctb\"), person(given=\"Corwin\", family=\"Joy\", role=\"ctb\") )",
+      "Depends": [
+        "R (>= 3.6.0)",
+        "zoo (>= 1.7-12)"
+      ],
+      "Imports": [
+        "methods"
+      ],
+      "LinkingTo": [
+        "zoo"
+      ],
+      "Suggests": [
+        "timeSeries",
+        "timeDate",
+        "tseries",
+        "chron",
+        "tinytest"
+      ],
+      "LazyLoad": "yes",
+      "Description": "Provide for uniform handling of R's different time-based data classes by extending zoo, maximizing native format information preservation and allowing for user level customization and extension, while simplifying cross-class interoperability.",
+      "License": "GPL (>= 2)",
+      "URL": "https://joshuaulrich.github.io/xts/, https://github.com/joshuaulrich/xts",
+      "BugReports": "https://github.com/joshuaulrich/xts/issues",
+      "Encoding": "UTF-8",
+      "NeedsCompilation": "yes",
+      "Author": "Jeffrey A. Ryan [aut, cph], Joshua M. Ulrich [cre, aut], Ross Bennett [ctb], Corwin Joy [ctb]",
+      "Maintainer": "Joshua M. Ulrich <josh.m.ulrich@gmail.com>",
+      "Repository": "CRAN"
+    },
     "yaml": {
       "Package": "yaml",
       "Version": "2.3.10",
@@ -9135,6 +9709,48 @@
       "Author": "Gábor Csárdi [aut, cre], Kuba Podgórski [ctb], Rich Geldreich [ctb], Posit Software, PBC [cph, fnd]",
       "Maintainer": "Gábor Csárdi <csardi.gabor@gmail.com>",
       "Repository": "RSPM"
+    },
+    "zoo": {
+      "Package": "zoo",
+      "Version": "1.8-14",
+      "Source": "Repository",
+      "Date": "2025-04-09",
+      "Title": "S3 Infrastructure for Regular and Irregular Time Series (Z's Ordered Observations)",
+      "Authors@R": "c(person(given = \"Achim\", family = \"Zeileis\", role = c(\"aut\", \"cre\"), email = \"Achim.Zeileis@R-project.org\", comment = c(ORCID = \"0000-0003-0918-3766\")), person(given = \"Gabor\", family = \"Grothendieck\", role = \"aut\", email = \"ggrothendieck@gmail.com\"), person(given = c(\"Jeffrey\", \"A.\"), family = \"Ryan\", role = \"aut\", email = \"jeff.a.ryan@gmail.com\"), person(given = c(\"Joshua\", \"M.\"), family = \"Ulrich\", role = \"ctb\", email = \"josh.m.ulrich@gmail.com\"), person(given = \"Felix\", family = \"Andrews\", role = \"ctb\", email = \"felix@nfrac.org\"))",
+      "Description": "An S3 class with methods for totally ordered indexed observations. It is particularly aimed at irregular time series of numeric vectors/matrices and factors. zoo's key design goals are independence of a particular index/date/time class and consistency with ts and base R by providing methods to extend standard generics.",
+      "Depends": [
+        "R (>= 3.1.0)",
+        "stats"
+      ],
+      "Suggests": [
+        "AER",
+        "coda",
+        "chron",
+        "ggplot2 (>= 3.5.0)",
+        "mondate",
+        "scales",
+        "stinepack",
+        "strucchange",
+        "timeDate",
+        "timeSeries",
+        "tinyplot",
+        "tis",
+        "tseries",
+        "xts"
+      ],
+      "Imports": [
+        "utils",
+        "graphics",
+        "grDevices",
+        "lattice (>= 0.20-27)"
+      ],
+      "License": "GPL-2 | GPL-3",
+      "URL": "https://zoo.R-Forge.R-project.org/",
+      "NeedsCompilation": "yes",
+      "Author": "Achim Zeileis [aut, cre] (<https://orcid.org/0000-0003-0918-3766>), Gabor Grothendieck [aut], Jeffrey A. Ryan [aut], Joshua M. Ulrich [ctb], Felix Andrews [ctb]",
+      "Maintainer": "Achim Zeileis <Achim.Zeileis@R-project.org>",
+      "Repository": "CRAN",
+      "Encoding": "UTF-8"
     }
   }
 }

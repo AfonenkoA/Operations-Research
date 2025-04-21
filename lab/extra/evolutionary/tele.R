@@ -1,10 +1,16 @@
-interp <- function(z)
+continious_xy <- function(z)
 {
   d <- attributes(z)$dim - 1
-  x <- seq(-d[[1]] / 2, d[[1]] / 2, by = 1)
-  y <- seq(-d[[1]] / 2, d[[1]] / 2, by = 1)
-  function(p)
-    pracma::interp2(x, y, z, p[[1]], p[[2]])
+  list(x = list(min = -d[[1]] / 2, max = d[[1]] / 2),
+       y = list(min = -d[[2]] / 2, max = d[[2]] / 2))
+}
+
+interp <- function(z)
+{
+  d <- continious_xy(z)
+  x <- seq(d$x$min, d$x$max, by = 1)
+  y <- seq(d$y$min, d$y$max, by = 1)
+  \(p) pracma::interp2(x, y, z, p[[1]], p[[2]])
 }
 
 add_segments <- function(fig, t, a, p)

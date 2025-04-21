@@ -2,8 +2,6 @@
 
 ### Jeely
 
-#### Формулировка
-
 Для производства
 
 Требуется минимизировать общее время выполнения задач распределённых по машинам.
@@ -108,12 +106,10 @@ sh$cost
 plot_jsp_schedule(sh$schedule)
 ```
 
-```{r}
-data('USCA50', package = 'TSP')
-```
 
 ```{r}
- methods <- c('nearest_insertion', 'farthest_insertion', 'cheapest_insertion', 'arbitrary_insertion', 'nn', 'repetitive_nn', 'two_opt')
+data('USCA50', package = 'TSP')
+methods <- c('nearest_insertion', 'farthest_insertion', 'cheapest_insertion', 'arbitrary_insertion', 'nn', 'repetitive_nn', 'two_opt')
 tours <- sapply(methods, \(m) TSP::solve_TSP(USCA50, method = m), simplify = FALSE)
 ```
 
@@ -121,21 +117,3 @@ tours <- sapply(methods, \(m) TSP::solve_TSP(USCA50, method = m), simplify = FAL
 Уровень 3
 :::
 
-Тюнинг параметров и лидерборд.
-
-### VPS и VDS
-
-Задача облачного хранилища данных. количество копий и т.д. А как измениться решение, если потребуется распределить ещё столько то сверху. Updating Rate и т.д. Дешевые мобильные пользователи, дорогие коммерческие. Разные классы задач. По типу хранилища на магнитных лентах, на жёстких дисках, на ssd. Уровень репликации тоже от клиента зависит. Возможно планирование нагрузки на год и учёт износа оборудования.
-
-Построить целевую функции и способ кодирования информации. Возможно внести в целевую функцию, свести к прямоугольным ограничениям.
-
-Возможно это задача permutation.
-
-::: {.callout-note appearance='minimal'}
-Уровень 3
-:::
-
-
-### Военная игра
-
-Военная игра с битовыми строками из 7269.PDF.pdf
