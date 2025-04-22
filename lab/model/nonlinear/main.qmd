@@ -2,10 +2,10 @@
 
 ## Задачи {#sec-lab-model-nonlinear-task}
 
-::::: {#exr-lab-model-nonlinear-dota2}
+:::: {#exr-lab-model-nonlinear-dota2}
 ### В соляного
 
-Характеристики героя Morphling (сила $\mathrm{Сил}$ и ловкость $\mathrm{Лов}$) рассчитываются в зависимости от уровня $\mathrm{ур}$ как:
+Характеристики героя Morphling из игры DotA 2 (сила $\mathrm{Сил}$ и ловкость $\mathrm{Лов}$) рассчитываются в зависимости от уровня $\mathrm{ур}$ как:
 
 $$
 \begin{aligned}
@@ -56,18 +56,16 @@ $$
 ::: {.callout-note appearance="minimal"}
 Уровень 1
 :::
+::::
 
-:::::
-
-
-::::: {#exr-lab-model-nonlinear-weapon-assigment-max-damage}
+:::::::::::: {#exr-lab-model-nonlinear-weapon-assigment-max-damage}
 ### Задача о назначении целей. Максимальный урон
 
 Задача состоит в том, чтобы максисизировать ожидаемый урон множеству целей. Пусть $x_{ij}$ обозначается количество вооружений типа $i$ назначенных цели $j$ ($i=1,\dots,p$ и $j=1,\dots,q$). Вводятся следующие ограничения на число вооружений
 
- - $a_i$ общее число доступных вооружений типа $i$.
- - $b_j$ минимальное число вооружений всех типов назначенных цели $j$
- 
+-   $a_i$ общее число доступных вооружений типа $i$.
+-   $b_j$ минимальное число вооружений всех типов назначенных цели $j$
+
 Эти ограничения записываются следующим образом
 
 $$
@@ -75,10 +73,19 @@ $$
 &\sum_{j=1}^q{x_{ij}} \leq a_i, \quad i=1,\dots,p;\\
 &\sum_{i=1}^p{x_{ij}} \geq b_j, \quad j=1,\dots,q.
 \end{aligned}
+$$ Целевая функция определяется через вероятность нанести урон цели, имеющей определённую боевую ценность.
+
+-   $\alpha_{ij}$ вероятность того, что цель $j$ не будет повреждена при атаке одной единицы вооружения $i$
+
+-   $u_j$ боевая ценность цели $j$
+
+Если ожидаемый урон цели $j$ при атаке её количеством $x_{ij}$ вооружений типа $j$ равняется $1-\alpha_{ij}^{x_{ij}}$, то общий ожидаемый урон вооружениями всех типов $1-\prod_{i=1}^p{\alpha_{ij}^{x_{ij}}}$. Тогда общий ожидаемый урон по всем целям в соответствии и их боевой ценностью
+
 $$
-Целевой функцией будет вероятность
+\sum_{j=1}^q{u_j\biggl[1-\prod_{i=1}^p{\alpha_{ij}^{x_{ij}}} \biggr]}
+$$
 
-
+**Решить** следующую задачу:
 
 Вооружение 5 типов назначается 20 разным целям. На рисунке показана гипотетическая область, которая содержит 20 целей и отображает область применимости вооружений. Например:
 
@@ -110,22 +117,58 @@ readr::read_csv('value.csv', col_types = c('c','i','i')) |>
   knitr::kable()
 ```
 
+:::: {.content-visible when-format="html"}
+::: {.callout appearance="minimal"}
+⤓ [target.csv](target.csv)
+:::
+::::
+
+:::: {.content-visible unless-format="html"}
+::: {.callout appearance="minimal"}
+`\faFile*[regular].`{=latex} [target.csv](lab/model/nonlinear/target.csv)
+:::
+::::
+
+:::: {.content-visible when-format="html"}
+::: {.callout appearance="minimal"}
+⤓ [value.csv](value.csv)
+:::
+::::
+
+:::: {.content-visible unless-format="html"}
+::: {.callout appearance="minimal"}
+`\faFile*[regular].`{=latex} [value.csv](lab/model/nonlinear/value.csv)
+:::
+::::
+
 ::: {.callout-note appearance="minimal"}
 Уровень 2
 :::
-:::::
+::::::::::::
 
-::::: {#exr-lab-model-nonlinear-weapon-assigment-minimal-cost}
+:::: {#exr-lab-model-nonlinear-weapon-assigment-minimal-cost}
 ### Задача о назначении целей. Минимальная стоимость
 
-Гарантированно уничтожить цели (**T1**, **T15**, **T19**) используя вооружения наименьшей стоимости. Условие гарантированного уничтожения можно записать как
+Гарантированно уничтожить цели (**T1**, **T15**, **T19**) используя вооружения наименьшей стоимости.
+
+Ограничения на урон наносимый целям определяются через $d_j$ -- минимальный ожидаемый урон по цели $j$.
+
+$$
+1-\prod_{i=1}^p{\alpha_{ij}^{x_{ij}}} \geq d_j,\quad \forall j
+$$
+
+если $c_i$ -- стоимость одной единицы вооружения типа $i$, то целевая функция
+
+$$
+\sum_{i=1}^p{c_i\sum_{j=1}^q{x_{ij}}}
+$$
 
 ::: {.callout-note appearance="minimal"}
 Уровень 2
 :::
-:::::
+::::
 
-::::: {#exr-lab-model-nonlinear-weapon-assigment-minimal-cost} 
+:::: {#exr-lab-model-nonlinear-procurement}
 ### Госзакупка
 
 Необходимо закупить 239'600'480 деталей по минимальной цене, при условии, что ни одни поставщик не может выполнить заказ полностью. Цена участия определяет дополнительную стоимость покупки у данного поставщика вне зависимости от количества деталей.
@@ -145,10 +188,140 @@ readr::read_csv('value.csv', col_types = c('c','i','i')) |>
 ::: {.callout-note appearance="minimal"}
 Уровень 2
 :::
-:::::
+::::
 
-<!--
-Задачи взяты из
+:::::::::::: {#exr-lab-model-nonlinear-fit-function}
+### Нелинейная регрессия
 
-SELECTED APPLICATIONS OF NONLINEAR PROGRAMMING Jerome Bracken and Garth P. McCormick Copyright © 1968 by Research Analysis Corporation.
--->
+Рассмотрим задачу нелинейной регрессии в простейшей формулировке. Пусть есть набор данных вида
+
+$$
+\begin{pmatrix}
+\begin{array}{c c c | c}
+x_{11} & \dots & x_{1n} & f_1 \\
+\vdots & \ddots & \vdots  & \vdots \\
+x_{m1} & \dots & x_{mn} & f_m 
+\end{array}
+\end{pmatrix}
+$$
+
+которые необходимо аппроксимировать функцией $f$ *наилучшим* образом
+
+$$
+f=f(x_1,\dots,x_n,p_1,\dots,p_k)
+$$
+
+где $p_i$ обозначают параметры, от которых зависит функция. Задача сводится к задаче минимизации следующего выражения
+
+$$
+N_f(\{f(x_{11},\dots,x_{1n},p_1,\dots,p_k) - f_1,\dots, f(x_{m1},\dots,x_{mn},p_1,\dots,p_k) - f_m\}) \rightarrow \min
+$$
+
+или простыми словами минимизировать норму $N_f$ всех отклонений данных от аппроксимирующей функции. В качестве нормы можно выбрать обычное квадратичное отклонение
+
+$$
+N_2(x_1,\dots,x_n) = \sqrt{x_1^2+\dots+x_n^2} 
+$$
+
+или функция потерь Хубера, которая менее чувствительна к выбросам, чем квадратичная ошибка
+
+$$
+N_{Hub}(x_1,\dots,x_n) = \sum 
+\begin{cases}
+\frac{1}{2}x_i^2& \text{если } |x_i| \leq \delta\\
+\delta |x_i| - \frac{1}{2}\delta^2 & \text{иначе}
+\end{cases}
+$$
+
+где $\delta$ произвольное положительное число.
+
+#### Одномерная
+
+Определить параметры $p_i$ функции
+
+$$
+f(x) = \tan^{-1}{(p_1x)}\exp{\bigl(-(x-p_2)\bigr)}+\cos^2{(x)}\sin{\frac{1}{1+\exp(-p_3x)}}
+$$ для данных из файла
+
+:::: {.content-visible when-format="html"}
+::: {.callout appearance="minimal"}
+⤓ [fit-one.csv](fit-one.csv)
+:::
+::::
+
+:::: {.content-visible unless-format="html"}
+::: {.callout appearance="minimal"}
+`\faFile*[regular].`{=latex} [fit-one.csv](lab/model/nonlinear/fit-one.csv)
+:::
+::::
+
+Построить график функции и аппроксимации
+
+#### Многомерная
+
+Определить параметры $p_i$ функции
+
+$$
+f(x,y)=\sin{(p_1 x^2y)}\exp{(p_2 {(x-y)}^2)}
+$$ для данных из файла
+
+:::: {.content-visible when-format="html"}
+::: {.callout appearance="minimal"}
+⤓ [fit-one.csv](fit-one.csv)
+:::
+::::
+
+:::: {.content-visible unless-format="html"}
+::: {.callout appearance="minimal"}
+`\faFile*[regular].`{=latex} [fit-one.csv](lab/model/nonlinear/fit-one.csv)
+:::
+::::
+
+Построить график функции и аппроксимации
+
+::: {.callout-note appearance="minimal"}
+Уровень 2
+:::
+::::::::::::
+
+:::::::: {#exr-lab-model-nonlinear-fit-distribution}
+### Оценка параметров распределения
+
+Метод максимального правдоподобия из наиболее распространённых методов оценки неизвестных параметров распределения по известной выборке. Его идея заключается в максимизации функции правдоподобия
+
+$$
+L = \prod_i{f(x_i, \theta)}
+$$
+
+где $f$ функция плотности распределения, вероятность получить вектор $x_i$ при параметрах распределения $\theta$ (вектор). Для упрощения вычисления функцию правдоподобия $L$ можно прологарифмировать.
+
+$$
+L = \sum_i {\log{\bigl(f(x_i,\theta) \bigr)}}
+$$
+
+Определить параметры средних $\mu_1$, $\mu_2$ и матрицы ковариации $\Sigma=\big(\begin{smallmatrix} \sigma_1 & \sigma_2 \\ \sigma_2 & \sigma_3 \end{smallmatrix}\big)$ для многомерного нормального распределения, плотность которого выражается следующим образом
+
+$$
+f(x,y) = \exp{\bigl(-\frac{1}{2} (X-\mu).\Sigma^{-1}.(X-\mu) \bigr)}
+$$
+
+где $x$ и $\mu$ векторные переменные. Данные для оценки взять из файла
+
+:::: {.content-visible when-format="html"}
+::: {.callout appearance="minimal"}
+⤓ [multivariate.csv](multivariate.csv)
+:::
+::::
+
+:::: {.content-visible unless-format="html"}
+::: {.callout appearance="minimal"}
+`\faFile*[regular].`{=latex} [multivariate.csv](lab/model/nonlinear/multivariate.csv)
+:::
+::::
+
+::: {.callout-note appearance="minimal"}
+Уровень 3
+:::
+::::::::
+
+<!--Задачи взяты из SELECTED APPLICATIONS OF NONLINEAR PROGRAMMING Jerome Bracken and Garth P. McCormick Copyright © 1968 by Research Analysis Corporation. -->

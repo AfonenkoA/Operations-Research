@@ -1,0 +1,10 @@
+---
+- from: main.qmd
+  files:
+    - target.csv
+    - value.csv
+    - fit-one.csv
+    - fit-many.csv
+    - multivariate.csv
+
+

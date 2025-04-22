@@ -170,6 +170,7 @@ book:
         - r/tools/solver/nonlinear/nloptr/local/constrained/inequality.qmd
         - r/tools/solver/nonlinear/nloptr/local/constrained/equality.qmd
 
+        - r/tools/solver/evolutionary/analysis.qmd
         - r/tools/solver/evolutionary/gensa.qmd
         - r/tools/solver/evolutionary/pso.qmd
         - r/tools/solver/evolutionary/ga.qmd
