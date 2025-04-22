@@ -21,9 +21,6 @@ install.packages('plotly')
 Для отображения графика во всех примерах требуется удалить последнее применение функции `|> pshow()`. Например @exm-r-tools-plotly-line2d-explicit
 
 ```{{r}}
-#| warning: false
-#| message: false
-
 library(plotly)
 x <- seq(0, 2*pi, length.out=100)
 y <- sin(x)           
@@ -36,9 +33,6 @@ plot_ly(x = x, y = y,
 Должно стать
 
 ```{{r}}
-#| warning: false
-#| message: false
-
 library(plotly)
 x <- seq(0, 2*pi, length.out=100)
 y <- sin(x)           

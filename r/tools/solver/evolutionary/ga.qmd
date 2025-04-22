@@ -1,1 +1,36 @@
-# GA обобщенный генетический алгоритм
+# GA обобщенный генетический алгоритм {#sec-r-tools-solver-evolutionary-ga}
+
+```{r}
+#| include: false
+
+source('../../../helper/sample.R')
+source('../../../helper/plotly.R')
+source('../../../helper/smoof.R')
+source('../../../helper/smoof_plotly.R')
+```
+
+```{r}
+f <- smoof::makeSphereFunction(2)
+```
+
+```{r}
+#| warning: false
+#| message: false
+
+lf <- smoof::addLoggingWrapper(f, logg.x = TRUE, size  = 1e5L)
+
+res <- GA::ga(type = 'real-valued', 
+         fitness = \(x)  -lf(x),
+         lower = smoof::getLowerBoxConstraints(f), 
+         upper = smoof::getUpperBoxConstraints(f), 
+         popSize = 50, 
+         maxiter = 1000, 
+         run = 20,
+         monitor = FALSE)
+
+rdf <- smoof::getLoggedValues(lf, compact = TRUE) |> log_sample(100)
+
+smoof_pcontour(f, 30) |> 
+  padd_eval_points(rdf) |>
+  pshow()
+```

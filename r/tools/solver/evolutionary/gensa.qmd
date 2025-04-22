@@ -1,1 +1,34 @@
-# GenSA Имитации отжига
+# GenSA Имитации отжига {#sec-r-tools-solver-evolutionary}
+
+```{r}
+#| include: false
+
+source('../../../helper/sample.R')
+source('../../../helper/plotly.R')
+source('../../../helper/smoof.R')
+source('../../../helper/smoof_plotly.R')
+```
+
+```{r}
+f <- smoof::makeSphereFunction(2)
+```
+
+```{r}
+#| warning: false
+#| message: false
+
+lf <- smoof::addLoggingWrapper(f, logg.x = TRUE, size  = 1e5L)
+res <- GenSA::GenSA(
+  par = c(3, 3),
+  fn = lf,
+  lower = smoof::getLowerBoxConstraints(f),
+  upper = smoof::getUpperBoxConstraints(f),
+  control = list(simple.function = TRUE, nb.stop.improvement = 15))
+
+
+rdf <- smoof::getLoggedValues(lf, compact = TRUE) |> rlog_sample(100)
+
+smoof_pcontour(f, 30) |> 
+  padd_eval_points(rdf) |>
+  pshow()
+```

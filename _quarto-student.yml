@@ -5,7 +5,6 @@ project:
 book:
   chapters:
     - index.qmd
-    - TODO.md
     - part: enviroment/overview.qmd
       chapters:
         - enviroment/setup.qmd

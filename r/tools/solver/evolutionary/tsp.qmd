@@ -1,1 +1,7 @@
-# TSP задача коммивояжера
+# TSP задача коммивояжера {#sec-r-tools-solver-evolutionary-tsp}
+
+```{r}
+data('USCA50', package = 'TSP')
+methods <- c('nearest_insertion', 'farthest_insertion', 'cheapest_insertion', 'arbitrary_insertion', 'nn', 'repetitive_nn', 'two_opt')
+tours <- sapply(methods, \(m) TSP::solve_TSP(USCA50, method = m), simplify = FALSE)
+```

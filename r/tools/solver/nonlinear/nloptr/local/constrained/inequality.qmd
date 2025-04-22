@@ -170,7 +170,8 @@ add_constr <- function(fig)
 #| label: obj-contour
 #| include: false
 
-fig <- smoof_pcontour(objfn, 50) 
+fig <- smoof_pcontour(objfn, 50)
+gfig <- smoof_pcontour_grad(objfn_g, 50)
 ```
 
 ## Прямого поиска {#sec-r-tools-solver-nonlinear-nloptr-local-constrained-inequality-directed}
@@ -300,8 +301,9 @@ fig |>
 #| warning: false
 #| fig-cap: "Вычисления градиента функции"
 
-fig |>
+gfig |>
   padd_eval_points(uni_sample(trace$eval$eval_grad_f, 100)) |>
+  padd_path_points(trace$path) |>
   padd_start_stop_points(trace$eval$eval_grad_f) |>
   add_constr()
 ```
@@ -326,7 +328,7 @@ fig |>
 #| warning: false
 #| fig-cap: "Вычисления якобиана ограничений"
 
-fig |>
+gfig |>
   padd_eval_points(uni_sample(trace$eval$eval_jac_g_ineq, 100)) |>
   padd_start_stop_points(trace$eval$eval_f) |>
   add_constr()
@@ -404,8 +406,9 @@ fig |>
 #| warning: false
 #| fig-cap: "Вычисления градиента функции"
 
-fig |>
+gfig |>
   padd_eval_points(uni_sample(trace$eval$eval_grad_f, 100)) |>
+  padd_path_points(trace$path) |>
   padd_start_stop_points(trace$eval$eval_grad_f) |>
   add_constr()
 ```
@@ -430,7 +433,7 @@ fig |>
 #| warning: false
 #| fig-cap: "Вычисления якобиана ограничений"
 
-fig |>
+gfig |>
   padd_eval_points(uni_sample(trace$eval$eval_jac_g_ineq, 100)) |>
   padd_start_stop_points(trace$eval$eval_f) |>
   add_constr()
@@ -509,8 +512,9 @@ fig |>
 #| warning: false
 #| fig-cap: "Вычисления градиента функции"
 
-fig |>
+gfig |>
   padd_eval_points(uni_sample(trace$eval$eval_grad_f, 100)) |>
+  padd_path_points(trace$path) |>
   padd_start_stop_points(trace$eval$eval_grad_f) |>
   add_constr()
 ```
@@ -535,7 +539,7 @@ fig |>
 #| warning: false
 #| fig-cap: "Вычисления якобиана ограничений"
 
-fig |>
+gfig |>
   padd_eval_points(uni_sample(trace$eval$eval_jac_g_ineq, 100)) |>
   padd_start_stop_points(trace$eval$eval_f) |>
   add_constr()

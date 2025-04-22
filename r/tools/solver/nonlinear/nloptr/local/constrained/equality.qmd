@@ -158,6 +158,7 @@ add_constr <- function(fig)
 #| include: false
 
 fig <- smoof_pcontour(objfn, 50)
+gfig <- smoof_pcontour_grad(objfn_g, 50)
 ```
 
 ## Градиентные {#sec-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient}
@@ -213,7 +214,7 @@ fig |>
 #| warning: false
 #| fig-cap: "Вычисления градиента функции"
 
-fig |>
+gfig |>
   padd_eval_points(uni_sample(trace$eval$eval_grad_f, 100)) |>
   padd_start_stop_points(trace$eval$eval_grad_f) |>
   add_constr()
@@ -239,7 +240,7 @@ fig |>
 #| warning: false
 #| fig-cap: "Вычисления якобиана ограничений"
 
-fig |>
+gfig |>
   padd_eval_points(uni_sample(trace$eval$eval_jac_g_eq, 100)) |>
   padd_start_stop_points(trace$eval$eval_f) |>
   add_constr()

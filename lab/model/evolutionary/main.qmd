@@ -61,7 +61,7 @@ colnames(Ddf) <- rownames(Ddf) <- t$name
 knitr::kable(Ddf, row.names = TRUE)
 ```
 
-Решим задачу получив путь
+Решим задачу получив путь @sec-r-tools-evolutionary-tsp
 
 ```{r}
 #| message: false
@@ -106,12 +106,6 @@ sh$cost
 plot_jsp_schedule(sh$schedule)
 ```
 
-
-```{r}
-data('USCA50', package = 'TSP')
-methods <- c('nearest_insertion', 'farthest_insertion', 'cheapest_insertion', 'arbitrary_insertion', 'nn', 'repetitive_nn', 'two_opt')
-tours <- sapply(methods, \(m) TSP::solve_TSP(USCA50, method = m), simplify = FALSE)
-```
 
 ::: {.callout-note appearance='minimal'}
 Уровень 3

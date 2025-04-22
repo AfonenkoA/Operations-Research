@@ -330,6 +330,11 @@ $$
 ##### Непрерывный {#sec-lab-extra-evolutionary-telecom-model-implementation-continuous}
 
 Могут пригодиться функции интерполяции и интегрирования (пакет `pracma`).
+
+#### Дискретный {#sec-lab-extra-evolutionary-telecom-model-implementation-continuous}
+
+Реализацию алгоритма Брезенхема можно взять из пакета `{r} AFM::getBresenham2DSegment() |> dl()`
+
 :::
 
 ::: {.callout-note appearance="minimal"}

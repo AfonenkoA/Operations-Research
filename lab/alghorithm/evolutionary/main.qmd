@@ -8,22 +8,23 @@
 -   Алгоритм роя частиц
 -   Генетические алгоритмы
 
+Из методички
+
+-   @sec-r-tools-solver-evolutionary-gensa
+-   @sec-r-tools-solver-evolutionary-pso
+-   @sec-r-tools-solver-evolutionary-ga
+
 ## Задания {#sec-lab-alghorithm-evolutionary-task}
-
-```{r}
-#| include: false
-
-source('../../../r/helper/sample.R')
-source('../../../r/helper/plotly.R')
-source('../../../r/helper/smoof.R')
-source('../../../r/helper/smoof_plotly.R')
-```
 
 ::: callout-important
 Для воспроизводимости результатов обязательно задавайте одинаковый seed random перед каждым запуском алгоритма
 :::
 
 ### Глобальная оптимизация
+
+@sec-r-tools-solver-evolutionary-analysis
+
+adaptive momentum, посмотреть, какие алгоритмы используют оптимизаторы в нейросетях
 
 Попробовать определить глобальный максимум функции с помощью вызова классического метода с разных начальных позиций. Применить различные алгоритмы эволюционный оптимизации (только вызов).
 
@@ -35,77 +36,11 @@ source('../../../r/helper/smoof_plotly.R')
 
 Поиграться с и выбрать параметры для дальнейшего изучения более сложных функций
 
-```{r}
-f <- smoof::makeSphereFunction(2)
-```
-
-```{r}
-#| warning: false
-#| message: false
-
-lf <- smoof::addLoggingWrapper(f, logg.x = TRUE, size  = 1e5L)
-res <- GenSA::GenSA(
-  par = c(3, 3),
-  fn = lf,
-  lower = smoof::getLowerBoxConstraints(f),
-  upper = smoof::getUpperBoxConstraints(f),
-  control = list(simple.function = TRUE, nb.stop.improvement = 15))
-
-
-rdf <- smoof::getLoggedValues(lf, compact = TRUE) |> rlog_sample(100)
-
-smoof_pcontour(f, 30) |> 
-  padd_eval_points(rdf) |>
-  pshow()
-```
-
 Вопросы к производительности, возможно использовать ggplot
-
-```{r}
-#| warning: false
-#| message: false
-
-lf <- smoof::addLoggingWrapper(f, logg.x = TRUE, size  = 1e5L)
-res <- pso::psoptim(
-  par = c(3, 3),
-  fn = lf,
-  lower = smoof::getLowerBoxConstraints(f),
-  upper = smoof::getUpperBoxConstraints(f),
-  control = list(abstol = 1e-6)
-)
-
-rdf <- smoof::getLoggedValues(lf, compact = TRUE) |> log_sample(100)
-
-smoof_pcontour(f, 30) |> 
-  padd_eval_points(rdf) |>
-  pshow()
-```
 
 <https://cran.r-project.org/web/packages/GA/vignettes/GA.html>
 
 Играться с параметрами подобрав примерно эквивалентное число вызовов. Или попробовать явно ограничить число вызовов. Подумать над permutation в GA. Также в 4 задаче реализовать свой поверх этой библиотеки самостоятельно определив операторы мутации, кросовера и выборки.
-
-```{r}
-#| warning: false
-#| message: false
-
-lf <- smoof::addLoggingWrapper(f, logg.x = TRUE, size  = 1e5L)
-
-res <- GA::ga(type = 'real-valued', 
-         fitness = \(x)  -lf(x),
-         lower = smoof::getLowerBoxConstraints(f), 
-         upper = smoof::getUpperBoxConstraints(f), 
-         popSize = 50, 
-         maxiter = 1000, 
-         run = 20,
-         monitor = FALSE)
-
-rdf <- smoof::getLoggedValues(lf, compact = TRUE) |> log_sample(100)
-
-smoof_pcontour(f, 30) |> 
-  padd_eval_points(rdf) |>
-  pshow()
-```
 
 <https://github.com/DEAP/deap> Также можно строить генетику или реализовывать алгоритмы поверх этого фреймоврка.
 
@@ -117,7 +52,13 @@ loadNamespace('ecr') |> invisible()
 
 Для трёх различных функций (должны демонстрировать разное) и для алгоритмов пройтись и посчитать алгоритмов необходимо посчитать статистику по запускам, чтобы ответить, являются ли различия в алогитмах случайными или статистически обоснованными. Тесты статистической значимости крутить именно на отдельном методе. По вариантам или алгоритм роя или генетики или имитации отжига.
 
-Сравнивая два алгоритма (набор параметров в одном алгоритме) используется t-тест Сравнивая 3 и более используется f-test
+Сравнивая два алгоритма (набор параметров в одном алгоритме) используется t-тест @sec-evolutionary-stats-t-test
+
+Сравнивая 3 и более используется f-test @sec-evolutionary-stats-f-test
+
+::: callout-tip
+Используйте @sec-r-tools-stats-t-test и @sec-r-tools-stats-f-test
+:::
 
 ::: {.callout-note appearance="minimal"}
 Уровень 2
@@ -125,4 +66,24 @@ loadNamespace('ecr') |> invisible()
 
 ### Казино
 
-Задать seed random одинаковый для всех итераций В эволюционном из хелпа по функциям определить факторы влияющие на решение. Изменяя факторы получить правильное решение с наименьшим числом итераций
+Задать seed random одинаковый для всех итераций. Один алгоритм на выбор:
+
+::: panel-tabset
+#### Метод имитации отжига
+
+В эволюционном из хелпа по функциям определить факторы влияющие на решение. Изменяя факторы получить правильное решение с наименьшим числом итераций
+
+#### Метод роя частиц
+
+Параметры памяти
+
+#### Генетический алгоритм
+
+Операторы скрещивания и мутации, размер поколения
+
+#### Стохастический градиент
+
+Параметры шага и т.д
+:::
+
+Уровень 3

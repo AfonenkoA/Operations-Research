@@ -260,8 +260,9 @@ fig |>
   padd_start_stop_points(trace$eval$eval_f) |>
   pshow()
 
-fig |>
+smoof_pcontour_grad(objfn_g, 30) |>
   padd_eval_points(uni_sample(trace$eval$eval_grad_f, 100)) |>
+  padd_path_points(trace$path) |>
   padd_start_stop_points(trace$eval$eval_grad_f) |>
   pshow()
 
@@ -319,8 +320,9 @@ fig |>
   padd_start_stop_points(trace$eval$eval_f) |>
   pshow()
 
-fig |>
+smoof_pcontour_grad(objfn_g, 30) |>
   padd_eval_points(uni_sample(trace$eval$eval_grad_f, 100)) |>
+  padd_path_points(trace$path) |>
   padd_start_stop_points(trace$eval$eval_grad_f) |>
   pshow()
 
@@ -378,8 +380,9 @@ fig |>
   padd_start_stop_points(trace$eval$eval_f) |>
   pshow()
 
-fig |>
+smoof_pcontour_grad(objfn_g, 30) |>
   padd_eval_points(uni_sample(trace$eval$eval_grad_f, 100)) |>
+  padd_path_points(trace$path) |>
   padd_start_stop_points(trace$eval$eval_grad_f) |>
   pshow()
 
