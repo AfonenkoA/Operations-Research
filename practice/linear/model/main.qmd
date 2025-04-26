@@ -71,7 +71,51 @@ $$
 
 :::: {.content-hidden when-profile="student" when-profile="practice"}
 ::: {#sol-practice-linear-model-standard-form}
-{{< lipsum 2 >}}
+
+Приведём целевую функцию к задаче максимизации следующим образом $\min F(x) = - \max \bigl(-F(x) \bigr)$
+
+$$
+F=2x_1-5x_2+3x_3-x_4
+$$
+
+Преобразуем 1 и 3 ограничение вводя остаточные переменные $o_i$ @sec-linear-overview-standart-problem-constraint и приводим к неотрицательной правой части
+
+$$
+\begin{aligned}
+&2x_1+3x_2+x_3+2x_4+o_1=18\\
+&-3x_2-2x_3-x_4-o_2=8
+\end{aligned}
+$$
+А ограничение 2 введя избыточную переменную $i_1$ 
+
+$$
+x_1+6x_2+11x_3-x_4-i_1=25
+$$
+
+Наконец преобразуем свободную переменную $x_4$ @sec-linear-overview-standart-problem-free-variable
+
+$$
+\begin{aligned}
+&x_4=x_4^--x_4^+\\
+&x_4^-,x_4^+\geq0
+\end{aligned}
+$$
+
+Итоговая формулировка
+
+$$
+\begin{aligned}
+&F=2x_1-5x_2+3x_3-x_4^-+x_4^+ \rightarrow \max \\
+&\begin{cases}
+2x_1+3x_2+x_3+2x_4^--2x_4^++o_1=18\\
+x_1+6x_2+11x_3-x_4^-+x_4^+-i_1=25\\
+-3x_2-2x_3-x_4-o_2=8\\
+x_1,x_2,x_3,x_4^-,x_4^+\geq0\\
+o_1,o_2,i_1\geq0
+\end{cases}
+\end{aligned}
+$$
+
 :::
 ::::
 
@@ -134,6 +178,65 @@ $$
 
 :::: {.content-hidden when-profile="student" when-profile="practice"}
 ::: {#sol-practice-linear-model-dual-problem}
-{{< lipsum 2 >}}
+
+Основываясь на правилах, определённых в @sec-linear-dual-problem получаем:
+
+Первый случай подходит под следующую формулировку
+
+$$
+\begin{aligned}
+&\max \mathrm{\mathbf{c}}^T\mathrm{\mathbf{x}} \\
+&\mathrm{\mathbf{A}} \mathrm{\mathbf{x}} \leq \mathrm{\mathbf{b}} \\
+&\mathrm{\mathbf{x}} \geq 0
+\end{aligned} 
+\longrightarrow
+\begin{aligned}
+&\min \mathrm{\mathbf{b}}^T\mathrm{\mathbf{y}} \\
+&\mathrm{\mathbf{A}}^T \mathrm{\mathbf{y}} \geq \mathrm{\mathbf{c}} \\
+&\mathrm{\mathbf{y}} \geq 0
+\end{aligned} 
+$$
+
+Соответственно двойственная задача
+
+$$
+\begin{aligned}
+&\min 2y_1+5y_2 \\
+&\begin{cases}
+-y_1+2y_2 \geq -5 \\
+y_1 + 3y_2 \geq 2
+\end{cases}
+\end{aligned}
+$$
+
+Во втором случае, условия равенства $=b_i$ и $x_i \geq 0$ будут преобразованы в $y_i \in \mathbb{R}$ и подходит под следующую типовую формулировку
+
+$$
+\begin{aligned}
+&\max \mathrm{\mathbf{c}}^T\mathrm{\mathbf{x}} \\
+&\mathrm{\mathbf{A}} \mathrm{\mathbf{x}} = \mathrm{\mathbf{b}} \\
+&\mathrm{\mathbf{x}} \geq 0
+\end{aligned} 
+\longrightarrow
+\begin{aligned}
+&\min \mathrm{\mathbf{b}}^T\mathrm{\mathbf{y}} \\
+&\mathrm{\mathbf{A}}^T \mathrm{\mathbf{y}} \geq \mathrm{\mathbf{c}} \\
+&\mathrm{\mathbf{y}} \in \mathbb{R}
+\end{aligned} 
+$$
+
+Соответственно двойственная задача
+
+$$
+\begin{aligned}
+&\min 7y_1\\
+&\begin{cases}
+5y_1\geq3\\
+6y_1\geq4\\
+y_1 \in \mathbb{R}
+\end{cases}
+\end{aligned}
+$$
+
 :::
 ::::

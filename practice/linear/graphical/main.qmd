@@ -58,7 +58,7 @@ ashow('grid/solution.asy')
 ::::
 
 :::::::: {.content-hidden when-profile="student" when-profile="practice" unless-meta="special-case.select"}
-::::::: {#exr-practice-2-special}
+::::::: {#exr-practice-linear-graphical-special}
 ## Особенная задачка
 
 Определить какой особый случай реализован. <!-- 3.5 Особые случаи применения симплекс-метода Таха 113-->
@@ -91,6 +91,13 @@ ashow('grid/special-case.asy',2)
 :::
 :::::::
 ::::::::
+
+
+:::: {.content-hidden when-profile="student" when-profile="practice"}
+::: {#sol-practice-linear-graphical-special}
+<!--Рисунок через plotly-->
+:::
+::::
 
 :::::: {.content-hidden when-profile="student" when-profile="practice" unless-meta="sensetivity.select"}
 ::::: {#exr-practice-linear-graphical-sensetivity}
@@ -138,3 +145,72 @@ ashow('grid/sensetivity.asy',2)
 :::
 :::::
 ::::::
+
+:::: {.content-hidden when-profile="student" when-profile="practice"}
+::: {#sol-practice-linear-graphical-sensetivity}
+
+Задаём целевую функцию
+
+```{r}
+Obj <- c(3,4) 
+```
+
+И ограничения
+
+```{r}
+A <- rbind(c(2,3),
+           c(2,1),
+           c(0,4))
+B <- c(1200,500,800)
+S <- rep('<=',3)
+```
+
+Решение задачи
+
+```{r}
+optimum <- lpSolve::lp(           
+  direction = 'max',
+  objective.in = Obj,
+  const.mat = A,
+  const.dir = S,
+  const.rhs = B,
+  compute.sens = TRUE)
+optimum$solution
+```
+
+<!--Сюда ещё график для анализа как в первой работе-->
+
+Двойственное значение для интересующего нас ограничения на конденсаторы $2x_1+x_2\leq500$
+
+```{r}
+optimum$duals[[2]]
+```
+
+И область его определения
+
+```{r}
+optimum$duals.from[[2]]
+optimum$duals.to[[2]]
+```
+
+Теперь рассмотрим чувствительность по коэффициентам целевой функции.
+
+```{r}
+lpSolve::lp(           
+  direction = 'max',
+  objective.in = c(9,2),
+  const.mat = A,
+  const.dir = S,
+  const.rhs = B,
+  compute.sens = TRUE)[['solution']]
+```
+
+При изменении коэффициента перед $x_1$ с 3 на 9 точка соответствующая оптимальному решению изменяется. Точка остается неизменной в диапазоне коэффициентов
+
+```{r}
+optimum$sens.coef.from[[1]]
+optimum$sens.coef.to[[1]]
+```
+
+:::
+::::
