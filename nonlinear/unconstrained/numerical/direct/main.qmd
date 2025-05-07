@@ -1,4 +1,4 @@
-# Численная многомерная. Прямые {#sec-nonlinear-unconstrained-numerical-many-direct}
+# Численная многомерная. Прямые {#sec-nonlinear-unconstrained-numerical-direct}
 
 ## Нелдер Мид
 

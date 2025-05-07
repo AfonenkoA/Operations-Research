@@ -10,10 +10,10 @@
 
 Из методички
 
--   @sec-nonlinear-unconstrained-numerical-one
--   @sec-nonlinear-unconstrained-numerical-many-direct
--   @sec-nonlinear-unconstrained-numerical-many-gradient
+-   @sec-nonlinear-unconstrained-numerical-direct
+-   @sec-nonlinear-unconstrained-numerical-gradient
 -   @sec-nonlinear-constrained-numerical-convert-to-unconstrained
+-   @sec-nonlinear-constrained-numerical-one
 -   @sec-nonlinear-constrained-numerical-many-direct
 -   @sec-nonlinear-constrained-numerical-many-gradient
 

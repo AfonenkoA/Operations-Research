@@ -1,4 +1,4 @@
-# PSO метод роя частиц
+# PSO метод роя частиц {#sec-r-tools-solver-evolutionary-pso}
 
 ```{r}
 #| include: false

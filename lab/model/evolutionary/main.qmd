@@ -1,6 +1,6 @@
 # Эволюционная оптимизация {#sec-lab-model-evolutionary}
 
-### Jeely
+### Белжди
 
 Для производства
 
@@ -22,14 +22,14 @@ M машин, N работ, каждая работа состоит из зад
 
 Файл со вспомогательными функциями
 
-:::: {.content-visible when-format='html'}
-::: {.callout appearance='minimal'}
+:::: {.content-visible when-format="html"}
+::: {.callout appearance="minimal"}
 ⤓ [JSP.R](../../../r/helper/JSP.R)
 :::
 ::::
 
-:::: {.content-visible unless-format='html'}
-::: {.callout appearance='minimal'}
+:::: {.content-visible unless-format="html"}
+::: {.callout appearance="minimal"}
 `\faFile*[regular].`{=latex} [JSP.R](r/helper/model/JSP.R)
 :::
 ::::
@@ -61,7 +61,7 @@ colnames(Ddf) <- rownames(Ddf) <- t$name
 knitr::kable(Ddf, row.names = TRUE)
 ```
 
-Решим задачу получив путь @sec-r-tools-evolutionary-tsp
+Решим задачу получив путь @sec-r-tools-solver-evolutionary-tsp
 
 ```{r}
 #| message: false
@@ -106,8 +106,6 @@ sh$cost
 plot_jsp_schedule(sh$schedule)
 ```
 
-
-::: {.callout-note appearance='minimal'}
+::: {.callout-note appearance="minimal"}
 Уровень 3
 :::
-

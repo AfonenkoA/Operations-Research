@@ -1,6 +1,0 @@
-# Условная оптимизация функции одной переменной {#sec-nonlinear-constrained-analytical-one}
-
-::: {.callout-important title="Состояние разработки"}
-В разработке
-:::
-

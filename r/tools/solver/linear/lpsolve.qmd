@@ -156,7 +156,7 @@ d1t <- optimum$sens.coef.from[[1]]
 
 #### Целевой функции {#sec-r-tools-lpsolve-lpsolve-sensetivity-objective}
 
-Диапазон в кортом можно изменять коэффициенты целевой функции @sec-linear-sensetivity-objective не меняя при этом характер решения (точку, соответствующую оптимальному решению) можно определить следующим образом
+Диапазон в кортом можно изменять коэффициенты целевой функции @sec-linear-simplex-sensetivity-objective не меняя при этом характер решения (точку, соответствующую оптимальному решению) можно определить следующим образом
 
 ```{r}
 optimum$sens.coef.from
@@ -167,7 +167,7 @@ optimum$sens.coef.to
 
 #### Ограничений {#sec-r-tools-lpsolve-lpsolve-sensetivity-constraint}
 
-Коэффициенты чувствительности по ограничениям @sec-linear-sensetivity-constraint (также встречается название **двойственные значения**).
+Коэффициенты чувствительности по ограничениям @sec-linear-simplex-sensetivity-constraint (также встречается название **двойственные значения**).
 
 ```{r}
 optimum$duals

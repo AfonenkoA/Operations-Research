@@ -7,7 +7,7 @@ freeze: false
 
 ::: {#exm-r-tools-solver-nonlinear-nloptr-local-constrained-inequality}
 
-Рассмотрим на основе примера @sec-nonlinear-constrained-many-inequality
+Рассмотрим на основе примера @sec-nonlinear-constrained-analytical-inequality
 
 ```{r}
 f <- function(par)

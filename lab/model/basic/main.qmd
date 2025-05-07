@@ -3,7 +3,7 @@
 ## Теория
 
 1.  Изучить язык разметки `LaTeX` @sec-latex
-2.  Повторить теорию определения экстремумов функций @sec-nonlinear-unconstrained-one и @sec-nonlinear-unconstrained-many
+2.  Повторить теорию определения экстремумов функций @sec-nonlinear-unconstrained-analytical-one и @sec-nonlinear-unconstrained-analytical-many
 
 ::: {#exm-lab-model-basic-beach}
 Чтобы попасть из пункта А (остановка автобуса) в пункт В (лодочная станция) человек должен пройти сначала по асфальтовой дороге шириной $S$, а затем по песчаному пляжу шириной $s$. Скорость передвижения по асфальту $V$ , скорость передвижения по песку $v$. Спрашивается, в каком месте нужно свернуть с асфальтовой дороги, чтобы затратить меньше времени на путь.
@@ -184,7 +184,11 @@ plot_ly(x= x, y=y, type = 'scatter', mode = 'lines') |> pshow()
 ::: panel-tabset
 #### R
 
-объемный (@sec-r-tools-plotly-surface3d), контурный (@sec-r-tools-plotly-contour2d) \#### Python
+объемный (@sec-r-tools-plotly-surface3d), контурный (@sec-r-tools-plotly-contour2d)
+
+#### Python
+
+свои пакеты
 :::
 
 ::: {.callout-note appearance="minimal"}
@@ -202,7 +206,7 @@ s = 18t + 9t^2 - t^3
 $$
 
 1.  Построить график функции и её производной (@exm-r-tools-plotly-line2d-combine).
-2.  Аналитически определить максимум функции (@sec-nonlinear-unconstrained-one).
+2.  Аналитически определить максимум функции (@sec-nonlinear-unconstrained-analytical-one).
 3.  Доказать, что данная точка является максимумом (@thm-nonlinear-unconstrained-one-sufficiency-1) или (@thm-nonlinear-unconstrained-one-sufficiency-2) .
 
 ::: {.callout-note appearance="minimal"}
@@ -216,7 +220,7 @@ $$
 Суточные расходы при плавании судна состоят из двух частей: постоянной, равной $а$, и переменной, возрастающий пропорционально кубу скорости. При какой скорости $v$ плавание судна окажется наиболее экономичным? @bib-pogadaeva-primenenie-proizvodnoj
 
 1.  определите целевую функцию
-2.  аналитически определите максимум целевой функции (@sec-nonlinear-unconstrained-one)
+2.  аналитически определите максимум целевой функции (@sec-nonlinear-unconstrained-analytical-one)
 3.  постройте график целевой функции (@sec-r-tools-plotly-line2d)
 
 ::: {.callout-note appearance="minimal"}
@@ -232,7 +236,7 @@ $$
 ![Раскройка листа жести](box.png)
 
 1.  определите целевую функцию
-2.  аналитически определите максимум целевой функции (@sec-nonlinear-unconstrained-one)
+2.  аналитически определите максимум целевой функции (@sec-nonlinear-unconstrained-analytical-one)
 3.  постройте график целевой функции (@sec-r-tools-plotly-line2d)
 
 ::: {.callout-note appearance="minimal"}

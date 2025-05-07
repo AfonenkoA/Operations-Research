@@ -25,6 +25,13 @@ book:
         - linear/simplex/special-cases.qmd
         - linear/integer.qmd
 
+    - part: nonlinear/overview.qmd
+      chapters:
+        - nonlinear/unconstrained/analytical/one/main.qmd
+        - nonlinear/unconstrained/analytical/many/main.qmd
+        - nonlinear/constrained/analytical/main.qmd
+        - nonlinear/constrained/numerical/conversion-to-unconstrained.qmd
+
     - part: "Задания. Программирование"
       chapters:
         - lab/programming/r/main.qmd
@@ -32,8 +39,7 @@ book:
     - part: "Задания. Алгоритмы"
       chapters:
         - lab/alghorithm/linear/algebra/main.qmd
-        - lab/alghorithm/graph-theory/main.qmd
-
+        - lab/alghorithm/nonlinear/main.qmd
 
     - part: "Задания. Моделирование"
       chapters:
@@ -42,11 +48,13 @@ book:
         - lab/model/linear/transport/main.qmd
         - lab/model/linear/integer/main.qmd
         - lab/model/network/main.qmd
+        - lab/model/nonlinear/main.qmd
 
     - part: "Задания. Дополнительно"
       chapters:
         - lab/extra/programming/r/main.qmd
         - lab/extra/network/main.qmd
+        - lab/extra/evolutionary/main.qmd
 
     - part: "Практические работы"
       chapters:
@@ -62,5 +70,21 @@ book:
     - part: "Язык программирования R"
       chapters:
         - r/tools/renv.qmd
+        - r/tools/pracma.qmd
+        - r/tools/smoof.qmd
+
         - r/tools/plot/plotly.qmd
+
+        - r/tools/solver/linear/transport.qmd
         - r/tools/solver/linear/lpsolve.qmd
+        - r/tools/solver/linear/clue.qmd
+
+        - r/tools/solver/nonlinear/nloptr/analysis.qmd
+        - r/tools/solver/nonlinear/nloptr/local/unconstrained.qmd
+        - r/tools/solver/nonlinear/nloptr/local/constrained/inequality.qmd
+        - r/tools/solver/nonlinear/nloptr/local/constrained/equality.qmd
+
+        - r/tools/solver/evolutionary/gensa.qmd
+        - r/tools/solver/evolutionary/pso.qmd
+        - r/tools/solver/evolutionary/ga.qmd
+        - r/tools/solver/evolutionary/tsp.qmd

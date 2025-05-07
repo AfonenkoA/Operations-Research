@@ -62,11 +62,9 @@ book:
       chapters:
         - nonlinear/unconstrained/analytical/one/main.qmd
         - nonlinear/unconstrained/analytical/many/main.qmd
-        - nonlinear/unconstrained/numerical/one/main.qmd
-        - nonlinear/unconstrained/numerical/many/direct/main.qmd
-        - nonlinear/unconstrained/numerical/many/gradient/main.qmd
-        - nonlinear/constrained/analytical/one/main.qmd
-        - nonlinear/constrained/analytical/many/main.qmd
+        - nonlinear/unconstrained/numerical/direct/main.qmd
+        - nonlinear/unconstrained/numerical/gradient/main.qmd
+        - nonlinear/constrained/analytical/main.qmd
         - nonlinear/constrained/numerical/conversion-to-unconstrained.qmd
         - nonlinear/constrained/numerical/one/main.qmd
         - nonlinear/constrained/numerical/many/direct/main.qmd
@@ -77,6 +75,7 @@ book:
         - evolutionary/simulated-annealing.qmd
         - evolutionary/ant-colony.qmd
         - evolutionary/genetic.qmd
+        - evolutionary/stats.qmd
 
     - part: game-theory/overview.qmd
       chapters:
@@ -170,7 +169,6 @@ book:
         - r/tools/solver/nonlinear/nloptr/local/constrained/inequality.qmd
         - r/tools/solver/nonlinear/nloptr/local/constrained/equality.qmd
 
-        - r/tools/solver/evolutionary/analysis.qmd
         - r/tools/solver/evolutionary/gensa.qmd
         - r/tools/solver/evolutionary/pso.qmd
         - r/tools/solver/evolutionary/ga.qmd

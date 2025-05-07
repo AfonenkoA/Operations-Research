@@ -1,4 +1,4 @@
-# Численная многомерная. Градиентные {#sec-nonlinear-unconstrained-numerical-many-gradient}
+# Численная многомерная. Градиентные {#sec-nonlinear-unconstrained-numerical-gradient}
 
 ## Сопряженных градиентов и т. д.
 

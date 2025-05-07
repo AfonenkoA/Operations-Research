@@ -3,7 +3,7 @@ cache: false
 freeze: false
 ---
 
-# Условная оптимизация функции многих переменных {#sec-nonlinear-constrained-analytical-many}
+# Условная оптимизация функции многих переменных {#sec-nonlinear-constrained-analytical}
 
 ::: {.callout-caution title="Состояние разработки"}
 Требуется доработка
@@ -14,7 +14,7 @@ freeze: false
 slog <- \(x) sign(x)*log(abs(x))
 ```
 
-## Прямоугольные ограничения неравенства {#sec-nonlinear-constrained-many-rectangle}
+## Прямоугольные ограничения неравенства {#sec-nonlinear-constrained-analytical-rectangle}
 
 $$
 \begin{cases}
@@ -149,7 +149,7 @@ plot_ly(x=x, y=y, z=z, type='contour', ncontours=30 , name='F(p)') |>
   pshow()
 ```
 
-## Ограничения неравенства {#sec-nonlinear-constrained-many-inequality}
+## Ограничения неравенства {#sec-nonlinear-constrained-analytical-inequality}
 
 Являются частным случаем нелинейных, большинство алгоритмов работает с ними, как с нелинейными.
 
@@ -314,7 +314,7 @@ plot_ly(
   pshow_safe()
 ```
 
-## Нелинейные ограничения равенства {#sec-nonlinear-constrained-many-equality}
+## Нелинейные ограничения равенства {#sec-nonlinear-constrained-analytical-equality}
 
 $$
 \begin{cases}

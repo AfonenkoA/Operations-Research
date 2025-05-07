@@ -1,4 +1,4 @@
-# GenSA Имитации отжига {#sec-r-tools-solver-evolutionary}
+# GenSA Имитации отжига {#sec-r-tools-solver-evolutionary-gensa}
 
 ```{r}
 #| include: false
