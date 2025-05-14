@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.2">
+<meta name="generator" content="quarto-1.8.4">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Приложение K — Nloptr. Локальная. Ограничения равенства – Исследование операций</title>
+<title>Приложение L — Nloptr. Локальная. Ограничения равенства – Исследование операций</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,7 +73,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../../../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../../../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../../../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../../../../../site_libs/quarto-html/quarto-syntax-highlighting-21178ce9c6d9aa40f92a5a0c1af1a00b.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../../../../../site_libs/quarto-html/quarto-syntax-highlighting-19cd9126a9a9c64aacb03dc90954a64a.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../../../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../../../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../../../../../../site_libs/bootstrap/bootstrap-83ffff5e47f8770f169806f6d52944f0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -149,7 +149,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключить боковую панель навигации" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Приложения</li><li class="breadcrumb-item"><a href="../../../../../../../r/tools/renv.html">Язык программирования R</a></li><li class="breadcrumb-item"><a href="../../../../../../../r/tools/solver/nonlinear/nloptr/local/constrained/equality.html"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Nloptr. Локальная. Ограничения равенства</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Приложения</li><li class="breadcrumb-item"><a href="../../../../../../../r/tools/renv.html">Язык программирования R</a></li><li class="breadcrumb-item"><a href="../../../../../../../r/tools/solver/nonlinear/nloptr/local/constrained/equality.html"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Nloptr. Локальная. Ограничения равенства</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключить боковую панель навигации" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Поиск" onclick="window.quartoOpenSearch();">
@@ -320,7 +320,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Задания. Программирование</span></a>
+ <span class="menu-text">Задания. Алгоритмы</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -328,21 +328,10 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../../../../../lab/programming/r/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../../../../../lab/alghorithm/programming/r/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">R</span></span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Задания. Алгоритмы</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../../lab/alghorithm/linear/algebra/main.html" class="sidebar-item-text sidebar-link">
@@ -359,13 +348,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
  <span class="menu-text">Задания. Моделирование</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../../lab/model/basic/main.html" class="sidebar-item-text sidebar-link">
@@ -406,13 +395,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">Задания. Дополнительно</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../../lab/extra/programming/r/main.html" class="sidebar-item-text sidebar-link">
@@ -435,13 +424,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
  <span class="menu-text">Практические работы</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../../practice/basic-model/main.html" class="sidebar-item-text sidebar-link">
@@ -482,22 +471,22 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
  <span class="menu-text">Приложения</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
+ <span class="menu-text">Язык программирования R</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
- <span class="menu-text">Язык программирования R</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../../r/tools/renv.html" class="sidebar-item-text sidebar-link">
@@ -518,74 +507,80 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../../../../../r/tools/stats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Пакет <code>stats</code></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../../../../../r/tools/plot/plotly.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Графическая библиотека plotly</span></span></a>
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Графическая библиотека plotly</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../../r/tools/solver/linear/transport.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Решатель transport</span></span></a>
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Решатель transport</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../../r/tools/solver/linear/lpsolve.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Решатель LPSolve</span></span></a>
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Решатель LPSolve</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../../r/tools/solver/linear/clue.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Решатель Clue</span></span></a>
+ <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Решатель Clue</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../../r/tools/solver/nonlinear/nloptr/analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Nloptr. Анализ</span></span></a>
+ <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Nloptr. Анализ</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../../r/tools/solver/nonlinear/nloptr/local/unconstrained.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Nloptr. Локальная безуслованя</span></span></a>
+ <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Nloptr. Локальная безуслованя</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../../r/tools/solver/nonlinear/nloptr/local/constrained/inequality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Nloptr. Локальная. Ограничения неравенства</span></span></a>
+ <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Nloptr. Локальная. Ограничения неравенства</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../../r/tools/solver/nonlinear/nloptr/local/constrained/equality.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Nloptr. Локальная. Ограничения равенства</span></span></a>
+ <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Nloptr. Локальная. Ограничения равенства</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../../r/tools/solver/evolutionary/gensa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">GenSA Имитации отжига</span></span></a>
+ <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">GenSA Имитации отжига</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../../r/tools/solver/evolutionary/pso.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">PSO метод роя частиц</span></span></a>
+ <span class="menu-text"><span class="chapter-number">N</span>&nbsp; <span class="chapter-title">PSO метод роя частиц</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../../r/tools/solver/evolutionary/ga.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">N</span>&nbsp; <span class="chapter-title">GA обобщенный генетический алгоритм</span></span></a>
+ <span class="menu-text"><span class="chapter-number">O</span>&nbsp; <span class="chapter-title">GA обобщенный генетический алгоритм</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../../../../r/tools/solver/evolutionary/tsp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">O</span>&nbsp; <span class="chapter-title">TSP задача коммивояжера</span></span></a>
+ <span class="menu-text"><span class="chapter-number">P</span>&nbsp; <span class="chapter-title">TSP задача коммивояжера</span></span></a>
   </div>
 </li>
       </ul>
@@ -602,9 +597,9 @@ window.Quarto = {
     <h2 id="toc-title">Содержание</h2>
    
   <ul>
-  <li><a href="#sec-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient" id="toc-sec-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient" class="nav-link active" data-scroll-target="#sec-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient"><span class="header-section-number">K.1</span> Градиентные</a>
+  <li><a href="#sec-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient" id="toc-sec-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient" class="nav-link active" data-scroll-target="#sec-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient"><span class="header-section-number">L.1</span> Градиентные</a>
   <ul class="collapse">
-  <li><a href="#sec-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient-ssqlp" id="toc-sec-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient-ssqlp" class="nav-link" data-scroll-target="#sec-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient-ssqlp"><span class="header-section-number">K.1.1</span> SSQLP</a></li>
+  <li><a href="#sec-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient-ssqlp" id="toc-sec-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient-ssqlp" class="nav-link" data-scroll-target="#sec-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient-ssqlp"><span class="header-section-number">L.1.1</span> SSQLP</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li><li><a href="https://github.com/AfonenkoA/Operations-Research/blob/master/r/tools/solver/nonlinear/nloptr/local/constrained/equality.qmd" class="toc-action"><i class="bi empty"></i>Показать код</a></li></ul></div></nav>
@@ -612,9 +607,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Приложения</li><li class="breadcrumb-item"><a href="../../../../../../../r/tools/renv.html">Язык программирования R</a></li><li class="breadcrumb-item"><a href="../../../../../../../r/tools/solver/nonlinear/nloptr/local/constrained/equality.html"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Nloptr. Локальная. Ограничения равенства</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Приложения</li><li class="breadcrumb-item"><a href="../../../../../../../r/tools/renv.html">Язык программирования R</a></li><li class="breadcrumb-item"><a href="../../../../../../../r/tools/solver/nonlinear/nloptr/local/constrained/equality.html"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Nloptr. Локальная. Ограничения равенства</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="exm-r-tools-solver-nonlinear-nloptr-local-constrained-equality" class="quarto-section-identifier">Приложение K — Nloptr. Локальная. Ограничения равенства</span></h1>
+<h1 class="title"><span id="exm-r-tools-solver-nonlinear-nloptr-local-constrained-equality" class="quarto-section-identifier">Приложение L — Nloptr. Локальная. Ограничения равенства</span></h1>
 </div>
 
 
@@ -632,7 +627,7 @@ window.Quarto = {
 
 
 <div id="exm-r-tools-solver-nonlinear-nloptr-local-constrained-equality" class="theorem example">
-<p><span class="theorem-title"><strong>Пример K.1</strong></span> Рассмотрим на основе примера <a href="../../../../../../../nonlinear/constrained/analytical/main.html#sec-nonlinear-constrained-analytical-equality" class="quarto-xref"><span>Глава 14.3</span></a></p>
+<p><span class="theorem-title"><strong>Пример L.1</strong></span> Рассмотрим на основе примера <a href="../../../../../../../nonlinear/constrained/analytical/main.html#sec-nonlinear-constrained-analytical-equality" class="quarto-xref"><span>Глава 14.3</span></a></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>(par)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>{</span>
@@ -715,10 +710,10 @@ p_1^2 - p_1 p_2 + 2=0
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">n.objectives =</span> <span class="dv">2</span>)</span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<section id="sec-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient" class="level2" data-number="K.1">
-<h2 data-number="K.1" class="anchored" data-anchor-id="sec-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient"><span class="header-section-number">K.1</span> Градиентные</h2>
-<section id="sec-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient-ssqlp" class="level3" data-number="K.1.1">
-<h3 data-number="K.1.1" class="anchored" data-anchor-id="sec-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient-ssqlp"><span class="header-section-number">K.1.1</span> SSQLP</h3>
+<section id="sec-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient" class="level2" data-number="L.1">
+<h2 data-number="L.1" class="anchored" data-anchor-id="sec-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient"><span class="header-section-number">L.1</span> Градиентные</h2>
+<section id="sec-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient-ssqlp" class="level3" data-number="L.1.1">
+<h3 data-number="L.1.1" class="anchored" data-anchor-id="sec-r-tools-solver-nonlinear-nloptr-local-constrained-equality-gradient-ssqlp"><span class="header-section-number">L.1.1</span> SSQLP</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> nloptr<span class="sc">::</span><span class="fu">nloptr</span>(</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">x0 =</span> x0,</span>
@@ -768,36 +763,36 @@ Optimal value of controls: -1.337528e-16 -2</code></pre>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="htmlwidget-c169e035595e8ed64797" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c169e035595e8ed64797">{"x":{"url":"equality_files/figure-html//widgets/widget_ssqlp-eval-obj.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-460fedc93664d4fdfeee" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-460fedc93664d4fdfeee">{"x":{"url":"equality_files/figure-html//widgets/widget_ssqlp-eval-obj.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
 <p>Вычисления функции</p>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="htmlwidget-1e469c43460825767fb6" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1e469c43460825767fb6">{"x":{"url":"equality_files/figure-html//widgets/widget_ssqlp-eval-grad.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-ae72ccd46c3504135a28" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ae72ccd46c3504135a28">{"x":{"url":"equality_files/figure-html//widgets/widget_ssqlp-eval-grad.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
 <p>Вычисления градиента функции</p>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="htmlwidget-e0ba535256d1e5dce85b" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-e0ba535256d1e5dce85b">{"x":{"url":"equality_files/figure-html//widgets/widget_ssqlp-eval-constr.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-b795d18c07393d9d4ad5" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b795d18c07393d9d4ad5">{"x":{"url":"equality_files/figure-html//widgets/widget_ssqlp-eval-constr.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
 <p>Вычисления ограничений</p>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="htmlwidget-ed706025cc77ca43b16a" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ed706025cc77ca43b16a">{"x":{"url":"equality_files/figure-html//widgets/widget_ssqlp-eval-constr-jac.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-18c67e5d08390b9f1fa9" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-18c67e5d08390b9f1fa9">{"x":{"url":"equality_files/figure-html//widgets/widget_ssqlp-eval-constr-jac.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
 <p>Вычисления якобиана ограничений</p>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="htmlwidget-849e01b4247a0351136b" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
-<script type="application/json" data-for="htmlwidget-849e01b4247a0351136b">{"x":{"url":"equality_files/figure-html//widgets/widget_ssqlp-path.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-0f0b30199dfe419bb260" style="width:100%;height:480px;" class="widgetframe html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0f0b30199dfe419bb260">{"x":{"url":"equality_files/figure-html//widgets/widget_ssqlp-path.html","options":{"xdomain":"*","allowfullscreen":false,"lazyload":false}},"evals":[],"jsHooks":[]}</script>
 <p>Путь оптимизации</p>
 </div>
 </div>
@@ -1239,12 +1234,12 @@ Optimal value of controls: -1.337528e-16 -2</code></pre>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../../../../../../r/tools/solver/nonlinear/nloptr/local/constrained/inequality.html" class="pagination-link" aria-label="Nloptr. Локальная. Ограничения неравенства">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Nloptr. Локальная. Ограничения неравенства</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Nloptr. Локальная. Ограничения неравенства</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../../../../../../r/tools/solver/evolutionary/gensa.html" class="pagination-link" aria-label="GenSA Имитации отжига">
-        <span class="nav-page-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">GenSA Имитации отжига</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">GenSA Имитации отжига</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
