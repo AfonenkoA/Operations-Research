@@ -83,12 +83,9 @@ book:
 
     - part: multi-objective/overview.qmd
 
-    - part: "Задания. Программирование"
-      chapters:
-        - lab/programming/r/main.qmd
-
     - part: "Задания. Алгоритмы"
       chapters:
+        - lab/alghorithm/programming/r/main.qmd
         - lab/alghorithm/linear/algebra/main.qmd
         - lab/alghorithm/graph-theory/main.qmd
         - lab/alghorithm/dynamic-programming/main.qmd
@@ -169,6 +166,7 @@ book:
         - r/tools/solver/nonlinear/nloptr/local/constrained/inequality.qmd
         - r/tools/solver/nonlinear/nloptr/local/constrained/equality.qmd
 
+        - r/tools/solver/evolutionary/analysis.qmd
         - r/tools/solver/evolutionary/gensa.qmd
         - r/tools/solver/evolutionary/pso.qmd
         - r/tools/solver/evolutionary/ga.qmd

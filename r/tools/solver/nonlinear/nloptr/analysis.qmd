@@ -243,6 +243,8 @@ fig |>
   add_constr()
 ```
 
+Усики показывают направление и модуль градиента
+
 ```{r}
 #| label: graphical-eval-grad
 #| echo: fenced

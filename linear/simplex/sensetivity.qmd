@@ -4,9 +4,9 @@
 В разработке
 :::
 
-## Изменения целевой функции {#sec-linear-sensetivity-objective}
+## Изменения целевой функции {#sec-linear-simplex-sensetivity-objective}
 
-## Изменения правых частей неравенств ограничений {#sec-linear-sensetivity-constraint}
+## Изменения правых частей неравенств ограничений {#sec-linear-simplex-sensetivity-constraint}
 
 ```{{r}}
 optimum$duals.from

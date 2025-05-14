@@ -49,7 +49,7 @@ $$
 Найти минимум функции
 
 $$
-7x^2+27xy+9y^2+8\exp{\bigg[-\bigg(\frac{x^2}{3}-\frac{(y+3)^2}{5}\bigg)\bigg]}+9\exp{\bigg[-\bigg(\frac{(x-1)^2}{5}+\frac{(y-2)^2}{2}\bigg)\bigg]}
+7x^2+3xy+9y^2+8\exp{\bigg[-\bigg(\frac{x^2}{3}-\frac{(y+3)^2}{5}\bigg)\bigg]}+9\exp{\bigg[-\bigg(\frac{(x-1)^2}{5}+\frac{(y-2)^2}{2}\bigg)\bigg]}
 $$
 
 1.  Применить @sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-directed-nelder-mead и @sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-directed-praxis
@@ -112,7 +112,7 @@ $$F=(\sum_{i=1}^N{L_ix_i}-b)^2$$
 :::: {#exr-lab-alghoritm-nonlinear-penalty}
 ### Штраф
 
-Решить задачу @exr-lab-alghoritm-nonlinear-constrained используя барьерные функции @sec-nonlinear-constrained-numerical-convert-to-unconstrained-penalty.
+Решить задачу @exr-lab-alghoritm-nonlinear-constrained используя штрафные функции @sec-nonlinear-constrained-numerical-convert-to-unconstrained-penalty.
 
 ::: {.callout-note appearance="minimal"}
 Уровень 3

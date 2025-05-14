@@ -44,7 +44,7 @@ $$
 :::: {#exr-lab-model-linear-programming-solver}
 ### Пакет с пакетами
 
-С помощью пакета @sec-r-tools-lpsolve получить решение задачи. Используйте, @sec-r-tools-lpsolve-lpsolve или @sec-r-tools-lpsolve-lpsolveapi на своё усмотрение.
+С помощью пакета @sec-r-tools-solver-linear-lpsolve получить решение задачи. Используйте, @sec-r-tools-solver-linear-lpsolve-lpsolve или @sec-r-tools-solver-linear-lpsolve-lpsolveapi на своё усмотрение.
 
 $$
 \begin{aligned}

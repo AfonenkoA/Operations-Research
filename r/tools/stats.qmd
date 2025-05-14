@@ -3,6 +3,7 @@
 ## Одномерная оптимизация {#sec-r-tools-stats-optimize}
 
 Оптимизация для одномерных смесь обратных парабол и золотого сечения. <https://en.wikipedia.org/wiki/Brent%27s_method>
+
 ```{r}
 a <- optimize
 ```

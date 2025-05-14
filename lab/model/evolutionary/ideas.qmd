@@ -1,5 +1,7 @@
 ### VPS и VDS
 
+<https://journalofcloudcomputing.springeropen.com/articles/10.1186/s13677-024-00719-4>
+
 Задача облачного хранилища данных. количество копий и т.д. А как измениться решение, если потребуется распределить ещё столько то сверху. Updating Rate и т.д. Дешевые мобильные пользователи, дорогие коммерческие. Разные классы задач. По типу хранилища на магнитных лентах, на жёстких дисках, на ssd. Уровень репликации тоже от клиента зависит. Возможно планирование нагрузки на год и учёт износа оборудования.
 
 Построить целевую функции и способ кодирования информации. Возможно внести в целевую функцию, свести к прямоугольным ограничениям.
@@ -13,3 +15,205 @@
 ### Военная игра
 
 Военная игра с битовыми строками из 7269.PDF.pdf
+
+
+### Tensorflow
+
+<https://web.njit.edu/~ansari/papers/94pdp.pdf>
+
+
+### Materialized views
+
+<https://wwwiti.cs.uni-magdeburg.de/~eike/selftuning/sources/an-evolutionary-approach-to.pdf>
+
+
+SELECT COUNT(TABLE.COLUMN), MIN(TABLE.COLUMN), AVG(TABLE.COLUMN)
+JOIN TABLE_1.COL=TABLE_2.COL
+FROM TABLE_1, TABLE_2
+WHERE COND_2 AND COND_2 AND COND_3
+
+JOIN можно в том числе на промежуточный запрос
+
+COND1
+COND2
+COND3
+COND4 QUERY_1, QUERY_2
+
+
+1. Сгенерировать все возможные деревья JOIN
+
+разные способы join.
+
+```{r}
+aggs <- c('MIN','MAX')
+selects <- paste0('COL',1:2)
+conds <- paste0('COND',1:2)
+tbls <- paste0('T',1:3)
+kfun <- c('AGG','SEL','FILTER','JOIN')
+g <- igraph::make_empty_graph()
+```
+
+```{r}
+empty <- 'JE'
+q1 <- c(list(fun = 'AGGREGATE', val = c(list(
+  fun = 'SELECT', val = c(list(
+    fun = 'FILTER', val = c(list(fun = 'JOIN', val = empty), tbls), 'SUBQ1'
+  ), conds)
+), selects)), aggs)
+q2 <- c(list(fun = 'SELECT', val = c(list(
+  fun = 'FILTER', val = c(list(fun = 'JOIN', val = empty), tbls)
+), conds)), selects)
+q3 <- c(list(fun = 'SELECT', val = c(list(
+  fun = 'FILTER', val = c(list(fun = 'JOIN', val = empty), c('T1', 'T2','T5'))
+), conds)), c('COL6'))
+
+q4 <- c(list(fun = 'SELECT', val = c(list(
+  fun = 'FILTER', val = c(list(fun = 'JOIN', val = empty), c('T1', 'T2', 'T4'))
+), conds)), c('COL6'))
+```
+
+```{r}
+source('sql.R')
+```
+
+```{r}
+add_query(q1,'Q1')
+add_query(q2,'Q2')
+add_query(q3,'Q3')
+add_query(q4,'Q4')
+```
+
+
+
+```{r}
+merge_graph()
+```
+
+```{r}
+#| fig-width: 20
+
+plot(g)
+```
+```{r}
+plot(igraph::make_tree(10) %du% igraph::make_tree(10))
+```
+
+
+```{r}
+#| fig-width: 20
+
+tg <- igraph::unfold_tree(g, mode = 'in', roots = 'Q1')$tree 
+tg <- igraph::subgraph(g, which(igraph::degree(tg) != 0))
+```
+
+out.callback = function(graph, data, extra) {
+  print(data)
+}
+
+
+```{r}
+#| fig-width: 20
+plot(tg, layout=igraph::layout_as_tree)
+```
+
+```{r}
+create_tree(40, children = 3, directed = TRUE)
+```
+
+
+```{r}
+igraph::V(g)[name=='Q1'] |> as.integer()
+```
+
+
+```{r}
+igraph::subgraph(g, c(2,3,5,21,31,20)) |> plot()
+```
+
+
+```{r}
+as_tbl_graph(g) |>
+to_dfs_tree(16, mode = 'in')
+```
+
+```{r}
+g
+```
+
+```{r}
+igraph::V(g)[[1]]$compute <- TRUE
+```
+
+
+```{r}
+length(igraph::E(g)[.to('JE')])
+```
+
+```{r}
+process <- function(node)
+{
+  in_nodes <- igraph::E(g)[.to(node)] # & label == args, & label == arg
+  
+  if(length(in_nodes) == 0L)
+    return(1)
+  else
+  igraph::E(g)[.to(node)] |> 
+igraph::tail_of(g, es = _) |> 
+purrr::reduce(\(cost,node) cost + process(node), .init = 0)
+}
+
+process()
+
+```
+
+```{r}
+i <- igraph::make_empty_graph() |> igraph::add_vertices(1, name = list(list(1,2)))
+```
+
+
+```{r}
+igraph::V(i)$name
+```
+
+
+У таблицы это колличество строк, ширина стобца
+И тогда на каждом этапе тоже вычисляется количество строк и набор столбцов
+
+
+Для начала все условия и запросы должны быть отсортированы.
+
+Join перемножает аргументы
+У condition это процент подходящих записей
+У select это относительный размер столбца в таблице
+У 
+
+Для всех аргументов надо задавать compute и storage, даже для элементов join
+из-за подзапросов join может быть в subquety может быть в join, поэтому надо обрабатывать и его стоимотсь. А может быть и в Where. Если узел сохранён в память, то его стоимость compute = 0, а стоимость хранения зависит от размера. Если нет, то он обязательно расчитывается (compute), а потом принимается решение о его сохранении. Обратите внимание на функции E(g)[.to,.from] и V(g). В графе с помощью аттрибуа показано. Внутри AGG кроме Identity линейно зависит от колличества строк. Unique квадратичино
+
+Тип узла. Таблица, условие, стоблец, аггрегат.
+у таблицы свойства, колличество строк, имена стоблцов и их типов данных.
+У промежуточных узлов тоже должно храниться полученная таблица.
+У условия процент подходящих
+У столбца нет дополнительных аттрибутов, только имя
+У агграгата тоже только имя.
+У всех узлов есть compute. Если это лист, то его compute 0. Если условие зависит от подзапроса, то его compute равен compute подзапроса, тоже самое и с join.
+
+
+сразу через датафрейм. JOIN(1,2), TABLE1, TABLE2, FILTER(FILTER(FILTER(JOIN(TABLE1,TABLE2),COND1))),
+
+Вопрос с левыми деревьями из статьи 
+
+После этого слияния можно удалить узлы у которых один вход и один выход.
+
+Потом применить все фильтры условий опять во всех возможных комбинациях, т.е. экспоненциальный рост графа.
+
+Стоимость ребёр можно определять во время генерации.
+
+При том, показать что некоторые COND зависят от QUERY
+
+Фитнес функция, это сумма всех рёбер графа. Задача её минимизировать
+
+
+
+
+И процедура Repair

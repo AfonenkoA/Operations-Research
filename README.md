@@ -33,6 +33,7 @@
 
 1.  [gdal](https://archlinux.org/packages/extra/x86_64/gdal/)
 2.  [libunits](https://aur.archlinux.org/packages/udunits)
+3.  [netcdf](https://archlinux.org/packages/extra/x86_64/netcdf/)
 
 ## Переменные среды
 
