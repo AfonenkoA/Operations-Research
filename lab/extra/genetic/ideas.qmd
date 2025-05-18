@@ -1,0 +1,87 @@
+
+```{r}
+#| fig-width: 20
+
+plot(g)
+```
+
+```{r}
+plot(igraph::make_tree(10) %du% igraph::make_tree(10))
+```
+
+
+```{r}
+#| fig-width: 20
+
+tg <- igraph::unfold_tree(g, mode = 'in', roots = 'Q1')$tree 
+tg <- igraph::subgraph(g, which(igraph::degree(tg) != 0))
+```
+
+out.callback = function(graph, data, extra) {
+  print(data)
+}
+
+
+```{r}
+#| fig-width: 20
+plot(tg, layout=igraph::layout_as_tree)
+```
+
+```{r}
+create_tree(40, children = 3, directed = TRUE)
+```
+
+
+```{r}
+igraph::V(g)[name=='Q1'] |> as.integer()
+```
+
+
+```{r}
+igraph::subgraph(g, c(2,3,5,21,31,20)) |> plot()
+```
+
+
+```{r}
+as_tbl_graph(g) |>
+to_dfs_tree(16, mode = 'in')
+```
+
+```{r}
+g
+```
+
+```{r}
+igraph::V(g)[[1]]$compute <- TRUE
+```
+
+
+```{r}
+length(igraph::E(g)[.to('JE')])
+```
+
+```{r}
+process <- function(node)
+{
+  in_nodes <- igraph::E(g)[.to(node)] # & label == args, & label == arg
+  
+  if(length(in_nodes) == 0L)
+    return(1)
+  else
+  igraph::E(g)[.to(node)] |> 
+igraph::tail_of(g, es = _) |> 
+purrr::reduce(\(cost,node) cost + process(node), .init = 0)
+}
+
+process()
+
+```
+
+```{r}
+i <- igraph::make_empty_graph() |> igraph::add_vertices(1, name = list(list(1,2)))
+```
+
+
+```{r}
+igraph::V(i)$name
+```

@@ -115,6 +115,8 @@ book:
         - lab/extra/packing/main.qmd
         - lab/extra/nonlinear/main.qmd
         - lab/extra/evolutionary/main.qmd
+        - lab/extra/genetic/main.qmd
+        - lab/extra/multi-objective/main.qmd
 
     - part: "Практические работы"
       chapters:

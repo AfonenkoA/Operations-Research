@@ -1,3 +1,7 @@
+---
+engine: knitr
+---
+
 # R {#sec-lab-programming-r}
 
 ## Установка
@@ -37,7 +41,7 @@ c(sqrt(1), sqrt(2), sqrt(3))
 :::: {#exr-lab-programming-r-plot2d}
 ### Вершины и овраги
 
-Построить график (@sec-r-tools-plotly-line2d) кусочно-гладкой функции (@sec-r-lang-basic-function-defenition) используя функцию `{r} ifelse() |> dl()`
+Построить график (@sec-r-tools-plotly-line2d) кусочно-гладкой функции (@sec-r-lang-basic-function-defenition) используя функцию `{r} base::ifelse() |> dl()`
 
 $$
 f(x)=\begin{cases}

@@ -220,7 +220,7 @@ clue::solve_LSAP(m)
 ```
 
 ::: callout-tip
-Для измерения производительности используйте `{r} system.time() |> dl()`
+Для измерения производительности используйте `{r} base::system.time() |> dl()`
 :::
 
 ::: {.callout-note appearance="minimal"}

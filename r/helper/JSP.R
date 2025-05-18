@@ -1,3 +1,6 @@
+# njob скаляр целое число работ
+# nmachine скаляр целое число машин
+# cost_mat матрица по строкам работы, по стобцам машины, на пересечении стоимость.
 make_task_data <- function(njob, nmachine, cost_mat)
 {
   list(
@@ -76,7 +79,14 @@ TSP_to_JSP <- function(task_data, path)
 
 plot_jsp_schedule <- function(sh)
 {
-  ggplot2::ggplot(sh, ggplot2::aes(x = from, xend = to, y = machine, yend = machine, color = job)) +
+  ggplot2::ggplot(sh,
+                  ggplot2::aes(
+                    x = from,
+                    xend = to,
+                    y = machine,
+                    yend = machine,
+                    color = job
+                  )) +
     ggplot2::geom_segment(linewidth = 5) +
     ggplot2::xlab(NULL) + ggplot2::ylab(NULL)
 }

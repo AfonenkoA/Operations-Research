@@ -1,5 +1,97 @@
 # Анализ эволюционного алгоритма {#sec-r-tools-solver-evolutionary-analysis}
 
-Контролируемая случайность, задание начального значения.
+Подключаем вспомогательные функции
 
-Статистическая проверка сходимости. Оценка числа вызова функций
+```{r}
+source('../../../helper/sample.R')
+source('../../../helper/plotly.R')
+source('../../../helper/smoof.R')
+source('../../../helper/smoof_plotly.R')
+```
+
+:::: {.content-visible when-format="html"}
+::: {.callout appearance="minimal"}
+⤓ [sample.R](../../../helper/sample.R)
+
+⤓ [plotly.R](../../../helper/plotly.R)
+
+⤓ [smoof.R](../../../helper/smoof.R)
+
+⤓ [smoof_plotly.R](../../../helper/smoof_plotly.R)
+:::
+::::
+
+:::: {.content-visible unless-format="html"}
+::: {.callout appearance="minimal"}
+`\faFile*[regular].`{=latex} [sample.R](r/helper/sample.R)
+
+`\faFile*[regular].`{=latex} [plotly.R](r/helper/plotly.R)
+
+`\faFile*[regular].`{=latex} [smoof.R](r/helper/smoof.R)
+
+`\faFile*[regular].`{=latex} [smoof_plotly.R](r/helper/smoof_plotly.R)
+:::
+::::
+
+Выберем тестовую функцию из библиотеки `smoof` и добавим обёртку для подсчёта числа вызовов
+
+```{r}
+objfn <- smoof::makeAckleyFunction(2) |> 
+  smoof::addLoggingWrapper(logg.x = TRUE, size  = 1e4L)
+```
+
+построим её график и посчитаем число вызовов
+
+```{r}
+#| eval: false
+
+smoof_pcontour(objfn, 30)
+```
+
+```{r}
+#| message: false
+#| warning: false
+
+smoof_pcontour(objfn, 30) |> pshow()
+```
+
+
+Функция была вызвана 
+
+```{r}
+smoof::getLoggedValues(objfn, compact = TRUE) |> nrow()
+```
+
+Теперь рассмотрим характеристики этой функции. Область поиска определяется через следующие вызовы
+
+```{r}
+smoof::getLowerBoxConstraints(objfn)
+smoof::getUpperBoxConstraints(objfn)
+```
+
+Характеристики функции
+
+```{r}
+smoof::getAvailableTags()
+```
+
+Определяется глобальный минимум или максимум
+
+```{r}
+smoof::shouldBeMinimized(objfn)
+```
+
+```{r}
+smoof::getGlobalOptimum(objfn)
+```
+
+Можно получить краткую информацию о функции за раз
+
+```{r}
+objfn
+```
+
+
+::: callout-important
+Для воспроизводимости результатов необходимо инициализировать генератор случайных чисел постоянным значением. Для инициализации в R используется `{r} base::set.seed() |> dl()`. Если библиотека использует для собственный генератор, то инициализируйте его как указано в документации. Например через параметр `control = list(seed = 42)`
+:::

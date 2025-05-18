@@ -39,3 +39,25 @@ res <- optim(par = 1, fn = o1, lower = 0, upper = pi, method = 'Brent')
 
 smoof::getLoggedValues(o1, compact = TRUE)
 ```
+
+## Преобразование в обычную функцию {#sec-r-tools-smoof-wrap}
+
+Некоторые пакеты работают только с обычными функциями R, а не с объектами smoof function. Для этого можно обернуть функцию 
+
+```{r}
+objfn <- smoof::makeSphereFunction(2) |> 
+  smoof::addLoggingWrapper(logg.x = TRUE, logg.y = TRUE)
+f <- \(par) objfn(par)
+```
+
+Теперь вызовем функцию `f`
+
+```{r}
+f(1:2)
+```
+
+И проверим вычисления
+
+```{r}
+smoof::getLoggedValues(objfn, compact = TRUE)
+```

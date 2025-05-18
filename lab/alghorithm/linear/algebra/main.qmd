@@ -18,7 +18,7 @@ engine: knitr
 ::: panel-tabset
 #### R
 
-`{r} solve() |> dl()` @sec-r-tools-basic-solve
+`{r} base::solve() |> dl()` @sec-r-tools-basic-solve
 
 #### Python
 
@@ -46,7 +46,7 @@ numpy
 ::: panel-tabset
 #### R
 
-Рассмотрите функции `{r} inverse() |> dl()` @sec-r-tools-basic-inverse, `{r} det() |> dl()` @sec-r-tools-basic-det
+Рассмотрите функции `{r} base::solve() |> dl()` @sec-r-tools-basic-inverse, `{r} base::det() |> dl()` @sec-r-tools-basic-det
 
 #### Python
 

@@ -40,13 +40,21 @@ add_node <- function(node)
   node$name
 }
 
+make_vertex <- function(q) purrr::modify_tree(q, post = name_node) |>
+  purrr::modify_tree(pre = cut_tree, post = add_node)
+
+add_subquery <- function(q, name)
+{
+  vtx_name <- make_vertex(q)
+  g <<- igraph::add_edges(g, c(vtx_name, name))
+  vtx_name
+}
 
 add_query <- function(q, name)
 {
-  vtx_name <- purrr::modify_tree(q, post = name_node) |>
-    purrr::modify_tree(pre = cut_tree, post = add_node)
+  vtx_name <- make_vertex(q)
   g <<- igraph::add_vertices(g, 1, name = name, fun = 'query') |>
-    igraph::add_edges(c(vtx_name, name), label = 'val')
+    igraph::add_edges(c(vtx_name, name))
   vtx_name
 }
 
@@ -114,7 +122,9 @@ insert_node <- function(common_args, unique_args, ids, fun, val)
 
   if (length(common_node_id) != 0)
   {
-    ids <- purrr::keep(ids, \(i) i != common_node_id)
+    i <- which(ids == common_node_id)
+    ids <- ids[-i]
+    unique_args <- unique_args[-i]
   }
   else
   {
@@ -139,7 +149,7 @@ insert_node <- function(common_args, unique_args, ids, fun, val)
   purrr::walk2(ids, unique_args, \(id, args) {
     igraph::V(g)$name <<- stringr::str_replace_all(igraph::V(g)$name,
                                                    stringr::str_escape(igraph::V(g)[[id]]$name),
-                                                   flat_str(fun, c(igraph::V(g)[[common_node_id]]$name, args)))
+                                                   flat_str(fun,igraph::V(g)[c(common_node_id,args)]$name))
   })
 }
 
@@ -152,4 +162,53 @@ merge_graph <- function()
       break
     purrr::pwalk(cmn, insert_node)
   }
+}
+
+add_entity <- function(fun)
+  function(g, name)
+    igraph::add_vertices(g, nv = 1, name = name, fun = fun)
+
+add_table <- add_entity('table')
+add_condition <- add_entity('condition')
+add_column <- add_entity('column')
+add_aggregate <-add_entity('aggregate')
+
+get_condition_names <- \(queries) purrr::map(queries,'body') |>
+  purrr::map('where') |>
+  purrr::list_c() |>
+  purrr::map(\(cond) if(!is.null(cond$depends)) cond$depends else cond$name) |>
+  as.character() |>
+  unique()
+
+get_column_names <- \(queries) purrr::map(queries,'body') |>
+  purrr::map('select') |>
+  purrr::list_c() |>
+  as.character() |>
+  unique()
+
+get_aggregate_names <- \(queries) purrr::map(queries, 'body') |>
+  purrr::map('aggregate') |>
+  purrr::list_c() |>
+  as.character() |>
+  unique()
+
+make_list_query <- function(body)
+{
+  base <- if(!is.null(body$join))
+    c(list(fun = 'JOIN', val = 'JE'), sort(body$join))
+  else
+    body$from
+
+
+  where <- if(!is.null(body$where))
+    c(list(fun = 'WHERE', val = base), purrr::map_chr(body$where, 'name') |> sort())
+  else
+    base
+
+  select <- c(list(fun = 'SELECT',val = where), sort(body$select))
+
+  if(!is.null(body$aggregate))
+    c(list(fun = 'AGGREGATE',val = select), sort(body$aggregate))
+  else
+    select
 }

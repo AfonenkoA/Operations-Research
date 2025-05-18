@@ -28,6 +28,7 @@ dshow('city.dot')
 #| fig-align: center
 
 g <- igraph::read_graph('buildings.graphml', format = 'GraphML')
+set.seed(42)
 plot(g, edge.label = igraph::E(g)$weight)
 ```
 
@@ -71,6 +72,7 @@ for(i in vs)
     igraph::E(g, path = p)$weight <- igraph::E(g, path = p)$weight + 
                                      P[cbind(head(p,-1), tail(p,-1))]
   }
+set.seed(42)
 plot(g, edge.label = igraph::E(g)$weight)
 ```
 
@@ -99,6 +101,7 @@ plot(g, edge.label = igraph::E(g)$weight)
 g <- igraph::make_full_graph(3,directed = TRUE)
 igraph::V(g)$label <- 1:3
 igraph::E(g)$capacity <- Inf
+set.seed(42)
 plot(g, edge.curved=0.3)
 ```
 
@@ -116,12 +119,14 @@ g <- g |>
 
 x <- igraph::E(g)$capacity
 x[x==Inf] <- '' 
+set.seed(42)
 plot(g, edge.label = x, edge.curved=0.3)
 ```
 
 ```{r}
 #| include: false
 
+set.seed(42)
 plot(g |> igraph::delete_vertices(c(4,5)), edge.label = igraph::max_flow(g, 4, 5)$flow, edge.curved=0.3)
 ```
 

@@ -1,3 +1,7 @@
+---
+engine: knitr
+---
+
 # Эволюционная оптимизация {#sec-lab-alghorithm-evolutionary}
 
 ## Теория {#sec-lab-alghorithm-evolutionary-theory}
@@ -16,76 +20,105 @@
 
 ## Задания {#sec-lab-alghorithm-evolutionary-task}
 
-::: callout-important
-Для воспроизводимости результатов обязательно задавайте одинаковый seed random перед каждым запуском алгоритма
+Изучить процедуру анализа алгоритмов эволюционной оптимизации @sec-r-tools-solver-evolutionary-analysis.
+
+:::: {#exr-lab-alghoritm-evolutionary-from-pit-to-bottom}
+### Из ямы на дно
+
+Переходим от методов локальной оптимизации к глобальной. Требуется найти минимум [функции Экли](https://en.wikipedia.org/wiki/Ackley_function) второго порядка:
+
+1.  Используя один из методов нелинейного программирования используя случайное начальное приближение.
+2.  Используя один из методов эволюционного программирования перечисленных выше.
+
+Сравните число вычислений функции, использованное для нахождения минимума. Постройте график целевой функции и нанесите на него путь оптимизации.
+
+::: callout-tip
+В качестве реализации функции использовать `{r} smoof::makeAckleyFunction() |> dl()` . Для передачи её в библиотеку `nloptr` используйте @sec-r-tools-smoof-wrap
 :::
-
-### Глобальная оптимизация
-
-@sec-r-tools-solver-evolutionary-analysis
-
-adaptive momentum, посмотреть, какие алгоритмы используют оптимизаторы в нейросетях
-
-Попробовать определить глобальный максимум функции с помощью вызова классического метода с разных начальных позиций. Применить различные алгоритмы эволюционный оптимизации (только вызов).
 
 ::: {.callout-note appearance="minimal"}
 Уровень 1
 :::
+::::
 
-Ограничить объем отображаемых точен линейной, логарифмической и обратной логарифмической выборкой
+:::: {#exr-lab-alghoritm-evolutionary-fine-tuning}
+### Дорабатываем напильником
 
-Поиграться с и выбрать параметры для дальнейшего изучения более сложных функций
+Исследовать [функцию Растрыгина](https://www.sfu.ca/~ssurjano/rastr.html) 3 порядка. Для одного алгоритма на выбор для фиксированных параметров `seed-random` и начальной точки изменять параметры алгоритма, для получения глобального минимума с наименьшим числом итераций. Построить таблицу со значениями параметров и количества вычислений функции для достижения глобального оптимума.
 
-Вопросы к производительности, возможно использовать ggplot
+::: panel-tabset
+#### Метод имитации отжига
 
-<https://cran.r-project.org/web/packages/GA/vignettes/GA.html>
+- `temperature` Initial value for temperature.
+- `visiting.param` Parameter for visiting distribution.
+- `acceptance.param` Parameter for acceptance distribution.
 
-Играться с параметрами подобрав примерно эквивалентное число вызовов. Или попробовать явно ограничить число вызовов. Подумать над permutation в GA. Также в 4 задаче реализовать свой поверх этой библиотеки самостоятельно определив операторы мутации, кросовера и выборки.
+#### Метод роя частиц
 
-<https://github.com/DEAP/deap> Также можно строить генетику или реализовывать алгоритмы поверх этого фреймоврка.
+- `s` The swarm size.
+- `k` The exponent for calculating number of informants.
+- `p` The average percentage of informants for each particle. A value of 1 implies that all particles are fully informed.
+- `w` The exploitation constant.
+- `c.p` The local exploration constant.
+- `c.g` The global exploration constant.
+- `d`  The diameter of the search space.
+- `v.max` The maximal (euclidean) length of the velocity vector.
 
-```{r}
-loadNamespace('ecr') |> invisible()
-```
+#### Генетический алгоритм
 
-### Сравнительный анализ
-
-Для трёх различных функций (должны демонстрировать разное) и для алгоритмов пройтись и посчитать алгоритмов необходимо посчитать статистику по запускам, чтобы ответить, являются ли различия в алогитмах случайными или статистически обоснованными. Тесты статистической значимости крутить именно на отдельном методе. По вариантам или алгоритм роя или генетики или имитации отжига.
-
-Сравнивая два алгоритма (набор параметров в одном алгоритме) используется t-тест @sec-evolutionary-stats-t-test
-
-Сравнивая 3 и более используется f-test @sec-evolutionary-stats-f-test
+- `popSize` The population size.
+- `pcrossover` The probability of crossover between pairs of chromosomes.
+- `pmutation` The probability of mutation in a parent chromosome. Usually mutation occurs with a small probability.
+- `elitism` The number of best fitness individuals to survive at each generation.
+:::
 
 ::: callout-tip
-Используйте @sec-r-tools-stats-t-test и @sec-r-tools-stats-f-test
+В качестве реализации функции использовать `{r} smoof::makeRastriginFunction() |> dl()`.
 :::
 
 ::: {.callout-note appearance="minimal"}
 Уровень 2
 :::
+::::
 
-### Казино
+:::: {#exr-lab-alghoritm-evolutionary-alghorithm-comparsion}
+### Неслучайная случайность
 
-Задать seed random одинаковый для всех итераций. Один алгоритм на выбор:
+Сравнить результативность методов для фиксированного `seed-random` и различных начальных приближений. С помощью T-статистики Стьюдента @sec-evolutionary-stats-t-test и @sec-r-tools-stats-t-test сделать заключение о том, чем обусловлено различие выборок: принципиальным отличием в эффективности алгоритмов или случайными отклонениями. В качестве выборки использовать вектор полученных значений целевой функции. Определить факторы влияющие на решение. Изменяя факторы получить правильное решение с наименьшим числом итераций
 
 ::: panel-tabset
-#### Метод имитации отжига
+#### Вариант 1
 
-В эволюционном из хелпа по функциям определить факторы влияющие на решение. Изменяя факторы получить правильное решение с наименьшим числом итераций
+@sec-r-tools-solver-evolutionary-gensa и @sec-r-tools-solver-evolutionary-pso
 
-#### Метод роя частиц
+#### Вариант 2
 
-Параметры памяти
+@sec-r-tools-solver-evolutionary-gensa и @sec-r-tools-solver-evolutionary-ga
 
-#### Генетический алгоритм
+#### Вариант 3
 
-Операторы скрещивания и мутации, размер поколения
-
-#### Стохастический градиент
-
-Параметры шага и т.д
+ @sec-r-tools-solver-evolutionary-ga и @sec-r-tools-solver-evolutionary-pso
 :::
 
-Запускать несколько раз с разными параметрами, смотреть сколько раз выпал действительный оптимум. В добавок на ближайшее время
+::: callout-tip
+В качестве реализации функции использовать `{r} smoof::makeSchwefelFunction() |> dl()`.
+:::
 
+::: {.callout-note appearance="minimal"}
 Уровень 3
+:::
+::::
+
+:::: {#exr-lab-alghoritm-evolutionary-parameter-comparsion}
+### Вращайте барабан!
+
+Для [функции Шафера N2](https://www.sfu.ca/~ssurjano/schaffer2.html) для одного алгоритма на выбор (@exr-lab-alghoritm-evolutionary-fine-tuning) сравнить 3 набора параметров. С помощью F статистики Фишера сделать вывод о статистической значимости различий эффективности алгоритмов @sec-evolutionary-stats-f-test и @sec-r-tools-stats-f-test.
+
+::: callout-tip
+В качестве реализации функции использовать `{r} smoof::makeSchafferN2Function() |> dl()`.
+:::
+
+::: {.callout-note appearance="minimal"}
+Уровень 3
+:::
+::::

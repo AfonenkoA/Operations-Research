@@ -1,6 +1,6 @@
 project:
   type: book
-  output-dir: _sbook
+  output-dir: _student-book
 
 book:
   chapters:
@@ -32,11 +32,16 @@ book:
         - nonlinear/constrained/analytical/main.qmd
         - nonlinear/constrained/numerical/conversion-to-unconstrained.qmd
 
+    - part: evolutionary/overview.qmd
+      chapters:
+        - evolutionary/stats.qmd
+
     - part: "Задания. Алгоритмы"
       chapters:
         - lab/alghorithm/programming/r/main.qmd
         - lab/alghorithm/linear/algebra/main.qmd
         - lab/alghorithm/nonlinear/main.qmd
+        - lab/alghorithm/evolutionary/main.qmd
 
     - part: "Задания. Моделирование"
       chapters:
@@ -46,6 +51,7 @@ book:
         - lab/model/linear/integer/main.qmd
         - lab/model/network/main.qmd
         - lab/model/nonlinear/main.qmd
+        - lab/model/evolutionary/main.qmd
 
     - part: "Задания. Дополнительно"
       chapters:
@@ -82,6 +88,7 @@ book:
         - r/tools/solver/nonlinear/nloptr/local/constrained/inequality.qmd
         - r/tools/solver/nonlinear/nloptr/local/constrained/equality.qmd
 
+        - r/tools/solver/evolutionary/analysis.qmd
         - r/tools/solver/evolutionary/gensa.qmd
         - r/tools/solver/evolutionary/pso.qmd
         - r/tools/solver/evolutionary/ga.qmd

@@ -17,6 +17,7 @@
 -   @sec-nonlinear-constrained-numerical-many-direct
 -   @sec-nonlinear-constrained-numerical-many-gradient
 
+
 ## Задачи
 
 Используя несколько методов для решения одной задачи провести сравнение их эффективности используя процедуру анализа, предложенную в @sec-r-tools-solver-nonlinear-nloptr-analysis.
@@ -24,7 +25,6 @@
 ::: callout-tip
 Для вычисления производных можно воспользоваться пакетами символьных вычислений. Например @sec-r-tools-stats-deriv
 :::
-
 
 :::: {#exr-lab-alghoritm-nonlinear-one-dim}
 ### Одномерная минимизация
@@ -37,6 +37,7 @@ $$
 
 1.  Найти минимум функции
 2.  Построить график, отобразив на нём точки вычисления функции и точки минимума
+3.  Объяснить основную идею метода обратных парабол (метода Пауэлла).
 
 ::: {.callout-note appearance="minimal"}
 Уровень 1
@@ -53,7 +54,6 @@ $$
 $$
 
 1.  Применить @sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-directed-nelder-mead и @sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-directed-praxis
-
 2.  Применить @sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-gradient-bfgs и @sec-r-tools-solver-nonlinear-nloptr-local-unconstrained-gradient-newton
 
 ::: {.callout-note appearance="minimal"}
@@ -127,4 +127,23 @@ $$F=(\sum_{i=1}^N{L_ix_i}-b)^2$$
 ::: {.callout-note appearance="minimal"}
 Уровень 3
 :::
+::::
+
+:::: {#exr-lab-alghoritm-nonlinear-summary}
+### Итог
+
+::: callout-important
+Ответить на вопросы письменно в конспекте, на листике или в отчёте.
+:::
+
+1.  Дать общую характеристику градиентных методов и методов прямого поиска.
+2.  Объяснить основную идею методов:
+    + Нелдера-Мида
+    + Локальной вариации
+    + Семейства градиентных спусков
+    + Ньютона
+3.  Объяснить различие в эффективности градиентных методов и методов прямого поиска:
+    + На функции вытянутого оврага
+    + На функции высокой $n\geq 10$ размерности
+4.  Объяснить различие методов штрафных и барьерных функций.
 ::::

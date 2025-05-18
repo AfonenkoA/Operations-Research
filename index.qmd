@@ -110,6 +110,7 @@
 |               | -   @sec-lab-extra-network            |
 |               | -   @sec-lab-extra-nonlinear          |
 |               | -   @sec-lab-extra-evolutionary       |
+|               | -   @sec-lab-extra-genetic            |
 +---------------+---------------------------------------+
 | Практика      | -   @sec-practice-nonlinear           |
 +---------------+---------------------------------------+
