@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.4">
+<meta name="generator" content="quarto-1.8.7">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <title>6&nbsp; Основы R – Исследование операций</title>
 <style>
@@ -85,14 +85,15 @@ div.csl-indent {
 <link href="../../r/overview.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-19cd9126a9a9c64aacb03dc90954a64a.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e2dbac4cb4103ab08bd69bea3cb63eec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-83ffff5e47f8770f169806f6d52944f0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../../site_libs/bootstrap/bootstrap-26e176b6bb6480e54d8b35f81db715d9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -293,8 +294,8 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
- <span class="menu-text">Задания. Алгоритмы</span></a>
+            <a href="../../evolutionary/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Эволюционная оптимизация</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -302,20 +303,8 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../lab/alghorithm/programming/r/main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">R</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../lab/alghorithm/linear/algebra/main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Линейная алгебра</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../lab/alghorithm/nonlinear/main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Нелинейное программирование</span></span></a>
+  <a href="../../evolutionary/stats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Статистика анализ</span></span></a>
   </div>
 </li>
       </ul>
@@ -323,7 +312,7 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">Задания. Моделирование</span></a>
+ <span class="menu-text">Задания. Алгоритмы</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -331,38 +320,26 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../lab/model/basic/main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Введение</span></span></a>
+  <a href="../../lab/alghorithm/programming/r/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../lab/model/linear/standard/main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Линейное программирование</span></span></a>
+  <a href="../../lab/alghorithm/linear/algebra/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Линейная алгебра</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../lab/model/linear/transport/main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Транспортные модели</span></span></a>
+  <a href="../../lab/alghorithm/nonlinear/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Нелинейное программирование</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../lab/model/linear/integer/main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Целочисленное линейное программирование</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../lab/model/network/main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Сетевые модели</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../lab/model/nonlinear/main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Нелинейная оптимизация</span></span></a>
+  <a href="../../lab/alghorithm/evolutionary/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Эволюционная оптимизация</span></span></a>
   </div>
 </li>
       </ul>
@@ -370,7 +347,7 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Задания. Дополнительно</span></a>
+ <span class="menu-text">Задания. Моделирование</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -378,19 +355,43 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../lab/extra/programming/r/main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">R</span></span></a>
+  <a href="../../lab/model/basic/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Введение</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../lab/extra/network/main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Cетевые модели</span></span></a>
+  <a href="../../lab/model/linear/standard/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Линейное программирование</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../lab/extra/evolutionary/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../lab/model/linear/transport/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Транспортные модели</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lab/model/linear/integer/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Целочисленное линейное программирование</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lab/model/network/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Сетевые модели</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lab/model/nonlinear/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Нелинейная оптимизация</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lab/model/evolutionary/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Эволюционная оптимизация</span></span></a>
   </div>
 </li>
@@ -399,7 +400,7 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
- <span class="menu-text">Практические работы</span></a>
+ <span class="menu-text">Задания. Дополнительно</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -407,32 +408,61 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../lab/extra/programming/r/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lab/extra/network/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Cетевые модели</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../lab/extra/evolutionary/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Эволюционная оптимизация</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Практические работы</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../practice/basic-model/main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Модели исследования операций</span></span></a>
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Модели исследования операций</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../practice/linear/algebra/main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Линейная алгебра</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Линейная алгебра</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../practice/linear/graphical/main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Линейное программирование. Графическое представление</span></span></a>
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Линейное программирование. Графическое представление</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../practice/linear/model/main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Линейное программирование. Модели</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Линейное программирование. Модели</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../practice/linear/simplex/main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Линейное программирование. Симплекс метод</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Линейное программирование. Симплекс метод</span></span></a>
   </div>
 </li>
       </ul>
@@ -445,22 +475,22 @@ div.csl-indent {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
  <span class="menu-text">Приложения</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
  <span class="menu-text">Язык программирования R</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Переключить раздел">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth2 ">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../r/tools/renv.html" class="sidebar-item-text sidebar-link">
@@ -535,26 +565,32 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../r/tools/solver/evolutionary/analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Анализ эволюционного алгоритма</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../r/tools/solver/evolutionary/gensa.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">GenSA Имитации отжига</span></span></a>
+ <span class="menu-text"><span class="chapter-number">N</span>&nbsp; <span class="chapter-title">GenSA Имитации отжига</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../r/tools/solver/evolutionary/pso.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">N</span>&nbsp; <span class="chapter-title">PSO метод роя частиц</span></span></a>
+ <span class="menu-text"><span class="chapter-number">O</span>&nbsp; <span class="chapter-title">PSO метод роя частиц</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../r/tools/solver/evolutionary/ga.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">O</span>&nbsp; <span class="chapter-title">GA обобщенный генетический алгоритм</span></span></a>
+ <span class="menu-text"><span class="chapter-number">P</span>&nbsp; <span class="chapter-title">GA обобщенный генетический алгоритм</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../r/tools/solver/evolutionary/tsp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">P</span>&nbsp; <span class="chapter-title">TSP задача коммивояжера</span></span></a>
+ <span class="menu-text"><span class="chapter-number">Q</span>&nbsp; <span class="chapter-title">TSP задача коммивояжера</span></span></a>
   </div>
 </li>
       </ul>
@@ -732,7 +768,7 @@ div.csl-indent {
 <p>Рекомендуется использовать оператор <code>&lt;-</code>.</p>
 </div>
 </div>
-<p>Так как R интерпретируемый язык переменные можно удалять с помощью функции <a href="https://rdrr.io/r/base/rm.html"><code>rm()</code></a>. После удаления обращение по имени <code>var_1</code> генерирует предупреждение.</p>
+<p>Так как R интерпретируемый язык переменные можно удалять с помощью функции <a href="https://rdrr.io/r/base/rm.html"><code>base::rm()</code></a>. После удаления обращение по имени <code>var_1</code> генерирует предупреждение.</p>
 <div class="cell">
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">var_1</span><span class="op">)</span></span>
 <span><span class="va">var_1</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -750,7 +786,7 @@ div.csl-indent {
 <li><a href="#sec-r-lang-basic-array" class="quarto-xref">Массивы&nbsp;<span>6.6</span></a></li>
 <li><a href="#sec-r-lang-basic-table" class="quarto-xref">Таблицы&nbsp;<span>6.7</span></a></li>
 </ul>
-<p>Все объекты в R строятся на основе интерфейса вектор. Два основных типа которые реализуют этот интерфейс: <a href="https://rdrr.io/r/base/list.html"><code>list()</code></a> и <a href="https://rdrr.io/r/base/vector.html"><code>vector()</code></a> остальные R-объекты строятся на основе этих типов. Существует шесть типов <a href="https://rdrr.io/r/base/typeof.html"><code>typeof()</code></a> данных атомарных векторов.</p>
+<p>Все объекты в R строятся на основе интерфейса вектор. Два основных типа которые реализуют этот интерфейс: <a href="https://rdrr.io/r/base/list.html"><code>base::list()</code></a> и <a href="https://rdrr.io/r/base/vector.html"><code>base::vector()</code></a> остальные R-объекты строятся на основе этих типов. Существует шесть типов <a href="https://rdrr.io/r/base/typeof.html"><code>base::typeof()</code></a> данных атомарных векторов.</p>
 <div id="tbl-r-lang-basic-data-types" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-r-lang-basic-data-types-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Таблица&nbsp;6.1: Базовые типы данных
@@ -841,7 +877,7 @@ div.csl-indent {
 </div>
 <section id="sec-r-lang-basic-vector-sequence" class="level3" data-number="6.3.1"><h3 data-number="6.3.1" class="anchored" data-anchor-id="sec-r-lang-basic-vector-sequence">
 <span class="header-section-number">6.3.1</span> Последовательности</h3>
-<p>Для объединения элементов в вектор используется функция <a href="https://rdrr.io/r/base/c.html"><code>c()</code></a> – <em>combine</em>. При комбинации элементов различных типов общий тип выводится по правилам (ссылка).</p>
+<p>Для объединения элементов в вектор используется функция <a href="https://rdrr.io/r/base/c.html"><code>base::c()</code></a> – <em>combine</em>. При комбинации элементов различных типов общий тип выводится по правилам (ссылка).</p>
 <div class="cell">
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">a</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span></span>
 <span><span class="va">a</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -857,14 +893,14 @@ div.csl-indent {
 <pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
 </div>
 </div>
-<p>или функции <a href="https://rdrr.io/r/base/seq.html"><code>seq()</code></a></p>
+<p>или функции <a href="https://rdrr.io/r/base/seq.html"><code>base::seq()</code></a></p>
 <div class="cell">
 <div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">5</span>, <span class="fl">9</span>, by <span class="op">=</span> <span class="fl">0.4</span><span class="op">)</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 5.0 5.4 5.8 6.2 6.6 7.0 7.4 7.8 8.2 8.6 9.0</code></pre>
 </div>
 </div>
-<p>Повторить элементы вектора можно с помощью функции <a href="https://rdrr.io/r/base/rep.html"><code>rep()</code></a></p>
+<p>Повторить элементы вектора можно с помощью функции <a href="https://rdrr.io/r/base/rep.html"><code>base::rep()</code></a></p>
 <div class="cell">
 <div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span>, each <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -875,7 +911,7 @@ div.csl-indent {
 <pre><code>[1] 1 2 3 1 2 3 1 2 3</code></pre>
 </div>
 </div>
-<p>Длина вектора получается функцией <a href="https://rdrr.io/r/base/length.html"><code>length()</code></a></p>
+<p>Длина вектора получается функцией <a href="https://rdrr.io/r/base/length.html"><code>base::length()</code></a></p>
 <div class="cell">
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">v</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">5</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">v</span><span class="op">)</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -930,7 +966,7 @@ div.csl-indent {
 </div>
 </section></section></section><section id="sec-r-lang-basic-list" class="level2" data-number="6.4"><h2 data-number="6.4" class="anchored" data-anchor-id="sec-r-lang-basic-list">
 <span class="header-section-number">6.4</span> Список</h2>
-<p>Списки - это объекты R, которые содержат элементы различных типов, такие как числа, строки, векторы и другие списки внутри них. Список также может содержать матрицу или функцию в качестве своих элементов. Список создается с помощью функции <a href="https://rdrr.io/r/base/list.html"><code>list()</code></a>. Ниже приведен пример создания списка, содержащего строки, числа, векторы и логические значения.</p>
+<p>Списки - это объекты R, которые содержат элементы различных типов, такие как числа, строки, векторы и другие списки внутри них. Список также может содержать матрицу или функцию в качестве своих элементов. Список создается с помощью функции <a href="https://rdrr.io/r/base/list.html"><code>base::list()</code></a>. Ниже приведен пример создания списка, содержащего строки, числа, векторы и логические значения.</p>
 <div class="cell">
 <div class="sourceCode" id="cb42"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">list_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="st">'Red'</span>, <span class="st">'Green'</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">21</span>,<span class="fl">32</span>,<span class="fl">11</span><span class="op">)</span>, <span class="cn">TRUE</span>, <span class="fl">51.23</span>, <span class="fl">119.1</span><span class="op">)</span></span>
 <span><span class="va">list_data</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1349,7 +1385,7 @@ div.csl-indent {
 </div>
 </section><section id="sec-r-lang-basic-vectorization-logical" class="level3" data-number="6.9.3"><h3 data-number="6.9.3" class="anchored" data-anchor-id="sec-r-lang-basic-vectorization-logical">
 <span class="header-section-number">6.9.3</span> Логические</h3>
-<p>В следующей таблице приведены логические операторы, поддерживаемые языком R. Они применимы только к векторам типа <a href="https://rdrr.io/r/base/logical.html"><code>logical()</code></a>, <a href="https://rdrr.io/r/base/numeric.html"><code>numeric()</code></a> или <a href="https://rdrr.io/r/base/complex.html"><code>complex()</code></a>. Все числа больше 1 считаются логическим значением TRUE.</p>
+<p>В следующей таблице приведены логические операторы, поддерживаемые языком R. Они применимы только к векторам типа <a href="https://rdrr.io/r/base/logical.html"><code>base::logical()</code></a>, <a href="https://rdrr.io/r/base/numeric.html"><code>base::numeric()</code></a> или <a href="https://rdrr.io/r/base/complex.html"><code>complex()</code></a>. Все числа больше 1 считаются логическим значением TRUE.</p>
 <p>Каждый элемент первого вектора сравнивается с соответствующим элементом второго вектора. Результатом сравнения является булево значение.</p>
 <div id="tbl-r-lang-basic-vectorization-logical-vector" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure"><figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-r-lang-basic-vectorization-logical-vector-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1508,7 +1544,7 @@ div.csl-indent {
 </section><section id="sec-r-lang-basic-branching-switch" class="level3" data-number="6.10.3"><h3 data-number="6.10.3" class="anchored" data-anchor-id="sec-r-lang-basic-branching-switch">
 <span class="header-section-number">6.10.3</span> Функция <code>switch</code>
 </h3>
-<p>Оператор <a href="https://rdrr.io/r/base/switch.html"><code>switch()</code></a> позволяет проверить переменную на равенство со списком значений. Каждое значение называется случаем, и переменная, которая включается, проверяется для каждого случая. Оператор записывается следующим образом:</p>
+<p>Оператор <a href="https://rdrr.io/r/base/switch.html"><code>base::switch()</code></a> позволяет проверить переменную на равенство со списком значений. Каждое значение называется случаем, и переменная, которая включается, проверяется для каждого случая. Оператор записывается следующим образом:</p>
 <div class="sourceCode" id="cb141"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/switch.html">switch</a></span><span class="op">(</span><span class="va">expression</span>, <span class="va">case1</span>, <span class="va">case2</span>, <span class="va">case3</span>, <span class="va">....</span><span class="op">)</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>К оператору switch применяются следующие правила.</p>
 <ul>
@@ -1693,7 +1729,7 @@ div.csl-indent {
 <p>В R есть множество встроенных функций, которые можно вызывать непосредственно в программе, не определяя их предварительно. Также можно создавать и использовать собственные функции, называемые функциями, определяемыми пользователем.</p>
 </section><section id="sec-r-lang-basic-function-integrated" class="level3" data-number="6.12.3"><h3 data-number="6.12.3" class="anchored" data-anchor-id="sec-r-lang-basic-function-integrated">
 <span class="header-section-number">6.12.3</span> Встроенные функции</h3>
-<p>Простыми примерами встроенных функций являются <a href="https://rdrr.io/r/base/seq.html"><code>seq()</code></a>, <a href="https://rdrr.io/r/base/mean.html"><code>mean()</code></a>, <a href="https://rdrr.io/r/base/sum.html"><code>sum()</code></a>, <a href="https://rdrr.io/r/base/paste.html"><code>paste()</code></a> и т. д. Они напрямую вызываются программами, написанными пользователем.</p>
+<p>Простыми примерами встроенных функций являются <a href="https://rdrr.io/r/base/seq.html"><code>base::seq()</code></a>, <a href="https://rdrr.io/r/base/mean.html"><code>base::mean()</code></a>, <a href="https://rdrr.io/r/base/sum.html"><code>base::sum()</code></a>, <a href="https://rdrr.io/r/base/paste.html"><code>base::paste()</code></a> и т. д. Они напрямую вызываются программами, написанными пользователем.</p>
 <div class="cell">
 <div class="sourceCode" id="cb164"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">32</span>,<span class="fl">44</span><span class="op">)</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
