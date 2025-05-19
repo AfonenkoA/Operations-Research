@@ -25,6 +25,10 @@ book:
         - linear/simplex/special-cases.qmd
         - linear/integer.qmd
 
+    - part: minizinc/overview.qmd
+      chapters:
+        - minizinc/basic.qmd
+
     - part: nonlinear/overview.qmd
       chapters:
         - nonlinear/unconstrained/analytical/one/main.qmd
@@ -58,6 +62,7 @@ book:
         - lab/extra/programming/r/main.qmd
         - lab/extra/network/main.qmd
         - lab/extra/evolutionary/main.qmd
+        - lab/extra/constraint/main.qmd
 
     - part: "Практические работы"
       chapters:

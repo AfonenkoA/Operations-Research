@@ -1,0 +1,17 @@
+Криптоарбитраж из ampl
+
+<https://ampl.com/mo-book/notebooks/04/cryptocurrency-arbitrage.html>
+
+Метод критического пути
+
+Построить граф зависимости активности. Из таблицы задать в tibble, с помощью tibble построить граф и задать critiacal path.
+
+<!--Просто списко активности из тахи.-->
+
+Построение расписания
+
+<https://cran.r-project.org/web/packages/sfnetworks/vignettes/sfn04_routing.html>
+
+<https://optimization-daily.netlify.app/posts/2022-07-09-maximum-network-flows-in-r/>
+
+<https://igraph.org/r/html/1.2.4/min_cut.html>

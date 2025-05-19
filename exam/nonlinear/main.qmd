@@ -1,7 +1,7 @@
 # Нелинейное программирование {#sec-exam-nonlinear}
 
 ::::: {.content-hidden when-profile="exam"}
-## Темы {#sec-exam-network-topics}
+## Темы {#sec-exam-nonlinear-topics}
 
 ::: {#exm-exam-network}
 ### Примерчик

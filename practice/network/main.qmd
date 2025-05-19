@@ -1,7 +1,7 @@
 # Сетевые задачи {#sec-practice-network}
 
 ::::{.content-hidden when-profile="practice"}
-## Темы {#sec-practice-linear-simplex-topics}
+## Темы {#sec-practice-network-topics}
 
 Построить граф, найти его минимальное остовное дерево.
 

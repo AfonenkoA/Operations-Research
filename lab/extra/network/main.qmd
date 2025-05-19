@@ -55,6 +55,7 @@ plot(
 
 ```{r}
 #| echo: false
+
 v <- data.frame('Устройство' = igraph::V(g)$name,
            'Тип' = igraph::V(g)$type,
            'Группа' = igraph::V(g)$group,
@@ -81,6 +82,7 @@ dplyr::sample_n(v,5) |>
 
 ```{r}
 #| echo: false
+
 e <- igraph::as_data_frame(g)
 readr::write_csv(e, file = 'edge.csv')
 dplyr::sample_n(e,5) |>
@@ -117,11 +119,13 @@ dplyr::sample_n(e,5) |>
 
 ::: callout-tip
 Идея представить граф как набор рёбер.
+:::
 
 ```{r}
 #| fig-align: center
 
 g <- igraph::sample_gnp(12,0.4)
+set.seed(42)
 plot(g)
 ```
 
@@ -139,37 +143,11 @@ hg <- dplyr::left_join(
   dplyr::mutate(color = tidyr::replace_na(color, 'black')) |>
   igraph::graph_from_data_frame(directed = FALSE)
 
+set.seed(42)
 plot(
   hg,
   edge.label = igraph::E(hg)$weight,
   edge.color = igraph::E(hg)$color)
 ```
-:::
 
 ::::::::::::::::::
-
-:::: content-hidden
-Расписание экзаменов на реальных данных из PDF maxflow11
-
-::: {.callout-note appearance="minimal"}
-Уровень 4
-:::
-
-Криптоарбитраж из ampl
-
-<https://ampl.com/mo-book/notebooks/04/cryptocurrency-arbitrage.html>
-
-Метод критического пути
-
-Построить граф зависимости активности. Из таблицы задать в tibble, с помощью tibble построить граф и задать critiacal path.
-
-<!--Просто списко активности из тахи.-->
-
-Построение расписания
-
-<https://cran.r-project.org/web/packages/sfnetworks/vignettes/sfn04_routing.html>
-
-<https://optimization-daily.netlify.app/posts/2022-07-09-maximum-network-flows-in-r/>
-
-<https://igraph.org/r/html/1.2.4/min_cut.html>
-::::

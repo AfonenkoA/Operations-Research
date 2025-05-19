@@ -81,7 +81,7 @@ book:
       chapters:
         - game-theory/matrix.qmd
 
-    - part: multi-objective/overview.qmd
+    - multi-objective/overview.qmd
 
     - part: "Задания. Алгоритмы"
       chapters:

@@ -5,4 +5,4 @@ project:
 book:
   chapters:
         - index.qmd
-        - lab/model/nonlinear/main.qmd
+        - lab/extra/constraint/main.qmd

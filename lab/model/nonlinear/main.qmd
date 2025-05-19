@@ -41,7 +41,7 @@ $$
 $$ Особенностью героя Morphling является то, что он может перекачивать все свои очки силы в ловкость и наоборот в соотношении 1 к 1. Регенерация здоровья зависит от силы. Одно очко силы увеличивает восстановление здоровья на 0.1 единицу в секунду. Число атак в секунду зависит определяется как
 
 $$
-\mathrm{Атк}/\mathrm{c}=\frac{100+\mathrm{Лов}}{100\cdotБВА}
+\mathrm{Атк}/\mathrm{c}=\frac{100+\mathrm{Лов}}{100 \cdot \mathrm{БВА}}
 $$
 
 где БВА – базовое время атаки $\mathrm{БВА}=1.5\mathrm{с}$. Наносимый урон за одну атаку зависит от ловкости
@@ -267,13 +267,13 @@ $$ для данных из файла
 
 :::: {.content-visible when-format="html"}
 ::: {.callout appearance="minimal"}
-⤓ [fit-one.csv](fit-one.csv)
+⤓ [fit-many.csv](fit-many.csv)
 :::
 ::::
 
 :::: {.content-visible unless-format="html"}
 ::: {.callout appearance="minimal"}
-`\faFile*[regular].`{=latex} [fit-one.csv](lab/model/nonlinear/fit-one.csv)
+`\faFile*[regular].`{=latex} [fit-many.csv](lab/model/nonlinear/fit-many.csv)
 :::
 ::::
 
