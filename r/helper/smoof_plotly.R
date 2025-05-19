@@ -1,8 +1,15 @@
+# Логарифм со знаком
+slog <- \(v) sign(v) * log(abs(v)) |> tidyr::replace_na(0)
+
 # Вызывает библиотеку plot_ly для отрисовки контурного графика для функции smoof
 smoof_pcontour <- function(f, len)
 {
   r <- smoof_outer(f, len)
-  plotly::plot_ly(x = r$x1, y = r$x2, z = r$f, type = 'contour')
+  plotly::plot_ly(x = r$x1,
+                  y = r$x2,
+                  z = slog(r$f),
+                  type = 'contour',
+                  ncontours = 40)
 }
 
 # Для градиентного графика
