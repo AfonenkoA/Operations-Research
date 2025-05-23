@@ -216,6 +216,12 @@ quarto render --to html --profile dev,exam,html
 quarto render --to latex --profile dev,exam,pdf-class
 ```
 
+## Публикация
+
+``` bash
+clear && git clean -fdx && Rscript -e 1 && quarto publish gh-pages --profile student,prod,html
+```
+
 ## Подсчёт строк кода
 
 ``` bash

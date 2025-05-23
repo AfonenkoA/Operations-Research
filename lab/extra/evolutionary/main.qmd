@@ -79,9 +79,9 @@ alt_mat <- tele[['Altitude']]$read()
 
 :::: {.content-visible unless-format="html"}
 ::: {.callout appearance="minimal"}
-`\faFile*[regular].`{=latex} [tele.hdf5](lab/extra/evolutionary/model/tele.hdf5)
+`\faFile*[regular].`{=latex} [tele.hdf5](lab/extra/evolutionary/tele.hdf5)
 
-`\faFile*[regular].`{=latex} [ban.csv](lab/extra/evolutionary/model/ban.csv)
+`\faFile*[regular].`{=latex} [ban.csv](lab/extra/evolutionary/ban.csv)
 :::
 ::::
 

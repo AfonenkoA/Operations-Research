@@ -1,0 +1,4 @@
+---
+- from: main.qmd
+  files:
+    - shadow.csv

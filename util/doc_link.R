@@ -1,8 +1,7 @@
 loadNamespace('downlit') |> invisible()
 loadNamespace('xml2') |> invisible()
 
-dl <- doc_link <-
-  \(fun) fun |>
+dl <- doc_link <- \(fun) fun |>
   rlang::enquo() |>
   rlang::as_label() |>
   (\(x) paste0('`',x,'`'))() |>
