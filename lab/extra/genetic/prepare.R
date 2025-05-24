@@ -40,3 +40,8 @@ purrr::walk2(
 
 # В графе определяются общие узлы, с последующим слиянием
 merge_graph()
+
+# Сохранить в файл
+igraph::write_graph(g,'plan.graphml',format = 'graphml')
+readr::write_csv(igraph::as_data_frame(g, 'vertices'), 'vertex.csv')
+readr::write_csv(igraph::as_data_frame(g, 'edges'), 'edges.csv')

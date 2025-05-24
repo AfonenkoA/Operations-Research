@@ -1,6 +1,6 @@
 flat_str <- \(fun, args) stringr::str_glue('{fun}({paste0(args,collapse=",")})')
 
-SQL_FUN <- c('JOIN', 'FILTER', 'SELECT', 'AGGREGATE')
+SQL_FUN <- c('JOIN', 'WHERE', 'SELECT', 'AGGREGATE')
 
 cut_tree <- function(node)
 {
@@ -32,8 +32,7 @@ add_node <- function(node)
   args <- node[names(node) == ''] |> as.character()
 
   g <<- setdiff(c(args, node$val), igraph::V(g)$name) |>
-    purrr::reduce(\(g, arg)  igraph::add_vertices(g, 1, name = arg, fun =
-                                                    'base'), .init = g)
+    purrr::reduce(\(g, arg)  igraph::add_vertices(g, 1, name = arg), .init = g)
 
   g <<- purrr::reduce(args, \(g, v) igraph::add_edges(g, c(v, node$name), label = 'arg'), .init = g) |>
     igraph::add_edges(c(node$val, node$name), label = 'val')
@@ -167,6 +166,10 @@ merge_graph <- function()
 add_entity <- function(fun)
   function(g, name)
     igraph::add_vertices(g, nv = 1, name = name, fun = fun)
+
+# Граф обязательно должен иметь имя g
+init_graph <- \() igraph::make_empty_graph() |>
+  igraph::add_vertices(n = 1, name = 'JE', fun = 'table')
 
 add_table <- add_entity('table')
 add_condition <- add_entity('condition')
