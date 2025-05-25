@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.7">
+<meta name="generator" content="quarto-1.8.11">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>32&nbsp; Программирование в ограничениях – Исследование операций</title>
+<title>34&nbsp; Программирование в ограничениях – Исследование операций</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -27,7 +27,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
 <link href="../../../practice/basic-model/main.html" rel="next">
-<link href="../../../lab/extra/evolutionary/main.html" rel="prev">
+<link href="../../../lab/extra/genetic/main.html" rel="prev">
 <script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -35,10 +35,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-e2dbac4cb4103ab08bd69bea3cb63eec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-09b140d2d032adf2aedb8b099be3ee13.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-26e176b6bb6480e54d8b35f81db715d9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
+<link href="../../../site_libs/bootstrap/bootstrap-a37c3f83d22f78a2a185819b108e8b30.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light"><script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -102,7 +102,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключить боковую панель навигации" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lab/extra/programming/r/main.html">Задания. Дополнительно</a></li><li class="breadcrumb-item"><a href="../../../lab/extra/constraint/main.html"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Программирование в ограничениях</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lab/extra/programming/r/main.html">Задания. Дополнительно</a></li><li class="breadcrumb-item"><a href="../../../lab/extra/constraint/main.html"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Программирование в ограничениях</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключить боковую панель навигации" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Поиск" onclick="window.quartoOpenSearch();">
@@ -411,14 +411,26 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../../../lab/extra/nonlinear/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Нелинейная оптимизация. Последние минуты жизни</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../../../lab/extra/evolutionary/main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Эволюционная оптимизация</span></span></a>
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Эволюционная оптимизация. Телекомания</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lab/extra/genetic/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Генетический алгоримт. Материализованные представления</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../lab/extra/constraint/main.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Программирование в ограничениях</span></span></a>
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Программирование в ограничениях</span></span></a>
   </div>
 </li>
       </ul>
@@ -435,31 +447,31 @@ window.Quarto = {
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../practice/basic-model/main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Модели исследования операций</span></span></a>
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Модели исследования операций</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../practice/linear/algebra/main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Линейная алгебра</span></span></a>
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Линейная алгебра</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../practice/linear/graphical/main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Линейное программирование. Графическое представление</span></span></a>
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Линейное программирование. Графическое представление</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../practice/linear/model/main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Линейное программирование. Модели</span></span></a>
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Линейное программирование. Модели</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../practice/linear/simplex/main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Линейное программирование. Симплекс метод</span></span></a>
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Линейное программирование. Симплекс метод</span></span></a>
   </div>
 </li>
       </ul>
@@ -602,13 +614,13 @@ window.Quarto = {
         <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Содержание</h2>
    
   <ul>
-<li><a href="#sec-lab-extra-constraint-theory" id="toc-sec-lab-extra-constraint-theory" class="nav-link active" data-scroll-target="#sec-lab-extra-constraint-theory"><span class="header-section-number">32.1</span> Теория</a></li>
-  <li><a href="#sec-lab-extra-constraint-task" id="toc-sec-lab-extra-constraint-task" class="nav-link" data-scroll-target="#sec-lab-extra-constraint-task"><span class="header-section-number">32.2</span> Задания</a></li>
+<li><a href="#sec-lab-extra-constraint-theory" id="toc-sec-lab-extra-constraint-theory" class="nav-link active" data-scroll-target="#sec-lab-extra-constraint-theory"><span class="header-section-number">34.1</span> Теория</a></li>
+  <li><a href="#sec-lab-extra-constraint-task" id="toc-sec-lab-extra-constraint-task" class="nav-link" data-scroll-target="#sec-lab-extra-constraint-task"><span class="header-section-number">34.2</span> Задания</a></li>
   </ul><div class="toc-actions"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li><li><a href="https://github.com/AfonenkoA/Operations-Research/blob/master/lab/extra/constraint/main.qmd" class="toc-action"><i class="bi empty"></i>Показать код</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lab/extra/programming/r/main.html">Задания. Дополнительно</a></li><li class="breadcrumb-item"><a href="../../../lab/extra/constraint/main.html"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Программирование в ограничениях</span></a></li></ol></nav><div class="quarto-title">
-<h1 class="title"><span id="sec-lab-extra-constraint" class="quarto-section-identifier"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Программирование в ограничениях</span></span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lab/extra/programming/r/main.html">Задания. Дополнительно</a></li><li class="breadcrumb-item"><a href="../../../lab/extra/constraint/main.html"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Программирование в ограничениях</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-lab-extra-constraint" class="quarto-section-identifier"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Программирование в ограничениях</span></span></h1>
 </div>
 
 
@@ -622,8 +634,8 @@ window.Quarto = {
   
 
 
-</header><section id="sec-lab-extra-constraint-theory" class="level2" data-number="32.1"><h2 data-number="32.1" class="anchored" data-anchor-id="sec-lab-extra-constraint-theory">
-<span class="header-section-number">32.1</span> Теория</h2>
+</header><section id="sec-lab-extra-constraint-theory" class="level2" data-number="34.1"><h2 data-number="34.1" class="anchored" data-anchor-id="sec-lab-extra-constraint-theory">
+<span class="header-section-number">34.1</span> Теория</h2>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -637,10 +649,10 @@ window.Quarto = {
 <p>Задачи могут быть сформулированы в условиях “если-то”, “или-или” в ручную, или при помощи макросов языка minizinc <a href="../../../minizinc/basic.html" class="quarto-xref"><span>Глава 12</span></a></p>
 </div>
 </div>
-</section><section id="sec-lab-extra-constraint-task" class="level2" data-number="32.2"><h2 data-number="32.2" class="anchored" data-anchor-id="sec-lab-extra-constraint-task">
-<span class="header-section-number">32.2</span> Задания</h2>
+</section><section id="sec-lab-extra-constraint-task" class="level2" data-number="34.2"><h2 data-number="34.2" class="anchored" data-anchor-id="sec-lab-extra-constraint-task">
+<span class="header-section-number">34.2</span> Задания</h2>
 <div id="exr-lab-extra-constraint-cryptarithms" class="theorem exercise">
-<p><span class="theorem-title"><strong>Упражнение 32.1 (Ребус)</strong></span> Сформулировать как задачу целочисленного линейного программирования. Условие соответствия различных букв различным значениям переменных можно задать используя подход <a href="https://ampl.com/mo-book/notebooks/03/cryptarithms.html">попарных неравенств</a> или макрос <a href="https://docs.minizinc.dev/en/stable/lib-globals-alldifferent.html"><code>all_different</code></a> языка minizinc.</p>
+<p><span class="theorem-title"><strong>Упражнение 34.1 (Ребус)</strong></span> Сформулировать как задачу целочисленного линейного программирования. Условие соответствия различных букв различным значениям переменных можно задать используя подход <a href="https://ampl.com/mo-book/notebooks/03/cryptarithms.html">попарных неравенств</a> или макрос <a href="https://docs.minizinc.dev/en/stable/lib-globals-alldifferent.html"><code>all_different</code></a> языка minizinc.</p>
 <p><span class="math display">\[
 \begin{array}{ccccc}
 &amp;&amp; G &amp; E &amp; T \\
@@ -664,7 +676,7 @@ B&amp;E&amp;A&amp;R&amp;E
 </div>
 </div>
 <div id="exr-lab-extra-constraint-jindosh-riddle" class="theorem exercise">
-<p><span class="theorem-title"><strong>Упражнение 32.2 (Задача Джиндоша)</strong></span> На званом обеде были леди Уинслоу, доктор Марколла, графиня Конти, мадам Нациу и баронесса Финч.</p>
+<p><span class="theorem-title"><strong>Упражнение 34.2 (Задача Джиндоша)</strong></span> На званом обеде были леди Уинслоу, доктор Марколла, графиня Конти, мадам Нациу и баронесса Финч.</p>
 <p>Женщины сидели в ряд. Все они были одеты в разные цвета. Например, Леди Уинслоу носила причудливое синее пончо; Доктор Марколла левее всех, рядом с гостьей, одетой в белое. Дама, одетая в красное платье, сидела слева от гостьи, одетой в пурпурное. Я помню красное платье, потому что его обладательница пролила на него виски. Путешественница, недавно покинувшая Морли, была одета во всё зелёное. Когда одна гостья хвастливо демонстрировала Портсигар, женщина, сидевшая рядом с ней, заметила: «Мой родной Морли славится такими безделушками».</p>
 <p>Тогда Баронесса Финч достала из сумочки свою фамильную ценность — Кулон с птицей. Дама, до того рассказывавшая, как красив в это время года её родной край, Фрейпорт, с усмешкой заметила, что её Перстень — куда большая редкость. Другая дама начала демонстративно рассматривать свою реликвию — Бриллиант; сидевшая рядом с ней гостья (помнится, её родина — Дануолл) чуть не выбила коктейль из рук своей соседки. Внезапно Графиня Конти, пившая исключительно абсент, предложила тост. Дама, которой предстояло навестить Серконос и которая весь вечер налегала на сидр, попыталась запрыгнуть на стол, но повалилась на гостью, сидевшую посередине, и та пролила ром. Затем Мадам Нациу завладела всеобщим вниманием, рассказав про Бейлтон времён своей юности.</p>
 <p>Наутро под столом валялись 4 фамильные драгоценности: Портсигар, Орден, Перстень и Бриллиант.</p>
@@ -681,7 +693,7 @@ B&amp;E&amp;A&amp;R&amp;E
 </div>
 </div>
 <div id="exr-lab-extra-constraint-radio-day" class="theorem exercise">
-<p><span class="theorem-title"><strong>Упражнение 32.3 (День радиофизика)</strong></span> После празднования дня радиофизика студенты планируют продолжение банкета, нарушающее правила проживания в общежитии. План общежития состоящего из нескольких блоков и коридоров соединённых открытыми дверями показан на рисунке. Член СБО, находящийся у двери может наблюдать за двумя смежными комнатами. Администрация общежития заинтересована, чтобы каждую комнату контролировал член СБО, при этом их число должно быть минимальным. Сформулируйте соответствующую задачу ЛП и решите её.</p>
+<p><span class="theorem-title"><strong>Упражнение 34.3 (День радиофизика)</strong></span> После празднования дня радиофизика студенты планируют продолжение банкета, нарушающее правила проживания в общежитии. План общежития состоящего из нескольких блоков и коридоров соединённых открытыми дверями показан на рисунке. Член СБО, находящийся у двери может наблюдать за двумя смежными комнатами. Администрация общежития заинтересована, чтобы каждую комнату контролировал член СБО, при этом их число должно быть минимальным. Сформулируйте соответствующую задачу ЛП и решите её.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure"><p><img src="dormitory.svg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
@@ -883,7 +895,7 @@ B&amp;E&amp;A&amp;R&amp;E
 <!--Таха 9.22 c 371-->
 </div>
 <div id="exr-lab-extra-constraint-connection" class="theorem exercise">
-<p><span class="theorem-title"><strong>Упражнение 32.4 (Хоть бы BBB запустился)</strong></span> Оператор НИКС совместно с ЦИТ БГУ планирует построить новые маршрутизаторы, для обеспечения быстрой и надёжной сети в подразделениях БГУ. Схема подразделений приведена на рисунке, а их описание в таблице. Столбец <code>cluster</code> отвечает за то, к какой зоне покрытия относятся подразделения.</p>
+<p><span class="theorem-title"><strong>Упражнение 34.4 (Хоть бы BBB запустился)</strong></span> Оператор НИКС совместно с ЦИТ БГУ планирует построить новые маршрутизаторы, для обеспечения быстрой и надёжной сети в подразделениях БГУ. Схема подразделений приведена на рисунке, а их описание в таблице. Столбец <code>cluster</code> отвечает за то, к какой зоне покрытия относятся подразделения.</p>
 <div class="callout callout-style-simple callout-none no-icon">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -1011,8 +1023,8 @@ B&amp;E&amp;A&amp;R&amp;E
 <p>Задача — обеспечить все корпуса подключением к сети, минимизировав стоимость установки маршрутизаторов.</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-92aa9a5baf39a32c2d64" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-92aa9a5baf39a32c2d64">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[[53.836684,53.905668,53.893869,53.905668,53.893185,53.892373,53.892548,53.899812,53.837901,53.89275,53.898968,53.89319,53.893869,53.837901,53.898968,53.894246,53.905997,53.901896,53.896814,53.916499,53.892845,53.905668,53.9004,53.902549,53.894363,53.89275,53.893026,53.893246,53.837348,53.837348,53.892739,53.837333,53.893869,53.892543,53.892033,53.896459,53.892346,53.899812,53.839654,53.828846,53.916499,53.8905,53.893079,53.837758,53.856891,53.892548,53.892039,53.891248,53.918699,53.838533,53.859945,53.916499],[27.469098,27.532312,27.547153,27.532312,27.549318,27.548267,27.56423,27.566763,27.476401,27.54514,27.559136,27.548347,27.547153,27.476401,27.559136,27.55009,27.546102,27.551411,27.566053,27.602264,27.613933,27.532312,27.555121,27.56378,27.543523,27.54514,27.545554,27.549376,27.475356,27.475356,27.547027,27.475323,27.547153,27.546209,27.565882,27.606208,27.547171,27.566763,27.477021,27.458363,27.602264,27.558858,27.564607,27.471155,27.485474,27.56423,27.567221,27.567149,27.556621,27.471479,27.483794,27.602264],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,["10","5","12","5","12","12","8","2","7","12","2","12","12","7","2","12","5","2","2","1","9","5","2","2","12","12","12","12","7","7","12","7","12","12","8","9","12","2","7","6","1","11","8","3","4","8","8","8","5","3","4","1"],{"interactive":false,"permanent":true,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[53.828846,53.918699],"lng":[27.458363,27.613933]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-5568ef069f50bc9530df" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-5568ef069f50bc9530df">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[[53.836684,53.905668,53.893869,53.905668,53.893185,53.892373,53.892548,53.899812,53.837901,53.89275,53.898968,53.89319,53.893869,53.837901,53.898968,53.894246,53.905997,53.901896,53.896814,53.916499,53.892845,53.905668,53.9004,53.902549,53.894363,53.89275,53.893026,53.893246,53.837348,53.837348,53.892739,53.837333,53.893869,53.892543,53.892033,53.896459,53.892346,53.899812,53.839654,53.828846,53.916499,53.8905,53.893079,53.837758,53.856891,53.892548,53.892039,53.891248,53.918699,53.838533,53.859945,53.916499],[27.469098,27.532312,27.547153,27.532312,27.549318,27.548267,27.56423,27.566763,27.476401,27.54514,27.559136,27.548347,27.547153,27.476401,27.559136,27.55009,27.546102,27.551411,27.566053,27.602264,27.613933,27.532312,27.555121,27.56378,27.543523,27.54514,27.545554,27.549376,27.475356,27.475356,27.547027,27.475323,27.547153,27.546209,27.565882,27.606208,27.547171,27.566763,27.477021,27.458363,27.602264,27.558858,27.564607,27.471155,27.485474,27.56423,27.567221,27.567149,27.556621,27.471479,27.483794,27.602264],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,["10","5","12","5","12","12","8","2","7","12","2","12","12","7","2","12","5","2","2","1","9","5","2","2","12","12","12","12","7","7","12","7","12","12","8","9","12","2","7","6","1","11","8","3","4","8","8","8","5","3","4","1"],{"interactive":false,"permanent":true,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[53.828846,53.918699],"lng":[27.458363,27.613933]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <div class="callout callout-style-simple callout-note no-icon">
@@ -1427,13 +1439,13 @@ B&amp;E&amp;A&amp;R&amp;E
     }
   });
   </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="../../../lab/extra/evolutionary/main.html" class="pagination-link" aria-label="Эволюционная оптимизация">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Эволюционная оптимизация</span></span>
+      <a href="../../../lab/extra/genetic/main.html" class="pagination-link" aria-label="Генетический алгоримт. Материализованные представления">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Генетический алгоримт. Материализованные представления</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../../practice/basic-model/main.html" class="pagination-link" aria-label="Модели исследования операций">
-        <span class="nav-page-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Модели исследования операций</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Модели исследования операций</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

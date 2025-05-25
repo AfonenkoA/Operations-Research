@@ -1,0 +1,147 @@
+name,fun
+JE,table
+categories,table
+manufacturers,table
+products,table
+price_change,table
+stores,table
+deliveries,table
+customers,table
+purchases,table
+purchase_items,table
+products.product_name,column
+categories.category_name,column
+manufacturers.manufacturer_name,column
+purchases.purchase_id,column
+purchases.purchase_date,column
+customers.full_name,column
+stores.name,column
+products.name,column
+deliveries.quantity,column
+purchases.id,column
+purchase_items.quantity,column
+price_change.price,column
+products.price,column
+categories.name,column
+manufacturers.name,column
+customers.name,column
+price_change.change_date,column
+products.id,column
+purchase_items.product_id,column
+purchases.customer_id,column
+IDENTITY,aggregate
+SUM,aggregate
+AVG,aggregate
+MIN,aggregate
+MAX,aggregate
+COUNT,aggregate
+DISTINCT,aggregate
+manufacturers.id = products.manufacturer_id,condition
+categories.id = products.category_id,condition
+customers.id = purchases.customer_id,condition
+purchases.purchase_date > 1619827200,condition
+stores.id = deliveries.store_id,condition
+products.id = delivers.product_id,condition
+purchases.id = purchase_items.purchase_id,condition
+products.id = purchase_items.product_id,condition
+products.name = Ноутбук Lenovo ThinkPad X270 [X27020HN0012RT],condition
+products.id = price_change.product_id,condition
+average_price,condition
+customers_with_several_purchases,condition
+average_purchase_price,condition
+select_specific_product,condition
+ever_bought_products,condition
+products.id = deliveries.product_id,condition
+manufacturers.name = Tanita,condition
+products.name = Ноутбук HP 15-bs000 [15-BS019UR 1ZJ85EA],condition
+"SELECT(price_change,price_change.price)",SELECT
+"AGGREGATE(SELECT(price_change,price_change.price),AVG)",AGGREGATE
+"SELECT(purchases,purchases.customer_id)",SELECT
+"AGGREGATE(SELECT(purchases,purchases.customer_id),COUNT)",AGGREGATE
+"JOIN(JOIN(JE,purchase_items,purchases),products)",JOIN
+"WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id)",WHERE
+"SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.price,purchase_items.quantity)",SELECT
+"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.price,purchase_items.quantity),AVG,AVG)",AGGREGATE
+"WHERE(products,products.name = Ноутбук HP 15-bs000 [15-BS019UR 1ZJ85EA])",WHERE
+"SELECT(WHERE(products,products.name = Ноутбук HP 15-bs000 [15-BS019UR 1ZJ85EA]),products.id)",SELECT
+"SELECT(purchase_items,purchase_items.product_id)",SELECT
+"AGGREGATE(SELECT(purchase_items,purchase_items.product_id),DISTINCT)",AGGREGATE
+"JOIN(JOIN(JE,categories,products),manufacturers)",JOIN
+"WHERE(JOIN(JOIN(JE,categories,products),manufacturers),categories.id = products.category_id,manufacturers.id = products.manufacturer_id)",WHERE
+"SELECT(WHERE(JOIN(JOIN(JE,categories,products),manufacturers),categories.id = products.category_id,manufacturers.id = products.manufacturer_id),categories.category_name,manufacturers.manufacturer_name,products.product_name)",SELECT
+products_with_category_and_manufacturer,query
+"JOIN(JE,customers,purchases)",JOIN
+"WHERE(JOIN(JE,customers,purchases),customers.id = purchases.customer_id,purchases.purchase_date > 1619827200)",WHERE
+"SELECT(WHERE(JOIN(JE,customers,purchases),customers.id = purchases.customer_id,purchases.purchase_date > 1619827200),customers.full_name,purchases.purchase_date,purchases.purchase_id)",SELECT
+purchases_after_date,query
+"JOIN(JOIN(JE,deliveries,stores),products)",JOIN
+"WHERE(JOIN(JOIN(JE,deliveries,stores),products),products.id = delivers.product_id,stores.id = deliveries.store_id)",WHERE
+"SELECT(WHERE(JOIN(JOIN(JE,deliveries,stores),products),products.id = delivers.product_id,stores.id = deliveries.store_id),deliveries.quantity,products.name,stores.name)",SELECT
+delivered_products_per_store,query
+"JOIN(JOIN(JE,purchase_items,purchases),customers)",JOIN
+"WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id)",WHERE
+"SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id),customers.full_name,purchase_items.quantity,purchases.id)",SELECT
+"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id),customers.full_name,purchase_items.quantity,purchases.id),IDENTITY,IDENTITY,SUM)",AGGREGATE
+purchases_with_more_than_5_items,query
+"JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers)",JOIN
+"WHERE(WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.name = Ноутбук Lenovo ThinkPad X270 [X27020HN0012RT])",WHERE
+"SELECT(WHERE(WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.name = Ноутбук Lenovo ThinkPad X270 [X27020HN0012RT]),customers.full_name,purchases.id,purchases.purchase_date)",SELECT
+purchases_with_product,query
+average_price_all_products,query
+"SELECT(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.price,purchase_items.quantity),purchases.id)",SELECT
+"AGGREGATE(SELECT(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.price,purchase_items.quantity),purchases.id),IDENTITY,SUM,SUM)",AGGREGATE
+most_expensive_purchase,query
+"JOIN(JE,deliveries,stores)",JOIN
+"WHERE(JOIN(JE,deliveries,stores),stores.id = deliveries.store_id)",WHERE
+"SELECT(WHERE(JOIN(JE,deliveries,stores),stores.id = deliveries.store_id),deliveries.quantity,stores.name)",SELECT
+"AGGREGATE(SELECT(WHERE(JOIN(JE,deliveries,stores),stores.id = deliveries.store_id),deliveries.quantity,stores.name),IDENTITY,SUM)",AGGREGATE
+total_deliveries_per_store,query
+"JOIN(JOIN(JE,categories,products),price_change)",JOIN
+"WHERE(JOIN(JOIN(JE,categories,products),price_change),categories.id = products.category_id,products.id = price_change.product_id)",WHERE
+"SELECT(WHERE(JOIN(JOIN(JE,categories,products),price_change),categories.id = products.category_id,products.id = price_change.product_id),categories.name,price_change.price)",SELECT
+"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,categories,products),price_change),categories.id = products.category_id,products.id = price_change.product_id),categories.name,price_change.price),IDENTITY,MIN)",AGGREGATE
+min_price_per_category,query
+"JOIN(JOIN(JE,price_change,products),manufacturers)",JOIN
+"WHERE(JOIN(JOIN(JE,price_change,products),manufacturers),manufacturers.id = products.manufacturer_id,products.id = price_change.product_id)",WHERE
+"SELECT(WHERE(JOIN(JOIN(JE,price_change,products),manufacturers),manufacturers.id = products.manufacturer_id,products.id = price_change.product_id),manufacturers.name,price_change.price)",SELECT
+"AGGREGATE(AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,price_change,products),manufacturers),manufacturers.id = products.manufacturer_id,products.id = price_change.product_id),manufacturers.name,price_change.price),IDENTITY),MAX)",AGGREGATE
+max_price_per_manufacturer,query
+"JOIN(JE,price_change,products)",JOIN
+"WHERE(JOIN(JE,price_change,products),average_price,products.id = price_change.product_id)",WHERE
+"SELECT(WHERE(JOIN(JE,price_change,products),average_price,products.id = price_change.product_id),price_change.price,products.name)",SELECT
+products_above_avg_price,query
+"WHERE(customers,customers_with_several_purchases)",WHERE
+"SELECT(WHERE(customers,customers_with_several_purchases),customers.name)",SELECT
+customers_with_multiple_purchases,query
+"WHERE(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),average_purchase_price)",WHERE
+"SELECT(WHERE(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),average_purchase_price),products.price,purchase_items.quantity,purchases.purchase_id)",SELECT
+"AGGREGATE(SELECT(WHERE(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),average_purchase_price),products.price,purchase_items.quantity,purchases.purchase_id),IDENTITY,SUM,SUM)",AGGREGATE
+purchases_above_avg_total,query
+"JOIN(JE,price_change)",JOIN
+"WHERE(JOIN(JE,price_change),select_specific_product)",WHERE
+"SELECT(WHERE(JOIN(JE,price_change),select_specific_product),price_change.change_date,price_change.price)",SELECT
+price_changes_specific_product,query
+"WHERE(products,ever_bought_products)",WHERE
+"SELECT(WHERE(products,ever_bought_products),products.name)",SELECT
+products_never_purchased,query
+"AGGREGATE(AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,price_change,products),manufacturers),manufacturers.id = products.manufacturer_id,products.id = price_change.product_id),manufacturers.name,price_change.price),IDENTITY),AVG)",AGGREGATE
+avg_price_per_manufacturer,query
+"JOIN(JE,categories,products)",JOIN
+"WHERE(JOIN(JE,categories,products),categories.id = products.category_id)",WHERE
+"SELECT(WHERE(JOIN(JE,categories,products),categories.id = products.category_id),categories.name,products.id)",SELECT
+"AGGREGATE(SELECT(WHERE(JOIN(JE,categories,products),categories.id = products.category_id),categories.name,products.id),COUNT,IDENTITY)",AGGREGATE
+most_common_category,query
+"WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id)",WHERE
+"SELECT(WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),customers.full_name,products.price,purchase_items.quantity)",SELECT
+"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),customers.full_name,products.price,purchase_items.quantity),IDENTITY,SUM,SUM)",AGGREGATE
+total_spent_per_customer,query
+"JOIN(JOIN(JOIN(JE,deliveries,stores),products),manufacturers)",JOIN
+"WHERE(JOIN(JOIN(JOIN(JE,deliveries,stores),products),manufacturers),manufacturers.id = products.manufacturer_id,manufacturers.name = Tanita,products.id = deliveries.product_id,stores.id = deliveries.store_id)",WHERE
+"SELECT(WHERE(JOIN(JOIN(JOIN(JE,deliveries,stores),products),manufacturers),manufacturers.id = products.manufacturer_id,manufacturers.name = Tanita,products.id = deliveries.product_id,stores.id = deliveries.store_id),stores.name)",SELECT
+"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JOIN(JE,deliveries,stores),products),manufacturers),manufacturers.id = products.manufacturer_id,manufacturers.name = Tanita,products.id = deliveries.product_id,stores.id = deliveries.store_id),stores.name),DISTINCT)",AGGREGATE
+stores_received_from_tanita,query
+"SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id),customers.name,purchase_items.product_id)",SELECT
+"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id),customers.name,purchase_items.product_id),COUNT,IDENTITY)",AGGREGATE
+customers_with_most_unique_products,query
+"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,price_change,products),manufacturers),manufacturers.id = products.manufacturer_id,products.id = price_change.product_id),manufacturers.name,price_change.price),IDENTITY)",AGGREGATE
+"JOIN(JE,purchase_items,purchases)",JOIN

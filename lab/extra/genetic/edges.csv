@@ -1,0 +1,221 @@
+from,to,label
+price_change.price,"SELECT(price_change,price_change.price)",arg
+price_change,"SELECT(price_change,price_change.price)",val
+AVG,"AGGREGATE(SELECT(price_change,price_change.price),AVG)",arg
+"SELECT(price_change,price_change.price)","AGGREGATE(SELECT(price_change,price_change.price),AVG)",val
+"AGGREGATE(SELECT(price_change,price_change.price),AVG)",average_price,NA
+purchases.customer_id,"SELECT(purchases,purchases.customer_id)",arg
+purchases,"SELECT(purchases,purchases.customer_id)",val
+COUNT,"AGGREGATE(SELECT(purchases,purchases.customer_id),COUNT)",arg
+"SELECT(purchases,purchases.customer_id)","AGGREGATE(SELECT(purchases,purchases.customer_id),COUNT)",val
+"AGGREGATE(SELECT(purchases,purchases.customer_id),COUNT)",customers_with_several_purchases,NA
+products,"JOIN(JOIN(JE,purchase_items,purchases),products)",arg
+products.id = purchase_items.product_id,"WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id)",arg
+purchases.id = purchase_items.purchase_id,"WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id)",arg
+"JOIN(JOIN(JE,purchase_items,purchases),products)","WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id)",val
+products.price,"SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.price,purchase_items.quantity)",arg
+purchase_items.quantity,"SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.price,purchase_items.quantity)",arg
+"WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id)","SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.price,purchase_items.quantity)",val
+AVG,"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.price,purchase_items.quantity),AVG,AVG)",arg
+AVG,"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.price,purchase_items.quantity),AVG,AVG)",arg
+"SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.price,purchase_items.quantity)","AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.price,purchase_items.quantity),AVG,AVG)",val
+"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.price,purchase_items.quantity),AVG,AVG)",average_purchase_price,NA
+products.name = Ноутбук HP 15-bs000 [15-BS019UR 1ZJ85EA],"WHERE(products,products.name = Ноутбук HP 15-bs000 [15-BS019UR 1ZJ85EA])",arg
+products,"WHERE(products,products.name = Ноутбук HP 15-bs000 [15-BS019UR 1ZJ85EA])",val
+products.id,"SELECT(WHERE(products,products.name = Ноутбук HP 15-bs000 [15-BS019UR 1ZJ85EA]),products.id)",arg
+"WHERE(products,products.name = Ноутбук HP 15-bs000 [15-BS019UR 1ZJ85EA])","SELECT(WHERE(products,products.name = Ноутбук HP 15-bs000 [15-BS019UR 1ZJ85EA]),products.id)",val
+"SELECT(WHERE(products,products.name = Ноутбук HP 15-bs000 [15-BS019UR 1ZJ85EA]),products.id)",select_specific_product,NA
+purchase_items.product_id,"SELECT(purchase_items,purchase_items.product_id)",arg
+purchase_items,"SELECT(purchase_items,purchase_items.product_id)",val
+DISTINCT,"AGGREGATE(SELECT(purchase_items,purchase_items.product_id),DISTINCT)",arg
+"SELECT(purchase_items,purchase_items.product_id)","AGGREGATE(SELECT(purchase_items,purchase_items.product_id),DISTINCT)",val
+"AGGREGATE(SELECT(purchase_items,purchase_items.product_id),DISTINCT)",ever_bought_products,NA
+manufacturers,"JOIN(JOIN(JE,categories,products),manufacturers)",arg
+categories.id = products.category_id,"WHERE(JOIN(JOIN(JE,categories,products),manufacturers),categories.id = products.category_id,manufacturers.id = products.manufacturer_id)",arg
+manufacturers.id = products.manufacturer_id,"WHERE(JOIN(JOIN(JE,categories,products),manufacturers),categories.id = products.category_id,manufacturers.id = products.manufacturer_id)",arg
+"JOIN(JOIN(JE,categories,products),manufacturers)","WHERE(JOIN(JOIN(JE,categories,products),manufacturers),categories.id = products.category_id,manufacturers.id = products.manufacturer_id)",val
+categories.category_name,"SELECT(WHERE(JOIN(JOIN(JE,categories,products),manufacturers),categories.id = products.category_id,manufacturers.id = products.manufacturer_id),categories.category_name,manufacturers.manufacturer_name,products.product_name)",arg
+manufacturers.manufacturer_name,"SELECT(WHERE(JOIN(JOIN(JE,categories,products),manufacturers),categories.id = products.category_id,manufacturers.id = products.manufacturer_id),categories.category_name,manufacturers.manufacturer_name,products.product_name)",arg
+products.product_name,"SELECT(WHERE(JOIN(JOIN(JE,categories,products),manufacturers),categories.id = products.category_id,manufacturers.id = products.manufacturer_id),categories.category_name,manufacturers.manufacturer_name,products.product_name)",arg
+"WHERE(JOIN(JOIN(JE,categories,products),manufacturers),categories.id = products.category_id,manufacturers.id = products.manufacturer_id)","SELECT(WHERE(JOIN(JOIN(JE,categories,products),manufacturers),categories.id = products.category_id,manufacturers.id = products.manufacturer_id),categories.category_name,manufacturers.manufacturer_name,products.product_name)",val
+"SELECT(WHERE(JOIN(JOIN(JE,categories,products),manufacturers),categories.id = products.category_id,manufacturers.id = products.manufacturer_id),categories.category_name,manufacturers.manufacturer_name,products.product_name)",products_with_category_and_manufacturer,NA
+customers,"JOIN(JE,customers,purchases)",arg
+purchases,"JOIN(JE,customers,purchases)",arg
+JE,"JOIN(JE,customers,purchases)",val
+customers.id = purchases.customer_id,"WHERE(JOIN(JE,customers,purchases),customers.id = purchases.customer_id,purchases.purchase_date > 1619827200)",arg
+purchases.purchase_date > 1619827200,"WHERE(JOIN(JE,customers,purchases),customers.id = purchases.customer_id,purchases.purchase_date > 1619827200)",arg
+"JOIN(JE,customers,purchases)","WHERE(JOIN(JE,customers,purchases),customers.id = purchases.customer_id,purchases.purchase_date > 1619827200)",val
+customers.full_name,"SELECT(WHERE(JOIN(JE,customers,purchases),customers.id = purchases.customer_id,purchases.purchase_date > 1619827200),customers.full_name,purchases.purchase_date,purchases.purchase_id)",arg
+purchases.purchase_date,"SELECT(WHERE(JOIN(JE,customers,purchases),customers.id = purchases.customer_id,purchases.purchase_date > 1619827200),customers.full_name,purchases.purchase_date,purchases.purchase_id)",arg
+purchases.purchase_id,"SELECT(WHERE(JOIN(JE,customers,purchases),customers.id = purchases.customer_id,purchases.purchase_date > 1619827200),customers.full_name,purchases.purchase_date,purchases.purchase_id)",arg
+"WHERE(JOIN(JE,customers,purchases),customers.id = purchases.customer_id,purchases.purchase_date > 1619827200)","SELECT(WHERE(JOIN(JE,customers,purchases),customers.id = purchases.customer_id,purchases.purchase_date > 1619827200),customers.full_name,purchases.purchase_date,purchases.purchase_id)",val
+"SELECT(WHERE(JOIN(JE,customers,purchases),customers.id = purchases.customer_id,purchases.purchase_date > 1619827200),customers.full_name,purchases.purchase_date,purchases.purchase_id)",purchases_after_date,NA
+products,"JOIN(JOIN(JE,deliveries,stores),products)",arg
+products.id = delivers.product_id,"WHERE(JOIN(JOIN(JE,deliveries,stores),products),products.id = delivers.product_id,stores.id = deliveries.store_id)",arg
+stores.id = deliveries.store_id,"WHERE(JOIN(JOIN(JE,deliveries,stores),products),products.id = delivers.product_id,stores.id = deliveries.store_id)",arg
+"JOIN(JOIN(JE,deliveries,stores),products)","WHERE(JOIN(JOIN(JE,deliveries,stores),products),products.id = delivers.product_id,stores.id = deliveries.store_id)",val
+deliveries.quantity,"SELECT(WHERE(JOIN(JOIN(JE,deliveries,stores),products),products.id = delivers.product_id,stores.id = deliveries.store_id),deliveries.quantity,products.name,stores.name)",arg
+products.name,"SELECT(WHERE(JOIN(JOIN(JE,deliveries,stores),products),products.id = delivers.product_id,stores.id = deliveries.store_id),deliveries.quantity,products.name,stores.name)",arg
+stores.name,"SELECT(WHERE(JOIN(JOIN(JE,deliveries,stores),products),products.id = delivers.product_id,stores.id = deliveries.store_id),deliveries.quantity,products.name,stores.name)",arg
+"WHERE(JOIN(JOIN(JE,deliveries,stores),products),products.id = delivers.product_id,stores.id = deliveries.store_id)","SELECT(WHERE(JOIN(JOIN(JE,deliveries,stores),products),products.id = delivers.product_id,stores.id = deliveries.store_id),deliveries.quantity,products.name,stores.name)",val
+"SELECT(WHERE(JOIN(JOIN(JE,deliveries,stores),products),products.id = delivers.product_id,stores.id = deliveries.store_id),deliveries.quantity,products.name,stores.name)",delivered_products_per_store,NA
+customers,"JOIN(JOIN(JE,purchase_items,purchases),customers)",arg
+customers.id = purchases.customer_id,"WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id)",arg
+purchases.id = purchase_items.purchase_id,"WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id)",arg
+"JOIN(JOIN(JE,purchase_items,purchases),customers)","WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id)",val
+customers.full_name,"SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id),customers.full_name,purchase_items.quantity,purchases.id)",arg
+purchase_items.quantity,"SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id),customers.full_name,purchase_items.quantity,purchases.id)",arg
+purchases.id,"SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id),customers.full_name,purchase_items.quantity,purchases.id)",arg
+"WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id)","SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id),customers.full_name,purchase_items.quantity,purchases.id)",val
+IDENTITY,"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id),customers.full_name,purchase_items.quantity,purchases.id),IDENTITY,IDENTITY,SUM)",arg
+IDENTITY,"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id),customers.full_name,purchase_items.quantity,purchases.id),IDENTITY,IDENTITY,SUM)",arg
+SUM,"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id),customers.full_name,purchase_items.quantity,purchases.id),IDENTITY,IDENTITY,SUM)",arg
+"SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id),customers.full_name,purchase_items.quantity,purchases.id)","AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id),customers.full_name,purchase_items.quantity,purchases.id),IDENTITY,IDENTITY,SUM)",val
+"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id),customers.full_name,purchase_items.quantity,purchases.id),IDENTITY,IDENTITY,SUM)",purchases_with_more_than_5_items,NA
+customers,"JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers)",arg
+products.name = Ноутбук Lenovo ThinkPad X270 [X27020HN0012RT],"WHERE(WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.name = Ноутбук Lenovo ThinkPad X270 [X27020HN0012RT])",arg
+customers.full_name,"SELECT(WHERE(WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.name = Ноутбук Lenovo ThinkPad X270 [X27020HN0012RT]),customers.full_name,purchases.id,purchases.purchase_date)",arg
+purchases.id,"SELECT(WHERE(WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.name = Ноутбук Lenovo ThinkPad X270 [X27020HN0012RT]),customers.full_name,purchases.id,purchases.purchase_date)",arg
+purchases.purchase_date,"SELECT(WHERE(WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.name = Ноутбук Lenovo ThinkPad X270 [X27020HN0012RT]),customers.full_name,purchases.id,purchases.purchase_date)",arg
+"WHERE(WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.name = Ноутбук Lenovo ThinkPad X270 [X27020HN0012RT])","SELECT(WHERE(WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.name = Ноутбук Lenovo ThinkPad X270 [X27020HN0012RT]),customers.full_name,purchases.id,purchases.purchase_date)",val
+"SELECT(WHERE(WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.name = Ноутбук Lenovo ThinkPad X270 [X27020HN0012RT]),customers.full_name,purchases.id,purchases.purchase_date)",purchases_with_product,NA
+"AGGREGATE(SELECT(price_change,price_change.price),AVG)",average_price_all_products,NA
+purchases.id,"SELECT(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.price,purchase_items.quantity),purchases.id)",arg
+IDENTITY,"AGGREGATE(SELECT(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.price,purchase_items.quantity),purchases.id),IDENTITY,SUM,SUM)",arg
+SUM,"AGGREGATE(SELECT(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.price,purchase_items.quantity),purchases.id),IDENTITY,SUM,SUM)",arg
+SUM,"AGGREGATE(SELECT(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.price,purchase_items.quantity),purchases.id),IDENTITY,SUM,SUM)",arg
+"SELECT(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.price,purchase_items.quantity),purchases.id)","AGGREGATE(SELECT(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.price,purchase_items.quantity),purchases.id),IDENTITY,SUM,SUM)",val
+"AGGREGATE(SELECT(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.price,purchase_items.quantity),purchases.id),IDENTITY,SUM,SUM)",most_expensive_purchase,NA
+deliveries,"JOIN(JE,deliveries,stores)",arg
+stores,"JOIN(JE,deliveries,stores)",arg
+JE,"JOIN(JE,deliveries,stores)",val
+stores.id = deliveries.store_id,"WHERE(JOIN(JE,deliveries,stores),stores.id = deliveries.store_id)",arg
+"JOIN(JE,deliveries,stores)","WHERE(JOIN(JE,deliveries,stores),stores.id = deliveries.store_id)",val
+deliveries.quantity,"SELECT(WHERE(JOIN(JE,deliveries,stores),stores.id = deliveries.store_id),deliveries.quantity,stores.name)",arg
+stores.name,"SELECT(WHERE(JOIN(JE,deliveries,stores),stores.id = deliveries.store_id),deliveries.quantity,stores.name)",arg
+"WHERE(JOIN(JE,deliveries,stores),stores.id = deliveries.store_id)","SELECT(WHERE(JOIN(JE,deliveries,stores),stores.id = deliveries.store_id),deliveries.quantity,stores.name)",val
+IDENTITY,"AGGREGATE(SELECT(WHERE(JOIN(JE,deliveries,stores),stores.id = deliveries.store_id),deliveries.quantity,stores.name),IDENTITY,SUM)",arg
+SUM,"AGGREGATE(SELECT(WHERE(JOIN(JE,deliveries,stores),stores.id = deliveries.store_id),deliveries.quantity,stores.name),IDENTITY,SUM)",arg
+"SELECT(WHERE(JOIN(JE,deliveries,stores),stores.id = deliveries.store_id),deliveries.quantity,stores.name)","AGGREGATE(SELECT(WHERE(JOIN(JE,deliveries,stores),stores.id = deliveries.store_id),deliveries.quantity,stores.name),IDENTITY,SUM)",val
+"AGGREGATE(SELECT(WHERE(JOIN(JE,deliveries,stores),stores.id = deliveries.store_id),deliveries.quantity,stores.name),IDENTITY,SUM)",total_deliveries_per_store,NA
+price_change,"JOIN(JOIN(JE,categories,products),price_change)",arg
+categories.id = products.category_id,"WHERE(JOIN(JOIN(JE,categories,products),price_change),categories.id = products.category_id,products.id = price_change.product_id)",arg
+products.id = price_change.product_id,"WHERE(JOIN(JOIN(JE,categories,products),price_change),categories.id = products.category_id,products.id = price_change.product_id)",arg
+"JOIN(JOIN(JE,categories,products),price_change)","WHERE(JOIN(JOIN(JE,categories,products),price_change),categories.id = products.category_id,products.id = price_change.product_id)",val
+categories.name,"SELECT(WHERE(JOIN(JOIN(JE,categories,products),price_change),categories.id = products.category_id,products.id = price_change.product_id),categories.name,price_change.price)",arg
+price_change.price,"SELECT(WHERE(JOIN(JOIN(JE,categories,products),price_change),categories.id = products.category_id,products.id = price_change.product_id),categories.name,price_change.price)",arg
+"WHERE(JOIN(JOIN(JE,categories,products),price_change),categories.id = products.category_id,products.id = price_change.product_id)","SELECT(WHERE(JOIN(JOIN(JE,categories,products),price_change),categories.id = products.category_id,products.id = price_change.product_id),categories.name,price_change.price)",val
+IDENTITY,"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,categories,products),price_change),categories.id = products.category_id,products.id = price_change.product_id),categories.name,price_change.price),IDENTITY,MIN)",arg
+MIN,"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,categories,products),price_change),categories.id = products.category_id,products.id = price_change.product_id),categories.name,price_change.price),IDENTITY,MIN)",arg
+"SELECT(WHERE(JOIN(JOIN(JE,categories,products),price_change),categories.id = products.category_id,products.id = price_change.product_id),categories.name,price_change.price)","AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,categories,products),price_change),categories.id = products.category_id,products.id = price_change.product_id),categories.name,price_change.price),IDENTITY,MIN)",val
+"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,categories,products),price_change),categories.id = products.category_id,products.id = price_change.product_id),categories.name,price_change.price),IDENTITY,MIN)",min_price_per_category,NA
+manufacturers,"JOIN(JOIN(JE,price_change,products),manufacturers)",arg
+manufacturers.id = products.manufacturer_id,"WHERE(JOIN(JOIN(JE,price_change,products),manufacturers),manufacturers.id = products.manufacturer_id,products.id = price_change.product_id)",arg
+products.id = price_change.product_id,"WHERE(JOIN(JOIN(JE,price_change,products),manufacturers),manufacturers.id = products.manufacturer_id,products.id = price_change.product_id)",arg
+"JOIN(JOIN(JE,price_change,products),manufacturers)","WHERE(JOIN(JOIN(JE,price_change,products),manufacturers),manufacturers.id = products.manufacturer_id,products.id = price_change.product_id)",val
+manufacturers.name,"SELECT(WHERE(JOIN(JOIN(JE,price_change,products),manufacturers),manufacturers.id = products.manufacturer_id,products.id = price_change.product_id),manufacturers.name,price_change.price)",arg
+price_change.price,"SELECT(WHERE(JOIN(JOIN(JE,price_change,products),manufacturers),manufacturers.id = products.manufacturer_id,products.id = price_change.product_id),manufacturers.name,price_change.price)",arg
+"WHERE(JOIN(JOIN(JE,price_change,products),manufacturers),manufacturers.id = products.manufacturer_id,products.id = price_change.product_id)","SELECT(WHERE(JOIN(JOIN(JE,price_change,products),manufacturers),manufacturers.id = products.manufacturer_id,products.id = price_change.product_id),manufacturers.name,price_change.price)",val
+MAX,"AGGREGATE(AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,price_change,products),manufacturers),manufacturers.id = products.manufacturer_id,products.id = price_change.product_id),manufacturers.name,price_change.price),IDENTITY),MAX)",arg
+"AGGREGATE(AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,price_change,products),manufacturers),manufacturers.id = products.manufacturer_id,products.id = price_change.product_id),manufacturers.name,price_change.price),IDENTITY),MAX)",max_price_per_manufacturer,NA
+price_change,"JOIN(JE,price_change,products)",arg
+products,"JOIN(JE,price_change,products)",arg
+JE,"JOIN(JE,price_change,products)",val
+average_price,"WHERE(JOIN(JE,price_change,products),average_price,products.id = price_change.product_id)",arg
+products.id = price_change.product_id,"WHERE(JOIN(JE,price_change,products),average_price,products.id = price_change.product_id)",arg
+"JOIN(JE,price_change,products)","WHERE(JOIN(JE,price_change,products),average_price,products.id = price_change.product_id)",val
+price_change.price,"SELECT(WHERE(JOIN(JE,price_change,products),average_price,products.id = price_change.product_id),price_change.price,products.name)",arg
+products.name,"SELECT(WHERE(JOIN(JE,price_change,products),average_price,products.id = price_change.product_id),price_change.price,products.name)",arg
+"WHERE(JOIN(JE,price_change,products),average_price,products.id = price_change.product_id)","SELECT(WHERE(JOIN(JE,price_change,products),average_price,products.id = price_change.product_id),price_change.price,products.name)",val
+"SELECT(WHERE(JOIN(JE,price_change,products),average_price,products.id = price_change.product_id),price_change.price,products.name)",products_above_avg_price,NA
+customers_with_several_purchases,"WHERE(customers,customers_with_several_purchases)",arg
+customers,"WHERE(customers,customers_with_several_purchases)",val
+customers.name,"SELECT(WHERE(customers,customers_with_several_purchases),customers.name)",arg
+"WHERE(customers,customers_with_several_purchases)","SELECT(WHERE(customers,customers_with_several_purchases),customers.name)",val
+"SELECT(WHERE(customers,customers_with_several_purchases),customers.name)",customers_with_multiple_purchases,NA
+average_purchase_price,"WHERE(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),average_purchase_price)",arg
+products.price,"SELECT(WHERE(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),average_purchase_price),products.price,purchase_items.quantity,purchases.purchase_id)",arg
+purchase_items.quantity,"SELECT(WHERE(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),average_purchase_price),products.price,purchase_items.quantity,purchases.purchase_id)",arg
+purchases.purchase_id,"SELECT(WHERE(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),average_purchase_price),products.price,purchase_items.quantity,purchases.purchase_id)",arg
+"WHERE(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),average_purchase_price)","SELECT(WHERE(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),average_purchase_price),products.price,purchase_items.quantity,purchases.purchase_id)",val
+IDENTITY,"AGGREGATE(SELECT(WHERE(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),average_purchase_price),products.price,purchase_items.quantity,purchases.purchase_id),IDENTITY,SUM,SUM)",arg
+SUM,"AGGREGATE(SELECT(WHERE(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),average_purchase_price),products.price,purchase_items.quantity,purchases.purchase_id),IDENTITY,SUM,SUM)",arg
+SUM,"AGGREGATE(SELECT(WHERE(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),average_purchase_price),products.price,purchase_items.quantity,purchases.purchase_id),IDENTITY,SUM,SUM)",arg
+"SELECT(WHERE(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),average_purchase_price),products.price,purchase_items.quantity,purchases.purchase_id)","AGGREGATE(SELECT(WHERE(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),average_purchase_price),products.price,purchase_items.quantity,purchases.purchase_id),IDENTITY,SUM,SUM)",val
+"AGGREGATE(SELECT(WHERE(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),average_purchase_price),products.price,purchase_items.quantity,purchases.purchase_id),IDENTITY,SUM,SUM)",purchases_above_avg_total,NA
+price_change,"JOIN(JE,price_change)",arg
+JE,"JOIN(JE,price_change)",val
+select_specific_product,"WHERE(JOIN(JE,price_change),select_specific_product)",arg
+"JOIN(JE,price_change)","WHERE(JOIN(JE,price_change),select_specific_product)",val
+price_change.change_date,"SELECT(WHERE(JOIN(JE,price_change),select_specific_product),price_change.change_date,price_change.price)",arg
+price_change.price,"SELECT(WHERE(JOIN(JE,price_change),select_specific_product),price_change.change_date,price_change.price)",arg
+"WHERE(JOIN(JE,price_change),select_specific_product)","SELECT(WHERE(JOIN(JE,price_change),select_specific_product),price_change.change_date,price_change.price)",val
+"SELECT(WHERE(JOIN(JE,price_change),select_specific_product),price_change.change_date,price_change.price)",price_changes_specific_product,NA
+ever_bought_products,"WHERE(products,ever_bought_products)",arg
+products,"WHERE(products,ever_bought_products)",val
+products.name,"SELECT(WHERE(products,ever_bought_products),products.name)",arg
+"WHERE(products,ever_bought_products)","SELECT(WHERE(products,ever_bought_products),products.name)",val
+"SELECT(WHERE(products,ever_bought_products),products.name)",products_never_purchased,NA
+AVG,"AGGREGATE(AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,price_change,products),manufacturers),manufacturers.id = products.manufacturer_id,products.id = price_change.product_id),manufacturers.name,price_change.price),IDENTITY),AVG)",arg
+"AGGREGATE(AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,price_change,products),manufacturers),manufacturers.id = products.manufacturer_id,products.id = price_change.product_id),manufacturers.name,price_change.price),IDENTITY),AVG)",avg_price_per_manufacturer,NA
+categories,"JOIN(JE,categories,products)",arg
+products,"JOIN(JE,categories,products)",arg
+JE,"JOIN(JE,categories,products)",val
+categories.id = products.category_id,"WHERE(JOIN(JE,categories,products),categories.id = products.category_id)",arg
+"JOIN(JE,categories,products)","WHERE(JOIN(JE,categories,products),categories.id = products.category_id)",val
+categories.name,"SELECT(WHERE(JOIN(JE,categories,products),categories.id = products.category_id),categories.name,products.id)",arg
+products.id,"SELECT(WHERE(JOIN(JE,categories,products),categories.id = products.category_id),categories.name,products.id)",arg
+"WHERE(JOIN(JE,categories,products),categories.id = products.category_id)","SELECT(WHERE(JOIN(JE,categories,products),categories.id = products.category_id),categories.name,products.id)",val
+COUNT,"AGGREGATE(SELECT(WHERE(JOIN(JE,categories,products),categories.id = products.category_id),categories.name,products.id),COUNT,IDENTITY)",arg
+IDENTITY,"AGGREGATE(SELECT(WHERE(JOIN(JE,categories,products),categories.id = products.category_id),categories.name,products.id),COUNT,IDENTITY)",arg
+"SELECT(WHERE(JOIN(JE,categories,products),categories.id = products.category_id),categories.name,products.id)","AGGREGATE(SELECT(WHERE(JOIN(JE,categories,products),categories.id = products.category_id),categories.name,products.id),COUNT,IDENTITY)",val
+"AGGREGATE(SELECT(WHERE(JOIN(JE,categories,products),categories.id = products.category_id),categories.name,products.id),COUNT,IDENTITY)",most_common_category,NA
+customers.id = purchases.customer_id,"WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id)",arg
+products.id = purchase_items.product_id,"WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id)",arg
+purchases.id = purchase_items.purchase_id,"WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id)",arg
+"JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers)","WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id)",val
+customers.full_name,"SELECT(WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),customers.full_name,products.price,purchase_items.quantity)",arg
+products.price,"SELECT(WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),customers.full_name,products.price,purchase_items.quantity)",arg
+purchase_items.quantity,"SELECT(WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),customers.full_name,products.price,purchase_items.quantity)",arg
+"WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id)","SELECT(WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),customers.full_name,products.price,purchase_items.quantity)",val
+IDENTITY,"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),customers.full_name,products.price,purchase_items.quantity),IDENTITY,SUM,SUM)",arg
+SUM,"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),customers.full_name,products.price,purchase_items.quantity),IDENTITY,SUM,SUM)",arg
+SUM,"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),customers.full_name,products.price,purchase_items.quantity),IDENTITY,SUM,SUM)",arg
+"SELECT(WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),customers.full_name,products.price,purchase_items.quantity)","AGGREGATE(SELECT(WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),customers.full_name,products.price,purchase_items.quantity),IDENTITY,SUM,SUM)",val
+"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),customers.full_name,products.price,purchase_items.quantity),IDENTITY,SUM,SUM)",total_spent_per_customer,NA
+manufacturers,"JOIN(JOIN(JOIN(JE,deliveries,stores),products),manufacturers)",arg
+manufacturers.id = products.manufacturer_id,"WHERE(JOIN(JOIN(JOIN(JE,deliveries,stores),products),manufacturers),manufacturers.id = products.manufacturer_id,manufacturers.name = Tanita,products.id = deliveries.product_id,stores.id = deliveries.store_id)",arg
+manufacturers.name = Tanita,"WHERE(JOIN(JOIN(JOIN(JE,deliveries,stores),products),manufacturers),manufacturers.id = products.manufacturer_id,manufacturers.name = Tanita,products.id = deliveries.product_id,stores.id = deliveries.store_id)",arg
+products.id = deliveries.product_id,"WHERE(JOIN(JOIN(JOIN(JE,deliveries,stores),products),manufacturers),manufacturers.id = products.manufacturer_id,manufacturers.name = Tanita,products.id = deliveries.product_id,stores.id = deliveries.store_id)",arg
+stores.id = deliveries.store_id,"WHERE(JOIN(JOIN(JOIN(JE,deliveries,stores),products),manufacturers),manufacturers.id = products.manufacturer_id,manufacturers.name = Tanita,products.id = deliveries.product_id,stores.id = deliveries.store_id)",arg
+"JOIN(JOIN(JOIN(JE,deliveries,stores),products),manufacturers)","WHERE(JOIN(JOIN(JOIN(JE,deliveries,stores),products),manufacturers),manufacturers.id = products.manufacturer_id,manufacturers.name = Tanita,products.id = deliveries.product_id,stores.id = deliveries.store_id)",val
+stores.name,"SELECT(WHERE(JOIN(JOIN(JOIN(JE,deliveries,stores),products),manufacturers),manufacturers.id = products.manufacturer_id,manufacturers.name = Tanita,products.id = deliveries.product_id,stores.id = deliveries.store_id),stores.name)",arg
+"WHERE(JOIN(JOIN(JOIN(JE,deliveries,stores),products),manufacturers),manufacturers.id = products.manufacturer_id,manufacturers.name = Tanita,products.id = deliveries.product_id,stores.id = deliveries.store_id)","SELECT(WHERE(JOIN(JOIN(JOIN(JE,deliveries,stores),products),manufacturers),manufacturers.id = products.manufacturer_id,manufacturers.name = Tanita,products.id = deliveries.product_id,stores.id = deliveries.store_id),stores.name)",val
+DISTINCT,"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JOIN(JE,deliveries,stores),products),manufacturers),manufacturers.id = products.manufacturer_id,manufacturers.name = Tanita,products.id = deliveries.product_id,stores.id = deliveries.store_id),stores.name),DISTINCT)",arg
+"SELECT(WHERE(JOIN(JOIN(JOIN(JE,deliveries,stores),products),manufacturers),manufacturers.id = products.manufacturer_id,manufacturers.name = Tanita,products.id = deliveries.product_id,stores.id = deliveries.store_id),stores.name)","AGGREGATE(SELECT(WHERE(JOIN(JOIN(JOIN(JE,deliveries,stores),products),manufacturers),manufacturers.id = products.manufacturer_id,manufacturers.name = Tanita,products.id = deliveries.product_id,stores.id = deliveries.store_id),stores.name),DISTINCT)",val
+"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JOIN(JE,deliveries,stores),products),manufacturers),manufacturers.id = products.manufacturer_id,manufacturers.name = Tanita,products.id = deliveries.product_id,stores.id = deliveries.store_id),stores.name),DISTINCT)",stores_received_from_tanita,NA
+customers.name,"SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id),customers.name,purchase_items.product_id)",arg
+purchase_items.product_id,"SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id),customers.name,purchase_items.product_id)",arg
+"WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id)","SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id),customers.name,purchase_items.product_id)",val
+COUNT,"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id),customers.name,purchase_items.product_id),COUNT,IDENTITY)",arg
+IDENTITY,"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id),customers.name,purchase_items.product_id),COUNT,IDENTITY)",arg
+"SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id),customers.name,purchase_items.product_id)","AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id),customers.name,purchase_items.product_id),COUNT,IDENTITY)",val
+"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),customers),customers.id = purchases.customer_id,purchases.id = purchase_items.purchase_id),customers.name,purchase_items.product_id),COUNT,IDENTITY)",customers_with_most_unique_products,NA
+IDENTITY,"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,price_change,products),manufacturers),manufacturers.id = products.manufacturer_id,products.id = price_change.product_id),manufacturers.name,price_change.price),IDENTITY)",arg
+"SELECT(WHERE(JOIN(JOIN(JE,price_change,products),manufacturers),manufacturers.id = products.manufacturer_id,products.id = price_change.product_id),manufacturers.name,price_change.price)","AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,price_change,products),manufacturers),manufacturers.id = products.manufacturer_id,products.id = price_change.product_id),manufacturers.name,price_change.price),IDENTITY)",val
+"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,price_change,products),manufacturers),manufacturers.id = products.manufacturer_id,products.id = price_change.product_id),manufacturers.name,price_change.price),IDENTITY)","AGGREGATE(AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,price_change,products),manufacturers),manufacturers.id = products.manufacturer_id,products.id = price_change.product_id),manufacturers.name,price_change.price),IDENTITY),MAX)",val
+"AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,price_change,products),manufacturers),manufacturers.id = products.manufacturer_id,products.id = price_change.product_id),manufacturers.name,price_change.price),IDENTITY)","AGGREGATE(AGGREGATE(SELECT(WHERE(JOIN(JOIN(JE,price_change,products),manufacturers),manufacturers.id = products.manufacturer_id,products.id = price_change.product_id),manufacturers.name,price_change.price),IDENTITY),AVG)",val
+"JOIN(JOIN(JE,purchase_items,purchases),products)","JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers)",val
+"SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.price,purchase_items.quantity)","SELECT(SELECT(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.price,purchase_items.quantity),purchases.id)",val
+"WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id)","WHERE(WHERE(JOIN(JOIN(JE,purchase_items,purchases),products),products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),average_purchase_price)",val
+"WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id)","WHERE(WHERE(JOIN(JOIN(JOIN(JE,purchase_items,purchases),products),customers),customers.id = purchases.customer_id,products.id = purchase_items.product_id,purchases.id = purchase_items.purchase_id),products.name = Ноутбук Lenovo ThinkPad X270 [X27020HN0012RT])",val
+"JOIN(JOIN(JE,deliveries,stores),products)","JOIN(JOIN(JOIN(JE,deliveries,stores),products),manufacturers)",val
+"JOIN(JE,categories,products)","JOIN(JOIN(JE,categories,products),manufacturers)",val
+"JOIN(JE,categories,products)","JOIN(JOIN(JE,categories,products),price_change)",val
+purchase_items,"JOIN(JE,purchase_items,purchases)",arg
+purchases,"JOIN(JE,purchase_items,purchases)",arg
+JE,"JOIN(JE,purchase_items,purchases)",val
+"JOIN(JE,purchase_items,purchases)","JOIN(JOIN(JE,purchase_items,purchases),products)",val
+"JOIN(JE,purchase_items,purchases)","JOIN(JOIN(JE,purchase_items,purchases),customers)",val
+"JOIN(JE,deliveries,stores)","JOIN(JOIN(JE,deliveries,stores),products)",val
+"JOIN(JE,price_change,products)","JOIN(JOIN(JE,price_change,products),manufacturers)",val

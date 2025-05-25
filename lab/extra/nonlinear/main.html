@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.11">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>31&nbsp; Нелинейная оптимизация. Последние минуты жизни – Исследование операций</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../lab/extra/evolutionary/main.html" rel="next">
+<link href="../../../lab/extra/network/main.html" rel="prev">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-09b140d2d032adf2aedb8b099be3ee13.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-a37c3f83d22f78a2a185819b108e8b30.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="../../../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet"><script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Поиск не дал результатов",
+    "search-matching-documents-text": "Результаты поиска",
+    "search-copy-link-title": "Скопировать ссылку",
+    "search-hide-matches-text": "Скрыть дополнительные результаты",
+    "search-more-match-text": "дополнительный результат в этом документе",
+    "search-more-matches-text": "дополнительных результата(-ов) в этом документе",
+    "search-clear-button-title": "Очистить",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Отменить",
+    "search-submit-button-title": "Найти",
+    "search-label": "Поиск"
+  }
+}</script><link href="../../../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="../../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script><script src="../../../site_libs/plotly-binding-4.10.4/plotly.js"></script><script src="../../../site_libs/typedarray-0.1/typedarray.min.js"></script><script src="../../../site_libs/jquery-3.5.1/jquery.min.js"></script><link href="../../../site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+<script src="../../../site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script><link href="../../../site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="../../../site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script><script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script><script src="/Operations-Research/site_libs/mathjax-3.2.2/tex-svg-full.js" type="text/javascript"></script><script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+</head>
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключить боковую панель навигации" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lab/extra/programming/r/main.html">Задания. Дополнительно</a></li><li class="breadcrumb-item"><a href="../../../lab/extra/nonlinear/main.html"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Нелинейная оптимизация. Последние минуты жизни</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключить боковую панель навигации" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Поиск" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../../">Исследование операций</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/AfonenkoA/Operations-Research" title="Исходный код" class="quarto-navigation-tool px-1" aria-label="Исходный код"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Поиск"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Интерактивный курс по исследованию операций</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../enviroment/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Среда разработки</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../enviroment/setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Установка и настройка</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../enviroment/rstudio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">RStudio IDE</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../enviroment/quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quarto</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../enviroment/markdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Язык разметки Markdown</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../enviroment/latex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Язык разметки LaTeX</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../r/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Язык программирования R</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../r/lang/basic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Основы R</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../linear/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Линейное программирование</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../linear/algebra.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Элементы линейной алгебры</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../linear/graphical/solution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Графическое решение</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../linear/graphical/sensetivity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Графический анализ чувствительности</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../linear/simplex/special-cases.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Особые случаи применения симплекс метода</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../linear/integer.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Целочисленное программирование</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../minizinc/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Язык моделирования MiniZinc</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../minizinc/basic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Основы Minizinc</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../nonlinear/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Нелинейное программирование</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../nonlinear/unconstrained/analytical/one/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Безусловная оптимизация функции одной переменной</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../nonlinear/unconstrained/analytical/many/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Безусловная оптимизация функции многих переменных</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../nonlinear/constrained/analytical/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Условная оптимизация функции многих переменных</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../nonlinear/constrained/numerical/conversion-to-unconstrained.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Сведение к задаче неограниченной оптимизации</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../evolutionary/overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Эволюционная оптимизация</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../evolutionary/stats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Статистика анализ</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+ <span class="menu-text">Задания. Алгоритмы</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lab/alghorithm/programming/r/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lab/alghorithm/linear/algebra/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Линейная алгебра</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lab/alghorithm/nonlinear/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Нелинейное программирование</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lab/alghorithm/evolutionary/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Эволюционная оптимизация</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
+ <span class="menu-text">Задания. Моделирование</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lab/model/basic/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Введение</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lab/model/linear/standard/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Линейное программирование</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lab/model/linear/transport/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Транспортные модели</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lab/model/linear/integer/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Целочисленное линейное программирование</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lab/model/network/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Сетевые модели</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lab/model/nonlinear/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Нелинейная оптимизация</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lab/model/evolutionary/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Эволюционная оптимизация</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
+ <span class="menu-text">Задания. Дополнительно</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lab/extra/programming/r/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lab/extra/network/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Cетевые модели</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lab/extra/nonlinear/main.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Нелинейная оптимизация. Последние минуты жизни</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lab/extra/evolutionary/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Эволюционная оптимизация. Телекомания</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lab/extra/genetic/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Генетический алгоримт. Материализованные представления</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../lab/extra/constraint/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Программирование в ограничениях</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
+ <span class="menu-text">Практические работы</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../practice/basic-model/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Модели исследования операций</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../practice/linear/algebra/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Линейная алгебра</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../practice/linear/graphical/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Линейное программирование. Графическое представление</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../practice/linear/model/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Линейное программирование. Модели</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../practice/linear/simplex/main.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Линейное программирование. Симплекс метод</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Литература</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true">
+ <span class="menu-text">Приложения</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">
+<li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Язык программирования R</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Переключить раздел">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">
+<li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../r/tools/renv.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Система управления пакетами renv</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../r/tools/pracma.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Численные методы <code>pracma</code></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../r/tools/smoof.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Smoof</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../r/tools/stats.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Пакет <code>stats</code></span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../r/tools/plot/plotly.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Графическая библиотека plotly</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../r/tools/solver/linear/transport.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Решатель transport</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../r/tools/solver/linear/lpsolve.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Решатель LPSolve</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../r/tools/solver/linear/clue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Решатель Clue</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../r/tools/solver/nonlinear/nloptr/analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Nloptr. Анализ</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../r/tools/solver/nonlinear/nloptr/local/unconstrained.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Nloptr. Локальная безуслованя</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../r/tools/solver/nonlinear/nloptr/local/constrained/inequality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Nloptr. Локальная. Ограничения неравенства</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../r/tools/solver/nonlinear/nloptr/local/constrained/equality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Nloptr. Локальная. Ограничения равенства</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../r/tools/solver/evolutionary/analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Анализ эволюционного алгоритма</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../r/tools/solver/evolutionary/gensa.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">N</span>&nbsp; <span class="chapter-title">GenSA Имитации отжига</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../r/tools/solver/evolutionary/pso.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">O</span>&nbsp; <span class="chapter-title">PSO метод роя частиц</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../r/tools/solver/evolutionary/ga.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">P</span>&nbsp; <span class="chapter-title">GA обобщенный генетический алгоритм</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../r/tools/solver/evolutionary/tsp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">Q</span>&nbsp; <span class="chapter-title">TSP задача коммивояжера</span></span></a>
+  </div>
+</li>
+      </ul>
+</li>
+      </ul>
+</li>
+    </ul>
+</div>
+</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Содержание</h2>
+   
+  <ul>
+<li><a href="#sec-lab-extra-nonlinear-satellite-task" id="toc-sec-lab-extra-nonlinear-satellite-task" class="nav-link active" data-scroll-target="#sec-lab-extra-nonlinear-satellite-task"><span class="header-section-number">31.1</span> Задание</a></li>
+  <li><a href="#sec-lab-extra-nonlinear-satellite-spatial-model" id="toc-sec-lab-extra-nonlinear-satellite-spatial-model" class="nav-link" data-scroll-target="#sec-lab-extra-nonlinear-satellite-spatial-model"><span class="header-section-number">31.2</span> Пространственная модель</a></li>
+  <li><a href="#sec-lab-extra-nonlinear-satellite-ablation" id="toc-sec-lab-extra-nonlinear-satellite-ablation" class="nav-link" data-scroll-target="#sec-lab-extra-nonlinear-satellite-ablation"><span class="header-section-number">31.3</span> Абляция</a></li>
+  <li>
+<a href="#sec-lab-extra-nonlinear-effective-area" id="toc-sec-lab-extra-nonlinear-effective-area" class="nav-link" data-scroll-target="#sec-lab-extra-nonlinear-effective-area"><span class="header-section-number">31.4</span> Эффективная площадь взаимодействия</a>
+  <ul class="collapse">
+<li><a href="#sec-lab-extra-nonlinear-effective-area-rotating" id="toc-sec-lab-extra-nonlinear-effective-area-rotating" class="nav-link" data-scroll-target="#sec-lab-extra-nonlinear-effective-area-rotating"><span class="header-section-number">31.4.1</span> Модель вращающегося тела</a></li>
+  <li><a href="#sec-lab-extra-nonlinear-effective-area-non-rotating" id="toc-sec-lab-extra-nonlinear-effective-area-non-rotating" class="nav-link" data-scroll-target="#sec-lab-extra-nonlinear-effective-area-non-rotating"><span class="header-section-number">31.4.2</span> Модель невращающегося тела</a></li>
+  </ul>
+</li>
+  <li><a href="#sec-lab-extra-nonlinear-satellite-energy" id="toc-sec-lab-extra-nonlinear-satellite-energy" class="nav-link" data-scroll-target="#sec-lab-extra-nonlinear-satellite-energy"><span class="header-section-number">31.5</span> Баланс энергии и импульса</a></li>
+  <li><a href="#sec-lab-extra-nonlinear-satellite-mass" id="toc-sec-lab-extra-nonlinear-satellite-mass" class="nav-link" data-scroll-target="#sec-lab-extra-nonlinear-satellite-mass"><span class="header-section-number">31.6</span> Потеря массы</a></li>
+  <li><a href="#sec-lab-extra-nonlinear-satellite-radiation" id="toc-sec-lab-extra-nonlinear-satellite-radiation" class="nav-link" data-scroll-target="#sec-lab-extra-nonlinear-satellite-radiation"><span class="header-section-number">31.7</span> Яркость излучения</a></li>
+  <li><a href="#sec-lab-extra-nonlinear-satellite-characteristics" id="toc-sec-lab-extra-nonlinear-satellite-characteristics" class="nav-link" data-scroll-target="#sec-lab-extra-nonlinear-satellite-characteristics"><span class="header-section-number">31.8</span> Спутник</a></li>
+  <li><a href="#sec-lab-extra-nonlinear-satellite-atmosphere" id="toc-sec-lab-extra-nonlinear-satellite-atmosphere" class="nav-link" data-scroll-target="#sec-lab-extra-nonlinear-satellite-atmosphere"><span class="header-section-number">31.9</span> Модель атмосферы</a></li>
+  <li><a href="#sec-lab-extra-nonlinear-satellite-constant" id="toc-sec-lab-extra-nonlinear-satellite-constant" class="nav-link" data-scroll-target="#sec-lab-extra-nonlinear-satellite-constant"><span class="header-section-number">31.10</span> Константы</a></li>
+  <li><a href="#sec-lab-extra-nonlinear-satellite-rotation" id="toc-sec-lab-extra-nonlinear-satellite-rotation" class="nav-link" data-scroll-target="#sec-lab-extra-nonlinear-satellite-rotation"><span class="header-section-number">31.11</span> Вращение тела в 3D</a></li>
+  <li><a href="#sec-lab-extra-nonlinear-satellite-shadow" id="toc-sec-lab-extra-nonlinear-satellite-shadow" class="nav-link" data-scroll-target="#sec-lab-extra-nonlinear-satellite-shadow"><span class="header-section-number">31.12</span> Тень на солнце</a></li>
+  <li><a href="#sec-lab-extra-nonlinear-satellite-stars" id="toc-sec-lab-extra-nonlinear-satellite-stars" class="nav-link" data-scroll-target="#sec-lab-extra-nonlinear-satellite-stars"><span class="header-section-number">31.13</span> Примечательные звёзды</a></li>
+  <li><a href="#sec-lab-extra-nonlinear-satellite-methods" id="toc-sec-lab-extra-nonlinear-satellite-methods" class="nav-link" data-scroll-target="#sec-lab-extra-nonlinear-satellite-methods"><span class="header-section-number">31.14</span> Численные методы</a></li>
+  </ul><div class="toc-actions"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li><li><a href="https://github.com/AfonenkoA/Operations-Research/blob/master/lab/extra/nonlinear/main.qmd" class="toc-action"><i class="bi empty"></i>Показать код</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../lab/extra/programming/r/main.html">Задания. Дополнительно</a></li><li class="breadcrumb-item"><a href="../../../lab/extra/nonlinear/main.html"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Нелинейная оптимизация. Последние минуты жизни</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-lab-extra-nonlinear-satellite" class="quarto-section-identifier"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Нелинейная оптимизация. Последние минуты жизни</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header><p>7 марта 2024 года, в полдень наблюдатель, находящийся недалеко от города Кигома (озеро Танганьика), Танзания настраивал свой солнечный телескоп Coronado SolarMax III 90. Он был удивлён, что на протяжении 5 секунд яркость солнца изменялась по закону <a href="#sec-lab-extra-nonlinear-satellite-shadow" class="quarto-xref"><span>Глава 31.12</span></a>. В это время в верхних слоях атмосферы, отправляя последние пакеты телеметрии, сгорал BSUSAT-1 <a href="#sec-lab-extra-nonlinear-satellite-characteristics" class="quarto-xref"><span>Глава 31.8</span></a>, который и заинтересовал астронома. Вдруг на мгновение всё вокруг залил ярчайший поток света. Определите, что озарило сознание любителя астрономии: сгоревший спутник или шаманская настойка, выпитая с утра.</p>
+<section id="sec-lab-extra-nonlinear-satellite-task" class="level2" data-number="31.1"><h2 data-number="31.1" class="anchored" data-anchor-id="sec-lab-extra-nonlinear-satellite-task">
+<span class="header-section-number">31.1</span> Задание</h2>
+<p>Физика процесса рассматривается начиная с пункта <a href="#sec-lab-extra-nonlinear-satellite-spatial-model" class="quarto-xref"><span>Глава 31.2</span></a>, справочные данные приводятся в <a href="#sec-lab-extra-nonlinear-satellite-constant" class="quarto-xref"><span>Глава 31.10</span></a></p>
+<ol type="1">
+<li>Построить контурный график целевой функции (ошибки оценки параметров). Из него оценить начальное приближение для оценки скорости вращения спутника</li>
+<li>Если спутник вращается быстро, то выбрать модель <em>вращающегося тела</em> <a href="#sec-lab-extra-nonlinear-effective-area-rotating" class="quarto-xref"><span>Глава 31.4.1</span></a>, иначе модель <em>невращающегося тела</em> <a href="#sec-lab-extra-nonlinear-effective-area-non-rotating" class="quarto-xref"><span>Глава 31.4.2</span></a>
+</li>
+<li>Построить графики массы, скорости и светимости от времени</li>
+<li>Определить максимальную яркость спутника, его звёздную величину, соотнести с известными звёздами, видимыми невооруженным глазом <a href="#sec-lab-extra-nonlinear-satellite-stars" class="quarto-xref"><span>Глава 31.13</span></a>
+</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Уведомление
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Масса <span class="math inline">\(m(t)\)</span>, эффективная площадь поперечного сечения <span class="math inline">\(S_e(t)\)</span> и другие физические величины определяются как функции от времени. А параметры окружающей среды зависят от высоты: температура <span class="math inline">\(T_a(h)\)</span>, плотность атмосферы <span class="math inline">\(\rho_a(h)\)</span>.</p>
+</div>
+</div>
+</section><section id="sec-lab-extra-nonlinear-satellite-spatial-model" class="level2" data-number="31.2"><h2 data-number="31.2" class="anchored" data-anchor-id="sec-lab-extra-nonlinear-satellite-spatial-model">
+<span class="header-section-number">31.2</span> Пространственная модель</h2>
+<p>Спутник падает вертикально вниз с первой космической скоростью <span class="math inline">\(V_1\)</span> и начинает взаимодействовать с атмосферой на высоте <span class="math inline">\(h_0\)</span>. Наблюдатель видит его на фоне солнца, находясь под ним.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="model.svg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></p>
+</figure>
+</div>
+</section><section id="sec-lab-extra-nonlinear-satellite-ablation" class="level2" data-number="31.3"><h2 data-number="31.3" class="anchored" data-anchor-id="sec-lab-extra-nonlinear-satellite-ablation">
+<span class="header-section-number">31.3</span> Абляция</h2>
+<p>Спутник входит входит в атмосферу на первой космической скорости <span class="math inline">\(V_1\)</span> и начинает взаимодействовать с её слоями на высоте <span class="math inline">\(h_0\)</span>. При входе в атмосферу будет сталкиваться с молекулами воздуха разогреваясь до температуры кипения металла. Основным фактором потери массы будет абляция — унос массы с поверхности твёрдого тела обтекающим эту поверхность потоком горячих газов.</p>
+</section><section id="sec-lab-extra-nonlinear-effective-area" class="level2" data-number="31.4"><h2 data-number="31.4" class="anchored" data-anchor-id="sec-lab-extra-nonlinear-effective-area">
+<span class="header-section-number">31.4</span> Эффективная площадь взаимодействия</h2>
+<p>Чтобы определить количество молекул, с которыми столкнётся спутник надо знать его эффективную площадь взаимодействия <span class="math inline">\(S_e\)</span> (площадь проекции). Для определения эффективной площади взаимодействия предлагаются следующие две модели</p>
+<section id="sec-lab-extra-nonlinear-effective-area-rotating" class="level3" data-number="31.4.1"><h3 data-number="31.4.1" class="anchored" data-anchor-id="sec-lab-extra-nonlinear-effective-area-rotating">
+<span class="header-section-number">31.4.1</span> Модель вращающегося тела</h3>
+<p>Для быстро вращающегося тела среднюю площадь его проекции можно считать как 1/4 полной площади поверхности <a href="#sec-lab-extra-nonlinear-satellite-rotation" class="quarto-xref"><span>Глава 31.11</span></a>. В этом случае оценкой коэффициента аэродинамической формы <span class="math inline">\(A=A_r\)</span> принимается равным <span class="math inline">\(1.2\)</span>.</p>
+</section><section id="sec-lab-extra-nonlinear-effective-area-non-rotating" class="level3" data-number="31.4.2"><h3 data-number="31.4.2" class="anchored" data-anchor-id="sec-lab-extra-nonlinear-effective-area-non-rotating">
+<span class="header-section-number">31.4.2</span> Модель невращающегося тела</h3>
+<p>В этом случае считаем, что спутник направлен своей большей гранью перпендикулярно потоку воздуха (направлению падения), и его коэффициент аэродинамической формы <span class="math inline">\(A=A_n\)</span> принимается равным <span class="math inline">\(1.6\)</span>.</p>
+</section></section><section id="sec-lab-extra-nonlinear-satellite-energy" class="level2" data-number="31.5"><h2 data-number="31.5" class="anchored" data-anchor-id="sec-lab-extra-nonlinear-satellite-energy">
+<span class="header-section-number">31.5</span> Баланс энергии и импульса</h2>
+<p>Температура спутника может быть рассчитана из закона сохранения энергии. Изменение температуры поверхности спутника <span class="math inline">\(dT\)</span> за интервал времени <span class="math inline">\(dt\)</span> можно вычислить из изменения энергии за тот же интервал <span class="math inline">\((dE)\)</span> по формуле</p>
+<p><span class="math display">\[
+dT = \frac{dE}{c m}
+\]</span></p>
+<p>где <span class="math inline">\(c\)</span> — удельная теплоёмкость материала спутника, а <span class="math inline">\(m\)</span> — его масса. Энергия передаётся спутнику за счёт столкновений с атмосферными атомами. В системе отсчёта спутника атмосфера имеет энергию</p>
+<p><span class="math display">\[
+m_a v^2 / 2
+\]</span></p>
+<p>где <span class="math inline">\(v\)</span> — скорость спутника, а <span class="math inline">\(m_a\)</span> — общая масса атмосферных атомов. Масса, встречаемая спутником за интервал времени <span class="math inline">\(dt\)</span>, равна</p>
+<p><span class="math display">\[
+\rho_a v S dt
+\]</span></p>
+<p>где <span class="math inline">\(ρ_a\)</span> – плотность атмосферы, <span class="math inline">\(A\)</span> — коэффициент формы определённый, <span class="math inline">\(S_e\)</span> — эффективная площадь поперечного сечения.</p>
+<p>Энергия теряется спутником за счёт излучения. Нагретый спутник излучает равномерно всей площадью своей поверхности <span class="math inline">\(S_s\)</span>. Теряемая энергия выражается как</p>
+<p><span class="math display">\[
+4\sigma \epsilon(T^4 − T_a^4) S_s
+\]</span></p>
+<p>где <span class="math inline">\(T_a\)</span> — температура атмосферы, <span class="math inline">\(\sigma\)</span> — постоянная Стефана–Больцмана, а <span class="math inline">\(\epsilon\)</span> — излучательная способность спутника, принимаемая равной 0.9.</p>
+<p>Энергия также теряется через испарение материала. Энергия, необходимая для абляции массы <span class="math inline">\(dm\)</span>, по определению равна <span class="math inline">\(Ldm\)</span>, где <span class="math inline">\(L\)</span> — теплота абляции, включающая теплоту плавления <span class="math inline">\(L_f\)</span> и теплоту испарения <span class="math inline">\(L_b\)</span> материала спутника. За счёт этого спутник теряет энергию <span class="math inline">\(Ldm/dt\)</span>. Таким образом, полное дифференциальное уравнение для температуры выглядит следующим образом:</p>
+<p><span class="math display">\[
+\frac{dT}{dt} = \frac{1}{cm} \left( \frac{\Lambda p_a v^3}{2} S_e - 4 \sigma \epsilon (T^4 - T_a^4) S_s - L \frac{dm}{dt} \right)
+\]</span></p>
+<p>Скорость спутника, как правило, не изменяется существенно по его траектории, но уравнение импульса используется для отслеживания любых таких изменений. Безразмерный коэффициент <span class="math inline">\(\Lambda\)</span> (коэффициент теплообмена) используется для описания доли кинетической энергии, пошедшей на нагрев спутника.</p>
+<p>Импульс молекул воздуха, сталкивающихся с спутника за время <span class="math inline">\(dt\)</span>, равен</p>
+<p><span class="math display">\[
+\rho_a v^2 S dt
+\]</span></p>
+<p>Чтобы описать долю импульса, фактически передаваемого спутнику используется безразмерный коэффициент <span class="math inline">\(Γ\)</span>, который близок к единице. Тогда уравнение для скорости выглядит следующим образом:</p>
+<p><span class="math display">\[
+\frac{dv}{dt} = \frac{\Gamma \rho_a v^2 S_e}{m}
+\]</span></p>
+</section><section id="sec-lab-extra-nonlinear-satellite-mass" class="level2" data-number="31.6"><h2 data-number="31.6" class="anchored" data-anchor-id="sec-lab-extra-nonlinear-satellite-mass">
+<span class="header-section-number">31.6</span> Потеря массы</h2>
+<p>В условиях разреженной атмосферы для расчёта потери массы применяется аппроксимированное уравнение в условиях высокой температуры:</p>
+<p><span class="math display">\[
+\frac{dm}{dt} = S_e \cdot \psi \cdot \frac{P_a \exp \left( \frac{L \mu}{k_B T_B} \right) \exp \left( -\frac{L \mu}{k_B T} \right)}{\sqrt{\frac{2 \pi k_B T}{\mu}}}
+\]</span></p>
+<p>где <span class="math inline">\(p_s\)</span> — насыщенное давление паров, <span class="math inline">\(\mu\)</span> — масса атома спутника, <span class="math inline">\(k_B\)</span> — постоянная Больцмана, температуру кипения вещества спутника <span class="math inline">\(T_B\)</span> при давлении на уровне моря <span class="math inline">\(P_a\)</span> где <span class="math inline">\(p_v\)</span> — парциальное давление паров вещества спутника, а <span class="math inline">\(\psi\)</span> — коэффициент конденсации, который определяет вероятность того, что испарившийся атом спутника, столкнувшись с поверхностью, конденсируется. Для металлов <span class="math inline">\(\psi = 1\)</span></p>
+</section><section id="sec-lab-extra-nonlinear-satellite-radiation" class="level2" data-number="31.7"><h2 data-number="31.7" class="anchored" data-anchor-id="sec-lab-extra-nonlinear-satellite-radiation">
+<span class="header-section-number">31.7</span> Яркость излучения</h2>
+<p>В этой модели используется классическое предположение, что световая интенсивность пропорциональна кинетической энергии, теряемой спутником пропорциональна скорости потери массы, поскольку скорость остаётся практически постоянной. Уравнение для световой интенсивности имеет вид:</p>
+<p><span class="math display">\[
+I = \tau \frac{dm}{dt} \frac{v^2}{2}
+\]</span></p>
+<p>где <span class="math inline">\(\tau\)</span> — безразмерный коэффициент светимости <span class="math inline">\(2\cdot 10^{-3}\)</span> для , а интенсивность <span class="math inline">\(I\)</span> выражается в Ваттах. Звёздная величина рассчитывается по формуле:</p>
+<p><span class="math display">\[
+M = 6.8 - 1.086 \ln{I}
+\]</span></p>
+</section><section id="sec-lab-extra-nonlinear-satellite-characteristics" class="level2" data-number="31.8"><h2 data-number="31.8" class="anchored" data-anchor-id="sec-lab-extra-nonlinear-satellite-characteristics">
+<span class="header-section-number">31.8</span> Спутник</h2>
+<p>Считать, что спутник состоит целиком из алюминия. Спутник формата 3U представляет собой параллелепипед размером <span class="math inline">\(30\times 10\times 10\)</span> см.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="3unit.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="200"></p>
+</figure>
+</div>
+</section><section id="sec-lab-extra-nonlinear-satellite-atmosphere" class="level2" data-number="31.9"><h2 data-number="31.9" class="anchored" data-anchor-id="sec-lab-extra-nonlinear-satellite-atmosphere">
+<span class="header-section-number">31.9</span> Модель атмосферы</h2>
+<p>Атмосфера рассматривается из барометрического подхода. Зависимость температуры в кельвинах от высоты <span class="math inline">\(h\)</span> заданна следующим соотношением</p>
+<p><span class="math display">\[
+T_a(h)=T_0-\frac{\gamma-1}{\gamma}\frac{Mg}{R}h
+\]</span></p>
+<p><span class="math display">\[
+\rho_a(h)=\rho_0 \cdot {\biggl(\frac{T_a(h)}{T_0}\biggr)}^{1/0.26}
+\]</span></p>
+<p>где <span class="math inline">\(M\)</span> – молярная масса воздуха, <span class="math inline">\(\gamma\)</span> – показатель адиабаты для воздуха</p>
+</section><section id="sec-lab-extra-nonlinear-satellite-constant" class="level2" data-number="31.10"><h2 data-number="31.10" class="anchored" data-anchor-id="sec-lab-extra-nonlinear-satellite-constant">
+<span class="header-section-number">31.10</span> Константы</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 29%">
+</colgroup>
+<thead><tr class="header">
+<th>Постоянная</th>
+<th>Значение</th>
+<th>Размерность</th>
+<th>Описание</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(R\)</span></td>
+<td><span class="math inline">\(8.31\)</span></td>
+<td><span class="math inline">\(\mathrm{\frac{Дж}{К\cdot моль}}\)</span></td>
+<td>универсальная газовая постоянная</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(M\)</span></td>
+<td><span class="math inline">\(28.97\)</span></td>
+<td><span class="math inline">\(\mathrm{\frac{г}{моль}}\)</span></td>
+<td>молярная масса воздуха</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(g\)</span></td>
+<td><span class="math inline">\(9.8\)</span></td>
+<td><span class="math inline">\(\mathrm{\frac{м}{с^2}}\)</span></td>
+<td>ускорение свободного падения</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\gamma\)</span></td>
+<td><span class="math inline">\(7/5\)</span></td>
+<td></td>
+<td>показатель адиабаты для воздуха</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(P_a\)</span></td>
+<td><span class="math inline">\(101.3\)</span></td>
+<td><span class="math inline">\(\mathrm{кПа}\)</span></td>
+<td>давление атмосферы на уровне моря</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\Lambda\)</span></td>
+<td><span class="math inline">\(0.6\)</span></td>
+<td></td>
+<td>безразмерный коэффициент теплообмена</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\tau\)</span></td>
+<td><span class="math inline">\(2\cdot 10^{-3}\)</span></td>
+<td></td>
+<td>коэффициент светимости</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\rho_0\)</span></td>
+<td><span class="math inline">\(1.20\)</span></td>
+<td><span class="math inline">\(\mathrm{\frac{кг}{м^3}}\)</span></td>
+<td>плотность атмосферы на уровне моря</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(Γ\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+<td></td>
+<td>коэффициент передачи кинетической энергии частицами воздуха спутнику</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(A_r\)</span></td>
+<td><span class="math inline">\(1.2\)</span></td>
+<td></td>
+<td>коэффициент аэродинамической формы</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(A_n\)</span></td>
+<td><span class="math inline">\(1.6\)</span></td>
+<td></td>
+<td>коэффициент аэродинамической формы</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(V_1\)</span></td>
+<td><span class="math inline">\(7.9\)</span></td>
+<td><span class="math inline">\(\mathrm{\frac{км}{с}}\)</span></td>
+<td>первая космическая скорость</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(h_0\)</span></td>
+<td><span class="math inline">\(100\)</span></td>
+<td><span class="math inline">\(\mathrm{км}\)</span></td>
+<td>высота входа спутника в атмосферу</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\epsilon\)</span></td>
+<td><span class="math inline">\(0.9\)</span></td>
+<td></td>
+<td>излучательная способность спутника</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\sigma\)</span></td>
+<td><span class="math inline">\(5.67\cdot 10^{-8}\)</span></td>
+<td><span class="math inline">\(\mathrm{\frac{Вт}{м^2 К^4}}\)</span></td>
+<td>постоянная Стефана-Больцмана</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\psi\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+<td></td>
+<td>вероятность конденсации испарившегося атома</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mathrm{a.е.м.}\)</span></td>
+<td><span class="math inline">\(1.66\cdot 10^{-27}\)</span></td>
+<td><span class="math inline">\(\mathrm{кг}\)</span></td>
+<td>атомная единица массы</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(k_B\)</span></td>
+<td><span class="math inline">\(1.38 \cdot 10^{-23}\)</span></td>
+<td><span class="math inline">\(\mathrm{\frac{Дж}{К}}\)</span></td>
+<td>постоянная Больцмана</td>
+</tr>
+</tbody>
+</table>
+<p>Характеристика алюминия</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 24%">
+<col style="width: 26%">
+</colgroup>
+<thead><tr class="header">
+<th>Постоянная</th>
+<th>Значение</th>
+<th>Размерность</th>
+<th>Описание</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(T_B\)</span></td>
+<td><span class="math inline">\(2470\)</span></td>
+<td><span class="math inline">\(\mathrm{^\circ C}\)</span></td>
+<td>температура кипения</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(c\)</span></td>
+<td><span class="math inline">\(930\)</span></td>
+<td><span class="math inline">\(\mathrm{\frac{Дж}{кг \cdot К}}\)</span></td>
+<td>теплоёмкость</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(L_f\)</span></td>
+<td><span class="math inline">\(390\)</span></td>
+<td><span class="math inline">\(\mathrm{\frac{кДж}{кг}}\)</span></td>
+<td>удельная теплота плавления</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(L_b\)</span></td>
+<td><span class="math inline">\(10.53\)</span></td>
+<td><span class="math inline">\(\mathrm{\frac{МДж}{кг}}\)</span></td>
+<td>удельная теплота кипения</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\mu\)</span></td>
+<td><span class="math inline">\(27\)</span></td>
+<td><span class="math inline">\(\mathrm{a.е.м.}\)</span></td>
+<td>масса атома</td>
+</tr>
+</tbody>
+</table></section><section id="sec-lab-extra-nonlinear-satellite-rotation" class="level2" data-number="31.11"><h2 data-number="31.11" class="anchored" data-anchor-id="sec-lab-extra-nonlinear-satellite-rotation">
+<span class="header-section-number">31.11</span> Вращение тела в 3D</h2>
+<p>Для определения площади проекции вращающегося объемного тела в плоскости наблюдателя рассмотрим модель поворота тела относительно неподвижной системы координат. Произвольное тело рассматривается как набор его угловых точек в пространстве. В нашем случае поворот вокруг оси <span class="math inline">\(x\)</span> задаётся углом <span class="math inline">\(\alpha\)</span>, вокруг <span class="math inline">\(y\)</span> углом <span class="math inline">\(\beta\)</span>, а вокруг оси <span class="math inline">\(z\)</span> углом <span class="math inline">\(\gamma\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure"><p><img src="roll-pitch-yaw.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Опуская вывод приводится матрица оператора поворота точки на углы <span class="math inline">\((\alpha,\beta,\gamma)\)</span></p>
+<p><span class="math display">\[
+\mathrm{Rot}(\alpha,\beta,\gamma)=\begin{pmatrix}
+\cos (\beta ) \cos (\gamma ) &amp; \sin (\alpha ) \sin (\beta ) \cos (\gamma )-\cos (\alpha ) \sin (\gamma ) &amp; \cos (\alpha ) \sin (\beta ) \cos (\gamma )+\sin (\alpha ) \sin (\gamma ) \\
+\cos (\beta ) \sin (\gamma ) &amp; \sin (\alpha ) \sin (\beta ) \sin (\gamma )+\cos (\alpha ) \cos (\gamma ) &amp; \cos (\alpha ) \sin (\beta ) \sin (\gamma )-\sin (\alpha ) \cos (\gamma ) \\
+-\sin (\beta ) &amp; \sin (\alpha ) \cos (\beta ) &amp; \cos (\alpha ) \cos (\beta ) \\
+\end{pmatrix}
+\]</span></p>
+<p>Для получения проекции на плоскость <span class="math inline">\(xy\)</span> используется тривиальная матрица оператора проекции</p>
+<p><span class="math display">\[
+\mathrm{Proj}=\begin{pmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 \\\end{pmatrix}
+\]</span></p>
+<p>Итоговая матрица оператора поворота и проекции получается как</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\mathrm{P}(\alpha,\beta,\gamma)=\mathrm{Proj}.\mathrm{Rot}(\alpha,\beta,\gamma) = \\
+&amp;=\begin{pmatrix}
+\cos (\beta ) \cos (\gamma ) &amp; \sin (\alpha ) \sin (\beta ) \cos (\gamma )-\cos (\alpha ) \sin (\gamma ) &amp; \cos (\alpha ) \sin (\beta ) \cos (\gamma )+\sin (\alpha ) \sin (\gamma ) \\
+\cos (\beta ) \sin (\gamma ) &amp; \sin (\alpha ) \sin (\beta ) \sin (\gamma )+\cos (\alpha ) \cos (\gamma ) &amp; \cos (\alpha ) \sin (\beta ) \sin (\gamma )-\sin (\alpha ) \cos (\gamma ) \\
+0 &amp; 0 &amp; 0 \\
+\end{pmatrix}
+\end{aligned}
+\]</span></p>
+<p>Проекция координат произвольной угловой точки тела <span class="math inline">\((x_0,y_0,z_0)\)</span> после поворота определяется умножением вектора координат на матрицу поворота</p>
+<p><span class="math display">\[
+(x,y,0)=\mathrm{P}(\alpha,\beta,\gamma).(x_0,y_0,z_0)
+\]</span></p>
+<p>Проделав так со всеми угловыми точками тела мы можем вычислить его площадь применив численный метод (вычисление площади замкнутой фигуры), как показано в анимации. Сверху указана площадь проекции.</p>
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="rotation.mp4"></video></div>
+</section><section id="sec-lab-extra-nonlinear-satellite-shadow" class="level2" data-number="31.12"><h2 data-number="31.12" class="anchored" data-anchor-id="sec-lab-extra-nonlinear-satellite-shadow">
+<span class="header-section-number">31.12</span> Тень на солнце</h2>
+<p>На рисунке приведён график зависимости яркости солнца от времени на протяжении 5 секунд в условных единицах. Обычная яркость солнца составляет 1000 условных единиц.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-145aa29303af9e5995a2" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-145aa29303af9e5995a2">{"x":{"visdat":{"29852e958c8":["function () ","plotlyVisDat"]},"cur_data":"29852e958c8","attrs":{"29852e958c8":{"x":[0,0.01,0.02,0.029999999999999999,0.040000000000000001,0.050000000000000003,0.059999999999999998,0.070000000000000007,0.080000000000000002,0.089999999999999997,0.10000000000000001,0.11,0.12,0.13,0.14000000000000001,0.14999999999999999,0.16,0.17000000000000001,0.17999999999999999,0.19,0.20000000000000001,0.20999999999999999,0.22,0.23000000000000001,0.23999999999999999,0.25,0.26000000000000001,0.27000000000000002,0.28000000000000003,0.28999999999999998,0.29999999999999999,0.31,0.32000000000000001,0.33000000000000002,0.34000000000000002,0.34999999999999998,0.35999999999999999,0.37,0.38,0.39000000000000001,0.40000000000000002,0.40999999999999998,0.41999999999999998,0.42999999999999999,0.44,0.45000000000000001,0.46000000000000002,0.46999999999999997,0.47999999999999998,0.48999999999999999,0.5,0.51000000000000001,0.52000000000000002,0.53000000000000003,0.54000000000000004,0.55000000000000004,0.56000000000000005,0.56999999999999995,0.57999999999999996,0.58999999999999997,0.59999999999999998,0.60999999999999999,0.62,0.63,0.64000000000000001,0.65000000000000002,0.66000000000000003,0.67000000000000004,0.68000000000000005,0.68999999999999995,0.69999999999999996,0.70999999999999996,0.71999999999999997,0.72999999999999998,0.73999999999999999,0.75,0.76000000000000001,0.77000000000000002,0.78000000000000003,0.79000000000000004,0.80000000000000004,0.81000000000000005,0.81999999999999995,0.82999999999999996,0.83999999999999997,0.84999999999999998,0.85999999999999999,0.87,0.88,0.89000000000000001,0.90000000000000002,0.91000000000000003,0.92000000000000004,0.93000000000000005,0.93999999999999995,0.94999999999999996,0.95999999999999996,0.96999999999999997,0.97999999999999998,0.98999999999999999,1,1.01,1.02,1.03,1.04,1.05,1.0600000000000001,1.0700000000000001,1.0800000000000001,1.0900000000000001,1.1000000000000001,1.1100000000000001,1.1200000000000001,1.1299999999999999,1.1399999999999999,1.1499999999999999,1.1599999999999999,1.1699999999999999,1.1799999999999999,1.1899999999999999,1.2,1.21,1.22,1.23,1.24,1.25,1.26,1.27,1.28,1.29,1.3,1.3100000000000001,1.3200000000000001,1.3300000000000001,1.3400000000000001,1.3500000000000001,1.3600000000000001,1.3700000000000001,1.3799999999999999,1.3899999999999999,1.3999999999999999,1.4099999999999999,1.4199999999999999,1.4299999999999999,1.4399999999999999,1.45,1.46,1.47,1.48,1.49,1.5,1.51,1.52,1.53,1.54,1.55,1.5600000000000001,1.5700000000000001,1.5800000000000001,1.5900000000000001,1.6000000000000001,1.6100000000000001,1.6200000000000001,1.6299999999999999,1.6399999999999999,1.6499999999999999,1.6599999999999999,1.6699999999999999,1.6799999999999999,1.6899999999999999,1.7,1.71,1.72,1.73,1.74,1.75,1.76,1.77,1.78,1.79,1.8,1.8100000000000001,1.8200000000000001,1.8300000000000001,1.8400000000000001,1.8500000000000001,1.8600000000000001,1.8700000000000001,1.8799999999999999,1.8899999999999999,1.8999999999999999,1.9099999999999999,1.9199999999999999,1.9299999999999999,1.9399999999999999,1.95,1.96,1.97,1.98,1.99,2,2.0099999999999998,2.02,2.0299999999999998,2.04,2.0499999999999998,2.0600000000000001,2.0699999999999998,2.0800000000000001,2.0899999999999999,2.1000000000000001,2.1099999999999999,2.1200000000000001,2.1299999999999999,2.1400000000000001,2.1499999999999999,2.1600000000000001,2.1699999999999999,2.1800000000000002,2.1899999999999999,2.2000000000000002,2.21,2.2200000000000002,2.23,2.2400000000000002,2.25,2.2599999999999998,2.27,2.2799999999999998,2.29,2.2999999999999998,2.3100000000000001,2.3199999999999998,2.3300000000000001,2.3399999999999999,2.3500000000000001,2.3599999999999999,2.3700000000000001,2.3799999999999999,2.3900000000000001,2.3999999999999999,2.4100000000000001,2.4199999999999999,2.4300000000000002,2.4399999999999999,2.4500000000000002,2.46,2.4700000000000002,2.48,2.4900000000000002,2.5,2.5099999999999998,2.52,2.5299999999999998,2.54,2.5499999999999998,2.5600000000000001,2.5699999999999998,2.5800000000000001,2.5899999999999999,2.6000000000000001,2.6099999999999999,2.6200000000000001,2.6299999999999999,2.6400000000000001,2.6499999999999999,2.6600000000000001,2.6699999999999999,2.6800000000000002,2.6899999999999999,2.7000000000000002,2.71,2.7200000000000002,2.73,2.7400000000000002,2.75,2.7599999999999998,2.77,2.7799999999999998,2.79,2.7999999999999998,2.8100000000000001,2.8199999999999998,2.8300000000000001,2.8399999999999999,2.8500000000000001,2.8599999999999999,2.8700000000000001,2.8799999999999999,2.8900000000000001,2.8999999999999999,2.9100000000000001,2.9199999999999999,2.9300000000000002,2.9399999999999999,2.9500000000000002,2.96,2.9700000000000002,2.98,2.9900000000000002,3,3.0099999999999998,3.02,3.0299999999999998,3.04,3.0499999999999998,3.0600000000000001,3.0699999999999998,3.0800000000000001,3.0899999999999999,3.1000000000000001,3.1099999999999999,3.1200000000000001,3.1299999999999999,3.1400000000000001,3.1499999999999999,3.1600000000000001,3.1699999999999999,3.1800000000000002,3.1899999999999999,3.2000000000000002,3.21,3.2200000000000002,3.23,3.2400000000000002,3.25,3.2599999999999998,3.27,3.2799999999999998,3.29,3.2999999999999998,3.3100000000000001,3.3199999999999998,3.3300000000000001,3.3399999999999999,3.3500000000000001,3.3599999999999999,3.3700000000000001,3.3799999999999999,3.3900000000000001,3.3999999999999999,3.4100000000000001,3.4199999999999999,3.4300000000000002,3.4399999999999999,3.4500000000000002,3.46,3.4700000000000002,3.48,3.4900000000000002,3.5,3.5099999999999998,3.52,3.5299999999999998,3.54,3.5499999999999998,3.5600000000000001,3.5699999999999998,3.5800000000000001,3.5899999999999999,3.6000000000000001,3.6099999999999999,3.6200000000000001,3.6299999999999999,3.6400000000000001,3.6499999999999999,3.6600000000000001,3.6699999999999999,3.6800000000000002,3.6899999999999999,3.7000000000000002,3.71,3.7200000000000002,3.73,3.7400000000000002,3.75,3.7599999999999998,3.77,3.7799999999999998,3.79,3.7999999999999998,3.8100000000000001,3.8199999999999998,3.8300000000000001,3.8399999999999999,3.8500000000000001,3.8599999999999999,3.8700000000000001,3.8799999999999999,3.8900000000000001,3.8999999999999999,3.9100000000000001,3.9199999999999999,3.9300000000000002,3.9399999999999999,3.9500000000000002,3.96,3.9700000000000002,3.98,3.9900000000000002,4,4.0099999999999998,4.0199999999999996,4.0300000000000002,4.04,4.0499999999999998,4.0599999999999996,4.0700000000000003,4.0800000000000001,4.0899999999999999,4.0999999999999996,4.1100000000000003,4.1200000000000001,4.1299999999999999,4.1399999999999997,4.1500000000000004,4.1600000000000001,4.1699999999999999,4.1799999999999997,4.1900000000000004,4.2000000000000002,4.21,4.2199999999999998,4.2300000000000004,4.2400000000000002,4.25,4.2599999999999998,4.2699999999999996,4.2800000000000002,4.29,4.2999999999999998,4.3099999999999996,4.3200000000000003,4.3300000000000001,4.3399999999999999,4.3499999999999996,4.3600000000000003,4.3700000000000001,4.3799999999999999,4.3899999999999997,4.4000000000000004,4.4100000000000001,4.4199999999999999,4.4299999999999997,4.4400000000000004,4.4500000000000002,4.46,4.4699999999999998,4.4800000000000004,4.4900000000000002,4.5,4.5099999999999998,4.5199999999999996,4.5300000000000002,4.54,4.5499999999999998,4.5599999999999996,4.5700000000000003,4.5800000000000001,4.5899999999999999,4.5999999999999996,4.6100000000000003,4.6200000000000001,4.6299999999999999,4.6399999999999997,4.6500000000000004,4.6600000000000001,4.6699999999999999,4.6799999999999997,4.6900000000000004,4.7000000000000002,4.71,4.7199999999999998,4.7300000000000004,4.7400000000000002,4.75,4.7599999999999998,4.7699999999999996,4.7800000000000002,4.79,4.7999999999999998,4.8099999999999996,4.8200000000000003,4.8300000000000001,4.8399999999999999,4.8499999999999996,4.8600000000000003,4.8700000000000001,4.8799999999999999,4.8899999999999997,4.9000000000000004,4.9100000000000001,4.9199999999999999,4.9299999999999997,4.9400000000000004,4.9500000000000002,4.96,4.9699999999999998,4.9800000000000004,4.9900000000000002,5],"y":[900,853.654,809.39700000000005,767.99199999999996,730.13800000000003,696.46199999999999,667.50300000000004,643.70299999999997,625.40099999999995,612.82600000000002,606.09500000000003,605.21299999999997,610.07399999999996,620.46900000000005,636.08699999999999,656.53099999999995,681.32299999999998,690.37699999999995,663.00800000000004,638.34699999999998,616.96600000000001,599.39599999999996,586.11500000000001,577.53599999999994,573.99400000000003,575.73599999999999,573.23699999999997,574.84100000000001,580.81799999999998,591.35599999999999,606.553,626.41600000000005,650.85000000000002,679.66300000000001,674.88699999999994,655.298,639.76099999999997,628.20899999999995,620.48800000000006,616.36900000000003,615.55499999999995,617.69399999999996,622.38699999999994,629.20699999999999,637.70600000000002,647.43399999999997,657.94600000000003,668.82399999999996,679.678,690.16600000000005,700,690.16600000000005,679.678,668.82399999999996,657.94600000000003,647.43399999999997,637.70600000000002,629.20699999999999,622.38699999999994,617.69399999999996,615.55499999999995,616.36900000000003,620.48800000000006,628.20899999999995,639.76099999999997,655.298,674.88699999999994,679.66300000000001,650.85000000000002,626.41600000000005,606.553,591.35599999999999,580.81799999999998,574.84100000000001,573.23699999999997,575.73599999999999,573.99400000000003,577.53599999999994,586.11500000000001,599.39599999999996,616.96600000000001,638.34699999999998,663.00800000000004,690.37699999999995,681.32299999999998,656.53099999999995,636.08699999999999,620.46900000000005,610.07399999999996,605.21299999999997,606.09500000000003,612.82600000000002,625.40099999999995,643.70299999999997,667.50300000000004,696.46199999999999,730.13800000000003,767.99199999999996,809.39700000000005,853.654,900,853.654,809.39700000000005,767.99199999999996,730.13800000000003,696.46199999999999,667.50300000000004,643.70299999999997,625.40099999999995,612.82600000000002,606.09500000000003,605.21299999999997,610.07399999999996,620.46900000000005,636.08699999999999,656.53099999999995,681.32299999999998,690.37699999999995,663.00800000000004,638.34699999999998,616.96600000000001,599.39599999999996,586.11500000000001,577.53599999999994,573.99400000000003,575.73599999999999,573.23699999999997,574.84100000000001,580.81799999999998,591.35599999999999,606.553,626.41600000000005,650.85000000000002,679.66300000000001,674.88699999999994,655.298,639.76099999999997,628.20899999999995,620.48800000000006,616.36900000000003,615.55499999999995,617.69399999999996,622.38699999999994,629.20699999999999,637.70600000000002,647.43399999999997,657.94600000000003,668.82399999999996,679.678,690.16600000000005,700,690.16600000000005,679.678,668.82399999999996,657.94600000000003,647.43399999999997,637.70600000000002,629.20699999999999,622.38699999999994,617.69399999999996,615.55499999999995,616.36900000000003,620.48800000000006,628.20899999999995,639.76099999999997,655.298,674.88699999999994,679.66300000000001,650.85000000000002,626.41600000000005,606.553,591.35599999999999,580.81799999999998,574.84100000000001,573.23699999999997,575.73599999999999,573.99400000000003,577.53599999999994,586.11500000000001,599.39599999999996,616.96600000000001,638.34699999999998,663.00800000000004,690.37699999999995,681.32299999999998,656.53099999999995,636.08699999999999,620.46900000000005,610.07399999999996,605.21299999999997,606.09500000000003,612.82600000000002,625.40099999999995,643.70299999999997,667.50300000000004,696.46199999999999,730.13800000000003,767.99199999999996,809.39700000000005,853.654,900,853.654,809.39700000000005,767.99199999999996,730.13800000000003,696.46199999999999,667.50300000000004,643.70299999999997,625.40099999999995,612.82600000000002,606.09500000000003,605.21299999999997,610.07399999999996,620.46900000000005,636.08699999999999,656.53099999999995,681.32299999999998,690.37699999999995,663.00800000000004,638.34699999999998,616.96600000000001,599.39599999999996,586.11500000000001,577.53599999999994,573.99400000000003,575.73599999999999,573.23699999999997,574.84100000000001,580.81799999999998,591.35599999999999,606.553,626.41600000000005,650.85000000000002,679.66300000000001,674.88699999999994,655.298,639.76099999999997,628.20899999999995,620.48800000000006,616.36900000000003,615.55499999999995,617.69399999999996,622.38699999999994,629.20699999999999,637.70600000000002,647.43399999999997,657.94600000000003,668.82399999999996,679.678,690.16600000000005,700,690.16600000000005,679.678,668.82399999999996,657.94600000000003,647.43399999999997,637.70600000000002,629.20699999999999,622.38699999999994,617.69399999999996,615.55499999999995,616.36900000000003,620.48800000000006,628.20899999999995,639.76099999999997,655.298,674.88699999999994,679.66300000000001,650.85000000000002,626.41600000000005,606.553,591.35599999999999,580.81799999999998,574.84100000000001,573.23699999999997,575.73599999999999,573.99400000000003,577.53599999999994,586.11500000000001,599.39599999999996,616.96600000000001,638.34699999999998,663.00800000000004,690.37699999999995,681.32299999999998,656.53099999999995,636.08699999999999,620.46900000000005,610.07399999999996,605.21299999999997,606.09500000000003,612.82600000000002,625.40099999999995,643.70299999999997,667.50300000000004,696.46199999999999,730.13800000000003,767.99199999999996,809.39700000000005,853.654,900,853.654,809.39700000000005,767.99199999999996,730.13800000000003,696.46199999999999,667.50300000000004,643.70299999999997,625.40099999999995,612.82600000000002,606.09500000000003,605.21299999999997,610.07399999999996,620.46900000000005,636.08699999999999,656.53099999999995,681.32299999999998,690.37699999999995,663.00800000000004,638.34699999999998,616.96600000000001,599.39599999999996,586.11500000000001,577.53599999999994,573.99400000000003,575.73599999999999,573.23699999999997,574.84100000000001,580.81799999999998,591.35599999999999,606.553,626.41600000000005,650.85000000000002,679.66300000000001,674.88699999999994,655.298,639.76099999999997,628.20899999999995,620.48800000000006,616.36900000000003,615.55499999999995,617.69399999999996,622.38699999999994,629.20699999999999,637.70600000000002,647.43399999999997,657.94600000000003,668.82399999999996,679.678,690.16600000000005,700,690.16600000000005,679.678,668.82399999999996,657.94600000000003,647.43399999999997,637.70600000000002,629.20699999999999,622.38699999999994,617.69399999999996,615.55499999999995,616.36900000000003,620.48800000000006,628.20899999999995,639.76099999999997,655.298,674.88699999999994,679.66300000000001,650.85000000000002,626.41600000000005,606.553,591.35599999999999,580.81799999999998,574.84100000000001,573.23699999999997,575.73599999999999,573.99400000000003,577.53599999999994,586.11500000000001,599.39599999999996,616.96600000000001,638.34699999999998,663.00800000000004,690.37699999999995,681.32299999999998,656.53099999999995,636.08699999999999,620.46900000000005,610.07399999999996,605.21299999999997,606.09500000000003,612.82600000000002,625.40099999999995,643.70299999999997,667.50300000000004,696.46199999999999,730.13800000000003,767.99199999999996,809.39700000000005,853.654,900,853.654,809.39700000000005,767.99199999999996,730.13800000000003,696.46199999999999,667.50300000000004,643.70299999999997,625.40099999999995,612.82600000000002,606.09500000000003,605.21299999999997,610.07399999999996,620.46900000000005,636.08699999999999,656.53099999999995,681.32299999999998,690.37699999999995,663.00800000000004,638.34699999999998,616.96600000000001,599.39599999999996,586.11500000000001,577.53599999999994,573.99400000000003,575.73599999999999,573.23699999999997,574.84100000000001,580.81799999999998,591.35599999999999,606.553,626.41600000000005,650.85000000000002,679.66300000000001,674.88699999999994,655.298,639.76099999999997,628.20899999999995,620.48800000000006,616.36900000000003,615.55499999999995,617.69399999999996,622.38699999999994,629.20699999999999,637.70600000000002,647.43399999999997,657.94600000000003,668.82399999999996,679.678,690.16600000000005,700,690.16600000000005,679.678,668.82399999999996,657.94600000000003,647.43399999999997,637.70600000000002,629.20699999999999,622.38699999999994,617.69399999999996,615.55499999999995,616.36900000000003,620.48800000000006,628.20899999999995,639.76099999999997,655.298,674.88699999999994,679.66300000000001,650.85000000000002,626.41600000000005,606.553,591.35599999999999,580.81799999999998,574.84100000000001,573.23699999999997,575.73599999999999,573.99400000000003,577.53599999999994,586.11500000000001,599.39599999999996,616.96600000000001,638.34699999999998,663.00800000000004,690.37699999999995,681.32299999999998,656.53099999999995,636.08699999999999,620.46900000000005,610.07399999999996,605.21299999999997,606.09500000000003,612.82600000000002,625.40099999999995,643.70299999999997,667.50300000000004,696.46199999999999,730.13800000000003,767.99199999999996,809.39700000000005,853.654,900],"mode":"lines","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":[]},"yaxis":{"domain":[0,1],"automargin":true,"title":[]},"hovermode":"closest","showlegend":false},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[0,0.01,0.02,0.029999999999999999,0.040000000000000001,0.050000000000000003,0.059999999999999998,0.070000000000000007,0.080000000000000002,0.089999999999999997,0.10000000000000001,0.11,0.12,0.13,0.14000000000000001,0.14999999999999999,0.16,0.17000000000000001,0.17999999999999999,0.19,0.20000000000000001,0.20999999999999999,0.22,0.23000000000000001,0.23999999999999999,0.25,0.26000000000000001,0.27000000000000002,0.28000000000000003,0.28999999999999998,0.29999999999999999,0.31,0.32000000000000001,0.33000000000000002,0.34000000000000002,0.34999999999999998,0.35999999999999999,0.37,0.38,0.39000000000000001,0.40000000000000002,0.40999999999999998,0.41999999999999998,0.42999999999999999,0.44,0.45000000000000001,0.46000000000000002,0.46999999999999997,0.47999999999999998,0.48999999999999999,0.5,0.51000000000000001,0.52000000000000002,0.53000000000000003,0.54000000000000004,0.55000000000000004,0.56000000000000005,0.56999999999999995,0.57999999999999996,0.58999999999999997,0.59999999999999998,0.60999999999999999,0.62,0.63,0.64000000000000001,0.65000000000000002,0.66000000000000003,0.67000000000000004,0.68000000000000005,0.68999999999999995,0.69999999999999996,0.70999999999999996,0.71999999999999997,0.72999999999999998,0.73999999999999999,0.75,0.76000000000000001,0.77000000000000002,0.78000000000000003,0.79000000000000004,0.80000000000000004,0.81000000000000005,0.81999999999999995,0.82999999999999996,0.83999999999999997,0.84999999999999998,0.85999999999999999,0.87,0.88,0.89000000000000001,0.90000000000000002,0.91000000000000003,0.92000000000000004,0.93000000000000005,0.93999999999999995,0.94999999999999996,0.95999999999999996,0.96999999999999997,0.97999999999999998,0.98999999999999999,1,1.01,1.02,1.03,1.04,1.05,1.0600000000000001,1.0700000000000001,1.0800000000000001,1.0900000000000001,1.1000000000000001,1.1100000000000001,1.1200000000000001,1.1299999999999999,1.1399999999999999,1.1499999999999999,1.1599999999999999,1.1699999999999999,1.1799999999999999,1.1899999999999999,1.2,1.21,1.22,1.23,1.24,1.25,1.26,1.27,1.28,1.29,1.3,1.3100000000000001,1.3200000000000001,1.3300000000000001,1.3400000000000001,1.3500000000000001,1.3600000000000001,1.3700000000000001,1.3799999999999999,1.3899999999999999,1.3999999999999999,1.4099999999999999,1.4199999999999999,1.4299999999999999,1.4399999999999999,1.45,1.46,1.47,1.48,1.49,1.5,1.51,1.52,1.53,1.54,1.55,1.5600000000000001,1.5700000000000001,1.5800000000000001,1.5900000000000001,1.6000000000000001,1.6100000000000001,1.6200000000000001,1.6299999999999999,1.6399999999999999,1.6499999999999999,1.6599999999999999,1.6699999999999999,1.6799999999999999,1.6899999999999999,1.7,1.71,1.72,1.73,1.74,1.75,1.76,1.77,1.78,1.79,1.8,1.8100000000000001,1.8200000000000001,1.8300000000000001,1.8400000000000001,1.8500000000000001,1.8600000000000001,1.8700000000000001,1.8799999999999999,1.8899999999999999,1.8999999999999999,1.9099999999999999,1.9199999999999999,1.9299999999999999,1.9399999999999999,1.95,1.96,1.97,1.98,1.99,2,2.0099999999999998,2.02,2.0299999999999998,2.04,2.0499999999999998,2.0600000000000001,2.0699999999999998,2.0800000000000001,2.0899999999999999,2.1000000000000001,2.1099999999999999,2.1200000000000001,2.1299999999999999,2.1400000000000001,2.1499999999999999,2.1600000000000001,2.1699999999999999,2.1800000000000002,2.1899999999999999,2.2000000000000002,2.21,2.2200000000000002,2.23,2.2400000000000002,2.25,2.2599999999999998,2.27,2.2799999999999998,2.29,2.2999999999999998,2.3100000000000001,2.3199999999999998,2.3300000000000001,2.3399999999999999,2.3500000000000001,2.3599999999999999,2.3700000000000001,2.3799999999999999,2.3900000000000001,2.3999999999999999,2.4100000000000001,2.4199999999999999,2.4300000000000002,2.4399999999999999,2.4500000000000002,2.46,2.4700000000000002,2.48,2.4900000000000002,2.5,2.5099999999999998,2.52,2.5299999999999998,2.54,2.5499999999999998,2.5600000000000001,2.5699999999999998,2.5800000000000001,2.5899999999999999,2.6000000000000001,2.6099999999999999,2.6200000000000001,2.6299999999999999,2.6400000000000001,2.6499999999999999,2.6600000000000001,2.6699999999999999,2.6800000000000002,2.6899999999999999,2.7000000000000002,2.71,2.7200000000000002,2.73,2.7400000000000002,2.75,2.7599999999999998,2.77,2.7799999999999998,2.79,2.7999999999999998,2.8100000000000001,2.8199999999999998,2.8300000000000001,2.8399999999999999,2.8500000000000001,2.8599999999999999,2.8700000000000001,2.8799999999999999,2.8900000000000001,2.8999999999999999,2.9100000000000001,2.9199999999999999,2.9300000000000002,2.9399999999999999,2.9500000000000002,2.96,2.9700000000000002,2.98,2.9900000000000002,3,3.0099999999999998,3.02,3.0299999999999998,3.04,3.0499999999999998,3.0600000000000001,3.0699999999999998,3.0800000000000001,3.0899999999999999,3.1000000000000001,3.1099999999999999,3.1200000000000001,3.1299999999999999,3.1400000000000001,3.1499999999999999,3.1600000000000001,3.1699999999999999,3.1800000000000002,3.1899999999999999,3.2000000000000002,3.21,3.2200000000000002,3.23,3.2400000000000002,3.25,3.2599999999999998,3.27,3.2799999999999998,3.29,3.2999999999999998,3.3100000000000001,3.3199999999999998,3.3300000000000001,3.3399999999999999,3.3500000000000001,3.3599999999999999,3.3700000000000001,3.3799999999999999,3.3900000000000001,3.3999999999999999,3.4100000000000001,3.4199999999999999,3.4300000000000002,3.4399999999999999,3.4500000000000002,3.46,3.4700000000000002,3.48,3.4900000000000002,3.5,3.5099999999999998,3.52,3.5299999999999998,3.54,3.5499999999999998,3.5600000000000001,3.5699999999999998,3.5800000000000001,3.5899999999999999,3.6000000000000001,3.6099999999999999,3.6200000000000001,3.6299999999999999,3.6400000000000001,3.6499999999999999,3.6600000000000001,3.6699999999999999,3.6800000000000002,3.6899999999999999,3.7000000000000002,3.71,3.7200000000000002,3.73,3.7400000000000002,3.75,3.7599999999999998,3.77,3.7799999999999998,3.79,3.7999999999999998,3.8100000000000001,3.8199999999999998,3.8300000000000001,3.8399999999999999,3.8500000000000001,3.8599999999999999,3.8700000000000001,3.8799999999999999,3.8900000000000001,3.8999999999999999,3.9100000000000001,3.9199999999999999,3.9300000000000002,3.9399999999999999,3.9500000000000002,3.96,3.9700000000000002,3.98,3.9900000000000002,4,4.0099999999999998,4.0199999999999996,4.0300000000000002,4.04,4.0499999999999998,4.0599999999999996,4.0700000000000003,4.0800000000000001,4.0899999999999999,4.0999999999999996,4.1100000000000003,4.1200000000000001,4.1299999999999999,4.1399999999999997,4.1500000000000004,4.1600000000000001,4.1699999999999999,4.1799999999999997,4.1900000000000004,4.2000000000000002,4.21,4.2199999999999998,4.2300000000000004,4.2400000000000002,4.25,4.2599999999999998,4.2699999999999996,4.2800000000000002,4.29,4.2999999999999998,4.3099999999999996,4.3200000000000003,4.3300000000000001,4.3399999999999999,4.3499999999999996,4.3600000000000003,4.3700000000000001,4.3799999999999999,4.3899999999999997,4.4000000000000004,4.4100000000000001,4.4199999999999999,4.4299999999999997,4.4400000000000004,4.4500000000000002,4.46,4.4699999999999998,4.4800000000000004,4.4900000000000002,4.5,4.5099999999999998,4.5199999999999996,4.5300000000000002,4.54,4.5499999999999998,4.5599999999999996,4.5700000000000003,4.5800000000000001,4.5899999999999999,4.5999999999999996,4.6100000000000003,4.6200000000000001,4.6299999999999999,4.6399999999999997,4.6500000000000004,4.6600000000000001,4.6699999999999999,4.6799999999999997,4.6900000000000004,4.7000000000000002,4.71,4.7199999999999998,4.7300000000000004,4.7400000000000002,4.75,4.7599999999999998,4.7699999999999996,4.7800000000000002,4.79,4.7999999999999998,4.8099999999999996,4.8200000000000003,4.8300000000000001,4.8399999999999999,4.8499999999999996,4.8600000000000003,4.8700000000000001,4.8799999999999999,4.8899999999999997,4.9000000000000004,4.9100000000000001,4.9199999999999999,4.9299999999999997,4.9400000000000004,4.9500000000000002,4.96,4.9699999999999998,4.9800000000000004,4.9900000000000002,5],"y":[900,853.654,809.39700000000005,767.99199999999996,730.13800000000003,696.46199999999999,667.50300000000004,643.70299999999997,625.40099999999995,612.82600000000002,606.09500000000003,605.21299999999997,610.07399999999996,620.46900000000005,636.08699999999999,656.53099999999995,681.32299999999998,690.37699999999995,663.00800000000004,638.34699999999998,616.96600000000001,599.39599999999996,586.11500000000001,577.53599999999994,573.99400000000003,575.73599999999999,573.23699999999997,574.84100000000001,580.81799999999998,591.35599999999999,606.553,626.41600000000005,650.85000000000002,679.66300000000001,674.88699999999994,655.298,639.76099999999997,628.20899999999995,620.48800000000006,616.36900000000003,615.55499999999995,617.69399999999996,622.38699999999994,629.20699999999999,637.70600000000002,647.43399999999997,657.94600000000003,668.82399999999996,679.678,690.16600000000005,700,690.16600000000005,679.678,668.82399999999996,657.94600000000003,647.43399999999997,637.70600000000002,629.20699999999999,622.38699999999994,617.69399999999996,615.55499999999995,616.36900000000003,620.48800000000006,628.20899999999995,639.76099999999997,655.298,674.88699999999994,679.66300000000001,650.85000000000002,626.41600000000005,606.553,591.35599999999999,580.81799999999998,574.84100000000001,573.23699999999997,575.73599999999999,573.99400000000003,577.53599999999994,586.11500000000001,599.39599999999996,616.96600000000001,638.34699999999998,663.00800000000004,690.37699999999995,681.32299999999998,656.53099999999995,636.08699999999999,620.46900000000005,610.07399999999996,605.21299999999997,606.09500000000003,612.82600000000002,625.40099999999995,643.70299999999997,667.50300000000004,696.46199999999999,730.13800000000003,767.99199999999996,809.39700000000005,853.654,900,853.654,809.39700000000005,767.99199999999996,730.13800000000003,696.46199999999999,667.50300000000004,643.70299999999997,625.40099999999995,612.82600000000002,606.09500000000003,605.21299999999997,610.07399999999996,620.46900000000005,636.08699999999999,656.53099999999995,681.32299999999998,690.37699999999995,663.00800000000004,638.34699999999998,616.96600000000001,599.39599999999996,586.11500000000001,577.53599999999994,573.99400000000003,575.73599999999999,573.23699999999997,574.84100000000001,580.81799999999998,591.35599999999999,606.553,626.41600000000005,650.85000000000002,679.66300000000001,674.88699999999994,655.298,639.76099999999997,628.20899999999995,620.48800000000006,616.36900000000003,615.55499999999995,617.69399999999996,622.38699999999994,629.20699999999999,637.70600000000002,647.43399999999997,657.94600000000003,668.82399999999996,679.678,690.16600000000005,700,690.16600000000005,679.678,668.82399999999996,657.94600000000003,647.43399999999997,637.70600000000002,629.20699999999999,622.38699999999994,617.69399999999996,615.55499999999995,616.36900000000003,620.48800000000006,628.20899999999995,639.76099999999997,655.298,674.88699999999994,679.66300000000001,650.85000000000002,626.41600000000005,606.553,591.35599999999999,580.81799999999998,574.84100000000001,573.23699999999997,575.73599999999999,573.99400000000003,577.53599999999994,586.11500000000001,599.39599999999996,616.96600000000001,638.34699999999998,663.00800000000004,690.37699999999995,681.32299999999998,656.53099999999995,636.08699999999999,620.46900000000005,610.07399999999996,605.21299999999997,606.09500000000003,612.82600000000002,625.40099999999995,643.70299999999997,667.50300000000004,696.46199999999999,730.13800000000003,767.99199999999996,809.39700000000005,853.654,900,853.654,809.39700000000005,767.99199999999996,730.13800000000003,696.46199999999999,667.50300000000004,643.70299999999997,625.40099999999995,612.82600000000002,606.09500000000003,605.21299999999997,610.07399999999996,620.46900000000005,636.08699999999999,656.53099999999995,681.32299999999998,690.37699999999995,663.00800000000004,638.34699999999998,616.96600000000001,599.39599999999996,586.11500000000001,577.53599999999994,573.99400000000003,575.73599999999999,573.23699999999997,574.84100000000001,580.81799999999998,591.35599999999999,606.553,626.41600000000005,650.85000000000002,679.66300000000001,674.88699999999994,655.298,639.76099999999997,628.20899999999995,620.48800000000006,616.36900000000003,615.55499999999995,617.69399999999996,622.38699999999994,629.20699999999999,637.70600000000002,647.43399999999997,657.94600000000003,668.82399999999996,679.678,690.16600000000005,700,690.16600000000005,679.678,668.82399999999996,657.94600000000003,647.43399999999997,637.70600000000002,629.20699999999999,622.38699999999994,617.69399999999996,615.55499999999995,616.36900000000003,620.48800000000006,628.20899999999995,639.76099999999997,655.298,674.88699999999994,679.66300000000001,650.85000000000002,626.41600000000005,606.553,591.35599999999999,580.81799999999998,574.84100000000001,573.23699999999997,575.73599999999999,573.99400000000003,577.53599999999994,586.11500000000001,599.39599999999996,616.96600000000001,638.34699999999998,663.00800000000004,690.37699999999995,681.32299999999998,656.53099999999995,636.08699999999999,620.46900000000005,610.07399999999996,605.21299999999997,606.09500000000003,612.82600000000002,625.40099999999995,643.70299999999997,667.50300000000004,696.46199999999999,730.13800000000003,767.99199999999996,809.39700000000005,853.654,900,853.654,809.39700000000005,767.99199999999996,730.13800000000003,696.46199999999999,667.50300000000004,643.70299999999997,625.40099999999995,612.82600000000002,606.09500000000003,605.21299999999997,610.07399999999996,620.46900000000005,636.08699999999999,656.53099999999995,681.32299999999998,690.37699999999995,663.00800000000004,638.34699999999998,616.96600000000001,599.39599999999996,586.11500000000001,577.53599999999994,573.99400000000003,575.73599999999999,573.23699999999997,574.84100000000001,580.81799999999998,591.35599999999999,606.553,626.41600000000005,650.85000000000002,679.66300000000001,674.88699999999994,655.298,639.76099999999997,628.20899999999995,620.48800000000006,616.36900000000003,615.55499999999995,617.69399999999996,622.38699999999994,629.20699999999999,637.70600000000002,647.43399999999997,657.94600000000003,668.82399999999996,679.678,690.16600000000005,700,690.16600000000005,679.678,668.82399999999996,657.94600000000003,647.43399999999997,637.70600000000002,629.20699999999999,622.38699999999994,617.69399999999996,615.55499999999995,616.36900000000003,620.48800000000006,628.20899999999995,639.76099999999997,655.298,674.88699999999994,679.66300000000001,650.85000000000002,626.41600000000005,606.553,591.35599999999999,580.81799999999998,574.84100000000001,573.23699999999997,575.73599999999999,573.99400000000003,577.53599999999994,586.11500000000001,599.39599999999996,616.96600000000001,638.34699999999998,663.00800000000004,690.37699999999995,681.32299999999998,656.53099999999995,636.08699999999999,620.46900000000005,610.07399999999996,605.21299999999997,606.09500000000003,612.82600000000002,625.40099999999995,643.70299999999997,667.50300000000004,696.46199999999999,730.13800000000003,767.99199999999996,809.39700000000005,853.654,900,853.654,809.39700000000005,767.99199999999996,730.13800000000003,696.46199999999999,667.50300000000004,643.70299999999997,625.40099999999995,612.82600000000002,606.09500000000003,605.21299999999997,610.07399999999996,620.46900000000005,636.08699999999999,656.53099999999995,681.32299999999998,690.37699999999995,663.00800000000004,638.34699999999998,616.96600000000001,599.39599999999996,586.11500000000001,577.53599999999994,573.99400000000003,575.73599999999999,573.23699999999997,574.84100000000001,580.81799999999998,591.35599999999999,606.553,626.41600000000005,650.85000000000002,679.66300000000001,674.88699999999994,655.298,639.76099999999997,628.20899999999995,620.48800000000006,616.36900000000003,615.55499999999995,617.69399999999996,622.38699999999994,629.20699999999999,637.70600000000002,647.43399999999997,657.94600000000003,668.82399999999996,679.678,690.16600000000005,700,690.16600000000005,679.678,668.82399999999996,657.94600000000003,647.43399999999997,637.70600000000002,629.20699999999999,622.38699999999994,617.69399999999996,615.55499999999995,616.36900000000003,620.48800000000006,628.20899999999995,639.76099999999997,655.298,674.88699999999994,679.66300000000001,650.85000000000002,626.41600000000005,606.553,591.35599999999999,580.81799999999998,574.84100000000001,573.23699999999997,575.73599999999999,573.99400000000003,577.53599999999994,586.11500000000001,599.39599999999996,616.96600000000001,638.34699999999998,663.00800000000004,690.37699999999995,681.32299999999998,656.53099999999995,636.08699999999999,620.46900000000005,610.07399999999996,605.21299999999997,606.09500000000003,612.82600000000002,625.40099999999995,643.70299999999997,667.50300000000004,696.46199999999999,730.13800000000003,767.99199999999996,809.39700000000005,853.654,900],"mode":"lines","type":"scatter","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div class="callout callout-style-simple callout-none no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>⤓ <a href="shadow.csv">shadow.csv</a></p>
+</div>
+</div>
+</div>
+</section><section id="sec-lab-extra-nonlinear-satellite-stars" class="level2" data-number="31.13"><h2 data-number="31.13" class="anchored" data-anchor-id="sec-lab-extra-nonlinear-satellite-stars">
+<span class="header-section-number">31.13</span> Примечательные звёзды</h2>
+<table class="caption-top table">
+<thead><tr class="header">
+<th>Звезда</th>
+<th style="text-align: left;">Видимая звёздная величина</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Солнце</td>
+<td style="text-align: left;"><span class="math inline">\(-26.7\)</span></td>
+</tr>
+<tr class="even">
+<td>Сириус</td>
+<td style="text-align: left;"><span class="math inline">\(-1.46\)</span></td>
+</tr>
+<tr class="odd">
+<td>Вега</td>
+<td style="text-align: left;"><span class="math inline">\(0.03\)</span></td>
+</tr>
+<tr class="even">
+<td>Антарес</td>
+<td style="text-align: left;"><span class="math inline">\(1.0\)</span></td>
+</tr>
+<tr class="odd">
+<td>Альфард</td>
+<td style="text-align: left;"><span class="math inline">\(2.0\)</span></td>
+</tr>
+<tr class="even">
+<td>Альбирео</td>
+<td style="text-align: left;"><span class="math inline">\(3.08\)</span></td>
+</tr>
+<tr class="odd">
+<td>Алдульфин</td>
+<td style="text-align: left;"><span class="math inline">\(4.03\)</span></td>
+</tr>
+<tr class="even">
+<td>Звезда Бесселя</td>
+<td style="text-align: left;"><span class="math inline">\(5.21\)</span></td>
+</tr>
+<tr class="odd">
+<td>Сихэ</td>
+<td style="text-align: left;"><span class="math inline">\(6.04\)</span></td>
+</tr>
+</tbody>
+</table></section><section id="sec-lab-extra-nonlinear-satellite-methods" class="level2" data-number="31.14"><h2 data-number="31.14" class="anchored" data-anchor-id="sec-lab-extra-nonlinear-satellite-methods">
+<span class="header-section-number">31.14</span> Численные методы</h2>
+<p>Площадь замкнутой фигуры в R можно найти с помощью функции <a href="https://rdrr.io/pkg/pracma/man/polyarea.html"><code>pracma::polyarea()</code></a></p>
+<div class="cell">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">pracma</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pracma/man/polyarea.html">polyarea</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">1</span>,<span class="fl">1</span>,<span class="fl">0</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span><span class="op">)</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+<p>Найти крайние точки области с помощью функции <a href="https://rdrr.io/r/grDevices/chull.html"><code>grDevices::chull()</code></a></p>
+<div class="cell">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">xy</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html">runif</a></span><span class="op">(</span><span class="fl">40</span><span class="op">)</span>, nrow<span class="op">=</span><span class="fl">20</span>, ncol <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> </span>
+<span><span class="va">cv</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/grDevices/chull.html">chull</a></span><span class="op">(</span><span class="va">xy</span><span class="op">)</span></span>
+<span><span class="fu">plotly</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/plotly/man/plot_ly.html">plot_ly</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">xy</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>,</span>
+<span>                y <span class="op">=</span> <span class="va">xy</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>, </span>
+<span>                type <span class="op">=</span> <span class="st">'scatter'</span>,</span>
+<span>                mode <span class="op">=</span> <span class="st">'markers'</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu">plotly</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/plotly/man/add_trace.html">add_trace</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">xy</span><span class="op">[</span><span class="va">cv</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">xy</span><span class="op">[</span><span class="va">cv</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>,<span class="fl">1</span><span class="op">]</span><span class="op">)</span>,</span>
+<span>                    y <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">xy</span><span class="op">[</span><span class="va">cv</span>,<span class="fl">2</span><span class="op">]</span>, <span class="va">xy</span><span class="op">[</span><span class="va">cv</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>,<span class="fl">2</span><span class="op">]</span><span class="op">)</span>, </span>
+<span>                    type <span class="op">=</span> <span class="st">'scatter'</span>,</span>
+<span>                    mode <span class="op">=</span> <span class="st">'lines+markers'</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
+<span>  <span class="fu">pshow</span><span class="op">(</span><span class="op">)</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-48b1a09026e656238240" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-48b1a09026e656238240">{"x":{"visdat":{"298561c77a48":["function () ","plotlyVisDat"]},"cur_data":"298561c77a48","attrs":{"298561c77a48":{"x":[0.65655619604513049,0.79435596708208323,0.43998311320319772,0.20537312747910619,0.19927073619328439,0.13939212635159492,0.24070082791149616,0.18496180349029601,0.033529919805005193,0.44389136554673314,0.27454141504131258,0.10426728310994804,0.6001044234726578,0.18579396093264222,0.12949964730069041,0.54257871303707361,0.26694424171000719,0.36382668651640415,0.84964862396009266,0.028331000125035644],"y":[0.93067717342637479,0.30423801369033754,0.96118489047512412,0.35315448394976556,0.20965439081192017,0.53194353217259049,0.43276227591559291,0.69298327038995922,0.48389022634364665,0.84653367754071951,0.36134810652583838,0.88494056323543191,0.21714478149078786,0.66855706134811044,0.73547578905709088,0.44595204736106098,0.83883761521428823,0.6170009239576757,0.0095040977466851473,0.6434804170858115],"mode":"markers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter"},"298561c77a48.1":{"x":[0.79435596708208323,0.84964862396009266,0.19927073619328439,0.033529919805005193,0.028331000125035644,0.10426728310994804,0.43998311320319772,0.65655619604513049,0.79435596708208323],"y":[0.30423801369033754,0.0095040977466851473,0.20965439081192017,0.48389022634364665,0.6434804170858115,0.88494056323543191,0.96118489047512412,0.93067717342637479,0.30423801369033754],"mode":"lines+markers","alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"type":"scatter","inherit":true}},"layout":{"margin":{"b":40,"l":60,"t":25,"r":10},"xaxis":{"domain":[0,1],"automargin":true,"title":[]},"yaxis":{"domain":[0,1],"automargin":true,"title":[]},"hovermode":"closest","showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"data":[{"x":[0.65655619604513049,0.79435596708208323,0.43998311320319772,0.20537312747910619,0.19927073619328439,0.13939212635159492,0.24070082791149616,0.18496180349029601,0.033529919805005193,0.44389136554673314,0.27454141504131258,0.10426728310994804,0.6001044234726578,0.18579396093264222,0.12949964730069041,0.54257871303707361,0.26694424171000719,0.36382668651640415,0.84964862396009266,0.028331000125035644],"y":[0.93067717342637479,0.30423801369033754,0.96118489047512412,0.35315448394976556,0.20965439081192017,0.53194353217259049,0.43276227591559291,0.69298327038995922,0.48389022634364665,0.84653367754071951,0.36134810652583838,0.88494056323543191,0.21714478149078786,0.66855706134811044,0.73547578905709088,0.44595204736106098,0.83883761521428823,0.6170009239576757,0.0095040977466851473,0.6434804170858115],"mode":"markers","type":"scatter","marker":{"color":"rgba(31,119,180,1)","line":{"color":"rgba(31,119,180,1)"}},"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"line":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[0.79435596708208323,0.84964862396009266,0.19927073619328439,0.033529919805005193,0.028331000125035644,0.10426728310994804,0.43998311320319772,0.65655619604513049,0.79435596708208323],"y":[0.30423801369033754,0.0095040977466851473,0.20965439081192017,0.48389022634364665,0.6434804170858115,0.88494056323543191,0.96118489047512412,0.93067717342637479,0.30423801369033754],"mode":"lines+markers","type":"scatter","marker":{"color":"rgba(255,127,14,1)","line":{"color":"rgba(255,127,14,1)"}},"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"line":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">pracma</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/pracma/man/polyarea.html">polyarea</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">xy</span><span class="op">[</span><span class="va">cv</span>,<span class="fl">1</span><span class="op">]</span>, y <span class="op">=</span> <span class="va">xy</span><span class="op">[</span><span class="va">cv</span>,<span class="fl">2</span><span class="op">]</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/MathFun.html">abs</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Скопировать текст" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.5348678</code></pre>
+</div>
+</div>
+<p>Решить систему дифференциальных уравнений с помощью семейства функций <a href="https://rdrr.io/pkg/pracma/man/ode.html"><code>pracma::ode45()</code></a></p>
+
+
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Скопировано");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Скопировано");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+      <a href="../../../lab/extra/network/main.html" class="pagination-link" aria-label="Cетевые модели">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Cетевые модели</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../lab/extra/evolutionary/main.html" class="pagination-link" aria-label="Эволюционная оптимизация. Телекомания">
+        <span class="nav-page-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Эволюционная оптимизация. Телекомания</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li><li><a href="https://github.com/AfonenkoA/Operations-Research/blob/master/lab/extra/nonlinear/main.qmd" class="toc-action"><i class="bi empty"></i>Показать код</a></li></ul></div></div></div></footer><script>videojs(video_shortcode_videojs_video1);</script>
+
+
+</body></html>
