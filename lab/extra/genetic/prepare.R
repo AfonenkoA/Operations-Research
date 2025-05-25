@@ -13,7 +13,7 @@ sqs <- q$subqueries
 # AGGREGATE - функции
 all_queries <- c(qs, sqs)
 
-g <- igraph::make_empty_graph()
+g <- init_graph()
 g <- purrr::reduce(tbl, add_table, .init = g)
 g <- get_column_names(all_queries) |>
   purrr::reduce(add_column, .init = g)

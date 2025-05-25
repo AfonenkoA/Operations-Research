@@ -1,5 +1,7 @@
-# Генетический алгоритм
+# Генетический алгоритм {#sec-evolutionary-genetc}
 
-::: {.callout-important title="Состояние разработки"}
-В разработке
-:::
+## Операция скрещивания {#sec-evolutionary-genetc-crossover}
+
+## Операция мутации {#sec-evolutionary-genetc-mutatuin}
+
+## Отбор особей {#sec-evolutionary-genetc-selection}

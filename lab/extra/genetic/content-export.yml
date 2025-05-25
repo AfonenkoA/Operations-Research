@@ -1,0 +1,8 @@
+---
+- from: main.qmd
+  files:
+    - database.yaml
+    - queries.yaml
+    - plan.graphml
+    - vertex.csv
+    - edges.csv

@@ -1,30 +1,38 @@
 ---
 engine: knitr
+cache: false
+freeze: false
 ---
 
 ```{r}
+#| include: false
 1
 ```
 
-# Задача генетического алгоритма {#sec-lab-extra-genetic}
+# Генетический алгоримт. Материализованные представления {#sec-lab-extra-genetic-materialized-view}
 
-<!--https://wwwiti.cs.uni-magdeburg.de/~eike/selftuning/sources/an-evolutionary-approach-to.pdf-->
+Хранилище данных (data warehousing) — это подход к интеграции данных из множества, возможно, очень больших, распределённых и неоднородных баз данных и других источников информации. Хранилище данных (DW) представляет собой репозиторий (хранилище) интегрированной информации, доступной для запросов и анализа. Чтобы избежать обращения к исходным источникам данных и повысить эффективность выполнения запросов к DW, некоторые промежуточные результаты обработки запросов сохраняются в самом хранилище. Эти промежуточные результаты называются материализованными представлениями (materialized views). На достаточно абстрактном уровне хранилище данных можно рассматривать как набор материализованных представлений над данными, извлечёнными из распределённых неоднородных баз данных. Существует множество исследовательских задач, связанных с DW, среди которых одной из самых сложных является задача выбора материализованных представлений. С одной стороны, материализованные представления ускоряют обработку запросов. С другой -- они требуют обновления при изменениях в источниках данных. Следовательно, при выборе материализованных представлений необходимо учитывать две категории затрат: затраты на обработку запросов и затраты на обслуживание (обновление) материализованных представлений. Нас интересует следующий вопрос: какие представления следует материализовать, чтобы сумма затрат на выполнение запросов и обслуживание представлений была минимальной?
 
-## Materialized views {#sec-lab-extra-genetic-materialized-view}
+Выбор материализованных представлений представляет собой сложный компромисс между производительностью выполнения запросов и затратами на обслуживание.
 
-Рассмотрим только некоторые подзадачи. Глобальный план обработки запросов получается из локального путём объединения вершин.
+-   Материализация всех представлений в хранилище данных (DW) обеспечивает наилучшую производительность, но сопровождается наивысшими затратами на обслуживание представлений.
+-   Оставление всех представлений виртуальными приведёт к минимальным затратам на их обслуживание, но к худшей производительности запросов. Под "виртуальными" в данном контексте подразумевается, что никакие промежуточные результаты не сохраняются в хранилище данных.
+-   Возможен также смешанный подход, при котором часть представлений материализуется (например, те, которые используются совместно), а остальные остаются виртуальными. Таким образом можно достичь оптимального (или близкого к оптимальному) баланса между приростом производительности и затратами на обслуживание.
 
-Выбор материализованных представлений включает три задачи оптимизации: оптимизацию запросов, оптимизацию множества запросов и собственно выбор материализованных представлений. Следует отметить, что набор локально оптимизированных запросов может перестать быть оптимальным при совместном рассмотрении нескольких запросов. Аналогично, оптимальный набор множества запросов не гарантирует оптимальный выбор материализованных представлений, так как другой набор может привести к более эффективным материализованным представлениям. Поэтому важно рассматривать все три задачи вместе при выборе материализованных представлений.
+К сожалению, доказано, что задача проектирования выбора материализованных представлений является NP-трудных. Поэтому на практике приходится использовать эвристику для нахождения приближённого к оптимальному решения. Задача, рассматриваемая в далее, формулируется следующим образом: на основе множества часто используемых запросов к хранилищу данных (DW) необходимо выбрать набор представлений для материализации таким образом, чтобы суммарные затраты на выполнение запросов и обслуживание были минимальны. Рассматриваемая задача связана с тремя различными аспектами:
 
-Для оптимального выбора матриализованных представлений для набора запросов должны быть решены 3 NP полные задачи.
+1.  Оптимизации выполнения одного запроса @sec-lab-extra-genetic-materialized-view-local-query
+2.  Оптимизация нескольких запросов одновременно @sec-lab-extra-genetic-materialized-view-global-query
+3.  Выбор материализованных представлений @sec-lab-extra-genetic-materialized-view-selection
 
-### Локальная оптимизация запроса {#sec-lab-extra-genetic-materialized-view-local-query}
+Следует отметить, что набор локально оптимизированных запросов может перестать быть оптимальным при совместном рассмотрении нескольких запросов. Аналогично, оптимальный набор множества запросов не гарантирует оптимальный выбор материализованных представлений, так как другой набор может привести к более эффективным материализованным представлениям. Поэтому важно рассматривать все три задачи, которые являются NP полными, вместе при выборе материализованных представлений. Однако в учебных целях будет **исследоваться только** решение задачи выбора материализованных представлений.
+
+## Локальная оптимизация запроса {#sec-lab-extra-genetic-materialized-view-local-query}
 
 Пусть есть три таблицы со следующей схемой
 
 ```{mermaid}
 erDiagram
-    direction LR
     catergories ||--|{ product : has
     manufacturers ||--|{ product : has
     catergories {
@@ -58,6 +66,7 @@ JOIN manufacturers ON product.manufacturer_id = manufacturers.id
 
 ```{r}
 #| include: false
+
 g <- igraph::make_empty_graph() |>
   igraph::add_vertices(nv = 3, name = c('prod','man','cat'))
 
@@ -75,35 +84,23 @@ g2 <- igraph::add_vertices(g, nv = 2, name = c('J(prod,man)','J(J(prod,man),cat)
 
 ```
 
-::: {.layout-ncol="2"}
 ```{r}
 #| echo: false
+#| layout-ncol: 2
 
-set.seed(42)
-plot(g1, layout = igraph::layout_as_tree(g1, flip.y = FALSE))
+plot(g1, vertex.label.cex = 2, layout = rbind(c(0,0),c(2,0),c(1,0),c(1,1),c(2,2)), vertex.size = 65)
+plot(g2, vertex.label.cex = 2, layout = rbind(c(0,0),c(1,0),c(2,0),c(1,1),c(2,2)), vertex.size = 65)
 ```
-
-```{r}
-#| echo: false
-
-set.seed(42)
-plot(g2, layout = igraph::layout_as_tree(g1, flip.y = FALSE))
-```
-:::
 
 Локальный план обработки определяется как граф запроса, в котором все отношения — это листовые узлы, а все операции (например, соединение, проекция и выборка) — внутренние узлы. Поскольку рассматривается только операция соединения, локальный план обработки для запроса можно представить в виде бинарного дерева соединений, листьями которого являются все отношения, а внутренними узлами — операции соединения. Рёбра в таком дереве маркируются предикатами соединения и селективностью соединения. Предикат соединения сопоставляет кортежи из декартова произведения смежных узлов в значение *false* или *true* в зависимости от того, должен ли кортеж включаться в результат. Селективность соединения — это отношение количества включенных кортежей к общему количеству кортежей.
 
-Стоимости двух деревьев соединения также различаются, хотя структура одинаковая, потому что порядок соединения отношений разный. Левое дерево в имеет вид $((cat \bowtie prod) \bowtie man)$, когда правое дерево – $((cat \bowtie man) \bowtie prod)$. Предположим, что размеры таблиц $cat$, $man$ и $prod$ равны 20, 30 и 100 соответственно. Стоимость левого дерева рассчитывается следующим образом. Сначала вычисляется стоимость $(cat \bowtie prod)$ как $\|cat\| \cdot \|prod\|=20 \cdot 100=2000$. Если результаты $(cat \bowtie prod)$ содержим 50 кортежей, то стоимость $((cat \bowtie prod) \bowtie man)$ будет $50 \cdot 30=1500$. Итак, общая стоимость: $2000+1500=3500$. Однако, стоимость правого дерева в будет отличаться. Стоимость $(cat \bowtie man)$ равна $\|cat\| \cdot \|man\|=20 \cdot 30=600$. Если результат $(cat \bowtie man)$ содержит 30 кортежей, то стоимость $((cat \bowtie man) \bowtie prod)$ будет равна $30 \cdot 100=3000$, и, следовательно общая стоимость равна $600 + 3000 = 3500$.
+Стоимости двух деревьев соединения также различаются, хотя структура одинаковая, потому что порядок соединения отношений разный. Левое дерево в имеет вид $((cat \bowtie prod) \bowtie man)$, когда правое дерево -- $((cat \bowtie man) \bowtie prod)$. Предположим, что размеры таблиц $cat$, $man$ и $prod$ равны 20, 30 и 100 соответственно. Стоимость левого дерева рассчитывается следующим образом. Сначала вычисляется стоимость $(cat \bowtie prod)$ как $\|cat\| \cdot \|prod\|=20 \cdot 100=2000$. Если результаты $(cat \bowtie prod)$ содержим 50 кортежей, то стоимость $((cat \bowtie prod) \bowtie man)$ будет $50 \cdot 30=1500$. Итак, общая стоимость: $2000+1500=3500$. Однако, стоимость правого дерева в будет отличаться. Стоимость $(cat \bowtie man)$ равна $\|cat\| \cdot \|man\|=20 \cdot 30=600$. Если результат $(cat \bowtie man)$ содержит 30 кортежей, то стоимость $((cat \bowtie man) \bowtie prod)$ будет равна $30 \cdot 100=3000$, и, следовательно общая стоимость равна $600 + 3000 = 3500$.
 
 Таким образом для определения оптимального локального плана выполнения запроса требуется решить. NP полную задачу. Данная задача далее рассматриваться **не будет** в связи с подходом к построению глобального плана указанного в пункте @sec-lab-extra-genetic-materialized-view-global-plan.
 
-### Глобальная оптимизация нескольких запросов {#sec-lab-extra-genetic-materialized-view-global-query}
+## Глобальная оптимизация нескольких запросов {#sec-lab-extra-genetic-materialized-view-global-query}
 
-Дано множество планов обработки для запроса. Цель оптимизации запроса — найти такой план обработки, который обеспечивает наименьшую стоимость выполнения запроса.
-
-Глобальный план выполнения получается путём объединения локальных планов. Таким образом два запроса могут быть объединиы по общим узлам.
-
-Рассмотрим следующие 3 запроса которые попарно используют 4 таблицы (T1, T2, T3, T4)
+Дано множество планов обработки для запроса. Цель оптимизации запроса — найти такой план обработки, который обеспечивает наименьшую стоимость выполнения запроса. Глобальный план выполнения получается путём объединения локальных планов. Таким образом два запроса могут быть объединены по общим узлам. Рассмотрим следующие 3 запроса которые попарно используют 4 таблицы (T1, T2, T3, T4)
 
 ``` sql
 SELECT * FROM T1 JOIN T2, T3
@@ -129,30 +126,22 @@ g3 <- igraph::make_empty_graph() |>
 
 Их локальные планы выполнения
 
-::: {.layot-ncol="3"}
 ```{r}
 #| echo: false
-plot(g1, layout = igraph::layout_as_tree)
+#| layout-ncol: 3
+
+plot(g1, vertex.label.cex = 3.5, layout = rbind(c(0,0),c(1,0),c(2,0),c(1,1)), vertex.size = 80)
+plot(g2, vertex.label.cex = 3.5, layout = rbind(c(0,0),c(1,0),c(2,0),c(1,1)), vertex.size = 80)
+plot(g3, vertex.label.cex = 3.5, layout = rbind(c(0,0),c(1,0),c(2,0),c(1,1)), vertex.size = 80)
 ```
 
-```{r}
-#| echo: false
-plot(g2, layout = igraph::layout_as_tree)
-```
-
-```{r}
-#| echo: false
-plot(g3, layout = igraph::layout_as_tree)
-```
-:::
-
-При объединении нескольких планов обработки запросов, то есть нескольких деревьев соединений, формируемый глобальный план обработки должен представлять собой ориентированный ациклический граф (DAG), а не дерево.
+При объединении нескольких планов обработки запросов, то есть нескольких деревьев соединений, формируемый глобальный план обработки должен представлять собой ориентированный ациклический граф (DAG), а не дерево. Вершины `Q1`, `Q2` и `Q3` обозначают результирующие таблицы запросов.
 
 ```{r}
 #| echo: false
 #| fig-height: 6
 
-set.seed(42)
+set.seed(23)
 igraph::make_empty_graph() |>
   igraph::add_vertices(nv = 11, name = c('Q1','Q2','Q3','T1','T2','T3','T4','J(T1,T2)','J(J(T1,T2),T3)','J(J(T1,T2),T4)', 'J(T1,T3,T4)')) |>
   igraph::add_edges(c('T1', 'J(T1,T2)',
@@ -167,55 +156,74 @@ igraph::make_empty_graph() |>
                       'J(J(T1,T2),T3)','Q1',
                       'J(J(T1,T2),T4)','Q2',
                       'J(T1,T3,T4)','Q3')) |> 
-plot()
+plot(vertex.label.cex = 1.5, vertex.size = 30)
 ```
 
 При объединении в один глобальный план возникает несколько вариантов промежуточных объединений, например JOIN(T1,T2) или JOIN(T2,T3). В общем случае объединение локально оптимальных планов не обязательно приводит к глобально оптимальному плану. Следовательно, мы не можем найти глобально оптимальный план, просто объединив локально оптимальные планы. Выбор оптимального глобального плана так-же является NP полной задачей и рассматриваться **не будет** в связи с подходом к построению глобального плана указанного в пункте @sec-lab-extra-genetic-materialized-view-global-plan.
 
-### Выбор материализованных представления {#sec-lab-extra-genetic-materialized-view-selection}
+## Выбор материализованных представления {#sec-lab-extra-genetic-materialized-view-selection}
 
-Для сокращения вычислительных затрат можно материализовать некоторые совместно используемые промежуточные узлы. Таким образом они вычисляются один раз, Есть смысл материализовывать только представления используемые совместно. Матрериализованный промежуточный узел вычисляется только один раз. Другие запросы используют его.
+Основная задача -- это выбор представлений для материализации таким образом, чтобы минимизировать стоимость обработки запросов и поддержки представлений для всех узлов в глобальном плане обработки. Простой подход — использовать полный перебор, чтобы найти оптимальный набор материализованных представлений для заданного множества запросов. Однако этот подход становится непрактичным при большом пространстве поиска. Задача выбора материализованных представлений является NP-трудной. Для ускорения получения результата необходимо использовать эволюционные алгоритмы, чтобы сократить пространство поиска @sec-lab-extra-genetic-materialized-view-genetic-alghorithm. Для предварительного сокращения пространства поиска имеет смысл материализовать только **совсместно используемые** промежуточные узлы.
 
-В хранилище данных (DW) выбранная информация извлекается заранее и сохраняется в репозитории. Таким образом, DW можно рассматривать как набор материализованных представлений, определённых на основе исходных данных. Задача, с которой мы сейчас сталкиваемся, — это выбор представлений для материализации таким образом, чтобы минимизировать стоимость обработки запросов и поддержки представлений для всех узлов в глобальном плане обработки.
-
-Простой подход — использовать полный перебор, чтобы найти оптимальный набор материализованных представлений для заданного множества запросов. Однако этот подход становится непрактичным при большом пространстве поиска. Было показано, что задача выбора материализованных представлений является NP-трудной \[2\].Для ускорения получения результата необходимо использовать эвристические алгоритмы, чтобы сократить пространство поиска \[2\], \[4\], \[5\]. Однако эффективность эвристического алгоритма сильно зависит от качества самих эвристик, которые на практике могут быть трудными или затратными для получения. Кроме того, эвристические алгоритмы легко застревают в локальном оптимуме.В отличие от них, эволюционные алгоритмы обладают рядом преимуществ, например, они выполняют поиск сразу от множества точек, используя вероятностные правила перехода. Чтобы избежать полного перебора во всём пространстве решений и получить лучшее решение по сравнению с эвристическими методами, мы предлагаем новый эволюционный подход к выбору материализованных представлений.
-
-### Модель запроса {#sec-lab-extra-genetic-materialized-view-query-model-plan}
+## Модель запроса {#sec-lab-extra-genetic-materialized-view-query-model-plan}
 
 Рассмотрим запрос выборки на языке SQL: "Товары дороже средней цены"
 
 ``` sql
-SELECT products.product_name, price_change.new_price
+SELECT products.name, price_change.price
 FROM products
 JOIN price_change ON products.id = price_change.product_id
-WHERE price_change.new_price > (SELECT AVG(price_change.price_change) FROM price_change)
+WHERE price_change.price > (SELECT AVG(price_change.price) FROM price_change)
+```
+
+из таблиц
+
+```{mermaid}
+erDiagram
+    products ||--|{ price_change : has
+    
+    price_change {
+        int id
+        int product_id
+        real price
+        date change_date
+    }
+    products {
+        int id
+        int category_id
+        int manufacturer_id
+        text name
+        real price
+    }
 ```
 
 Разделим его на подзапрос, вычисляющий среднюю цену `average_price`
 
 ``` sql
-SELECT AVG(price_change.price_change)
+SELECT AVG(price_change.price)
 FROM price_change
 ```
 
 и главный запрос
 
 ``` sql
-SELECT products.product_name, price_change.new_price
+SELECT products.name, price_change.price
 FROM products
 JOIN price_change ON products.id = price_change.product_id
-WHERE price_change.new_price > average_price
+WHERE price_change.price > average_price
 ```
 
 В задаче будет рассматриваться максимально упрощенное подмножество операторов языка SQL. Рассмотрим, как предстваить этот запрос в виде графа вычислений.
 
 ```{r}
+#| include: false
+
 source('sql.R')
 ```
 
-С каждым вычислительным узлом связана таблица, эта таблица передаётся в главном аргументе (связь val)
+С каждым вычислительным узлом связана таблица, эта таблица передаётся в главном аргументе (связь `val`)
 
-#### JOIN {#sec-lab-extra-genetic-materialized-view-query-model-plan-join}
+### JOIN {#sec-lab-extra-genetic-materialized-view-query-model-plan-join}
 
 Рассмотрим часть запроса
 
@@ -233,42 +241,39 @@ body:
     - price_change
 ```
 
-В отличии от других у функции JOIN аргументы (таблицы) равнозначны, что отличает её от других функций, которые имеют один главный аргумент (`val`), к которому они применяют другие свои аргументы `arg`. Для однотипной обработки введём фиктивный главный аргумент `JOIN EMPTY` --- `JE`.
+Операция JOIN выполняется в два этапа, сначала создаётся полное декартово произведение двух таблиц, далее записи фильтруются по условию соединения в операции WHERE @sec-lab-extra-genetic-materialized-view-query-model-plan-where. У операции JOIN аргументы (таблицы) равнозначны, что отличает её от других функций, которые имеют один главный аргумент (`val`), к которому они применяют другие свои аргументы `arg`. Для однотипной обработки введём фиктивный главный аргумент `JOIN EMPTY` --- `JE`.
 
 ```{r}
-#| echo: false
+#| include: false
+
 q_join <- list(fun = 'JOIN', val = 'JE', 'products','price_change')
 g <- g_join <- init_graph() |>
   add_table('products') |>
   add_table('price_change')
-
 add_query(q_join,'QJ') |> invisible()
 gf_join <- g
-set.seed(42)
-plot(gf_join, layout = igraph::layout_as_tree)
+
+l_join <- rbind(c(1,0), # JE
+                c(0,1), # products
+                c(3,1), # price_change
+                c(1,3), # JOIN(JE,products, price_change)
+                c(1,5)) # QJ
 ```
 
-На текущий момент граф выглядит следующим образом. Он состоит из вершин, с именами. И операциями в вершинах
+```{r}
+#| echo: false
+
+plot(gf_join, vertex.label.cex = 1.8, layout = l_join, vertex.size = 35)
+```
+
+На текущий момент граф выглядит следующим образом:
 
 ```{r}
 #| include: false
 
 v_join <- igraph::as_data_frame(gf_join, 'vertices')
 e_join <- igraph::as_data_frame(gf_join, 'edges')
-```
-
-`query` -- корневые вершины графа, представляющие собой запросы
-
-```{r}
-#| echo: false
-
-knitr::kable(e_join)
-knitr::kable(v_join)
-```
-
-```{r}
-#| include: false
-table <- tibble::tibble(col = c('products.id',
+table_join <- tibble::tibble(col = c('products.id',
          'products.name',
          'products.category_id',
          'products.manufacturer_id',
@@ -278,37 +283,42 @@ table <- tibble::tibble(col = c('products.id',
          'price_change.price',
          'price_change.change_date'), 
          type = c('INTEGER','TEXT','INTEGER','INTEGER', 'REAL', 'INTEGER','INTEGER','REAL','DATE'))
-lines <- 100 * 150
+lines_join <- 100 * 150
 ```
-
-Соответственно на данный момент результатом операции будет таблица, состоящая из $100 * 150 = 15000$ строк и следующих столбцов
 
 ```{r}
 #| echo: false
-kintr::kable(table)
+#| tbl-cap: [Вершины, Рёбра]
+
+knitr::kable(v_join, row.names = FALSE)
+knitr::kable(e_join)
+```
+
+Соответственно на данный момент результатом операции будет таблица, состоящая из $100 \cdot 150 = 15000$ строк и следующих столбцов
+
+```{r}
+#| echo: false
+
+knitr::kable(table_join)
 ```
 
 ::: callout-note
 Считается, что у таблицы JoinEmpty (JE) нет столбцов и одна строка.
 :::
 
-#### WHERE {#sec-lab-extra-genetic-materialized-view-query-model-plan-where}
+### WHERE {#sec-lab-extra-genetic-materialized-view-query-model-plan-where}
 
-Добавим к запросу условие отбора, предварительно определив подзапрос
+Добавим к запросу условие отбора, его главынм аргументом `val` будет таблица, полученная на предыдущем шаге в JOIN, а аргументами `arg` имена условий
 
 ``` sql
-FROM products
-JOIN price_change ON products.id = price_change.product_id
-WHERE price_change.new_price > average_price
+WHERE price_change.new_price > average_price AND
+  products.id = price_change.product_id
 ```
 
 Представленную в yaml
 
 ``` yaml
 body:
-  join:
-    - products
-    - price_change
   where:
     - name: products.id = price_change.product_id
       sample: 0.3
@@ -332,112 +342,218 @@ add_query(q_where,'QW') |> invisible()
 gf_where <- g
 v_where <- igraph::as_data_frame(gf_where, 'vertices')
 e_where <- igraph::as_data_frame(gf_where, 'edges')
+table_where <- table_join
+lines_where <- lines_join * 0.3^2
+
+l_where <- rbind(c(1,0),  # JE
+                 c(-1,1), # products
+                 c(3,1),  # price_change
+                 c(4,3),  # products.id = price_change
+                 c(-1,3), # average_price
+                 c(1,2),  # JOIN(JE,)
+                 c(1,5),  # WHERE(JOIN(JE,))
+                 c(1,7))  # QW
 ```
 
 ```{r}
 #| echo: false
 #| fig-height: 6
 
-set.seed(42)
-plot(g)
+plot(gf_where, vertex.label.cex = 1, layout = l_where, vertex.size = 25)
 ```
 
 Заметим, что условие `price_change.new_price > average_price` зависит от подзапроса `average_price`, поэтому и назовём его так-же для удобства.
 
-В граф были добавлены...
+В граф были добавлены
 
 ```{r}
 #| echo: false
+#| tbl-cap: [Вершины, Рёбра]
 
-knitr::kable(dplyr::setdiff(v_where,v_join))
-```
-
-И рёбрами
-
-```{r}
-#| echo: false
-
+knitr::kable(dplyr::setdiff(v_where,v_join), row.names = FALSE)
 knitr::kable(dplyr::setdiff(e_where,e_join))
-```
-
-```{r}
-#| include: false
-
-lines <- lines * 0.3^2
 ```
 
 Так как оба условия имеют селективность $0.3$, то общее число строк станет $15000 \cdot {0.3}^2=1350$, а столбцы останутся всё те же.
 
-#### SELECT {#sec-lab-extra-genetic-materialized-view-query-model-plan-select}
+### SELECT {#sec-lab-extra-genetic-materialized-view-query-model-plan-select}
 
-Аргументом запроса с
+Главным аргументом запроса `val` будет таблица полученная на предыдущем шаге, а аргументами `arg` будут полные названия столбцов
+
+``` sql
+SELECT products.product_name, price_change.new_price
+```
+
+Представленную в yaml
+
+``` yaml
+body:
+  select:
+    - products.product_name
+    - price_change.new_price
+```
 
 ```{r}
 #| include: false
 
-g <- g_select <- add_column(g_where, 'products.product_name') |> 
-  add_column('price_change.new_price')
+g <- g_select <- add_column(g_where, 'products.name') |> 
+  add_column('price_change.price')
 
-q_select <- list(fun='SELECT', val = q_where, 'products.product_name', 'price_change.new_price')
+q_select <- list(fun='SELECT', val = q_where, 'products.name', 'price_change.price')
 add_query(q_select,'QS') |> invisible()
 gf_select <- g
 v_select <- igraph::as_data_frame(gf_select, 'vertices')
-v_select <- igraph::as_data_frame(gf_select, 'edges')
+e_select <- igraph::as_data_frame(gf_select, 'edges')
+lines_select <- lines_where
+table_select <- dplyr::filter(table_where, col %in% c('products.name', 'price_change.price'))
+
+l_select <- rbind(c(1,0),  # JE
+                  c(-1,1), # products
+                  c(3,1),  # price_change
+                  c(4,3),  # products.id
+                  c(-1,3), # average_price 
+                  c(-1,6), # products.name
+                  c(4,6),  # price_change.price
+                  c(1,3),  # JOIN
+                  c(1,5),  # WHERE
+                  c(1,7),  # SELECT
+                  c(1,9))  # QS
 ```
 
 ```{r}
 #| echo: false
-#| fig-height: 6
+#| fig-height: 7
 
-set.seed(42)
-plot(g)
+plot(gf_select, layout = l_select, vertex.size = 30)
 ```
 
-В граф были добавлены...
+В граф были добавлены
 
 ```{r}
 #| echo: false
-knitr::kable(dplyr::setdiff(v_where,v_join))
-```
+#| tbl-cap: [Вершины, Рёбра]
 
-И рёбрами
-
-```{r}
-#| echo: false
-knitr::kable(dplyr::setdiff(e_where,e_join))
+knitr::kable(dplyr::setdiff(v_select,v_where), row.names = FALSE)
+knitr::kable(dplyr::setdiff(e_select,e_where))
 ```
 
 В этом случае в таблице останутся только два столбца
 
 ```{r}
 #| echo: false
-table <- dplyr::filter(table, col %in% c('products.product_name', 'price_change.new_price'))
-knitr::kable(table)
+
+knitr::kable(table_select)
 ```
 
-#### AGGREGATE {#sec-lab-extra-genetic-materialized-view-query-model-plan-aggregate}
+### AGGREGATE {#sec-lab-extra-genetic-materialized-view-query-model-plan-aggregate}
 
-IDENTITY не изменяет текущий столбец
+Возможны следующие функции агрегации
 
-Продемонстрируем работу *AGGREGATE* на подзапросе
+-   IDENTITY
+-   COUNT
+-   SUM
+-   MAX
+-   AVG
+-   MIN
+-   DISTINCT
 
-#### Добавление подзапроса {#sec-lab-extra-genetic-materialized-view-query-model-plan-subquery}
+Оператор IDENTITY введён для обобщенной обработки и не изменяет текущий столбец. Продемонстрируем применение функции агрегации на подзапросе.
 
-Объединив главный запрос и подзапрос получаем следующий граф вычислений.
+``` sql
+SELECT AVG(price_change.price_change)
+FROM price_change
+```
+
+``` yaml
+subqueries:
+    body:
+      from: price_change
+      select:
+        - price_change.new_price
+      aggregate:
+        - AVG
+```
 
 ```{r}
-sq <- list(fun = 'AGGREGATE', val = list(fun = 'SELECT', val = 'price_change', 'price_change.new_price'), 'AVG')
+#| include: false
 
-add_subquery(sq,'average_price') |> invisible()
+g <- igraph::make_empty_graph() |> 
+  add_table('price_change') |>
+  add_column('price_change.price') |>
+  add_aggregate('AVG') |>
+  add_condition('average_price')
+
+sq <- list(fun = 'AGGREGATE', 
+           val = list(fun = 'SELECT', 
+                      val = 'price_change', 
+                      'price_change.price'),
+           'AVG')
+
+add_subquery(sq, 'average_price') |> invisible()
+v_aggregate <- igraph::as_data_frame(g, 'vertices')
+e_aggregate <- igraph::as_data_frame(g, 'edges')
+
+l_aggregate <- rbind(c(0,0), # price_change
+                     c(1,1), # price_change.price
+                     c(1,3), # AVG
+                     c(0,6), # average_price
+                     c(0,2), # SELECT  
+                     c(0,4)) # AGGREGATE
 ```
 
-#### Представление в yaml {#sec-lab-extra-genetic-materialized-view-query-model-plan-yaml}
+```{r}
+#| echo: false
+#| fig-height: 6
 
-Структура таблиц определена в файле
+plot(g, vertex.label.cex = 1.5, layout = l_aggregate)
+```
+
+### Полный граф вычислений {#sec-lab-extra-genetic-materialized-view-query-model-plan-full}
+
+Объединив главный запрос и подзапрос получаем следующий граф вычислений. Узел обозначающий запрос определяется по имени из yaml файла
+
+``` yaml
+queries:
+    name: products_above_avg_price
+```
+
+```{r}
+#| include: false
+
+igraph::V(gf_select)[name == 'QS']$name <- 'products_above_avg_price'
+g <- add_aggregate(gf_select, 'AVG')
+add_subquery(sq, 'average_price') |> invisible()
+l_full <- rbind(c(1,-2),  # JE
+                c(-1,-1), # products
+                c(3,-1),  # price_change
+                c(-1,3),  # products.id = price_change.product_id
+                c(4,3),   # average_price
+                c(-1,5),  # products.name
+                c(7,5),   # price_change.price
+                c(1,0),   # JOIN(JE,products, price_change)
+                c(1,4),   # WHERE()
+                c(1,6),   # SELECT(WHERE)
+                c(1,8),   # QS
+                c(3,1.2), # AVG
+                c(5,0.5), # SELECT(price_change, price_change.price)
+                c(5,2))   # AGGREGATE
+```
+
+```{r}
+#| echo: false
+#| fig-height: 8
+
+plot(g, layout = l_full)
+```
+
+### Представление в yaml {#sec-lab-extra-genetic-materialized-view-query-model-plan-yaml}
+
+Структура таблиц определена в файле `database.yaml`
 
 ``` yaml
 - name: products
   lines: 100
+  freq: 8
   columns:
     - name: id
       type: INTEGER
@@ -451,6 +567,7 @@ add_subquery(sq,'average_price') |> invisible()
       type: REAL
 - name: price_change
   lines: 150
+  freq: 5
   columns:
     - name: id
       type: INTEGER
@@ -462,25 +579,26 @@ add_subquery(sq,'average_price') |> invisible()
       type: DATE
 ```
 
-Таким образом представленный тут запрос сохраняется в yaml структуре
+А рассмотренный запрос сохраняется в виде yaml в файлу `queries.yaml`
 
 ``` yaml
 queries:
   - desc: Товары дороже средней цены
     name: products_above_avg_price
+    freq: 9
     body:
       join:
         - products
         - price_change
       where:
         - name: products.id = price_change.product_id
-          sample: 0.3
-        - name: price_change.new_price > average_price
+          sample: 0.4
+        - name: price_change.price > average_price
           sample: 0.3
           depends: average_price
       select:
-        - products.product_name
-        - price_change.new_price
+        - products.name
+        - price_change.price
 
 subqueries:
   - desc: Вычисление средней цены
@@ -488,95 +606,128 @@ subqueries:
     body:
       from: price_change
       select:
-        - price_change.new_price
+        - price_change.price
       aggregate:
         - AVG
 ```
 
-### Стоимость хранения
+:::: {.content-visible when-format="html"}
+::: {.callout appearance="minimal"}
+⤓ [database.yaml](database.yaml)
 
-Размеры типов данных в байтах приведены ниже
+⤓ [queries.yaml](queries.yaml)
+:::
+::::
+
+:::: {.content-visible unless-format="html"}
+::: {.callout appearance="minimal"}
+`\faFile*[regular].`{=latex} [shadow.csv](lab/extra/genetic/database.yaml)
+
+`\faFile*[regular].`{=latex} [shadow.csv](lab/extra/genetic/queries.yaml)
+:::
+::::
+
+## Стоимость обслуживания {#sec-lab-extra-genetic-materialized-view-maintain-cost}
+
+Каждый промежуточных узел характеризуется стоимость обслуживания, которая складывается из стоимости хранения $\mathrm{store}$ и стоимости обновления $\mathrm{maint}$
+
+$$
+\mathrm{main} = \mathrm{store} \cdot \mathrm{maint} 
+$$
 
 ```{r}
 #| echo: false
 
-datatypes <- tibble::tibble(name = 'INTEGER', size = 4)
+datatypes <- tibble::tibble(type = c('INTEGER','REAL','DATE','TEXT'),
+                            size = c(4,8,4,100))
 knitr::kable(datatypes)
 ```
 
-Таким образом размер сохраняемой таблицы основного запроса на каждом этапе
+Стоимость хранения зависит от размера таблицы
+
+$$
+\mathrm{store} = n \cdot \sum s_{col,i}
+$$
+
+где $n$ число строк в промежуточной таблице, $s_{col,i}$ -- размер типа данных $i$-того столбца.
+
+Для промежуточных узлов вычислений, рассмотренных выше, стоимость приведена в таблице
 
 ```{r}
-tibble::tibble(fun = c('JOIN','WHERE','SELECT'), 
-num_col = purrr::map_int(list(),nrow),
-size = 1L:3L)
+#| echo: false
+
+tbls <- list(table_join, table_where, table_select)
+lns <- list(lines_join, lines_where, lines_select)
+tibble::tibble(
+  fun = c('JOIN', 'WHERE', 'SELECT'),
+  num_col = purrr::map_int(tbls, nrow),
+  size = purrr::map2_int(tbls, lns, \(tbl, lines) sum(
+    dplyr::inner_join(tbl, datatypes, by = 'type')$size
+  ) * lines)
+) |> knitr::kable()
 ```
 
-И подзапроса. SELECT и AGGREGATE
+Стоимость обновления зависит от частоты запросов к базовым таблицам материализованного представления
 
-### Стоимость вычисления запроса {#sec-lab-extra-genetic-materialized-view-query-cost}
+$$
+\mathrm{upd} = \mathrm{size} \cdot \sum f_{u,i}
+$$
 
-Все узлы имеют свою стоимость вычисления. Если узел является листом (Таблица, независимое условие, столбец), то стоимость его вычисления равна нулю. Стоимость вычисления функции складывается со стоимостью вычисления её аргументов рекурсивно до получения ...
+где $f_i$ -- частота запросов $i$-той базовой таблице этого представления. Частота запросов $f_u$ выражается параметром `freq` файла `database.yaml`.
 
-Каждый функциональный узел JOIN, WHERE, SELECT, AGGREGATE определяет две характеристики: стоимость его вычисления, и объём полученной таблицы (столбцы + количество строк)
+## Стоимость вычисления запроса {#sec-lab-extra-genetic-materialized-view-query-cost}
 
-#### JOIN {#sec-lab-extra-genetic-materialized-view-query-cost-join}
+Все узлы имеют свою стоимость вычисления $\mathrm{comp}$. Если узел является листом (таблица, независимое условие, столбец), то стоимость его вычисления равна нулю. Стоимость вычисления запроса определяется стоимостью вычисления его узлов **поиском в глубину**. Для сокращения вычислительных затрат в качестве кандидатов на материализацию будут рассматриваться только совместно используемые промежуточные узлы. Если узел выбран как материализованный, то стоимость его вычисления учитывается **только один раз** в общей стоимости вычисления всех запросов.
 
-Для JOIN применяется алгоритм соединения, поэтому стоимость операции оценивается как $n \log{n}$, где n число строк таблицы результата. N получается перемножением строк аргументов.
+Итоговая стоимость вычисления запроса также зависит от его частоты $f_{q}$, которая приведена в файле `queries.yaml` параметром `freq`
 
-#### WHERE {#sec-lab-extra-genetic-materialized-view-query-cost-where}
+Стоимости вычисления функциональных узлов приведены ниже. За $n$ будем принимать число строк в итоговой таблице данного узла.
 
-Условие применяется последовательно к каждой строке для отбора, поэтому стоимость вычисления пропорциональна количеству условий и числу строк. $N \cdot k$
+### JOIN {#sec-lab-extra-genetic-materialized-view-query-cost-join}
 
-#### SELECT {#sec-lab-extra-genetic-materialized-view-query-cost-select}
+Для JOIN применяется алгоритм хеш-соединения, поэтому стоимость операции оценивается как
 
-Операция Select имеет стоимость log от числа строк.
+$$
+n \log{n}
+$$
 
-#### AGGREGATE {#sec-lab-extra-genetic-materialized-view-query-cost-aggregate}
+### WHERE {#sec-lab-extra-genetic-materialized-view-query-cost-where}
 
-| Функция  | Стоимость |
-|----------|-----------|
-| IDENTITY | 0         |
-| COUNT    |           |
-| SUM      |           |
-| MAX      |           |
-| AVG      |           |
-| MIN      |           |
-| DISTINCT |  n log n  |
+Условие применяется последовательно к каждой строке для отбора, поэтому стоимость вычисления пропорциональна количеству условий $k$ и числу строк $n$
+
+$$
+n \cdot k
+$$
+
+Аргументы операции WHERE могут зависеть от подзапросов, поэтому к стоимости вычисления добавляется ещё и стоимость вычисления подзапросов.
+
+### SELECT {#sec-lab-extra-genetic-materialized-view-query-cost-select}
+
+Операция SELECT имеет стоимость $\log{n}$ от числа строк $n$.
+
+### AGGREGATE {#sec-lab-extra-genetic-materialized-view-query-cost-aggregate}
 
 В примере рассматриваются следующие функции агрегации
 
-Для всех аргументов надо задавать compute и storage, даже для элементов join из-за подзапросов join может быть в subquety может быть в join, поэтому надо обрабатывать и его стоимотсь. А может быть и в Where. Если узел сохранён в память, то его стоимость compute = 0, а стоимость хранения зависит от размера. Если нет, то он обязательно расчитывается (compute), а потом принимается решение о его сохранении. Обратите внимание на функции E(g)\[.to,.from\] и V(g). В графе с помощью аттрибуа показано. Внутри AGG кроме Identity линейно зависит от колличества строк
+| Функция  | Стоимость   |
+|----------|-------------|
+| IDENTITY | $0$         |
+| COUNT    | $1$         |
+| SUM      | $n$         |
+| MAX      | $n$         |
+| AVG      | $n$         |
+| MIN      | $n$         |
+| DISTINCT | $n \log{n}$ |
 
-### Целевая функция {#sec-lab-extra-genetic-materialized-view-objective}
+::: callout-tip
+Библиотека `igraph` предоставляет гибкие и эффективные функции выбора подграфов, листьев и вершин по условию @sec-lab-extra-genetic-materialized-view-igraph-query.
+:::
 
-Целевая функция состоит из стоимости выполения всех запросов и стоимости обсуживания всех представлений. Стоимость выполнения запроса умножить на частоту этих запросов. Стоимость обсуживания прямо пропорциональна размеру материализуемого представления. Частоты заданны в файле. Для запросов и представлений частоты заданны в файле.
+## Целевая функция {#sec-lab-extra-genetic-materialized-view-objective}
 
-Теперь мы можем рассчитать затраты для различных стратегий материализации представлений. Предположим, что некоторые промежуточные узлы материализованы. Для каждого запроса стоимость обработки равна произведению частоты выполнения запроса на стоимость доступа к запросу от материализованного узла (или узлов). Стоимость поддержки материализованного представления — это стоимость его построения (в данном случае предполагается, что при каждом обновлении задействованных базовых отношений представление полностью пересчитывается). Общая стоимость MVPP — это сумма всех затрат на выполнение запросов и затрат на поддержку представлений. Наша цель — найти такой набор узлов для материализации, при котором общая стоимость минимальна. В таблице II представлены некоторые стратегии проектирования материализованных представлений и их соответствующие стоимости. Конечно, в рамках этого примера возможны и многие другие стратегии материализации представлений.
+Теперь мы можем рассчитать затраты для различных стратегий материализации представлений. Предположим, что некоторые промежуточные узлы материализованы. Для каждого запроса стоимость обработки равна произведению частоты выполнения запроса на стоимость доступа к запросу от материализованного узла (или узлов). Стоимость поддержки материализованного представления -- это стоимость его построения (в данном случае предполагается, что при каждом обновлении задействованных базовых отношений представление полностью пересчитывается). Общая стоимость -- это сумма всех затрат на выполнение запросов и затрат на поддержку представлений. Цель -- найти такой набор узлов для материализации, при котором общая стоимость минимальна.
 
-Модель стоимости: Глобальный план обработки представляет собой направленный ациклический граф (DAG) может быть описан как $(V,A,C_a^q(v),C_m^r(v),f_q,f_u)$, где $V$ – множество вершин и $A$ – множество дуг(ребёр) над $V$. DAG строится следующим образом.
-
-Создать вершину каждой операции реляционной алгебры в дереве запросов, каждой базовой таблицы и каждого отдельного запроса.
-
-Для $v \in V, T(v)$ – отношение, генерируемое соответствующей вершиной $v$. $T(v)$ может быть базовый отношением, промежуточным результатом при обработки запроса или конечным результатом запроса.
-
-Для любой конечной вершины $v$ (то есть, у нее нет ребер, входящих в вершину), $T(v)$ соответствует базовому запросу. Пусть $L$ – набор конечных узлов.
-
-Для любой корневой вершины $v$ (то есть, у нее нет ребер, выходящих из вершины), $T(v)$ соответствует глобальному запросу. Пусть $R$ – набор корневых узлов.
-
-Если базовое отношение или промежуточный результат $T(u)$, соответствующий вершине $u$, требуется для обработки в другом узле $v$, добавляется дуга $u \longrightarrow v$.
-
-Для каждой вершины $v$ пусть $S(v)$ обозначает исходные узлы, ребра которых направлены на $v$. Для любого $v \in L,S(v) = \emptyset$. Пусть $S^*\{v\}$ – множество потомков $v$.
-
-Для каждой вершины $v$ пусть $D(v)$ обозначает конечные узлы, на которые указывает $v$. Для любого $v \in R,D(v) = \emptyset$.
-
-Для $v \in V C_a^q(v)$ – это стоимость запроса $q$, обращающегомя к $T(v)$, $C_m^r(v)$ – это стоимость поддержания $T(v)$ на основе изменений базового отношения $S^*(v) \cap R$, если $T(v)$ реализовано.
-
-$f_q,f_u$ – это частота запросов и обслуживания соответственно.
-
-Для расчета стоимости запроса $Q$ используется линейная модель затрат \[21\]. Стоимость выполнения $Q$ определяется количеством строк в таблице, которую запрос $Q_А$ используется для построения $Q$.
-
-Пусть $М$ – набор материализованных представлений, $C_{q_i}(M)$ – стоимость вычислений $q_i$ из набора материализованных представлений $M$, а $C_m(V)$ – стоимость обслуживания при материализации $v$. Тогда общая стоимость обработки запроса $\sum_{q_i\in Q} f_{q_i} C_{q_i}(M)$. Тогда общая стоимость обслуживания $\sum_{v \in M} C_m(v)$. Общая стоисмость материализованных представлений $M$ определяется формулой:
+Пусть $М$ – набор материализованных представлений, $C_{q_i}(M)$ – стоимость вычислений $q_i$ из набора материализованных представлений $M$, а $C_m(V)$ – стоимость обслуживания при материализации $v$. Тогда общая стоимость обработки запроса $\sum_{q_i\in Q} f_{q_i} C_{q_i}(M)$, а общая стоимость обслуживания $\sum_{v \in M} C_m(v)$. Общая стоимость материализованных представлений $M$ определяется формулой:
 
 $$
 \sum_{q_i \in Q} C_{q_i} f_{q_i}(M)  + \sum_{v \in M} f_u C_m(v)
@@ -584,66 +735,122 @@ $$
 
 Для заданного глобального плана обработки минимизировать указанную общую стоимость.
 
-Точно так же, как невозможно гарантировать получение глобально оптимального плана обработки путём объединения локально оптимальных планов, мы не можем гарантировать и оптимальный выбор материализованных представлений, даже если у нас уже есть глобально оптимальный план обработки. Это связано с тем, что оптимизация глобального плана обработки не учитывает стоимость поддержки представлений. Например, оптимальный глобальный план может иметь стоимость выполнения запросов 333 млн (м), а общая стоимость (выполнение + поддержка) при этом составит 370 м. Однако если использовать неоптимальный глобальный план с стоимостью запросов 350 м, то можно получить такой набор материализованных представлений, при котором общая стоимость составит всего 360 м, что меньше, чем в первом случае. Таким образом, не всегда выгодно полагаться на глобально оптимальный план обработки, если цель — минимизация общей стоимости.
+## Построение глобального плана запросов {#sec-lab-extra-genetic-materialized-view-global-plan}
 
-### Построение глобального плана запросов {#sec-lab-extra-genetic-materialized-view-global-plan}
+Глобальный план запросов строился из следующих предположений:
+
+-   Все узлы, которые имеют одинаковый главный аргумент `val` и пересекающиеся аргументы `args`
+-   Сначала создаются (обрабатываются) узлы, имеющие наибольшее количество общих аргументов
+-   Затем узлы, которые имеют меньше общих аргументов, но больше улов используют эти аргументы совместно
+-   Процесс повторяется до тех пор, пока таких узлов не останется
+
+В итоге получается один из возможных глобальных планов
 
 ```{r}
+#| echo: false
 g <- igraph::read_graph('plan.graphml', format = 'graphml')
-igraph::V(g)$name
+base_color <- tibble::tibble(fun = c('table','condition','column','aggregate','query'),
+color = c('blue','green','magenta','orange','yellow'))
+g
 ```
 
-И csv файлы
+Для наглядной визуализации определим цвета базовых узлов
 
-Здесь характеристики того общего графа. Граф построен на использовании предположения, что в первую очередь объединяются узлы, имеющие наибольшее число общих аргументов. Про свойство узлов, возможно таблицу функции
+```{r}
+#| echo: false
 
+knitr::kable(base_color)
+```
 
-Теперь необходимо решить, какие узлы следует материализовать, чтобы минимизировать общую стоимость обработки запросов и поддержки представлений. Из графа видно, что существует несколько вариантов выбора набора материализованных представлений, например:
+и отобразим на графе
 
-материализовать все прикладные запросы;
+```{r}
+#| echo: false
+#| fig-height: 8
 
-материализовать некоторые промежуточные узлы (например, tmp1, tmp3, tmp7 и т.д.);
+igraph::V(g)$color <- tibble::tibble(fun = igraph::V(g)$fun) |>  
+  dplyr::left_join(base_color, by = 'fun') |>
+  (\(df) df$color)()
+set.seed(24)
+plot(g, vertex.label = NA, edge.label = NA, vertex.size=5, edge.arrow.size = 0.6)
+```
 
-оставить все нелистовые узлы виртуальными.
+Красным отмечены промежуточные совместно используемые узлы
 
-Стоимость каждого из этих вариантов может быть рассчитана с учётом затрат на обработку запросов и поддержку представлений.
+```{r}
+#| echo: false
+#| fig-height: 8
 
-Для расчёта стоимости мы делаем следующие предположения:
+igraph::V(g)$color <- NA
+igraph::V(g)[fun %in% SQL_FUN & igraph::degree(g, mode='out') >= 2]$color <- 'red'
+set.seed(24)
+plot(g, vertex.label = NA, edge.label = NA, vertex.size=5, edge.arrow.size = 0.6)
+```
 
-В отношении Itemсодержится 1 тысяча кортежей.
+Граф определяется в следующих файлах
 
-В среднем каждый товар включает десять деталей, следовательно, в таблице Part содержится 10 тысяч кортежей.
+:::: {.content-visible when-format="html"}
+::: {.callout appearance="minimal"}
+⤓ [plan.graphml](plan.graphml)
 
-В таблице Supplier содержится 50 тысяч (50k) кортежей.
+⤓ [vertex.csv](vertex.csv)
 
-В таблице Sales хранятся данные за 10 лет — с 1987 по 1996 год. В среднем каждый товар продаётся 100 раз в месяц, что даёт 12 миллионов записей в таблице Sales.
+⤓ [edges.csv](edges.csv)
+:::
+::::
 
-Стоимость выполнения запроса $Q$ пропорциональна числу строк в таблице, использованной для построения $Q$.
+:::: {.content-visible unless-format="html"}
+::: {.callout appearance="minimal"}
+`\faFile*[regular].`{=latex} [plan.graphml](lab/extra/genetic/plan.graphml)
 
-Операции выборки(select) и соединения (join) реализуются с использованием линейного поиска и вложенных циклов (nested loop).
+`\faFile*[regular].`{=latex} [shadow.csv](lab/extra/genetic/vertex.csv)
 
-### Решение генетическим алгоритмом {#sec-lab-extra-genetic-materialized-view-genetic-alghorithm}
+`\faFile*[regular].`{=latex} [shadow.csv](lab/extra/genetic/edges.csv)
+:::
+::::
 
-Таким образом получается, что целевая функция зависит от набора материализуемых представлений. Выбор представления для материализации это 0,1. Следовательно структуру задачи можно представить битовой строкой, где позици (индекс) это номер представления, а занчение да - нет.
+## Решение генетическим алгоритмом {#sec-lab-extra-genetic-materialized-view-genetic-alghorithm}
+
+Таким образом получается, что целевая функция зависит от набора материализуемых представлений (промежуточных узлов). Её структуру можно представить с помощью битовой строки, где позиции (индекс) это номер представления, а значение -- решение о его материализации.
+
+<https://loginom.ru/blog/ga-math>
 
 ::: callout-tip
-В связи с типичностью задачи, рекомендуется использовать пакет решателя. Например в R это GA
+Задача оптимизации битовых строк является широко распространённой. Рекомендуется использовать готовый пакет, например `{r} GA::ga() |> dl()`.
 :::
 
-#### Операция скрещивания {#sec-lab-extra-genetic-materialized-view-genetic-alghorithm-crossover}
+## Запросы к графу {#sec-lab-extra-genetic-materialized-view-igraph-query}
 
-#### Операция мутации {#sec-lab-extra-genetic-materialized-view-genetic-alghorithm-mutatuin}
+### Выбор поддерева
 
-#### Отбор особей {#sec-lab-extra-genetic-materialized-view-genetic-alghorithm-selection}
+`{r} igraph::unfold_tree() |> dl()` и `{r} igraph::subgraph() |> dl()`.
 
-JOIN можно в том числе на промежуточный запрос
+### Выбор вершин
 
-разные способы join.
+Индексация [`igraph::V(g)[]`](https://igraph.org/r/html/latest/igraph-vs-indexing.html) позволяет использовать атрибуты вершин в запросе
 
-У таблицы это колличество строк, ширина стобца И тогда на каждом этапе тоже вычисляется количество строк и набор столбцов
+```{{r}}
+igraph::V(g)[fun == 'JOIN']
+```
 
-Для начала все условия и запросы должны быть отсортированы.
+Также этот запрос можно комбинировать с логическим вектором
 
-Join перемножает аргументы У condition это процент подходящих записей У select это относительный размер столбца в таблице У
+```{{r}}
+igraph::V(g)[fun == 'JOIN' & igraph::degree(g, mode = 'out')]
+```
 
-сразу через датафрейм. JOIN(1,2), TABLE1, TABLE2, FILTER(FILTER(FILTER(JOIN(TABLE1,TABLE2),COND1))),
+### Степень вершины
+
+Чтобы определить количество входящих и выходящих рёбер из вершины полезна функция `{r} igraph::degree() |> dl()`.
+
+### Выбор рёбер
+
+[`igraph::E(g)[]`](https://igraph.org/r/html/latest/igraph-es-indexing.html) полезными будут аргументы `to` и `from`
+
+```{{r}}
+E(g)[.to(),from()]
+```
+
+### Получение вершин смежных ребру
+
+`{r} igraph::tail_of() |> dl()` и `{r} igraph::head_of() |> dl()`

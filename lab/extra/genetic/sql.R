@@ -91,7 +91,7 @@ get_common <- function()
                               {
                                 common_args <- purrr::reduce(df$args, intersect)
                                 list(
-                                  common_args = common_args,
+                                  common_args = list(common_args),
                                   unique_args = purrr::map(df$args, \(arg) setdiff(arg, common_args)),
                                   ids = df$id,
                                   fun = fun,
@@ -102,7 +102,7 @@ get_common <- function()
                    tibble::as_tibble() |>
                    dplyr::rowwise() |>
                    dplyr::mutate(num_nodes = length(ids), args_len = length(common_args)) |>
-                   dplyr::filter(args_len >= 2) |>
+                   dplyr::filter((fun == 'JOIN' & args_len >= 2) | (fun != 'JOIN' & args_len >= 1)) |>
                    dplyr::arrange(dplyr::desc(args_len), dplyr::desc(num_nodes)) |>
                    dplyr::select(-args_len, -num_nodes) |>
                    (\(df) if(nrow(df)==0L) NULL else dplyr::first(df))()
@@ -176,10 +176,11 @@ add_condition <- add_entity('condition')
 add_column <- add_entity('column')
 add_aggregate <-add_entity('aggregate')
 
+extract_cond <- \(cond) if(!is.null(cond$depends)) cond$depends else cond$name
 get_condition_names <- \(queries) purrr::map(queries,'body') |>
   purrr::map('where') |>
   purrr::list_c() |>
-  purrr::map(\(cond) if(!is.null(cond$depends)) cond$depends else cond$name) |>
+  purrr::map(extract_cond) |>
   as.character() |>
   unique()
 
@@ -202,9 +203,9 @@ make_list_query <- function(body)
   else
     body$from
 
-
   where <- if(!is.null(body$where))
-    c(list(fun = 'WHERE', val = base), purrr::map_chr(body$where, 'name') |> sort())
+    c(list(fun = 'WHERE', val = base),
+      purrr::map_chr(body$where, extract_cond) |> sort())
   else
     base
 

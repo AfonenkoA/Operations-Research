@@ -1,5 +1,6 @@
 - name: categories
   lines: 20
+  freq: 10
   columns:
     - name: id
       type: INTEGER
@@ -16,6 +17,7 @@
       type: TEXT
 - name: products
   lines: 100
+  freq: 5
   columns:
     - name: id
       type: INTEGER
@@ -29,6 +31,7 @@
       type: REAL
 - name: price_change
   lines: 150
+  freq: 8
   columns:
     - name: id
       type: INTEGER
@@ -40,6 +43,7 @@
       type: DATE
 - name: stores
   lines: 20
+  freq: 4
   colunms:
     - name: id
       type: INTEGER
@@ -49,6 +53,7 @@
       type: TEXT
 - name: deliveries
   lines: 100
+  freq: 15
   columns:
     - name: id
       type: INTEGER
@@ -62,6 +67,7 @@
       type: DATE
 - name: customers
   lines: 50
+  freq: 20
   columns:
     - name: id
       type: INTEGER
@@ -75,6 +81,7 @@
       type: DATE
 - name: purchases
   lines: 100
+  freq: 6
   columns:
     - name: id
       type: INTEGER
@@ -84,6 +91,7 @@
       type: DATE
 - name: purchase_items
   lines: 150
+  freq: 8
   columns:
     - name: id
       type: INTEGER

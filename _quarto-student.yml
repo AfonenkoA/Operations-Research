@@ -61,7 +61,9 @@ book:
       chapters:
         - lab/extra/programming/r/main.qmd
         - lab/extra/network/main.qmd
+        - lab/extra/nonlinear/main.qmd
         - lab/extra/evolutionary/main.qmd
+        - lab/extra/genetic/main.qmd
         - lab/extra/constraint/main.qmd
 
     - part: "Практические работы"

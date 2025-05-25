@@ -1,15 +1,16 @@
 queries:
   - desc: Список всех товаров с категорией и производителем
     name: products_with_category_and_manufacturer
+    freq: 2
     body:
       join:
         - products
         - categories
         - manufacturers
       where:
-        - name: products.manufacturer_id = manufacturers.id
+        - name: manufacturers.id = products.manufacturer_id
           sample: 0.2
-        - name: products.category_id = categories.id
+        - name: categories.id = products.category_id
           sample: 0.1
       select:
         - products.product_name
@@ -17,6 +18,7 @@ queries:
         - manufacturers.manufacturer_name
   - desc: Покупки после 2021-05-01 с указанием клиента
     name: purchases_after_date
+    freq: 5
     body:
       join:
         - purchases
@@ -29,25 +31,27 @@ queries:
       select:
         - purchases.purchase_id
         - purchases.purchase_date
-        - customers.customer_name
+        - customers.full_name
   - desc: Доставленные товары по магазинам
     name: delivered_products_per_store
+    freq: 1
     body:
       join:
         - deliveries
         - stores
         - products
       where:
-        - name: deliveries.store_id = stores.id
+        - name: stores.id = deliveries.store_id
           sample: 0.05
         - name: products.id = delivers.product_id
           sample: 0.35
       select:
-        - stores.store_name
-        - products.product_name
-        - deliveries.product_count
+        - stores.name
+        - products.name
+        - deliveries.quantity
   - desc: Покупки с количеством товаров больше 5
     name: purchases_with_more_than_5_items
+    freq: 6
     body:
       join:
         - purchases
@@ -56,18 +60,19 @@ queries:
       where:
         - name: customers.id = purchases.customer_id
           select: 0.3
-        - name: purchase_items.purchase_id = purchases.id
+        - name: purchases.id = purchase_items.purchase_id
           select: 0.1
       select:
-        - purchases.purchase_id
-        - customers.customer_name
-        - purchase_items.product_count
+        - purchases.id
+        - customers.full_name
+        - purchase_items.quantity
       aggregate:
         - IDENTITY
         - IDENTITY
         - SUM
   - desc: Покупки с конкретным товаром
     name: purchases_with_product
+    freq: 4
     body:
       join:
         - purchases
@@ -77,24 +82,25 @@ queries:
       where:
         - name: customers.id = purchases.customer_id
           sample: 0.3
-        - name: purchase_items.purchase_id = purchases.id
+        - name: purchases.id = purchase_items.purchase_id
           sample: 0.1
         - name: products.id = purchase_items.product_id
-          sample: 0.4
+          sample: 0.1
         - name: >-
-            products.product_name = Ноутбук Lenovo ThinkPad X270
+            products.name = Ноутбук Lenovo ThinkPad X270
             [X27020HN0012RT]
           sample: 0.2
       select:
-        - purchases.purchase_id
-        - customers.customer_name
+        - purchases.id
+        - customers.full_name
         - purchases.purchase_date
   - desc: Средняя цена всех товаров
     name: average_price_all_products
+    freq: 20
     body:
       from: price_change
       select:
-        - price_change.new_price
+        - price_change.price
       aggregate:
         - AVG
   - desc: Самая дорогая покупка
@@ -103,114 +109,127 @@ queries:
       join:
         - purchases
         - purchase_items
+        - products
       where:
         - name: purchases.id = purchase_items.purchase_id
-          sample: 0.3
+          sample: 0.1
+        - name: products.id = purchase_items.product_id
+          sample: 0.1
       select:
-        - purchases.purchase_id
-        - purchase_items.product_count
-        - purchase_items.product_price
+        - purchases.id
+        - purchase_items.quantity
+        - products.price
       aggregate:
         - IDENTITY
         - SUM
         - SUM
   - desc: Сумма доставок по магазинам
     name: total_deliveries_per_store
+    freq: 12
     body:
       join:
         - deliveries
         - stores
       where:
-        - name: deliveries.store_id = stores.id
+        - name: stores.id = deliveries.store_id
           sample: 0.05
       select:
-        - stores.store_name
-        - deliveries.product_count
+        - stores.name
+        - deliveries.quantity
       aggregate:
         - IDENTITY
         - SUM
   - desc: Минимальная цена по категориям
     name: min_price_per_category
+    freq: 8
     body:
       join:
         - products
         - categories
         - price_change
       where:
-        - name: products.category_id = categories.id
-          sample: 0.04
+        - name: categories.id = products.category_id
+          sample: 0.1
         - name: products.id = price_change.product_id
           sample: 0.4
       select:
-        - categories.category_name
-        - price_change.new_price
+        - categories.name
+        - price_change.price
       aggregate:
         - IDENTITY
         - MIN
   - desc: Максимальное изменение цены по производителям
     name: max_price_per_manufacturer
+    freq: 13
     body:
       join:
         - products
         - manufacturers
         - price_change
       where:
-        - name: products.manufacturer_id = manufacturers.id
+        - name: manufacturers.id = products.manufacturer_id
           sample: 0.2
         - name: products.id = price_change.product_id
-          sample: 0.35
+          sample: 0.4
       select:
-        - manufacturers.manufacturer_name
-        - price_change.new_price
+        - manufacturers.name
+        - price_change.price
       aggregate:
         - IDENTITY
         - MAX
   - desc: Товары дороже средней цены
     name: products_above_avg_price
+    freq: 9
     body:
       join:
         - products
         - price_change
       where:
         - name: products.id = price_change.product_id
-          sample: 0.3
-        - name: price_change.new_price > average_price
+          sample: 0.4
+        - name: price_change.price > average_price
           sample: 0.3
           depends: average_price
       select:
-        - products.product_name
-        - price_change.new_price
+        - products.name
+        - price_change.price
   - desc: Клиенты с более чем одной покупкой
     name: customers_with_multiple_purchases
+    freq: 5
     body:
       from: customers
       where:
-        - name: customers.customer_id IN customers_with_several_purchases
+        - name: customers.id IN customers_with_several_purchases
           sample: 0.25
           depends: customers_with_several_purchases
-      select: customers.customer_name
-  - desc: 'Покупки, сумма которых больше средней'
+      select: customers.name
+  - desc: Покупки, сумма которых больше средней
     name: purchases_above_avg_total
+    freq: 7
     body:
       join:
         - purchases
         - purchase_items
+        - products
       where:
-        - name: purchase_items.purchase_id = purchases.id
+        - name: purchases.id = purchase_items.purchase_id
+          sample: 0.1
+        - name: products.id = purchase_items.product_id
           sample: 0.1
         - name: total > average_purchase_price
           sample: 0.15
           depends: average_purchase_price
       select:
         - purchases.purchase_id
-        - purchase_items.product_count
-        - purchase_items.product_price
+        - purchase_items.quantity
+        - products.price
       aggregate:
         - IDENTITY
         - SUM
         - SUM
   - desc: Изменения цены на конкретный товар
     name: price_changes_specific_product
+    freq: 4
     body:
       join: price_change
       where:
@@ -218,93 +237,102 @@ queries:
           sample: 0.4
           depends: select_specific_product
       select:
-        - price_change.new_price
-        - price_change.date_price_change
-  - desc: 'Товары, которые ни разу не покупались'
+        - price_change.price
+        - price_change.change_date
+  - desc: Товары, которые ни разу не покупались
     name: products_never_purchased
+    freq: 16
     body:
       from: products
       where:
-        - name: products.product_id NOT IN ever_bought_products
+        - name: products.id NOT IN ever_bought_products
           sample: 0.35
           depends: ever_bought_products
       select:
-        - products.product_name
+        - products.name
   - desc: Средняя цена по производителям
     name: avg_price_per_manufacturer
+    freq: 8
     body:
       join:
         - products
         - manufacturers
         - price_change
       where:
-        - name: products.manufacturer_id = manufacturers.id
+        - name: manufacturers.id = products.manufacturer_id
           sample: 0.2
         - name: products.id = price_change.product_id
-          sample: 0.3
+          sample: 0.4
       select:
-        - manufacturers.manufacturer_name
-        - price_change.new_price
+        - manufacturers.name
+        - price_change.price
       aggregate:
         - IDENTITY
         - AVG
   - desc: Категория с наибольшим числом товаров
     name: most_common_category
+    freq: 19
     body:
       join:
         - categories
         - products
       where:
-        - name: products.category_id = categories.id
-          sample: 0.3
+        - name: categories.id = products.category_id
+          sample: 0.1
       select:
-        - categories.category_name
-        - products.product_id
+        - categories.name
+        - products.id
       aggregate:
         - IDENTITY
         - COUNT
   - desc: Общая сумма покупок по клиенту
     name: total_spent_per_customer
+    freq: 7
     body:
       join:
         - customers
         - purchases
         - purchase_items
+        - products
       where:
         - name: customers.id = purchases.customer_id
           sample: 0.3
-        - name: purchase_items.purchase_id = purchases.id
+        - name: purchases.id = purchase_items.purchase_id
+          sample: 0.1
+        - name: products.id = purchase_items.product_id
           sample: 0.1
       select:
-        - customers.customer_name
-        - purchase_items.product_count
-        - purchase_items.product_price
+        - customers.full_name
+        - purchase_items.quantity
+        - products.price
       aggregate:
         - IDENTITY
         - SUM
         - SUM
-  - desc: 'Магазины, получившие товары от производителя Tanita'
+  - desc: Магазины, получившие товары от производителя Tanita
     name: stores_received_from_tanita
+    freq: 3
     body:
       join:
         - stores
         - manufacturers
         - deliveries
         - products
-      select: stores.store_name
       where:
-        - name: deliveries.store_id = stores.id
+        - name: stores.id = deliveries.store_id
           sample: 0.05
-        - name: products.manufacturer_id = manufacturers.id
+        - name: manufacturers.id = products.manufacturer_id
           sample: 0.2
         - name: products.id = deliveries.product_id
           sample: 0.1
-        - name: manufacturers.manufacturer_name = 'Tanita'
+        - name: manufacturers.name = Tanita
           sample: 0.5
+      select: stores.name
       aggregate:
         - DISTINCT
   - desc: Покупатели с наибольшим числом уникальных товаров
     name: customers_with_most_unique_products
+    freq: 13
     body:
       join:
         - customers
@@ -313,21 +341,21 @@ queries:
       where:
         - name: customers.id = purchases.customer_id
           sample: 0.3
-        - name: purchase_items.purchase_id = purchases.id
+        - name: purchases.id = purchase_items.purchase_id
           sample: 0.1
       select:
-        - customers.customer_name
+        - customers.name
         - purchase_items.product_id
       aggregate:
         - IDENTITY
-        - DISTINCT
+        - COUNT
 subqueries:
   - desc: Вычисление средней цены
     name: average_price
     body:
       from: price_change
       select:
-        - price_change.new_price
+        - price_change.price
       aggregate:
         - AVG
   - desc: Количество покупателей с несколькими заказами
@@ -344,12 +372,15 @@ subqueries:
       join:
         - purchases
         - purchase_items
+        - products
       where:
-        - name: purchase_items.purchase_id = purchases.id
+        - name: purchases.id = purchase_items.purchase_id
+          sample: 0.1
+        - name: products.id = purchase_items.product_id
           sample: 0.1
       select:
-        - purchase_items.product_count
-        - purchase_items.product_price
+        - purchase_items.quantity
+        - products.price
       aggregate:
         - AVG
         - AVG
@@ -359,10 +390,10 @@ subqueries:
       from:
         - products
       where:
-        - name: 'products.product_name = Ноутбук HP 15-bs000 [15-BS019UR 1ZJ85EA]'
+        - name: products.name = Ноутбук HP 15-bs000 [15-BS019UR 1ZJ85EA]
           sample: 0.3
       select:
-        - products.product_id
+        - products.id
   - desc: Все когда-либо заказанные товары
     name: ever_bought_products
     body:

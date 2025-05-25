@@ -4,5 +4,5 @@ project:
 
 book:
   chapters:
-        - index.qmd
-        - lab/extra/constraint/main.qmd
+    - index.qmd
+    - lab/extra/genetic/main.qmd
