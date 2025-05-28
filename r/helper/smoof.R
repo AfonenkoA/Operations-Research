@@ -14,7 +14,7 @@ smoof_outer <- function(f, len)
   up <- smoof::getUpperBoxConstraints(f)
   x <- purrr::pmap(list(lo, up, len), \(l, u, le) seq(l, u, length.out = le)) |>
     purrr::set_names(paste0('x', seq_len(nx)))
-  cf <- purrr::compose(f, c)
+  cf <- purrr::compose(f, base::c)
   do.call(tidyr::crossing, rev(x)) |>
     purrr::pmap(cf) |>
     do.call(rbind, args = _) |>

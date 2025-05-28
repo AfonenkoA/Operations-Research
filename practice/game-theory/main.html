@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Язык программирования R – Исследование операций</title>
+<title>41&nbsp; Теория игр – Исследование операций</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +23,26 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../r/lang/basic.html" rel="next">
-<link href="../enviroment/latex.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-09b140d2d032adf2aedb8b099be3ee13.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-a37c3f83d22f78a2a185819b108e8b30.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../references.html" rel="next">
+<link href="../../practice/linear/simplex/main.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-09b140d2d032adf2aedb8b099be3ee13.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-a37c3f83d22f78a2a185819b108e8b30.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключить боковую панель навигации" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../r/overview.html">Язык программирования R</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../practice/basic-model/main.html">Практические работы</a></li><li class="breadcrumb-item"><a href="../../practice/game-theory/main.html"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Теория игр</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключить боковую панель навигации" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Поиск" onclick="window.quartoOpenSearch();">
@@ -98,7 +98,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Исследование операций</a> 
+      <a href="../../">Исследование операций</a> 
         <div class="sidebar-tools-main">
     <a href="https://github.com/AfonenkoA/Operations-Research" title="Исходный код" class="quarto-navigation-tool px-1" aria-label="Исходный код"><i class="bi bi-github"></i></a>
 </div>
@@ -113,13 +113,13 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Интерактивный курс по исследованию операций</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../enviroment/overview.html" class="sidebar-item-text sidebar-link">
+            <a href="../../enviroment/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Среда разработки</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -128,31 +128,31 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../enviroment/setup.html" class="sidebar-item-text sidebar-link">
+  <a href="../../enviroment/setup.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Установка и настройка</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../enviroment/rstudio.html" class="sidebar-item-text sidebar-link">
+  <a href="../../enviroment/rstudio.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">RStudio IDE</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../enviroment/quarto.html" class="sidebar-item-text sidebar-link">
+  <a href="../../enviroment/quarto.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quarto</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../enviroment/markdown.html" class="sidebar-item-text sidebar-link">
+  <a href="../../enviroment/markdown.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Язык разметки Markdown</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../enviroment/latex.html" class="sidebar-item-text sidebar-link">
+  <a href="../../enviroment/latex.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Язык разметки LaTeX</span></span></a>
   </div>
 </li>
@@ -160,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../r/overview.html" class="sidebar-item-text sidebar-link active">
+            <a href="../../r/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Язык программирования R</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -169,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/lang/basic.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/lang/basic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Основы R</span></span></a>
   </div>
 </li>
@@ -177,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../linear/overview.html" class="sidebar-item-text sidebar-link">
+            <a href="../../linear/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Линейное программирование</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -186,31 +186,31 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../linear/algebra.html" class="sidebar-item-text sidebar-link">
+  <a href="../../linear/algebra.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Элементы линейной алгебры</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../linear/graphical/solution.html" class="sidebar-item-text sidebar-link">
+  <a href="../../linear/graphical/solution.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Графическое решение</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../linear/graphical/sensetivity.html" class="sidebar-item-text sidebar-link">
+  <a href="../../linear/graphical/sensetivity.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Графический анализ чувствительности</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../linear/simplex/special-cases.html" class="sidebar-item-text sidebar-link">
+  <a href="../../linear/simplex/special-cases.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Особые случаи применения симплекс метода</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../linear/integer.html" class="sidebar-item-text sidebar-link">
+  <a href="../../linear/integer.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Целочисленное программирование</span></span></a>
   </div>
 </li>
@@ -218,7 +218,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../minizinc/overview.html" class="sidebar-item-text sidebar-link">
+            <a href="../../minizinc/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Язык моделирования MiniZinc</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -227,7 +227,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../minizinc/basic.html" class="sidebar-item-text sidebar-link">
+  <a href="../../minizinc/basic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Основы Minizinc</span></span></a>
   </div>
 </li>
@@ -235,7 +235,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../nonlinear/overview.html" class="sidebar-item-text sidebar-link">
+            <a href="../../nonlinear/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Нелинейное программирование</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -244,25 +244,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nonlinear/unconstrained/analytical/one/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nonlinear/unconstrained/analytical/one/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Безусловная оптимизация функции одной переменной</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nonlinear/unconstrained/analytical/many/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nonlinear/unconstrained/analytical/many/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Безусловная оптимизация функции многих переменных</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nonlinear/constrained/analytical/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nonlinear/constrained/analytical/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Условная оптимизация функции многих переменных</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../nonlinear/constrained/numerical/conversion-to-unconstrained.html" class="sidebar-item-text sidebar-link">
+  <a href="../../nonlinear/constrained/numerical/conversion-to-unconstrained.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Сведение к задаче неограниченной оптимизации</span></span></a>
   </div>
 </li>
@@ -270,7 +270,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../evolutionary/overview.html" class="sidebar-item-text sidebar-link">
+            <a href="../../evolutionary/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Эволюционная оптимизация</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -279,7 +279,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../evolutionary/stats.html" class="sidebar-item-text sidebar-link">
+  <a href="../../evolutionary/stats.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Статистика анализ</span></span></a>
   </div>
 </li>
@@ -287,7 +287,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../game-theory/overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../../game-theory/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Теория игр</span></span></a>
   </div>
 </li>
@@ -302,25 +302,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab/alghorithm/programming/r/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../lab/alghorithm/programming/r/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab/alghorithm/linear/algebra/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../lab/alghorithm/linear/algebra/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Линейная алгебра</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab/alghorithm/nonlinear/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../lab/alghorithm/nonlinear/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Нелинейное программирование</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab/alghorithm/evolutionary/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../lab/alghorithm/evolutionary/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Эволюционная оптимизация</span></span></a>
   </div>
 </li>
@@ -337,43 +337,43 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab/model/basic/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../lab/model/basic/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Введение</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab/model/linear/standard/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../lab/model/linear/standard/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Линейное программирование</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab/model/linear/transport/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../lab/model/linear/transport/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Транспортные модели</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab/model/linear/integer/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../lab/model/linear/integer/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Целочисленное линейное программирование</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab/model/network/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../lab/model/network/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Сетевые модели</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab/model/nonlinear/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../lab/model/nonlinear/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Нелинейная оптимизация</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab/model/evolutionary/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../lab/model/evolutionary/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Эволюционная оптимизация</span></span></a>
   </div>
 </li>
@@ -390,37 +390,37 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab/extra/programming/r/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../lab/extra/programming/r/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab/extra/network/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../lab/extra/network/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Cетевые модели</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab/extra/nonlinear/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../lab/extra/nonlinear/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Нелинейная оптимизация. Последние минуты жизни</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab/extra/evolutionary/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../lab/extra/evolutionary/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Эволюционная оптимизация. Телекомания</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab/extra/genetic/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../lab/extra/genetic/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Генетический алгоримт. Материализованные представления</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../lab/extra/constraint/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../lab/extra/constraint/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Программирование в ограничениях</span></span></a>
   </div>
 </li>
@@ -437,37 +437,37 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../practice/basic-model/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../practice/basic-model/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Модели исследования операций</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../practice/linear/algebra/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../practice/linear/algebra/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Линейная алгебра</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../practice/linear/graphical/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../practice/linear/graphical/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Линейное программирование. Графическое представление</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../practice/linear/model/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../practice/linear/model/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Линейное программирование. Модели</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../practice/linear/simplex/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../practice/linear/simplex/main.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Линейное программирование. Симплекс метод</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../practice/game-theory/main.html" class="sidebar-item-text sidebar-link">
+  <a href="../../practice/game-theory/main.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Теория игр</span></span></a>
   </div>
 </li>
@@ -475,7 +475,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../references.html" class="sidebar-item-text sidebar-link">
+  <a href="../../references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Литература</span></a>
   </div>
 </li>
@@ -499,103 +499,103 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/tools/renv.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/tools/renv.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Система управления пакетами renv</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/tools/pracma.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/tools/pracma.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Численные методы <code>pracma</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/tools/smoof.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/tools/smoof.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Smoof</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/tools/stats.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/tools/stats.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">D</span>&nbsp; <span class="chapter-title">Пакет <code>stats</code></span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/tools/plot/plotly.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/tools/plot/plotly.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">E</span>&nbsp; <span class="chapter-title">Графическая библиотека plotly</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/tools/solver/linear/transport.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/tools/solver/linear/transport.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">F</span>&nbsp; <span class="chapter-title">Решатель transport</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/tools/solver/linear/lpsolve.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/tools/solver/linear/lpsolve.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">G</span>&nbsp; <span class="chapter-title">Решатель LPSolve</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/tools/solver/linear/clue.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/tools/solver/linear/clue.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">H</span>&nbsp; <span class="chapter-title">Решатель Clue</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/tools/solver/nonlinear/nloptr/analysis.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/tools/solver/nonlinear/nloptr/analysis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">I</span>&nbsp; <span class="chapter-title">Nloptr. Анализ</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/tools/solver/nonlinear/nloptr/local/unconstrained.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/tools/solver/nonlinear/nloptr/local/unconstrained.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">J</span>&nbsp; <span class="chapter-title">Nloptr. Локальная безуслованя</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/tools/solver/nonlinear/nloptr/local/constrained/inequality.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/tools/solver/nonlinear/nloptr/local/constrained/inequality.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">K</span>&nbsp; <span class="chapter-title">Nloptr. Локальная. Ограничения неравенства</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/tools/solver/nonlinear/nloptr/local/constrained/equality.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/tools/solver/nonlinear/nloptr/local/constrained/equality.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">L</span>&nbsp; <span class="chapter-title">Nloptr. Локальная. Ограничения равенства</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/tools/solver/evolutionary/analysis.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/tools/solver/evolutionary/analysis.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">M</span>&nbsp; <span class="chapter-title">Анализ эволюционного алгоритма</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/tools/solver/evolutionary/gensa.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/tools/solver/evolutionary/gensa.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">N</span>&nbsp; <span class="chapter-title">GenSA Имитации отжига</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/tools/solver/evolutionary/pso.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/tools/solver/evolutionary/pso.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">O</span>&nbsp; <span class="chapter-title">PSO метод роя частиц</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/tools/solver/evolutionary/ga.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/tools/solver/evolutionary/ga.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">P</span>&nbsp; <span class="chapter-title">GA обобщенный генетический алгоритм</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../r/tools/solver/evolutionary/tsp.html" class="sidebar-item-text sidebar-link">
+  <a href="../../r/tools/solver/evolutionary/tsp.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">Q</span>&nbsp; <span class="chapter-title">TSP задача коммивояжера</span></span></a>
   </div>
 </li>
@@ -608,15 +608,21 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Содержание</h2>
+   
+  <ul>
+  <li><a href="#sec-practice-game-theory-topics" id="toc-sec-practice-game-theory-topics" class="nav-link active" data-scroll-target="#sec-practice-game-theory-topics"><span class="header-section-number">41.1</span> Темы</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li><li><a href="https://github.com/AfonenkoA/Operations-Research/blob/master/practice/game-theory/main.qmd" class="toc-action"><i class="bi empty"></i>Показать код</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../practice/basic-model/main.html">Практические работы</a></li><li class="breadcrumb-item"><a href="../../practice/game-theory/main.html"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Теория игр</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-r-lang-overview" class="quarto-section-identifier">Язык программирования R</span></h1>
+<h1 class="title"><span id="sec-practice-game-theory" class="quarto-section-identifier"><span class="chapter-number">41</span>&nbsp; <span class="chapter-title">Теория игр</span></span></h1>
 </div>
 
 
@@ -633,26 +639,24 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-caution callout-titled" title="Состояние разработки">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="sec-practice-game-theory-topics" class="level2" data-number="41.1">
+<h2 data-number="41.1" class="anchored" data-anchor-id="sec-practice-game-theory-topics"><span class="header-section-number">41.1</span> Темы</h2>
+<p>В практической работе будут предложены задачи на следующие темы:</p>
+<ul>
+<li><a href="../../game-theory/overview.html#sec-game-theory-overview-representation" class="quarto-xref"><span>Глава 18.1</span></a></li>
+<li><a href="../../game-theory/overview.html#sec-game-theory-overview-solution" class="quarto-xref"><span>Глава 18.3</span></a></li>
+<li><a href="../../game-theory/overview.html#sec-game-theory-overview-domination" class="quarto-xref"><span>Глава 18.2</span></a></li>
+<li><a href="../../game-theory/overview.html#sec-game-theory-overview-nature" class="quarto-xref"><span>Глава 18.4</span></a></li>
+</ul>
+<div id="exm-practice-game-theory" class="theorem example">
+<p><span class="theorem-title"><strong>Пример 41.1 (Примерчик)</strong></span> Задание</p>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Осторожность</span>Состояние разработки
+<div id="sol-practice-game-theory" class="proof solution">
+<p><span class="proof-title"><em>Решение 41.1</em>. </span>Решение</p>
 </div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Требуется доработка</p>
-</div>
-</div>
-<p>R - это язык программирования и программная среда для статистического анализа, графического представления и создания отчетов. R был создан <a href="https://en.wikipedia.org/wiki/Ross_Ihaka">Россом Ихакой</a> и <a href="https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)">Робертом Джентльменом</a> в Оклендском университете (Новая Зеландия) и в настоящее время разрабатывается командой <a href="https://www.r-project.org/">R Development Core Team</a>.</p>
-<p>В основе R лежит интерпретируемый компьютерный язык, позволяющий выполнять ветвления и циклы, а также модульное программирование с использованием функций. Для повышения эффективности R позволяет интегрировать его с процедурами, написанными на языках C, C++, .Net, Python или FORTRAN.</p>
-<p>R находится в свободном доступе под лицензией GNU General Public License, а предварительно скомпилированные бинарные версии предоставляются для различных операционных систем, таких как Linux, Windows и Mac.</p>
-<p>R - свободное программное обеспечение, распространяемое под лицензией <a href="https://www.gnu.org/licenses/copyleft.html">GNU copyleft</a>.</p>
-<p>Общая характеристика языка</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1056,13 +1060,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../enviroment/latex.html" class="pagination-link" aria-label="Язык разметки LaTeX">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Язык разметки LaTeX</span></span>
+      <a href="../../practice/linear/simplex/main.html" class="pagination-link" aria-label="Линейное программирование. Симплекс метод">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">40</span>&nbsp; <span class="chapter-title">Линейное программирование. Симплекс метод</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../r/lang/basic.html" class="pagination-link" aria-label="Основы R">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Основы R</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../references.html" class="pagination-link" aria-label="Литература">
+        <span class="nav-page-text">Литература</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1071,4 +1075,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li><li><a href="https://github.com/AfonenkoA/Operations-Research/blob/master/r/overview.qmd" class="toc-action"><i class="bi empty"></i>Показать код</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li><li><a href="https://github.com/AfonenkoA/Operations-Research/blob/master/practice/game-theory/main.qmd" class="toc-action"><i class="bi empty"></i>Показать код</a></li></ul></div></div></div></footer></body></html>

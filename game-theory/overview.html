@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Язык программирования R – Исследование операций</title>
+<title>18&nbsp; Теория игр – Исследование операций</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../r/lang/basic.html" rel="next">
-<link href="../enviroment/latex.html" rel="prev">
+<link href="../lab/alghorithm/programming/r/main.html" rel="next">
+<link href="../evolutionary/stats.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -70,7 +70,39 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Поиск"
   }
 }</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="/Operations-Research/site_libs/mathjax-3.2.2/tex-svg-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -83,7 +115,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключить боковую панель навигации" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../r/overview.html">Язык программирования R</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../game-theory/overview.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Теория игр</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Переключить боковую панель навигации" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Поиск" onclick="window.quartoOpenSearch();">
@@ -160,7 +192,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../r/overview.html" class="sidebar-item-text sidebar-link active">
+            <a href="../r/overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Язык программирования R</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Переключить раздел">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -287,7 +319,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../game-theory/overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../game-theory/overview.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Теория игр</span></span></a>
   </div>
 </li>
@@ -608,15 +640,32 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Содержание</h2>
+   
+  <ul>
+  <li><a href="#sec-game-theory-overview-representation" id="toc-sec-game-theory-overview-representation" class="nav-link active" data-scroll-target="#sec-game-theory-overview-representation"><span class="header-section-number">18.1</span> Форма представления игры</a>
+  <ul class="collapse">
+  <li><a href="#sec-game-theory-overview-representation-tree" id="toc-sec-game-theory-overview-representation-tree" class="nav-link" data-scroll-target="#sec-game-theory-overview-representation-tree"><span class="header-section-number">18.1.1</span> Развёрнутая</a></li>
+  <li><a href="#sec-game-theory-overview-representation-normal" id="toc-sec-game-theory-overview-representation-normal" class="nav-link" data-scroll-target="#sec-game-theory-overview-representation-normal"><span class="header-section-number">18.1.2</span> Нормальная</a></li>
+  </ul></li>
+  <li><a href="#sec-game-theory-overview-domination" id="toc-sec-game-theory-overview-domination" class="nav-link" data-scroll-target="#sec-game-theory-overview-domination"><span class="header-section-number">18.2</span> Принцип доминирования</a></li>
+  <li><a href="#sec-game-theory-overview-solution" id="toc-sec-game-theory-overview-solution" class="nav-link" data-scroll-target="#sec-game-theory-overview-solution"><span class="header-section-number">18.3</span> Решение в чистых стратегиях</a></li>
+  <li><a href="#sec-game-theory-overview-nature" id="toc-sec-game-theory-overview-nature" class="nav-link" data-scroll-target="#sec-game-theory-overview-nature"><span class="header-section-number">18.4</span> Игры с природой</a>
+  <ul class="collapse">
+  <li><a href="#sec-game-theory-overview-representation-nature-laplace" id="toc-sec-game-theory-overview-representation-nature-laplace" class="nav-link" data-scroll-target="#sec-game-theory-overview-representation-nature-laplace"><span class="header-section-number">18.4.1</span> Критерий Лапласса</a></li>
+  <li><a href="#sec-game-theory-overview-representation-nature-wald" id="toc-sec-game-theory-overview-representation-nature-wald" class="nav-link" data-scroll-target="#sec-game-theory-overview-representation-nature-wald"><span class="header-section-number">18.4.2</span> Критерий Вальда</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li><li><a href="https://github.com/AfonenkoA/Operations-Research/blob/master/game-theory/overview.qmd" class="toc-action"><i class="bi empty"></i>Показать код</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-r-lang-overview" class="quarto-section-identifier">Язык программирования R</span></h1>
+<h1 class="title"><span id="sec-game-theory-overview" class="quarto-section-identifier"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Теория игр</span></span></h1>
 </div>
 
 
@@ -633,26 +682,258 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-caution callout-titled" title="Состояние разработки">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="sec-game-theory-overview-representation" class="level2" data-number="18.1">
+<h2 data-number="18.1" class="anchored" data-anchor-id="sec-game-theory-overview-representation"><span class="header-section-number">18.1</span> Форма представления игры</h2>
+<!--Шиловская с 16-->
+<section id="sec-game-theory-overview-representation-tree" class="level3" data-number="18.1.1">
+<h3 data-number="18.1.1" class="anchored" data-anchor-id="sec-game-theory-overview-representation-tree"><span class="header-section-number">18.1.1</span> Развёрнутая</h3>
+<p>В данной форме задаются:</p>
+<ul>
+<li>порядок ходов</li>
+<li>альтернативы (выборы), доступные игроку, когда подходит очередь его хода</li>
+<li>информация, доступная игроку на каждом из ходов</li>
+<li>выигрыши игроков как функции выбранных ходов</li>
+</ul>
+<p>Игру представляют в виде дерева решений, где вершины соответствуют ситуациям выбора игроками своей стратегии; каждому игроку отделяется уровень вершин; результат игры записан в конечных вершинах.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">graph TB;
+    A((1)) -- A --&gt;B((2))
+    A -- B --&gt; C((2))
+    B -- C --&gt; E((5, 3))
+    B -- D --&gt; F(("-2,2"))
+    C-- C --&gt; H((0,0))
+    C -- D --&gt; I((3,5))
+</pre>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Осторожность</span>Состояние разработки
+<p></p></figure><p></p>
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Требуется доработка</p>
 </div>
+</section>
+<section id="sec-game-theory-overview-representation-normal" class="level3" data-number="18.1.2">
+<h3 data-number="18.1.2" class="anchored" data-anchor-id="sec-game-theory-overview-representation-normal"><span class="header-section-number">18.1.2</span> Нормальная</h3>
+<p>Нормальная форма игры суммирует позиционную игру в трёх элементах:</p>
+<ul>
+<li>множестве игроков</li>
+<li>множестве стратегий каждого игрока</li>
+<li>функции выигрышей, ставящей в соответствие каждому набору стратегий игроков соответствующие выигрыши игроков</li>
+</ul>
+<p>Игра может быть описана <em>платёжной матрицей</em>: каждая строка матрицы соответствующий отдельному игроку (строки – возможные стратегии 1-го игрока; столбцы – стратегии 2-го игрока); элементы матрицы – платежи, соответствующие решению каждой из сторон о выборе одной из своих стратегий.</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td>Стратегии 1-го игрока</td>
+<td style="text-align: center;">Стратегии 2-го игрока</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td></td>
+<td style="text-align: center;">1-я стратегия</td>
+<td style="text-align: center;">2-я стратегия</td>
+</tr>
+<tr class="odd">
+<td>1-я стратегия</td>
+<td style="text-align: center;">5,3</td>
+<td style="text-align: center;">-2,-2</td>
+</tr>
+<tr class="even">
+<td>2-я стратегия</td>
+<td style="text-align: center;">0,0</td>
+<td style="text-align: center;">3,5</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="sec-game-theory-overview-domination" class="level2" data-number="18.2">
+<h2 data-number="18.2" class="anchored" data-anchor-id="sec-game-theory-overview-domination"><span class="header-section-number">18.2</span> Принцип доминирования</h2>
+<p>В теории игр при их исследовании большое значение имеет возможность учёта предпочтения стратегий игроков, которое будет осуществляться с помощью принципа доминирования, который позволяет уменьшить размерность матрицы.</p>
+<p>Первый игрок стремится максимизировать свой выигрыш, и ему будет выгодна та стратегия, которая принесёт больший выигрыш. Если элементы некоторой строки платежной матрицы <span class="math inline">\(C\)</span> меньше соответствующих элементов другой строки, то интуитивно ясно, первую можно вычеркнуть. Сформулируем условия доминирования строк и столбцов платежной матрицы, позволяющую уменьшить её размерность.</p>
+<div id="def-game-theory-overview-vector-domination" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 18.1</strong></span> Вектор <span class="math inline">\(x=(x_1,\dots,x_n)\)</span> доминирует вектор <span class="math inline">\(y=(y_1,\dots,y_n)\)</span>, если элементы вектора <span class="math inline">\(x\)</span> больше или равны соответствубщим элементам вектора <span class="math inline">\(y\)</span>. То есть <span class="math inline">\(x_i \geq y_i\)</span>, для <span class="math inline">\(\forall i=1,\dots n\)</span> и хотя бы одно неравество выполняется как строгое. Про вектор <span class="math inline">\(y\)</span> говорят, что он доминируется вектором <span class="math inline">\(x\)</span>.</p>
 </div>
-<p>R - это язык программирования и программная среда для статистического анализа, графического представления и создания отчетов. R был создан <a href="https://en.wikipedia.org/wiki/Ross_Ihaka">Россом Ихакой</a> и <a href="https://en.wikipedia.org/wiki/Robert_Gentleman_(statistician)">Робертом Джентльменом</a> в Оклендском университете (Новая Зеландия) и в настоящее время разрабатывается командой <a href="https://www.r-project.org/">R Development Core Team</a>.</p>
-<p>В основе R лежит интерпретируемый компьютерный язык, позволяющий выполнять ветвления и циклы, а также модульное программирование с использованием функций. Для повышения эффективности R позволяет интегрировать его с процедурами, написанными на языках C, C++, .Net, Python или FORTRAN.</p>
-<p>R находится в свободном доступе под лицензией GNU General Public License, а предварительно скомпилированные бинарные версии предоставляются для различных операционных систем, таких как Linux, Windows и Mac.</p>
-<p>R - свободное программное обеспечение, распространяемое под лицензией <a href="https://www.gnu.org/licenses/copyleft.html">GNU copyleft</a>.</p>
-<p>Общая характеристика языка</p>
+<div id="def-game-theory-overview-linear-combination" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 18.2</strong></span> Линейная комбинация векторов называется выпуклой, если существует такие коэффициенты <span class="math inline">\(k_1,k_2,\dots,k_n,k_l \in [0,1]\)</span> для <span class="math inline">\(i=1, \dots , n\)</span> не равные нулю одновременно, что выполнено условие</p>
+<p><span class="math display">\[
+k_1 x^1 + k_1 x^2 + \dots + k_n x^n = x
+\]</span></p>
+</div>
+<div id="thm-game-theory-overview-row-domination" class="theorem">
+<p><span class="theorem-title"><strong>Теорема 18.1 (О доминировании строк)</strong></span> Если в игре с платежной матрицей <span class="math inline">\(C\)</span> какая-либо строка доминируется выпуклой комбинаций остальных строк, то на будет входить с нулевой вероятностью в оптимальную смешанную стратегию первого игрока и её можно вычеркнуть.</p>
+</div>
+<div id="cor-game-theory-overview-row-domination" class="theorem corollary">
+<p><span class="theorem-title"><strong>Следствие 18.1</strong></span> &nbsp;</p>
+<ol type="1">
+<li>Если в матрице существуют несколько одинаковых строк, то все, кроме одной, можно вычеркнуть, и они будут входить с нулевой вероятностью в оптимальную смешанную стратегию первого игрока.</li>
+<li>Если какая-либо строка доминируется другой строкой, то меньшую можно вычеркнуть.</li>
+</ol>
+</div>
+<div id="thm-game-theory-overview-col-domination" class="theorem">
+<p><span class="theorem-title"><strong>Теорема 18.2 (О доминировании столбцов)</strong></span> Если в игре с платёжной матрицей <span class="math inline">\(C\)</span> какой-либо столбец доминирует выпуклую комбинацию остальных столбцов, о он будет входить с нулевой вероятностью в оптимальную смешанную стратегию второго игрока и его можно вычеркнуть.</p>
+</div>
+<div id="exm-game-theory-overview-domination" class="theorem example">
+<p><span class="theorem-title"><strong>Пример 18.1</strong></span> Используя принцип доминирования найти оптимальную стратегию</p>
+<p><span class="math display">\[
+C =
+\begin{pmatrix}
+2 &amp; 0 &amp; 1 &amp; 4 \\
+1 &amp; 2 &amp; 5 &amp; 3 \\
+4 &amp; 1 &amp; 3 &amp; 2
+\end{pmatrix}
+\]</span></p>
+</div>
+<div id="sol-game-theory-overview-domination" class="proof solution">
+<p><span class="proof-title"><em>Решение 18.1</em>. </span>Третий и чертвеёртный столбцы доминируют над вторым, поэтому, в соответствии с утверждением о доминировании столбцов, их можно вычеркнуть (они будут входить в нулевой вероятностью в смешанную стратегию <strong>второго игрока</strong>). Получаем</p>
+<p><span class="math display">\[
+C =
+\begin{pmatrix}
+2 &amp; 0 \\
+1 &amp; 2 \\
+4 &amp; 1
+\end{pmatrix}
+\]</span></p>
+<p>Из оставшихся трёх строк и двух столбцов можно вычеркнуть первую строку и так как она доминируется третьей строкой. Таким образом, получаем игру с платежной матрицей <span class="math inline">\(2 \times 2: \big(\begin{smallmatrix} 1 &amp; 2\\ 4 &amp; 1 \end{smallmatrix}\big)\)</span>, которая решается просто.</p>
+</div>
+<!--В. П. Невежин -->
+</section>
+<section id="sec-game-theory-overview-solution" class="level2" data-number="18.3">
+<h2 data-number="18.3" class="anchored" data-anchor-id="sec-game-theory-overview-solution"><span class="header-section-number">18.3</span> Решение в чистых стратегиях</h2>
+<!--Шиловская с 17 и Таха с 560-->
+<p>Каждый игрок в конфликтной ситуации старается выбрать наиболее выгодную для себя стратегию. 1-й игрок, очевидно, стремится выбрать стратегию, максимизирующую его выигрыш, а 2-й игрок выбирает стратегию, минимизирующую проигрыш. Чтобы определить рациональные границы наибольшего выигрыша и наименьшего проигрыша, вводят понятие ниженй и верхней чистой цены игры.</p>
+<div id="def-game-theory-overview-solution-low-price" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 18.3</strong></span> Нижней чистой ценой игры (максимином) называют число <span class="math inline">\(\alpha\)</span>, которое определяется по формуле</p>
+<p><span class="math display">\[
+\alpha = \max_i \min_j a_{ij}
+\]</span></p>
+</div>
+<div id="def-game-theory-overview-solution-top-price" class="theorem definition">
+<p><span class="theorem-title"><strong>Определение 18.4</strong></span> Верхней чистой ценой игры называют число <span class="math inline">\(\beta\)</span>, которое определяется по формуле</p>
+<p><span class="math display">\[
+\beta = \min_j \max_i a_{ij}
+\]</span></p>
+</div>
+<div id="exm-game-theory-overview-solution" class="theorem example">
+<p><span class="theorem-title"><strong>Пример 18.2</strong></span> Две компании <span class="math inline">\(A\)</span> и <span class="math inline">\(B\)</span> продают два вида лекарств против гриппа. Компания <span class="math inline">\(A\)</span> рекламирует продукцию на радио <span class="math inline">\(A\)</span> рекламирует продукцию на радио (<span class="math inline">\(A_1\)</span>), телевидении (<span class="math inline">\(A_2\)</span>) и в газетах (<span class="math inline">\(A_3\)</span>). Компания <span class="math inline">\(B\)</span> в дополнении к использованию радио (<span class="math inline">\(B_1\)</span>), телевидения (<span class="math inline">\(B_2\)</span>) и газет (<span class="math inline">\(B_3\)</span>) рассылает по почте брошюры (<span class="math inline">\(B_4\)</span>). В зависимости от умения и интенсивности проведения рекламной кампании, каждая из компаний может привлечь на свою сторону часть клиентов конкурирующей компании. Приведенная ниже матрица характеризует процент клиентов, привлеченных или потерянных компанией <span class="math inline">\(A\)</span>.</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td style="text-align: right;"></td>
+<td style="text-align: center;"><span class="math inline">\(B_1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(B_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(B_3\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(B_4\)</span></td>
+<td style="text-align: left;">Минимумы строк</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(A_1\)</span></td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">-2</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">-3</td>
+<td style="text-align: left;">-3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;"><span class="math inline">\(A_2\)</span></td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;"><strong>5</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;"><span class="math inline">\(A_3\)</span></td>
+<td style="text-align: center;">-2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">-9</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">-9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">Максимумы столбцов</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;"><strong>5</strong></td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="sol-game-theory-overview-solution" class="proof solution">
+<p><span class="proof-title"><em>Решение 18.2</em>. </span>Решение игры основано на обеспечении <em>наилучшего</em> результата из <em>наихудших</em> для каждого игрока. Если компания <span class="math inline">\(A\)</span> выберет стратегию <span class="math inline">\(A_1\)</span>, то, независимо от того, что предпринимает компания <span class="math inline">\(B\)</span>, наихудшим результатом является потеря компанией <span class="math inline">\(A\)</span> 3% рынка в пользу компании <span class="math inline">\(B\)</span>. Это определяется минимумом элементов первой строки матрицы платежей. Аналогично при выборе стратегии <span class="math inline">\(A_2\)</span> наихудшем исходом для компании <span class="math inline">\(A\)</span> является увеличение рынка на 5%, за счёт компании <span class="math inline">\(B\)</span>. Наконец, наихудшим исходом при выборе стратегии <span class="math inline">\(A_3\)</span> является потеря компанией <span class="math inline">\(A\)</span> 9% рынка в пользу компании <span class="math inline">\(B\)</span>. Эти результаты содержатся в столбце “Минимумы строк”. Чтобы достичь наилучшего результата из наихудших, компания <span class="math inline">\(A\)</span> выбирает стратегию <span class="math inline">\(A_2\)</span>, так как она соответствует наибольшему элементу столбца “Минимумы строк”.</p>
+<p>Рассмотрим теперь стратегии компании <span class="math inline">\(B\)</span>. Так как элементы матрицы являются платежами компании <span class="math inline">\(A\)</span>, критерий <em>наилучшего результата</em> из <em>наихудших</em> для компании <span class="math inline">\(B\)</span> соответствует выбору минимаксного значения. В результате приходим к выводу, что выбором компании <span class="math inline">\(B\)</span> является стратегия <span class="math inline">\(B_2\)</span>.</p>
+<p>Оптимальным решением в игре является выбор стратегий <span class="math inline">\(A_2\)</span> и <span class="math inline">\(B_2\)</span>, т.е. обеим компаниям следует проводить рекламу на телевидении. При этом выигрыш будет в пользу компании <span class="math inline">\(A\)</span>, так как её рынок увеличится на 5%. В этом случае говорят, что цена игры равна 5% и что компании <span class="math inline">\(A\)</span> и <span class="math inline">\(B\)</span> используют стратегии, соответствующие <strong>седловой точке</strong>.</p>
+<p>Решение, соответствующее седловой точке, гарантирует, что ни одной компании нет смысла пытаться выбрать другую стратегию. Действительно, если компания <span class="math inline">\(B\)</span> переходит к другой стратегии (<span class="math inline">\(B_1\)</span>, <span class="math inline">\(B_3\)</span> или <span class="math inline">\(B_4\)</span>), то компания <span class="math inline">\(A\)</span> может сохранить свой выбор стратегии <span class="math inline">\(A_2\)</span>, что приведёт к большей потере рынка компанией <span class="math inline">\(B\)</span> (6 или 8%). По тем же причинам компании <span class="math inline">\(A\)</span> нет резона использовать другую стратегию, ибо, если она применит, например стратегию <span class="math inline">\(A_3\)</span>, то компания <span class="math inline">\(B\)</span> может использовать свою стратегию <span class="math inline">\(B_3\)</span> и увеличить свой рынок на 9%. Аналогичные выводы имеют место, если компания <span class="math inline">\(A\)</span> будет использовать стратегию <span class="math inline">\(A_1\)</span>.</p>
+</div>
+</section>
+<section id="sec-game-theory-overview-nature" class="level2" data-number="18.4">
+<h2 data-number="18.4" class="anchored" data-anchor-id="sec-game-theory-overview-nature"><span class="header-section-number">18.4</span> Игры с природой</h2>
+<p>В игре с природой осознанно действует только один игрок, а именно лицо, принимающее решение.</p>
+<!--Шиловская-->
+<div id="exm-game-theory-overview-nature" class="theorem example">
+<p><span class="theorem-title"><strong>Пример 18.3</strong></span> Инвестор действует в условиях информационной непрозрачности и неопределенности на рынке жилья, и это приводит к потере доходности. Чтобы преодолеть неопределённость и повысить доходность инвестиций, необходимо учитывать риски. Итак, инвестор принимает решения о строительстве жилья определенного типа в заранее определённом районе (множество участков для застройки определяется градостроительными решениями, стоимостью земли и другими факторами). Принимая <span class="math inline">\(i\)</span>-е решение, инвестор ожидает получить доход в размере <span class="math inline">\(q_{ij}\)</span>, если на рынке жилья в момент завершения строительства реализуется <span class="math inline">\(j\)</span>-я ситуация. Множество возможных ситуаций на рынке формализуется на основе ретроспективных статистических данных. Матрица, составленная из <span class="math inline">\(q_{ij}, Q={(q_{ij})}_{m\times n}\)</span> называется <em>матрицей доходов</em>.</p>
+<p>На основе имеющих статистических данных получена следующая матрица доходов:</p>
+<p><span class="math display">\[
+Q =
+\begin{pmatrix}
+2 &amp; 1 &amp; 0 &amp; 1 \\
+2 &amp; 3 &amp; 4 &amp; 0 \\
+1 &amp; 2 &amp; 1 &amp; 1 \\
+4 &amp; 3 &amp; 0 &amp; 0
+\end{pmatrix}
+\]</span></p>
+</div>
+<section id="sec-game-theory-overview-representation-nature-laplace" class="level3" data-number="18.4.1">
+<h3 data-number="18.4.1" class="anchored" data-anchor-id="sec-game-theory-overview-representation-nature-laplace"><span class="header-section-number">18.4.1</span> Критерий Лапласса</h3>
+<!--Невежин-->
+<p>Данный критерий опирается на “принцип недостаточного основания” Лапласа, согласно которому все состояния природы <span class="math inline">\(S_j, j=1,\dots,m\)</span> полагаются равновероятными <span class="math inline">\(q_j=\frac{1}{n}\)</span>. Если в исходной задаче матрица представлена матрицей выйгрышей, то для выбора оптимальной стратегии <span class="math inline">\(i\)</span> выбирают максимальное значение среди предварительно вычисленных по строкам матрицы средних арифметических значений, дающих наиболее ожидаемый выигрыш</p>
+<p><span class="math display">\[
+\max_{i} \frac{1}{m} \sum_{j=1}^n {q_{ij}}
+\]</span></p>
+<p>Соответственно для примера</p>
+<p><span class="math display">\[
+\max {
+\frac{1}{4}
+\begin{bmatrix}
+2+1+0+1 = 4\\
+2+3+4+0 = 9\\
+1+2+1+1 = 5\\
+4+3+0+0 = 7
+\end{bmatrix}
+} =
+\max{(1, \frac{9}{4},\frac{5}{4},\frac{7}{4})}
+\]</span></p>
+<p>Таким образом выбираем вторую стратегию</p>
+</section>
+<section id="sec-game-theory-overview-representation-nature-wald" class="level3" data-number="18.4.2">
+<h3 data-number="18.4.2" class="anchored" data-anchor-id="sec-game-theory-overview-representation-nature-wald"><span class="header-section-number">18.4.2</span> Критерий Вальда</h3>
+<p>Критерий Вальда, который часто называют минимаксным или максиминным критерием, опирается на принцип наибольшей осторожности и основывается на выборе наилучшей из наихудших стратегий <span class="math inline">\(i\)</span>.</p>
+<p>Согласно ему игра с природой ведётся как игра с разумным, причём агрессивным противником, делающим всё для того, чтобы помешать другому игроку достигнуть успеха. Оптимальной считается стратегия, при которой гарантируется выигрыш в любом случае не меньший, чем “нижняя цена игры с природой”.</p>
+<p>Если в исходной игре результат представляет выигрыш лица, принимающего решение, то при выборе оптимальной стратегии используемый <em>максиминный критерий</em>:</p>
+<p><span class="math display">\[
+Z = \max_i \min_j q_{ij}
+\]</span></p>
+<p>Соответственно для примера</p>
+<p><span class="math display">\[
+\max {
+\frac{1}{4}
+\begin{bmatrix}
+\min{(2,1,0,1)} = 0\\
+\min{(2,3,4,0)} = 0\\
+\min{(1,2,1,1)} = 1\\
+\min{(4,3,0,0)} = 0
+\end{bmatrix}
+} =
+\max{(0,0,1,0)}
+\]</span> В таком случае выбираем 3-ю стратегию.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1056,13 +1337,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../enviroment/latex.html" class="pagination-link" aria-label="Язык разметки LaTeX">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Язык разметки LaTeX</span></span>
+      <a href="../evolutionary/stats.html" class="pagination-link" aria-label="Статистика анализ">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Статистика анализ</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../r/lang/basic.html" class="pagination-link" aria-label="Основы R">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Основы R</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../lab/alghorithm/programming/r/main.html" class="pagination-link" aria-label="R">
+        <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">R</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1071,4 +1352,4 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li><li><a href="https://github.com/AfonenkoA/Operations-Research/blob/master/r/overview.qmd" class="toc-action"><i class="bi empty"></i>Показать код</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/AfonenkoA/Operations-Research/issues/new" class="toc-action"><i class="bi bi-github"></i>Сообщить о проблеме</a></li><li><a href="https://github.com/AfonenkoA/Operations-Research/blob/master/game-theory/overview.qmd" class="toc-action"><i class="bi empty"></i>Показать код</a></li></ul></div></div></div></footer></body></html>
