@@ -9,6 +9,10 @@ source('../../../helper/smoof.R')
 source('../../../helper/smoof_plotly.R')
 ```
 
+::: callout-important
+Для воспроизведения графиков предварительно измените код @sec-r-tools-plotly-pshow.
+:::
+
 ```{r}
 f <- smoof::makeSphereFunction(2)
 ```

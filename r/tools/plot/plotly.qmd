@@ -17,8 +17,11 @@ install.packages('plotly')
 ```
 :::
 
+## Графики из методички {#sec-r-tools-plotly-pshow}
+
 ::: callout-important
 Для отображения графика во всех примерах требуется удалить последнее применение функции `|> pshow()`. Например @exm-r-tools-plotly-line2d-explicit
+:::
 
 ```{{r}}
 library(plotly)
@@ -40,7 +43,7 @@ plot_ly(x = x, y = y,
         type = 'scatter',
         mode = 'lines')
 ```
-:::
+
 
 ## 2D График {#sec-r-tools-plotly-line2d}
 

@@ -113,6 +113,10 @@ constr_eq_jac_fn <- smoof::makeMultiObjectiveFunction(
 ```
 :::
 
+::: callout-important
+Для воспроизведения графиков предварительно измените код @sec-r-tools-plotly-pshow.
+:::
+
 ```{r}
 #| include: false
 

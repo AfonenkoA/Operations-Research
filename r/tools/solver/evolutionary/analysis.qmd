@@ -33,6 +33,10 @@ source('../../../helper/smoof_plotly.R')
 :::
 ::::
 
+::: callout-important
+Для воспроизведения графиков предварительно измените код @sec-r-tools-plotly-pshow.
+:::
+
 Выберем тестовую функцию из библиотеки `smoof` и добавим обёртку для подсчёта числа вызовов
 
 ```{r}
@@ -43,18 +47,11 @@ objfn <- smoof::makeAckleyFunction(2) |>
 построим её график и посчитаем число вызовов
 
 ```{r}
-#| eval: false
-
-smoof_pcontour(objfn, 30)
-```
-
-```{r}
 #| message: false
 #| warning: false
 
 smoof_pcontour(objfn, 30) |> pshow()
 ```
-
 
 Функция была вызвана 
 

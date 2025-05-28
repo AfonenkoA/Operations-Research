@@ -118,7 +118,6 @@ constr_ineq_jac_fn <- smoof::makeMultiObjectiveFunction(
 ```
 :::
 
-
 ```{r}
 #| include: false
 
@@ -165,6 +164,10 @@ add_constr <- function(fig)
     pshow_safe()
 }
 ```
+
+::: callout-important
+Для воспроизведения графиков предварительно измените код @sec-r-tools-plotly-pshow.
+:::
 
 ```{r}
 #| label: obj-contour

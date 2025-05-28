@@ -53,6 +53,10 @@ x0 <- c(3,3)
 
 :::
 
+::: callout-important
+Для воспроизведения графиков предварительно измените код @sec-r-tools-plotly-pshow.
+:::
+
 ```{r}
 #| include: false
 

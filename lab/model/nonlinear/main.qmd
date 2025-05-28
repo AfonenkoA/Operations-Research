@@ -120,23 +120,13 @@ readr::read_csv('value.csv', col_types = c('c','i','i')) |>
 :::: {.content-visible when-format="html"}
 ::: {.callout appearance="minimal"}
 ⤓ [target.csv](target.csv)
-:::
-::::
-
-:::: {.content-visible unless-format="html"}
-::: {.callout appearance="minimal"}
-`\faFile*[regular].`{=latex} [target.csv](lab/model/nonlinear/target.csv)
-:::
-::::
-
-:::: {.content-visible when-format="html"}
-::: {.callout appearance="minimal"}
 ⤓ [value.csv](value.csv)
 :::
 ::::
 
 :::: {.content-visible unless-format="html"}
 ::: {.callout appearance="minimal"}
+`\faFile*[regular].`{=latex} [target.csv](lab/model/nonlinear/target.csv)
 `\faFile*[regular].`{=latex} [value.csv](lab/model/nonlinear/value.csv)
 :::
 ::::

@@ -222,6 +222,9 @@ trace <- nloptr_trace(
 
 ## Графический анализ {#sec-r-tools-solver-nonlinear-nloptr-analysis-graphical}
 
+::: callout-important
+Для воспроизведения графиков предварительно измените код @sec-r-tools-plotly-pshow.
+:::
 
 ```{r}
 #| label: graphical-contour

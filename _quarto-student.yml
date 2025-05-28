@@ -1,6 +1,6 @@
 project:
   type: book
-  output-dir: _student-book
+  output-dir: _s-book
 
 book:
   chapters:
@@ -40,6 +40,8 @@ book:
       chapters:
         - evolutionary/stats.qmd
 
+    -  game-theory/overview.qmd
+
     - part: "Задания. Алгоритмы"
       chapters:
         - lab/alghorithm/programming/r/main.qmd
@@ -73,6 +75,7 @@ book:
         - practice/linear/graphical/main.qmd
         - practice/linear/model/main.qmd
         - practice/linear/simplex/main.qmd
+        - practice/game-theory/main.qmd
 
     - references.qmd
 
